@@ -1,0 +1,108 @@
+### YamlMime:Landing
+metadata:
+  title: Hjelpesenter for Dynamics 365 Customer Insights
+  author: m-hartmann
+  description: Finn relevante artikler for å starte med innhold i hjelp.
+  ms.author: mhart
+  ms.date: 10/29/2020
+  ms.service: customer-insights
+  ms.topic: landing-page
+  ms.openlocfilehash: f175ea858213022afc87fce77213893c7d050d30
+  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.translationtype: HT
+  ms.contentlocale: nb-NO
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "4406544"
+title: Dynamics 365 Customer Insights-dokumentasjon
+summary: Finn nyttige ressurser for å komme i gang og lære om funksjoner og egenskaper i Customer Insights.
+landingContent:
+- title: Møt Customer Insights
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Oversikt over Customer Insights
+      url: overview.md
+    - text: Lanseringsplaner
+      url: https://docs.microsoft.com/dynamics365-release-plan/2020wave2/customer-data-platform/dynamics365-customer-insights/planned-features
+    - text: Få tilgang til miljøet ditt
+      url: https://home.ci.ai.dynamics.com/
+- title: Kom i gang med målgruppeinnsikt
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Registrer deg for en prøveversjon
+      url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
+    - text: Nyheter
+      url: audience-insights/whats-new-audience-insights.md
+    - text: Dokumentasjon for målgruppeinnsikt
+      url: audience-insights/index.yml
+- title: Få kontakt
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Bli med i Dynamics 365-fellesskapet
+      url: https://go.microsoft.com/fwlink/?linkid=2073991
+    - text: Del ideene dine
+      url: https://go.microsoft.com/fwlink/?linkid=2074172
+    - text: Rapporter et problem
+      url: https://go.microsoft.com/fwlink/?linkid=2079641
+- title: Opplæringer i målgruppeinnsikt
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Opprett et nytt miljø
+      url: audience-insights/home.md
+    - text: Opprette en samlet kundeprofil
+      url: https://docs.microsoft.com/learn/modules/unified-customer-profile/
+    - text: Arbeide med appen
+      url: https://docs.microsoft.com/learn/modules/working-with-customer-insights/
+- title: Eksportere målgruppeinnsiktsdata
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurere eksportmål
+      url: audience-insights/export-destinations.md
+    - text: Kundekort i Dynamics 365-apper
+      url: audience-insights/customer-card-add-in.md
+    - text: Power BI-kobling
+      url: audience-insights/export-power-bi.md
+- title: Administrere målgruppeinnsikt
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurere systemet
+      url: audience-insights/system.md
+    - text: Definere brukertillatelser
+      url: audience-insights/permissions.md
+    - text: Behandle flere miljøer
+      url: audience-insights/manage-environments.md
+- title: Om engasjementsinnsikt (forhåndsversjon)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Oversikt over funksjoner
+      url: engagement-insights/overview.md
+    - text: Begreper og konsepter
+      url: engagement-insights/glossary.md
+    - text: Kom i gang
+      url: engagement-insights/get-started.md
+- title: Rapporter for engasjementsinnsikt (forhåndsversjon)
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Vis rapporter
+      url: engagement-insights/view-reports.md
+    - text: Opprette egendefinerte rapporter
+      url: engagement-insights/custom-reports.md
+    - text: Vise rapport om enhetlige profiler
+      url: engagement-insights/profile-reports.md
+- title: Hendelser for engasjementsinnsikt (forhåndsversjon)
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Opprette finjusterte hendelser
+      url: engagement-insights/refined-events.md
+    - text: Eksportere hendelser
+      url: engagement-insights/export-events.md
+    - text: Slette og eksportere personlige data
+      url: engagement-insights/delete-export-personal-data.md
