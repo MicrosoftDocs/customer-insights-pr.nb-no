@@ -5,16 +5,16 @@ ms.date: 11/24/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1b5c6e46e8e424df83e855d81fc4dd7ecb394e3c
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 12eed91a7ca4ef7fde0d53cca4a1dfd398b4634f
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668735"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269434"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Supplering av firmaprofiler med Leadspace (forhåndsversjon)
 
@@ -38,7 +38,11 @@ Følgende forutsetninger må være oppfylt for at du skal kunne konfigurere Lead
 
 1. Velg **Kom i gang**, og angi deretter et aktivt **Leadspace-token** (permanent nøkkel). Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**. Bekreft begge inndataene ved å velge **Koble til Leadspace**.
 
-1. Velg **Tilordne data**, og definer hvilke felt fra de enhetlige profilene som skal brukes til å søke etter samsvarende firmadata fra Leadspace. Feltet **Navn på selskap** feltet er obligatorisk. For høyere nøyaktighet kan opptil to andre felter, **Selskapets nettsted** og **Selskapssted**, legges til.
+1. Velg **Tilordne data**, og velg datasettet du vil supplere med selskapsdata fra Leadspace. Du kan velge *kundeenheten* for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
+
+   :::image type="content" source="media/enrichment-leadspace-select-segment.png" alt-text="Velg mellom kundeprofil og segmentsupplering.":::
+
+1. Klikk på **Neste**, og definer hvilke felt fra de enhetlige profilene som skal brukes til å søke etter samsvarende firmadata fra Leadspace. Feltet **Navn på selskap** feltet er obligatorisk. For høyere nøyaktighet kan opptil to andre felter, **Selskapets nettsted** og **Selskapssted**, legges til.
 
    :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Tilordningsrute i Leadspace-felt.":::
    
@@ -62,3 +66,6 @@ Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md), 
 
 Når du aktiverer Dynamics 365 Customer Insights for overføring av data til Leadspace, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data, for eksempel personlige data. Microsoft overfører slike data etter instruksjon fra deg, men du er ansvarlig for å sørge for at Leadspace oppfyller alle forpliktelser til personvern eller sikkerhet du måtte ha. Hvis du vil ha mer informasjon, kan du se [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen når som helst for å slutte å bruke denne funksjonaliteten.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

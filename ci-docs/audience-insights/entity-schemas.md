@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 2cf01029ef6b64fe566022d09ce65bca3603189c
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 9e7a6e944d37d25f4c25846644278b39b3ddd08e
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643920"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269296"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Enhetsskjemaer i Common Data Model
 
@@ -45,3 +45,6 @@ Hvis du vil ha mer informasjon, kan du se dokumentasjonen om [Customer Insights-
 Du kan vise enheter i [Common Data Model-enhetsnavigatoren](https://microsoft.github.io/CDM/). Velg knappen **Last inn fra GitHub!** , og naviger til **foundationCommon** > **crmCommon** > **løsninger** > **customerInsights**, der du finner en liste over Customer Insights-enheter og definisjoner.
 > [!div class="mx-imgBorder"]
 > ![CDM-enhetsnavigator som viser Kundeaktivitet-enhet](media/CDM-entity-navigator.png "CDM-enhetsnavigator som viser Kundeaktivitet-enhet")
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 9032d99357db86e66588eda544211a5f8eb2f23b
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 63caa2ebdd7d637d14ac9c9cc7972095803aee2f
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643875"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477145"
 ---
-# <a name="export-destinations-preview"></a>Eksportmål (forhåndsvisning)
+# <a name="export-destinations-preview-overview"></a>Oversikt over eksportmål (forhåndsversjon)
 
 Siden **Eksportmål** viser alle stedene du har konfigurert til å eksportere data til. Du kan også legge til nye mål for eksport. I tillegg vises det tilgjengelige alternativer for eksport. Få en rask oversikt og en beskrivelse, og finn ut hva du kan gjøre med hvert utvidelsesalternativ. Eksporter samlede profiler, mål og segmenter til apper som støttes for virksomheten din.
 
@@ -27,10 +27,13 @@ Gå til **Admin** > **Eksportmål** for å finne følgende utvidelsesalternative
 - [Power Automate-kobling](export-power-automate.md)
 - [Power Apps-kobling](export-power-apps.md)
 - [Power BI-kobling](export-power-bi.md)
+- [Autopilot](export-autopilot.md)
 - [DotDigital](export-dotdigital.md)
-- [Dynamics 365 for salg](export-dynamics365-sales.md)
+- [Dynamics 365 Sales](export-dynamics365-sales.md)
 - [Dynamics 365 Marketing](export-dynamics365-marketing.md)
 - [Azure Blob Storage](export-azure-blob-storage.md)
+- [Azure Data Lake Storage Gen2](export-azure-data-lake-storage-gen2.md)
+- [SendGrid](export-sendgrid.md)
 - [LiveRamp&reg;-kobling](export-liveramp.md)
 - [Robot for Microsoft Teams](export-teams-bot.md)
 - [Mailchimp](export-mailchimp.md)
@@ -95,3 +98,6 @@ Hvis du vil fjerne et eksportmål, starter du fra hovedsiden for **Eksportmål**
 2. Velg **Fjern** fra rullegardinmenyen.
 
 3. Bekreft fjerningen ved å velge **Fjern** i bekreftelsesdialogboksen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

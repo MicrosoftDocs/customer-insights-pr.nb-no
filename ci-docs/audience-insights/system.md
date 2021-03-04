@@ -1,7 +1,7 @@
 ---
 title: Systemkonfigurasjon i målgruppeinnsikt
 description: Lær om systeminnstillinger i funksjonen for målgruppeinnsikt i Dynamics 365 Customer Insights.
-ms.date: 06/02/2020
+ms.date: 02/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,25 +9,30 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: nimagen
 manager: shellyha
-ms.openlocfilehash: 7dd72e6512cd87ac70235d21667399298408db21
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: a9c9e258da49b8f452550794539962d48b856829
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406535"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267352"
 ---
 # <a name="system-configuration"></a>Systemkonfigurasjon
 
-**System**-siden inneholder fire kategorier: **Status**, **Plan**, **Om** og **Generelt**.
+**System**-siden inneholder følgende faner:
+- [Status](#status-tab)
+- [Tidsplan](#schedule-tab)
+- [API-bruk](#api-usage-tab)
+- [Om](#about-tab)
+- [Generelt](#general-tab)
 
 > [!div class="mx-imgBorder"]
 > ![Systemside](media/system-tabs.png "Systemside")
 
 ## <a name="status-tab"></a>Kategorien Status
 
-I **Status-kategorien** kan du spore fremdriften for datainntak, dataeksport og flere viktige produktprosesser. Se gjennom informasjonen i denne kategorien for å sikre at aktive prosesser er fullført.
+I fanen **Status** kan du spore fremdriften for datainntak, dataeksporter og flere andre viktige produktprosesser. Se gjennom informasjonen i denne kategorien for å sikre at aktive prosesser er fullført.
 
-Denne kategorien inneholder statustabeller for **Datakilder**, **Systemprosesser** og **Dataforberedelse**. Hver tabell sporer **navnet** på oppgaven og den tilsvarende enheten, **statusen** for den nyeste kjøringen og når den **sist ble oppdatert**.
+Denne fanen inneholder tabeller med status og behandlingsinformasjon for ulike prosesser. Hver tabell sporer **navnet** på oppgaven og den tilsvarende enheten, **statusen** for den nyeste kjøringen og når den **sist ble oppdatert**.
 
 Du kan vise detaljene for de siste kjøringene av oppgaven ved å velge navnet på den.
 
@@ -40,7 +45,7 @@ Det finnes seks typer statuser for oppgaver. Følgende statustyper vises også p
 - **Hoppet over:** Oppgaven ble hoppet over. Én eller flere av de prosessene nedstrøms som denne oppgaven avhenger av, mislykkes eller blir hoppet over.
 - **Feil:** Behandlingen av oppgaven mislyktes.
 - **Avbrutt:** Behandlingen ble avbrutt av brukeren før den var ferdig.
-- **I kø:** Behandlingen blir lagt i kø og starter straks alle de nedstrømsoppgavene er fullført. Hvis du vil ha mer informasjon, kan du se [Oppdateringspolicyer](#refresh-policies).
+- **I kø:** Behandlingen blir lagt i kø og starter når alle oppstrømsoppgavene er fullført. Hvis du vil ha mer informasjon, kan du se [Oppdateringspolicyer](#refresh-policies).
 
 ### <a name="refresh-policies"></a>Oppdateringspolicyer
 
@@ -89,4 +94,17 @@ Velg **Lagre** for å bekrefte valgene.
 
 ## <a name="api-usage-tab"></a>Kategorien API-bruk
 
-Finn detaljer om API-bruken i sanntid og se hvilke hendelser som skjedde i et gitt tidsintervall. Se [Datainntak i sanntid](real-time-data-ingestion.md) for mer informasjon.
+Finn detaljer om API-bruk i sanntid, og se hvilke hendelser som har skjedd i en gitt tidsramme. Du velger tidsramme i rullegardinlisten **Velg en tidsramme**. 
+
+**API-bruken** inneholder tre deler: 
+- **API-kall** – et diagram som visualiserer det samlede antallet kall til API-en i den valgte tidsramme.
+
+- **Dataoverføring** – et diagram som viser datamengden som ble overført via API-en i den valgte tidsramme.
+
+-  **Operasjoner** – en tabell med rader for hver tilgjengelige API-operasjon og detaljer om bruken av operasjonene. Du kan velge et operasjonsnavn for å gå til [API-referansen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
+
+   Operasjoner som bruker [inntak av data i sanntid](real-time-data-ingestion.md), inneholder en knapp med et kikkertsymbol for å vise API-bruk i sanntid. Velg knappen for å åpne en siderute som inneholder bruksdetaljer for API-bruk i sanntid i det gjeldende miljøet.   
+   Bruk **Grupper etter**-boksen i ruten for **API-bruk i sanntid** til å velge hvordan du best kan presentere samhandlinger i sanntid. Du kan gruppere dataene etter API-metode, enhetskvalifisertnavn (hentet enhet), opprettet av (kilde for hendelsen), resultat (vellykket eller mislykket) eller feilkoder. Dataene er tilgjengelige som et historikkdiagram og som en tabell.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

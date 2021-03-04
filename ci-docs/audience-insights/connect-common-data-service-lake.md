@@ -4,17 +4,17 @@ description: Importer data fra et Common Data Service-administrert datasjø.
 ms.date: 09/29/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
 ms.reviewer: adkuppa
-ms.openlocfilehash: 029857e2bbb5f6357a5c01138ceaad78887b7518
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 18b6cd3fdaf5b738877a73b520b91dbc6ded40de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643410"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267826"
 ---
 # <a name="connect-to-data-in-a-common-data-service-managed-data-lake"></a>Koble til data i en Common Data Service-administrert datasjø
 
@@ -34,7 +34,10 @@ Data som lagres i onlinetjenester, for eksempel Azure Data Lake Storage, kan lag
 
 3. Velg **Koble til Common Data Service**, og velg deretter **Neste**.
 
-4. Skriv inn et **navn** for datakilden, og klikk deretter **Neste**.
+4. Skriv inn et **navn** for datakilden, og klikk deretter **Neste**. Navneretningslinjer: 
+   - Start med en bokstav.
+   - Bruk bare bokstaver og tall. Spesialtegn og mellomrom er ikke tillatt.
+   - Bruk mellom 3 og 64 tegn.
 
 5. Angi **serveradressen** for Common Data Service-organisasjonen, og velg **Logg på**.
 
@@ -65,3 +68,6 @@ Hvis du vil koble til en annen Common Data Service, [oppretter du en ny datakild
 3. Velg **Rediger**-alternativet fra listen.
 
 4. Velg flere enheter fra den tilgjengelige listen med enheter, og velg **Lagre**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -5,16 +5,16 @@ ms.date: 11/19/2020
 ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 055708ed3f9f468cad83ecf976a460814bf05199
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 81540ad2f490cf566f031233543b3cb6aa838033
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643605"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269802"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Eksempelveiledning for prognose på transaksjonelt frafall (forhåndsversjon)
 
@@ -49,7 +49,7 @@ Se gjennom artiklene [om datainntak](data-sources.md) og [importering av datakil
    [!div class="mx-imgBorder"]
    ![Transformer førdselsdato til dato](media/ecommerce-dob-date.PNG "Transformer fødselsdato til dato")
 
-1. I Navn-feltet i den høyre ruten endrer du navnet på datakilden fra **Query** til **eCommerceContacts**.
+1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden fra **Spørring** til **eCommerceContacts**
 
 1. Lagre datakilden.
 
@@ -66,7 +66,7 @@ Se gjennom artiklene [om datainntak](data-sources.md) og [importering av datakil
    - **PurchasedOn**: Dato/klokkeslett
    - **TotalPrice**: Valuta
    
-1. I Navn-feltet i den høyre ruten endrer du navnet på datakilden fra **Query** til **eCommercePurchases**.
+1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden fra **Spørring** til **eCommercePurchases**.
 
 1. Lagre datakilden.
 
@@ -84,7 +84,7 @@ Se gjennom artiklene [om datainntak](data-sources.md) og [importering av datakil
    - **RewardsPoints**: Heltall
    - **CreatedOn**: Dato/klokkeslett
 
-1. I Navn-feltet i den høyre ruten endrer du navnet på datakilden fra **Query** til **loyCustomers**.
+1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden fra **Spørring** til **loyCustomers**.
 
 1. Lagre datakilden.
 
@@ -166,7 +166,7 @@ Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abo
 
      :::image type="content" source="media/model-levers.PNG" alt-text="Velg modellbryterne Prediksjonsvindu og Frafallsdefinisjon.":::
 
-1. Velg **Kjøpshistorikk (obligatorisk)**, og velg **Legg til data** for abonnementshistorikken.
+1. Velg **Kjøpshistorikk (obligatorisk)**, og velg **Legg til data** for kjøpshistorikken.
 
 1. Legg til enheten **eCommercePurchases : eCommerce**, og tilordne feltene fra eCommerce til de tilsvarende feltene som kreves av modellen.
 
@@ -204,3 +204,6 @@ Du kan opprette et nytt segment basert på enheten som er opprettet av modellen.
 Du har nå et segment som er dynamisk oppdatert, og som identifiserer kunder med høy frafallsrisiko for denne abonnementsvirksomheten.
 
 Hvis du vil ha mer informasjon, kan du se [Opprette og behandle segmenter](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

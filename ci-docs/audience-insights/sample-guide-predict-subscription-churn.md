@@ -5,16 +5,16 @@ ms.date: 11/19/2020
 ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 2537cfb5dde0d1ce1af16f585f0bf91d15ea1870
-ms.sourcegitcommit: a6e7df90d61450e00886753eb5db116f2f35bb6c
+ms.openlocfilehash: 3f1019ace424f89320c5a0d5058e928f4cbc7e62
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "4653992"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269849"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Eksempelveiledning for prognose på abonnementsfrafall (forhåndsversjon)
 
@@ -46,10 +46,9 @@ Se gjennom artiklene [om datainntak](data-sources.md) og [importering av datakil
    - **DateOfBirth**: Dato
    - **CreatedOn**: Dato/klokkeslett/sone
 
-   [!div class="mx-imgBorder"]
-   ![Transformer førdselsdato til dato](media/ecommerce-dob-date.PNG "Transformer fødselsdato til dato")
+   :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Transformer fødselsdato til dato.":::
 
-1. I Navn-feltet i den høyre ruten endrer du navnet på datakilden fra **Query** til **eCommerceContacts**.
+1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden fra **Spørring** til **eCommerceContacts**
 
 1. Lagre datakilden.
 
@@ -67,7 +66,7 @@ Se gjennom artiklene [om datainntak](data-sources.md) og [importering av datakil
    - **RewardsPoints**: Heltall
    - **CreatedOn**: Dato/klokkeslett
 
-1. I Navn-feltet i den høyre ruten endrer du navnet på datakilden fra **Query** til **loyCustomers**.
+1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden fra **Spørring** til **loyCustomers**.
 
 1. Lagre datakilden.
 
@@ -90,7 +89,7 @@ Se gjennom artiklene [om datainntak](data-sources.md) og [importering av datakil
    - **Is_auto_renew**: Sann/usann
    - **RecurringFrequencyInMonths**: Heltall
 
-1. I Navn-feltet i den høyre ruten endrer du navnet på datakilden fra **Query** til **SubscriptionHistory**.
+1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden fra **Spørring** til **SubscriptionHistory**.
 
 1. Lagre datakilden.
 
@@ -230,3 +229,6 @@ Du kan opprette et nytt segment basert på enheten som er opprettet av modellen.
 Du har nå et segment som er dynamisk oppdatert, og som identifiserer kunder med høy frafallsrisiko for denne abonnementsvirksomheten.
 
 Hvis du vil ha mer informasjon, kan du se [Opprette og behandle segmenter](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
-title: Opprett og rediger mål
-description: Definere kunderelaterte tiltak for å analysere og gjenspeile ytelsen til bestemte forretningsområder.
-ms.date: 10/15/2020
+title: Opprett og administrer mål
+description: Definer mål som skal analyseres og gjenspeile selskapets ytelse.
+ms.date: 02/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,105 +9,111 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: wameng
 manager: shellyha
-ms.openlocfilehash: 0e214a6eb66abd27f7292db3ce2c2a6e16a8ff33
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 5bcee3b4c51880740715575b18fd7a4dbf87e6d0
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406534"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269940"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere mål
 
-**Mål** representerer viktige ytelsesindikatorer (KPI-er) som gjenspeiler ytelsen og tilstanden til bestemte forretningsområder. Målgruppeinnsikt gir en intuitiv opplevelse for bygging av ulike typer mål, ved hjelp av et spørringsverktøy som ikke krever at du skriver kode eller validerer målene manuelt. Du kan spore forretningsmålene på siden **Start**, se mål for bestemte kunder på **Kundekort** og bruke mål til å definere kundesegmenter på siden **Segmenter**.
+Tiltak hjelper deg med å få bedre forståelse av kundeatferd og forretningsytelse ved å hente relevante verdier fra [enhetlige profiler](data-unification.md). En virksomhet vil for eksempel se *totalkostnaden per kunde* for å forstå den enkelte kundes kjøpshistorikk. Du kan også måle *det totale salget i selskapet* for å forstå omsetningen på aggregatnivå i hele selskapet.  
+
+Tiltak opprettes ved hjelp av måleverktøyet, en dataspørringsplattform med forskjellige operatorer og enkle tilordningsalternativer. Den lar deg filtrere dataene, gruppere resultater, registrere [enhetsrelasjonsbaner](relationships.md) og forhåndsvise utdataene.
+
+Bruk måleverktøyet til å planlegge forretningsaktiviteter ved å spørre etter kundedata og trekke ut innsikt. Hvis du for eksempel oppretter et mål for *totalkostnad per kunde* og *total avkastning per kunde*, blir det enklere å identifisere en gruppe kunder med høy avkastning, men likevel høy avkastning. Du kan [opprette et segment](segments.md) for å få de nest beste handlingene. 
 
 ## <a name="create-a-measure"></a>Opprette et mål
 
-Denne delen veileder deg gjennom opprettingen av et mål fra bunnen av. Du kan bygge tiltak med data fra flere datakilder som er koblet sammen via kundeenheten. Enkelte [tjenestebegrensninger](service-limits.md) gjelder.
+Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan bygge et mål med dataattributter fra dataenheter som har en relasjon konfigurert til å koble til kundeenheten. 
 
 1. I Målgruppeinnsikt går du til **Mål**.
 
-2. Velg **Nye mål**.
+1. Velg **Ny**.
 
-3. Velg målet **Type**:
-
-   - **Kundeattributt**: Et enkelt felt per kunde som gjenspeiler en poengsum, en verdi eller en tilstand for kunden. Kundeattributter opprettes som attributter i en ny systemgenerert enhet som kalles **Kundemål**.
-
-   - **Kundemål**: Innsikt i kundeatferd med nedbryting etter valgte dimensjoner. Det genereres en ny enhet for hvert mål, potensielt med flere oppføringer per kunde.
-
-   - **Forretningsmål**: Sporer forretningsprestasjonen og tilstanden til virksomheten. Forretningstiltak kan ha to forskjellige resultater: et numerisk resultat som vises på siden **Start** eller en ny enhet som du finner på siden **Enheter**.
-
-4. Angi et **Navn** og et valgfritt **Visningsnavn**, og velg **Neste**.
-
-5. I delen **Enheter** velger du første enhet fra rullegardinlisten. Du bør nå bestemme om det skal brukes tilleggsenheter som en del av måldefinisjonen.
-
-   > [!div class="mx-imgBorder"]
-   > ![Måldefinisjon](media/measure-definition.png "Måldefinisjon")
-
-   Hvis du vil legge til flere enheter, velger du **Legg til enhet**, og velg enhetene du vil bruke for målet.
-
+1. Velg **Rediger navn**, og angi et **navn** for målet. 
    > [!NOTE]
-   > Du kan bare velge enheter som har relasjoner til startenheten din. Hvis du vil ha mer informasjon om hvordan du definerer relasjoner, se [Relasjoner](relationships.md).
+   > Hvis den nye målkonfigurasjonen bare har to felter, for eksempel CustomerID og en beregning, blir utdataene lagt til som en ny kolonne i den systemgenererte enheten kalt Customer_Measure. Du kan også se målets verdi i den enhetlige kundeprofilen. Andre tiltak vil generere sine egne enheter.
 
-6. Du kan eventuelt konfigurere variabler. I delen **Variabler** velger du **Ny variabel**.
+1. Velg sammensettingsfunksjonen fra rullegardinlisten **Velg funksjon** i konfigurasjonsområdet. Aggregasjonsfunksjonene omfatter: 
+   - **Sum**
+   - **Gjennomsnitt**
+   - **Antall**
+   - **Antall unike**
+   - **Max**
+   - **Min**
+   - **Første**: tar den første verdien i dataoppføringen
+   - **Siste**: tar den siste verdien som ble lagt til i dataoppføringen
 
-   Variabler er beregninger som gjøres for hver av de valgte oppføringene. Eksempel: Sammendrag av salgssted (POS) og onlinesalg for hver av kundenes oppføringer.
+   :::image type="content" source="media/measure-operators.png" alt-text="Operatorer for måleberegninger.":::
 
-7. Gi variabelen et **Navn**.
+1. Velg **Legg til attributt** for å velge dataene du vil opprette dette målet.
+   
+   1. Velg fanen **Attributtene**. 
+   1. Dataenhet: Velg enheten som inneholder attributtet du vil måle. 
+   1. Dataattributt: Velg attributtet du vil bruke i aggregasjonsfunksjonen, for å beregne målet. Du kan bare velge ett attributt om gangen.
+   1. Du kan også velge et dataattributt fra et eksisterende mål ved å velge fanen **Mål**. Du kan også søke etter et enhets- eller målnavn. 
+   1. Velg **Legg til** for å legge til det valgte attributtet i målet.
 
-8. I området **Uttrykk** velger du et felt å begynne beregningen med.
+   :::image type="content" source="media/measure-attribute-selection.png" alt-text="Velg et attributt som skal brukes i beregninger.":::
 
-9. Skriv inn et uttrykk i området **Uttrykk** mens du velger flere felt som skal tas med i beregningen.
+1. Hvis du vil bygge mer komplekse tiltak, kan du legge til flere attributter eller bruke operatorer for målefunksjon.
 
-   > [!NOTE]
-   > For øyeblikket støttes bare aritmetiske uttrykk. I tillegg støttes ikke variabelberegning for enheter fra forskjellige [enhetsbaner](relationships.md).
+   :::image type="content" source="media/measure-math-operators.png" alt-text="Opprett et komplekst mål med matteoperatorer.":::
 
-10. Velg **Ferdig**.
+1. Hvis du vil legge til filtre, velger du **Filter** i konfigurasjonsområdet. 
+  
+   1. I delen **Legg til attributt** i **Filtre**-ruten velger du attributtet du vil bruke til å opprette filtre.
+   1. Angi filteroperatorene for å definere filteret for hvert valgte attributt.
+   1. Velg **Bruk** for å legge til filtrene i målet.
 
-11. I delen **Måldefinisjon** definerer du hvordan de valgte enhetene og de beregnede variablene samles i en ny målenhet eller et nytt attributt.
+1. Hvis du vil legge til dimensjoner, velger du **Dimensjon** i konfigurasjonsområdet. Dimensjoner vises som kolonner i målutdataenheten.
+   1. Velg **Rediger dimensjoner** for å legge til dataattributter du vil gruppere målverdiene etter. For eksempel poststed eller kjønn. Som standard velges *CustomerID*-dimensjonen for å opprette *mål på kundenivå*. Du kan fjerne standarddimensjonen hvis du vil opprette *tiltak på forretningsnivå*.
+   1. Velg **Ferdig** for å legge til dimensjonene i målet.
 
-12. Velg **Ny dimensjon**. Du kan tenke på en dimensjon som en *grupper etter*-funksjon. Utdataene for målenheten eller attributtet blir gruppert etter alle de definerte dimensjonene.
+1. Hvis det finnes flere baner mellom dataenheten du tilordnet og kundeenheten, må du velge en av de identifiserte [enhetsrelasjonsbanene](relationships.md). Måleresultatene kan variere avhengig av den valgte banen.
+   1. Velg **Datainnstillinger**, og velg enhetsbanen som skal brukes til å identifisere målet.
+   1. Velg **Fullført** for å ta i bruk valget. 
 
-    > [!div class="mx-imgBorder"]
-    > ![Velg samlesyklus](media/measures-businessreport-measure-definition2.png "Velg samlesyklus")
+   :::image type="content" source="media/measures-data-preferences.png" alt-text="Velg enhetsbanen for målet.":::
 
-    Velg eller angi følgende informasjon som en del av dimensjonens definisjon:
+1. Hvis du vil legge til flere beregninger for målet, velger du **Ny beregning**. Du kan bare bruke enheter i den samme enhetsbanen for nye beregninger. Flere beregninger vises som nye kolonner i målutdataenheten.
 
-    - **Enhet**: Hvis du angir en målenhet, må den inneholde minst ett attributt. Hvis du angir et målattributt, vil det bare inneholde ett attributt som standard. Dette valget handler om å velge enheten som inneholder det attributtet.
-    - **Felt**: Velg det bestemte attributtet som skal inkluderes enten i målenheten eller i attributtet.
-    - **Samling**: Velg om du vil samle data daglig, månedlig eller årlig. Det er et nødvendig valg bare hvis du har valgt et datotype-attributt.
-    - **Som**: Definerer navnet på det nye feltet.
-    - **Visningsnavn**: Definerer visningsnavnet for feltet.
+1. Velg **...** i beregningen til **Duplikat**, **Gi nytt navn** eller **Fjern** en beregning fra et mål.
 
-    > [!NOTE]
-    > Forretningsmålet blir lagret som en enhet med ett tall og vises på siden **Start** mindre du legger til flere dimensjoner i målet. Målet vil *ikke* vises på siden **Start** etter at du har lagt til flere dimensjoner.
+1. I området **Forhåndsvisning** vises dataskjemaet for målutdataenheten, inkludert filtre og dimensjoner. Forhåndsvisningen reagerer dynamisk på endringer i konfigurasjonen.
 
-13. Hvis du vil, kan du legge til aggregeringsfunksjoner. Alle aggregasjoner du oppretter, fører til en ny verdi i målenheten eller attributtet. Støttede aggregeringsfunksjoner er: **Min**, **Maks**, **Gjennomsnitt**, **Median**, **Sum**, **Antall unike**, **Første** (tar den første oppføringen for en dimensjonsverdi) og **Siste** (tar den siste oppføringen til en dimensjonsverdi).
+1. Velg **Kjør** for å beregne resultater for det konfigurerte målet. Velg **Lagre og lukk** hvis du vil beholde gjeldende konfigurasjon og kjøre tiltaket senere.
 
-14. Velg **Lagre** for å bruke endringene på målet.
+1. Gå til **Mål** for å vise det nylig opprettede målet i listen.
 
 ## <a name="manage-your-measures"></a>Administrer målene dine
 
-Etter at du har opprettet minst ett mål, vises en liste over mål på **Mål**-siden.
+Etter at du har [opprettet et mål](#create-a-measure), vises en liste over mål på **Mål**-siden.
 
-Du finner informasjon om måltypen, oppretteren, opprettelsesdato og -tidspunkt, dato og klokkeslett for siste redigering, status (om målet er aktivt, inaktivt eller mislykket), og dato og tidspunkt for siste oppdatering. Når du velger et mål fra listen, kan du se en forhåndsvisning av utdataene.
+Du finner informasjon om måltypen, oppretteren, opprettingsdato, status og tilstand. Når du velger et mål fra listen, kan du forhåndsvise utdataene og laste ned en .CSV-fil.
 
 Hvis du vil oppdatere alle målene samtidig, velger du **Oppdater alle** uten å velge et bestemt mål.
 
 > [!div class="mx-imgBorder"]
 > ![Handlinger for å administrere enkeltmål](media/measure-actions.png "Handlinger for å administrere enkeltmål")
 
-Alternativt kan du velge et mål fra listen og utføre én av følgende handlinger:
+Velg et mål fra listen for følgende alternativer:
 
 - Velg målnavnet for å vise detaljene.
 - **Rediger** konfigurasjonen av målet.
+- **Oppdater** målet basert på de nyeste dataene.
 - **Gi nytt navn** til målet.
 - **Slett** målet.
-- Velg ellipsen (...), og deretter **Oppdater** for å starte oppdateringsprosessen for målet.
-- Velg ellipsen (...), og deretter **Last ned** for å hente en .CSV-fil for målet.
+- **Aktiver** eller **Deaktiver**. Inaktive tiltak oppdateres ikke under en [planlagt oppdatering](system.md#schedule-tab).
 
 > [!TIP]
 > Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
 
 ## <a name="next-step"></a>Neste trinn
 
-Du kan bruke eksisterende mål for å opprette ditt første kundesegment på siden **Segmenter**. Du finner mer informasjon på [Segmenter](segments.md).
+Du kan bruke eksisterende tiltak til å opprette [et kundesegment](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

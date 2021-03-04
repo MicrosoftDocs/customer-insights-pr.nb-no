@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 7de78c0ef71ec5b83870d396de36a7dcabbd14e5
-ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
+ms.openlocfilehash: f7fcecdea8dc49666dd5c45bf4109c205993f326
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "4689232"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268422"
 ---
 # <a name="user-permissions"></a>Brukertillatelser
 
@@ -74,3 +74,6 @@ I målgruppeinnsikt går du til **Administrasjon** > **Tillatelser** for å se h
 - Roller er angitt under kolonnen **Rolle**.
 - Velg en kolonnetittel for å sortere resultatene etter verdien i kolonnen.
 - Bruk **Søk**-feltet øverst på siden for å finne bestemte brukere.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

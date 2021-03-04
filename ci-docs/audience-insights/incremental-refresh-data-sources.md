@@ -5,16 +5,16 @@ ms.date: 09/28/2020
 ms.reviewer: adkuppa
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: b7e834f5f2fd1328563139675d7f850008348734
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d4b01be75d25fa0e120904924a193171eefec579
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406526"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268560"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinnvis oppdatering for datakilder som er baserte på Power Query
 
@@ -54,3 +54,6 @@ Målgruppeinnsikt tillater trinnvis oppdatering for datakilder importert via Pow
    - **Se etter oppdateringer hver**: Angi lengden på tidsrammen for trinnvis oppdatering.
 
 1. Velg **Lagre** for å fullføre opprettingen av datakilden. Den første dataoppdateringen vil være en fullstendig oppdatering. Deretter utføres den trinnvise dataoppdateringen slik det er konfigurert i forrige trinn.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

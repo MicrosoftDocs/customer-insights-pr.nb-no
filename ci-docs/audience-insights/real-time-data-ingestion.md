@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: b00a72e6a67e33c8e70ccc6139c5e62020f9d3e1
-ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
+ms.openlocfilehash: 7421ed9d2cb399d546815b2d1b0ea5ec51ca6b6d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "4689187"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270292"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Datainntak i sanntid (forhåndsversjon)
 
@@ -83,6 +83,7 @@ Detaljer om denne API-en, inkludert parametere og svar, finner du i **EntityData
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Forstå sanntidsbruk med telemetri
 
-Få en oversikt over volumet av forespørsler til sanntids-API-en og informasjon om problemer som systemet kan støte på. Du kan [få tilgang til sanntidstelemetri](system.md#api-usage-tab) ved å gå til **Admin** > **System** > **API-bruk**. I **Operasjoner**-tabellen inneholder rader for API-operasjoner som bruker sanntidsmetoder, en knapp som brukes til å vise API-bruk i sanntid. Knappen er visualisert med et kikkertsymbol. Velg knappen for å åpne en siderute som inneholder bruksdetaljer for API-bruk i sanntid i det gjeldende miljøet.
+Få en oversikt over volumet av forespørsler til sanntids-API-en og informasjon om problemer som systemet kan støte på. Du får [tilgang til telemetrien i sanntid](system.md#api-usage-tab). 
 
-Bruk velgeren **Grupper etter** til å velge hvordan du best vil presentere interaksjon i sanntid på en tidslinje fra de siste 24 timene til de siste 30 dagene. Du kan gruppere dataene etter API-metode, enhetskvalifisertnavn (hentet enhet), opprettet av (kilde for hendelsen), resultat (vellykket eller mislykket) eller feilkoder. Dataene er tilgjengelige som et historikkdiagram og som en tabell.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

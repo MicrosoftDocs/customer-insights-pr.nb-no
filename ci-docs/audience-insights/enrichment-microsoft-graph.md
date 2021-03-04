@@ -1,20 +1,20 @@
 ---
 title: Supplere kundeprofiler med Microsoft Graph
 description: Bruk proprietære data fra Microsoft Graph til å supplere kundedataene med merke- og interesseaffiniteter.
-ms.date: 09/28/2020
+ms.date: 12/10/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 4f93a2337815f76b98185ecb3755e08443031748
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 2c95369c778f592bc1460799aca0fa8cff813d68
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406503"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269342"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Supplere kundeprofiler med merke- og interesseaffiniteter (forhåndsvisning)
 
@@ -35,16 +35,21 @@ Vi bruker elektroniske søkedata fra Microsoft Graph til å finne affinitet for 
 
 [Finn ut mer om Microsoft Graph](https://docs.microsoft.com/graph/overview).
 
-## <a name="affinity-score-and-confidence"></a>Affinitetspoengsum og konfidens
+## <a name="affinity-level-and-score"></a>Affinitetsnivå og poengsum
 
-En **affinitetspoengsum** blir beregnet på en 100-punktsskala, der 100 representerer segmentet som har den høyeste affinitet for et merke eller en interesse.
+For hver supplerte kundeprofil oppgir vi to relaterte verdier – affinitetsnivå og affinitetspoengsum. Disse verdiene hjelper deg med å bestemme hvor sterkt affiniteten er for den profilens demografiske segment, for et merke eller en interesse sammenlignet med andre demografiske segmenter.
 
-**Affinitetstrygghet** blir også beregnet på en 100-punktsskala. Det angir systemets trygghetsnivå for at et segment har en affinitet for merket eller interessen. Konfidensnivået er basert på segmentstørrelsen og detaljnivået for segmentet. Segmentstørrelse bestemmes av mengden data vi har for et gitt segment. Detaljnivå for segmentet bestemmes av hvor mange attributter (alder, kjønn, sted) som er tilgjengelige i en profil.
+*Affinitetsnivået* består av fire nivåer, og *affinitetspoengsummen* beregnes på en 100-punkts skala som tilordnes til affinitetsnivåene.
 
-Vi normaliserer ikke resultatene for datasettet ditt. Det kan derfor hende at du ikke ser alle mulige verdier for affinitet for datasettet ditt. Det kan for eksempel hende at det ikke finnes en supplert kundeprofil med affinitet på 100 i dataene. Det er mulig at det ikke finnes noen kunder i det demografiske segmentet som oppnådde 100 for et gitt merke eller en interesse.
 
-> [!TIP]
-> Når du [oppretter segmenter](segments.md) ved hjelp av affinitetspoengsummer, kan du se gjennom distribusjonen av affinitetspoengsummen for datasett før du bestemmer deg for de aktuelle grenseverdiene for poengsum. En affinitetspoengsum på 10 kan for eksempel anses som viktig i en datasett som har en høyeste affinitet på bare 25 for et bestemt merke eller en interesse.
+|Affinitetsnivå |Affinitetspoengsum  |
+|---------|---------|
+|Svært høyt     | 85–100       |
+|Høy     | 70–84        |
+|Middels     | 35–69        |
+|Lav     | 1–34        |
+
+Avhengig av detaljnivået du ønsker for å måle affiniteten, kan du bruke enten affinitetsnivå eller poengsum. Affinitetspoengsummen gir deg mer nøyaktig kontroll.
 
 ## <a name="supported-countriesregions"></a>Støttede land/områder
 
@@ -54,17 +59,13 @@ Du velger et land ved å åpne **Merkesupplering** eller **Interessesupplering**
 
 ### <a name="implications-related-to-country-selection"></a>Implikasjoner knyttet til valg av land
 
-- Når du [velger dine egne merker](#define-your-brands-or-interests), kommer vi med forslag basert på det valgte landet/området.
+- Når du [velger dine egne merker](#define-your-brands-or-interests), gir systemet forslag basert på det valgte landet eller området.
 
-- Ved [valg av bransje](#define-your-brands-or-interests) identifiserer vi de mest relevante merkene eller interessene basert på det valgte landet/området.
+- Når du [velger en bransje](#define-your-brands-or-interests), får du de mest relevante merkene eller interessene basert på det valgte landet eller området.
 
-- Hvis feltet Land/område ikke tilordnes når du [tilordner feltene](#map-your-fields), bruker vi Microsoft Graph-data fra det valgte landet/området til å supplere kundeprofilene. Vi bruker også dette valget til å supplere kundeprofilene uten tilgjengelige data for land/område.
-
-- Når du [supplerer profiler](#refresh-enrichment), supplerer vi alle kundeprofilene der vi har Microsoft Graph-data tilgjengelige for de valgte merkene og interessene, inkludert profiler som ikke er i det valgte landet/området. Hvis du for eksempel valgte Tyskland, supplerer vi profiler i USA hvis vi har Microsoft Graph-data tilgjengelige for de valgte merkene og interessene i USA.
+- Når du [supplerer profiler](#refresh-enrichment), blir alle kundeprofilene supplert, og vi får data for de valgte merkene og interessene. Inkludering av profiler som ikke er i det valgte landet eller området. Hvis du for eksempel valgte Tyskland, supplerer vi profiler i USA hvis vi har Microsoft Graph-data tilgjengelige for de valgte merkene og interessene i USA.
 
 ## <a name="configure-enrichment"></a>Konfigurere supplering
-
-Konfigurasjon av merker eller interesser består av to trinn:
 
 ### <a name="define-your-brands-or-interests"></a>Definer merker og interesser
 
@@ -75,9 +76,19 @@ Velg ett av følgende alternativer:
 
 Hvis du vil legge til et merke eller en interesse, angir du det i inndataområdet for å få forslag basert på samsvarende betingelser. Hvis vi ikke viser et merke eller en interesse du leter etter, kan du sende oss tilbakemelding ved hjelp av **Foreslå**-koblingen.
 
+### <a name="review-enrichment-preferences"></a>Se gjennom innstillinger for supplering
+
+Se gjennom standardinnstillingene for supplering, og oppdater dem etter behov.
+
+:::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Skjermbilde av vinduet for innstillinger for supplering.":::
+
+### <a name="select-entity-to-enrich"></a>Velg enhet som skal suppleres
+
+Velg **Supplert enhet**, og velg datasettet du vil supplere med selskapsdata fra Microsoft Graph. Du kan velge kundeenheten for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
+
 ### <a name="map-your-fields"></a>Tilordne feltene
 
-Tilordne felt fra den enhetlige kundeenheten til minst to attributter for å definere det demografiske segmentet du vil at vi skal bruke til å forbedre kundedataene. Velg **Rediger** for å definere tilordningen av feltene, og velg **Bruk** når du er ferdig. Velg **Lagre** for å fullføre felttilordningen.
+Tilordne felter fra enheten for enhetlige kunder for å definere det demografiske segmentet du vil at systemet skal bruke til supplering av kundedataene. Tilordne land/område og minst attributtene Fødselsdato eller Kjønn. I tillegg må du tilordne minst én by (og delstat/område) eller ett postnummer. Velg **Rediger** for å definere tilordningen av feltene, og velg **Bruk** når du er ferdig. Velg **Lagre** for å fullføre felttilordningen.
 
 Følgende formater og verdier støttes (det skilles ikke mellom små og store bokstaver i verdier):
 
@@ -120,3 +131,6 @@ Merke- og interesseaffiniteter kan også vises på individuelle kundekort. Gå t
 ## <a name="next-steps"></a>Neste trinn
 
 Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md), [mål](measures.md) og til og med [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

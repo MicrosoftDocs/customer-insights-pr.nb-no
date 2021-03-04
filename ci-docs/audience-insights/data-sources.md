@@ -9,14 +9,14 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: a720641f7499fc71ff5bceeba48d296c51f77242
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 68aa1b56fb634da80a0c64db72f778d57507104d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643965"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269710"
 ---
-# <a name="overview-about-data-sources"></a>Oversikt over datakilder
+# <a name="data-sources-overview"></a>Oversikt over datakilder
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
@@ -49,7 +49,7 @@ Du ser navnet på hver integrerte datakilde, statusen og siste gang dataene ble 
 |Oppdaterer    |Datainntak pågår. Du kan avbryte denne operasjonen ved å velge **Stopp oppdatering** i kolonnen **Handlinger**. Hvis du stopper oppdateringen av en datakilde, blir den tilbakestilt til siste oppdateringstilstand.       |
 |Mislyktes     |Det oppstod en feil i datainnhentingen.         |
 
-Velg **Oppdater status** for å vise flere detaljer om oppdateringsstatusen, inkludert informasjon om feil og prosessoppdateringer nedstrøms.
+Velg verdien i **Status**-kolonnen for en datakilde for å se gjennom flere detaljer. Utvid **Datakilder** i ruten **Fremdriftsdetaljer**. Velg **Se detaljer** for mer informasjon om oppdateringsstatusen, inkludert informasjon om feil og prosessoppdateringer nedstrøms.
 
 Datainnlasting kan ta litt tid. Etter en vellykket oppdatering kan de innhentede dataene gjennomgås fra siden **Enheter**. Hvis du vil ha mer informasjon, se [Enheter](entities.md).
 
@@ -76,3 +76,6 @@ Følg denne fremgangsmåten for å oppdatere en datakilde ved behov:
 2. Merk den loddrette ellipsen ved siden av datakilden du vil fjerne, og velg **Slett** fra rullegardinmenyen.
 
 3. Bekreft slettingen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

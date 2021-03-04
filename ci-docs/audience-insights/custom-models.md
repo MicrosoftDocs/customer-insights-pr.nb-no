@@ -4,16 +4,16 @@ description: Arbeide med egendefinerte modeller fra Azure Machine Learning i Dyn
 ms.date: 11/19/2020
 ms.reviewer: zacook
 ms.service: dynamics-365-ai
-ms.topic: article
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: ef248086b30b870359970529a7bfb37792be62d5
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 34489faaecc5da1ce3dd68d799b3e0e0d9672ab7
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668915"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267246"
 ---
 # <a name="custom-machine-learning-models"></a>Egendefinerte modeller for maskinlæring
 
@@ -46,15 +46,15 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
 
 1. Velg Machine Learning Studio (klassisk)-nettjenesten eller Azure Machine Learning-pipelinen i rullegardinmenyen **Nettjeneste som inneholder modellen**. Velg deretter **Neste**.
    - Lær mer om [publisering av en nettjeneste i Machine Learning Studio (klassisk)](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Lær mer om [publisering av en pipeline i Azure Machine Learning ved hjelp av designeren](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK-et](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). 
-     > [!NOTE]
-     > Pipelinen må publiseres under et [pipelineendepunkt](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+   - Lær mer om [publisering av en pipeline i Azure Machine Learning ved hjelp av designeren](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK-et](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Pipelinen må publiseres under et [pipelineendepunkt](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. For hver **nettjenesteinndata** velger du den samsvarende **enheten** fra målgruppeinnsikt og velger **Neste**.
+   > [!NOTE]
+   > Arbeidsflyten for egendefinert modell bruker heuristikk til å tilordne inndatafeltene for nettjenesten til enhetsattributtene basert på navnet og datatypen for feltet. Det vises en feilmelding hvis et nettjenestefelt ikke kan tilordnes til en enhet.
 
    > [!div class="mx-imgBorder"]
    > ![Konfigurere en arbeidsflyt](media/intelligence-screen2-updated.png "Konfigurere en arbeidsflyt")
-
+   
 1. I trinnet **Parametere for modellutdata** angir du følgende egenskaper:
    - Machine Learning Studio (klassisk)
       1. Angi **enhetsnavnet** for utdataene der du vil at utdataresultatene fra nettjenesten skal flytes.
@@ -112,3 +112,6 @@ Arbeidsflyten kjøres også automatisk med hver planlagte oppdatering. Lær mer 
 1. Velg **Slett**, og bekreft slettingen.
 
 Arbeidsflyten blir slettet. [Enheten](entities.md) som ble opprettet da du opprettet arbeidsflyten, vedvarer og kan vises fra **Enheter**-siden.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,20 +1,20 @@
 ---
 title: Berike med tredjeparts supplering fra HERE Technologies
 description: Generell informasjon om tredjeparts supplering fra HERE Technologies.
-ms.date: 10/27/2020
+ms.date: 12/10/2020
 ms.reviewer: jodahl
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 7082fcfec099c3c9436b233c193be23625f6691a
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 258e37de9d9685d9ebc30b3c6b8d238d583431b4
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668690"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269526"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Supplering av kundeprofiler med HERE Technologies (forhåndsversjon)
 
@@ -43,7 +43,11 @@ For å konfigure HERE Technologies-suppleringer må følgende forhåndskrav vær
 
 1. Bekreft begge inndataene ved å velge **Koble til HERE**.
 
-1. Velg **Legg til data**, og velg om du vil tilordne felt til den primære og/eller sekundære adressen. Du kan angi en felttilordning for begge adressene (for eksempel en privatadresse og en firmaadresse), og du kan supplere profilene hver for seg. Velg **Neste**.
+1.  Velg **Legg til data**, og velg **kundedatasettet** du vil supplere med plasseringsdata fra HERE Technologies. Du kan velge **kundeenheten** for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
+
+    :::image type="content" source="media/enrichment-HERE-configuration-customer-data-set.png" alt-text="Skjermbilde når du velger kundedatasettet.":::
+
+1. Velg om du vil tilordne felter til den primære og/eller sekundære adressen. Du kan angi en felttilordning for begge adressene (for eksempel en privatadresse og en firmaadresse), og du kan supplere profilene hver for seg. Velg **Neste**.
 
 1. Definer hvilke felt fra de enhetlige profilene som skal brukes til å søke etter samsvarende stedsdata fra HERE Technologies. Feltene **Gate/vei 1** og **Postnummer** kreves for den valgte primære og/eller sekundære adressen. Flere felt kan legges til for å oppnå høyere nøyaktighet.
 
@@ -68,3 +72,6 @@ Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md), 
 
 Når du aktiverer Dynamics 365 Customer Insights for overføring av data til HERE Technologies, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data, for eksempel personlige data. Microsoft overfører slike data etter instruksjon fra deg, men du er ansvarlig for å sørge for at HERE Technologies oppfyller alle forpliktelser til personvern eller sikkerhet du måtte ha. Hvis du vil ha mer informasjon, kan du se [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen når som helst for å slutte å bruke denne funksjonaliteten.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

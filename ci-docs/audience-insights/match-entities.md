@@ -4,17 +4,17 @@ description: Samsvar enheter for å opprette enhetlige kundeprofiler.
 ms.date: 10/14/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: 78549037f9c9e59329f5423c36eeb058128802c0
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 05afd17b7f1b34f7f24a8fa8cb2dc32c1649d40f
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406532"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267490"
 ---
 # <a name="match-entities"></a>Samsvare enheter
 
@@ -22,7 +22,7 @@ Når du har fullført tilordningsfasen, er du klar til å samsvare med enhetene.
 
 ## <a name="specify-the-match-order"></a>Angi samsvarsrekkefølgen
 
-Gå til **Samle** > **Samsvar**, og velg **Angi rekkefølge** for å starte samsvarsfasen.
+Gå til **Data** > **Samle** > **Samsvar**, og velg **Angi ordre** for å starte samsvarsfasen.
 
 Hvert treff forener to eller flere enheter i én enhet, samtidig som hver unike kundeoppføring beholdes. I det følgende eksemplet valgte vi tre entiteter: **ContactCSV: TestData** som **Primær**-enhet, **WebAccountCSV: TestData** som **Enhet 2** og **CallRecordSmall: TestData** som **Enhet 3**. Diagrammet over utvalgene illustrerer hvordan samsvarsrekkefølgen blir utført.
 
@@ -136,7 +136,7 @@ Når en deduplisert oppføring er identifisert, blir denne oppføringen brukt i 
 
 1. Når du kjører samsvarsprosessen, grupperes oppføringene nå basert på betingelsene som er definert i dedupliseringsreglene. Når du har gruppert oppføringene, brukes sammenslåingspolicyen til å identifisere vinneroppføringen.
 
-1. Denne vinneroppføringen sendes deretter til kryssenhetssamsvaret.
+1. Denne vinneroppføringen sendes deretter videre til samsvar på tvers av enheter sammen med de ikke-vinnende oppføringer (for eksempel alternative ID-er) for å forbedre den samsvarende kvaliteten.
 
 1. Eventuelle egendefinerte samsvars regler som er definert for å alltid og aldri samsvare, overstyr dedupliseringsregler. Hvis en dedupliseringsregel identifiserer samsvarende oppføringer, og en egendefinert samsvarsregel er angitt til aldri å samsvare med disse oppføringene, samsvares ikke disse to oppføringene.
 
@@ -157,6 +157,17 @@ Den første samsvarsprosessen fører til at det opprettes en hoveddataenhet. All
 
 > [!TIP]
 > Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
+
+## <a name="deduplication-output-as-an-entity"></a>Dedupliseringsutdata som en enhet
+I tillegg til den enhetlige hovedenheten som er opprettet som en del av samsvarende tverrenhet, genererer dedupliseringsprosessen også en ny enhet for hver enhet fra samsvarsrekkefølgen for å identifisere de dedupliserte oppføringene. Disse enhetene kan finnes sammen med **ConflationMatchPairs:CustomerInsights** i **System**-delen på **Enheter**-siden med navnet **Deduplication_Datasource_Entity**.
+
+En utdataenhet for deduplisering inneholder følgende informasjon:
+- ID-er/nøkler
+  - Hovednøkkelfelt og alternativt ID-felt. Feltet for alternative ID-er består av alle de alternative ID-ene som er identifisert for en oppføring.
+  - Feltet Deduplication_GroupId viser gruppen eller klyngen som identifiseres i en enhet, som grupperer alle lignende oppføringer basert på de angitte dedupliseringsfeltene. Dette brukes til systembehandlingsformål. Hvis det ikke er angitt noen regler for manuell deduplisering og systemdefinerte dedupliseringsregler gjelder, kan det hende du ikke finner dette feltet i utdataenheten for deduplisering.
+  - Deduplication_WinnerId: Dette feltet inneholder vinner-ID-en fra de identifiserte gruppene eller klyngene. Hvis Deduplication_WinnerId er den samme som primærnøkkelverdien for en oppføring, betyr det at oppføringen er vinneroppføringen.
+- Felter brukes til å definere dedupliseringsreglene.
+- Feltene Regel og Poengsum for å angi hvilke av dedupliseringsreglene som ble brukt, og poengsummen som ble returnert av den samsvarende algoritmen.
 
 ## <a name="review-and-validate-your-matches"></a>Se gjennom og validere samsvarene
 
@@ -200,6 +211,11 @@ Evaluer kvaliteten på samsvarsparene og begrens det:
   > [!div class="mx-imgBorder"]
   > ![Duplisere en regel](media/configure-data-duplicate-rule.png "Duplisere en regel")
 
+- **Deaktiver en regel** for å beholde en samsvarsregel når den utelates fra den samsvarende prosessen.
+
+  > [!div class="mx-imgBorder"]
+  > ![Deaktiver en regel](media/configure-data-deactivate-rule.png "Deaktiver en regel")
+
 - **Rediger reglene** ved å velge symbolet **Rediger**. Du kan gjøre følgende endringer:
 
   - Endre attributter for en betingelse: Velg nye attributter innenfor den bestemte betingelsesraden.
@@ -229,6 +245,8 @@ Du kan spesifisere vilkårene som bestemte oppføringer alltid skal samsvare med
     - Entity2Key: 34567
 
    Den samme malfilen kan angi egendefinerte samsvarsoppføringer fra flere enheter.
+   
+   Hvis du vil angi egendefinert samsvar for deduplisering for en enhet, angir du samme enhet som både Enhet1 og Enhet2 og angir de forskjellige primærnøkkelverdiene.
 
 5. Når du har lagt til alle overstyringene du vil bruke, lagrer du malfilen.
 
@@ -250,3 +268,6 @@ Du kan spesifisere vilkårene som bestemte oppføringer alltid skal samsvare med
 ## <a name="next-step"></a>Neste trinn
 
 Når du har fullført samsvarsprosessen for minst ett samsvarspar, kan du løse mulige konflikter i dataene ved å gå gjennom emnet [**Slå sammen**](merge-entities.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

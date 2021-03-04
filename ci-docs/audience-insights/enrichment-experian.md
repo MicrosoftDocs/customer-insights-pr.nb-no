@@ -1,20 +1,20 @@
 ---
 title: Berike med tredjeparts supplering fra Experian
 description: Generell informasjon om tredjeparts supplering fra Experian.
-ms.date: 09/17/2020
+ms.date: 12/10/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 60fc49734e54740e83b47a7028be216a0eb81e49
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: baf3cc58a233b70c48fb94ac4a543d162f91bdd1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668824"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269572"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Supplere kundeprofiler med demografidata fra Experian (forhåndsversjon)
 
@@ -41,7 +41,9 @@ For å konfigurere Experian må følgende forutsetninger være oppfylt:
 
 ## <a name="map-your-fields"></a>Tilordne feltene
 
-1. Velg **Legg til data**, og velg nøkkelidentifikatorer fra **Navn og adresse**, **E-post** eller **Telefon** for å sende til Experian for identitetsløsning.
+1.  Velg **Legg til data**, og velg **kundedatasettet** du vil supplere med demografiske data fra Experian. Du kan velge **kundeenheten** for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
+
+1. Velg nøkkelidentifikatorene fra **Navn og Adresse**, **E-post** eller **Telefon** for å sende til Experian for identitetsløsning.
 
    > [!TIP]
    > Flere nøkkel-ID-attributter som sendes til Experian, vil sannsynligvis gi en høyere samsvarsrate.
@@ -52,8 +54,8 @@ For å konfigurere Experian må følgende forutsetninger være oppfylt:
 
 1.  Velg **Lagre** for å fullføre felttilordningen.
 
-   > [!div class="mx-imgBorder"]
-   > ![Experian-felttilordning](media/experian-field-mapping.png "Experian-felttilordning")
+    > [!div class="mx-imgBorder"]
+    > ![Experian-felttilordning](media/experian-field-mapping.png "Experian-felttilordning")
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 
@@ -71,3 +73,6 @@ Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md), 
 
 Når du aktiverer Dynamics 365 Customer Insights for overføring av data til Experian, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data, for eksempel personlige data. Microsoft overfører slike data etter instruksjon fra deg, men du er ansvarlig for å sørge for at Experian oppfyller alle forpliktelser til personvern eller sikkerhet du måtte ha. Hvis du vil ha mer informasjon, kan du se [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen når som helst for å slutte å bruke denne funksjonaliteten.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

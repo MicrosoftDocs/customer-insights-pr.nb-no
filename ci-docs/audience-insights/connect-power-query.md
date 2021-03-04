@@ -5,16 +5,16 @@ ms.date: 09/29/2020
 ms.reviewer: adkuppa
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 8a170cc5b64b4b383501021232c83948e838a0e2
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d51a7efa5fd9f7336d1662500eb804a674738493
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406515"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267783"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Koble til et Power Query-datakilde
 
@@ -28,7 +28,10 @@ Power Query tilbyr et bredt sett med koblinger for å hente data. De fleste av d
 
 1. Velg **Importer data**-metoden, og velg deretter **Neste**.
 
-1. Angi et **Navn** for datakilden, og velg deretter **Neste** for å opprette datakilden.
+1. Angi et **Navn** for datakilden, og velg deretter **Neste** for å opprette datakilden. Navneretningslinjer: 
+   - Start med en bokstav.
+   - Bruk bare bokstaver og tall. Spesialtegn og mellomrom er ikke tillatt.
+   - Bruk mellom 3 og 64 tegn.
 
 1. Velg én av de [tilgjengelige koblingene](#available-power-query-data-sources). I dette eksemplet velger vi **Tekst/CSV**-koblingen.
 
@@ -77,3 +80,6 @@ Kontakter med en hake i kolonnen **Customer Insights (dataflyter)** er tilgjenge
 3. Ta i bruk endringene og transformasjonene i dialogboksen **Power Query – Rediger spørringer** slik det er beskrevet i delen [Opprett en ny datakilde](#create-a-new-data-source).
 
 4. Velg **Lagre** i Power Query når du har fullført endringene, for å lagre endringene.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

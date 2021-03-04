@@ -5,16 +5,16 @@ ms.date: 06/05/2020
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 8260e3b5e529f3d54678d9d6e11aebb2795e27fd
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: c839f9dc7e403412c0e3d936392d45a43bc63545
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643695"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269986"
 ---
 # <a name="connector-for-facebook-ads-manager-preview"></a>Kobling for Facebook-annonseadministrasjon (forhåndsversjon)
 
@@ -62,7 +62,16 @@ Eksporter segmenter for enhetlige kundeprofiler til Facebook-annonseadministrasj
 
 Du kan [eksportere data etter behov](export-destinations.md). Eksporten blir også kjørt med hver [planlagte oppdatering](system.md#schedule-tab).
 
+## <a name="known-limitations"></a>Kjente begrensninger
+
+- Opptil 10 millioner kundeprofiler per eksport til Facebook Ads Manager 
+- Eksport til Facebook Ads Manager er begrenset til segmenter
+- Eksport av segmenter med totalt 10 million profiler kan ta opptil tre timer å fullføre
+
 ## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
 
 Når du aktiverer Dynamics 365 Customer Insights for overføring av data til Facebook-annonseadministrasjon, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data, for eksempel personlige data. Microsoft overfører slike data etter instruksjon fra deg, men du er ansvarlig for å sørge for at Facebook-annonseadministrasjon oppfyller alle forpliktelser til personvern eller sikkerhet du måtte ha. Hvis du vil ha mer informasjon, kan du se [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insights-administratoren kan fjerne dette eksportmålet når som helst for å slutte å bruke denne funksjonaliteten.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

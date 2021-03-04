@@ -14,10 +14,10 @@
       href: 'https://dynamics.microsoft.com/get-started/?appname=customerinsights'
     - name: Nye og oppdaterte funksjoner
       href: audience-insights/whats-new-audience-insights.md
-    - name: Kom i gang
+    - name: Opprett et nytt miljø
+      href: audience-insights/home.md
+    - name: Lær moduler
       items:
-        - name: Opprett et nytt miljø
-          href: audience-insights/home.md
         - name: Hent inn data
           href: 'https://docs.microsoft.com/learn/modules/ingest-data-customer-insights/'
         - name: Opprette en samlet kundeprofil
@@ -80,6 +80,8 @@
           href: audience-insights/segments.md
         - name: Få innsikt i segmenter
           href: audience-insights/segment-insights.md
+        - name: Se foreslåtte segmenter
+          href: audience-insights/suggested-segments.md
         - name: Søk etter lignende kunder
           href: audience-insights/find-similar-customer-segments.md
         - name: Definere mål og KPI-er
@@ -96,6 +98,12 @@
           href: audience-insights/predict-transactional-churn.md
         - name: Eksempelveiledning for prognose på transaksjonelt frafall
           href: audience-insights/sample-guide-predict-transactional-churn.md
+        - name: Forutsi kundens levetidsverdi (CLV)
+          href: audience-insights/predict-customer-lifetime-value.md
+        - name: Forutsi produktanbefalinger
+          href: audience-insights/predict-product-recommendation.md
+        - name: Eksempelveiledning for prediksjon for produktanbefaling
+          href: audience-insights/sample-guide-predict-product-recommendation.md
         - name: Implementere egendefinerte maskinlæringsmodeller
           href: audience-insights/custom-models.md
         - name: Eksperimenter med Azure Machine Learning
@@ -104,10 +112,14 @@
           href: audience-insights/machine-learning-studio-experiments.md
     - name: Eksportalternativer
       items:
-        - name: Oppdag eksportmål
+        - name: Oversikt over eksportmål
           href: audience-insights/export-destinations.md
+        - name: Autopilot
+          href: audience-insights/export-autopilot.md
         - name: Azure Blob Storage
           href: audience-insights/export-azure-blob-storage.md
+        - name: Azure Data Lake Storage Gen2
+          href: audience-insights/export-azure-data-lake-storage-gen2.md
         - name: DotDigital
           href: audience-insights/export-dotdigital.md
         - name: Dynamics 365 Customer Service (tillegg)
@@ -136,6 +148,8 @@
           href: audience-insights/export-power-apps.md
         - name: Power Automate
           href: audience-insights/export-power-automate.md
+        - name: SendGrid
+          href: audience-insights/export-sendgrid.md
         - name: SFTP
           href: audience-insights/export-sftp.md
     - name: Administrasjon
@@ -152,6 +166,8 @@
           href: audience-insights/supported-languages.md
     - name: Utvidbarhet
       items:
+        - name: Integrere nettdata fra engasjementsinnsikt
+          href: audience-insights/integrate-engagement-insights.md
         - name: Se gjennom enhetsskjemaer i Common Data Model
           href: audience-insights/entity-schemas.md
         - name: Arbeide med APIer
@@ -170,10 +186,6 @@
       href: engagement-insights/overview.md
     - name: Gratis prøveversjon
       href: 'https://pi.dynamics.com/'
-    - name: Hurtigstart
-      items:
-        - name: Hurtigstart for offentlig forhåndsversjon
-          href: engagement-insights/quickstart.md
     - name: Kom i gang
       items:
         - name: Kom i gang
@@ -223,4 +235,4 @@
     - name: Tjenestegrenser
       href: engagement-insights/quotas.md
 - name: Kontakt kundestøtte
-  href: 'https://go.microsoft.com/fwlink/?linkid=2145734'
+  href: 'https://admin.powerplatform.microsoft.com/support'

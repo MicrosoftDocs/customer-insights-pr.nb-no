@@ -1,7 +1,7 @@
 ---
 title: Startside i målgruppeinnsikt
 description: Kom i gang med å utforske appen på startsiden.
-ms.date: 09/30/2020
+ms.date: 01/07/2021
 ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: bd16966eabb126d9c9945ededc53273df02c3369
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 7cc767f5d80b213a4c1bb5b2e8062bd44c15279b
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406521"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477053"
 ---
 # <a name="create-a-new-environment"></a>Opprett et nytt miljø
 
@@ -29,6 +29,8 @@ Du kan registrere deg for en prøveversjon på [registreringssiden for prøvever
 
 1. Oppgi e-postadresse for jobb eller skole, og fortell oss mer om deg selv, og velg **Neste**.
 
+   :::image type="content" source="media/trial-signup-dialog.png" alt-text="Dialogen for å registrere deg for en prøveversjonsforekomst":::
+
 1. Angi et **Navn** på det nye miljøet. 
 
 1. Velg prøveversjonstype.
@@ -41,34 +43,34 @@ Du kan registrere deg for en prøveversjon på [registreringssiden for prøvever
 
 Når miljøet er opprettet, vil du se **Demo**-miljøet, som gjør det mulig å utforske appen med fiktive data. Du kan endre eksempeldataene, slik at de samsvarer med bransjen. Velg **Innstillinger**-ikonet i hodet, og velg **Demoinnstillinger**. Du kan også endre det visuelle temaet. 
 
-Du [bytter til miljøet ](#change-between-environments) du opprettet under registreringsprosessen, slik at du kan arbeide med dine egne data.
+Du [bytter til miljøet ](#switch-environments) du opprettet under registreringsprosessen, slik at du kan arbeide med dine egne data.
 
 ## <a name="create-a-new-production-or-sandbox-environment"></a>Opprette et nytt produksjons- eller sandkassemiljø
 
-Velg **Innstillinger**-ikonet i hodet i miljøet, og velg deretter **Nytt miljø**.
+I miljøet velger du **Miljøer**-velgeren i apphodet i miljøet, og velg **Ny**.
 
-Følg fremgangsmåten som om du [oppretter et prøvemiljø](#create-a-trial-environment). Du får et tilleggsalternativ når du velger **Avanserte innstillinger**, for lagring av data i din egen Azure Data Lake. Angi kontonavn og kontonøkkel for å opprette en tilkobling til Azure Data Lake. Som standard lagres data i den Customer Insights-styrte datasjøen.
+Følg fremgangsmåten som om du [oppretter et prøvemiljø](#create-a-trial-environment). Som standard lagres data i den Customer Insights-styrte datasjøen. Du får et tilleggsalternativ når du velger **Avanserte innstillinger**, for lagring av data i din egen Azure Data Lake. Angi kontonavn og kontonøkkel for å opprette en tilkobling til Azure Data Lake. 
 
 > [!IMPORTANT]
 > Når du lagrer data i Azure Data Lake Storage, godtar du at dataene overføres til og lagres i den riktige geografiske plasseringen for denne Azure Storage-kontoen, som kan variere fra der dataene lagres i Dynamics 365 Customer Insights. [Finn ut mer om Microsofts klareringssenter.](https://www.microsoft.com/trust-center)
 
 ## <a name="explore-the-home-page"></a>Utforske startsiden
 
-Du kan [få tilgang til Customer Insights-miljøet](https://home.ci.ai.dynamics.com/) på følgende URL-adresse: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
-**Startside** siden viser en oversikt over kundebasen og nøkkelmetrikkverdier for å spore tilstanden til virksomheten.
+Du kan [få målgruppeinnsikt fra Dynamics 365 Customer Insights](https://home.ci.ai.dynamics.com/) på følgende nettadresse: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
+**Startsiden** viser en oversikt over segmenter, målinger og suppleringsdata (hvis konfigurert) etter fullføring av fasene [tilordningen](map-entities.md), [samsvare](match-entities.md) og [slå sammen](merge-entities.md).
 
 > [!div class="mx-imgBorder"] 
 > ![Innsikter på startside](media/home-page-insights.png "Innsikter på startside")
 
-Under **Nylige segmenter** ser du grupper av kunder basert på demografiske, atferdsstyrte eller overførbare attributter som du har definert. [Ved å opprette segmenter](segments.md) kan du tilpasse forretningsaktivitetene bedre.
+Under **Nylige segmenter** ser du grupper av kunder basert på demografiske, atferdsstyrte eller overførbare attributter som du har definert. [Oppretting av segementer](segments.md) hjelper deg med å gruppere kundebasen din og målrette forretningsaktivitetene dine bedre.
 
-**Nylige mål** viser fliser med [mål](measures.md). Mål er KPI-er du har definert. For eksempel gjennomsnittlig sannsynlighet for kundefrafall eller gjennomsnittlig online-forbruk per kunde.
+**Nylige mål** viser fliser med [viktige ytelsesindikatorer (KPI-er)](measures.md) du har definert. Det kan for eksempel være gjennomsnittlig sannsynlighet for at en kunde frafaller, eller gjennomsnittlig Internett-bruk per kunde.
 
-Delen **Siste suppleringer** viser resultatene av de suppleringskjøringene som nylig ble utført. Suppleringer legger til informasjon om kundebasen. Hvis du for eksempel forstår interessene og merker de har affinitet for. Denne informasjonen kan låses opp ved hjelp av funksjonene for [supplering](enrichment-microsoft-graph.md), etter å ha fullført fasene [tilordning](map-entities.md), [samsvar](match-entities.md) og [sammenslåing](merge-entities.md).
+Delen **Siste suppleringer** viser resultatene av de suppleringskjøringene som nylig ble utført. [Suppleringer](enrichment-hub.md) legger til informasjon om kundebasen. Hvis du for eksempel forstår interessene og merker de har affinitet for.
 
-## <a name="change-between-environments"></a>Bytte mellom miljøer
+## <a name="switch-environments"></a>Bytt miljøer
 
-Når du har opprettet og konfigurert [datakilder](data-sources.md), må du bytte fra et demonstrasjonsmiljø til et live-miljø. Ved hjelp av produksjonsmiljøet kan du jobbe med dine egne kundedata. Velg kontrollen **Miljø** øverst i høyre hjørne på siden for å endre miljøer.
+Velg kontrollen **Miljø** øverst i høyre hjørne på siden for å endre miljøer.
 
 > [!div class="mx-imgBorder"] 
 > ![Bytt miljø](media/home-page-environment-switcher.png "Bytt miljø")
@@ -78,3 +80,6 @@ Administratorer kan opprette og administrere [flere miljøer](manage-environment
 ## <a name="next-step"></a>Neste trinn
 
 Hvis du vil se din egen innsikt på startsiden, må du først [legge til datakilder](data-sources.md) og [samle](data-unification.md) dataene for å bygge kundeprofiler.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

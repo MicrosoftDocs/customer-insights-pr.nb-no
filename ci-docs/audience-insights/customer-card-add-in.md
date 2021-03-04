@@ -1,7 +1,7 @@
 ---
 title: Installere og konfigurere Kundekort-tillegget
 description: Installere og konfigurere tillegg for kundekort for Dynamics 365 Customer Insights.
-ms.date: 08/04/2020
+ms.date: 01/20/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: aab5deaf89b4b019f6688a1bca950ec2277ad5fb
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: a6d5b49380ed129cf147698a16f5f3f597bf7fbc
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644055"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268056"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillegg for kundekort (forhåndsversjon)
 
@@ -28,7 +28,7 @@ Få en 360-graders visning av kundene direkte i Dynamics 365-apper. Vis demograf
 - Kundeprofiler [hentet fra Dynamics 365-appen ved hjelp av Common Data Service](connect-power-query.md).
 - Brukere av Kundekort-tillegget må [legges til som brukere](permissions.md) i målgruppeinnsikt.
 - [Konfigurerte søke- og filterfunksjoner](search-filter-index.md).
-- Demografisk kontroll: Demografiske felt, for eksempel alder eller kjønn, er tilgjengelige i den enhetlige kundeprofilen.
+- Demografisk kontroll: Demografiske felter (for eksempel alder eller kjønn) er tilgjengelige i den enhetlige kundeprofilen.
 - Suppleringskontroll: Krever at aktive [suppleringer](enrichment-hub.md) er brukt på kundeprofiler.
 - Intelligenskontroll: Krever data generert ved hjelp av Azure Machine Learning ([prediksjoner](predictions.md) eller [egendefinerte modeller](custom-models.md))
 - Målkontroll: Krever [konfigurerte mål](measures.md).
@@ -92,10 +92,26 @@ Det kan ta litt tid før løsningen installeres i miljøet ditt.
 
 1. I dialogboksen **Feltegenskaper** fjerner du merket for **Vis etikett i skjemaet**.
 
-1. Velg **Web**-alternativet for kontrollen. For suppleringskontrollen må du velge hvilken suppleringstype du vil skal vises, ved å konfigurere **enrichmentType**-feltet. Du må legge til en separat suppleringskontroll for hver suppleringstype.
+1. Velg **Web**-alternativet for kontrollen. For suppleringskontrollen må du velge hvilken suppleringstype du vil skal vises, ved å konfigurere **enrichmentType**-feltet. Legg til en separat suppleringskontroll for hver suppleringstype.
 
 1. Velg **Lagre** og **Publiser** for å publisere det oppdaterte kontaktskjemaet.
 
 1. Gå til det publiserte kontaktskjemaet. Du vil se den nylig tillagte kontrollen. Det kan hende du må logge på første gang du bruker den.
 
 1. Hvis du vil tilpasse det du vil vise på den egendefinerte kontrollen, velger du Rediger-knappen øverst i høyre hjørne.
+
+## <a name="upgrade-customer-card-add-in"></a>Oppgrader tillegg for kundekort
+Tillegget for kundekort oppgraderes ikke automatisk. Hvis du vil oppgradere til den nyeste versjonen, følger du denne fremgangsmåten i Dynamics 365-appen der tillegget er installert.
+
+1. Gå til **Innstillinger** > **Tilpasning** i Dynamics 365-appen, og velg **Løsninger**.
+
+1. Se etter **CustomerInsightsCustomerCard** i tabellen med tillegg, og velg raden.
+
+1. Velg **Bruk løsningsoppgradering** på handlingslinjen.
+
+   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Oppgrader løsningen i Tilpasning-området i Dynamics 365-appene":::
+
+1. Når du har startet oppgraderingsprosessen, vises en innlastingsindikator til oppgraderingen er fullført. Hvis det ikke finnes en nyere versjon, vises en feilmelding for oppgraderingen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

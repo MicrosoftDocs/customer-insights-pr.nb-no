@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 24321e9e11f9fd4e800526673726e5146ed33674
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 44f97696ec91dc488dd6a7528e186abb99c8288b
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406499"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269664"
 ---
-# <a name="data-unification"></a>Datasamling
+# <a name="data-unification-overview"></a>Oversikt over datasamling
 
 Når du har [konfigurert datakildene](data-sources.md), kan du samle dataene. Datasamling består av tre trinn: **Tilordne**, **Samsvare** og **Slå sammen**.
 
@@ -31,3 +31,6 @@ Når du har fullført datasamlingen, kan du
 - [konfigurere relasjoner mellom enheter](relationships.md) hvis du vil opprette sofistikerte segmenter
 - [berike dataene](enrichment-hub.md) for å få et større utvalg av innsikt om kundene
 - [definere aktiviteter](activities.md) fra noen av attributtene som er hentet inn
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

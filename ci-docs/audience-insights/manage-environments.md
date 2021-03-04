@@ -1,20 +1,20 @@
 ---
 title: Opprette og behandle miljøer
 description: Lær hvordan du registrerer deg for tjenesten og hvordan du administrerer miljøer.
-ms.date: 11/10/2020
+ms.date: 02/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: nimagen
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 010336445d0825a7ff82d1b7a65702fc12245788
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 744f0bcbf5d2700363180f44e38d6dee9bf5df63
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644145"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270124"
 ---
 # <a name="manage-environments"></a>Behandle miljøer
 
@@ -46,9 +46,9 @@ Du kan opprette et nytt miljø på to måter. Du kan enten spesifisere en helt n
 
 Slik oppretter du et miljø:
 
-1. Velg **Innstillinger**-symbolet i overskriften i appen.
+1. Velg **Miljø**-velgeren i overskriften i appen.
 
-1. Velg **Nytt miljø**.
+1. Velg **Ny**.
 
    > [!div class="mx-imgBorder"]
    > ![Miljøinnstillinger](media/environment-settings-dialog.png)
@@ -75,7 +75,14 @@ Slik oppretter du et miljø:
 
    - For Azure Data Lake Storage Gen2 kan du velge mellom et ressursbasert alternativ og et abonnementsbasert alternativ for godkjenning. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). **Beholder**-navnet kan ikke endres, og det vil være "customerinsights".
    
-   - Hvis du vil bruke [prognoser](predictions.md), skriver du inn URL-adressen til Common Data Service-forekomsten i **Serveradresse**-feltet under **Bruk prognoser**.
+   - Hvis du vil bruke [prediksjoner](predictions.md) eller konfigurere datadeling med programmer og løsninger basert på Microsoft Dataverse, må du oppgi URL-adressen for Microsoft Dataverse-miljøet under **Konfigurere datadeling med Microsoft Dataverse og aktivere flere funksjoner**. Velg **Aktiver datadeling** for å dele Customer Insights-utdata med en Microsoft Dataverse-administrert datasjø.
+
+     > [!NOTE]
+     > - Det er for øyeblikket ikke støtte for datadeling med Microsoft Dataverse-styrt datasjø når du lagrer alle dataene i din egen Azure Data Lake Storage.
+     > - [Prediksjon av manglende miljøer i en enhet](predictions.md) støttes for øyeblikket ikke når du aktiverer datadeling med Microsoft Dataverse-administrert datasjø.
+
+     > [!div class="mx-imgBorder"]
+     > ![Konfigurasjonsalternativer for å aktivere datadeling med Microsoft Dataverse](media/Datasharing-with-DataverseMDL.png)
 
    Når du kjører prosesser, for eksempel datainntak eller segmentopprettelse, blir tilsvarende mapper opprettet i lagringskontoen du angav ovenfor. Datafiler og model.json-filer opprettes og legges til i de respektive undermappene basert på prosessen du kjører.
 
@@ -86,7 +93,7 @@ Slik oppretter du et miljø:
 Følgende konfigurasjonsinnstillinger kopieres:
 
 - Funksjonskonfigurasjoner
-- Hentede/importerte datakilder
+- Samlede/importerte datakilder
 - Konfigurasjon av forening av data (tilordning, samsvar, sammenslåing)
 - Segmenter
 - Mål
@@ -120,11 +127,11 @@ Når datasamlingen er fullført, kan du gå til **Mål** og **Segmenter** for å
 
 Du kan redigere noen av detaljene i eksisterende miljøer.
 
-1. Gå til **Admin** > **System** > **Om**.
+1.  Velg **Miljø**-velgeren i overskriften i appen.
 
-2. Velg **Rediger**.
+2.  Velg **Rediger**-ikonet.
 
-3. Du kan oppdatere miljøets **Visningsnavn**, men du kan ikke endre **Område** eller **Type**.
+3. I **Rediger miljø**-boksen kan du oppdatere miljøets **visningsnavn**, men du kan ikke endre **område** eller **type**.
 
 4. Hvis et miljø er konfigurert til å lagre data i Azure Data Lake Storage Gen2, kan du oppdatere **kontonøkkelen**. Du kan imidlertid ikke endre **Kontonavn** eller **Beholder**-navn.
 
@@ -132,19 +139,27 @@ Du kan redigere noen av detaljene i eksisterende miljøer.
 
 ## <a name="reset-an-existing-environment"></a>Tilbakestille et eksisterende miljø
 
-Du kan tilbakestille et miljø til en tom tilstand hvis du vil slette alle konfigurasjoner og fjerne data som er hentet inn.
+Som en administrator kan du tilbakestille et miljø til en tom tilstand hvis du vil slette alle konfigurasjoner og fjerne data som er hentet inn.
 
-1.  Gå til **Admin** > **System** > **Om**.
+1.  Velg **Miljø**-velgeren i overskriften i appen. 
 
-2.  Velg **Tilbakestill**. 
+2.  Velg miljøet du vil tilbakestille, og velg ellipsen **...**. 
 
-3.  Bekreft slettingen ved å skrive inn miljønavnet og velge **Tilbakestill**.
+3. Velg **Tilbakestill**-alternativet. 
+
+4.  Bekreft slettingen ved å skrive inn miljønavnet og velge **Tilbakestill**.
+
+## <a name="delete-an-existing-environment-available-only-for-admins"></a>Slett et eksisterende miljø (tilgjengelig bare for administratorer)
+
+Som en administrator kan du slette et miljø du administrerer.
+
+1.  Velg **Miljø**-velgeren i overskriften i appen.
+
+2.  Velg miljøet du vil tilbakestille, og velg ellipsen **...**. 
+
+3. Velg **Slett**-alternativet. 
+
+4.  Bekreft slettingen ved å angi miljønavnet og velge **Slett**.
 
 
-## <a name="delete-an-existing-environment"></a>Slette et eksisterende miljø
-
-1. Gå til **Admin** > **System** > **Om**.
-
-1. Velg **Slett**.
-
-1. Bekreft slettingen ved å angi miljønavnet og velge **Slett**.
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

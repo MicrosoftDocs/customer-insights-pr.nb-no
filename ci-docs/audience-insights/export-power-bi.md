@@ -5,16 +5,16 @@ ms.date: 09/21/2020
 ms.reviewer: sthe
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: d497ca779a337c512a7254524f597cff226bcb45
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 0607a4644ac7d7beb19e4faecf012efcd197d48c
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406496"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477100"
 ---
 # <a name="connector-for-power-bi-preview"></a>Kobling for Power BI (forhåndsvisning)
 
@@ -31,7 +31,7 @@ Opprett visualiseringer for dataene med Power BI Desktop. Generer ekstra innsikt
 
 1. Velg **Se mer** og søk etter **Dynamics 365 Customer Insights**
 
-1. Velg resultatet, og velg **Koble til**.
+1. Velg **Koble til**.
 
 1. **Logg på** med samme organisasjonskonto som du bruker for Customer Insights, og velg **Koble til**.
    > [!NOTE]
@@ -52,3 +52,22 @@ Customer Insights-koblingen for Power BI er utformet for å fungere for datasett
 ### <a name="work-with-a-subset-of-data"></a>Arbeide med et delsett av data
 
 Vurder å arbeide med et delsett av dataene. Du kan for eksempel opprette [segmenter](segments.md) i stedet for å eksportere alle kundeoppføringer til Power BI.
+
+## <a name="troubleshooting"></a>Feilsøking
+
+### <a name="customer-insights-environment-doesnt-show-in-power-bi"></a>Customer Insights-miljøet vises ikke i Power BI
+
+Miljøer der mer enn én [relasjon](relationships.md) er definert mellom to identiske enheter i målgruppeinnsikter, vil ikke være tilgjengelig i Power BI-koblingen.
+
+Du kan identifisere og fjerne de dupliserte relasjonene.
+
+1. I målgruppeinnsikt går du til **Data** > **Relasjoner** i miljøet du mangler i Power BI.
+2. Identifiser dupliserte relasjoner:
+   - Kontroller om mer enn én relasjon er definert mellom de samme to entitetene.
+   - Kontroller om det er en relasjon som er opprettet mellom to entiteter som begge er inkludert i foreningsprosessen. Det er en implisitt relasjon definert mellom alle enheter som er inkludert i foreningsprosessen.
+3. Fjern eventuelle dupliserte relasjoner som er identifisert.
+
+Når du har fjernet dupliserte relasjoner, kan du prøve å konfigurere Power BI-koblingen på nytt. Miljøet skal være tilgjengelig nå.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]
+

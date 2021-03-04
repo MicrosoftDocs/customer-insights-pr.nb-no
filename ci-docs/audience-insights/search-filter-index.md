@@ -1,7 +1,7 @@
 ---
 title: Søke etter og filtrere kundeprofiler
 description: Finn informasjon raskt om enhetlige kundeprofiler, og filtrer etter bestemte attributter.
-ms.date: 04/16/2020
+ms.date: 01/19/2021
 ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1842ad333c23bb155abc89167556163ae79cdd34
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d675738c43cbdb5f9b478d53d6124db38ba3004d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406538"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270078"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Kundeprofiler: Søk- og filterindeks
 
@@ -28,14 +28,6 @@ Resultatet av å samle kundedata er en kundeprofilenhet som gir en enhetlig visn
 Hvis det er første gang du definerer søkbare attributter som en administrator, må du først definere indekserte felt. Vi foreslår at du velger alle attributtene som brukere kan søke og filtrere kunder etter på siden **Kunder**. Du kan bare angi attributter som finnes i kundeprofilenheten du opprettet i løpet av datasamlingsprosessen.
 
 1. Åpne **Kunder**-siden, og velg **Søk- og filterindeks**.
-
-> [!NOTE]
-> Vi oppretter en standard konfigurasjon for søkeindeks på de tilgjengelige attributtene i kundeenheten fra følgende semantiske typer, slik det er definert på tilordningssiden.
-> - Personens fornavn, etternavn, mellomnavn, fullt navn
-> - Navn på organisasjon
-> - E-postadresse
-> - Telefon
-> - Plasseringsinformasjon
 
 2. Velg **+ Legg til** for å angi de indekserte feltene.
 
@@ -65,3 +57,10 @@ Menyen **Filter** på siden **Kunder** kan inneholde et varierende antall attrib
 2. Velg **Lagre** for å ta i bruk endringene.
 
 3. Velg **Kjør** når du er klar til å bruke innstillingene.
+
+## <a name="next-steps"></a>Neste trinn
+
+Gå til **Kunder**-siden for å søke etter kundeprofiler, eller bruk de indekserte feltene til å vise et delsett med alle kundeprofiler.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

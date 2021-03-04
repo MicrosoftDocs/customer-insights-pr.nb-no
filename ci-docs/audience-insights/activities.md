@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1c95cba333266a73959de0a3afe1c8677130a3ec
-ms.sourcegitcommit: 334633cbd58f5659d20b4f87252c1a10cc7130db
+ms.openlocfilehash: dcef8f0547009e1488f1abe91423fa0bf5b061de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4667241"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267444"
 ---
 # <a name="customer-activities"></a>Kundeaktiviteter
 
@@ -44,13 +44,13 @@ Datakildene inneholder enheter med transaksjons- og aktivitetsdata fra flere dat
 
 1. I delen **Konfigurer relasjon** konfigurerer du detaljer for å koble aktivitetsdataene til den tilsvarende kunden.
 
-   > [!div class="mx-imgBorder"]
-   > ![Definere enhetsrelasjonen](media/activities-entities-define.png "Definere enhetsrelasjonen")
-
     - **Feltet Aktivitetsenhet**: Velg feltet i aktivitetsenheten som skal brukes til å opprette en relasjon til en annen enhet.
     - **Kundeenhet**: Velg den tilsvarende kildekundeenheten som aktivitetsenheten skal være i relasjon til. Du kan bare relatere til de kildekundeenhetene som brukes i datasamlingsprosessen.
     - **Feltet Kundeenhet**: Dette feltet viser primærnøkkelen for kildekundeenheten som er valgt i tilordningsprosessen. Dette hovednøkkelfeltet i kildekundeenheten brukes til å opprette en relasjon med aktivitetsenheten.
     - **Navn**: Hvis det allerede finnes en relasjon mellom denne aktivitetsenheten og den valgte kildekundeenheten, vil relasjonsnavnet være i skrivebeskyttet modus. Hvis det ikke finnes en slik relasjon, blir det opprettet en ny relasjon med navnet som er angitt her.
+   
+   > [!div class="mx-imgBorder"]
+   > ![Definere enhetsrelasjonen](media/activities-entities-define.png "Definere enhetsrelasjonen")
 
 1. Velg **Lagre** for å ta i bruk endringene.
 
@@ -82,3 +82,6 @@ Datakildene inneholder enheter med transaksjons- og aktivitetsdata fra flere dat
 3. Velg **Slett**-ikonet.
 
 4. Bekreft slettingen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

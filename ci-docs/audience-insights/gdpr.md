@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: f276a73feca52023391ad92fbc84359921b85328
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: ed9aa09fba938606611c6ce86c2b250c5e19c606
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406522"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268698"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>DSR-forespørsler (Data Subject Rights) under GDPR
 
@@ -75,3 +75,6 @@ En leieradministrator kan følge disse trinnene for å eksportere data:
 1. Send en e-post til D365CI@microsoft.com for å angi brukerens e-postadresse i forespørselen. Customer Insights-teamet sender en e-post til den registrerte e-postadressen til leieradministratoren og ber om bekreftelse på å eksportere data.
 2. Godta bekreftelsen om å eksportere dataene for den forespurte brukeren.
 3. Motta de eksporterte dataene via e-postadressen for leieradministratoren.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]
