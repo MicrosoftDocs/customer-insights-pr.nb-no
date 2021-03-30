@@ -2,19 +2,19 @@
 title: Power BI-kobling
 description: Finn ut hvordan du bruker Dynamics 365 Customer Insights-koblingen i Power BI.
 ms.date: 09/21/2020
-ms.reviewer: sthe
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: stefanie-msft
+ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 0607a4644ac7d7beb19e4faecf012efcd197d48c
-ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
+ms.openlocfilehash: e43e2f9dbc84ebfbf2154990a752740f973296cb
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "5477100"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596051"
 ---
 # <a name="connector-for-power-bi-preview"></a>Kobling for Power BI (forhåndsvisning)
 
@@ -23,7 +23,7 @@ Opprett visualiseringer for dataene med Power BI Desktop. Generer ekstra innsikt
 ## <a name="prerequisites"></a>Forutsetninger
 
 - Du har enhetlige kundeprofiler.
-- Den nyeste versjonen av [Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/) er installert på datamaskinen. [Lær mer om Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-what-is-desktop).
+- Den nyeste versjonen av [Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/) er installert på datamaskinen. [Lær mer om Power BI Desktop](/power-bi/desktop-what-is-desktop).
 
 ## <a name="configure-the-connector-for-power-bi"></a>Konfigurer koblingen for Power BI
 
@@ -47,7 +47,7 @@ Opprett visualiseringer for dataene med Power BI Desktop. Generer ekstra innsikt
 
 ## <a name="large-data-sets"></a>Store datasett
 
-Customer Insights-koblingen for Power BI er utformet for å fungere for datasett som inneholder opptil 1 000 000 kundeprofiler. Det kan hende at importen av større datasett fungerer, men det krever lang tid. Prosessen kan også bli tidsavbrutt på grunn av Power BI-begrensninger. Hvis du vil ha mer informasjon, kan du se [Power BI: Anbefalinger for store datasett](https://docs.microsoft.com/power-bi/admin/service-premium-what-is#large-datasets). 
+Customer Insights-koblingen for Power BI er utformet for å fungere for datasett som inneholder opptil 1 000 000 kundeprofiler. Det kan hende at importen av større datasett fungerer, men det krever lang tid. Prosessen kan også bli tidsavbrutt på grunn av Power BI-begrensninger. Hvis du vil ha mer informasjon, kan du se [Power BI: Anbefalinger for store datasett](/power-bi/admin/service-premium-what-is#large-datasets). 
 
 ### <a name="work-with-a-subset-of-data"></a>Arbeide med et delsett av data
 
@@ -70,4 +70,3 @@ Du kan identifisere og fjerne de dupliserte relasjonene.
 Når du har fjernet dupliserte relasjoner, kan du prøve å konfigurere Power BI-koblingen på nytt. Miljøet skal være tilgjengelig nå.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
-

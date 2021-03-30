@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
-ms.author: mhart
-ms.reviewer: ameetj
+ms.author: ameetj
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8a861d62bdfee6a3a82468fe1ab4a3fbbdad43d4
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 71881f7e1f9448fe0a7d6d92b8102b8b42de7c2a
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270216"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598351"
 ---
 # <a name="use-models-based-on-azure-machine-learning-studio-classic"></a>Bruke modeller basert på Azure Machine Learning Studio (klassisk)
 
@@ -37,7 +37,7 @@ I det første trinnet må vi opprette et arbeidsområde for og åpne Machine Lea
 
 1. Søk etter **Machine Learning Studio-arbeidsområde**, og velg **Opprett**.
 
-1. Angi de nødvendige detaljene for å [opprette arbeidsområdet](https://docs.microsoft.com/azure/machine-learning/studio/create-workspace). Velg **prisnivået for webtjenesteplanen** basert på datamengden du planlegger å importere. For å få best mulig ytelse bør du velge **stedet** som er nærmest deg geografisk.
+1. Angi de nødvendige detaljene for å [opprette arbeidsområdet](/azure/machine-learning/studio/create-workspace). Velg **prisnivået for webtjenesteplanen** basert på datamengden du planlegger å importere. For å få best mulig ytelse bør du velge **stedet** som er nærmest deg geografisk.
 
 1. Når du har opprettet ressursen, vises instrumentbordet for Machine Learning Studio-arbeidsområdet. Velg **Start Machine Learning Studio**.
 
@@ -65,7 +65,7 @@ Du kan nå opprette et nytt eksperiment eller importere en eksisterende eksperim
 
    ![Konfigurere en prediktiv nettjeneste](media/predictive-webservice-control.png)
 
-1. Når det prediktive nettjenesteeksperimentet er vellykket, kan du distribuere det for automatisk planlegging. Hvis du vil at nettjenesten skal fungere med Customer Insights, velger du **Distribuer nettjeneste** > **Distribuer nettjeneste [Ny] – forhåndsversjon**. [Finn ut mer om hvordan du distribuerer en nettjeneste](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service).
+1. Når det prediktive nettjenesteeksperimentet er vellykket, kan du distribuere det for automatisk planlegging. Hvis du vil at nettjenesten skal fungere med Customer Insights, velger du **Distribuer nettjeneste** > **Distribuer nettjeneste [Ny] – forhåndsversjon**. [Finn ut mer om hvordan du distribuerer en nettjeneste](/azure/machine-learning/studio/deploy-a-machine-learning-web-service).
 
    ![Distribuere en prediktiv nettjeneste](media/predictive-webservice-deploy.png)
 
@@ -116,7 +116,7 @@ Følgende bilde viser modellopplæringen og evalueringspipelinen fra Azure Machi
 
 ![Frafallsmodell i Azure Machine Learning Studio](media/azure-machine-learning-model.png)
 
-Vi bruker også en teknikk kalt **Funksjonsviktighet ved permutasjon**, et viktig aspekt ved modelloptimalisering. Innebygde modeller har liten til ingen innsikt i virkningen av en bestemt funksjon på den endelige prediksjonen. Kalkulatoren for funksjonsviktighet bruker en egendefinert algoritme til å beregne innvirkningen til enkeltfunksjoner på resultatet for en bestemt modell. Funksjonsviktigheten normaliseres mellom +1 og -1. En negativ innvirkning betyr at den tilsvarende funksjonen har en kontraintuitiv innvirkning på resultatet, og bør fjernes fra modellen. En positiv innvirkning indikerer at funksjonen bidrar kraftig i retning av prediksjonen. Disse verdiene er ikke korrelasjonskoeffisienter siden de er ulike måledata. Hvis du vil ha mer informasjon, kan du se[Funksjonsviktighet ved permutasjon](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/permutation-feature-importance).
+Vi bruker også en teknikk kalt **Funksjonsviktighet ved permutasjon**, et viktig aspekt ved modelloptimalisering. Innebygde modeller har liten til ingen innsikt i virkningen av en bestemt funksjon på den endelige prediksjonen. Kalkulatoren for funksjonsviktighet bruker en egendefinert algoritme til å beregne innvirkningen til enkeltfunksjoner på resultatet for en bestemt modell. Funksjonsviktigheten normaliseres mellom +1 og -1. En negativ innvirkning betyr at den tilsvarende funksjonen har en kontraintuitiv innvirkning på resultatet, og bør fjernes fra modellen. En positiv innvirkning indikerer at funksjonen bidrar kraftig i retning av prediksjonen. Disse verdiene er ikke korrelasjonskoeffisienter siden de er ulike måledata. Hvis du vil ha mer informasjon, kan du se[Funksjonsviktighet ved permutasjon](/azure/machine-learning/studio-module-reference/permutation-feature-importance).
 
 Hele [frafallseksperimentet er tilgjengelig i Azure AI-galleriet](https://gallery.azure.ai/Experiment/Hotel-Churn-Predictive-Exp).
 
@@ -168,7 +168,7 @@ Du får tilgang til hele [produktanbefalingseksperimentet i Azure AI-galleriet.]
 
 ## <a name="integrate-custom-models"></a>Integrere egendefinerte modeller
 
-Hvis du vil bruke disse prediksjonene i Customer Insights, må du **eksportere** prediksjonene sammen med kunde-ID-ene. [Eksporter dem til samme Azure Blob Storage-plassering](https://docs.microsoft.com/azure/storage/common/storage-import-export-data-from-blobs) som du eksporterer kildedataene til. Den prediktive nettjenesten kan planlegges til å kjøre regelmessig og oppdatere poengsummene.
+Hvis du vil bruke disse prediksjonene i Customer Insights, må du **eksportere** prediksjonene sammen med kunde-ID-ene. [Eksporter dem til samme Azure Blob Storage-plassering](/azure/storage/common/storage-import-export-data-from-blobs) som du eksporterer kildedataene til. Den prediktive nettjenesten kan planlegges til å kjøre regelmessig og oppdatere poengsummene.
 
 Data som genereres av den egendefinerte modellen, kan brukes til å supplere kundedataene ytterligere. Hvis du vil ha mer informasjon, kan du se [Egendefinerte maskinlæringsmodeller](custom-models.md).
 

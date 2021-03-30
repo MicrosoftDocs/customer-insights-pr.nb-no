@@ -5,16 +5,16 @@ ms.date: 05/05/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: zacook
+author: zacookmsft
+ms.author: zacook
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 577232c7e901dfd54a195c3e9cfac5d1f0f866e6
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 3342328b9eead9bdcb8b41f119a1d0a5823001c8
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268284"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595913"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Fyll ut de delvise dataene med prognoser
 
@@ -31,7 +31,7 @@ Med prognoser er det mulig å enkelt opprette predisjonsverdier som kan forbedre
 
 Før organisasjonen kan bruke prognosefunksjonen, må du kontrollere at følgende forhåndskrav er oppfylt:
 
-1. Organisasjonen har en forekomst [konfigurert i Common Data Service](https://docs.microsoft.com/ai-builder/build-model#prerequisites), og den er i samme organisasjon som Customer Insights.
+1. Organisasjonen har en forekomst [konfigurert i Common Data Service](/ai-builder/build-model#prerequisites), og den er i samme organisasjon som Customer Insights.
 
 2. Miljøet ditt er knyttet til Common Data Service-forekomsten din.
 
@@ -120,7 +120,7 @@ Når du har opprettet en prognose, kan du tilpasse modellen i AI Builder for å 
 
 4. Velg **Tilpass i AI Builder**.
 
-5. Oppdater modellen i AI Builder. [Lær mer om behandling av modeller i AI Builder](https://docs.microsoft.com/ai-builder/manage-model#retrain-and-republish-existing-models).
+5. Oppdater modellen i AI Builder. [Lær mer om behandling av modeller i AI Builder](/ai-builder/manage-model#retrain-and-republish-existing-models).
 
 Neste kjøring av prognosen vil bruke den oppdaterte modellen du har opprettet.
 

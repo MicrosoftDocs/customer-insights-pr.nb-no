@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: naravill
-ms.author: mhart
-ms.reviewer: m-hartmann
+ms.author: naravill
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c166015b92596da0c6097e3d25e89579a5186ce0
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267918"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597431"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Bruk Azure Machine Learning-baserte modeller
 
@@ -29,9 +29,9 @@ De ensartede dataene i Dynamics 365 Customer Insights er en kilde for bygging av
 
 ## <a name="set-up-azure-machine-learning-workspace"></a>Konfigurer Azure Machine Learning-arbeidsområde
 
-1. Se [Opprette et Azure Machine Learning-arbeidsområde](https://docs.microsoft.com/azure/machine-learning/concept-workspace#-create-a-workspace) for alternativer for å opprette arbeidsområdet. For å få best mulig ytelse bør du opprette arbeidsområdet i et Azure-område som er geografisk nærmest Customer Insights-miljøet ditt.
+1. Se [Opprette et Azure Machine Learning-arbeidsområde](/azure/machine-learning/concept-workspace#-create-a-workspace) for alternativer for å opprette arbeidsområdet. For å få best mulig ytelse bør du opprette arbeidsområdet i et Azure-område som er geografisk nærmest Customer Insights-miljøet ditt.
 
-1. Få tilgang til arbeidsområdet via [Azure Machine Learning Studio](https://ml.azure.com/). Det finnes flere [måter å samhandle](https://docs.microsoft.com/azure/machine-learning/concept-workspace#tools-for-workspace-interaction) med arbeidsområdet på.
+1. Få tilgang til arbeidsområdet via [Azure Machine Learning Studio](https://ml.azure.com/). Det finnes flere [måter å samhandle](/azure/machine-learning/concept-workspace#tools-for-workspace-interaction) med arbeidsområdet på.
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Arbeide med Azure Machine Learning-designer
 
@@ -39,13 +39,13 @@ Azure Machine Learning-designer har et visuelt lerret der du kan dra og slippe d
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Arbeide med SDK-et for Azure Machine Learning
 
-Datateknikere og AI-utviklere bruker [SDK-et for Azure Machine Learning](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true) til å bygge Machine Learning-arbeidsflyter. Modeller som er lært opp ved hjelp av SDK-et, kan for øyeblikket ikke integreres direkte med Customer Insights. En bunkeslutningspipeline som bruker denne modellen, er nødvendig for å integrere med Customer Insights.
+Datateknikere og AI-utviklere bruker [SDK-et for Azure Machine Learning](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py) til å bygge Machine Learning-arbeidsflyter. Modeller som er lært opp ved hjelp av SDK-et, kan for øyeblikket ikke integreres direkte med Customer Insights. En bunkeslutningspipeline som bruker denne modellen, er nødvendig for å integrere med Customer Insights.
 
 ## <a name="batch-pipeline-requirements-to-integrate-with-customer-insights"></a>Krav til bunkepipeline for å integrere med Customer Insights
 
 ### <a name="dataset-configuration"></a>Konfigurasjon av datasett
 
-Du må opprette datasett for å bruke enhetsdata fra Customer Insights for bunkeslutningspipelinen. Disse datasettene må registreres i arbeidsområdet. For øyeblikket støtter vi bare [tabelldatasett](https://docs.microsoft.com/azure/machine-learning/how-to-create-register-datasets#tabulardataset) i .csv-format. Datasettene som tilsvarer enhetsdata, må ha parametere som en pipelineparameter.
+Du må opprette datasett for å bruke enhetsdata fra Customer Insights for bunkeslutningspipelinen. Disse datasettene må registreres i arbeidsområdet. For øyeblikket støtter vi bare [tabelldatasett](/azure/machine-learning/how-to-create-register-datasets#tabulardataset) i .csv-format. Datasettene som tilsvarer enhetsdata, må ha parametere som en pipelineparameter.
    
 * Datasettparametere i designeren
    
@@ -76,7 +76,7 @@ Du må opprette datasett for å bruke enhetsdata fra Customer Insights for bunke
 
 ### <a name="import-pipeline-data-into-customer-insights"></a>Importere pipelinedata til Customer Insights
 
-* Designeren har [Eksporter data-modulen](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/export-data) som tillater at utdataene fra en pipeline kan eksporteres til Azure Storage. For øyeblikket må modulen bruke datalagertypen **Azure Blob Storage** og parametrisere **datalageret** og den relative **banen**. Customer Insights overstyrer begge disse parameterne under kjøring av pipeline med et datalager og en bane som er tilgjengelig for produktet.
+* Designeren har [Eksporter data-modulen](/azure/machine-learning/algorithm-module-reference/export-data) som tillater at utdataene fra en pipeline kan eksporteres til Azure Storage. For øyeblikket må modulen bruke datalagertypen **Azure Blob Storage** og parametrisere **datalageret** og den relative **banen**. Customer Insights overstyrer begge disse parameterne under kjøring av pipeline med et datalager og en bane som er tilgjengelig for produktet.
    > [!div class="mx-imgBorder"]
    > ![Eksportere datamodulkonfigurasjon](media/intelligence-designer-importdata.png "Eksportere datamodulkonfigurasjon")
    

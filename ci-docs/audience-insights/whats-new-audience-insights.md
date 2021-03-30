@@ -1,7 +1,7 @@
 ---
 title: Nye og kommende funksjoner
 description: Informasjon om nye funksjoner, forbedringer og feilrettinger.
-ms.date: 02/02/2021
+ms.date: 03/08/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,18 +9,18 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 9183c8af4fb9f9f08ac63d8d0cd37c6868bba310
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 96c0b871eeaaf0976e5c718f37f883f4410977dc
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270444"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598458"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Nyheter i funksjonaliteten for målgruppeinnsikt i Dynamics 365 Customer Insights
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Vi har gleden av å kunngjøre de nyeste oppdateringene! Denne artikkelen oppsummerer funksjoner i offentlig forhåndsversjon, generelle tilgjengelighetsforbedringer og funksjonsoppdateringer. Hvis du vil se de langsiktige funksjonsplanene, kan du se [Dynamics 365 og Power Platform-utgivelsesplanene](https://docs.microsoft.com/dynamics365/release-plans/).
+Vi har gleden av å kunngjøre de nyeste oppdateringene! Denne artikkelen oppsummerer funksjoner i offentlig forhåndsversjon, generelle tilgjengelighetsforbedringer og funksjonsoppdateringer. Hvis du vil se de langsiktige funksjonsplanene, kan du se [Dynamics 365 og Power Platform-utgivelsesplanene](/dynamics365/release-plans/).
 
 Du kan også se på følgende video for å finne ut mer om hvilke funksjoner som er planlagt de siste seks månedene.
 
@@ -30,6 +30,40 @@ Vi ruller ut oppdateringer for hver region. Enkelte områder kan se funksjoner f
 
 > [!TIP]
 > For å sende inn og stemme på funksjonsforespørsler og produktforslag, går du til [ideportalen for Dynamics 365-apper](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="february-2021-updates"></a>Oppdateringer februar 2021
+
+Oppdateringene i februar 2021 inneholder flere funksjoner, ytelsesoppgraderinger og feilrettinger.
+
+#### <a name="extensibility"></a>Utvidbarhet
+
+- **Eksporter segmenter til AdRoll**
+
+  Vi har utvidet eksportmålene til å inkludere AdRoll. Du kan nå eksportere segmenter fra Customer Insights til AdRoll-målgrupper og bruke dem som utgangspunkt for annonseringen. Hvis du vil ha mer informasjon, kan du se [Kobling for AdRoll](export-adroll.md).
+
+#### <a name="segments"></a>Segmenter
+ 
+- **Dupliser et segment**
+  
+  Hvis du vil opprette et nytt segment basert på et eksisterende, kan du duplisere et segment og redigere det dupliserte segmentet for å finjustere det ytterligere. 
+
+- **Legg til flere attributter i et segment**
+
+  Du kan nå inkludere attributter i segmentutdataene, selv om disse attributtene ikke er en del av kundeprofilen. Du kan for eksempel inkludere abonnements-ID-er i et segment, selv om det er en del av abonnementsenheten som har en M:1-relasjon med kundeenheten. Så lenge attributtet tilhører en enhet som er relatert til kundeenheten, kan du nå inkludere disse attributtene.  
+
+#### <a name="predictions"></a>Prediksjoner
+
+- **Opprett prediktive produktanbefalinger**
+
+  Det å forstå hva kunder er interessert i å kjøpe, er et av de første trinnene som kreves for å forbedre omsetningen og bygge kundelojalitet ved hjelp av tilpassing og engasjement. Ved å gi anbefalinger for produkter som ikke er innrettet etter kundens interesser, kan du skape en følelse av distansering mellom kunden og bedriften, og til slutt begrense den totale potensielle inntekten og opplevelsen for en kunde. 
+
+  Ved hjelp av dine egne data kan du nå lage prognoser for hvilke produkter kundene sannsynligvis vil kjøpe i fremtiden. Hvis du vil ha mer informasjon, kan du se [Produktanbefalingsprediksjon](predict-product-recommendation.md).
+
+#### <a name="system-administration"></a>Systemadministrasjon
+
+- **Kopier miljø støtter flere typer datakilder**
+
+  Administratorer kan kopiere miljøkonfigurasjoner til et nytt miljø i samme organisasjon. Denne funksjonen utvider Kopier miljø-funksjonaliteten for tilfeller der datakilder basert på en Common Data Service-datasjø eller en Common Data Model-mappe brukes.
 
 ## <a name="january-2021-updates"></a>Januar 2021-oppdateringer
 

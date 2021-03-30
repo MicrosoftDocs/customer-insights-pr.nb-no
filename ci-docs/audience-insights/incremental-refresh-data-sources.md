@@ -2,19 +2,19 @@
 title: Trinnvis oppdatering for Power Query-baserte datakilder
 description: Oppdatere nye og oppdaterte data for store datakilder basert på Power Query.
 ms.date: 09/28/2020
-ms.reviewer: adkuppa
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: adkuppa
+ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: d4b01be75d25fa0e120904924a193171eefec579
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 03f76bcfc7336d8430146e8a26ffa649c6a17db0
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268560"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596833"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinnvis oppdatering for datakilder som er baserte på Power Query
 

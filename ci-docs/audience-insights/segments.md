@@ -1,20 +1,20 @@
 ---
 title: Opprette og behandle segmenter
 description: Opprett segmenter av kunder for å gruppere dem basert på forskjellige attributter.
-ms.date: 10/15/2020
+ms.date: 03/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: jimsonc
+author: JimsonChalissery
+ms.author: jimsonc
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: a1308f07ac3ba7d4b09931bab3d19b6dfaf479ee
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 4a6e8a3216a2c0738d60247054afa9fc18412f55
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270368"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597066"
 ---
 # <a name="create-and-manage-segments"></a>Opprette og behandle segmenter
 
@@ -35,19 +35,19 @@ Segmenter administreres på **Segmenter**-siden.
 
 1. I Målgruppeinnsikt går du til **Segmenter**-siden.
 
-2. Velg **Ny** > **Tomt segment**.
+1. Velg **Ny** > **Tomt segment**.
 
-3. Velg ruten **Nytt segment**, gå til en segmenttype og angi et **Navn**.
+1. Velg ruten **Nytt segment**, gå til en segmenttype og angi et **Navn**.
 
    Du kan eventuelt angi et visningsnavn og en beskrivelse som hjelper deg med å identifisere segmentet.
 
-4. Velg **Neste** for å gå til siden for **Segmentverktøy**, der du definerer en gruppe. En gruppe er et sett med kunder.
+1. Velg **Neste** for å gå til siden for **Segmentverktøy**, der du definerer en gruppe. En gruppe er et sett med kunder.
 
-5. Velg enheten som inkluderer attributtet du vil segmentere etter.
+1. Velg enheten som inkluderer attributtet du vil segmentere etter.
 
-6. Velg attributtet du vil segmentere etter. Dette attributtet kan ha en av fire verdityper: numerisk, streng, dato eller boolsk.
+1. Velg attributtet du vil segmentere etter. Dette attributtet kan ha en av fire verdityper: numerisk, streng, dato eller boolsk.
 
-7. Velg en operator og en verdi for det valgte attributtet.
+1. Velg en operator og en verdi for det valgte attributtet.
 
    > [!div class="mx-imgBorder"]
    > ![Egendefinert gruppefilter](media/customer-group-numbers.png "Gruppefilter for kunde")
@@ -64,9 +64,14 @@ Segmenter administreres på **Segmenter**-siden.
    > [!div class="mx-imgBorder"]
    > ![Relasjonsbane under opprettelse av segment](media/segments-multiple-relationships.png "Relasjonsbane under opprettelse av segment")
 
-9. Velg **Lagre** for å lagre segmentet. Segmentet blir lagret og behandlet hvis alle kravene valideres. Hvis ikke blir det lagret som et utkast.
+1. Som standard genererer segmenter en utdataenhet som inneholder alle attributter for kundeprofiler som samsvarer med de definerte filtrene. Hvis et segment er basert på andre enheter enn *Kunde*-enheten, kan du legge til flere attributter fra disse enhetene i utdataenheten. Velg **Prosjektattributter** for å velge attributtene som skal legges til i utdataenheten.  
 
-10. Velg **Tilbake til Segmenter** for å gå tilbake til **Segmenter**-siden.
+   
+   Eksempel: Et segment er basert på en enhet som inneholder kundeaktivitetsdata som er relatert til *Kunde*-enheten. Segmentet ser etter alle kunder som har ringt til brukerstøtteavdelingen i løpet av de siste 60 dagene. Du kan velge å tilføye samtalevarighet og antall samtaler til alle samsvarende kundeoppføringer i utdataenheten. Denne informasjonen kan være nyttig for å sende en e-post med nyttige koblinger til artikler i elektronisk hjelp og vanlige spørsmål til kunder som ofte har ringt.
+
+1. Velg **Lagre** for å lagre segmentet. Segmentet blir lagret og behandlet hvis alle kravene valideres. Hvis ikke blir det lagret som et utkast.
+
+1. Velg **Tilbake til Segmenter** for å gå tilbake til **Segmenter**-siden.
 
 ## <a name="manage-existing-segments"></a>Behandle eksisterende segmenter
 
@@ -85,6 +90,7 @@ Følgende handling er tilgjengelig når du velger et segment:
 
 - **Vis** segmentdetaljene, inkludert medlemsantall, som viser en forhåndsvisning av segmentmedlemmer.
 - **Rediger** segmentet for å endre egenskapene.
+- **Opprett duplikat** av et segment. Du kan velge å redigere egenskapene med en gang, eller ganske enkelt lagre duplikatet.
 - **Oppdater** segmentet slik at det inneholder de nyeste dataene.
 - **Aktiver** eller **Deaktiver** segmentet. Segmenter har to mulige tilstander – aktive eller inaktive. Disse tilstandene er nyttige når du redigerer et segment. For inaktive segmenter finnes segmentdefinisjonen, men den inneholder ingen kunder ennå. Når du aktiverer et segment, endres statusen fra inaktiv til aktiv, og den begynner å se etter kunder som samsvarer med segmentdefinisjonen. Hvis en [planlagt oppdatering](system.md#schedule-tab) er konfigurert, har inaktive segmenter **Status** oppført som **Hoppet over**, og dette tyder på at en oppdatering ikke ble forsøkt. Når et inaktivt segment blir aktivert, oppdateres det og tas med i planlagte oppdateringer.
   Du kan også bruke funksjonen **Planlegg senere** i rullegardinlisten **Aktiver/Deaktiver** for å angi en fremtidig dato og klokkeslett for acktivering og deaktivering av et bestemt segment.

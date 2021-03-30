@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
-ms.author: mhart
-ms.reviewer: wameng
+ms.author: wameng
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 5bcee3b4c51880740715575b18fd7a4dbf87e6d0
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 202ea22d290be04e54ce9676b6b693162354607f
+ms.sourcegitcommit: d3eb07dcc72624a2d5cfc95c7ea9faaa2c1b6001
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269940"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "5654744"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere mål
 
@@ -72,8 +72,8 @@ Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan by
    1. Velg **Rediger dimensjoner** for å legge til dataattributter du vil gruppere målverdiene etter. For eksempel poststed eller kjønn. Som standard velges *CustomerID*-dimensjonen for å opprette *mål på kundenivå*. Du kan fjerne standarddimensjonen hvis du vil opprette *tiltak på forretningsnivå*.
    1. Velg **Ferdig** for å legge til dimensjonene i målet.
 
-1. Hvis det finnes flere baner mellom dataenheten du tilordnet og kundeenheten, må du velge en av de identifiserte [enhetsrelasjonsbanene](relationships.md). Måleresultatene kan variere avhengig av den valgte banen.
-   1. Velg **Datainnstillinger**, og velg enhetsbanen som skal brukes til å identifisere målet.
+1. Hvis det finnes flere baner mellom dataenheten du tilordnet og *Kunde*-enheten, må du velge en av de identifiserte [enhetsrelasjonsbanene](relationships.md). Måleresultatene kan variere avhengig av den valgte banen. 
+   1. Velg **Datainnstillinger**, og velg enhetsbanen som skal brukes til å identifisere målet. Hvis det bare finnes én enkelt bane til *Kunde*-enheten, vises ikke denne kontrollen.
    1. Velg **Fullført** for å ta i bruk valget. 
 
    :::image type="content" source="media/measures-data-preferences.png" alt-text="Velg enhetsbanen for målet.":::

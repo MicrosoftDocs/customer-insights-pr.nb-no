@@ -2,19 +2,19 @@
 title: Prediksjon av verdi for kundelevetid (CLV)
 description: Forutsi omsetningspotensialet for aktive kunder i fremtiden.
 ms.date: 02/05/2021
-ms.reviewer: wameng
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
-ms.author: mhart
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 363a46c81b5bb737d274998f9a699dc662e38d7c
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268606"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595821"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Prediksjon av verdi for kundelevetid (CLV) (forhåndsversjon)
 
@@ -194,11 +194,11 @@ Det er tre hoveddeler med data på resultatsiden.
   
   - **Prediksjonssuksess for kunder med høy verdi**
 
-  Se forskjellen mellom å forutsi kunder med høy verdi ved hjelp av modellen for kunstig intelligens sammenlignet med basismodellen. Suksessrate på 84 % betyr for eksempel at av alle kunder med høy verdi i opplæringsdataene, kunne modellen for kunstig intelligens nøyaktig fange opp 84 %. Deretter sammenligner vi suksessgraden med suksessgraden for basismodellen for å rapportere den relative endringen. Denne verdien brukes til å tilordne en vurdering til modellen.
+    Se forskjellen mellom å forutsi kunder med høy verdi ved hjelp av modellen for kunstig intelligens sammenlignet med basismodellen. Suksessrate på 84 % betyr for eksempel at av alle kunder med høy verdi i opplæringsdataene, kunne modellen for kunstig intelligens nøyaktig fange opp 84 %. Deretter sammenligner vi suksessgraden med suksessgraden for basismodellen for å rapportere den relative endringen. Denne verdien brukes til å tilordne en vurdering til modellen.
 
   - **Feilmåleverdier**
     
-  Med en annen måleverdi kan du gå gjennom den totale ytelsen til modellen i form av feil når du skal forutsi fremtidige verdier. Vi bruker den totale RMSE-måleverdien (Root Mean Squared Error) til å vurdere denne feilen. RMSE er en standardmetode for å måle feilen for en modell ved prediksjon av kvantitative data. RMSE for modellen for kunstig intelligens sammenlignes med RMSE for basismodellen, og den relative forskjellen rapporteres.
+    Med en annen måleverdi kan du gå gjennom den totale ytelsen til modellen i form av feil når du skal forutsi fremtidige verdier. Vi bruker den totale RMSE-måleverdien (Root Mean Squared Error) til å vurdere denne feilen. RMSE er en standardmetode for å måle feilen for en modell ved prediksjon av kvantitative data. RMSE for modellen for kunstig intelligens sammenlignes med RMSE for basismodellen, og den relative forskjellen rapporteres.
 
   Modellen for kunstig intelligens prioriterer nøyaktig rangering av kunder i henhold til verdien de gir til virksomheten. Så bare suksessfrekvensen for å forutsi kunder med høy verdi brukes til å få den endelige modellgraden. RMSE-måleverdien er sensitiv for fordreininger. I scenarioer der du har en liten prosentandel av kundene med usedvanlig høye kjøpsverdier, kan det hende at den samlede RMSE-måleverdien ikke gir et fullstendig bilde av modellytelsen.   
 

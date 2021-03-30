@@ -2,19 +2,19 @@
 title: Datainntak i sanntid og begrensninger
 description: Generell informasjon om sanntidsfunksjoner i målgruppeinnsikt.
 ms.date: 10/27/2020
-ms.reviewer: nikeller
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 7421ed9d2cb399d546815b2d1b0ea5ec51ca6b6d
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 3c84cfe7441eb026c1fd45eda1f72421388d01d7
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270292"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598581"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Datainntak i sanntid (forhåndsversjon)
 
@@ -54,7 +54,7 @@ I sanntids-API-en kan du publisere en ny aktivitet fra kildesystemet (en individ
 
 Du kan koble deg til sanntids-API-en på to måter:
 
-- [indirekte](#connect-via-the-dynamics-365-customer-insights-connector) ved hjelp av [Dynamics 365 Customer Insights-koblingen](https://docs.microsoft.com/connectors/customerinsights/)
+- [indirekte](#connect-via-the-dynamics-365-customer-insights-connector) ved hjelp av [Dynamics 365 Customer Insights-koblingen](/connectors/customerinsights/)
 - [direkte](#connect-directly-to-the-real-time-api), med kode
 
 Følgende forutsetninger gjelder for begge:
@@ -66,13 +66,13 @@ Følgende forutsetninger gjelder for begge:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Koble til via Dynamics 365 Customer Insights-koblingen
 
-Sanntids-API-en kan inkludere data fra en dedikert Power Platform-kobling, [Dynamics 365 Customer Insights-koblingen](https://docs.microsoft.com/connectors/customerinsights/), uten å måtte skrive og distribuere kode.    
-Koblingen kan utføre samme sanntidshandlinger som API-en. Du trenger en gyldig lisens for Premium-koblinger. Hvis du vil ha mer informasjon, kan du se [Vanlige spørsmål om om lisensiering for Power Apps og Power Automate](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
+Sanntids-API-en kan inkludere data fra en dedikert Power Platform-kobling, [Dynamics 365 Customer Insights-koblingen](/connectors/customerinsights/), uten å måtte skrive og distribuere kode.    
+Koblingen kan utføre samme sanntidshandlinger som API-en. Du trenger en gyldig lisens for Premium-koblinger. Hvis du vil ha mer informasjon, kan du se [Vanlige spørsmål om om lisensiering for Power Apps og Power Automate](/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps og/eller Power Automate](https://docs.microsoft.com/connectors/)
-- Azure [Logic Apps](https://docs.microsoft.com/azure/connectors/apis-list)
+- Power Platform [Power Apps og/eller Power Automate](/connectors/)
+- Azure [Logic Apps](/azure/connectors/apis-list)
 
-Hvis du vil ha informasjon om hvordan du oppretter flyter, kan du se i [Power Automate-dokumentasjonen](https://docs.microsoft.com/power-automate/).
+Hvis du vil ha informasjon om hvordan du oppretter flyter, kan du se i [Power Automate-dokumentasjonen](/power-automate/).
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Koble direkte til API i sanntid
 

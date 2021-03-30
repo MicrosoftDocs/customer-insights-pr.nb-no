@@ -1,34 +1,34 @@
 ---
 title: Støttede språk for målgruppeinnsikt
 description: Forstå og konfigurere språkstøtte.
-ms.date: 04/27/2020
+ms.date: 02/26/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: philk
+author: pkieffer
+ms.author: philk
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 84c4011e61058729a0ed0b7123df8a9227b0f083
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: cbf37b55ea6c54d912200a1f7167126925b35443
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268192"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595484"
 ---
 # <a name="supported-languages-for-audience-insights-capability"></a>Støttede språk for målgruppeinnsiktsfunksjonaliteten
 
-Målgruppeinnsiktsfunksjonaliteten i Dynamics 365 Customer Insights støtter en rekke språk. Dette emnet viser tilgjengelige språk og har støtte for å bytte mellom dem, samt en oversikt over hva slags innhold som blir oversatt.
+Målgruppeinnsikt for Dynamics 365 Customer Insights er oversatt til mange språk. Listen nedenfor inneholder tilgjengelige språk og informasjon om hva som er oversatt. Du kan også lære mer om hvordan du endrer språkinnstillingene. 
 
 ## <a name="languages"></a>Språk
 
 | Språknavn (engelsk)|  Språknavn (opprinnelig språk) |
 | ------------- | ------------- |
 | Baskisk | euskara |
-| bulgarsk | Български |
+| bulgarsk | български |
 | katalansk | català |
 | kinesisk (forenklet) | 中文(简体) |
-| Kinesisk (tradisjonell) | 中文(繁體) |
+| kinesisk (tradisjonell) | 中文(繁體) |
 | Kroatisk | hrvatski |
 | tsjekkisk | čeština |
 | Dansk | dansk |
@@ -39,26 +39,26 @@ Målgruppeinnsiktsfunksjonaliteten i Dynamics 365 Customer Insights støtter en 
 | Fransk | français |
 | Galisisk | galego |
 | Tysk | Deutsch |
-| gresk | Ελληνικά |
-| Hindi | हिंदी |
-| ungarsk | magyar |
-| Indonesisk | Bahasa Indonesia |
+| Gresk | Ελληνικά |
+| hindi | हिंदी |
+| Ungarsk | magyar |
+| indonesisk | Indonesia |
 | Italiensk | italiano |
 | Japansk | 日本語 |
-| Kasakhisk | Қазақ |
-| koreansk | 한국어 |
-| Latvisk | latviešu |
-| Litauisk | lietuvių |
-| Malayisk | Bahasa Melayu |
-| Norsk (Bokmål) | norsk (bokmål) |
-| Polsk | Polski |
+| kasakhisk | қазақ тілі |
+| Koreansk | 한국어 |
+| latvisk | latviešu |
+| litauisk | lietuvių |
+| malaysisk | Melayu |
+| Norsk (Bokmål) | norsk bokmål |
+| Polsk | polski |
 | Portugisisk (Brasil) | português |
 | Portugisisk (Portugal) | português |
-| Rumensk | română |
-| russisk | Русский |
-| serbisk (kyrillisk) | српски |
-| Serbisk (latinsk) | srpski |
-| Slovakisk | slovenčina |
+| rumensk | română |
+| Russisk | pусский |
+| Serbisk (kyrillisk) | српски |
+| serbisk (latinsk) | srpski |
+| slovakisk | slovenčina |
 | Slovensk | slovenski |
 | Spansk | español |
 | svensk | svenska |

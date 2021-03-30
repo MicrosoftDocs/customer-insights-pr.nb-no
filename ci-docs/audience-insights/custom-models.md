@@ -1,19 +1,20 @@
 ---
 title: Egendefinerte modeller for maskinlæring | Microsoft Docs
 description: Arbeide med egendefinerte modeller fra Azure Machine Learning i Dynamics 365 Customer Insights.
-ms.date: 11/19/2020
-ms.reviewer: zacook
-ms.service: dynamics-365-ai
+ms.date: 03/22/2021
+ms.reviewer: mhart
+ms.service: customer-insights
+ms.subservice: audience-insights
 ms.topic: tutorial
-author: m-hartmann
-ms.author: mhart
+author: zacookmsft
+ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 34489faaecc5da1ce3dd68d799b3e0e0d9672ab7
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 87fb517e9f0b380f9721f77470dceb3bcb7e5616
+ms.sourcegitcommit: 55c00ea61c78db7b3b54894c01afb3246dff31c8
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267246"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "5700680"
 ---
 # <a name="custom-machine-learning-models"></a>Egendefinerte modeller for maskinlæring
 
@@ -21,13 +22,18 @@ ms.locfileid: "5267246"
 
 ## <a name="responsible-ai"></a>Ansvarlig kunstig intelligens
 
-Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forretningsmulighetene og omsetningsstrømmer. Vi anbefaler på det sterkeste at du balanserer verdien i prediksjon mot innvirkningen den har, og vektlegger det som blir introdusert, på en etisk måte. Lær mer om hvordan Microsoft [håndterer ansvarlig kunstig intelligens](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Du kan også lære om [teknikker og prosesser for ansvarlig maskinlæring](https://docs.microsoft.com/azure/machine-learning/concept-responsible-ml) som er spesifikke for Azure Machine Learning.
+Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forretningsmulighetene og omsetningsstrømmer. Vi anbefaler på det sterkeste at du balanserer verdien i prediksjon mot innvirkningen den har, og vektlegger det som blir introdusert, på en etisk måte. Lær mer om hvordan Microsoft [håndterer ansvarlig kunstig intelligens](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Du kan også lære om [teknikker og prosesser for ansvarlig maskinlæring](/azure/machine-learning/concept-responsible-ml) som er spesifikke for Azure Machine Learning.
 
 ## <a name="prerequisites"></a>Forutsetninger
 
-- Denne funksjonen støtter for øyeblikket nettjenester som publiseres via [Machine Learning Studio (klassisk)](https://studio.azureml.net) og [bunkepipeliner i Azure Machine Learning](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines).
+- Denne funksjonen støtter for øyeblikket nettjenester som publiseres via [Machine Learning Studio (klassisk)](https://studio.azureml.net) og [bunkepipeliner i Azure Machine Learning](/azure/machine-learning/concept-ml-pipelines).
 
-- Du trenger en Azure Data Lake Gen2-lagringskonto som er tilknyttet Azure Studio-forekomsten, for å bruke denne funksjonen. Hvis du vil ha mer informasjon, se [Opprette en Azure Data Lake Storage Gen2-lagringskonto](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-account)
+- Du trenger en Azure Data Lake Gen2-lagringskonto som er tilknyttet Azure Studio-forekomsten, for å bruke denne funksjonen. Hvis du vil ha mer informasjon, se [Opprett en Azure Data Lake Storage Gen2-lagringskonto](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
+
+- For Azure Machine Learning-arbeidsområder med pipeliner trenger du tillatelse som Eier eller Administrator for brukertilgang til Azure Machine Learning-arbeidsområdet.
+
+   > [!NOTE]
+   > Data overføres mellom Customer Insights-forekomstene dine og de valgte Azure-webtjenestene eller -pipelinene i arbeidsflyten. Når du overfører data til en Azure-tjeneste, må du sørge for at tjenesten er konfigurert til å behandle data på måten og stedet som er nødvendig for å overholde eventuelle juridiske eller forskriftsmessige krav for disse dataene for organisasjonen din.
 
 ## <a name="add-a-new-workflow"></a>Legge til en ny arbeidsflyt
 
@@ -45,8 +51,8 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
 1. Velg **arbeidsområdene** som er knyttet til nettjenesten. To deler vises, én for Azure Machine Learning v1 (Machine Learning Studio (klassisk)) og Azure Machine Learning v2 (Azure Machine Learning). Hvis du ikke er sikker på hvilket arbeidsområde som er det riktige for Machine Learning Studio (klassisk)-nettjenesten, velger du **Hvilken som helst**.
 
 1. Velg Machine Learning Studio (klassisk)-nettjenesten eller Azure Machine Learning-pipelinen i rullegardinmenyen **Nettjeneste som inneholder modellen**. Velg deretter **Neste**.
-   - Lær mer om [publisering av en nettjeneste i Machine Learning Studio (klassisk)](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Lær mer om [publisering av en pipeline i Azure Machine Learning ved hjelp av designeren](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK-et](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Pipelinen må publiseres under et [pipelineendepunkt](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+   - Lær mer om [publisering av en nettjeneste i Machine Learning Studio (klassisk)](/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
+   - Lær mer om [publisering av en pipeline i Azure Machine Learning ved hjelp av designeren](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK-et](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Pipelinen må publiseres under et [pipelineendepunkt](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. For hver **nettjenesteinndata** velger du den samsvarende **enheten** fra målgruppeinnsikt og velger **Neste**.
    > [!NOTE]
@@ -54,7 +60,7 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
 
    > [!div class="mx-imgBorder"]
    > ![Konfigurere en arbeidsflyt](media/intelligence-screen2-updated.png "Konfigurere en arbeidsflyt")
-   
+
 1. I trinnet **Parametere for modellutdata** angir du følgende egenskaper:
    - Machine Learning Studio (klassisk)
       1. Angi **enhetsnavnet** for utdataene der du vil at utdataresultatene fra nettjenesten skal flytes.
@@ -62,12 +68,12 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
       1. Angi **enhetsnavnet** for utdataene der du vil at utdataresultatene for pilelinen skal flytes.
       1. Velg **Navn på parameter for utdatalager** for bunkepipelinen fra rullegardinmenyen.
       1. Velg **Navn på parameter for utdatabane** for bunkepipelinen fra rullegardinmenyen.
-      
+
       > [!div class="mx-imgBorder"]
       > ![Parameterrute for modelutdata](media/intelligence-screen3-outputparameters.png "Parameterrute for modelutdata")
 
 1. Velg det tilsvarende attributtet fra rullegardinlisten **Kunde-ID i resultater** som er identifiserer kunder, og velg **Lagre**.
-   
+
    > [!div class="mx-imgBorder"]
    > ![Relater resultater til kundedataruten](media/intelligence-screen4-relatetocustomer.png "Relater resultater til kundedataruten")
 
@@ -95,7 +101,7 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
       1. Velg **Navn på parameter for utdatabane** for testpipelinen.
 
 1. Velg det tilsvarende attributtet fra rullegardinlisten **Kunde-ID i resultater** som er identifiserer kunder, og velg **Lagre**.
-   Du må velge et attributt fra beslutningsutdataene med verdier som ligner på kunde-ID-kolonnen for kundeenheten. Hvis du ikke har en slik kolonne i datasettet, velger du et attributt som unikt identifiserer raden.
+   Velg et attributt fra beslutningsutdataene med verdier som ligner på kunde-ID-kolonnen for kundeenheten. Hvis du ikke har en slik kolonne i datasettet, velger du et attributt som unikt identifiserer raden.
 
 ## <a name="run-a-workflow"></a>Kjøre en arbeidsflyt
 
@@ -113,5 +119,28 @@ Arbeidsflyten kjøres også automatisk med hver planlagte oppdatering. Lær mer 
 
 Arbeidsflyten blir slettet. [Enheten](entities.md) som ble opprettet da du opprettet arbeidsflyten, vedvarer og kan vises fra **Enheter**-siden.
 
+## <a name="results"></a>Resultater
+
+Resultater fra en arbeidsflyt lagres i enheten som er konfigurert under fasen Parameter for modellutdata. Du kan få tilgang til disse dataene fra [enhetssiden](entities.md) eller med [API-tilgang](apis.md).
+
+### <a name="api-access"></a>API-tilgang
+
+Bruk følgende format for den bestemte OData-spørringen for å hente data fra en egendefinert modellenhet:
+
+`https://api.ci.ai.dynamics.com/v1/instances/<your instance id>/data/<custom model output entity name>%3Ffilter%3DCustomerId%20eq%20'<guid value>'`
+
+1. Erstatt `<your instance id>` med ID-en for Customer Insights-miljøet ditt, som du finner på adresselinjen i nettleseren når du går til Customer Insights.
+
+1. Erstatt `<custom model output entity>` med enhetsnavnet du oppgav under trinnet Parametere for modellutdata under konfigurasjonen av den egendefinerte modellen.
+
+1. Erstatt `<guid value>` med kunde-ID-en for kunden du vil ha tilgang til oppføringen for. Du finner vanligvis denne ID-en på [kundeprofilsiden](customer-profiles.md) i CustomerID-feltet.
+
+## <a name="frequently-asked-questions"></a>Vanlige spørsmål
+
+- Hvorfor kan jeg ikke se pipelinjen min når jeg konfigurerer en arbeidsflyt for en egendefinert modell?    
+  Dette problemet skyldes ofte et konfigurasjonsproblem i pipelinen. Kontroller at [inndataparameteren er konfigurert](azure-machine-learning-experiments.md#dataset-configuration), og at [utdatadatalageret og baneparameterne](azure-machine-learning-experiments.md#import-pipeline-data-into-customer-insights) også er konfigurert.
+
+- Hva betyr feilmeldingen "Kunne ikke lagre en intelligensarbeidsflyt"?    
+  Brukerne ser vanligvis denne feilmeldingen hvis de ikke har rettigheter som eier eller administrator for brukertilgang på arbeidsområdet. Brukeren må ha et høyere tillatelsesnivå for at Customer Insights skal kunne behandle arbeidsflyten som en tjeneste, i stedet for å bruke brukerlegitimasjonen for påfølgende kjøringer av arbeidsflyten.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
