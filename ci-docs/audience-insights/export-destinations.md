@@ -1,7 +1,7 @@
 ---
-title: Eksportmål
-description: Eksporter data og administrer eksportmål.
-ms.date: 07/21/2020
+title: Eksportere data fra Customer Insights
+description: Administrer eksporter for å dele data.
+ms.date: 03/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,102 +9,73 @@ ms.topic: conceptual
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5557442983f8c48cd46387009e0060beb6e764bb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 354ce9ef30fe918975d06290430996c84f8bd3f7
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596097"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896155"
 ---
-# <a name="export-destinations-preview-overview"></a><span data-ttu-id="83d62-103">Oversikt over eksportmål (forhåndsversjon)</span><span class="sxs-lookup"><span data-stu-id="83d62-103">Export destinations (preview) overview</span></span>
+# <a name="exports-preview-overview"></a><span data-ttu-id="6e02f-103">Oversikt over Eksporter (forhåndsversjon)</span><span class="sxs-lookup"><span data-stu-id="6e02f-103">Exports (preview) overview</span></span>
 
-<span data-ttu-id="83d62-104">Siden **Eksportmål** viser alle stedene du har konfigurert til å eksportere data til.</span><span class="sxs-lookup"><span data-stu-id="83d62-104">The **Export destinations** page shows you all locations you've set up to export data to.</span></span> <span data-ttu-id="83d62-105">Du kan også legge til nye mål for eksport.</span><span class="sxs-lookup"><span data-stu-id="83d62-105">You can also add new destinations for export.</span></span> <span data-ttu-id="83d62-106">I tillegg vises det tilgjengelige alternativer for eksport.</span><span class="sxs-lookup"><span data-stu-id="83d62-106">Additionally, it shows export currently available options.</span></span> <span data-ttu-id="83d62-107">Få en rask oversikt og en beskrivelse, og finn ut hva du kan gjøre med hvert utvidelsesalternativ.</span><span class="sxs-lookup"><span data-stu-id="83d62-107">Get a quick overview, description, and find out what you can do with each extensibility option.</span></span> <span data-ttu-id="83d62-108">Eksporter samlede profiler, mål og segmenter til apper som støttes for virksomheten din.</span><span class="sxs-lookup"><span data-stu-id="83d62-108">Export unified profiles, measures, and segments to supported apps relevant for your business.</span></span>
+<span data-ttu-id="6e02f-104">**Eksporter**-siden viser alle konfigurerte eksporter.</span><span class="sxs-lookup"><span data-stu-id="6e02f-104">The **Exports** page shows you all configured exports.</span></span> <span data-ttu-id="6e02f-105">Eksporter deler bestemte data med forskjellige programmer.</span><span class="sxs-lookup"><span data-stu-id="6e02f-105">Exports share specific data with various applications.</span></span> <span data-ttu-id="6e02f-106">De kan omfatte kundeprofiler eller enheter, skjemaer og tilordningsdetaljer.</span><span class="sxs-lookup"><span data-stu-id="6e02f-106">They can include customer profiles or entities, schemas, and mapping details.</span></span> <span data-ttu-id="6e02f-107">Hver eksport krever en [tilkobling, konfigurert av en administrator, for å administrere godkjenning og tilgang](connections.md).</span><span class="sxs-lookup"><span data-stu-id="6e02f-107">Each export requires a [connection, set up by an administrator, to manage authentication and access](connections.md).</span></span>
 
-<span data-ttu-id="83d62-109">Gå til **Admin** > **Eksportmål** for å finne følgende utvidelsesalternativer:</span><span class="sxs-lookup"><span data-stu-id="83d62-109">Go to **Admin** > **Export destinations** to find the following extensibility options:</span></span>
+> [!NOTE]
+> <span data-ttu-id="6e02f-108">Frem til mars 2021 opprettet eksporter automatisk en tilkobling til den tilsvarende tjenesten.</span><span class="sxs-lookup"><span data-stu-id="6e02f-108">Until March 2021, exports created a connection to the corresponding service automatically.</span></span> <span data-ttu-id="6e02f-109">Eksporter krever nå en [tilkobling, opprettet og delt av en administrator](connections.md) før du kan opprette dem.</span><span class="sxs-lookup"><span data-stu-id="6e02f-109">Exports now require a [connection, created and shared by an administrator](connections.md) before you can create them.</span></span>
 
-- [<span data-ttu-id="83d62-110">Adobe Campaign Standard</span><span class="sxs-lookup"><span data-stu-id="83d62-110">Adobe Campaign Standard</span></span>](export-adobe-campaign-standard.md)
-- [<span data-ttu-id="83d62-111">Adobe Experience Platform</span><span class="sxs-lookup"><span data-stu-id="83d62-111">Adobe Experience Platform</span></span>](export-adobe-experience-platform.md)
-- [<span data-ttu-id="83d62-112">AdRoll</span><span class="sxs-lookup"><span data-stu-id="83d62-112">AdRoll</span></span>](export-adroll.md)
-- [<span data-ttu-id="83d62-113">Autopilot</span><span class="sxs-lookup"><span data-stu-id="83d62-113">Autopilot</span></span>](export-autopilot.md)
-- [<span data-ttu-id="83d62-114">Azure Blob Storage</span><span class="sxs-lookup"><span data-stu-id="83d62-114">Azure Blob Storage</span></span>](export-azure-blob-storage.md)
-- [<span data-ttu-id="83d62-115">Azure Data Lake Storage Gen2</span><span class="sxs-lookup"><span data-stu-id="83d62-115">Azure Data Lake Storage Gen2</span></span>](export-azure-data-lake-storage-gen2.md)
-- [<span data-ttu-id="83d62-116">Robot for Microsoft Teams</span><span class="sxs-lookup"><span data-stu-id="83d62-116">Bot for Microsoft Teams</span></span>](export-teams-bot.md)
-- [<span data-ttu-id="83d62-117">Customer Insights-API</span><span class="sxs-lookup"><span data-stu-id="83d62-117">Customer Insights API</span></span>](apis.md)
-- [<span data-ttu-id="83d62-118">DotDigital</span><span class="sxs-lookup"><span data-stu-id="83d62-118">DotDigital</span></span>](export-dotdigital.md)
-- [<span data-ttu-id="83d62-119">Dynamics 365 Customer Service (kundekorttillegg)</span><span class="sxs-lookup"><span data-stu-id="83d62-119">Dynamics 365 Customer Service (Customer Card Add-in)</span></span>](customer-card-add-in.md)
-- [<span data-ttu-id="83d62-120">Dynamics 365 Marketing</span><span class="sxs-lookup"><span data-stu-id="83d62-120">Dynamics 365 Marketing</span></span>](export-dynamics365-marketing.md)
-- [<span data-ttu-id="83d62-121">Dynamics 365 Sales</span><span class="sxs-lookup"><span data-stu-id="83d62-121">Dynamics 365 Sales</span></span>](export-dynamics365-sales.md)
-- [<span data-ttu-id="83d62-122">Dynamics 365 Salgssenter (kundekorttillegg)</span><span class="sxs-lookup"><span data-stu-id="83d62-122">Dynamics 365 Sales Hub (Customer Card Add-in)</span></span>](customer-card-add-in.md)
-- [<span data-ttu-id="83d62-123">Facebook-annonseadministrasjon</span><span class="sxs-lookup"><span data-stu-id="83d62-123">Facebook Ads Manager</span></span>](export-facebook.md)
-- [<span data-ttu-id="83d62-124">Google Ads</span><span class="sxs-lookup"><span data-stu-id="83d62-124">Google Ads</span></span>](export-google-ads.md)
-- [<span data-ttu-id="83d62-125">LiveRamp&reg;</span><span class="sxs-lookup"><span data-stu-id="83d62-125">LiveRamp&reg;</span></span>](export-liveramp.md)
-- [<span data-ttu-id="83d62-126">Mailchimp</span><span class="sxs-lookup"><span data-stu-id="83d62-126">Mailchimp</span></span>](export-mailchimp.md)
-- [<span data-ttu-id="83d62-127">Marketo</span><span class="sxs-lookup"><span data-stu-id="83d62-127">Marketo</span></span>](export-marketo.md)
-- [<span data-ttu-id="83d62-128">Power Automate</span><span class="sxs-lookup"><span data-stu-id="83d62-128">Power Automate</span></span>](export-power-automate.md)
-- [<span data-ttu-id="83d62-129">Power Apps</span><span class="sxs-lookup"><span data-stu-id="83d62-129">Power Apps</span></span>](export-power-apps.md)
-- [<span data-ttu-id="83d62-130">Power BI</span><span class="sxs-lookup"><span data-stu-id="83d62-130">Power BI</span></span>](export-power-bi.md)
-- [<span data-ttu-id="83d62-131">SendGrid</span><span class="sxs-lookup"><span data-stu-id="83d62-131">SendGrid</span></span>](export-sendgrid.md)
-- [<span data-ttu-id="83d62-132">SFTP</span><span class="sxs-lookup"><span data-stu-id="83d62-132">SFTP</span></span>](export-sftp.md)
+<span data-ttu-id="6e02f-110">Gå til **Data** > **Eksporter** for å vise eksportsiden.</span><span class="sxs-lookup"><span data-stu-id="6e02f-110">Go to **Data** > **Exports** to view the exports page.</span></span> <span data-ttu-id="6e02f-111">Alle brukerroller har tilgang til å vise konfigurerte eksporter.</span><span class="sxs-lookup"><span data-stu-id="6e02f-111">All user roles have access to view configured exports.</span></span> <span data-ttu-id="6e02f-112">Bruk av søkefeltet på kommandolinjen til å søke etter eksporter etter navn, tilkoblingsnavn eller tilkoblingstype.</span><span class="sxs-lookup"><span data-stu-id="6e02f-112">Use of the search field in the command bar to find exports by their name, connection name, or connection type.</span></span>
 
-## <a name="add-a-new-export-destination"></a><span data-ttu-id="83d62-133">Legge til et nytt eksportmål</span><span class="sxs-lookup"><span data-stu-id="83d62-133">Add a new export destination</span></span>
+## <a name="set-up-a-new-export"></a><span data-ttu-id="6e02f-113">Konfigurer en ny eksport</span><span class="sxs-lookup"><span data-stu-id="6e02f-113">Set up a new export</span></span>
 
-<span data-ttu-id="83d62-134">Hvis du vil legge til eksportmål, må du ha [administratortillatelser](permissions.md).</span><span class="sxs-lookup"><span data-stu-id="83d62-134">To add export destinations, you have [administrator permissions](permissions.md).</span></span> <span data-ttu-id="83d62-135">Hvis du eksporterer til Microsoft-tjenester, antas det at begge tjenestene er i samme organisasjon.</span><span class="sxs-lookup"><span data-stu-id="83d62-135">If you export to Microsoft services, we assume both services are in the same organization.</span></span>
+<span data-ttu-id="6e02f-114">Hvis du vil konfigurere eller redigere en eksport, må du ha tilkoblinger tilgjengelige for deg.</span><span class="sxs-lookup"><span data-stu-id="6e02f-114">To set up or edit an export, you need to have connections available to you.</span></span> <span data-ttu-id="6e02f-115">Tilkoblinger avhenger av [brukerrollen din](permissions.md):</span><span class="sxs-lookup"><span data-stu-id="6e02f-115">Connections depend on your [user role](permissions.md):</span></span>
+- <span data-ttu-id="6e02f-116">Administratorer har tilgang til alle tilkoblinger.</span><span class="sxs-lookup"><span data-stu-id="6e02f-116">Administrators have access to all connections.</span></span> <span data-ttu-id="6e02f-117">De kan også opprette nye tilkoblinger når de konfigurerer en eksport.</span><span class="sxs-lookup"><span data-stu-id="6e02f-117">They can also create new connections when setting up an export.</span></span>
+- <span data-ttu-id="6e02f-118">Bidragsytere kan ha tilgang til bestemte tilkoblinger.</span><span class="sxs-lookup"><span data-stu-id="6e02f-118">Contributors can have access to specific connections.</span></span> <span data-ttu-id="6e02f-119">De er avhengig av administratorer for å konfigurere og dele tilkoblinger.</span><span class="sxs-lookup"><span data-stu-id="6e02f-119">They depend on administrators to configure and share connections.</span></span> <span data-ttu-id="6e02f-120">Hvis du vil ha mer informasjon, se [Tillate bidragsytere å bruke en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).</span><span class="sxs-lookup"><span data-stu-id="6e02f-120">For more information, see [Allow contributors to use a connection for exports](connections.md#allow-contributors-to-use-a-connection-for-exports).</span></span>
+- <span data-ttu-id="6e02f-121">Visningsprogrammer kan bare vise eksisterende eksporter, men ikke opprette dem.</span><span class="sxs-lookup"><span data-stu-id="6e02f-121">Viewers can only view existing exports but not create them.</span></span>
 
-1. <span data-ttu-id="83d62-136">Gå til **Admin** > **Eksporter mål**.</span><span class="sxs-lookup"><span data-stu-id="83d62-136">Go to **Admin** > **Export destinations**.</span></span>
+1. <span data-ttu-id="6e02f-122">Gå til **Data** > **Eksporter**.</span><span class="sxs-lookup"><span data-stu-id="6e02f-122">Go to **Data** > **Exports**.</span></span>
 
-1. <span data-ttu-id="83d62-137">Bytt til kategorien **Mine eksportmål**.</span><span class="sxs-lookup"><span data-stu-id="83d62-137">Switch to the **My export destinations** tab.</span></span>
+1. <span data-ttu-id="6e02f-123">Velg **Legg til eksport** for å opprette et nytt eksportmål.</span><span class="sxs-lookup"><span data-stu-id="6e02f-123">Select **Add export** to create a new export destination.</span></span>
 
-1. <span data-ttu-id="83d62-138">Velg **Legg til mål** for å opprette et nytt eksportmål.</span><span class="sxs-lookup"><span data-stu-id="83d62-138">Select **Add destination** to create a new export destination.</span></span>
+1. <span data-ttu-id="6e02f-124">Velg hvilken tilkobling som skal brukes, i ruten **Konfigurer eksport**.</span><span class="sxs-lookup"><span data-stu-id="6e02f-124">In the **Set up export** pane, select which connection to use.</span></span> <span data-ttu-id="6e02f-125">[Tilkoblinger](connections.md) administreres av administratorer.</span><span class="sxs-lookup"><span data-stu-id="6e02f-125">[Connections](connections.md) are managed by administrators.</span></span> 
 
-1. <span data-ttu-id="83d62-139">I ruten **Legg til mål** velger du **Type** eksportmål i rullegardinlisten.</span><span class="sxs-lookup"><span data-stu-id="83d62-139">In the **Add destination** pane, select the **Type** of export destination in the drop-down.</span></span>
+1. <span data-ttu-id="6e02f-126">Oppgi de nødvendige detaljene, og velg **Lagre** for å opprette eksporten.</span><span class="sxs-lookup"><span data-stu-id="6e02f-126">Provide the required details and select **Save** to create the export.</span></span>
 
-1. <span data-ttu-id="83d62-140">Angi de nødvendige detaljene, og velg deretter **Neste** for å opprette eksportmålet.</span><span class="sxs-lookup"><span data-stu-id="83d62-140">Provide the required details and select **Next** to create the export destination.</span></span>
+### <a name="edit-an-export"></a><span data-ttu-id="6e02f-127">Rediger en eksport</span><span class="sxs-lookup"><span data-stu-id="6e02f-127">Edit an export</span></span>
 
-<span data-ttu-id="83d62-141">Du kan også velge **Konfigurer** på en flis i kategorien **Oppdag**.</span><span class="sxs-lookup"><span data-stu-id="83d62-141">You can also select **Set up** on a tile on the **Discover** tab.</span></span>
+1. <span data-ttu-id="6e02f-128">Velg den loddrette ellipsen for eksportmålet du vil redigere.</span><span class="sxs-lookup"><span data-stu-id="6e02f-128">Select the vertical ellipsis for the export destination you want to edit.</span></span>
 
-## <a name="view-export-destinations"></a><span data-ttu-id="83d62-142">Vise eksportmål</span><span class="sxs-lookup"><span data-stu-id="83d62-142">View Export destinations</span></span>
+1. <span data-ttu-id="6e02f-129">Velg **Rediger** i rullegardinlisten.</span><span class="sxs-lookup"><span data-stu-id="6e02f-129">Select **Edit** from the drop-down menu.</span></span>
 
-<span data-ttu-id="83d62-143">Når du har opprettet eksportmålene, finner du dem i en tabell i kategorien **Mine eksportmål**. Denne tabellen har tre kolonner:</span><span class="sxs-lookup"><span data-stu-id="83d62-143">After creating export destinations, you'll find them in a table on the **My export destinations** tab. This table has three columns:</span></span>
+1. <span data-ttu-id="6e02f-130">Endre verdiene du vil oppdatere, og velg **Lagre**.</span><span class="sxs-lookup"><span data-stu-id="6e02f-130">Change the values you want to update and select **Save**.</span></span>
 
-- <span data-ttu-id="83d62-144">**Visningsnavn**: Navnet du angav da du opprettet målet.</span><span class="sxs-lookup"><span data-stu-id="83d62-144">**Display name**: The name you entered when creating the destination.</span></span>
-- <span data-ttu-id="83d62-145">**Type**: Typen eksportmål du angir når du oppretter målet.</span><span class="sxs-lookup"><span data-stu-id="83d62-145">**Type**: The export destination type you set when creating the destination.</span></span>
-- <span data-ttu-id="83d62-146">**Opprettet**: Datoen du opprettet målet.</span><span class="sxs-lookup"><span data-stu-id="83d62-146">**Created**: The date you created the destination.</span></span>
+## <a name="view-exports-and-export-details"></a><span data-ttu-id="6e02f-131">Vise eksporter og eksportdetaljer</span><span class="sxs-lookup"><span data-stu-id="6e02f-131">View Exports and export details</span></span>
 
-## <a name="edit-an-export-destination"></a><span data-ttu-id="83d62-147">Redigere et eksportmål</span><span class="sxs-lookup"><span data-stu-id="83d62-147">Edit an export destination</span></span>
+<span data-ttu-id="6e02f-132">Når du har opprettet eksportmål, vises de i **Data** > **Eksporter**.</span><span class="sxs-lookup"><span data-stu-id="6e02f-132">After creating export destinations, they are listed on **Data** > **Exports**.</span></span> <span data-ttu-id="6e02f-133">Alle brukere kan se hvilke data som deles, og den nyeste statusen.</span><span class="sxs-lookup"><span data-stu-id="6e02f-133">All users can see which data is shared and its latest status.</span></span>
 
-1. <span data-ttu-id="83d62-148">Velg den loddrette ellipsen for eksportmålet du vil redigere.</span><span class="sxs-lookup"><span data-stu-id="83d62-148">Select the vertical ellipsis for the Export destination you want to edit.</span></span>
+1. <span data-ttu-id="6e02f-134">Gå til **Data** > **Eksporter**.</span><span class="sxs-lookup"><span data-stu-id="6e02f-134">Go to **Data** > **Exports**.</span></span>
 
-   > [!div class="mx-imgBorder"]
-   > <span data-ttu-id="83d62-149">![Loddrett ellipse](media/export-destinations-page-ellipsis.png "Loddrett ellipse")</span><span class="sxs-lookup"><span data-stu-id="83d62-149">![Vertical ellipsis](media/export-destinations-page-ellipsis.png "Vertical ellipsis")</span></span>
+1. <span data-ttu-id="6e02f-135">Brukere uten redigeringstillatelser velger **Vis** i stedet for **Rediger** for å se eksportdetaljene.</span><span class="sxs-lookup"><span data-stu-id="6e02f-135">Users without edit permissions select **View** instead of **Edit** see the export details.</span></span>
 
-1. <span data-ttu-id="83d62-150">Velg **Rediger** på rullegardinmenyen.</span><span class="sxs-lookup"><span data-stu-id="83d62-150">Select **Edit** from the dropdown menu.</span></span>
+1. <span data-ttu-id="6e02f-136">Denne sideruten viser oppsettet for denne eksporten.</span><span class="sxs-lookup"><span data-stu-id="6e02f-136">This side pane shows the set up of this export.</span></span> <span data-ttu-id="6e02f-137">Du kan ikke endre verdier uten redigeringstillatelser.</span><span class="sxs-lookup"><span data-stu-id="6e02f-137">Without edit permissions, you can't change values.</span></span> <span data-ttu-id="6e02f-138">Velg **Lukk** for å gå tilbake til eksportsiden.</span><span class="sxs-lookup"><span data-stu-id="6e02f-138">Select **Close** to return to the exports page.</span></span>
 
-1. <span data-ttu-id="83d62-151">Endre verdiene som krever oppdatering, og velg **Lagre**.</span><span class="sxs-lookup"><span data-stu-id="83d62-151">Change the values that require update and select **Save**.</span></span>
+## <a name="run-exports-on-demand"></a><span data-ttu-id="6e02f-139">Kjør eksporter ved behov</span><span class="sxs-lookup"><span data-stu-id="6e02f-139">Run exports on demand</span></span>
 
-## <a name="export-data-on-demand"></a><span data-ttu-id="83d62-152">Eksportere data etter behov</span><span class="sxs-lookup"><span data-stu-id="83d62-152">Export data on demand</span></span>
+<span data-ttu-id="6e02f-140">Når du har konfigurert en eksport, kjøres den med alle [planlagte oppdateringer](system.md#schedule-tab) så lenge den har en fungerende tilkobling.</span><span class="sxs-lookup"><span data-stu-id="6e02f-140">After configuring an export, it will run with every [scheduled refresh](system.md#schedule-tab) as long as it has a working connection.</span></span>
 
-<span data-ttu-id="83d62-153">Når du har konfigurert en kobling for et eksportmål, kjøres eksporter med alle [planlagte oppdateringer](system.md#schedule-tab).</span><span class="sxs-lookup"><span data-stu-id="83d62-153">After configuring a connector for an export destination, exports will run with every [scheduled refresh](system.md#schedule-tab).</span></span>
+<span data-ttu-id="6e02f-141">Hvis du vil eksportere data uten å vente på en planlagt oppdatering, går du til **Data** > **Eksporter**.</span><span class="sxs-lookup"><span data-stu-id="6e02f-141">To export data without waiting for a scheduled refresh, go to **Data** > **Exports**.</span></span> <span data-ttu-id="6e02f-142">Du har to alternativer:</span><span class="sxs-lookup"><span data-stu-id="6e02f-142">You have two options:</span></span>
 
-<span data-ttu-id="83d62-154">Hvis du vil eksportere data uten å vente på en planlagt oppdatering, kan du gå til kategorien **Mine eksportmål** på **Administrator** > **Eksportmål**.</span><span class="sxs-lookup"><span data-stu-id="83d62-154">To export data without waiting for a scheduled refresh, go the **My export destinations** tab on **Admin** > **Export destinations**.</span></span>
+- <span data-ttu-id="6e02f-143">Hvis du vil kjøre alle eksporter, velger du **Kjør alle** på kommandolinjen.</span><span class="sxs-lookup"><span data-stu-id="6e02f-143">To run all exports, select **Run all** in the command bar.</span></span> 
+- <span data-ttu-id="6e02f-144">Hvis du vil kjøre én enkelt eksport, velger du ellipsen (...) på et listeelement, og deretter velger du **Kjør**.</span><span class="sxs-lookup"><span data-stu-id="6e02f-144">To run a single export, select the ellipsis (...) on a list item and then choose **Run**.</span></span>
 
-> [!div class="mx-imgBorder"]
-> <span data-ttu-id="83d62-155">![Loddrett ellipse](media/export-destinations-page-ellipsis.png "Loddrett ellipse")</span><span class="sxs-lookup"><span data-stu-id="83d62-155">![Vertical ellipsis](media/export-destinations-page-ellipsis.png "Vertical ellipsis")</span></span>
+## <a name="remove-an-export"></a><span data-ttu-id="6e02f-145">Fjerne en eksport</span><span class="sxs-lookup"><span data-stu-id="6e02f-145">Remove an Export</span></span>
 
-- <span data-ttu-id="83d62-156">Velg **Eksporter** over listen for å kjøre eksporten til alle eksportmålene samtidig.</span><span class="sxs-lookup"><span data-stu-id="83d62-156">Select **Export** above the list to run the export to all export destinations simultaneously.</span></span>
-- <span data-ttu-id="83d62-157">Velg ellipsen (...) etter et listeelement, og velg deretter **Eksporter**-alternativet for å kjøre eksporten for et enkelt eksportmål.</span><span class="sxs-lookup"><span data-stu-id="83d62-157">Select the ellipsis (...) after a list item and then choose the **Export** option to run the export for a single export destination.</span></span>
+1. <span data-ttu-id="6e02f-146">Gå til **Data** > **Eksporter**.</span><span class="sxs-lookup"><span data-stu-id="6e02f-146">Go to **Data** > **Exports**.</span></span>
 
-## <a name="remove-an-export-destination"></a><span data-ttu-id="83d62-158">Fjerne et eksportmål</span><span class="sxs-lookup"><span data-stu-id="83d62-158">Remove an Export destination</span></span>
+1. <span data-ttu-id="6e02f-147">Velg den loddrette ellipsen for eksporten du vil fjerne.</span><span class="sxs-lookup"><span data-stu-id="6e02f-147">Select the vertical ellipsis for the Export you want to remove.</span></span>
 
-<span data-ttu-id="83d62-159">Hvis du vil fjerne et eksportmål, starter du fra hovedsiden for **Eksportmål**.</span><span class="sxs-lookup"><span data-stu-id="83d62-159">To remove an Export destination, start from the main **Export destinations** page.</span></span>
+1. <span data-ttu-id="6e02f-148">Velg **Fjern** fra rullegardinmenyen.</span><span class="sxs-lookup"><span data-stu-id="6e02f-148">Select **Remove** from the dropdown menu.</span></span>
 
-1. <span data-ttu-id="83d62-160">Velg den loddrette ellipsen for eksportmålet du vil fjerne.</span><span class="sxs-lookup"><span data-stu-id="83d62-160">Select the vertical ellipsis for the Export destination you want to remove.</span></span>
-
-   > [!div class="mx-imgBorder"]
-   > <span data-ttu-id="83d62-161">![Loddrett ellipse](media/export-destinations-page-ellipsis.png "Loddrett ellipse")</span><span class="sxs-lookup"><span data-stu-id="83d62-161">![Vertical ellipsis](media/export-destinations-page-ellipsis.png "Vertical ellipsis")</span></span>
-
-2. <span data-ttu-id="83d62-162">Velg **Fjern** fra rullegardinmenyen.</span><span class="sxs-lookup"><span data-stu-id="83d62-162">Select **Remove** from the dropdown menu.</span></span>
-
-3. <span data-ttu-id="83d62-163">Bekreft fjerningen ved å velge **Fjern** i bekreftelsesdialogboksen.</span><span class="sxs-lookup"><span data-stu-id="83d62-163">Confirm the removal by selecting **Remove** on the confirmation screen.</span></span>
+1. <span data-ttu-id="6e02f-149">Bekreft fjerningen ved å velge **Fjern** i bekreftelsesdialogboksen.</span><span class="sxs-lookup"><span data-stu-id="6e02f-149">Confirm the removal by selecting **Remove** on the confirmation screen.</span></span>
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
