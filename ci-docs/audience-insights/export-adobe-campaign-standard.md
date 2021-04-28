@@ -1,7 +1,7 @@
 ---
 title: Eksporter Customer Insights-data til Adobe Campaign Standard
 description: Lær hvordan du bruker målgruppeinnsiktssegmenter i Adobe Campaign Standard.
-ms.date: 02/26/2021
+ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: a5d0154c3d7c473dcba03fac0847bafcf97de2f2
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b6c010d84119c2fa8b3ef99017c65f9939bf28c4
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596327"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760293"
 ---
 # <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Bruk Customer Insights-segmenter i Adobe Campaign Standard (forhåndsversjon)
 
@@ -48,15 +48,21 @@ E-postmeldingen for tilbudet du vil sende ut, inneholder kundens fornavn, ettern
 
 ## <a name="export-your-target-audience"></a>Eksporter målgruppen
 
+### <a name="configure-a-connection"></a>Konfigurer en tilkobling
+
 Når målgruppen er identifisert, kan vi konfigurere eksporten fra målgruppeinnsikt til en Azure Blob Storage-konto.
 
-1. I Målgruppeinnsikt går du til **Administrasjon** > **Eksportmål**.
+1. I målgruppeinnsikt går du til **Administrator** > **Tilkoblinger**.
 
-1. I flisen **Adobe-kampanje** velger du **Oppsett**.
+1. Velg **Legg til tilkobling**, og velg **Adobe Campaign** for å konfigurere tilkoblingen, eller velg **Konfigurer** i **Adobe Campaign**-flisen
 
    :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Konfigurasjonsflis for Adobe Campaign Standard.":::
 
-1. Angi et **visningsnavn** for dette nye eksportmålet, og angi deretter **kontonavnet**, **kontonøkkelen** og **beholderen** for Azure Blob Storage-kontoen du vil eksportere segmentet til.  
+1. Gi tilkoblingen et gjenkjennelig navn i **Visningsnavn**-feltet. Navnet og tilkoblingstypen beskriver denne tilkoblingen. Vi anbefaler at du velger et navn som forklarer formålet med og målet for tilkoblingen.
+
+1. Velg hvem som kan bruke denne tilkoblingen. Hvis du ikke gjør noe, vil standarden være Administratorer. Hvis du vil ha mer informasjon, se [Tillatelser som kreves for å konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+
+1. Angi **forretningsforbindelsesnavnet**, **forretningsforbindelsesnøkkelen** og **beholderen** for Azure Blob Storage-kontoen du vil eksportere segmentet til.  
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Skjermbilde av konfigurasjonen av lagringskontoen. "::: 
 
@@ -64,7 +70,17 @@ Når målgruppen er identifisert, kan vi konfigurere eksporten fra målgruppeinn
 
    - Hvis du vil lære hvordan du oppretter en beholder, kan du se [Opprette en beholder](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-1. Velg **Neste**.
+1. Velg **Lagre** for å fullføre tilkoblingen.
+
+### <a name="configure-an-export"></a>Konfigurere en eksport
+
+Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denne typen. Hvis du vil ha mer informasjon, se [Tillatelser som kreves for å konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+
+1. Gå til **Data** > **Eksporter**.
+
+1. Velg **Legg til eksport** for å opprette en ny eksport.
+
+1. Velg en tilkobling fra Adobe Campaign-delen i feltet **Tilkobling for eksport**. Hvis du ikke ser dette inndelingsnavnet, er ingen tilkoblinger av denne typen tilgjengelige for deg.
 
 1. Velg segmentet du vil eksportere. I dette eksemplet er det **ChurnProneCustomers**.
 
@@ -83,11 +99,9 @@ Når målgruppen er identifisert, kan vi konfigurere eksporten fra målgruppeinn
 
 1. Velg **Lagre**.
 
-Når du har lagret eksportmålet, finner du det i **Administrator** > **Eksporter** > **Mine eksportmål**.
+Når du har lagret eksportmålet, finner du det i **Data** > **Eksporter**.
 
-:::image type="content" source="media/export-destination-adobe-campaign-standard.png" alt-text="Skjermbilde med listen over eksporter og eksempelsegment uthevet.":::
-
-Du kan nå [eksportere segmentet ved behov](export-destinations.md#export-data-on-demand). Eksporten blir også kjørt med hver [planlagte oppdatering](system.md).
+Du kan nå [eksportere segmentet ved behov](export-destinations.md#run-exports-on-demand). Eksporten blir også kjørt med hver [planlagte oppdatering](system.md).
 
 > [!NOTE]
 > Kontroller at antall oppføringer i det eksporterte segmentet er innenfor den tillatte grensen for Adobe Campaign Standard-lisensen.

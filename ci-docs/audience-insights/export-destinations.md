@@ -1,7 +1,7 @@
 ---
-title: Eksportmål
-description: Eksporter data og administrer eksportmål.
-ms.date: 07/21/2020
+title: Eksportere data fra Customer Insights
+description: Administrer eksporter for å dele data.
+ms.date: 03/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,102 +9,73 @@ ms.topic: conceptual
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5557442983f8c48cd46387009e0060beb6e764bb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 354ce9ef30fe918975d06290430996c84f8bd3f7
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596097"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896155"
 ---
-# <a name="export-destinations-preview-overview"></a>Oversikt over eksportmål (forhåndsversjon)
+# <a name="exports-preview-overview"></a>Oversikt over Eksporter (forhåndsversjon)
 
-Siden **Eksportmål** viser alle stedene du har konfigurert til å eksportere data til. Du kan også legge til nye mål for eksport. I tillegg vises det tilgjengelige alternativer for eksport. Få en rask oversikt og en beskrivelse, og finn ut hva du kan gjøre med hvert utvidelsesalternativ. Eksporter samlede profiler, mål og segmenter til apper som støttes for virksomheten din.
+**Eksporter**-siden viser alle konfigurerte eksporter. Eksporter deler bestemte data med forskjellige programmer. De kan omfatte kundeprofiler eller enheter, skjemaer og tilordningsdetaljer. Hver eksport krever en [tilkobling, konfigurert av en administrator, for å administrere godkjenning og tilgang](connections.md).
 
-Gå til **Admin** > **Eksportmål** for å finne følgende utvidelsesalternativer:
+> [!NOTE]
+> Frem til mars 2021 opprettet eksporter automatisk en tilkobling til den tilsvarende tjenesten. Eksporter krever nå en [tilkobling, opprettet og delt av en administrator](connections.md) før du kan opprette dem.
 
-- [Adobe Campaign Standard](export-adobe-campaign-standard.md)
-- [Adobe Experience Platform](export-adobe-experience-platform.md)
-- [AdRoll](export-adroll.md)
-- [Autopilot](export-autopilot.md)
-- [Azure Blob Storage](export-azure-blob-storage.md)
-- [Azure Data Lake Storage Gen2](export-azure-data-lake-storage-gen2.md)
-- [Robot for Microsoft Teams](export-teams-bot.md)
-- [Customer Insights-API](apis.md)
-- [DotDigital](export-dotdigital.md)
-- [Dynamics 365 Customer Service (kundekorttillegg)](customer-card-add-in.md)
-- [Dynamics 365 Marketing](export-dynamics365-marketing.md)
-- [Dynamics 365 Sales](export-dynamics365-sales.md)
-- [Dynamics 365 Salgssenter (kundekorttillegg)](customer-card-add-in.md)
-- [Facebook-annonseadministrasjon](export-facebook.md)
-- [Google Ads](export-google-ads.md)
-- [LiveRamp&reg;](export-liveramp.md)
-- [Mailchimp](export-mailchimp.md)
-- [Marketo](export-marketo.md)
-- [Power Automate](export-power-automate.md)
-- [Power Apps](export-power-apps.md)
-- [Power BI](export-power-bi.md)
-- [SendGrid](export-sendgrid.md)
-- [SFTP](export-sftp.md)
+Gå til **Data** > **Eksporter** for å vise eksportsiden. Alle brukerroller har tilgang til å vise konfigurerte eksporter. Bruk av søkefeltet på kommandolinjen til å søke etter eksporter etter navn, tilkoblingsnavn eller tilkoblingstype.
 
-## <a name="add-a-new-export-destination"></a>Legge til et nytt eksportmål
+## <a name="set-up-a-new-export"></a>Konfigurer en ny eksport
 
-Hvis du vil legge til eksportmål, må du ha [administratortillatelser](permissions.md). Hvis du eksporterer til Microsoft-tjenester, antas det at begge tjenestene er i samme organisasjon.
+Hvis du vil konfigurere eller redigere en eksport, må du ha tilkoblinger tilgjengelige for deg. Tilkoblinger avhenger av [brukerrollen din](permissions.md):
+- Administratorer har tilgang til alle tilkoblinger. De kan også opprette nye tilkoblinger når de konfigurerer en eksport.
+- Bidragsytere kan ha tilgang til bestemte tilkoblinger. De er avhengig av administratorer for å konfigurere og dele tilkoblinger. Hvis du vil ha mer informasjon, se [Tillate bidragsytere å bruke en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- Visningsprogrammer kan bare vise eksisterende eksporter, men ikke opprette dem.
 
-1. Gå til **Admin** > **Eksporter mål**.
+1. Gå til **Data** > **Eksporter**.
 
-1. Bytt til kategorien **Mine eksportmål**.
+1. Velg **Legg til eksport** for å opprette et nytt eksportmål.
 
-1. Velg **Legg til mål** for å opprette et nytt eksportmål.
+1. Velg hvilken tilkobling som skal brukes, i ruten **Konfigurer eksport**. [Tilkoblinger](connections.md) administreres av administratorer. 
 
-1. I ruten **Legg til mål** velger du **Type** eksportmål i rullegardinlisten.
+1. Oppgi de nødvendige detaljene, og velg **Lagre** for å opprette eksporten.
 
-1. Angi de nødvendige detaljene, og velg deretter **Neste** for å opprette eksportmålet.
-
-Du kan også velge **Konfigurer** på en flis i kategorien **Oppdag**.
-
-## <a name="view-export-destinations"></a>Vise eksportmål
-
-Når du har opprettet eksportmålene, finner du dem i en tabell i kategorien **Mine eksportmål**. Denne tabellen har tre kolonner:
-
-- **Visningsnavn**: Navnet du angav da du opprettet målet.
-- **Type**: Typen eksportmål du angir når du oppretter målet.
-- **Opprettet**: Datoen du opprettet målet.
-
-## <a name="edit-an-export-destination"></a>Redigere et eksportmål
+### <a name="edit-an-export"></a>Rediger en eksport
 
 1. Velg den loddrette ellipsen for eksportmålet du vil redigere.
 
-   > [!div class="mx-imgBorder"]
-   > ![Loddrett ellipse](media/export-destinations-page-ellipsis.png "Loddrett ellipse")
+1. Velg **Rediger** i rullegardinlisten.
 
-1. Velg **Rediger** på rullegardinmenyen.
+1. Endre verdiene du vil oppdatere, og velg **Lagre**.
 
-1. Endre verdiene som krever oppdatering, og velg **Lagre**.
+## <a name="view-exports-and-export-details"></a>Vise eksporter og eksportdetaljer
 
-## <a name="export-data-on-demand"></a>Eksportere data etter behov
+Når du har opprettet eksportmål, vises de i **Data** > **Eksporter**. Alle brukere kan se hvilke data som deles, og den nyeste statusen.
 
-Når du har konfigurert en kobling for et eksportmål, kjøres eksporter med alle [planlagte oppdateringer](system.md#schedule-tab).
+1. Gå til **Data** > **Eksporter**.
 
-Hvis du vil eksportere data uten å vente på en planlagt oppdatering, kan du gå til kategorien **Mine eksportmål** på **Administrator** > **Eksportmål**.
+1. Brukere uten redigeringstillatelser velger **Vis** i stedet for **Rediger** for å se eksportdetaljene.
 
-> [!div class="mx-imgBorder"]
-> ![Loddrett ellipse](media/export-destinations-page-ellipsis.png "Loddrett ellipse")
+1. Denne sideruten viser oppsettet for denne eksporten. Du kan ikke endre verdier uten redigeringstillatelser. Velg **Lukk** for å gå tilbake til eksportsiden.
 
-- Velg **Eksporter** over listen for å kjøre eksporten til alle eksportmålene samtidig.
-- Velg ellipsen (...) etter et listeelement, og velg deretter **Eksporter**-alternativet for å kjøre eksporten for et enkelt eksportmål.
+## <a name="run-exports-on-demand"></a>Kjør eksporter ved behov
 
-## <a name="remove-an-export-destination"></a>Fjerne et eksportmål
+Når du har konfigurert en eksport, kjøres den med alle [planlagte oppdateringer](system.md#schedule-tab) så lenge den har en fungerende tilkobling.
 
-Hvis du vil fjerne et eksportmål, starter du fra hovedsiden for **Eksportmål**.
+Hvis du vil eksportere data uten å vente på en planlagt oppdatering, går du til **Data** > **Eksporter**. Du har to alternativer:
 
-1. Velg den loddrette ellipsen for eksportmålet du vil fjerne.
+- Hvis du vil kjøre alle eksporter, velger du **Kjør alle** på kommandolinjen. 
+- Hvis du vil kjøre én enkelt eksport, velger du ellipsen (...) på et listeelement, og deretter velger du **Kjør**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Loddrett ellipse](media/export-destinations-page-ellipsis.png "Loddrett ellipse")
+## <a name="remove-an-export"></a>Fjerne en eksport
 
-2. Velg **Fjern** fra rullegardinmenyen.
+1. Gå til **Data** > **Eksporter**.
 
-3. Bekreft fjerningen ved å velge **Fjern** i bekreftelsesdialogboksen.
+1. Velg den loddrette ellipsen for eksporten du vil fjerne.
+
+1. Velg **Fjern** fra rullegardinmenyen.
+
+1. Bekreft fjerningen ved å velge **Fjern** i bekreftelsesdialogboksen.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Opprette og behandle miljøer
 description: Lær hvordan du registrerer deg for tjenesten og hvordan du administrerer miljøer.
-ms.date: 02/01/2021
+ms.date: 03/26/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 1c2dfdd2889b5cb6c5285b4d7cc7f52a3d6de4d1
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8cc1401251ed7c45c598bd4a8fb33a9709fabbc8
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598305"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887998"
 ---
 # <a name="manage-environments"></a>Behandle miljøer
 
@@ -44,6 +44,9 @@ Denne artikkelen forklarer hvordan du oppretter en ny organisasjon og hvordan du
 
 Du kan opprette et nytt miljø på to måter. Du kan enten spesifisere en helt ny konfigurasjon, eller du kan kopiere noen konfigurasjonsinnstillinger fra et eksisterende miljø.
 
+> [!NOTE]
+> Organisasjoner kan opprette *to* miljøer for hver Customer Insights-lisens. Hvis organisasjonen din kjøper flere enn én lisens, kan du [kontakte kundestøtteteamet](https://go.microsoft.com/fwlink/?linkid=2079641) for å øke antallet tilgjengelige miljøer. Hvis du vil ha mer informasjon om kapasitet og tilleggskapasitet, kan du laste ned [lisensieringsveiledning for Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544).
+
 Slik oppretter du et miljø:
 
 1. Velg **Miljø**-velgeren i overskriften i appen.
@@ -55,14 +58,14 @@ Slik oppretter du et miljø:
 
 1. I dialogboksen **Opprett nytt miljø** velger du **Nytt miljø**.
 
-   Hvis du vil [kopiere data fra det gjeldende miljøet](#additional-considerations-for-copy-configuration-preview), velger du **Kopier fra eksisterende miljø**. Det vises en liste over alle tilgjengelige miljøer i organisasjonen, der du kan kopiere data fra.
+   Hvis du vil [kopiere data fra det gjeldende miljøet](#considerations-for-copy-configuration-preview), velger du **Kopier fra eksisterende miljø**. Det vises en liste over alle tilgjengelige miljøer i organisasjonen, der du kan kopiere data fra.
 
 1. Angi følgende detaljer:
    - **Navn**: Navnet på dette miljøet. Dette feltet er allerede fylt ut hvis du har kopiert et eksisterende miljø, men du kan endre det.
    - **Område**: Området som servicen er distribuert i, og driftet.
    - **Type**: Velg om du vil opprette et produksjons- eller sandkassemiljø.
 
-2. Du kan eventuelt velge **Avanserte innstillinger**:
+1. Du kan eventuelt velge **Avanserte innstillinger**:
 
    - **Lagre alle data i**: Angir hvor du vil lagre utdataene som er generert av Customer Insights. Du har to alternativer: **Customer Insights-lagring** (en Azure Data Lake administrert av Customer Insights-teamet) og **Azure Data Lake Storage Gen2** (din egen Azure Data Lake Storage). Som standard er det merket av for lagringsalternativet Customer Insights.
 
@@ -75,20 +78,20 @@ Slik oppretter du et miljø:
 
    - For Azure Data Lake Storage Gen2 kan du velge mellom et ressursbasert alternativ og et abonnementsbasert alternativ for godkjenning. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). **Beholder**-navnet kan ikke endres, og det vil være "customerinsights".
    
-   - Hvis du vil bruke [prediksjoner](predictions.md) eller konfigurere datadeling med programmer og løsninger basert på Microsoft Dataverse, må du oppgi URL-adressen for Microsoft Dataverse-miljøet under **Konfigurere datadeling med Microsoft Dataverse og aktivere flere funksjoner**. Velg **Aktiver datadeling** for å dele Customer Insights-utdata med en Microsoft Dataverse-administrert datasjø.
+   - Hvis du vil bruke [prognoser](predictions.md), konfigurere datadeling med programmer og løsninger basert på Microsoft Dataverse, eller aktivere inntak av data fra lokale datakilder, må du oppgi URL-adressen for Microsoft Dataverse-miljøet under **Konfigurere datadeling med Microsoft Dataverse og aktivere flere funksjoner**. Velg **Aktiver datadeling** for å dele Customer Insights-utdata med en Microsoft Dataverse-administrert datasjø.
 
      > [!NOTE]
      > - Det er for øyeblikket ikke støtte for datadeling med Microsoft Dataverse-styrt datasjø når du lagrer alle dataene i din egen Azure Data Lake Storage.
      > - [Prediksjon av manglende miljøer i en enhet](predictions.md) støttes for øyeblikket ikke når du aktiverer datadeling med Microsoft Dataverse-administrert datasjø.
 
      > [!div class="mx-imgBorder"]
-     > ![Konfigurasjonsalternativer for å aktivere datadeling med Microsoft Dataverse](media/Datasharing-with-DataverseMDL.png)
+     > ![Konfigurasjonsalternativer for å aktivere datadeling med Microsoft Dataverse](media/datasharing-with-DataverseMDL.png)
 
    Når du kjører prosesser, for eksempel datainntak eller segmentopprettelse, blir tilsvarende mapper opprettet i lagringskontoen du angav ovenfor. Datafiler og model.json-filer opprettes og legges til i de respektive undermappene basert på prosessen du kjører.
 
    Hvis du oppretter flere miljøer i Customer Insights og velger å lagre enhetene fra disse miljøene i lagringskontoen, blir det opprettet separate mapper for hvert miljø med ci_<environmentid> i beholderen.
 
-### <a name="additional-considerations-for-copy-configuration-preview"></a>Tilleggshensyn for kopieringskonfigurasjon (forhåndsversjon)
+### <a name="considerations-for-copy-configuration-preview"></a>Vurderinger ved kopieringskonfigurasjon (forhåndsvisning)
 
 Følgende konfigurasjonsinnstillinger kopieres:
 
@@ -136,6 +139,18 @@ Du kan redigere noen av detaljene i eksisterende miljøer.
 4. Hvis et miljø er konfigurert til å lagre data i Azure Data Lake Storage Gen2, kan du oppdatere **kontonøkkelen**. Du kan imidlertid ikke endre **Kontonavn** eller **Beholder**-navn.
 
 5. Du kan eventuelt oppdatere fra en tilkobling basert på en kontonøkkel til en ressursbasert eller abonnementsbasert tilkobling. Når du har oppgradert, kan du ikke tilbakestille til kontonøkkelen etter oppdateringen. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). Du kan ikke endre informasjon om en **beholder** når du oppdaterer tilkoblingen.
+
+6. Alternativt kan du angi en URL-adresse for Microsoft Dataverse-miljøet under **Konfigurere datadeling med Microsoft Dataverse og aktivere flere funksjoner**. Disse funksjonene omfatter datadeling med programmer og løsninger basert på Microsoft Dataverse, datainntak fra lokale datakilder, eller bruk av [prediksjoner](predictions.md). Velg **Aktiver datadeling** for å dele Customer Insights-utdata med en Microsoft Dataverse-administrert Data Lake.
+
+   > [!NOTE]
+   > - Det er for øyeblikket ikke støtte for datadeling med Microsoft Dataverse-styrt datasjø når du lagrer alle dataene i din egen Azure Data Lake Storage.
+   > - [Prediksjon av manglende verdier i en enhet](predictions.md) støttes for øyeblikket ikke når du aktiverer datadeling med Microsoft Dataverse-administrert Data Lake.
+
+   Når du aktiverer datadeling med Microsoft Dataverse, utløses en fullstendig oppdatering av datakildene og andre prosesser. Hvis prosesser kjører og står i kø, vises ikke alternativet for å aktivere datadeling med Microsoft Dataverse. Du kan vente til disse prosessene er fullført eller avbrutt for å aktivere datadeling. 
+   
+   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Konfigurasjonsalternativer for å aktivere datadeling med Microsoft Dataverse.":::
+   
+   Når du kjører prosesser, for eksempel datainntak eller segmentopprettelse, blir tilsvarende mapper opprettet i lagringskontoen du angav ovenfor. Datafiler og model.json-filer blir opprettet og lagt til i de respektive undermappene, avhengig av prosessen du kjører.
 
 ## <a name="reset-an-existing-environment"></a>Tilbakestille et eksisterende miljø
 

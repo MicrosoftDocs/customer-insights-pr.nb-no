@@ -1,7 +1,7 @@
 ---
 title: Administrasjon av brukertillatelser
 description: Lær om tillatelser og brukerroller.
-ms.date: 10/27/2020
+ms.date: 03/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e58bb1a3bd4c0920ff984daffabbf16162185f3d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8638489dba908d4504278916d2c28454e3ea9e18
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595714"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760385"
 ---
 # <a name="user-permissions"></a>Brukertillatelser
 
@@ -31,7 +31,7 @@ Det finnes tre typer roller:
 - Vise og utforske siden **Supplering**.
 - Utforsk og eksporter enheter på siden **Enheter**.
 - Vis statusen for systemprosesser ved hjelp av siden **System**.
-- Eksporter segmenter fra **Segmenter**-siden.
+- Vis eksporter på **Eksporter**-siden.
 - Installer og bruk instrumentbordet i **Power BI Customer Insights**.
 
 ## <a name="contributor"></a>Bidragsyter
@@ -43,6 +43,7 @@ Det finnes tre typer roller:
 - Opprett segmenter ved hjelp siden **Segmenter**.
 - Opprett mål ved hjelp siden **Mål**.
 - Administrer konfigurasjon og suppler kundeprofiler fra **Supplering**-siden (bare for førsteparts suppleringer).
+- Administrer og opprett eksporter basert på tilkoblinger delt med bidragsytere. [Lær mer om hvordan administratorer tillater at bidragsytere bruker en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 ## <a name="administrator"></a>Administrator
 
@@ -50,8 +51,9 @@ Det finnes tre typer roller:
 - Endre innstillinger på siden **System**, inkludert arbeidsspråket, og oppdater planer for systemprosessene.
 - Vis og legg til tillatelser ved hjelp av siden **Tillatelser**.
 - Angi søke- og filtreringdefinisjoner for Kunder-siden ved å bruke siden **Søk- og filterindeks** (tilgjengelig via **Kunder**-siden).
-- Definer Dynamics 365 Sales-segmentdestinasjoner ved hjelp av siden **Eksportmål**.
+- Administrer tilkoblinger, og tillat dem for andre brukerroller på **Tilkoblinger**-siden.
 - Administrer konfigurasjon og suppler kundeprofiler fra **Supplering**-siden (for alle suppleringer).
+- Behandle og opprett eksporter på **Eksporter**-siden.
 - Installere og bruk **Tillegg for kundekort**.
 - Legg til og bruk **Power Apps-koblingen**.
 - Aktiver bruk av [API-er for Customer Insights](apis.md).

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: f120e9e3cf8d40d913c7fa6a81fbf9facd045e3c
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597201"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906868"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Transaksjonell frafallsprognose (forhåndsversjon)
 
@@ -46,6 +46,14 @@ Transaksjonsell frafallsprognose bidrar til å forutse om en kunde ikke lenger k
         - **Tidsstempel:** Dato og klokkeslett for hendelsen som er identifisert ved hjelp av primærnøkkelen.
         - **Hendelse:** Navnet på hendelsen du vil bruke. Et felt kalt "Brukerhandling" i en dagligvareforretning kan for eksempel være en kupong som brukes av kunden.
         - **Detaljer:** Detaljert informasjon om hendelsen. Et felt kalt "Kupongverdi" i et dagligvareforretning kan for eksempel være valutaverdien for kupongen.
+- Kjennetegn for foreslåtte data:
+    - Tilstrekkelige historiske data: Transaksjonsdata for minst det dobbelte av det valgte tidsvinduet. Fortrinnsvis to til tre år med abonnementsdata. 
+    - Flere kjøp per kunde: Ideelt minst to transaksjoner per kunde.
+    - Antall kunder: Minst 10 kundeprofiler, helst mer enn 1 000 unike kunder. Modellen vil mislykkes med færre enn 10 kunder og utilstrekkelige historiske data.
+    - Datafullføring: Mindre enn 20 % av manglende verdier i datafeltet for den angitte enheten.
+
+> [!NOTE]
+> For en bedrift med høy kundekjøpsfrekvens (med noen få ukers mellomrom) anbefales det å velge et kortere prediksjonsvindu og frafallsdefinisjon. For lav kjøpsfrekvens (med noen få måneders mellomrom eller en gang i året) velger du en lengre prediksjonsvindu og frafallsdefinisjon.
 
 ## <a name="create-a-transactional-churn-prediction"></a>Opprette en transaksjonell frafallsprognose
 
@@ -129,7 +137,9 @@ Transaksjonsell frafallsprognose bidrar til å forutse om en kunde ikke lenger k
 1. Velg prognosen du vil gå gjennom.
    - **Navn på prediksjon:** Navnet på prediksjonen som ble angitt under opprettingen.
    - **Prediksjontype:** Typen modell som brukes for prediksjonen.
-   - **Utdataenhet:** Navn på enheten for å lagre utdataene fra prediksjonen. Du kan finne en enhet med dette navnet på **Data** > **Enhteter**.
+   - **Utdataenhet:** Navn på enheten for å lagre utdataene fra prediksjonen. Du kan finne en enhet med dette navnet på **Data** > **Enhteter**.    
+     I utdataenheten er *ChurnScore* den anslåtte sannsynligheten for frafall, og *IsChurn* er en binær etikett basert på *ChurnScore* med en terskel på 0,5. Standardterskelen fungerer kanskje ikke for scenariet. [Opprett et nytt segment](segments.md#create-a-new-segment) med din foretrukne terskelverdi.
+     Ikke alle kunder er nødvendigvis aktive kunder. Noen av dem har kanskje ikke hatt noen aktivitet på lenge og anses som frafalt allerede, basert på din frafallsdefinisjon. Det er ikke nyttig å forutsi frafallsrisikoen for kunder som allerede har frafalt, fordi de ikke er målgruppen av interesse.
    - **Forespeilet felt:** Dette feltet fylles bare ut for enkelte typer prediksjoner, og brukes ikke i frafallsprediksjon.
    - **Status:** Statusen for prognosekjøringen.
         - **I kø:** Prognonsen venter på at andre prosesser skal kjøre.

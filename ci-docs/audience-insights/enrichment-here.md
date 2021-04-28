@@ -1,7 +1,7 @@
 ---
 title: Berike med tredjeparts supplering fra HERE Technologies
 description: Generell informasjon om tredjeparts supplering fra HERE Technologies.
-ms.date: 12/10/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 8e8d6bfea4e0df54682501f60759c24c893444af
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 5d1f037377010153045c9255d2d01f98ebf1fdfd
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597753"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896063"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Supplering av kundeprofiler med HERE Technologies (forhåndsversjon)
 
@@ -26,35 +26,54 @@ For å konfigure HERE Technologies-suppleringer må følgende forhåndskrav vær
 
 - Du har et aktivt abonnement på HERE Technologies. Hvis du vil ha et abonnement, kan du [registrere deg her](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) eller [kontakte HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) direkte. [Finn ut mer om lokasjonssupplement fra HERE Technologies.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- Du har API-nøkkelen for HERE Technologies.
+- Det er en HERE [tilkobling](connections.md) tilgjengelig *eller* du har [administrator](permissions.md#administrator)-tillatalser og API-nøkkel for HERE Technologies.
 
-- Du har [administratortillatelser](permissions.md#administrator).
+## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
 
-## <a name="configuration"></a>Konfigurasjon
+1. Gå til **Data** > **Supplering**. 
 
-1. Gå til **Data** > **Supplering**.
-
-1. Velg **Suppler dataene** på HERE Technologies-flisen.
+1. Velg **Suppler dataene** på HERE Technologies-flisen, og velg **Kom i gang**.
 
    > [!div class="mx-imgBorder"]
    > ![HERE Technologies-flis](media/HERE-tile.png "HERE Technologies-flis")
 
-1. Angi en aktiv **API-nøkkel for HERE Technologies**. Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**. 
+1. Velg en [tilkobling](connections.md) fra rullegardinlisten. Kontakt en administrator hvis ingen tilkobling er tilgjengelig. Hvis du er en administrator, kan du opprette en tilkobling ved å velge **Legg til tilkobling**. Velg **HERE Technologies** fra rullegardinlisten. 
 
-1. Bekreft begge inndataene ved å velge **Koble til HERE**.
+1. Velg **Koble til HERE Technologies** for å bekrefte valget.
 
-1.  Velg **Legg til data**, og velg **kundedatasettet** du vil supplere med plasseringsdata fra HERE Technologies. Du kan velge **kundeenheten** for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
+1.  Velg **Neste**, og velg **kundedatasettet** du vil supplere med stedsdata fra HERE Technologies. Du kan velge **kundeenheten** for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
 
     :::image type="content" source="media/enrichment-HERE-configuration-customer-data-set.png" alt-text="Skjermbilde når du velger kundedatasettet.":::
 
-1. Velg om du vil tilordne felter til den primære og/eller sekundære adressen. Du kan angi en felttilordning for begge adressene (for eksempel en privatadresse og en firmaadresse), og du kan supplere profilene hver for seg. Velg **Neste**.
+1. Velg om du vil tilordne felter til den primære og/eller sekundære adressen. Du kan angi en felttilordning for begge adressene og supplere profilene for begge adressene separat. Hvis det for eksempel finnes en hjemme- og en forretningsadresse. Velg **Neste**.
 
 1. Definer hvilke felt fra de enhetlige profilene som skal brukes til å søke etter samsvarende stedsdata fra HERE Technologies. Feltene **Gate/vei 1** og **Postnummer** kreves for den valgte primære og/eller sekundære adressen. Flere felt kan legges til for å oppnå høyere nøyaktighet.
 
    > [!div class="mx-imgBorder"]
    > ![Konfigurasjonsside for HERE Technologies-supplering](media/enrichment-HERE-configuration.png "Konfigurasjonsside for HERE Technologies-supplering")
 
-1. Velg **Bruk** for å fullføre felttilordningen.
+1. Velg **Neste** for å fullføre felttilordningen.
+
+1. Angi et navn for suppleringen. 
+
+1. Velg **Lagre supplering** etter at du har sett gjennom valgene.
+
+## <a name="configure-the-connection-for-here-technologies"></a>Konfigurere tilkoblingen for HERE technologies 
+
+Du må være en administrator for å konfigurere tilkoblinger. Velg **Legg til tilkobling** når du konfigurerer en supplering *eller* gå til **Administrasjon** > **Tilkoblinger** og velg **Konfigurer** i HERE technologies-filen.
+
+1. Skriv inn et navn på tilkoblingen i **Visningsnavn**-boksen.
+
+1. Angi en gyldig API-nøkkel for HERE Technologies.
+
+1. Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**
+
+1. Velg **Bekreft** for å validere konfigurasjonen.
+
+1. Velg **Lagre** etter at verifiseringen er fullført.
+
+> [!div class="mx-imgBorder"]
+   > ![Konfigurasjonsside for HERE technologies-tilkobling](media/enrichment-HERE-connection.png "Konfigurasjonsside for HERE technologies-tilkobling")
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 

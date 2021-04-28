@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til DotDigital
-description: Lær hvordan du konfigurerer tilkoblingen til DotDigital.
-ms.date: 11/14/2020
+description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til DotDigital.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,33 +9,40 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 51a28bdf0de34f0555d8ad7e3d13b2ef8911d417
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 235bcdfa4a7c4c1a382778bd4f66c1a9f5b7beb1
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598029"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5759971"
 ---
-# <a name="connector-for-dotdigital-preview"></a>Kontakt for DotDigital (forhåndsversjon)
+# <a name="export-segment-lists-to-dotdigital-preview"></a>Eksportere segmentlister til DotDigital (forhåndsvisning)
 
 Eksporter segmenter med enhetlige kundeprofiler til DotDigital-adressebøker, og bruk dem for kampanjer, e-postmarkedsføring og til å bygge kundesegmenter med DotDigital. 
 
-## <a name="prerequisites"></a>Forutsetninger
+## <a name="prerequisites-for-a-connection"></a>Forutsetninger for en tilkobling
 
 -   Du har en [DotDigital-konto](https://dotdigital.com/) og tilhørende påloggingsinformasjon for administrator.
 -   Det finnes eksisterende adressebøker i DotDigital og de tilsvarende ID-ene. Du kan finne ID-en i URL-adressen når du velger og åpner en adressebok. Hvis du vil ha mer informasjon, kan du se [DotDigital-adressebøker](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
 -   Du har [konfigurerte segmenter](segments.md) i målgruppeinnsikt.
 -   Enhetlige kundeprofiler i de eksporterte segmentene inneholder et felt som representerer en e-postadresse.
 
-## <a name="connect-to-dotdigital"></a>Koble til DotDigital
+## <a name="known-limitations"></a>Kjente begrensninger
 
-1. Gå til **Admin** > **Eksporter mål**.
+- Opptil 1 million profiler per eksport til DotDigital.
+- Eksport til DotDigital er begrenset til segmenter.
+- Eksport av segmenter med totalt 1 million profiler kan ta opptil tre timer på grunn av begrensninger på leverandørsiden. 
+- Antallet profiler du kan eksportere til DotDigital, er avhengig av og begrenset til kontrakten din med DotDigital.
 
-1. Under **DotDigital** velger du **Oppsett**.
+## <a name="set-up-connection-to-dotdigital"></a>Konfigurere tilkobling til DotDigital
 
-1. Gi eksportmålet et gjenkjennelig navn i **Visningsnavn**-feltet.
+1. Gå til **Administrator** > **Tilkoblinger**.
 
-   :::image type="content" source="media/DotDigital_config.PNG" alt-text="Konfigurasjonsrute for DotDigital-eksport.":::
+1. Velg **Legg til tilkobling**, og velg **DotDigital** for å konfigurere tilkoblingen.
+
+1. Gi tilkoblingen et gjenkjennelig navn i **Visningsnavn**-feltet. Navnet og tilkoblingstypen beskriver denne tilkoblingen. Vi anbefaler at du velger et navn som forklarer formålet med og målet for tilkoblingen.
+
+1. Velg hvem som kan bruke denne tilkoblingen. Hvis du ikke gjør noe, vil standarden være Administratorer. Hvis du vil ha mer informasjon, se [Tillate bidragsytere å bruke en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Angi **brukernavnet og passordet for DotDigital**.
 
@@ -47,9 +54,18 @@ Eksporter segmenter med enhetlige kundeprofiler til DotDigital-adressebøker, og
 
 1. Velg **Legg til deg selv som eksportbruker**, og angi Customer Insights-legitimasjonen din.
 
-1. Velg **Neste** for å konfigurere eksporten.
+1. Velg **Lagre** for å fullføre tilkoblingen. 
 
-## <a name="configure-the-connector"></a>Konfigurere koblingen
+## <a name="configure-an-export"></a>Konfigurere en eksport
+
+Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denne typen. Hvis du vil ha mer informasjon, se [Tillatelser som kreves for å konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+
+1. Gå til **Data** > **Eksporter**.
+
+1. Velg **Legg til mål** for å opprette en ny eksport.
+
+1. Velg en tilkobling fra DotDigital-delen i feltet **Tilkobling for eksport**. Hvis du ikke ser dette inndelingsnavnet, er ingen tilkoblinger av denne typen tilgjengelige for deg.
+
 
 1. I **Datasamsvar**-delen, i feltet **E-post** velger du feltet i den enhetlige kundeprofilen som representerer en kundes e-postadresse. Gjenta de samme trinnene for andre valgfrie felt, for eksempel **Fornavn**, **Etternavn**, **Fullt navn**, **Kjønn** og **Postnummer**.
 
@@ -57,16 +73,12 @@ Eksporter segmenter med enhetlige kundeprofiler til DotDigital-adressebøker, og
 
 1. Velg **Lagre**.
 
-## <a name="export-the-data"></a>Eksportere dataene
+Hvis du lagrer en eksport, kjøres ikke eksporten umiddelbart.
 
-Du kan [eksportere data etter behov](export-destinations.md). Eksporten blir også kjørt med hver [planlagte oppdatering](system.md#schedule-tab). I DotDigital kan du nå finne segmentene i [DotDigital-adressebøker](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
+Eksporten kjører med hver [planlagte oppdatering](system.md#schedule-tab). Du kan også [eksportere data ved behov](export-destinations.md#run-exports-on-demand). 
+ 
+I DotDigital kan du nå finne segmentene i [DotDigital-adressebøker](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
 
-## <a name="known-limitations"></a>Kjente begrensninger
-
-- Opptil 1 million profiler per eksport til DotDigital.
-- Eksport til DotDigital er begrenset til segmenter.
-- Eksport av segmenter med totalt 1 million profiler kan ta opptil tre timer på grunn av begrensninger på leverandørsiden. 
-- Antallet profiler du kan eksportere til DotDigital, er avhengig av og begrenset til kontrakten din med DotDigital.
 
 ## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
 

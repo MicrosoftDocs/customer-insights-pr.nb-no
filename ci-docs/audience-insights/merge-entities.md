@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 737c593353878a5e322488d00de5dc5db5befda9
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 4ad06a0baf57e612fc0e0214dfd23d28e7d2b6be
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597845"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896523"
 ---
 # <a name="merge-entities"></a>Slå sammen enheter
 
@@ -83,7 +83,7 @@ Hvis det ikke var første gang du kjørte en sammenslåing, vil alle nedstrømsp
 
 ## <a name="next-step"></a>Neste trinn
 
-Konfigurer [aktiviteter](activities.md), [supplering](enrichment-microsoft-graph.md) eller [relasjoner](relationships.md) for å få mer informasjon om kundene.
+Konfigurer [aktiviteter](activities.md), [supplering](enrichment-hub.md) eller [relasjoner](relationships.md) for å få mer informasjon om kundene.
 
 Hvis du allerede har konfigurert aktiviteter, suppleringer eller relasjoner, eller hvis du definerte segmenter, blir de automatisk behandlet for å bruke de nyeste kundedataene.
 

@@ -1,7 +1,7 @@
 ---
 title: Supplering med egendefinert SFTP-import
 description: Generell informasjon om supplering med egendefinert SFTP-import.
-ms.date: 11/18/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,44 +9,63 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: d9e095ef793cbd25415864f76a541dce68fafe47
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: a2d450635c19432bdd88db74b61c17febdeb568d
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595867"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896293"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Supplere kundeprofiler med egendefinerte data (forhåndsversjon)
 
-Med egendefinert SFTP-import (Secure File Transfer Protocol) kan du importere data som ikke trenger å gå gjennom dataforening. Det er en fleksibel, sikker og enkel måte å skaffe seg på dataene på. Egendefinert SFTP-import kan brukes i kombinasjon med [SFTP-eksport](export-sftp.md), noe som gjør at du kan eskportere kundeprofildataene som er nødvendig for supplering. Dataene kan deretter behandles og suppleres, og den egendefinerte SFTP-importen kan brukes til å hente de supplerte dataene tilbake til målgruppeinnsikt i Dynamics 365 Customer Insights.
+Egendefinert SFTP-import (Secure File Transfer Protocol) gjør det mulig å importere data som ikke trenger å gå gjennom prosessen med dataforening. Det er en fleksibel, sikker og enkel måte å skaffe seg på dataene på. Egendefinert SFTP-import kan brukes i kombinasjon med [SFTP-eksport](export-sftp.md), noe som gjør at du kan eskportere kundeprofildataene som er nødvendig for supplering. Dataene kan deretter behandles og suppleres, og den egendefinerte SFTP-importen kan brukes til å hente de supplerte dataene tilbake til målgruppeinnsikt i Dynamics 365 Customer Insights.
 
 ## <a name="prerequisites"></a>Forutsetninger
 
 For å konfigure egendefinert SFTP-import må følgende forhåndskrav være oppfylt:
 
-- Du har brukerlegitimasjon (brukernavn og passord) for SFTP-plasseringen der dataene som skal importeres, ligger.
-- Du har URL-adressen og portnummeret (vanligvis 22) for STFP-verten.
-- Du har filnavnet og plasseringen til filen som skal importeres på SFTP-verten.
-- Det finnes en *model.json*-fil som angir skjemaet for dataene som skal importeres. Denne filen må være i samme katalog som filen som skal importeres.
-- Du har [administratortillatelser](permissions.md#administrator).
+- Du har filnavnet og plasseringen (banen) til filen som skal importeres på SFTP-verten.
+- Det finnes en *model.json*-fil som angir [Common Data Model-skjemaet](/common-data-model/) for dataene som skal importeres. Denne filen må være i samme katalog som filen som skal importeres.
+- En SFTP-tilkobling er allerede konfigurert av en *administrator*, eller du har [administrator](permissions.md#administrator)-tillatelser. Du trenger legitimasjonen for brukeren, URL-adressen og portnummeret for SFTP-plasseringen der du vil importere data fra.
 
-## <a name="configuration"></a>Konfigurasjon
+
+## <a name="configure-the-import"></a>Konfigurer importen
 
 1. Gå til **Data** > **Supplering**, og velg **Oppdag**-fanen.
 
-1. På **flisen for egendefinert SFTP-import** velger du **Suppler dataene**.
+1. På **flisen for egendefinert SFTP-import** velger du **Suppler dataene** og deretter **Kom i gang**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Flis for egendefinert SFTP-import](media/SFTP_Custom_Import_tile.png "Flis for egendefinert SFTP-import")
+   :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="Flis for egendefinert SFTP-import.":::
 
-1. Velg **Kom i gang**, og angi legitimasjonen og adressen for SFTP-serveren. Eksempel: sftp://mysftpserver.com:22.
+1. Velg en [tilkobling](connections.md) fra rullegardinlisten. Kontakt en administrator hvis ingen tilkobling er tilgjengelig. Hvis du er en administrator, kan du opprette en tilkobling ved å velge **Legg til tilkobling** og velge **Egendefinert SFTP-import** fra rullegardinlisten.
 
-1. Skriv inn navnet på filen som inneholder dataene, og banen til filen på SFTP-serveren hvis den ikke finnes i rotmappen.
+1. Velg **Koble til egendefinert import** for å bekrefte valget av tilkobling.
 
-1. Bekreft alle inndata ved å velge **Koble til egendefinert import**.
+1.  Velg **Neste**, og skriv inn **filnavnet** og **banen** til datafilen du vil importere.
 
-   > [!div class="mx-imgBorder"]
-   > ![Undermeny for konfigurasjon av egendefinert SFTP-import](media/SFTP_Custom_Import_Configuration_flyout.png "Undermeny for konfigurasjon av egendefinert SFTP-import")
+    :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Skjermbilde når du angir dataplassering.":::
+
+1. Velg **Neste** angi et navn for suppleringen og et navn for utdataenheten. 
+
+1. Velg **Lagre supplering** etter at du har sett gjennom valgene.
+
+## <a name="configure-the-connection-for-sftp-custom-import"></a>Konfigurere tilkoblingen for egendefinert import av SFTP 
+
+Du må være en administrator for å konfigurere tilkoblinger. Velg **Legg til tilkobling** når du konfigurerer en supplering *eller* gå til **Administrasjon** > **Tilkoblinger** og velg **Konfigurer** i Egendefinert import-flisen.
+
+1. Skriv inn et navn på tilkoblingen i **Visningsnavn**-boksen.
+
+1. Skriv inn gyldig brukernavn, passord og verts-URL-adresse for STFP-serveren som dataene som skal importeres, finnes på.
+
+1. Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**.
+
+1. Velg **Bekreft** for å validere konfigurasjonen.
+
+1. Når verifiseringen er fullført, kan tilkoblingen lagres ved å klikke **Lagre**.
+
+> [!div class="mx-imgBorder"]
+   > ![Side for konfigurasjon av Experian-tilkobling](media/enrichment-SFTP-connection.png "Side for konfigurasjon av Experian-tilkobling.")
+
 
 ## <a name="defining-field-mappings"></a>Definere felttilordninger 
 
@@ -105,8 +124,5 @@ Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velg
 ## <a name="next-steps"></a>Neste trinn
 
 Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md) og [mål](measures.md), og [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
-
-
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

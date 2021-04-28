@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 75f5f9f8f56a33b2a43a605595a463ca2e937c6b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595668"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906914"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Forutsigelse av abonnementsfrafall (forhåndsversjon)
 
@@ -49,6 +49,12 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
         - **Tidsstempel:** Dato og klokkeslett for hendelsen som er identifisert ved hjelp av primærnøkkelen.
         - **Hendelse:** Navnet på hendelsen du vil bruke. Et felt kalt "UserAction" i en strømmevideotjeneste kan for eksempel ha verdien "Vist".
         - **Detaljer:** Detaljert informasjon om hendelsen. Et felt kalt "ShowTitle" i en strømmevideotjeneste kan for eksempel ha verdien for en video som kunden har sett på.
+- Kjennetegn for foreslåtte data:
+    - Tilstrekkelige historiske data: Abonnementsdata for minst det dobbelte av det valgte tidsvinduet. Fortrinnsvis to til tre år med abonnementsdata.
+    - Abonnementsstatus: Data inkluderer aktive og inaktive abonnementer for hver kunde, slik at det er flere oppføringer per kunde-ID.
+    - Antall kunder: Minst 10 kundeprofiler, helst mer enn 1 000 unike kunder. Modellen vil mislykkes med færre enn 10 kunder og utilstrekkelige historiske data.
+    - Datafullføring: Mindre enn 20 % av manglende verdier i datafeltet for den angitte enheten.
+   
    > [!NOTE]
    > Du må ha minst to aktivitetsoppføringer for 50 % av kundene du vil beregne frafall for.
 
@@ -67,7 +73,7 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
 ### <a name="define-customer-churn"></a>Definer kundefrafall
 
 1. Angi et antall for **Dager siden abonnement ble avsluttet** som bedriften anser at en kunde er i frafalt tilstand. Denne perioden er vanligvis knyttet til forretningsaktiviteter som tilbud eller andre markedsføringstiltak som prøver å hindre at bedriften mister kunden.
-1. Angi antall **dager å se inn i fremtiden for å forutsi frafall** for å angi et vindu å forutsi frafall for. Hvis du for eksempel vil forutsi risikoen for frafall for kundene dine i løpet av de neste 90 dagene, og justere markedsføringstiltak. Ved å forutse fra risiko for lengre eller kortere tid kan det bli vanskeligere å løse faktorene i en frafallsrisikoprofil, men dette er svært avhengig av de spesifikke forretningskravene. Velg **Neste** for å fortsette
+1. Angi antall **dager å se inn i fremtiden for å forutsi frafall** for å angi et vindu å forutsi frafall for. Hvis du for eksempel vil forutsi risikoen for frafall for kundene dine i løpet av de neste 90 dagene, og justere markedsføringstiltak. Å forutsi frafallsrisiko i lengre eller kortere perioder kan gjøre det vanskeligere å håndtere faktorene i profilen for frafallsrisiko, avhengig av dine spesielle forretningskrav. Velg **Neste** for å fortsette
    >[!TIP]
    > Du kan velge **Lagre og lukk** når som helst for å lagre forutsigelsen som et utkast. Du finner utkastforutsigelsen i **Mine prediksjoner**-fanen for å fortsette.
 
@@ -113,7 +119,8 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
 1. Velg prognosen du vil gå gjennom.
    - **Navn på prediksjon:** Navnet på prediksjonen som ble angitt under opprettingen.
    - **Prediksjonstype:** Typen modell som brukes for prediksjonen.
-   - **Utdataenhet:** Navn på enheten for å lagre utdataene fra prediksjonen. Du kan finne en enhet med dette navnet på **Data** > **Enhteter**.
+   - **Utdataenhet:** Navn på enheten for å lagre utdataene fra prediksjonen. Du kan finne en enhet med dette navnet på **Data** > **Enhteter**.    
+     I utdataenheten er *ChurnScore* den anslåtte sannsynligheten for frafall, og *IsChurn* er en binær etikett basert på *ChurnScore* med en terskel på 0,5. Standardterskelen fungerer kanskje ikke for scenariet. [Opprett et nytt segment](segments.md#create-a-new-segment) med din foretrukne terskelverdi.
    - **Forespeilet felt:** Dette feltet fylles bare ut for enkelte typer prediksjoner, og brukes ikke i forutsigelse av abonnementsfrafall.
    - **Status:** Gjeldende status for prediksjonskjøringen.
         - **I kø:** Forutsigelsen venter på at andre prosesser kjøres.

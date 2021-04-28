@@ -9,12 +9,12 @@ author: mukeshpo
 ms.author: mukeshpo
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 14ebff30d3ec7fc52dca6f86136309a3f454fa27
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 9a4cb77bb4c6ef0d88b3f00802f66baab5520a07
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597477"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896431"
 ---
 # <a name="integrate-web-data-from-engagement-insights-with-audience-insights"></a>Integrere nettdata fra engasjementsinnsikt med målgruppeinnsikt
 
@@ -46,7 +46,7 @@ Vurderinger ved oppretting av begrensede hendelser:
     - Signal.Action.Name – angir aktivitetsdetaljene
     - Signal.User.Id – brukes til å tilordne med kunde-ID-en
     - Signal.View.Uri – brukes som en nettadresse som grunnlag for segmenter eller tiltak
-    - Signal.Export.Id – brukes som primærnøkkel for hendelser <!-- system generated, do we need to list?-->
+    - Signal.Export.Id – brukes som primærnøkkel for hendelser
     - Signal.Timestamp – for å bestemme datoen og klokkeslettet for aktiviteten
 
 Velg filtrene for å fokusere på hendelser og sider som er viktige for ditt bruksområde. I dette eksemplet bruker vi handlingsnavnet E-postkampanje.

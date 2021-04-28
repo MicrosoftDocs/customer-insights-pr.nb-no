@@ -1,7 +1,7 @@
 ---
 title: Supplere enhetlige kundeprofiler
 description: Bruk funksjoner for å supplere kundedataene.
-ms.date: 11/02/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 36e6f7f8fcd64fc2591e913910918b83bf27567b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 10c338b89a6f9971912d05986c105cba1221b01b
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597707"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896017"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
 
@@ -27,8 +27,8 @@ Du må ha tillatelse som bidragsyter eller administrator for å opprette eller r
 
 I kategorien **Oppdag** finner du følgende suppleringer:
 
-- [Merker](enrichment-microsoft-graph.md) formidlet av Microsoft Graph
-- [Interesser](enrichment-microsoft-graph.md) formidlet av Microsoft Graph
+- [Merker](enrichment-microsoft.md) levert av Microsoft
+- [Interesser](enrichment-microsoft.md) levert av Microsoft
 - [Firmadata](enrichment-leadspace.md) levert av Leadspace
 - [Demografi](enrichment-experian.md) levert av Experian
 - [Stedsdata](enrichment-here.md) levert av HERE Technologies
@@ -40,7 +40,7 @@ I kategorien **Mine suppleringer** kan du se de suppleringene du har konfigurert
 
 Gå til **Mine suppleringer** for å se alle konfigurerte suppleringer. Hvert supplering vises som en rad som inneholder tilleggsinformasjon om suppleringen.
 
-Velg en supplering for å vise de tilgjengelige alternativene. Du kan også velge en ellipse (...) for et listeelement for å vise alternativene.
+Velg en supplering for å vise de tilgjengelige alternativene. Du kan også velge ellipsen (...) i et listeelement for å vise alternativene.
 
 :::image type="content" source="media/enrichment-hub-options-run.png" alt-text="Alternativer for å behandle suppleringer i listen over suppleringer":::
 
@@ -52,5 +52,12 @@ Velg en supplering for å vise de tilgjengelige alternativene. Du kan også velg
 
 Du kan kjøre eller deaktivere flere supplementer samtidig ved å velge dem i listen. Alternativer for visning og redigering er ikke tilgjengelige som massehandling og fungerer bare for én supplering om gangen.
 
+## <a name="enrichments-and-connections"></a>Suppleringer og tilkoblinger
+
+Tredjeparts suppleringer konfigureres ved hjelp av [tilkoblinger](connections.md), som en administrator konfigurerer med legitimasjon og gir samtykketil dataoverføringer. Tilkoblingen kan brukes av administratorer og bidragsytere til å konfigurere suppleringer.  
+
+## <a name="multiple-enrichments-of-the-same-type"></a>Flere suppleringer av samme type
+
+Enheten som skal suppleres, angis under suppleringskonfigurasjonen, noe som gjør at du bare kan supplere et delsett av profilene. For eksempel supplerer du bare data for et bestemt segment. Du kan konfigurere flere suppleringer av samme type og bruke samme tilkobling på nytt. Noen suppleringer vil ha begrensninger på antall suppleringer av samme type som kan opprettes. Du kan se grensene og gjeldende bruk på **Supplering**-siden.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

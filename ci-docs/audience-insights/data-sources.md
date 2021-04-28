@@ -1,7 +1,7 @@
 ---
 title: Bruke datakildene til å ta inn data
 description: Lær hvordan du importerer data fra ulike kilder.
-ms.date: 11/03/2020
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 780dc61a82d6ed9856a37dc8f164fa946d982bbe
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 0fc13d3ac0a5176637b6fe481dabe0b2aec11649
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595959"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887906"
 ---
 # <a name="data-sources-overview"></a>Oversikt over datakilder
 
@@ -32,8 +32,15 @@ Du kan legge til en datakilde på tre hovedmåter:
 - [Fra en mappe i Common Data Model](connect-common-data-model.md)
 - [Fra din egen Common Data Service-datasjø](connect-common-data-service-lake.md)
 
-> [!NOTE]
-> Du kan ikke legge til data fra lokale datakilder ennå.
+## <a name="add-data-from-on-premises-data-sources"></a>Legge til data fra lokale datakilder
+
+Inntak av data fra lokale datakilder i Målgruppeinnsikt støttes basert på Power Platform-dataflyter. Dataflyter kan aktiveres i Customer Insights ved å [angi Microsoft Dataverse-URL-adressen for miljøet](manage-environments.md#create-an-environment-in-an-existing-organization) under konfigurasjon av miljøet.
+
+Datakilder som opprettes etter at et miljø er knyttet til et Dataverse-miljø med Customer Insights, bruker [Power Platform-dataflyter](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflyter støtter tilkobling på stedet ved hjelp av datagatewayene. Fjern og opprett på nytt datakilder som eksisterte før et Dataverse-miljø ble knyttet til, for å bruke lokale datagatewayer.
+
+Datagatewayer fra et eksisterende Power BI- eller Power Apps-miljø vil være synlige og kan brukes på nytt i Customer Insights. Datakildesiden viser koblinger til å gå til Power Platform-miljøet der du kan vise og konfigurere lokale datagatewayer.
+
+:::image type="content" source="media/data-sources-onpremises-gateways.png" alt-text="Skjermbilde av datakildesiden som viser koblinger som peker til Power Platform-miljøet.":::
 
 ## <a name="review-ingested-data"></a>Se gjennom integrerte data
 
@@ -65,7 +72,7 @@ Følg denne fremgangsmåten for å oppdatere en datakilde ved behov:
 
 2. Velg den loddrette ellipsen ved siden av datakilden du vil oppdatere, og velg **Oppdater** fra rullegardinlisten.
 
-3. Datakilden utløses nå for manuell oppdatering. Når du oppdaterer en datakilde, oppdateres både enhetsskjemaet og dataene for alle enhetene som er angitt i datakilden.
+3. Datakilden utløses nå for manuell oppdatering. Oppdatering av en datakilde vil oppdatere både enhetsskjemaet og dataene for alle enhetene som er angitt i datakilden.
 
 4. Velg **Stopp oppdatering** hvis du vil avbryte en eksisterende oppdatering, og datakilden tilbakestilles til den siste oppdateringsstatusen.
 

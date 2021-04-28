@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: d6a9e7872a488b6d68afce35b547f93cc4a7c652
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596879"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896339"
 ---
 # <a name="customer-profiles"></a>Kundeprofiler
 
@@ -59,7 +59,7 @@ Kundedetaljene inkluderer:
 
 -   **Kundeprofilflis:** Denne flisen viser de forskjellige verdiene fra den enhetlige kundeprofilenheten. Disse detaljene kan omfatte e-postadresse, navn, poststed og så videre. 
 
--   **Potensielle interesser, potensielle merker:** Viser om du har konfigurert en førsteparts supplering. Det representerer potensielle interesser og tiltrekning for merker en kunde med en profil som ligner på denne kunden, kan ha. Hvis du vil ha mer informasjon, kan du se [Supplere kundeprofiler med merke- og interesseaffiniteter](enrichment-microsoft-graph.md).
+-   **Potensielle interesser, potensielle merker:** Viser om du har konfigurert en førsteparts supplering. Det representerer potensielle interesser og tiltrekning for merker en kunde med en profil som ligner på denne kunden, kan ha. Hvis du vil ha mer informasjon, kan du se [Supplere kundeprofiler med merke- og interesseaffiniteter](enrichment-microsoft.md).
 
 -   **Mål:** Viser om du har konfigurert ett eller flere mål for en bestemt type: kundeattributtmål. De inkluderer beregnede KPI-er rundt kundene på det enkelte kundenivået. Hvis du vil ha mer informasjon, kan du se [Definere og behandle mål](measures.md).
 

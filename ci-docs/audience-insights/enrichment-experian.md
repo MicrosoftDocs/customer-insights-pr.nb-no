@@ -1,7 +1,7 @@
 ---
 title: Berike med tredjeparts supplering fra Experian
 description: Generell informasjon om tredjeparts supplering fra Experian.
-ms.date: 12/10/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 4d4723e8f793ee857c4f5204a42be8338c71d4c3
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 9cf2a7fa18ecc022ea67f6829f52381ad59f3172
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597799"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896385"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Supplere kundeprofiler med demografidata fra Experian (forhåndsversjon)
 
@@ -25,10 +25,10 @@ Experian er en global leder innen forbruker- og forretningskredittrapportering o
 For å konfigurere Experian må følgende forutsetninger være oppfylt:
 
 - Du har et aktivt Experian-abonnement. Hvis du vil ha et abonnement, [kontakter du Experian](https://www.experian.com/marketing-services/contact) direkte. [Finn ut mer om Experian-datasupplering](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
-- Du har bruker-ID, part-ID og modellnummer for SSH-aktivert ST-konto (Secure Transport) som Experian opprettet for deg.
-- Du har [administratortillatelser](permissions.md#administrator) tillatelser i målgruppeinnsikt.
 
-## <a name="configuration"></a>Konfigurasjon
+- En Experian-tilkobling er allerede konfigurert av en *administrator*, eller du har [administrator](permissions.md#administrator)-tillatelser. Du må også ha bruker-ID-en, parts-ID-en og modellnummeret for den SSH-aktiverte ST-kontoen (Secure Transport) som Experian opprettet for deg.
+
+## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
 
 1. Gå til **Data** > **Supplering**, og velg **Oppdag**-fanen.
 
@@ -36,26 +36,46 @@ For å konfigurere Experian må følgende forutsetninger være oppfylt:
 
    > [!div class="mx-imgBorder"]
    > ![Experian-flis](media/experian-tile.png "Experian-flis")
+   > 
 
-1. Velg **Start**, og angi bruker-ID, part-ID og modellnummer for Experian Secure Transport-kontoen. Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**. Bekreft alle inndata ved å velge **Bruk**.
+1. Velg en [tilkobling](connections.md) fra rullegardinlisten. Kontakt en administrator hvis ingen tilkobling er tilgjengelig. Hvis du er en administrator, kan du opprette en tilkobling ved å velge **Legg til tilkobling** og velge Experian fra rullegardinlisten. 
 
-## <a name="map-your-fields"></a>Tilordne feltene
+1. Velg **Koble til Experian** for å bekrefte valget av tilkobling.
 
-1.  Velg **Legg til data**, og velg **kundedatasettet** du vil supplere med demografiske data fra Experian. Du kan velge **kundeenheten** for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
+1.  Velg **Neste**, og velg **kundedatasettet** du vil supplere med demografiske data fra Experian. Du kan velge **kundeenheten** for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
 
-1. Velg nøkkelidentifikatorene fra **Navn og Adresse**, **E-post** eller **Telefon** for å sende til Experian for identitetsløsning.
+    :::image type="content" source="media/enrichment-Experian-configuration-customer-data-set.png" alt-text="Skjermbilde når du velger kundedatasettet.":::
 
-   > [!TIP]
-   > Flere nøkkel-ID-attributter som sendes til Experian, vil sannsynligvis gi en høyere samsvarsrate.
+1. Velg **Neste** og definer hvilken type felt fra de enhetlige profilene som skal brukes til å lete etter samsvarende demografiske data fra Experian. Minst ett av feltene **Navn og adresse**, **Telefon** eller **E-post** er obligatorisk. Hvis du vil ha høyere nøyaktighet for treff, kan du legge til opptil to andre felt. Dette valget påvirker tilordningsfeltene du har tilgang til i neste trinn.
 
-1. Velg **Neste**, og tilordne de tilsvarende attributtene fra den enhetlige kundeenheten for de valgte nøkkel-ID-feltene.
+    > [!TIP]
+    > Flere nøkkel-ID-attributter som sendes til Experian, vil sannsynligvis gi en høyere samsvarsrate.
 
-1. Velg **Legg til attributt** for å tilordne eventuelle tilleggsattributter du ønsker å sende til Experian.
+1. Velg **Neste** for å starte felttilordningen.
 
-1.  Velg **Lagre** for å fullføre felttilordningen.
+1. Definer hvilke felt fra de enhetlige profilene som skal brukes til å lete etter samsvarende demografiske data fra Experian. Obligatoriske felt er merket.
 
-    > [!div class="mx-imgBorder"]
-    > ![Experian-felttilordning](media/experian-field-mapping.png "Experian-felttilordning")
+1. Angi et navn for suppleringen og et navn for utdataenheten.
+
+1. Velg **Lagre supplering** etter at du har sett gjennom valgene.
+
+## <a name="configure-the-connection-for-experian"></a>Konfigurere tilkoblingen for Experian 
+
+Du må være en administrator for å konfigurere tilkoblinger. Velg **Legg til tilkobling** når du konfigurerer en supplering *eller* gå til **Administrasjon** > **Tilkoblinger** og velg **Konfigurer** i Experian-filen.
+
+1. Velg **Komme i gang**.
+
+1. Skriv inn et navn på tilkoblingen i **Visningsnavn**-boksen.
+
+1. Angi gyldig bruker-ID, parts-ID og modellnummer for Secure Transport-kontoen for Experian.
+
+1. Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**
+
+1. Velg **Bekreft** for å validere konfigurasjonen.
+
+1. Velg **Lagre** etter at verifiseringen er fullført.
+   
+   :::image type="content" source="media/enrichment-Experian-connection.png" alt-text="Rute for konfigurasjon av Experian-tilkobling.":::
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 

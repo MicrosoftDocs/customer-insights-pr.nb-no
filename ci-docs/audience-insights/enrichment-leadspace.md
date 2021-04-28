@@ -1,7 +1,7 @@
 ---
 title: Supplering av firmaprofiler med tredjeparts supplering fra Leadspace
 description: Generell informasjon om tredjeparts supplering fra Leadspace.
-ms.date: 11/24/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,46 +9,67 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 41c56aece043c2d7658fd2655713e1e98775edec
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: ccf4f661ecffb281556a4545b1f26ee809c697cd
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597661"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5895925"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Supplering av firmaprofiler med Leadspace (forhåndsversjon)
 
-Leadspace er et datavitenskapsfirma som tilbyr en B2B-kundedataplattform. Den gjør det mulig for kunder med enhetlige kundeprofiler for selskaper å berike dataene sine. Suppleringer omfatter ekstra attributter, for eksempel selskapsstørrelse, sted, bransje og mer.
+Leadspace er et datavitenskapsfirma som tilbyr en B2B-kundedataplattform. Den gjør det mulig for kunder med enhetlige kundeprofiler for selskaper å berike dataene sine. Suppleringer inkluderer flere attributter, for eksempel firmastørrelse, sted, bransje og mer.
 
 ## <a name="prerequisites"></a>Forutsetninger
 
 Følgende forutsetninger må være oppfylt for at du skal kunne konfigurere Leadspace:
 
-- Du har en aktiv Leadspace-lisens og en "permanent nøkkel" (henvist til som **Leadspace-token**). Kontakt [Leadspace](https://www.leadspace.com/products/leadspace-on-demand/) direkte for detaljer om produktet.
-- Du har [administratortillatelser](permissions.md#administrator).
+- Du har en aktiv Leadspace-lisens.
 - Du har [enhetlige kundeprofiler](customer-profiles.md) for selskaper.
+- En Leadspace-tilkobling er allerede konfigurert av en administrator, eller du har [administrator](permissions.md#administrator)-tillatelser og den "permanente nøkkelen" (kalt **Leadspace-token**). Kontakt [Leadspace](https://www.leadspace.com/products/leadspace-on-demand/) direkte hvis du vil ha mer informasjon om produktet.
 
-## <a name="configuration"></a>Konfigurasjon
+## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
 
 1. I Målgruppeinnsikt går du til **Data** > **Supplering**.
 
-1. Velg **Suppler dataene** på Leadspace-flisen.
+1. Velg **Suppler dataene** på Leadspace-flisen, og velg **Kom i gang**.
 
    :::image type="content" source="media/leadspace-tile.png" alt-text="Skjermbilde av Leadspace-flisen.":::
 
-1. Velg **Kom i gang**, og angi deretter et aktivt **Leadspace-token** (permanent nøkkel). Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**. Bekreft begge inndataene ved å velge **Koble til Leadspace**.
+1. Velg en [tilkobling](connections.md) fra rullegardinlisten. Kontakt en administrator hvis ingen tilkobling er tilgjengelig. Hvis du er en administrator, kan du opprette en tilkobling ved å velge **Legg til tilkobling** og deretter **Leadspace**. 
 
-1. Velg **Tilordne data**, og velg datasettet du vil supplere med selskapsdata fra Leadspace. Du kan velge *kundeenheten* for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
+1. Velg **Koble til Leadspace** for å bekrefte tilkoblingen.
 
-   :::image type="content" source="media/enrichment-leadspace-select-segment.png" alt-text="Velg mellom kundeprofil og segmentsupplering.":::
+1. Velg **Neste**, og velg **kundedatasettet** du vil supplere med firmadata fra Leadspace. Du kan velge **kundeenheten** for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
 
-1. Klikk på **Neste**, og definer hvilke felt fra de enhetlige profilene som skal brukes til å søke etter samsvarende firmadata fra Leadspace. Feltet **Navn på selskap** feltet er obligatorisk. For høyere nøyaktighet kan opptil to andre felter, **Selskapets nettsted** og **Selskapssted**, legges til.
+    :::image type="content" source="media/enrichment-Leadspace-configuration-customer-data-set.png" alt-text="Skjermbilde når du velger kundedatasettet.":::
+
+1. Velg **Neste** og definer hvilken type felt fra de enhetlige profilene som skal brukes til å lete etter samsvarende firmadata fra Leadspace. Feltet **Navn på selskap** feltet er obligatorisk. For høyere nøyaktighet kan opptil to andre felter, **Selskapets nettsted** og **Selskapssted**, legges til.
 
    :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Tilordningsrute i Leadspace-felt.":::
-   
-1. Velg **Bruk** for å fullføre felttilordningen.
 
-1. Velg **Kjør** for å supplere firmaprofilene. Hvor lang tid en supplering tar, avhenger av antallet enhetlige kundeprofiler.
+1. Velg **Neste** for å fullføre felttilordningen.
+
+1. Angi et navn for suppleringen, og velg **Lagre supplering** etter at du har sett gjennom valgene.
+
+
+## <a name="configure-the-connection-for-leadspace"></a>Konfigurere tilkoblingen for Leadspace 
+
+Du må være en administrator for å konfigurere tilkoblinger. Velg **Legg til tilkobling** når du konfigurerer en supplering *eller* gå til **Administrasjon** > **Tilkoblinger** og velg **Konfigurer** i Leadspace-flisen.
+
+1. Velg **Kom i gang** 
+
+1. Skriv inn et navn på tilkoblingen i **Visningsnavn**-boksen.
+
+1. Angi et gyldig Leadspace-token.
+
+1. Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**
+
+1. Velg **Bekreft** for å validere konfigurasjonen.
+
+1. Velg **Lagre** etter at verifiseringen er fullført.
+   
+   :::image type="content" source="media/enrichment-Leadspace-connection.png" alt-text="Konfigurasjonsside for Leadspace-tilkobling.":::
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 
