@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 9a94a32a04f2a8beb661c27271fe96f23d998722
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 402e5ef3515bce0e6f56788781b7bd909738aaa6
+ms.sourcegitcommit: b833e333745d321edeaf96d3ed14458cbce02ff1
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887952"
+ms.lasthandoff: 05/17/2021
+ms.locfileid: "6049262"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere mål
 
@@ -34,7 +34,7 @@ Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan by
 
 1. Velg **Rediger navn**, og angi et **navn** for målet. 
    > [!NOTE]
-   > Hvis den nye målkonfigurasjonen bare har to felter, for eksempel CustomerID og en beregning, blir utdataene lagt til som en ny kolonne i den systemgenererte enheten kalt Customer_Measure. Du kan også se målets verdi i den enhetlige kundeprofilen. Andre tiltak vil generere sine egne enheter.
+   > Hvis den nye målkonfigurasjonen bare har to felter, for eksempel Kunde-ID og én beregning, legges utdataene til som en ny kolonne i den systemgenererte enheten Customer_Measure. Du kan også se målets verdi i den enhetlige kundeprofilen. Andre tiltak vil generere sine egne enheter.
 
 1. Velg sammensettingsfunksjonen fra rullegardinlisten **Velg funksjon** i konfigurasjonsområdet. Aggregasjonsfunksjonene omfatter: 
    - **Sum**

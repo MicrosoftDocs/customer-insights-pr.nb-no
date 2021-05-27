@@ -1,7 +1,7 @@
 ---
 title: Arbeide med APIer
 description: Bruk API-er og forstå begrensninger.
-ms.date: 03/10/2021
+ms.date: 05/10/2021
 ms.reviewer: wimohabb
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 59161456914df84d7e72402ed1f5faf70a5119ba
-ms.sourcegitcommit: a39e00a50ad3eda820fd756c5611081f0ca04662
+ms.openlocfilehash: 4d41d7d328dfa6699b5f5e992d3a5bf3179490d8
+ms.sourcegitcommit: 33a8e21b3bf6521bdb8346f81f79fce88091ddfd
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "5873674"
+ms.lasthandoff: 05/10/2021
+ms.locfileid: "6016632"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbeide med API-er for Customer Insights
 
@@ -90,19 +90,13 @@ Hvis du vil ha informasjon om hvordan du bruker API-ene i klientbibliotekene, ka
 
 1. Gå til **API-tillatelser** i appregistreringen i Azure Portal.
 
-1. Velg **Legg til en tillatelse**, og velg **Customer Insights** i sideruten.
+1. Velg **Legg til en tillatelse**. 
+
+1. Velg fanen **API-ene organisasjonen** bruker, og velg deretter **Dynamics 365 AI for Customer Insights** fra listen. 
 
 1. For **Tillatelsestype** velger du **Apptillatelser** og velger deretter tillatelsen **CustomerInsights.Api.All**.
 
 1. Velg **Legg til tillatelser**.
-
-1. Du må legge til en tjenestekontohaver for at du skal kunne gi administratorsamtykke for denne apptillatelsen.
-
-   1. Installer Azure Active Directory (AD) PowerShell-modulen: `Install-Module -Name AzureAD -AllowClobber -Scope AllUsers`
-   1. Koble til AD-kontoen: `Connect-AzureAD -TenantId <your tenant id>`. Du finner leier-ID-en din under **Oversikt** > **Azure Active Directory**.
-   1. Kjør følgende kommando for å legge til en Azure AD-tjenestekontohaver: `New-AzureADServicePrincipal -AppId "38c77d00-5fcb-4cce-9d93-af4738258e3c" -DisplayName "Microsoft Dynamics 365 Customer Insights"`. AppId-parameteren gjelder for API-appen for Customer Insights.
-
-   :::image type="content" source="media/azureAD-service-principal.png" alt-text="Eksempel på tjenestekontohaver":::
 
 1. Gå tilbake til **API-tillatelser** for appregistreringen.
 

@@ -1,7 +1,7 @@
 ---
 title: Slå sammen enheter i dataforening
 description: Slå sammen enheter for å opprette enhetlige kundeprofiler.
-ms.date: 04/16/2020
+ms.date: 05/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,61 +9,100 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4ad06a0baf57e612fc0e0214dfd23d28e7d2b6be
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 2cab702509596dd87c0c9b9769d1af8ba8387f9d
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896523"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085588"
 ---
 # <a name="merge-entities"></a>Slå sammen enheter
 
 Sammenslåingsfasen er den siste fasen i datasamlingsprosessen. Formålet er avstemming av data er i konflikt. Eksempler på motstridende data kan omfatte et kundenavn som finnes i to av datasettene, men som vises litt ulikt i hvert sett ("Kari Nordmann" kontra "Kari Nordman"), eller et telefonnummer som er forskjellig i format (617-803-091X kontra 617803091X). Sammenslåing av de motstridende datapunktene utføres på attributtbasis.
 
+:::image type="content" source="media/merge-fields-page.png" alt-text="Slå sammen-siden i dataforeningsprosessen som viser tabell med sammenslåtte felter som definerer den enhetlige kundeprofilen.":::
+
 Når du har fullført [samsvarsfasen](match-entities.md), kan du starte sammenslåingsfasen ved å velge flisen **Flett** på siden **Samle**.
 
 ## <a name="review-system-recommendations"></a>Gå gjennom systemanbefalinger
 
-På siden **Flett** velger og utelater du attributter som skal slås sammen i den enhetlige kundeprofilenheten (resultatet av konfigurasjonsprosessen). Noen attributter blir automatisk slått sammen av systemet.
+I **Data** > **Samle** > **Slå sammen** velger og utelater du attributter som skal slås sammen inn i enheten for enhetlig kundeprofil. Den enhetlige kundeprofilen er et resultat av dataforeningsprosessen. Noen attributter blir automatisk slått sammen av systemet.
 
-### <a name="view-merged-attributes"></a>Vise sammenslåtte attributter
+Hvis du vil vise attributtene som er inkludert i ett av de automatisk sammenslåtte attributtene, velger du det sammenslåtte attributtet i fanen **Kundefelter** i tabellen. Attributtene som utgjør det sammenslåtte attributtet, vises i to nye rader under det flettede attributtet.
 
-Hvis du vil vise attributtene som er inkludert i et av de automatisk sammenslåtte attributtene, velger du det sammenslåtte attributtet. De to attributtene som utgjør det flettede attributtet, vises i to nye rader under det flettede attributtet.
+## <a name="separate-rename-exclude-and-edit-merged-fields"></a>Del opp, gi nytt navn til, utelat og rediger sammenslåtte felter
 
-> [!div class="mx-imgBorder"]
-> ![Velg sammenslått attributt](media/configure-data-merge-profile-attributes.png "Velge sammenslått attributt")
+Du kan endre hvordan systemet behandler sammenslåtte attributter for å generere den enhetlige kundeprofilen. Velg **Vis mer** og velg hva du vil endre.
 
-### <a name="separate-merged-attributes"></a>Separat sammenslåtte attributter
+:::image type="content" source="media/manage-merged-attributes.png" alt-text="Alternativer i rullegardinlisten Vis mer for å behandle sammenslåtte attributter.":::
 
-Hvis du vil skille eller fjerne sammenslåingen av noen av de automatisk flettede attributtene, kan du finne attributtet i tabellen **Profilattributter**.
+Se følgende deler hvis du vil ha mer informasjon.
 
-1. Merk elliseknappen (...).
+## <a name="separate-merged-fields"></a>Del sammenslåtte felter
+
+Du skiller sammenslåtte felter ved å finne attributtet i tabellen. Delte felter vises som individuelle datapunkter i den enhetlige kundeprofilen. 
+
+1. Velg det sammenslåtte feltet.
   
-2. Velg **Separate felt** i rullegardinlisten.
+1. Velg **Vis mer** og velg **Del felter**.
+ 
+1. Bekreft delingen.
 
-### <a name="remove-merged-attributes"></a>Fjerne sammenslåtte attributter
+1. Velg **Lagre** og **Kjør** for å behandle endringene.
 
-Hvis du vil utelate et attributt fra den endelige kundeprofilenheten, finner du det i tabellen **Profilattributter**.
+## <a name="rename-merged-fields"></a>Gi nytt navn til sammenslåtte felter
 
-1. Merk elliseknappen (...).
+Endre visningsnavnet for sammenslåtte attributter. Du kan ikke endre navnet på utdataenheten.
+
+1. Velg det sammenslåtte feltet.
   
-2. Velg **Ikke slå sammen** i rullegardinlisten.
+1. Velg **Vis mer** og velg **Gi nytt navn**.
 
-   Attributtet flyttes til delen **Fjernet fra kundeoppføring**.
+1. Bekreft det endrede visningsnavnet. 
 
-## <a name="manually-add-a-merged-attribute"></a>Legge til et flettet attributt manuelt
+1. Velg **Lagre** og **Kjør** for å behandle endringene.
 
-Hvis du vil legge til et flettet attributt, går du til siden **Slå sammen**.
+## <a name="exclude-merged-fields"></a>Utelatt sammenslåtte felter
 
-1. Velg **Legg til sammenslått attributt**.
+Utelat et attributt fra den enhetlige kundeprofilen. Hvis feltet brukes i andre prosesser, for eksempel i et segment, fjerner du det fra disse prosessene før du utelater det fra kundeprofilen. 
 
-2. Angi et **Navn** for å identifisere det på siden **Slå sammen** senere.
+1. Velg det sammenslåtte feltet.
+  
+1. Velg **Vis mer** og velg **Utelat**.
 
-3. Du kan eventuelt angi et **Visningsnavn** som skal vises i den enhetlige kundeprofilenheten.
+1. Bekreft utelatelsen.
 
-4. Konfigurer **Velg duplikatattributter** for å velge attributtene du vil slå sammen, fra de samsvarende enhetene. Du kan også søke etter attributter.
+1. Velg **Lagre** og **Kjør** for å behandle endringene. 
 
-5. Angi **Ranger etter viktighet** for å prioritere ett attributt over de andre. Hvis for eksempel enheten *WebAccountCSV* inneholder de mest nøyaktige dataene om attributtet *Fullt navn*, kan du prioritere denne enheten over *ContactCSV* ved å velge *WebAccountCSV*. Som et resultat flytter *WebAccountCSV* til førsteprioritet, mens *ContactCSV* flytter til andreprioritet når det hentes verdier for attributet *Fullt navn*.
+Velg **Utelatte felter** på **Slå sammen**-siden for å vise listen over alle utelatte felter. I denne ruten kan du legge til utelatte felter på nytt.
+
+## <a name="manually-combine-fields"></a>Kombiner felter manuelt
+
+Angi et sammenslått attributt manuelt. 
+
+1. Velg **Kombiner felter** på **Slå sammen**-siden.
+
+1. Angi et **navn** og et **navn på utdatafelt**.
+
+1. Veg et felt du vil legge til. Velg **Legg til felter** for å kombinere flere felter.
+
+1. Bekreft utelatelsen.
+
+1. Velg **Lagre** og **Kjør** for å behandle endringene. 
+
+## <a name="change-the-order-of-fields"></a>Endre rekkefølgen på feltene
+
+Noen enheter inneholder flere detaljer enn andre. Hvis en enhet inneholder de nyeste dataene om et felt, kan du prioritere det over andre enheter ved å slå sammen verdier.
+
+1. Velg det sammenslåtte feltet.
+  
+1. Velg **Vis mer** og velg **Rediger**.
+
+1. Velg **Flytt opp/ned** i **Kombiner felter**-ruten for å angi rekkefølgen, eller dra og slipp dem i ønsket posisjon.
+
+1. Bekreft endringen.
+
+1. Velg **Lagre** og **Kjør** for å behandle endringene.
 
 ## <a name="run-your-merge"></a>Kjøre flettingen
 
@@ -72,11 +111,11 @@ Uansett om du slår sammen attributter manuelt eller lar programmet slå dem sam
 > [!div class="mx-imgBorder"]
 > ![Lagre og kjøre datasammenslåing](media/configure-data-merge-save-run.png "Lagre og kjøre datasammenslåing")
 
-Hvis du vil gjøre flere endringer og kjøre trinnet på nytt, kan du annullere en sammenslåing som pågår. Velg **Oppdaterer ...**, og velg **Avbryt jobb** i sideruten som vises.
+Velg **Kjør bare fletting** hvis du bare vil vise utdataene i enheten for enhetlig kunde. Nedstrømsprosesser oppdateres som [definert i oppdateringsplanen](system.md#schedule-tab).
 
-Etter at teksten **Oppdaterer ...** endres til **Vellykket**, har sammenslåingen fullført og løst motstridende data i henhold til policyene du definerte. Sammenslåtte og ikke-sammenslåtte attributter er inkludert i den enhetlige profilenheten. Utelukkede attributter er ikke inkludert i den enhetlige profilenheten.
+Velg **Kjør fletting og nedstrømsprosesser** for å oppdatere systemet med endringene. Alle prosesser, inkludert supplering, segmenter og mål, kjører på nytt automatisk. Når alle nedstrømsprosesser er fullført, gjenspeiler kundeprofilene endringene du har gjort.
 
-Hvis det ikke var første gang du kjørte en sammenslåing, vil alle nedstrømsprosesser, inkludert supplering, segmentering og tiltak, kjøres på nytt automatisk. Når alle nedstrømsprosessene er kjørt på nytt, gjenspeiler kundeprofilene eventuelle endringer du har gjort.
+Hvis du vil gjøre flere endringer og kjøre trinnet på nytt, kan du avbryte en pågående fletting. Velg **Oppdaterer ...**, og velg **Avbryt jobb** i sideruten som vises.
 
 > [!TIP]
 > Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
@@ -85,9 +124,6 @@ Hvis det ikke var første gang du kjørte en sammenslåing, vil alle nedstrømsp
 
 Konfigurer [aktiviteter](activities.md), [supplering](enrichment-hub.md) eller [relasjoner](relationships.md) for å få mer informasjon om kundene.
 
-Hvis du allerede har konfigurert aktiviteter, suppleringer eller relasjoner, eller hvis du definerte segmenter, blir de automatisk behandlet for å bruke de nyeste kundedataene.
-
-
-
+Hvis du allerede har konfigurert aktiviteter, supplering eller segmenter, behandles de automatisk for å bruke de nyeste kundedataene.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

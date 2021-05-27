@@ -66,6 +66,8 @@
           href: audience-insights/enrichment-hub.md
         - name: Merke- og interesseaffiniteter
           href: audience-insights/enrichment-microsoft.md
+        - name: Forbedrede adresser
+          href: audience-insights/enrichment-enhanced-addresses.md
         - name: Suppler med HERE Technologies
           href: audience-insights/enrichment-here.md
         - name: Supplere med Leadspace
@@ -76,14 +78,20 @@
           href: audience-insights/enrichment-SFTP-custom-import.md
     - name: Segmenter og mål
       items:
-        - name: Opprette segmenter og kundegrupper
+        - name: Oversikt over segmenter
           href: audience-insights/segments.md
+        - name: Opprette segmenter og kundegrupper
+          href: audience-insights/segment-builder.md
+        - name: Foreslåtte segmenter basert på tiltak
+          href: audience-insights/suggested-segments.md
+        - name: Foreslåtte segmenter basert på aktivitet
+          href: audience-insights/suggested-segments-activity.md
         - name: Få innsikt i segmenter
           href: audience-insights/segment-insights.md
-        - name: Se foreslåtte segmenter
-          href: audience-insights/suggested-segments.md
         - name: Søk etter lignende kunder
           href: audience-insights/find-similar-customer-segments.md
+    - name: Mål
+      items:
         - name: Definere mål og KPI-er
           href: audience-insights/measures.md
     - name: Prediksjoner
@@ -116,7 +124,7 @@
       items:
         - name: Eksporter
           items:
-            - name: Oversikt over Eksporter (forhåndsversjon)
+            - name: Oversikt over eksporter
               href: audience-insights/export-destinations.md
             - name: AdRoll
               href: audience-insights/export-adroll.md
@@ -126,6 +134,8 @@
               href: audience-insights/export-azure-blob-storage.md
             - name: Azure Data Lake Storage Gen2
               href: audience-insights/export-azure-data-lake-storage-gen2.md
+            - name: Azure Synapse-analyse
+              href: audience-insights/export-azure-synapse-analytics.md
             - name: Adobe Campaign Standard
               href: audience-insights/export-adobe-campaign-standard.md
             - name: Adobe Experience Platform
@@ -160,9 +170,7 @@
               href: audience-insights/export-sftp.md
         - name: Annen bruk
           items:
-            - name: Dynamics 365 Customer Service (tillegg)
-              href: audience-insights/customer-card-add-in.md
-            - name: Salgssenter for Dynamics 365 (tillegg)
+            - name: Kundekort-tillegget for Dynamics 365
               href: audience-insights/customer-card-add-in.md
             - name: Microsoft Teams (robot)
               href: audience-insights/export-teams-bot.md
@@ -178,7 +186,7 @@
           href: audience-insights/system.md
         - name: Tilordne brukertillatelser
           href: audience-insights/permissions.md
-        - name: Oversikt over tilkoblinger (forhåndsversjon)
+        - name: Oversikt over tilkoblinger
           href: audience-insights/connections.md
         - name: Behandle flere miljøer
           href: audience-insights/manage-environments.md

@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2eb84c44aa530346a73ba720106734d705a45f23
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2155042d86cda0cffee1588760a06d6c7eb7077e
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595576"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085634"
 ---
 # <a name="match-entities"></a>Samsvare enheter
 
@@ -103,6 +103,18 @@ Samsvarsregler representerer sett med betingelser. Hvis du vil samsvare enheter 
 
 > [!NOTE]
 > Rekkefølgen av regler er viktig. Den samsvarende algoritmen prøver å samsvare på grunnlag av den første regelen, og fortsetter til den andre regelen bare hvis ingen treff ble identifisert med den første regelen.
+
+### <a name="change-the-entity-order-in-match-rules"></a>Endre enhetsrekkefølgen i samsvarsregler
+
+Du kan endre rekkefølgen på enheter for samsvarsregler for å endre rekkefølgen de behandles i. Regler som er i konflikt på grunn av en endret ordre, blir fjernet. Du må opprette regler som er fjernet, på nytt med en oppdatert konfigurasjon.
+
+1. Gå til **Data** > **Samle** > **Samsvar**, og velg **Rediger**.
+
+1. I **Rediger regel**-ruten velger du **Flytt opp/ned**-kontrollen eller drar og slipper enheter for å endre rekkefølgen.
+
+   :::image type="content" source="media/reorder-match-rules.png" alt-text="Alternativer for å endre rekkefølgen enheter behandles i, i samsvarsfasen.":::
+
+1. Velg **Ferdig** for å lagre regelen.
 
 ## <a name="define-deduplication-on-a-match-entity"></a>Definere deduplisering på en samsvarsenhet
 

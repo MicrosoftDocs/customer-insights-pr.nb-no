@@ -1,7 +1,7 @@
 ---
-title: Installere og konfigurere Kundekort-tillegget
-description: Installere og konfigurere tillegg for kundekort for Dynamics 365 Customer Insights.
-ms.date: 01/20/2021
+title: Kundekort-tillegget for Dynamics 365-apper
+description: Vis data fra målgruppeinnsikt i Dynamics 365-apper med dette tillegget.
+ms.date: 05/18/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,30 +9,31 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f3c4a01f9ce7749eeee72f7901620dae7cb9b8d3
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 88492943ddbf9ae30c64d92b261433b74f34f682
+ms.sourcegitcommit: d74430270f1b754322287c4f045d7febdae35be2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597339"
+ms.lasthandoff: 05/18/2021
+ms.locfileid: "6059600"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillegg for kundekort (forhåndsversjon)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Få en 360-graders visning av kundene direkte i Dynamics 365-apper. Vis demografi, innsikt og timeplan for aktiviteter med kundekorttillegget.
+Få en 360-graders visning av kundene direkte i Dynamics 365-apper. Når tillegget for kundekort installert i en støttet Dynamics 365-app, kan du velge å vise demografi, innsikt og aktivitetstidslinjer. Tillegget henter data fra Customer Insights uten at det påvirker dataene i den tilkoblede Dynamics 365-appen. 
 
 ## <a name="prerequisites"></a>Forutsetninger
 
-- Dynamics 365-appen (for eksempel Salgssenter eller Kundeservicehub) versjon 9.0 og nyere med Enhetlig grensesnitt aktivert.
-- Kundeprofiler [hentet fra Dynamics 365-appen ved hjelp av Common Data Service](connect-power-query.md).
-- Brukere av Kundekort-tillegget må [legges til som brukere](permissions.md) i målgruppeinnsikt.
-- [Konfigurerte søke- og filterfunksjoner](search-filter-index.md).
-- Demografisk kontroll: Demografiske felter (for eksempel alder eller kjønn) er tilgjengelige i den enhetlige kundeprofilen.
-- Suppleringskontroll: Krever at aktive [suppleringer](enrichment-hub.md) er brukt på kundeprofiler.
-- Intelligenskontroll: Krever data generert ved hjelp av Azure Machine Learning ([prediksjoner](predictions.md) eller [egendefinerte modeller](custom-models.md))
-- Målkontroll: Krever [konfigurerte mål](measures.md).
-- Tidslinjekontroll: Krever [konfigurerte aktiviteter](activities.md).
+- Tillegget fungerer bare med modelldrevne Dynamics 365-apper, for eksempel Sales eller Customer Service, versjon 9.0 og nyere.
+- Hvis Dynamics 365-dataene skal tilordnes til kundeprofilene for målgruppeinnsikten, må de være [hentet fra Dynamics 365-appen ved hjelp av Common Data Service-koblingen](connect-power-query.md).
+- Alle Dynamics 365-brukere av tillegget for kundekort må [legges til som brukere](permissions.md) i målgruppeinnsikt for å se dataene.
+- [Konfigurerte søke- og filterfunksjoner](search-filter-index.md) i målgruppeinnsikt er nødvendig for at oppslag av data skal fungere.
+- Hver tilleggskontroll er avhengig av bestemte data i målgruppeinnsikt:
+  - Målkontroll: Krever [konfigurerte mål](measures.md).
+  - Intelligenskontroll: Krever data generert ved hjelp av [prediksjoner](predictions.md) eller [egendefinerte modeller](custom-models.md).
+  - Demografisk kontroll: Demografiske felter (for eksempel alder eller kjønn) er tilgjengelige i den enhetlige kundeprofilen.
+  - Suppleringskontroll: Krever at aktive [suppleringer](enrichment-hub.md) er brukt på kundeprofiler.
+  - Tidslinjekontroll: Krever [konfigurerte aktiviteter](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Installere tillegget Kundekort
 
@@ -56,9 +57,9 @@ Det kan ta litt tid før løsningen installeres i miljøet ditt.
    > [!NOTE]
    > Kontroller at popup-blokkeringen i nettleseren ikke blokkerer godkjenningsvinduet når du velger knappen **Logg på**.
 
-1. Velg miljøet du vil hente data fra.
+1. Velg Customer Insights-miljøet du vil hente data fra.
 
-1. Definerer hvilke felt som skal tilknyttes oppføringer i Dynamics 365-appen.
+1. Definer felttilordningen til oppføringer i Dynamics 365-appen. Avhengig av dataene i Customer Insights kan du velge å tilordne følgende alternativer:
    - Hvis du vil tilordne med en kontakt, velger du feltet i kundeenheten som samsvarer med ID-en til kontaktenheten.
    - Hvis du vil tilordne med en forretningsforbindelse, velger du feltet i kundeenheten som samsvarer med ID-en til forretningsforbindelsesenheten.
 

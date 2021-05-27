@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 383523bad5105e08e57758838e90a49e805b5f9b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: f81128183b6e20e1078ad38c42c771d343909270
+ms.sourcegitcommit: c1841ab91fbef9ead9db0f63fbc669cc3af80c12
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596419"
+ms.lasthandoff: 05/17/2021
+ms.locfileid: "6049406"
 ---
 # <a name="entities-in-audience-insights"></a>Enheter i målgruppeinnsikt
 
@@ -37,12 +37,12 @@ Velg en enhet for å utforske de forskjellige feltene og oppføringene som er in
 > [!div class="mx-imgBorder"]
 > ![Velg en enhet](media/data-manager-entities-data.png "Velg en enhet")
 
-- Kategorien **Data** velges som standard og viser en tabell med detaljer om enkeltoppføringer for enheten.
+- Fanen **Data** viser en tabell som viser detaljer om enkeltoppføringer for enheten.
 
 > [!div class="mx-imgBorder"]
 > ![Tabellen Felt](media/data-manager-entities-fields.PNG "Tabellen Felt")
 
-- Kategorien **Felt** viser en tabell for å se gjennom detaljer for den valgte enheten, for eksempel feltnavn, datatyper og typer. **Type**-kolonnen viser Common Data Model-tilknyttede typer, som enten er automatisk identifiserte av systemet eller [manuelt tilordnede](map-entities.md) av brukere. Dette er semantiske typer som kan være forskjellige fra attributtenes datatyper – for eksempel har feltet *E-post* nedenfor datatypen *Tekst*, men (semantisk) Common Data Model-type kan være *E-post* eller *EmailAddress*.
+- Fanen **Attributter** velges som standard og viser en tabell for å se gjennom detaljer for den valgte enheten, for eksempel feltnavn, datatyper og typer. **Type**-kolonnen viser Common Data Model-tilknyttede typer, som enten er automatisk identifiserte av systemet eller [manuelt tilordnede](map-entities.md) av brukere. Dette er semantiske typer som kan være forskjellige fra attributtenes datatyper – for eksempel har feltet *E-post* nedenfor datatypen *Tekst*, men (semantisk) Common Data Model-type kan være *E-post* eller *EmailAddress*.
 
 > [!NOTE]
 > Begge tabellene viser bare et eksempel på enhetens data. Hvis du vil vise hele datasettet, går du til siden **Datakilder**, velger en enhet, velger **Rediger** og deretter viser enhetens data med Power Query-redigeringsprogrammet som forklart i [Datakilder](data-sources.md).

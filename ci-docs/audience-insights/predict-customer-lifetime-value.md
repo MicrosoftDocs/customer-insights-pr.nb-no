@@ -9,12 +9,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
+ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595821"
+ms.lasthandoff: 04/28/2021
+ms.locfileid: "5954591"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Prediksjon av verdi for kundelevetid (CLV) (forhåndsversjon)
 
@@ -38,11 +38,11 @@ Følgende data er obligatoriske, og der det er merket som valgfritt, anbefales d
 - Kundeidentifikator: unik identifikator for å samsvare transaksjoner med en individuell kunde
 
 - Transaksjonslogg: logg over historiske transaksjoner med semantisk dataskjema
-    - Transaksjons-ID: unik identifikator for hver transaksjon
-    - Transaksjonsdato: dato, helst et tidsstempel for hver transaksjon
-    - Transaksjonsbeløp: pengeverdi (for eksempel omsetning eller fortjenestemargin) for hver transaksjon
-    - Etikett tilordnet til returer (valgfritt): boolsk verdi som angir om transaksjonen er en retur 
-    - Produkt-ID (valgfritt): produkt-ID for produktet involvert i transaksjonen
+    - **Transaksjons-ID**: unik identifikator for hver transaksjon
+    - **Transaksjonsdato**: dato, helst et tidsstempel for hver transaksjon
+    - **Transaksjonsbeløp**: pengeverdi (for eksempel omsetning eller fortjenestemargin) for hver transaksjon
+    - **Etikett tilordnet til returer** (valgfritt): boolsk verdi som angir om transaksjonen er en retur 
+    - **Produkt-ID** (valgfritt): produkt-ID for produktet involvert i transaksjonen
 
 - Tilleggsdata (valgfritt), for eksempel
     - Nettaktiviteter: logg for nettstedsbesøk, e-postlogg
@@ -53,10 +53,20 @@ Følgende data er obligatoriske, og der det er merket som valgfritt, anbefales d
     - Kunde-ID-er for å tilordne aktiviteter til kundene
     - Aktivitetsinformasjon som inneholder navnet på og datoen for aktiviteten
     - Det semantiske dataskjemaet for aktiviteter omfatter følgende: 
-        - Primærnøkkel: En unik identifikator for en aktivitet
-        - Tidsstempel: Dato og klokkeslett for hendelsen som er identifisert ved hjelp av primærnøkkelen
-        - Hendelse (aktivitetsnavn): Navnet på hendelsen du vil bruke
-        - Detaljer (beløp eller verdi): Detaljer om kundeaktiviteten
+        - **Primærnøkkel**: En unik identifikator for en aktivitet
+        - **Tidsstempel**: Dato og klokkeslett for hendelsen som er identifisert ved hjelp av primærnøkkelen
+        - **Hendelse (aktivitetsnavn)**: Navnet på hendelsen du vil bruke
+        - **Detaljer (beløp eller verdi)**: Detaljer om kundeaktiviteten
+
+- Kjennetegn for foreslåtte data:
+    - Tilstrekkelige historiske data: minst ett år med transaksjonsdata. Helst to til tre år med transaksjonsdata for å forutsi CLV i ett år.
+    - Flere kjøp per kunde: Ideelt sett minst to til tre transaksjoner per kunde-ID, helst på flere datoer.
+    - Antall kunder: Minst 100 unike kunder, helst mer enn 10 000 kunder. Modellen vil mislykkes med færre enn 100 kunder og utilstrekkelige historiske data
+    - Datafullstendighet: Mindre enn 20 % mangler verdier i obligatoriske felter i inndataene   
+
+> [!NOTE]
+> - Modellen krever kundenes transaksjonshistorikk. Bare én transaksjonsloggenhet kan konfigureres for øyeblikket. Hvis det er flere innkjøps-/transaksjonsenheter, kan du slå dem sammen i Power Query før datainntak.
+> - For flere kundeaktivitetsdata (valgfritt) kan du imidlertid legge til så mange kundeaktivitetsenheter som du vil ta hensyn til etter modellen.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Opprett en prediksjon av verdi for kundelevetid
 
@@ -76,7 +86,7 @@ Følgende data er obligatoriske, og der det er merket som valgfritt, anbefales d
    Enheten angis som standard som måneder. Du kan endre den til år for å se lenger inn i fremtiden.
 
    > [!TIP]
-   > For å kunne forutsi CLV nøyaktig for tidsperioden du angir, trenger du en sammenlignbar periode med historiske data. Hvis du for eksempel vil forutsi for de neste 12 månedene, anbefales det at du har minst 18–24 måneder med historiske data.
+   > For å kunne forutsi CLV nøyaktig for tidsperioden du angir, trenger du en sammenlignbar periode med historiske data. Hvis du for eksempel vil forutsi CLV for de neste 12 månedene, anbefales det at du har minst 18–24 måneder med historiske data.
 
 1. Angi hva **aktive kunder** betyr for virksomheten. Angi tidsramme der en kunde må ha hatt minst én transaksjon for å bli betraktet som aktiv. Modellen vil bare forutsi CLV for aktive kunder. 
    - **La modellen beregne innkjøpsintervall (anbefales)**: Modellen analyserer dataene og bestemmer en tidsperiode basert på historiske kjøp.
@@ -181,14 +191,14 @@ Det er tre hoveddeler med data på resultatsiden.
   Ved hjelp av definisjonen av kunder med høy verdi under konfigurasjon av prediksjon, vurderer systemet hvordan modellen for kunstig intelligens gjorde det ved å forutsi kundene med høy verdi sammenlignet med en basismodell.    
 
   Vurderinger fastsettes basert på følgende regler:
-  - A når modellen nøyaktig beregnet minst 5 % flere kunder med høy verdi sammenlignet med basismodellen.
-  - B når modellen nøyaktig beregnet mellom 0–5 % flere kunder med høy verdi sammenlignet med basismodellen.
-  - C når modellen nøyaktig beregnet færre kunder med høy verdi sammenlignet med basismodellen.
+  - **A** når modellen nøyaktig beregnet minst 5 % flere kunder med høy verdi sammenlignet med basismodellen.
+  - **B** når modellen nøyaktig beregnet mellom 0–5 % flere kunder med høy verdi sammenlignet med basismodellen.
+  - **C** når modellen nøyaktig beregnet færre kunder med høy verdi sammenlignet med basismodellen.
 
   Ruten **Modellrangering** viser flere detaljer om ytelsen til modellen for kunstig intelligens og basismodellen. Basismodellen bruker en ikke-AI-basert metode til å beregne verdie for kundelevetid, basert primært på historiske kjøp gjort av kunder.     
   Standardformelen som brukes til å beregne CLV etter basismodellen:    
 
-  *CLV for hver kunde = Gjennomsnittlig månedlig kjøp gjort av kunden i det aktive kundevinduet * antall måneder i CLV-prediksjonsperioden * total oppbevaringsgrad for alle kunder*
+  _**CLV for hver kunde** = Gjennomsnittlig månedlig kjøp gjort av kunden i det aktive kundevinduet * antall måneder i CLV-prediksjonsperioden * total oppbevaringsgrad for alle kunder*_
 
   Modellen for kunstig intelligens sammenlignes med basismodellen basert på to måleverdier for modellytelse.
   

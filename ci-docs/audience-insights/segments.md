@@ -1,7 +1,7 @@
 ---
-title: Opprette og behandle segmenter
-description: Opprett segmenter av kunder for å gruppere dem basert på forskjellige attributter.
-ms.date: 03/02/2021
+title: Segmenter i målgruppeinnsikt
+description: Oversikt over segmenter og hvordan du oppretter og administrerer dem.
+ms.date: 05/03/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,79 +9,42 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4a6e8a3216a2c0738d60247054afa9fc18412f55
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: a7fa6515bd6e79dedfb21aa0f0b8e24b873a6771
+ms.sourcegitcommit: 8341fa964365c185b65bc4b71fc0c695ea127dc0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597066"
+ms.lasthandoff: 05/14/2021
+ms.locfileid: "6034024"
 ---
-# <a name="create-and-manage-segments"></a>Opprette og behandle segmenter
+# <a name="segments-overview"></a>Oversikt over segmenter
 
 Med segmenter kan du gruppere kunder basert på demografiske, transaksjonelle eller atferdsmessige attributter. Du kan bruke segmenter til å målrette kampanjer, salgsaktiviteter og kundestøttehandlinger slik at du oppnår forretningsmålene dine.
 
-Du kan definere komplekse filtre rundt kundeprofilenheten og de relaterte enhetene. Hvert segment, etter behandlingen, oppretter et sett med kundeoppføringer som du kan eksportere og utføre handlinger på. Enkelte [tjenestebegrensninger](service-limits.md) gjelder.
-
-Med mindre noe annet er angitt, er alle segmenter **dynamiske segmenter**, som oppdateres etter en regelmessig tidsplan.
-
-Eksemplet nedenfor viser bruken av segmenteringsfunksjonaliteten. Vi har definert et segment for kunder som har bestilt varer for minst USD 500 i løpet av de siste 90 dagene *og* som var involvert i en kundeservicesamtale som ble videresendt.
-
-> [!div class="mx-imgBorder"]
-> ![Flere grupper](media/segmentation-group1-2.png "Flere grupper")
+Kundeprofiler som samsvarer med filtrene i en segmentdefinisjon, kalles *medlemmer* av et segment. Enkelte [tjenestebegrensninger](service-limits.md) gjelder.
 
 ## <a name="create-a-new-segment"></a>Opprett et nytt segment
 
-Segmenter administreres på **Segmenter**-siden.
+Du kan opprette et nytt segment på flere måter: 
 
-1. I Målgruppeinnsikt går du til **Segmenter**-siden.
+- Komplekst segment med segmentverktøyet: [Tomt segment](segment-builder.md#create-a-new-segment)
+- Enkle segmenter med én operator: [Hurtigsegment](segment-builder.md#quick-segments)
+- AI-drevne måter å finne lignende kunder på: [Lignende kunder](find-similar-customer-segments.md)
+- AI-drevne forslag basert på mål eller attributter: [Foreslåtte segmenter for å forbedre tiltak](suggested-segments.md)
+- Forslag basert på aktiviteter: [Foreslåtte segmenter basert på kundeaktivitet](suggested-segments-activity.md)
 
-1. Velg **Ny** > **Tomt segment**.
+## <a name="get-insights-on-existing-segments"></a>Få innsikt i eksisterende segmenter
 
-1. Velg ruten **Nytt segment**, gå til en segmenttype og angi et **Navn**.
+Oppdag ytterligere informasjon om de eksisterende segmentene ved hjelp av [Segmentinnsikt](segment-insights.md). Finn ut hva som skiller to segmenter fra hverandre, eller hva de har til felles.
 
-   Du kan eventuelt angi et visningsnavn og en beskrivelse som hjelper deg med å identifisere segmentet.
+## <a name="find-similar-customers"></a>Søk etter lignende kunder
 
-1. Velg **Neste** for å gå til siden for **Segmentverktøy**, der du definerer en gruppe. En gruppe er et sett med kunder.
-
-1. Velg enheten som inkluderer attributtet du vil segmentere etter.
-
-1. Velg attributtet du vil segmentere etter. Dette attributtet kan ha en av fire verdityper: numerisk, streng, dato eller boolsk.
-
-1. Velg en operator og en verdi for det valgte attributtet.
-
-   > [!div class="mx-imgBorder"]
-   > ![Egendefinert gruppefilter](media/customer-group-numbers.png "Gruppefilter for kunde")
-
-   |Antall |Definisjon  |
-   |---------|---------|
-   |1     |Entity          |
-   |2     |Attributt          |
-   |3    |Operator         |
-   |4    |Verdi         |
-
-8. Hvis enheten er koblet til den enhetlige kundeenheten via [relasjoner](relationships.md), må du definere relasjonsbanen for å opprette et gyldig segment. Legg til enhetene fra relasjonsbanen til du kan velge **Kunde: CustomerInsights**-enheten fra rullegardinlisten. Velg deretter **Alle oppføringer** for hver betingelse.
-
-   > [!div class="mx-imgBorder"]
-   > ![Relasjonsbane under opprettelse av segment](media/segments-multiple-relationships.png "Relasjonsbane under opprettelse av segment")
-
-1. Som standard genererer segmenter en utdataenhet som inneholder alle attributter for kundeprofiler som samsvarer med de definerte filtrene. Hvis et segment er basert på andre enheter enn *Kunde*-enheten, kan du legge til flere attributter fra disse enhetene i utdataenheten. Velg **Prosjektattributter** for å velge attributtene som skal legges til i utdataenheten.  
-
-   
-   Eksempel: Et segment er basert på en enhet som inneholder kundeaktivitetsdata som er relatert til *Kunde*-enheten. Segmentet ser etter alle kunder som har ringt til brukerstøtteavdelingen i løpet av de siste 60 dagene. Du kan velge å tilføye samtalevarighet og antall samtaler til alle samsvarende kundeoppføringer i utdataenheten. Denne informasjonen kan være nyttig for å sende en e-post med nyttige koblinger til artikler i elektronisk hjelp og vanlige spørsmål til kunder som ofte har ringt.
-
-1. Velg **Lagre** for å lagre segmentet. Segmentet blir lagret og behandlet hvis alle kravene valideres. Hvis ikke blir det lagret som et utkast.
-
-1. Velg **Tilbake til Segmenter** for å gå tilbake til **Segmenter**-siden.
+Finn kunder som ligner på medlemmene i et valgt segment, ved hjelp av kunstig intelligens. Hvis du vil ha mer informasjon, kan du se [lignende kunder ](find-similar-customer-segments.md).
 
 ## <a name="manage-existing-segments"></a>Behandle eksisterende segmenter
 
-På siden **Segmenter** kan du vise alle lagrede segmenter og administrere dem.
+Gå til **Segmenter**-siden for å vise alle lagrede segmenter og behandle dem.
 
 Hvert segment representeres av en rad som inneholder tilleggsinformasjon om segmentet.
-
-Du kan sortere segmentene i en kolonne ved å velge kolonneoverskriften.
-
-Bruk **Søk**-boksen øverst i høyre hjørne til å filtrere segmentene.
 
 > [!div class="mx-imgBorder"]
 > ![Alternativer for å behandle et eksisterende segment](media/segments-selected-segment.png "Alternativer for å behandle et eksisterende segment")
@@ -106,71 +69,6 @@ Du kan oppdatere alle segmenter samtidig ved å velge **Oppdater alle** på **Se
 > [!TIP]
 > Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
 
-## <a name="download-and-export-segments"></a>Laste ned og eksportere segmenter
-
-Du kan laste ned segmentene til en CSV-fil eller eksportere dem til Dynamics 365 Sales.
-
-### <a name="download-segments-to-a-csv-file"></a>Laste ned segmenter til en CSV-fil
-
-1. I Målgruppeinnsikt går du til **Segmenter**-siden.
-
-2. Velg en ellipse i flisen i et bestemt segment.
-
-3. Velg **Last ned som CSV** fra rullegardinlisten for handlinger.
-
-### <a name="export-segments-to-dynamics-365-sales"></a>Eksporter segmenter til Dynamics 365 Sales
-
-Før du eksporterer segmenter til Dynamics 365 Sales, må en administrator [opprette eksportmålet](export-destinations.md) for Dynamics 365 Sales.
-
-1. I Målgruppeinnsikt går du til **Segmenter**-siden.
-
-2. Velg en ellipse i flisen i et bestemt segment.
-
-3. Velg **Legg til i** fra rullegardinlisten for handlinger, og velg eksportmålet du vil sende dataene til.
-
-## <a name="draft-mode-for-segments"></a>Kladdemodus for segmenter
-
-Hvis ikke alle krav til å behandle et segment er oppfylt, kan du lagre segmentet som et utkast og få tilgang til det fra siden **Segmenter**.
-
-Det blir lagret som et inaktivt segment, og kan ikke aktiveres det før det er gyldig.
-
-## <a name="add-more-conditions-to-a-group"></a>Legge til flere betingelser i en gruppe
-
-Hvis du vil legge til flere betingelser i en gruppe, kan du bruke to logiske operatorer:
-
-- **AND**-operator: Begge betingelser må oppfylles som en del av segmentprosessen. Dette alternativet er svært nyttig når du definerer betingelser på tvers av forskjellige enheter.
-
-- **OR**-operator: En av betingelsene må oppfylles som en del av segmenteringsprosessen. Dette alternativet er svært nyttig når du definerer flere betingelser for samme enhet.
-
-   > [!div class="mx-imgBorder"]
-   > ![OR-operator der begge betingelser må oppfylles](media/segmentation-either-condition.png "OR-operator der begge betingelser må oppfylles")
-
-Det er for øyeblikket mulig å neste en **OR**-operator under en **AND**-operator, men ikke motsatt.
-
-## <a name="combine-multiple-groups"></a>Kombinere flere grupper
-
-Hver gruppe produserer et bestemt sett med kunder. Du kan kombinere disse gruppene slik at de inneholder kundene som kreves for forretningssaken.
-
-1. I Målgruppeinnsikt går du til **Segmenter**-siden og velger et segemtn.
-
-2. Velg **Legg til gruppe**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Legg til gruppe i kundegruppe](media/customer-group-add-group.png "Legg til gruppe i kundegruppe")
-
-3. Velg én av følgende sett operatorer: **Union**, **Skjæringspunkt** eller **Unntatt**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Legg til union i kundegruppe](media/customer-group-union.png "Legg til union i kundegruppe")
-
-   Velg en angitt operator for å definere en ny gruppe. Lagre forskjellige grupper for å avgjøre hvilke data som beholdes:
-
-   - **Union** forener de to gruppene.
-
-   - **Intersect** overlapper de to gruppene. Bare data som *er felles* for begge gruppene, beholdes i den enhetlige gruppen.
-
-   - **Bortsett fra** kombinerer de to gruppene. Bare data i gruppe A som *ikke er felles* med data i gruppe B, beholdes.
-
 ## <a name="view-processing-history-and-segment-members"></a>Vis behandlingslogg og segmentmedlemmer
 
 Du kan vise konsoliderte data om et segment ved å se gjennom detaljene.
@@ -191,43 +89,4 @@ Den nedre delen inneholder en liste over medlemmene i segmentet.
 >
 >Listen er en forhåndsvisning av de samsvarende segmentmedlemmene og viser de første 100 oppføringene av segmentet, slik at du raskt kan evaluere det og se gjennom definisjonene hvis det er nødvendig. Hvis du vil vise alle samsvarende oppføringer, må du [eksportere segmentet](export-destinations.md).
 
-## <a name="quick-segments"></a>Hurtigsegmenter
-
-I tillegg til segmentverktøyet finnes det en annen bane for oppretting av segmenter. Med hurtigsegmenter kan du bygge enkle segmenter (med én enkelt operator) raskt og med direkte innsikt.
-
-1. På **Segmenter**-siden velger du **Ny** > **Hurtigopprett fra**.
-
-   - Velg alternativet **Profiler** for å bygge et segment som er basert på den enhetlige kundeenheten.
-   - Velg alternativet **Mål** for å bygge et segment rundt hver av Kundeattributt-måltypene du tidligere har opprettet på **Mål**-siden.
-   - Velg alternativet **Intelligens** for å bygge et segment rundt én av de utgående enhetene du genererte ved hjelp av funksjonene **Prediksjoner** eller **Egendefinerte modeller**.
-
-2. I dialogboksen **Nytt hurtigsegment** velger du et attributt fra **Felt**-rullegardinlisten.
-
-3. Systemet gir noe ekstra innsikt som hjelper deg med å lage bedre segmenter av kundene.
-   - Vi viser de 10 største kundeantallene for kategoriske felt. Velg en **Verdi** og deretter **Gå gjennom**.
-
-   - For et numerisk attributt vil systemet vise hvilken attributtverdi som faller under hver kundepersentil. Velg en **Operator** og en **Verdi**, og velg deretter **Gå gjennom**.
-
-4. Systemet gir deg en **Beregnet segmentstørrelse**. Du kan velge om du vil generere segmentet du har definert, eller først gå til det igjen for å få en annen segmentstørrelse.
-
-    > [!div class="mx-imgBorder"]
-    > ![Navn og beregning for et hurtigsegment](media/quick-segment-name.png "Navn og beregning for et hurtigsegment")
-
-5. Angi et **Navn** for segmentet. Alternativt kan du angi et **Visningsnavn**.
-
-6. Velg **Lagre** for å opprette segmentet.
-
-7. Når segmentet er ferdig behandlet, kan du vise det på samme måte som et hvilket som helst segment du har opprettet.
-
-I følgende scenarioer anbefaler vi å bruke segmentverktøyet i stedet for den anbefalte segmentfunksjonen:
-
-- Opprette segmenter med filtre i kategorifelt der operatoren er forskjellig fra **Is**-operatoren
-- Opprette segmenter med filtre på numeriske felt der operatoren er forskjellig fra operatorene **Mellom**, **Større enn** og **Mindre enn**
-- Opprette segmenter med filtre på datotype-felt
-
-## <a name="next-steps"></a>Neste trinn
-
-[Eksporter et segment](export-destinations.md) og utforsk [Kundekort](customer-card-add-in.md) og [Koblinger](export-power-bi.md) for å få innsikt på kundenivået.
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+[!INCLUDE[footer-include](../includes/footer-banner.md)] 
