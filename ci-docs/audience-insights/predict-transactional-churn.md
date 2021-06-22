@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906868"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095614"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Transaksjonell frafallsprognose (forhåndsversjon)
 
@@ -144,7 +144,7 @@ Transaksjonsell frafallsprognose bidrar til å forutse om en kunde ikke lenger k
    - **Status:** Statusen for prognosekjøringen.
         - **I kø:** Prognonsen venter på at andre prosesser skal kjøre.
         - **Oppdaterer:** Prognosen kjører for å produsere resultater som flytes til utdataenheten.
-        - **Mislyktes:** Prognosekjøringen mislyktes. [Se gjennom loggene](#troubleshoot-a-failed-prediction) for mer informasjon.
+        - **Mislyktes:** Prognosekjøringen mislyktes. [Se gjennom loggene](manage-predictions.md#troubleshoot-a-failed-prediction) for mer informasjon.
         - **Fullført:** Prognosen ble fullført. Velg **Vis** under de loddrette ellipsene for å gå gjennom forutsigelsen
    - **Redigert:** Datoen da konfigurasjonen av forutsigelsen ble endret.
    - **Sist oppdatert:** Datoen da forutsigelsen oppdaterte resultater i utdataenheten.
@@ -168,35 +168,9 @@ Transaksjonsell frafallsprognose bidrar til å forutse om en kunde ikke lenger k
        
     1. **Mest innflytelsesrike faktorer:** Det er mange faktorer du må ta hensyn til når du oppretter forutsigelsen. Hver av faktorene har sin viktighet beregnet for de aggregerte prognosene som en modell oppretter. Du kan bruke disse faktorene til å validere forutsigelsesresultatene. Du kan også bruke denne informasjonen senere til å [opprette segmenter](segments.md) som kan ha innvirkning på frafallsrisiko for kunder.
 
-## <a name="troubleshoot-a-failed-prediction"></a>Feilsøke en mislykket prognose
+## <a name="manage-predictions"></a>Administrere prediksjoner
 
-1. Gå til **Intelligens** > **Prognoser**, og velg kategorien **Mine prognoser**.
-
-1. Velg de loddrette ellipsene ved siden av prediksjonen du vil vise feillogger for.
-
-1. Velg **Logger**.
-
-1. Se gjennom alle feilene. Det finnes flere typer feil som kan oppstå, og de beskriver hvilken betingelse som forårsaket feilen. En feil på grunn av at det ikke er nok data til å forutsi nøyaktig, blir vanligvis løst ved å laste inn flere data i Customer Insights.
-
-## <a name="refresh-a-prediction"></a>Oppdatere en prediksjon
-
-Prognoser oppdateres automatisk på samme [tidsplan som dataene dine oppdateres](system.md#schedule-tab), som konfigurert i innstillingene. Du kan også oppdatere dem manuelt.
-
-1. Gå til **Intelligens** > **Prognoser**, og velg kategorien **Mine prognoser**.
-
-1. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil oppdatere.
-
-1. Velg **Oppdater**.
-
-## <a name="delete-a-prediction"></a>Slette en prediksjon
-
-Sletting av en prognose fjerner også utdataenheten.
-
-1. Gå til **Intelligens** > **Prognoser**, og velg kategorien **Mine prognoser**.
-
-1. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil slette.
-
-1. Velg **Slett**.
+Det går an å optimalisere, feilsøke, oppdatere eller slette prognoser. Se gjennom en brukbarhetsrapport for inndata for å finne ut hvordan du gjør en prediksjon raskere og mer pålitelig. Hvis du vil ha mer informasjon, kan du se [Administrere prediksjoner](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

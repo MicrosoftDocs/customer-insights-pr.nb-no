@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: e46e31131a2dd5235af8221eafcd2e1d1394f3d4
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: 01704f78cfe1f6ceeee19ff825fc65150894d4ed
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906776"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095568"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Produktanbefalingsprediksjon (forhåndsversjon)
 
@@ -205,33 +205,9 @@ Noen ganger er bare visse produkter gunstige eller passende for den typen predik
        > [!div class="mx-imgBorder"]
        > ![Liste som viser forslag med høy sikkerhet for et utvalgt sett med individuelle kunder](media/product-recommendation-highconfidence.PNG "Liste som viser forslag med høy sikkerhet for et utvalgt sett med individuelle kunder")
 
-## <a name="fix-a-failed-prediction"></a>Rette en mislykket forutsigelse
+## <a name="manage-predictions"></a>Administrere prediksjoner
 
-1. Gå til kategorien **Mine prediksjoner** i **Intelligens** > **Prediksjoner**.
-
-1. Velg hvilken forutsigelse du vil vise feillogger for, og velg **Logger**.
-
-1. Se gjennom alle feilene. Det finnes flere typer feil som kan oppstå, og de beskriver hvilken betingelse som forårsaket feilen. En feil som det for eksempel ikke er nok data til å forutsi nøyaktig, løses vanligvis ved å laste inn mer data i Customer Insights.
-
-## <a name="refresh-a-prediction"></a>Oppdatere en prediksjon
-
-Prediksjoner oppdateres automatisk i den samme [tidsplanen dataene oppdateres](system.md#schedule-tab) som konfigurert i innstillingene.
-
-1. Gå til kategorien **Mine prediksjoner** i **Intelligens** > **Prediksjoner**.
-
-1. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil oppdatere.
-
-1. Velg **Oppdater**.
-
-## <a name="delete-a-prediction"></a>Slette en prediksjon
-
-Sletting av en preiksjon vil også fjerne utdataenheten.
-
-1. Gå til kategorien **Mine prediksjoner** i **Intelligens** > **Prediksjoner**.
-
-1. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil slette.
-
-1. Velg **Slett**.
+Det går an å optimalisere, feilsøke, oppdatere eller slette prognoser. Se gjennom en brukbarhetsrapport for inndata for å finne ut hvordan du gjør en prediksjon raskere og mer pålitelig. Hvis du vil ha mer informasjon, kan du se [Administrere prediksjoner](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

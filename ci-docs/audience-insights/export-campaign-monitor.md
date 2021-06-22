@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7fd6af37b40e21d030a1ace0cd5f8fcc7861c3fa
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 091a3197dc0c19ff78f0419fb4e88868e0f78359
+ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760597"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6124193"
 ---
-# <a name="export-segment-lists-to-campaign-monitor-preview"></a>Eksportere segmentlister til Campaign Monitor (forhåndsvisning)
+# <a name="export-segments-to-campaign-monitor-preview"></a>Eksportere segmenter til Campaign Monitor (forhåndsversjon)
 
 Eksporter segmenter av enhetlige kundeprofiler til Campaign Monitor, og bruk dem for markedsføringsaktiviteter.
 

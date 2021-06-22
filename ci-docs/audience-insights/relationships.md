@@ -1,74 +1,110 @@
 ---
 title: Relasjoner mellom enheter og enhetsbaner
 description: Opprett og administrer relasjoner mellom enheter fra flere datakilder.
-ms.date: 04/14/2020
+ms.date: 06/01/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: mukeshpo
-ms.author: mukeshpo
+author: MichelleDevaney
+ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: c25bfcb8e2a8223498dd1a5e8cfb3712a40ab85e
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
+ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595224"
+ms.lasthandoff: 06/03/2021
+ms.locfileid: "6171176"
 ---
 # <a name="relationships-between-entities"></a>Relasjoner mellom enheter
 
-Relasjoner hjelper deg med å koble sammen enheter og generere et diagram over dataene når enhetene deler en felles identifikator (sekundærnøkkel) som kan refereres fra én enhet til en annen. Ved å bruke tilkoblede enheter kan du definere segmenter og mål basert på flere datakilder.
+Relasjoner kobler sammen enheter og definerer en graf for dataene når enheter deler en felles identifikator, en sekundærnøkkel. Denne sekundærnøkkelen kan referere fra én enhet til en annen. Tilkoblede enheter gjør at segmenter og mål kan defineres basert på flere datakilder.
 
-Det finnes to typer relasjoner: Systemrelasjoner som ikke kan redigeres, som opprettes automatisk, og egendefinerte relasjoner som opprettes og konfigureres av brukere.
+Det finnes tre typer relasjoner: 
+- systemrelasjoner som ikke kan redigeres, og som opprettes av systemet som en del av dataforeningsprosessen
+- arvede relasjoner som ikke kan redigeres, og som opprettes automatisk fra inntak av datakilder 
+- egendefinerte relasjoner som kan redigeres, og som opprettes og konfigureres av brukere
 
-I løpet av samsvars- og sammenslåingsprosessene opprettes systemrelasjoner i bakgrunnen basert på intelligent samsvar. Disse relasjonene hjelper deg med å relatere kundeprofiloppføringene med andre korresponderende enheters oppføringer. Følgende diagram illustrerer opprettelsen av tre systemrelasjoner når kundeenheten samsvarer med tilleggsenheter for å produsere den endelige kundeprofilenheten.
+## <a name="non-editable-system-relationships"></a>Systemrelasjoner som ikke kan redigeres
 
-> [!div class="mx-imgBorder"]
-> ![Relasjonsopprettelse](media/relationships-entities-merge.png "Relasjonsopprettelse")
+Under dataforening opprettes systemrelasjoner automatisk basert på intelligent samsvar. Disse relasjonene hjelper deg å knytte kundeprofiloppføringene til tilsvarende oppføringer. Diagrammet nedenfor illustrerer opprettelsen av tre systembaserte relasjoner. Kundeenheten sammenlignes med andre enheter for å produsere den enhetlige *Kunde*-enheten.
 
-- ***CustomerToContact*-relasjon** ble opprettet mellom kundeenheten og kontaktenheten. Kundeenheten får nøkkelfeltet **Contact_contactId** til å relatere til nøkkelfeltet til kontaktenheten **contactId**.
-- ***CustomerToAccount*-relasjon** ble opprettet mellom kundeenheten og kontoenheten. Kundeenheten får nøkkelfeltet **Account_accountId** til å relatere til nøkkelfeltet til kontoenheten **accountId**.
-- ***CustomerToWebAccount*-relasjon** ble opprettet mellom kundeenheten og webkontoenheten. Kundeenheten får nøkkelfeltet **WebAccount_webaccountId** til å relatere til nøkkelfeltet til webkontoenheten **webaccountId**.
+:::image type="content" source="media/relationships-entities-merge.png" alt-text="Diagram med relasjonsbaner for kundeenheten med tre 1:N-relasjoner.":::
 
-## <a name="create-a-relationship"></a>Opprette en relasjon
+- ***CustomerToContact*-relasjon** ble opprettet mellom *Kunde*-enheten og *Kontakt*-enheten. *Kunde*-enheten får nøkkelfeltet **Contact_contactID** til å knyttes til nøkkelfeltet **contactID** for *Kontakt*-enheten.
+- ***CustomerToAccount*-relasjon** ble opprettet mellom *Kunde*-enheten og *Konto*-enheten. *Kunde*-enheten får nøkkelfeltet **Account_accountID** til å knyttes til nøkkelfeltet **accountID** for *Konto*-enheten.
+- ***CustomerToWebAccount*-relasjon** ble opprettet mellom *Kunde*-enheten og *WebAccount*-enheten. *Kunde*-enheten får nøkkelfeltet **WebAccount_webaccountID** til å knyttes til nøkkelfeltet **webaccountID** for *WebAccount*-enheten.
 
-Definer egendefinerte relasjoner på siden **Relasjoner**. Hver relasjon består av en kildeenhet (enheten som inneholder sekundærnøkkelen) og en målenhet (enheten som kildeenhetens sekundærnøkkel peker til).
+## <a name="non-editable-inherited-relationships"></a>Arvede relasjoner som ikke kan redigeres
+
+Under datainntaksprosessen kontrollerer systemet datakilder for eksisterende relasjoner. Hvis ingen relasjoner finnes, oppretter systemet dem automatisk. Disse relasjonene brukes også i nedstrømsprosesser.
+
+## <a name="create-a-custom-relationship"></a>Opprette en egendefinert relasjon
+
+Relasjonen består av en *kildeenhet* som inneholder sekundærnøkkelen og en *målenhet* som kildeenhetens sekundærnøkkel peker mot. 
 
 1. I Målgruppeinnsikt går du til **Data** > **Relasjoner**.
 
 2. Velg **Ny relasjon**.
 
-3. Angi følgende informasjon i ruten **Legg til relasjon**:
+3. Angi følgende informasjon i ruten **Ny relasjon**:
 
-   > [!div class="mx-imgBorder"]
-   > ![Angi relasjonsdetaljer](media/relationships-add.png "Angi relasjonsdetaljer")
+   :::image type="content" source="media/relationship-add.png" alt-text="Sideruten Ny relasjon med tomme inndatafelter.":::
 
-   - **Relasjonsnavn**: Navn som gjenspeiler formålet med relasjonen (for eksempel **AccountWebLogs**).
+   - **Relasjonsnavn**: Navn som gjenspeiler formålet med relasjonen. Eksempel: CustomerToSupportCase.
    - **Beskrivelse**: Beskrivelse av relasjonen.
-   - **Kildeenhet**: Velg enheten som brukes som en kilde i relasjonen (for eksempel WebLog).
-   - **Kardinalitet**: Velg kardinaliteten for kildeenhetsoppføringene. "Mange" betyr for eksempel at flere Weblog-oppføringer er relatert til én WebAccount.
-   - **Kildenøkkelfelt**: Dette representerer sekundærnøkkelfeltet i kildeenheten. For eksempel har WebLog sekundærnøkkelfeltet **accountId** .
-   - **Målenhet**: Velg enheten som brukes som et mål i relasjonen (for eksempel WebAccount).
-   - **Målkardinalitet**: Velg kardinaliteten for målenhetsoppføringene. "Én" betyr for eksempel at flere Weblog-oppføringer er relatert til én WebAccount.
-   - **Målprogramfelt**: Dette feltet representerer nøkkelfeltet for målenhet. For eksempel har WebAccount nøkkelfeltet **accountId** .
+   - **Kildeenhet**: Enhet som brukes som en kilde i relasjonen. Eksempel: SupportCase.
+   - **Målenhet**: Enhet som brukes som et mål i relasjonen. Eksempel: Kunde.
+   - **Kildekardinalitet**: Angi kardinaliteten til kildeenheten. Kardinalitet beskriver antall mulige elementer i et sett. Den er alltid relatert til målkardinaliteten. Du kan velge mellom **Én** og **Mange**. Bare mange-til-én- og én-til-én-relasjoner støttes.  
+     - Mange-til-én: Flere kildeoppføringer kan knyttes til én måloppføring. Eksempel: Flere kundestøttesaker fra én kunde.
+     - Én-til-én: Én kildeoppføring er knyttet til én måloppføring. Eksempel: Én fordels-ID for én kunde.
 
-> [!NOTE]
-> Bare mange-til-én- og én-til-én-relasjoner støttes. Mange-til-mange-relasjoner kan opprettes ved hjelp av to mange-til-én-relasjoner og en koblingsenhet (en enhet som brukes til å koble kildeenheten og målenheten).
+     > [!NOTE]
+     > Mange-til-mange-relasjoner kan opprettes ved hjelp av to mange-til-én-relasjoner og en koblingsenhet, som kobler sammen kildeenheten og målenheten.
 
-## <a name="delete-a-relationship"></a>Slette en relasjon
+   - **Målkardinalitet**: Velg kardinaliteten for målenhetsoppføringene. 
+   - **Kildenøkkelfelt**: Sekundærnøkkelfeltet i kildeenheten. Eksempel: SupportCase kan bruke CaseID som et sekundærnøkkelfelt.
+   - **Målprogramfelt**: Nøkkelfeltet for målenheten. Eksempel: Kunde kan bruke nøkkelfeltet **CustomerID**.
 
-1. I Målgruppeinnsikt går du til **Data** > **Relasjoner**.
+4. Velg **Lagre** for å opprette den egendefinerte relasjonen.
 
-2. Merk av for relasjonene du vil slette.
+## <a name="view-relationships"></a>Vise relasjoner
 
-3. Velg **Slett** øverst i **Relasjoner** tabellen.
+Relasjoner-siden viser alle relasjonene som er opprettet. Hver rad representerer en relasjon, som også omfatter detaljer om kildeenheten, målenheten og kardinaliteten. 
 
-4. Bekreft slettingen.
+:::image type="content" source="media/relationships-list.png" alt-text="Liste over relasjoner og alternativer på handlingslinjen på Relasjoner-siden.":::
+
+Denne siden har et sett med alternativer for eksisterende og nye relasjoner: 
+- **Ny relasjon**: [Opprett en egendefinert relasjon](#create-a-custom-relationship).
+- **Visualisering**: [Utforsk relasjonsvisualiseringen](#explore-the-relationship-visualizer) for å se et nettverksdiagram over eksisterende relasjoner og kardinaliteten deres.
+- **Filtrer etter**: Velg hvilken type relasjoner som skal vises i listen.
+- **Søk etter relasjoner**: Bruk et tekstbasert søk etter egenskaper i relasjoner.
+
+### <a name="explore-the-relationship-visualizer"></a>Utforske relasjonsvisualiseringen
+
+Relasjonsvisualiseringen viser et nettverksdiagram over eksisterende relasjoner mellom tilkoblede enheter og kardinaliteten deres.
+
+Hvis du vil tilpasse visningen, kan du endre plasseringen til boksene ved å dra dem på lerretet.
+
+:::image type="content" source="media/relationship-visualizer.png" alt-text="Skjermbilde av nettverksdiagrammet for relasjonsvisualisering med tilkoblinger mellom relaterte enheter.":::
+
+Tilgjengelige alternativer: 
+- **Eksporter som bilde**: Lagre gjeldende visning som en bildefil.
+- **Endre til vannrett/loddrett oppsett**: Endre justeringen av enhetene og relasjonene.
+- **Rediger**: Oppdater egenskaper for egendefinerte relasjoner i redigeringsruten, og lagre endringer.
+
+## <a name="manage-existing-relationships"></a>Administrere eksisterende relasjoner 
+
+Hver relasjon representeres av en rad på Relasjoner-siden. 
+
+Velg en relasjon, og velg ett av følgende alternativer: 
+ 
+- **Rediger**: Oppdater egenskaper for egendefinerte relasjoner i redigeringsruten, og lagre endringer.
+- **Slett**: Slett egendefinerte relasjoner.
+- **Vis**: Vis systemopprettede og arvede relasjoner. 
 
 ## <a name="next-step"></a>Neste trinn
 
-System- og egendefinerte relasjoner brukes til å opprette segmenter basert på flere datakilder som ikke lenger er i siloer. Du finner mer informasjon på [Segmenter](segments.md).
-
+Systemrelasjoner og egendefinerte relasjoner brukes til å [opprette segmenter](segments.md) basert på flere datakilder som ikke lenger er i siloer.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

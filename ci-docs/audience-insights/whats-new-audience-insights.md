@@ -1,7 +1,7 @@
 ---
 title: Nye og kommende funksjoner
 description: Informasjon om nye funksjoner, forbedringer og feilrettinger.
-ms.date: 05/06/2021
+ms.date: 06/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: c66b37d6e4d6ed830238566fbc09934832892b34
-ms.sourcegitcommit: 3f9981df97fa7b1f432a446d3f11936ea4cfbde5
+ms.openlocfilehash: 355dc22ac381145b231848830cefc47eda7968f4
+ms.sourcegitcommit: 6944c1592877eb92ec789df5f2e0dbecef638837
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "5988932"
+ms.lasthandoff: 06/15/2021
+ms.locfileid: "6263263"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Nyheter i funksjonaliteten for målgruppeinnsikt i Dynamics 365 Customer Insights
 
@@ -26,6 +26,37 @@ Vi ruller ut oppdateringer for hver region. Enkelte områder kan se funksjoner f
 
 > [!TIP]
 > For å sende inn og stemme på funksjonsforespørsler og produktforslag, går du til [ideportalen for Dynamics 365-apper](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="may-2021-updates"></a>Mai 2021-oppdateringer
+
+Oppdateringene i mai 2021 omfatter flere funksjoner, ytelsesoppgraderinger og feilrettinger.
+
+### <a name="data-ingestion"></a>Datainntak
+
+- **Vis eller endre metadata eller enhetsdefinisjon når du knytter til data fra Azure Data Lake Storage** Du kan nå vise og redigere metadata eller enhetsdefinisjon i målgruppeinnsikt når du knytter til data fra en Common Data Model-mappe i Azure Data Lake Storage. Denne funksjonen gir tilbakemelding, modellvalidering og feilkontroll i sanntid. Den gjør at du kan redigere både model.json og manifest.json sømløst.
+
+### <a name="extensibility"></a>Utvidbarhet
+
+- **Forbedrede segmenteksporter, egendefinert tidsplan og duplisering** Du kan nå [se alle eksporter for et bestemt segment](export-destinations.md#view-exports-and-export-details) i en liste. Denne nye visningen hjelper deg å styre hvordan et bestemt segment brukes, og å tilpasse eksisterende eller opprette nye rapporter.    
+  Du kan [definere egendefinerte oppdateringsplaner](export-destinations.md#schedule-and-run-exports) for individuelle eksporter eller flere eksporter samtidig. Hittil har alle eksporter blitt kjørt med hver systemoppdatering.    
+  Du kan nå starte basert på en eksisterende rapport for å spare litt tid, i stedet for å opprette en ny eksport fra grunnen av.
+
+- **Eksporter segmenter til Microsoft Advertising** Vi har utvidet eksportmålene til å omfatte Microsoft Advertising. Opprett Customer Match-målgrupper på Microsoft Advertising med de enhetlige kundeprofildataene, og bruk disse målgruppene i reklamekampanjene dine. Hvis du vil ha mer informasjon, kan du se [Eksporter segmenter til Microsoft Advertising](export-microsoft-advertising.md).
+
+- **Eksporter segmenter til LinkedIn-annonser** Vi har utvidet eksportmålene våre slik at de omfatter LinkedIn-annonser, og gjør at du kan låse opp kontaktmålretting samt firmamålretting via LinkedIn ved å eksportere de enhetlige kundeprofildataene. Hvis du vil ha mer informasjon, kan du se [Eksportere segmenter til LinkedIn-annonser](export-linkedin-ads.md).
+
+
+- **Eksporter segmenter til Omnisend** Vi har utvidet eksportmålene til å omfatte Omnisend. Bruk segmentene som er opprettet i målgruppeinnsikt, til å generere kampanjer, levere e-postmarkedsføring og bruke bestemte kundegrupper med Omnisend. Hvis du vil ha mer informasjon, kan du se [Eksportere segmenter til Omnisend](export-omnisend.md).
+
+### <a name="predictions"></a>Prediksjoner
+
+- **Brukbarhetsrapport for inndata** Brukbarhetsrapporten for inndata byr på en konsolidert visning av feilene og advarslene som de bruksklare prediksjonene kan generere. Den gir også anbefalinger om hvordan du kan forbedre modellytelsen.    
+  Rapporten er tilgjengelig etter at en modell har fullført opplæringsprosessen. Den opprettes for hver modell separat, uavhengig av om den ble fullført eller ikke.
+  Denne funksjonen er for øyeblikket bare tilgjengelig for modellen for transaksjonsfrafall. Hvis du vil ha mer informasjon, kan du se [Brukbarhetsrapport for inndata](manage-predictions.md#input-data-usability-report).
+
+### <a name="relationships"></a>Relasjoner
+
+- **Relasjonsvisualisering** Visningen for relasjonsvisualisering gjør at du kan se alle eksisterende relasjoner mellom enheter og kardinaliteten deres. Relasjoner er nå organisert i grupper: brukeropprettede relasjoner, systemrelasjoner og arvede relasjoner. Du kan også eksportere en visning som et bilde. Hvis du vil ha mer informasjon, kan du se [Vise relasjoner](relationships.md#view-relationships). 
 
 ## <a name="april-2021-updates"></a>April 2021-oppdateringer
 

@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: a7fa6515bd6e79dedfb21aa0f0b8e24b873a6771
-ms.sourcegitcommit: 8341fa964365c185b65bc4b71fc0c695ea127dc0
+ms.openlocfilehash: 6cb7bd62bf0f61e6dc5811b20e5011e4a086c743
+ms.sourcegitcommit: 84283d523a891298fca8aaf629d9f9ab2a1bc067
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/14/2021
-ms.locfileid: "6034024"
+ms.lasthandoff: 05/27/2021
+ms.locfileid: "6111399"
 ---
 # <a name="segments-overview"></a>Oversikt over segmenter
 
@@ -32,22 +32,13 @@ Du kan opprette et nytt segment på flere måter:
 - AI-drevne forslag basert på mål eller attributter: [Foreslåtte segmenter for å forbedre tiltak](suggested-segments.md)
 - Forslag basert på aktiviteter: [Foreslåtte segmenter basert på kundeaktivitet](suggested-segments-activity.md)
 
-## <a name="get-insights-on-existing-segments"></a>Få innsikt i eksisterende segmenter
-
-Oppdag ytterligere informasjon om de eksisterende segmentene ved hjelp av [Segmentinnsikt](segment-insights.md). Finn ut hva som skiller to segmenter fra hverandre, eller hva de har til felles.
-
-## <a name="find-similar-customers"></a>Søk etter lignende kunder
-
-Finn kunder som ligner på medlemmene i et valgt segment, ved hjelp av kunstig intelligens. Hvis du vil ha mer informasjon, kan du se [lignende kunder ](find-similar-customer-segments.md).
-
 ## <a name="manage-existing-segments"></a>Behandle eksisterende segmenter
 
 Gå til **Segmenter**-siden for å vise alle lagrede segmenter og behandle dem.
 
 Hvert segment representeres av en rad som inneholder tilleggsinformasjon om segmentet.
 
-> [!div class="mx-imgBorder"]
-> ![Alternativer for å behandle et eksisterende segment](media/segments-selected-segment.png "Alternativer for å behandle et eksisterende segment")
+:::image type="content" source="media/segments-selected-segment.png" alt-text="Valgt segment med rullegardinliste for alternativer og tilgjengelige alternativer.":::
 
 Følgende handling er tilgjengelig når du velger et segment:
 
@@ -59,7 +50,7 @@ Følgende handling er tilgjengelig når du velger et segment:
   Du kan også bruke funksjonen **Planlegg senere** i rullegardinlisten **Aktiver/Deaktiver** for å angi en fremtidig dato og klokkeslett for acktivering og deaktivering av et bestemt segment.
 - **Gi nytt navn** til segmentet.
 - **Last ned** listen over medlemmer som en .CSV-fil.
-- **Legg til**-alternativet sender listen over kunde-ID-er i segmentet til behandling i et annet program.
+- **Behandle eksporter** for å se eksporter som er knyttet til segment, og administrere dem. [Finn ut mer om eksporter.](export-destinations.md)
 - **Slett** segmentet.
 
 ## <a name="refresh-segments"></a>Oppdatere segmenter
@@ -68,6 +59,24 @@ Du kan oppdatere alle segmenter samtidig ved å velge **Oppdater alle** på **Se
 
 > [!TIP]
 > Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
+
+## <a name="export-segments"></a>Eksportere segmenter
+
+Du kan eksportere et segment fra segmentsiden eller [eksportsiden](export-destinations.md). 
+
+1. Gå til siden **Segmenter**.
+
+1. Velg **Vis mer [...]** for segmentet du vil eksportere.
+
+1. Velg **Behandle eksporter** fra rullegardinlisten for handlinger.
+
+1. Siden **Eksporter (forhåndsversjon) for segmentet** åpnes. Du kan se alle konfigurerte eksporter gruppert etter eksporter som inneholder gjeldende segment eller ikke inneholder det.
+
+   1. Hvis du vil legge til det valgte segmentet i en eksport, velger du eksporten fra listen og velger **Legg til segment**.
+
+   1. Hvis du vil opprette en ny eksport med det valgte segmentet, velger du **Legg til eksport**. Hvis du vil ha mer informasjon om hvordan du oppretter eksporter, kan du se [Konfigurere en ny eksport](export-destinations.md#set-up-a-new-export).
+
+1. Velg **Tilbake** for å gå tilbake til hovedsiden for segmenter.
 
 ## <a name="view-processing-history-and-segment-members"></a>Vis behandlingslogg og segmentmedlemmer
 

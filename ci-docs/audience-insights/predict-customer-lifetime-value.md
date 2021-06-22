@@ -9,12 +9,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
-ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
+ms.openlocfilehash: e2f92a64d01a443bcf3c1605621abe045b93ee5e
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "5954591"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095522"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Prediksjon av verdi for kundelevetid (CLV) (forhåndsversjon)
 
@@ -149,7 +149,6 @@ Data som gjenspeiler viktige samhandlinger med kunder (for eksempel nett, kundes
 
 1. Velg **Neste**.
 
-
 ### <a name="review-and-run-the-model-configuration"></a>Se gjennom og kjøre modellkonfigurasjonen
 
 1. I trinnet **Se gjennom modelldetaljer** validerer du konfigurasjonen av prediksjonen. Du kan gå tilbake til en hvilken som helst del av forutsigelseskonfigurasjonen ved å velge **Rediger** under verdien som vises. Du kan også velge et konfigurasjonstrinn fra fremdriftsindikatoren.
@@ -170,11 +169,10 @@ Data som gjenspeiler viktige samhandlinger med kunder (for eksempel nett, kundes
 - **Status**: Statusen for prediksjonskjøringen.
     - **I kø**: Prediksjonen venter på at andre prosesser skal fullføres.
     - **Oppdaterer**: Prediksjonen kjører for å opprette resultater som flytes til utdataenheten.
-    - **Mislyktes**: Prediksjonskjøringen mislyktes. [Se gjennom loggene](#troubleshoot-a-failed-prediction) for mer informasjon.
+    - **Mislyktes**: Prediksjonskjøringen mislyktes. [Se gjennom loggene](manage-predictions.md#troubleshoot-a-failed-prediction) for mer informasjon.
     - **Fullført**: Prediksjonen ble fullført. Velg **Vis** under de loddrette ellipsene for å se gjennom prediksjonsresultatene.
 - **Redigert**: Datoen da konfigurasjonen av prediksjonen ble endret.
 - **Sist oppdatert**: Datoen da prediksjonen oppdaterte resultater i utdataenheten.
-
 
 ### <a name="review-prediction-results"></a>Se gjennom prediksjonsresultater
 
@@ -216,28 +214,8 @@ Det er tre hoveddeler med data på resultatsiden.
 
 - **Mest innflytelsesrike faktorer**: Ulike faktorer vurderes når du oppretter CLV-prediksjon basert på inndataene som gis til modellen for kunstig intelligens. Hver av faktorene har sin viktighet beregnet for de aggregerte prognoser som opprettes av en modell. Du kan bruke disse faktorene til å validere forutsigelsesresultatene. Disse faktorene gir også mer innsikt i de mest innflytelsesrike faktorene som bidro til å forutsi CLV for alle kundene.
 
-## <a name="refresh-a-prediction"></a>Oppdatere en prediksjon
+## <a name="manage-predictions"></a>Administrere prediksjoner
 
-Prediksjoner oppdateres automatisk i den samme [tidsplanen dataene oppdateres](system.md#schedule-tab) som konfigurert i innstillingene. Du kan også oppdatere dem manuelt.
-
-1. Gå til **Intelligens** > **Prognoser**, og velg kategorien **Mine prognoser**.
-2. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil oppdatere.
-3. Velg **Oppdater**.
-
-## <a name="delete-a-prediction"></a>Slette en prediksjon
-
-Sletting av en prognose fjerner også utdataenheten.
-
-1. Gå til **Intelligens** > **Prognoser**, og velg kategorien **Mine prognoser**.
-2. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil slette.
-3. Velg **Slett**.
-
-## <a name="troubleshoot-a-failed-prediction"></a>Feilsøke en mislykket prognose
-
-1. Gå til **Intelligens** > **Prognoser**, og velg kategorien **Mine prognoser**.
-2. Velg de loddrette ellipsene ved siden av prediksjonen du vil vise feillogger for.
-3. Velg **Logger**.
-4. Se gjennom alle feilene. Det finnes flere typer feil som kan oppstå, og de beskriver hvilken betingelse som forårsaket feilen. En feil der det for eksempel ikke er nok data til å forutsi nøyaktig, blir vanligvis løst ved å laste inn flere data i målgruppeinnsikt.
-
+Det går an å optimalisere, feilsøke, oppdatere eller slette prognoser. Se gjennom en brukbarhetsrapport for inndata for å finne ut hvordan du gjør en prediksjon raskere og mer pålitelig. Hvis du vil ha mer informasjon, kan du se [Administrere prediksjoner](manage-predictions.md).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

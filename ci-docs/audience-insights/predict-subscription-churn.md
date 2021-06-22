@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906914"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095660"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Forutsigelse av abonnementsfrafall (forhåndsversjon)
 
@@ -147,30 +147,9 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
        > [!div class="mx-imgBorder"]
        > ![Liste med innflytelsesrike faktorer og viktigheten av dem, for å forutsi frafallsresultatet](media/subscription-churn-influentialfactors.PNG "Liste med innflytelsesrike faktorer og viktigheten av dem, for å forutsi frafallsresultatet")
 
-## <a name="fix-a-failed-prediction"></a>Rette en mislykket forutsigelse
+## <a name="manage-predictions"></a>Administrere prediksjoner
 
-1. Gå til kategorien **Mine prediksjoner** i **Intelligens** > **Prediksjoner**.
-1. Velg hvilken forutsigelse du vil vise feillogger for, og velg **Logger**.
-   > [!div class="mx-imgBorder"]
-   > ![Visning av resultatmenylinjen, inkludert knapper for lukking, redigeringsmodell og logger](media/subscription-churn-logsbutton.PNG "Visning av resultatmenylinjen, inkludert knapper for lukking, redigeringsmodell og logger")
-1. Se gjennom alle feilene. Det finnes flere typer feil som kan oppstå, og de beskriver hvilken betingelse som forårsaket feilen. En feil der det for eksempel ikke er nok data til å forutsi nøyaktig, blir vanligvis løst ved å laste inn flere data.
-
-## <a name="refresh-a-prediction"></a>Oppdatere en prediksjon
-
-Prognoser oppdateres automatisk på samme [tidsplan som dataene dine oppdateres](system.md#schedule-tab), som konfigurert i innstillingene.
-
-1. Gå til kategorien **Mine prediksjoner** i **Intelligens** > **Prediksjoner**.
-1. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil oppdatere.
-1. Velg **Oppdater**.
-
-## <a name="delete-a-prediction"></a>Slette en prediksjon
-
-1. Gå til kategorien **Mine prediksjoner** i **Intelligens** > **Prediksjoner**.
-1. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil slette.
-1. Velg **Slett**.
-
-> [!NOTE]
-> Hvis du sletter en prediksjon, fjernes utdataenheten.
+Det går an å optimalisere, feilsøke, oppdatere eller slette prognoser. Se gjennom en brukbarhetsrapport for inndata for å finne ut hvordan du gjør en prediksjon raskere og mer pålitelig. Hvis du vil ha mer informasjon, kan du se [Administrere prediksjoner](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

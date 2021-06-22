@@ -1,7 +1,7 @@
 ---
 title: Opprette og behandle miljøer
 description: Lær hvordan du registrerer deg for tjenesten og hvordan du administrerer miljøer.
-ms.date: 03/26/2021
+ms.date: 06/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 8cc1401251ed7c45c598bd4a8fb33a9709fabbc8
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 06310ea6fc72f26e21e185a6abcb5d19d4b201f6
+ms.sourcegitcommit: e5425f060c8d80f9510283dc610ce70a4e709b1e
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887998"
+ms.lasthandoff: 06/15/2021
+ms.locfileid: "6259111"
 ---
 # <a name="manage-environments"></a>Behandle miljøer
 
@@ -76,9 +76,9 @@ Slik oppretter du et miljø:
    > Vi støtter bare Azure Data Lake Gen2-lagringskontoer fra det samme Azure-området du valgte da du opprettet miljøet.
    > Vi støtter bare Azure Data Lake Gen2 Hierarkisk navneområde (HNS)-aktiverte lagringskontoer.
 
-   - For Azure Data Lake Storage Gen2 kan du velge mellom et ressursbasert alternativ og et abonnementsbasert alternativ for godkjenning. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). **Beholder**-navnet kan ikke endres, og det vil være "customerinsights".
+   - For Azure Data Lake Storage Gen2 kan du velge mellom et ressursbasert alternativ og et abonnementsbasert alternativ for godkjenning. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). **Beholder**-navnet kan ikke endres og er `customerinsights`.
    
-   - Hvis du vil bruke [prognoser](predictions.md), konfigurere datadeling med programmer og løsninger basert på Microsoft Dataverse, eller aktivere inntak av data fra lokale datakilder, må du oppgi URL-adressen for Microsoft Dataverse-miljøet under **Konfigurere datadeling med Microsoft Dataverse og aktivere flere funksjoner**. Velg **Aktiver datadeling** for å dele Customer Insights-utdata med en Microsoft Dataverse-administrert datasjø.
+   - Hvis du vil bruke [prediksjoner](predictions.md), konfigurere datadeling med Microsoft Dataverse, eller aktivere datainntak fra lokale datakilder, oppgir du nettadressen for Microsoft Dataverse-miljøet under **Konfigurer datadeling med Microsoft Dataverse og aktiver flere funksjoner**. Velg **Aktiver datadeling** for å dele Customer Insights-utdata med en Microsoft Dataverse-administrert datasjø.
 
      > [!NOTE]
      > - Det er for øyeblikket ikke støtte for datadeling med Microsoft Dataverse-styrt datasjø når du lagrer alle dataene i din egen Azure Data Lake Storage.
@@ -87,7 +87,7 @@ Slik oppretter du et miljø:
      > [!div class="mx-imgBorder"]
      > ![Konfigurasjonsalternativer for å aktivere datadeling med Microsoft Dataverse](media/datasharing-with-DataverseMDL.png)
 
-   Når du kjører prosesser, for eksempel datainntak eller segmentopprettelse, blir tilsvarende mapper opprettet i lagringskontoen du angav ovenfor. Datafiler og model.json-filer opprettes og legges til i de respektive undermappene basert på prosessen du kjører.
+   Når du kjører prosesser, for eksempel datainntak eller segmentopprettelse, blir tilsvarende mapper opprettet i lagringskontoen du angav ovenfor. Datafiler og model.json-filer blir opprettet og lagt til i mapper basert på prosessnavnet.
 
    Hvis du oppretter flere miljøer i Customer Insights og velger å lagre enhetene fra disse miljøene i lagringskontoen, blir det opprettet separate mapper for hvert miljø med ci_<environmentid> i beholderen.
 
@@ -140,13 +140,13 @@ Du kan redigere noen av detaljene i eksisterende miljøer.
 
 5. Du kan eventuelt oppdatere fra en tilkobling basert på en kontonøkkel til en ressursbasert eller abonnementsbasert tilkobling. Når du har oppgradert, kan du ikke tilbakestille til kontonøkkelen etter oppdateringen. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). Du kan ikke endre informasjon om en **beholder** når du oppdaterer tilkoblingen.
 
-6. Alternativt kan du angi en URL-adresse for Microsoft Dataverse-miljøet under **Konfigurere datadeling med Microsoft Dataverse og aktivere flere funksjoner**. Disse funksjonene omfatter datadeling med programmer og løsninger basert på Microsoft Dataverse, datainntak fra lokale datakilder, eller bruk av [prediksjoner](predictions.md). Velg **Aktiver datadeling** for å dele Customer Insights-utdata med en Microsoft Dataverse-administrert Data Lake.
+6. Alternativt kan du angi en URL-adresse for Microsoft Dataverse-miljøet under **Konfigurere datadeling med Microsoft Dataverse og aktivere flere funksjoner**. Disse funksjonene omfatter datadeling med programmer og løsninger basert på Microsoft Dataverse, datainntak fra lokale datakilder eller bruk av [prediksjoner](predictions.md). Velg **Aktiver datadeling** for å dele Customer Insights-utdata med en Microsoft Dataverse-administrert Data Lake.
 
    > [!NOTE]
    > - Det er for øyeblikket ikke støtte for datadeling med Microsoft Dataverse-styrt datasjø når du lagrer alle dataene i din egen Azure Data Lake Storage.
    > - [Prediksjon av manglende verdier i en enhet](predictions.md) støttes for øyeblikket ikke når du aktiverer datadeling med Microsoft Dataverse-administrert Data Lake.
 
-   Når du aktiverer datadeling med Microsoft Dataverse, utløses en fullstendig oppdatering av datakildene og andre prosesser. Hvis prosesser kjører og står i kø, vises ikke alternativet for å aktivere datadeling med Microsoft Dataverse. Du kan vente til disse prosessene er fullført eller avbrutt for å aktivere datadeling. 
+   Etter at du har aktivert datadeling med Microsoft Dataverse, starter en fullstendig oppdatering av datakildene og andre prosesser. Hvis prosesser kjører, vises ikke alternativet for å aktivere datadeling med Microsoft Dataverse. Vent til disse prosessene er fullført eller avbrutt for å aktivere datadeling. 
    
    :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Konfigurasjonsalternativer for å aktivere datadeling med Microsoft Dataverse.":::
    

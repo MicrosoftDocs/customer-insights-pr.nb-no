@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 20072d14b160e54f5ad044adc1de6c079bf790e4
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b136084316da5ae17a8428236381f69e5c21f9ea
+ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595285"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6129911"
 ---
 # <a name="product-recommendation-prediction-preview-sample-guide"></a>Eksempelveiledning for prediksjon for produktanbefaling (forhåndsversjon)
 
@@ -22,7 +22,7 @@ Vi tar deg gjennom et helhetlig eksempel på prediksjon av produktanbefaling ved
 
 ## <a name="scenario"></a>Scenario
 
-Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som de kan selge via nettstedet Contoso Coffee. Målet er å forstå hvilke produkter de bør anbefale til sine regelmessige kunder. Hvis du vet hva det er mer **sannsynlig at kundene kjøper**, kan du hjelpe dem med å lagre markedsføringen ved å fokusere på bestemte elementer.
+Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som de selger via nettstedet sitt, Contoso Coffee. Målet er å forstå hvilke produkter de bør anbefale til sine regelmessige kunder. Hvis du vet hva det er mer **sannsynlig at kundene kjøper**, kan du hjelpe dem med å lagre markedsføringen ved å fokusere på bestemte elementer.
 
 ## <a name="prerequisites"></a>Forutsetninger
 
@@ -65,7 +65,7 @@ Se gjennom artiklene [om datainntak](data-sources.md) og [importering av datakil
 
 1. I **Navn**-feltet i sideruten endrer du navnet på datakilden fra **Spørring** til **eCommercePurchases**.
 
-1. Lagre datakilden.
+1. **Lagre** datakilden.
 
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Hente inn kundedata fra lojalitetsskjema
@@ -83,11 +83,11 @@ Se gjennom artiklene [om datainntak](data-sources.md) og [importering av datakil
 
 1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden fra **Spørring** til **loyCustomers**.
 
-1. Lagre datakilden.
+1. **Lagre** datakilden.
 
 ## <a name="task-2---data-unification"></a>Oppgave 2 – Dataforening
 
-Etter å ha hentet inn dataene, begynner vi nå med prosessen for å **tilordne, samsvare og slå sammen** for å opprette en enhetlig kundeprofil. Hvis du vil ha mer informasjon, kan du se [Dataforening](data-unification.md).
+Etter å ha tatt inn dataene begynner vi nå dataforeningsprosessen for å opprette en enhetlig kundeprofil. Hvis du vil ha mer informasjon, kan du se [Dataforening](data-unification.md).
 
 ### <a name="map"></a>Tilordne
 
@@ -156,7 +156,7 @@ Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abo
 
    - **Antall produkter**: Angi **5** for denne verdien. Denne innstillingen definerer hvor mange produkter du vil anbefale til kundene.
 
-   - **Foreslå produkter som kunder nylig har kjøpt?**: Velg **Ja** for å angi at du vil inkludere produkter i anbefalingen som kundene har kjøpt tidligere.
+   - **Forventet å gjenta innkjøp**: Velg **Ja** for å angi at du vil ta med produkter som kundene har kjøpt tidligere, i anbefalingen.
 
    - **Tilbakeblikksvindu:** Velg minst **365 dager**. Denne innstillingen definerer hvor langt modellen skal se bakover for å se på kundens aktivitet og bruke det som inndata i anbefalingene.
    
