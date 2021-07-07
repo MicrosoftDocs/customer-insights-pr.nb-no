@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: ccf4f661ecffb281556a4545b1f26ee809c697cd
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 0496d10c994cd077a778a6e745e3774e316765ae
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5895925"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305214"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Supplering av firmaprofiler med Leadspace (forhåndsversjon)
 
@@ -57,13 +57,13 @@ Følgende forutsetninger må være oppfylt for at du skal kunne konfigurere Lead
 
 Du må være en administrator for å konfigurere tilkoblinger. Velg **Legg til tilkobling** når du konfigurerer en supplering *eller* gå til **Administrasjon** > **Tilkoblinger** og velg **Konfigurer** i Leadspace-flisen.
 
-1. Velg **Kom i gang** 
+1. Velg **Komme i gang**. 
 
 1. Skriv inn et navn på tilkoblingen i **Visningsnavn**-boksen.
 
 1. Angi et gyldig Leadspace-token.
 
-1. Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**
+1. Gå gjennom og gi ditt samtykke til **Datapersonvern og -samsvar** ved å velge **Jeg er enig**.
 
 1. Velg **Bekreft** for å validere konfigurasjonen.
 
@@ -81,7 +81,7 @@ Hvis du vil ha mer informasjon, kan du se [API-er for Leadspace](https://support
 
 ## <a name="next-steps"></a>Neste trinn
 
-Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md), [mål](measures.md) og til og med [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
+Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md) og [mål](measures.md), og [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
 
 ## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
 

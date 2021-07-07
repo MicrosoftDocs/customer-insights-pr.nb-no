@@ -9,12 +9,12 @@ ms.topic: how-to
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: b935be08199f20e83bceb3317985b0e1dc120016
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: dccb8dcca8f65f64973e46fed9d83034d58282e2
+ms.sourcegitcommit: bcc47d15d4f0eacf008e4dbc09baac7f062b3ca8
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095736"
+ms.lasthandoff: 06/29/2021
+ms.locfileid: "6315890"
 ---
 # <a name="manage-predictions"></a>Administrere prediksjoner
 
@@ -35,9 +35,6 @@ Denne artikkelen tar for seg noen oppgaver som de fleste prediksjonsscenarioene 
 Brukbarhetsrapporten for inndata gir en konsolidert visning av feilene og advarslene som de bruksklare prediksjonene kan generere. Den gir også anbefalinger om hvordan du kan forbedre modellytelsen.
 
 Rapporten er tilgjengelig etter at en modell har fullført opplæringsprosessen. Den opprettes for hver modell separat, uavhengig av om den ble fullført eller ikke.
-
-> [!NOTE]
-> Denne funksjonen fungerer for øyeblikket bare for modellen for transaksjonsfrafall.
 
 ### <a name="view-the-input-data-usability-report"></a>Vise brukbarhetsrapporten for inndata
 

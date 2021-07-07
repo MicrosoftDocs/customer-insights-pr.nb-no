@@ -9,16 +9,16 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 402e5ef3515bce0e6f56788781b7bd909738aaa6
-ms.sourcegitcommit: b833e333745d321edeaf96d3ed14458cbce02ff1
+ms.openlocfilehash: a83caf2428f3dbd9791b9f746d00d370362a508c
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/17/2021
-ms.locfileid: "6049262"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304813"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere mål
 
-Tiltak hjelper deg med å få bedre forståelse av kundeatferd og forretningsytelse. De ser på relevante verdier fra [enhetlige profiler](data-unification.md). En virksomhet vil for eksempel se det *totale forbruket per kunde* for å forstå den enkelte kundes kjøpshistorikk, eller måle *det totale salget for selskapet* for å forstå omsetningen på aggregert nivå i hele virksomheten.  
+Tiltak hjelper deg med å få bedre forståelse av kundeatferd og forretningsytelse. De ser på relevante verdier fra [enhetlige profiler](data-unification.md). En virksomhet vil for eksempel se *totalkostnaden per kunde* for å forstå en individuell kundes kjøpshistorikk eller måle *totalt salg av firmaet* for å forstå omsetningen på aggregert nivå i hele virksomheten.  
 
 Tiltak opprettes ved hjelp av måleverktøyet, en dataspørringsplattform med forskjellige operatorer og enkle tilordningsalternativer. Den lar deg filtrere dataene, gruppere resultater, registrere [enhetsrelasjonsbaner](relationships.md) og forhåndsvise utdataene.
 
@@ -36,7 +36,7 @@ Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan by
    > [!NOTE]
    > Hvis den nye målkonfigurasjonen bare har to felter, for eksempel Kunde-ID og én beregning, legges utdataene til som en ny kolonne i den systemgenererte enheten Customer_Measure. Du kan også se målets verdi i den enhetlige kundeprofilen. Andre tiltak vil generere sine egne enheter.
 
-1. Velg sammensettingsfunksjonen fra rullegardinlisten **Velg funksjon** i konfigurasjonsområdet. Aggregasjonsfunksjonene omfatter: 
+1. Velg aggregasjonsfunksjon fra rullegardinlisten **Velg funksjon** i konfigurasjonsområdet. Aggregasjonsfunksjonene omfatter: 
    - **Sum**
    - **Gjennomsnitt**
    - **Antall**
@@ -69,12 +69,14 @@ Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan by
    1. Velg **Bruk** for å legge til filtrene i målet.
 
 1. Hvis du vil legge til dimensjoner, velger du **Dimensjon** i konfigurasjonsområdet. Dimensjoner vises som kolonner i målutdataenheten.
+ 
    1. Velg **Rediger dimensjoner** for å legge til dataattributter du vil gruppere målverdiene etter. For eksempel poststed eller kjønn. Som standard velges *CustomerID*-dimensjonen for å opprette *mål på kundenivå*. Du kan fjerne standarddimensjonen hvis du vil opprette *tiltak på forretningsnivå*.
    1. Velg **Ferdig** for å legge til dimensjonene i målet.
 
 1. Hvis det finnes verdier i dataene som du må erstatte med et heltall, for eksempel erstatte *null* med *0*, velger du **Regler**. Konfigurer regelen, og pass på at du bare velger hele tall som erstatning.
 
 1. Hvis det finnes flere baner mellom dataenheten du tilordnet og *Kunde*-enheten, må du velge en av de identifiserte [enhetsrelasjonsbanene](relationships.md). Måleresultatene kan variere avhengig av den valgte banen. 
+   
    1. Velg **Datainnstillinger**, og velg enhetsbanen som skal brukes til å identifisere målet. Hvis det bare finnes én enkelt bane til *Kunde*-enheten, vises ikke denne kontrollen.
    1. Velg **Fullført** for å ta i bruk valget. 
 
@@ -123,7 +125,7 @@ Fremgangsmåten nedenfor beskriver hvordan du bygger et nytt mål ved hjelp av e
 
 1. Velg **Ferdig**.
 
-1. I delen **Angi tidsperiode** definerer du tidsrammen for dataene som skal brukes. Velg om du vil at det nye målet skal dekke hele datasettet ved å velge **Historiske**. Eller hvis du vil at målet skal fokusere på en **Bestemt tidsperiode**.
+1. I delen **Angi tidsperiode** definerer du tidsrammen for dataene som skal brukes. Velg om du vil at det nye målet skal dekke hele datasett, ved å velge **Alle tider**, eller om du vil at målet skal fokusere på en **Bestemt tidsperiode**.
 
    :::image type="content" source="media/measure-set-time-period.png" alt-text="Skjermbilde som viser tidsperiodedelen når du konfigurerer et mål fra en mal.":::
 
@@ -142,12 +144,12 @@ Fremgangsmåten nedenfor beskriver hvordan du bygger et nytt mål ved hjelp av e
 
 Du finner mållisten på **Mål**-siden.
 
-Du finner informasjon om måltypen, oppretteren, opprettingsdato, status og tilstand. Når du velger et mål fra listen, kan du forhåndsvise utdataene og laste ned en .CSV-fil.
+Du finner informasjon om måltypen, oppretteren, opprettingsdato, status og tilstand. Når du velger et mål fra listen, kan du forhåndsvise utdataene og laste ned en CSV-fil.
 
 Hvis du vil oppdatere alle målene samtidig, velger du **Oppdater alle** uten å velge et bestemt mål.
 
 > [!div class="mx-imgBorder"]
-> ![Handlinger for å administrere enkeltmål](media/measure-actions.png "Handlinger for å administrere enkeltmål")
+> ![Handlinger for å administrere enkeltmål.](media/measure-actions.png "Handlinger for å administrere enkeltmål.")
 
 Velg et mål fra listen for følgende alternativer:
 
@@ -159,11 +161,11 @@ Velg et mål fra listen for følgende alternativer:
 - **Aktiver** eller **Deaktiver**. Inaktive tiltak oppdateres ikke under en [planlagt oppdatering](system.md#schedule-tab).
 
 > [!TIP]
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
+> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Når du har valgt **Se detaljer** for en av jobbens oppgaver, finner du ytterligere informasjon: behandlingstid, siste behandlingsdato og alle feil og advarsler knyttet til oppgaven.
 
 ## <a name="next-step"></a>Neste trinn
 
-Du kan bruke eksisterende tiltak til å opprette [et kundesegment](segments.md).
+Du kan bruke eksisterende målinger til å opprette [et kundesegment](segments.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

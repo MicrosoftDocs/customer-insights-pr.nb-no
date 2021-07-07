@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 87fb517e9f0b380f9721f77470dceb3bcb7e5616
-ms.sourcegitcommit: 55c00ea61c78db7b3b54894c01afb3246dff31c8
+ms.openlocfilehash: 82f6f363497f8f1b45fa84acd49bcaed332e60e8
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "5700680"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305655"
 ---
 # <a name="custom-machine-learning-models"></a>Egendefinerte modeller for maskinlæring
 
@@ -72,7 +72,7 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
       > [!div class="mx-imgBorder"]
       > ![Parameterrute for modelutdata](media/intelligence-screen3-outputparameters.png "Parameterrute for modelutdata")
 
-1. Velg det tilsvarende attributtet fra rullegardinlisten **Kunde-ID i resultater** som er identifiserer kunder, og velg **Lagre**.
+1. Velg det tilsvarende attributtet fra rullegardinlisten **Kunde-ID i resultater** som identifiserer kunder, og velg **Lagre**.
 
    > [!div class="mx-imgBorder"]
    > ![Relater resultater til kundedataruten](media/intelligence-screen4-relatetocustomer.png "Relater resultater til kundedataruten")
@@ -100,7 +100,7 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
       1. Velg **Navn på parameter for utdatalager** for testpipelinen.
       1. Velg **Navn på parameter for utdatabane** for testpipelinen.
 
-1. Velg det tilsvarende attributtet fra rullegardinlisten **Kunde-ID i resultater** som er identifiserer kunder, og velg **Lagre**.
+1. Velg det tilsvarende attributtet fra rullegardinlisten **Kunde-ID i resultater** som identifiserer kunder, og velg **Lagre**.
    Velg et attributt fra beslutningsutdataene med verdier som ligner på kunde-ID-kolonnen for kundeenheten. Hvis du ikke har en slik kolonne i datasettet, velger du et attributt som unikt identifiserer raden.
 
 ## <a name="run-a-workflow"></a>Kjøre en arbeidsflyt

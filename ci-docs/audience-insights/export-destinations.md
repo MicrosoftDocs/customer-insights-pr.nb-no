@@ -9,18 +9,18 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 6e7793fa99f8431d9d420529b39e0b5b5dbf6748
-ms.sourcegitcommit: 0689e7ed4265855d1f76745d68af390f8f4af8a0
+ms.openlocfilehash: 28563e3a76535cb0c92bfcda4ef5037430d00cfa
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/14/2021
-ms.locfileid: "6253052"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305490"
 ---
 # <a name="exports-preview-overview"></a>Oversikt over Eksporter (forhåndsversjon)
 
 **Eksporter**-siden viser alle konfigurerte eksporter. Eksporter deler bestemte data med forskjellige programmer. De kan omfatte kundeprofiler eller enheter, skjemaer og tilordningsdetaljer. Hver eksport krever en [tilkobling, konfigurert av en administrator, for å administrere godkjenning og tilgang](connections.md).
 
-Gå til **Data** > **Eksporter** for å vise eksportsiden. Alle brukerroller har tilgang til å vise konfigurerte eksporter. Bruk av søkefeltet på kommandolinjen til å søke etter eksporter etter navn, tilkoblingsnavn eller tilkoblingstype.
+Gå til **Data** > **Eksporter** for å vise eksportsiden. Alle brukerroller kan vise konfigurerte eksporter. Bruk søkefeltet på kommandolinjen til å søke etter eksporter etter navn, tilkoblingsnavn eller tilkoblingstype.
 
 ## <a name="set-up-a-new-export"></a>Konfigurer en ny eksport
 
@@ -65,7 +65,7 @@ Når du har opprettet eksportmål, vises de i **Data** > **Eksporter**. Alle bru
 
 1. Gå til **Data** > **Eksporter**.
 
-1. Brukere uten redigeringstillatelser velger **Vis** i stedet for **Rediger** for å se eksportdetaljene.
+1. Brukere uten redigeringstillatelser velger **Vis** i stedet for **Rediger** for å vise eksportdetaljene.
 
 1. Sideruten viser konfigurasjonen av en eksport. Du kan ikke endre verdier uten redigeringstillatelser. Velg **Lukk** for å gå tilbake til eksportsiden.
 
@@ -73,7 +73,7 @@ Når du har opprettet eksportmål, vises de i **Data** > **Eksporter**. Alle bru
 
 Hver eksport du konfigurerer, har en oppdateringsplan. Under en oppdatering ser systemet etter nye eller oppdaterte data som skal tas med i en eksport. Eksporter kjører som standard som en del av hver [planlagte systemoppdatering](system.md#schedule-tab). Du kan tilpasse oppdateringsplanen eller deaktivere den for å kjøre eksporter manuelt.
 
-Eksportplaner er avhengig av tilstanden til miljøet. Hvis [avhengigheter](system.md#refresh-policies) oppdateres når en planlagt eksport skal starte, fullfører systemet oppdateringene for avhengighetene først, og deretter kjører det eksporten. Du kan se når en eksport sist ble oppdatert, i kolonnen **Oppdatert**.
+Eksportplaner er avhengig av tilstanden til miljøet. Hvis det pågår oppdateringer for [avhengigheter](system.md#refresh-policies) når en planlagt eksport skal starte, fullføres oppdateringene først, og deretter kjøres eksporten. Du kan se når en eksport sist ble oppdatert, i kolonnen **Oppdatert**.
 
 ### <a name="schedule-exports"></a>Planlegge eksporter
 

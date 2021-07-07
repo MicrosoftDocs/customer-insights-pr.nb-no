@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: c9adb4d7db74573d0512ae7a68a0e7ab51c994a0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896339"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304616"
 ---
 # <a name="customer-profiles"></a>Kundeprofiler
 
@@ -57,13 +57,13 @@ Velg en hvilken som helst av kundeflisene for å åpne **Kundedetaljer**-siden. 
 
 Kundedetaljene inkluderer:
 
--   **Kundeprofilflis:** Denne flisen viser de forskjellige verdiene fra den enhetlige kundeprofilenheten. Disse detaljene kan omfatte e-postadresse, navn, poststed og så videre. 
+-   **Kundeprofilflis**: Denne flisen viser de forskjellige verdiene fra den enhetlige kundeprofilenheten. Disse detaljene kan omfatte e-postadresse, navn, poststed og så videre. 
 
--   **Potensielle interesser, potensielle merker:** Viser om du har konfigurert en førsteparts supplering. Det representerer potensielle interesser og tiltrekning for merker en kunde med en profil som ligner på denne kunden, kan ha. Hvis du vil ha mer informasjon, kan du se [Supplere kundeprofiler med merke- og interesseaffiniteter](enrichment-microsoft.md).
+-   **Potensielle interesser, potensielle merker**: Viser om du har konfigurert en førsteparts supplering. Det representerer potensielle interesser og tiltrekning for merker en kunde med en profil som ligner på denne kunden, kan ha. Hvis du vil ha mer informasjon, kan du se [Supplere kundeprofiler med merke- og interesseaffiniteter](enrichment-microsoft.md).
 
--   **Mål:** Viser om du har konfigurert ett eller flere mål for en bestemt type: kundeattributtmål. De inkluderer beregnede KPI-er rundt kundene på det enkelte kundenivået. Hvis du vil ha mer informasjon, kan du se [Definere og behandle mål](measures.md).
+-   **Mål**: Viser om du har konfigurert ett eller flere mål for en bestemt type: kundeattributtmål. De inkluderer beregnede KPI-er rundt kundene på det enkelte kundenivået. Hvis du vil ha mer informasjon, kan du se [Definere og behandle mål](measures.md).
 
--   **Aktivitetstidslinje:** Vises om du har konfigurert aktiviteter. Tidslinjevisningen inneholder kronologisk sorterte aktiviteter av denne kunden, og starter med den nyeste aktiviteten. Hvis du vil ha mer informasjon, kan du se [Kundeaktiviteter](activities.md).
+-   **Aktivitetstidslinje**: Vises om du har konfigurert aktiviteter. Tidslinjevisningen inneholder kronologisk sorterte aktiviteter av denne kunden, og starter med den nyeste aktiviteten. Hvis du vil ha mer informasjon, kan du se [Kundeaktiviteter](activities.md).
 
 Velg **Tilbake til Kunder** for å gå tilbake til kundesøkesiden.
 

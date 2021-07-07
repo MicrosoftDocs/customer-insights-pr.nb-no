@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 73d294a285b4ad706bec7fe925c1daa0b839ddd6
-ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
+ms.openlocfilehash: 19c1fbadb79ba22c0dc11aa7c3b5b2415add70a7
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6129957"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306361"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Eksempelveiledning for prediksjon om kundens levetidsverdi (CLV)
 
@@ -123,9 +123,9 @@ Etter å ha tatt inn dataene begynner vi nå dataforeningsprosessen for å oppre
 
 1. Gå til **Samsvar**-fanen, og velg **Angi rekkefølge**.
 
-1. I rullegardinlisten **Primær** velger du **eCommerceContacts : eCommerce** som primærkilden og inkluderer alle oppføringene.
+1. I rullegardinlisten **Primær** velger du **eCommerceContacts: eCommerce** som hovedkilde , og inkluder alle oppføringer.
 
-1. I rullegardinlisten **Enhet 2** velger du **loyCustomers : LoyaltyScheme** og inkluderer alle oppføringer.
+1. I nedtrekkslisten **Enhet 2** velger du **loyCustomers: LoyaltyScheme** og inkluderer alle oppføringer.
 
    ![Samle treff for eCommerce og lojalitet.](media/unify-match-order.png)
 
@@ -135,14 +135,14 @@ Etter å ha tatt inn dataene begynner vi nå dataforeningsprosessen for å oppre
 
    - For eCommerceContacts velger du **FullName** i rullegardinlisten.
    - For loyCustomers velger du **FullName** i rullegardinlisten.
-   - Velg rullegardinlisten **Normaliser**, og velg **Type (telefon, navn, adresse ...)**.
+   - Velg **Normaliser**-rullegardinlisten, og velg **Type (telefon, navn, adresse ...)**.
    - Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
 
 1. Angi navnet **FullName, Email** for den nye regelen.
 
    - Legg til en ny betingelse for e-postadresse ved å velge **Legg til betingelse**.
-   - For enheten eCommerceContacts velger du **EMail** i rullegardinlisten.
-   - For enheten loyCustomers velger du **EMail** i rullegardinlisten.
+   - Velg **E-post** i rullegardinmenyen for enheten eCommerceContacts.
+   - Velg **E-post** i rullegardinmenyen for enheten loyCustomers.
    - La Normaliser være tomt.
    - Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
 

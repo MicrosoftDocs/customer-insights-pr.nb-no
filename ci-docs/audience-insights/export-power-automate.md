@@ -1,7 +1,7 @@
 ---
 title: Power Automate-kobling | Microsoft Docs
 description: Opprett flyter i Microsoft Power Automate fra Dynamics 365 Customer Insights.
-ms.date: 01/20/2021
+ms.date: 06/24/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ce2477d957a1792e0436a0dfc15a33621b1c89a9
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: 57be0a204ef920b7a4bb31cf9a5b3a77f96eca0d
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976100"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305076"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate-kobling (forhåndsvisning)
 
@@ -31,9 +31,10 @@ Bruk utløsere til å opprette skyflyter og automatisere repeterende oppgaver, f
 - Utløses når en full oppdatering av (datakilder, segmenter, mål ...) er fullført.
 - Utløs når en oppdatering av samlingsprosessen (tilordning, samsvar, sammenslåing) er fullført.
 
-[Konfigurere utløsere i Power Automate](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/).
+[Konfigurere utløsere i Power Automate.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
 
 ## <a name="power-automate-actions"></a>Power Automate-handlinger
+
 Power Automate-koblingen gir andre handlinger enn de tilgjengelige utløserne. Hvis du vil ha mer informasjon, kan du se [Dynamics 365 Customer Insights Connector](/connectors/customerinsights/).
 
 ## <a name="create-a-power-automate-flow"></a>Opprett en Power Automate-flyt

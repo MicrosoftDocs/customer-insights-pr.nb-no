@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: dbebc3ee3978ca6ee9d1ad1c15c226479876709f
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
+ms.openlocfilehash: 67bfa23d56b26ae592efa4d7197713664bb02623
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124377"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304845"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Eksportere segmenter til AdRoll (forhåndsversjon)
 
@@ -28,11 +28,11 @@ Eksporter segmenter av enhetlige kundeprofiler til AdRoll, og bruk dem for rekla
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-- Du kan eksportere opptil 250 000 profiler per eksport til AdRoll.
+- Du kan eksportere opptil 250 000 profiler om gangen til AdRoll.
 - Du kan ikke eksportere segmenter med færre enn 100 profiler til AdRoll. 
 - Eksport til AdRoll er begrenset til segmenter.
 - Det kan ta opptil 10 minutter å eksportere opptil 250 000 profiler til AdRoll. 
-- Antallet profiler du kan eksportere til AdRoll, er avhengig av og begrenset til kontrakten din med AdRoll.
+- Antall profiler du kan eksportere til AdRoll, avhenger av kontrakten med AdRoll.
 
 ## <a name="set-up-connection-to-adroll"></a>Konfigurer tilkobling til AdRoll
 
@@ -62,9 +62,9 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Velg **Legg til mål** for å opprette en ny eksport.
 
-1. Velg en tilkobling fra AdRoll-delen i feltet **Tilkobling for eksport**. Hvis du ikke ser dette inndelingsnavnet, er ingen tilkoblinger av denne typen tilgjengelige for deg.
+1. Velg en tilkobling fra AdRoll-delen i feltet **Tilkobling for eksport**. Hvis navnet på denne delen ikke vises, er ingen tilkoblinger av denne typen tilgjengelige for deg.
 
-1. Skriv inn **ID for AdRoll-annonsør** Hvis du vil ha mer informasjon, kan du se [Profiler for AdRoll-annonsør](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
+1. Angi **ID for AdRoll-annonsør**. Hvis du vil ha mer informasjon, kan du se [AdRoll-annonsørprofiler](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
 
 3. I **Datasamsvar**-delen, i feltet **E-post** velger du feltet i den enhetlige kundeprofilen som representerer en kundes e-postadresse. Dette kreves for å eksportere segmenter til AdRoll.
 
@@ -74,11 +74,13 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 Hvis du lagrer en eksport, kjøres ikke eksporten umiddelbart.
 
-Eksporten kjører med hver [planlagte oppdatering](system.md#schedule-tab). Du kan også [eksportere data ved behov](export-destinations.md#run-exports-on-demand). 
+Eksporten kjører med hver [planlagte oppdatering](system.md#schedule-tab). 
+
+Du kan også [eksportere data ved behov](export-destinations.md#run-exports-on-demand). 
 
 
 ## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
 
 Når du aktiverer Dynamics 365 Customer Insights for overføring av data til AdRoll, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data, for eksempel personlige data. Microsoft overfører slike data etter instruksjon fra deg, men du er ansvarlig for å sørge for at AdRoll oppfyller alle forpliktelser til personvern eller sikkerhet du måtte ha. Hvis du vil ha mer informasjon, kan du se [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
 
-Dynamics 365 Customer Insights-administratoren kan fjerne dette eksportmålet når som helst for å slutte å bruke denne funksjonaliteten.
+Dynamics 365 Customer Insights-administratoren kan fjerne dette eksportmålet når som helst for å avslutte bruken av denne funksjonaliteten.

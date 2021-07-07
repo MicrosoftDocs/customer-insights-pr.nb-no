@@ -1,7 +1,7 @@
 ---
 title: Integrere nettdata fra engasjementsinnsikt med målgruppeinnsikt
 description: Hent nettinformasjon om kunder fra engasjementsinnsikt til målgruppeinnsikt.
-ms.date: 12/17/2020
+ms.date: 06/24/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,16 +9,16 @@ author: mukeshpo
 ms.author: mukeshpo
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 9a4cb77bb4c6ef0d88b3f00802f66baab5520a07
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 76a53a897e90152707a7c1255ed5ed93a5f3b5a0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896431"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305030"
 ---
 # <a name="integrate-web-data-from-engagement-insights-with-audience-insights"></a>Integrere nettdata fra engasjementsinnsikt med målgruppeinnsikt
 
-Kunder gjør ofte sine daglige transaksjoner på Internett ved hjelp av nettsteder. Engasjementsinnsiktsfunksjonen i Dynamics 365 Customer Insights er en nyttig løsning for å integrere nettdata som en kilde. I tillegg til transaksjonsdata, demografiske data eller atferdsdata kan vi se aktiviteter på Internett i enhetlige kundeprofiler. Vi kan bruke denne profilen til å få mer innsikt, for eksempel segmenter, tiltak eller prediksjoner for målgruppeaktivering.
+Kunder gjør ofte sine daglige transaksjoner på Internett ved hjelp av nettsteder. engasjementsinnsikt-funksjonen (forhåndsversjon) i Dynamics 365 Customer Insights er en nyttig løsning for å integrere webdata som kilde. I tillegg til transaksjonsdata, demografiske data eller atferdsdata kan vi se aktiviteter på Internett i enhetlige kundeprofiler. Vi kan bruke disse profilene til å få mer innsikt, for eksempel segmenter, tiltak eller prognoser for målgruppeaktivering.
 
 Denne artikkelen beskriver fremgangsmåten for å hente kundenes nettaktivitetsdata fra engasjementsinnsikt i det eksisterende målgruppeinnsiktsmiljøet.
 
@@ -30,12 +30,12 @@ Vi vil nå vite om en kunde besøker nettegenskapene og forstå aktivitetene der
 
 Noen få forhåndskrav må oppfylles for å kunne integrere data fra engasjementsinnsikt: 
 
-- Integrer SDK-et for engasjementsinnsikt med nettstedet ditt. Hvis du vil ha mer informasjon, kan du se [Kom i gang med nett-SDK-et](../engagement-insights/instrument-website.md).
-- Eksport av netthendelser fra engasjementsinnsikt krever tilgang til en ADLS Gen 2-lagringskonto som blir brukt til å samle inn netthendelsesdataene til målgruppeinnsikt. Hvis du vil ha mer informasjon, kan du se [Eksporter hendelser](../engagement-insights/export-events.md).
+- Integrer SDK-et for engasjementsinnsikt med nettstedet ditt. Hvis du vil ha mer informasjon, kan du se [Oversikt over utviklerressurser](../engagement-insights/developer-resources.md).
+- Eksport av webhendelser fra Engasjementsinnsikt krever tilgang til en Azure Data Lake Storage-forretningsforbindelse som vil bli brukt til å legge inn webhendelsesdataene for målgruppeinnsikt. Hvis du vil ha mer informasjon, kan du se [Eksporter hendelser](../engagement-insights/export-events.md).
 
 ## <a name="configure-refined-events-in-engagement-insights"></a>Konfigurer begrensede hendelser i engasjementsinnsikt
 
-Når en administrator instrumenterte et nettsted med SDK-et for engasjementsinnsikt, samles *basishendelser* når en bruker viser en nettside eller klikker et sted. Basishendelser inneholder en rekke detaljer. Avhengig av bruksaken trenger du bare et delsett av dataene i en basishendelse. Engasjementsinnsikt gjør det enkelt å opprette *begrensede hendelser* som bare inneholder egenskapene for en basishendelse du velger.     
+Når en administrator instrumenterer et nettsted med Engasjementsinnsikt-SDKen, samles *basishendelser* når en bruker viser en webside eller klikker et sted. Basishendelser inneholder en rekke detaljer. Avhengig av bruksaken trenger du bare et delsett av dataene i en basishendelse. Engasjementsinnsikt gjør det enkelt å opprette *begrensede hendelser* som bare inneholder egenskapene for en basishendelse du velger.     
 
 Hvis du vil ha mer informasjon, kan du se [Opprett og endre begrensede hendelser](../engagement-insights/refined-events.md).
 
@@ -43,17 +43,17 @@ Vurderinger ved oppretting av begrensede hendelser:
 
 - Angi et beskrivende navn for den begrensede hendelsen. Den brukes som et aktivitetsnavn i målgruppeinnsikt.
 - Velg minst følgende egenskaper for å opprette en aktivitet i målgruppeinnsikt: 
-    - Signal.Action.Name – angir aktivitetsdetaljene
-    - Signal.User.Id – brukes til å tilordne med kunde-ID-en
-    - Signal.View.Uri – brukes som en nettadresse som grunnlag for segmenter eller tiltak
-    - Signal.Export.Id – brukes som primærnøkkel for hendelser
-    - Signal.Timestamp – for å bestemme datoen og klokkeslettet for aktiviteten
+    - Signal.Action.Name – angir aktivitetsdetaljene.
+    - Signal.User.Id – brukes til å tilordne med kunde-ID-en.
+    - Signal.View.Uri – brukes som en nettadresse som grunnlag for segmenter eller tiltak.
+    - Signal.Export.Id – brukes som primærnøkkel for hendelser.
+    - Signal.Timestamp – bestemmer datoen og klokkeslettet for aktiviteten.
 
 Velg filtrene for å fokusere på hendelser og sider som er viktige for ditt bruksområde. I dette eksemplet bruker vi handlingsnavnet E-postkampanje.
 
 ## <a name="export-the-refined-web-events"></a>Eksportere de begrensede netthendelsene 
 
-Når du har definert den begrensede hendelsen, må du konfigurere eksporten av hendelsesdataene til en Azure Data Lake Storage, som kan angis som en datakilde for inntak i målgruppeinnsikt. Eksporter skjer hele tiden etter hvert som hendelsene strømmer fra nettegenskapen.
+Når du har definert den finjusterte hendelsen, må du konfigurere eksporten av hendelsesdataene til Azure Data Lake Storage, som kan angis som en datakilde for inkludering i målgruppeinnsikt. Eksporter skjer hele tiden etter hvert som hendelsene strømmer fra nettegenskapen.
 
 Hvis du vil ha mer informasjon, kan du se [Eksporter hendelser](../engagement-insights/export-events.md).
 
@@ -61,7 +61,7 @@ Hvis du vil ha mer informasjon, kan du se [Eksporter hendelser](../engagement-in
 
 Nå som du har definert den begrensede hendelsen og konfigurert eksporten, går vi videre til å legge inn dataene til målgruppeinnsikt. Du må opprette en ny datakilde basert på en Common Data Model-mappe. Angi detaljene for lagringskontoen du eksporterer hendelsene til. I filen *default.cdm.json* velger du den begrensede hendelsen som skal inntas, og oppretter enheten i målgruppeinnsikt.
 
-Hvis du vil ha mer informasjon, kan du se [Koble til en Common Data Model-mappe ved hjelp av en Azure Data Lake-konto](connect-common-data-model.md)
+Hvis du vil ha mer informasjon, kan du se [Koble til en Common Data Model-mappe ved hjelp av en Azure Data Lake-konto](connect-common-data-model.md).
 
 
 ## <a name="relate-refined-event-data-as-an-activity-of-a-customer-profile"></a>Relatere begrensede hendelsesdata som en aktivitet for en kundeprofil
@@ -74,20 +74,19 @@ Hvis du vil ha mer informasjon, kan du se [Kundeaktiviteter](activities.md).
 
 Konfigurer den nye aktiviteten med følgende tilordning: 
 
-- **Hovednøkkel:** Signal.Export.Id, en unik ID som er tilgjengelig for hver hendelsesoppføring i engasjementsinnsikt. Denne egenskapen genereres automatisk.
+- **Hovednøkkel**: Signal.Export.Id, en unik ID som er tilgjengelig for hver hendelsesoppføring i engasjementsinnsikt. Denne egenskapen genereres automatisk.
 
-- **Tidsstempel:** Signal.Timestamp i hendelsesegenskapen.
+- **Tidsstempel**: Signal.Timestamp i hendelsesegenskapen.
 
-- **Hendelse:** Signal.Name, hendelsesnavnet du vil spore.
+- **Hendelse**: Signal.Name, hendelsesnavnet du vil spore.
 
-- **Nettadresse:** Signal.View.Uri som refererer til URI-en til siden som opprettet hendelsen.
+- **Webadresse**: Signal.View.Uri som refererer til URI-en til siden som opprettet hendelsen.
 
-- **Detaljer:** Signal.Action.Name som representerer informasjonen som skal knyttes til hendelsen. Den valgte egenskapen i dette tilfellet angir at hendelsen gjelder for e-postkampanje.
+- **Detaljer**: Signal.Action.Name som representerer informasjonen som skal knyttes til hendelsen. Den valgte egenskapen i dette tilfellet angir at hendelsen gjelder for e-postkampanje.
 
-- **Aktivitetstype:** I dette eksemplet velger vi den eksterne aktivitetstypen WebLog. Dette valget er et nyttig filteralternativ for å kjøre prediksjonsmodeller eller opprette segmenter basert på denne aktivitetstypen.
+- **Aktivitetstype**: I dette eksemplet velger vi den eksisterende aktivitetstypen Weblog. Dette valget er et nyttig filteralternativ for å kjøre prediksjonsmodeller eller opprette segmenter basert på denne aktivitetstypen.
 
-- **Konfigurer relasjon:** Denne viktige innstillingen binder aktiviteten til eksisterende kundeprofiler. **Signal.User.Id** er identifikatoren som er konfigurert i SDK-et som skal samles inn, og som er relatert til bruker-ID-en i andre datakilder som er konfigurert i målgruppeinnsikt. I dette eksemplet konfigurerer vi relasjonen mellom Signal.User.Id og RetailCustomers:CustomerRetailId, som er primærnøkkelen som ble definert i tilordningstrinnet i dataforklaringsprosessen.
-
+- **Konfigurer relasjon**: Denne viktige innstillingen binder aktiviteten til eksisterende kundeprofiler. **Signal.User.Id** er identifikatoren som er konfigurert i SDK-et som skal samles inn, og som er relatert til bruker-ID-en i andre datakilder som er konfigurert i målgruppeinnsikt. I dette eksemplet konfigurerer vi relasjonen mellom Signal.User.Id og RetailCustomers:CustomerRetailId, som er primærnøkkelen som ble identifisert i tilordningstrinnet i dataforeningsprosessen.
 
 Når du har behandlet aktivitetene, kan du se gjennom kundeoppføringer og åpne et kundekort for å se aktiviteter fra engasjementsinnsikt på tidslinjen. 
 

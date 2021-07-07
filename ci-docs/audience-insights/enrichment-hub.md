@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c8e4a7247ccf575a62440038180010916b09d51b
-ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
+ms.openlocfilehash: c35e73b366fcd5db2ba5a757295ddda6db30efa0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "5954499"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305260"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
 
@@ -22,7 +22,8 @@ Bruk data fra kilder som Microsoft og andre partnere for å berike kundedataene.
 
 :::image type="content" source="media/enrichment-hub-page.png" alt-text="Side for suppleringshub":::
 
-I måltruppeinnsikt går du til **Data** > **Supplering** for å arbeide med suppleringsalternativer.    
+I måltruppeinnsikt går du til **Data** > **Supplering** for å arbeide med suppleringsalternativer.  
+
 Du må ha tillatelse som bidragsyter eller administrator for å opprette eller redigere berikelser. Du finner mer informasjon i [Tillatelser](permissions.md).
 
 I kategorien **Oppdag** finner du følgende suppleringer:
@@ -39,7 +40,7 @@ I kategorien **Mine suppleringer** kan du se de suppleringene du har konfigurert
 
 ## <a name="manage-existing-enrichments"></a>Behandle eksisterende suppleringer
 
-Gå til **Mine suppleringer** for å se alle konfigurerte suppleringer. Hvert supplering vises som en rad som inneholder tilleggsinformasjon om suppleringen.
+Gå til fanen **Mine suppleringer** for å vise alle konfigurerte pårikninger. Hvert supplering vises som en rad som inneholder tilleggsinformasjon om suppleringen.
 
 Velg en supplering for å vise de tilgjengelige alternativene. Du kan også velge ellipsen (...) i et listeelement for å vise alternativene.
 
@@ -59,6 +60,6 @@ Tredjeparts suppleringer konfigureres ved hjelp av [tilkoblinger](connections.md
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flere suppleringer av samme type
 
-Enheten som skal suppleres, angis under suppleringskonfigurasjonen, noe som gjør at du bare kan supplere et delsett av profilene. For eksempel supplerer du bare data for et bestemt segment. Du kan konfigurere flere suppleringer av samme type og bruke samme tilkobling på nytt. Noen suppleringer vil ha begrensninger på antall suppleringer av samme type som kan opprettes. Du kan se grensene og gjeldende bruk på **Supplering**-siden.
+Enheten som skal suppleres, angis under suppleringskonfigurasjonen, noe som gjør at du bare kan supplere et delsett av profilene. Du kan for eksempel bare supplere data for et bestemt segment. Du kan konfigurere flere suppleringer av samme type og bruke samme tilkobling på nytt. Noen suppleringer vil ha begrensninger på antall suppleringer av samme type som kan opprettes. Du kan se grensene og gjeldende bruk på **Supplering**-siden.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

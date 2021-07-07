@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2155042d86cda0cffee1588760a06d6c7eb7077e
-ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
+ms.openlocfilehash: 50b11e7d6f62d7a25eb25a0f2b1c4ad7d859def1
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/20/2021
-ms.locfileid: "6085634"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306040"
 ---
 # <a name="match-entities"></a>Samsvare enheter
 
@@ -209,7 +209,7 @@ Prøv ulike presisjonsgrenser for betingelser for å finne den optimale verdien.
 
 Du kan omkonfigurere og finjustere de fleste av samsvarsparameterne.
 
-:::image type="content" source="media/match-rules-management.png" alt-text="Skjermbilde av rullegardinmenyen med alternativer for samsvarsregler.":::
+:::image type="content" source="media/match-rules-management.png" alt-text="Skjermbilde av rullegardinmenyen med alternativer for samsvarsregel.":::
 
 - **Endre rekkefølgen på reglene** hvis du definerer flere regler. Du kan endre rekkefølgen på samsvarsreglene ved å velge alternativene **Flytt opp** og **Flytt ned** ellerr ved å dra og slippe.
 
@@ -247,7 +247,7 @@ Du kan spesifisere vilkårene som bestemte oppføringer alltid skal samsvare med
 
 1. Gå til **Data** > **Datakilder**, og hent inn malfilene som nye enheter. Når de er lagt inn, kan du bruke dem til å angi samsvarskonfigurasjonen.
 
-1. Etter at du har lastet opp filene og enhetene er tilgjengelige, velger du alternativet **Egendefinert samsvar** på nytt. Du vil se alternativer for å angi enhetene du vil inkludere. Velg de påkrevde enhetene på rullegardinmenyen.
+1. Etter at du har lastet opp filene og enhetene er tilgjengelige, velger du alternativet **Egendefinert samsvar** på nytt. Du vil se alternativer for å angi enhetene du vil inkludere. Velg de nødvendige enhetene på rullegardinmenyen.
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Skjermbilde av dialogen for å velge overstyringer for et egendefinert samsvarsscenario.":::
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 07271d491460764f2c738e760e41c3492f2b6de9
-ms.sourcegitcommit: 27f9dd837304ef9fc00f055a6e900fbf6fce1429
+ms.openlocfilehash: e0ca731f944da9a7eaae7c2dc2d7568b6386089f
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "5965590"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305444"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Supplering av kundeprofiler med forbedrede adresser
 
@@ -22,11 +22,11 @@ Adresser i dataene kan være ustrukturerte, ufullstendige eller feil. Bruk Micro
 
 ## <a name="how-we-enhance-addresses"></a>Slik forbedrer vi adressene
 
-Modellen vår går gjennom en totrinnsprosess for å forbedre en adresse. Først analyseres adressen for å identifisere komponentene og plassere dem i et strukturert format. Deretter bruker vi kunstig intelligens til å korrigere, fullføre og standardisere verdiene i adressen.
+Modellen vår går gjennom en totrinnsprosess for å forbedre en adresse. Først analyseres adressen for å identifisere komponentene og plassere dem i et strukturert format. Deretter bruker vi AI til å korrigere, fullføre og standardisere verdiene i adressen.
 
 ### <a name="example"></a>Eksempel
 
-Adresseinformasjon kan være i et format som ikke er standard, og inneholde stavefeil. Modellen kan løse disse problemene og opprette ensartede adresser i enhetlige kundeprofiler.
+Adresseinformasjon kan være i et format som ikke er standard, og inneholder stavefeil. Modellen kan løse disse problemene og opprette ensartede adresser i enhetlige kundeprofiler.
 
 ```Input
 4567 w main stret californa missouri 54321 us
@@ -50,7 +50,7 @@ Forbedrede adresser fungerer bare med verdiene som allerede finnes i de innlagte
 2. kontrollere om noen av verdiene, for eksempel postnumre eller gatenavn, er gyldige
 3. endre verdier den ikke gjenkjenner
 
-Modellen bruker maskinlæringsbaserte teknikker for å forbedre adressene. Selv om vi bruker en høy terskel for trygghet når modellen endrer en inndataverdi, som med alle ML-baserte modeller, er ikke nøyaktighet på 100 % garantert.
+Modellen bruker maskinlæringsbaserte teknikker for å forbedre adressene. Selv om vi bruker en terskel for høy konfidens for når modellen endrer en inndataverdi, på samme måte som med alle maskinlæringsbaserte modeller, er ikke 100 prosent nøyaktighet garantert.
 
 ## <a name="supported-countries-or-regions"></a>Støttede land eller områder
 
@@ -76,7 +76,7 @@ Adresser må inneholde en land-/områdeverdi. Vi behandler ikke adresser for lan
 1. Velg hvordan adresser formateres i datasettet. Velg **Adresse for enkeltattributt** hvis adressene i dataene bruker ett enkelt felt. Velg **Adresse for flere attributter** hvis adressene i dataene bruker mer enn ett datafelt.
 
    > [!NOTE]
-   > Land/område er obligatorisk i adressen for både enkeltattributter og flere attributter. Adresser som ikke inneholder gyldige eller støttede land-/områdeverdier, blir ikke supplert
+   > Land/område er obligatorisk både i adresser med enkeltattributter og flere attributter. Adresser som ikke inneholder gyldige eller støttede land-/områdeverdier, blir ikke supplert.
 
 1.  Tilordne adressefeltene fra enheten for enhetlig kunde.
 
@@ -98,6 +98,6 @@ Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velg
 
 ## <a name="next-steps"></a>Neste trinn
 
-Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md), [mål](measures.md) og til og med [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
+Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md) og [mål](measures.md), og [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

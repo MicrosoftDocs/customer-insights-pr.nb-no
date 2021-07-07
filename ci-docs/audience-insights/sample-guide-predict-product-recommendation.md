@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: b136084316da5ae17a8428236381f69e5c21f9ea
-ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
+ms.openlocfilehash: a85ee598ec747d0594755314e83a127ce0f2af95
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6129911"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306178"
 ---
 # <a name="product-recommendation-prediction-preview-sample-guide"></a>Eksempelveiledning for prediksjon for produktanbefaling (forhåndsversjon)
 
@@ -105,9 +105,9 @@ Etter å ha tatt inn dataene begynner vi nå dataforeningsprosessen for å oppre
 
 1. Gå til **Samsvar**-fanen, og velg **Angi rekkefølge**.
 
-2. I rullegardinlisten **Primær** velger du **eCommerceContacts : eCommerce** som primærkilden og inkluderer alle oppføringene.
+2. I rullegardinlisten **Primær** velger du **eCommerceContacts: eCommerce** som hovedkilde , og inkluder alle oppføringer.
 
-3. I rullegardinlisten **Enhet 2** velger du **loyCustomers : LoyaltyScheme** og inkluderer alle oppføringer.
+3. I nedtrekkslisten **Enhet 2** velger du **loyCustomers: LoyaltyScheme** og inkluderer alle oppføringer.
 
    ![Samle treff for eCommerce og lojalitet.](media/unify-match-order.png)
 
@@ -123,8 +123,8 @@ Etter å ha tatt inn dataene begynner vi nå dataforeningsprosessen for å oppre
 6. Angi navnet **FullName, Email** for den nye regelen.
 
    - Legg til en ny betingelse for e-postadresse ved å velge **Legg til betingelse**.
-   - For enheten eCommerceContacts velger du **EMail** i rullegardinlisten.
-   - For enheten loyCustomers velger du **EMail** i rullegardinlisten.
+   - Velg **E-post** i rullegardinmenyen for enheten eCommerceContacts.
+   - Velg **E-post** i rullegardinmenyen for enheten loyCustomers.
    - La Normaliser være tomt.
    - Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
 
@@ -177,7 +177,7 @@ Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abo
 1. Når du har sett gjennom alle detaljene, velger du **Lagre og kjør**.
 
 
-## <a name="task-4---review-model-results-and-explanations"></a>Oppgave 4 – Gå gjennom modellresultater og forklaringer
+## <a name="task-4---review-model-results-and-explanations"></a>Oppgave 4 – gå gjennom modellresultater og forklaringer
 
 La modellen fullføre opplæringen og beregne poengsum for dataene. Du kan nå se gjennom forklaringer av modellen for produktanbefaling. Hvis du vil ha mer informasjon, kan du se [Gå gjennom en prediksjonsstatus og resultater](predict-subscription-churn.md#review-a-prediction-status-and-results).
 

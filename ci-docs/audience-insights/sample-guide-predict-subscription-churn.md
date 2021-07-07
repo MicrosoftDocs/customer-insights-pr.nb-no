@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 324e5c19778230dd978b2f4e9156a2dd82b3d2bd
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: fa460fa5c79bc8a356ec5e90050ec85e05c55be8
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595530"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306315"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Eksempelveiledning for prognose på abonnementsfrafall (forhåndsversjon)
 
@@ -22,7 +22,7 @@ Vi tar deg gjennom et helhetlig eksempel på prediksjon av abonnementsfrafall ve
 
 ## <a name="scenario"></a>Scenario
 
-Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som de kan selge via nettstedet Contoso Coffee. De har nylig startet et abonnementsselskap for kundene for å få kaffe på en jevn basis. Målet deres er å forstå hvilke kunder med abonnement som kanskje vil annullere abonnementet i løpet av de neste månedene. Det å vite hvilke av kundene som har **sannsynlighet for frafall**, kan hjelpe dem med å spare markedsføringsinnsats ved å fokusere på å beholde dem.
+Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som de selger via nettstedet sitt, Contoso Coffee. De har nylig startet et abonnementsselskap for kundene for å få kaffe på en jevn basis. Målet deres er å forstå hvilke kunder med abonnement som kanskje vil annullere abonnementet i løpet av de neste månedene. Det å vite hvilke av kundene som har **sannsynlighet for frafall**, kan hjelpe dem med å spare markedsføringsinnsats ved å fokusere på å beholde dem.
 
 ## <a name="prerequisites"></a>Forutsetninger
 
@@ -128,9 +128,9 @@ Etter å ha hentet inn dataene, begynner vi nå med prosessen for å **tilordne,
 
 1. Gå til **Samsvar**-fanen, og velg **Angi rekkefølge**.
 
-1. I rullegardinlisten **Primær** velger du **eCommerceContacts : eCommerce** som primærkilden og inkluderer alle oppføringene.
+1. I rullegardinlisten **Primær** velger du **eCommerceContacts: eCommerce** som hovedkilde , og inkluder alle oppføringer.
 
-1. I rullegardinlisten **Enhet 2** velger du **loyCustomers : LoyaltyScheme** og inkluderer alle oppføringer.
+1. I nedtrekkslisten **Enhet 2** velger du **loyCustomers: LoyaltyScheme** og inkluderer alle oppføringer.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="Samle treff for eCommerce og lojalitet.":::
 
@@ -146,8 +146,8 @@ Etter å ha hentet inn dataene, begynner vi nå med prosessen for å **tilordne,
 1. Angi navnet **FullName, Email** for den nye regelen.
 
    * Legg til en ny betingelse for e-postadresse ved å velge **Legg til betingelse**.
-   * For enheten eCommerceContacts velger du **EMail** i rullegardinlisten.
-   * For enheten loyCustomers velger du **EMail** i rullegardinlisten. 
+   * Velg **E-post** i rullegardinmenyen for enheten eCommerceContacts.
+   * Velg **E-post** i rullegardinmenyen for enheten loyCustomers. 
    * La Normaliser være tomt. 
    * Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
 
@@ -205,7 +205,7 @@ Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abo
 
 1. Når du har sett gjennom alle detaljene, velger du **Lagre og kjør**.
 
-## <a name="task-4---review-model-results-and-explanations"></a>Oppgave 4 – Gå gjennom modellresultater og forklaringer
+## <a name="task-4---review-model-results-and-explanations"></a>Oppgave 4 – gå gjennom modellresultater og forklaringer
 
 La modellen fullføre opplæringen og beregne poengsum for dataene. Du kan nå se gjennom forklaringer av modellen for abonnementsfrafall. Hvis du vil ha mer informasjon, kan du se [Gå gjennom en prediksjonsstatus og resultater](predict-subscription-churn.md#review-a-prediction-status-and-results).
 

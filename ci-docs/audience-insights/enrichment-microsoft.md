@@ -9,16 +9,16 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: e92360bb886739cfe477ce1d2eb62219228a0292
-ms.sourcegitcommit: d4b4053f6ee8f60f1a214982c4726c9de84615ef
+ms.openlocfilehash: 1b11c325649b91ebb47cde924227eacedae64b7a
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/14/2021
-ms.locfileid: "6245719"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305168"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Supplere kundeprofiler med merke- og interesseaffiniteter (forhåndsvisning)
 
-Bruk proprietære data fra Microsoft til å supplere kundedataene med merke- og interesseaffiniteter. Disse affinitetene fastsettes basert på data fra personer med liknende demografiske data som kundene dine. Ved hjelp av denne informasjonen kan du bedre forstå og segmentere kunder basert på deres affinitet til bestemte merker og interesser.
+Bruk proprietære data fra Microsoft til å supplere kundedataene med merke- og interesseaffiniteter. Disse affinitetene er basert på data fra personer med en lignende demografi til kundene dine. Ved hjelp av denne informasjonen kan du bedre forstå og segmentere kunder basert på deres affinitet til bestemte merker og interesser.
 
 I målgruppeinnsikt går du til **Data** > **Supplering** for å [konfigurere og vise suppleringer](enrichment-hub.md).
 
@@ -35,7 +35,7 @@ Vi bruker Microsofts søkedata på Internett til å finne affiniteter for merker
 
 ## <a name="affinity-level-and-score"></a>Affinitetsnivå og poengsum
 
-For hver supplerte kundeprofil oppgir vi to relaterte verdier – affinitetsnivå og affinitetspoengsum. Disse verdiene hjelper deg med å bestemme hvor sterkt affiniteten er for den profilens demografiske segment, for et merke eller en interesse sammenlignet med andre demografiske segmenter.
+For hver supplerte kundeprofil oppgir vi to relaterte verdier: affinitetsnivå og affinitetspoengsum. Disse verdiene hjelper deg med å bestemme hvor sterkt affiniteten er for den profilens demografiske segment, for et merke eller en interesse sammenlignet med andre demografiske segmenter.
 
 *Affinitetsnivået* består av fire nivåer, og *affinitetspoengsummen* beregnes på en 100-punkts skala som tilordnes til affinitetsnivåene.
 
@@ -53,7 +53,7 @@ Avhengig av detaljnivået du ønsker for å måle affiniteten, kan du bruke ente
 
 Vi støtter for øyeblikket følgende alternativer for land/område: Australia, Canada (engelsk), Frankrike, Tyskland, Storbritannia eller USA (engelsk).
 
-Du velger et land ved å åpne **Merkesupplering** eller **Interessesupplering** og velger **Endre** ved siden av **Land/område**. Velg et alternativ i ruten **Innstillinger for land/område**, og velg **Bruk**.
+Hvis du vil velge et land eller en region, åpner du **Merkesupplering** eller **Interessesupplering** og velger **Endre** ved siden av **Land/område**. Velg et alternativ i ruten **Innstillinger for land/område**, og velg **Bruk**.
 
 ### <a name="implications-related-to-country-selection"></a>Implikasjoner knyttet til valg av land
 
@@ -61,7 +61,7 @@ Du velger et land ved å åpne **Merkesupplering** eller **Interessesupplering**
 
 - Når du [velger en bransje](#define-your-brands-or-interests), får du de mest relevante merkene eller interessene basert på det valgte landet eller området.
 
-- Når du [supplerer profiler](#refresh-enrichment), blir alle kundeprofilene supplert, og vi får data for de valgte merkene og interessene. Inkludering av profiler som ikke er i det valgte landet eller området. Hvis du for eksempel valgte Tyskland, vil vi supplere profiler i USA hvis vi har data tilgjengelig for de valgte merkene og interessene i USA.
+- Ved [supplering av profiler](#refresh-enrichment) supplerer vi alle kundeprofiler som vi får data for de valgte merkene og interessene for, inkludert profiler som ikke finnes i det valgte landet eller området. Hvis du for eksempel valgte Tyskland, vil vi supplere profiler i USA hvis vi har data tilgjengelig for de valgte merkene og interessene i USA.
 
 ## <a name="configure-enrichment"></a>Konfigurere supplering
 
@@ -71,7 +71,7 @@ En veiledet opplevelse hjelper deg gjennom konfigurasjonen av suppleringene.
 
 Velg opptil fem merker eller interesser ved å bruke ett av eller begge disse alternativene:
 
-- **Bransje**: Velg bransjen fra rullegardinlisten, og velg deretter blant de største merkene eller interessene for denne bransjen.
+- **Bransje**: Velg bransje fra rullegardinlisten, og velg deretter blant de viktigste merkene eller interessene for den bransjen.
 - **Velg dine egne**: Angi et merke eller en interesse som er relevant for organisasjonen din, og velg deretter blant forslagene som samsvarer. Hvis vi ikke viser et merke eller en interesse du leter etter, kan du sende oss tilbakemelding ved hjelp av **Foreslå**-koblingen.
 
 ### <a name="review-enrichment-preferences"></a>Se gjennom innstillinger for supplering
@@ -90,10 +90,10 @@ Tilordne felter fra enheten for enhetlige kunder for å definere det demografisk
 
 Følgende formater og verdier støttes (det skilles ikke mellom små og store bokstaver i verdier):
 
-- **Fødselsdato**: Vi anbefaler at fødselsdatoen konverteres til en DateTime-type under datainntak. Alternativt kan den være en streng i [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)-formatet «ÅÅÅÅ-MM-DD» eller «ÅÅÅÅ-MM-DDTtt:mm:ssZ».
-- **Kjønn**: hann, hunn, ukjent
-- **Postnummer**: Femsifrede postnumre for USA, standard postnummer alle andre steder
-- **Sted**: Navn på poststed på engelsk
+- **Fødselsdato**: Vi anbefaler at fødselsdatoen konverteres til en DateTime-type under datainntak. Den kan også være en streng i [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format "åååå-MM-dd" eller "åååå-MM-ddTHH:mm:ss".
+- **Kjønn**: hann, hunn, ukjent.
+- **Postnummer**: Femsifrede postnumre for USA, standard postnummer alle andre steder.
+- **Sted**: Navn på poststed på engelsk.
 - **Delstat/område**: Forkortelse på to bokstaver for USA og Canada. Forkortelse på to eller tre bokstaver for Australia. Gjelder ikke for Frankrike, Tyskland eller Storbritannia.
 - **Land/område**:
 
@@ -113,10 +113,11 @@ Til slutt får du se gjennom informasjonen og angi et navn for suppleringen.
 ## <a name="refresh-enrichment"></a>Oppdatere supplering
 
 Kjør suppleringen etter å ha konfigurert merker, interesser og felttilordningen for demografi. Hvis du vil starte prosessen, velger du **Kjør** på siden for merke- eller interessekonfigurasjon. I tillegg kan du la systemet kjøre suppleringen automatisk som en del av en planlagt oppdatering.
+
 Avhengig av størrelsen på kundedataene kan det ta flere minutter å fullføre en supplering.
 
 > [!TIP]
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
+> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Når du har valgt **Se detaljer** for en av jobbens oppgaver, finner du ytterligere informasjon: behandlingstid, siste behandlingsdato og alle feil og advarsler knyttet til oppgaven.
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 
@@ -134,7 +135,7 @@ Merke- og interesseaffiniteter kan også vises på individuelle kundekort. Gå t
 
 ## <a name="next-steps"></a>Neste trinn
 
-Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md), [mål](measures.md) og til og med [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
+Bygg på toppen av de supplerte kundedataene. Opprett [Segmenter](segments.md) og [Mål](measures.md), og [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

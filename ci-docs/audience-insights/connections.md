@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 106dbc26f95b309821d738e1484b1eaa79dd225b
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896109"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304984"
 ---
 # <a name="connections-preview-overview"></a>Oversikt over tilkoblinger (forhåndsversjon)
 
@@ -42,7 +42,7 @@ Hvis du vil legge til tilkoblinger, må du ha [administratortillatelser](permiss
 
 1. Gå til kategorien **Tilkoblinger**.
 
-1. Velg **Legg til tilkobling** for å opprette en ny tilkobling. Velg fra rullegardinmenyen hvilken type tilkobling du vil opprette.
+1. Velg **Legg til tilkobling** for å opprette en ny tilkobling. Velg hvilken tilkoblingstype du vil opprette, i rullegardinmenyen.
 
 1. Angi de nødvendige detaljene i ruten **Konfigurer tilkobling**. 
    1. **Visningsnavnet** og tilkoblingstypen beskriver en tilkobling. Vi anbefaler at du velger et navn som forklarer formålet med og målet for denne tilkoblingen.
@@ -74,7 +74,9 @@ Når du definerer eller redigerer en eksporttilkobling, velger du hvilke brukere
 
 ## <a name="remove-a-connection"></a>Fjerne en tilkobling
 
-Hvis tilkoblingen du fjerner, brukes av suppleringer eller eksport, må du først koble fra eller fjerne dem. Dialogboksen for fjerning vil lede deg til de relevante suppleringene eller eksportene. Frakoblede suppleringer og eksporter blir inaktive. Du aktiverer dem på nytt ved å legge til en annen tilkobling til dem på siden [Suppleringer](enrichment-hub.md) eller [Eksporter](export-destinations.md).
+Hvis tilkoblingen du fjerner, brukes av suppleringer eller eksport, må du først koble fra eller fjerne dem. Dialogboksen for fjerning vil lede deg til de relevante suppleringene eller eksportene. 
+
+Frakoblede suppleringer og eksporter blir inaktive. Du aktiverer dem på nytt ved å legge til en annen tilkobling til dem på siden [Suppleringer](enrichment-hub.md) eller [Eksporter](export-destinations.md).
 
 1. Gå til **Administrator** > **Tilkoblinger (forhåndsversjon)**.
 

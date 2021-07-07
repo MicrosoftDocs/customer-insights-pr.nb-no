@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: 0c728fad4ed00d1bf085fed60057211861b3a195
-ms.sourcegitcommit: f0855bd7762b1f0a1d3dd5259e23c95e1b0a6a93
+ms.openlocfilehash: 342aeb33f652d5d60cd25e13969766954bf56370
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "5866419"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304938"
 ---
 # <a name="customer-activities"></a>Kundeaktiviteter
 
@@ -53,23 +53,23 @@ Datakildene kan inneholde enheter med transaksjons- og aktivitetsdata fra flere 
 
 1. Velg aktivitetshendelsen og starttiden for aktiviteten i **Aktivitetsforening**-trinnet. 
    - **Obligatoriske felter**
-      1. **Hendelsesaktivitet**: Felt som er hendelsen for denne aktiviteten
-      2. **Tidsstempel**: Felt som representerer starttidspunktet for aktiviteten.
+      - **Hendelsesaktivitet**: Felt som er hendelsen for denne aktiviteten.
+      - **Tidsstempel**: Felt som representerer starttidspunktet for aktiviteten.
 
    - **Valgfrie felt**
-      1. **Tilleggsdetaljer**: Felt med relevant informasjon for denne aktiviteten.
-      2. **Ikon**: Ikon som best representerer denne aktivitetstypen.
-      3. **Webadresse**: Felt som inneholder en URL-adresse med informasjon om denne aktiviteten. For eksempel transaksjonssystemet som er kilde for denne aktiviteten. Denne URL-adressen kan være et hvilket som helst felt fra datakilde, eller den kan konstrueres som et nytt felt ved hjelp av en Power Query-transformasjon. URL-dataene lagres i *Enhetlig aktivitet*-enheten, som kan brukes nedstrøms ved hjelp av [API-er](apis.md).
+      - **Tilleggsdetaljer**: Felt med relevant informasjon for denne aktiviteten.
+      - **Ikon**: Ikon som best representerer denne aktivitetstypen.
+      - **Webadresse**: Felt som inneholder en URL-adresse med informasjon om denne aktiviteten. For eksempel transaksjonssystemet som er kilde for denne aktiviteten. Denne URL-adressen kan være et hvilket som helst felt fra datakilde, eller den kan konstrueres som et nytt felt ved hjelp av en Power Query-transformasjon. URL-dataene lagres i *Enhetlig aktivitet*-enheten, som kan brukes nedstrøms ved hjelp av [API-er](apis.md).
    
    :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Angi kundeaktivitetsdataene i en Enhetlig aktivitet-enhet.":::
 
 1. Velg **Neste** for å gå til neste trinn. Du kan velge **Fullfør og se gjennom** for å lagre aktiviteten nå med aktivitetstypen satt til **Annet**. 
 
-1. Velg aktivitetstypen i **Aktivitetstype**-trinnet, og velg eventuelt hvis du vil semantisk tilordne noen av aktivitetstypene for bruk i andre områder av Customer Insights. Aktivitetstypene *Abonnement* & *SalesOrderLine* kan tilordnes semantisk etter at du har godtatt å tilordne feltene. Hvis en aktivitetstype ikke er relevant for den nye aktiviteten, kan du velge *Annet* eller *Opprett ny* for en egendefinert type.
+1. Velg aktivitetstypen i **Aktivitetstype**-trinnet, og velg eventuelt hvis du vil semantisk tilordne noen av aktivitetstypene for bruk i andre områder av Customer Insights. Aktivitetstypene *Abonnement* og *SalesOrderLine* kan tilordnes semantisk etter at du har godtatt å tilordne feltene. Hvis en aktivitetstype ikke er relevant for den nye aktiviteten, kan du velge *Annet* eller *Opprett ny* for en egendefinert type.
 
 1. Velg **Neste** for å gå til neste trinn. 
 
-1. Bekreft valgene i trinnet **Se gjennom**. Du går tilbake til noen av de forrige trinnene, og oppdaterer informasjonen om nødvendig.
+1. Bekreft valgene i trinnet **Se gjennom**. Gå tilbake til noen av de forrige trinnene, og oppdater informasjonen om nødvendig.
 
    :::image type="content" source="media/Activity_Wizard5.PNG" alt-text="Se gjennom de angitte feltene for en aktivitet.":::
    

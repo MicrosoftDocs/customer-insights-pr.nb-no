@@ -9,21 +9,21 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 4d41d7d328dfa6699b5f5e992d3a5bf3179490d8
-ms.sourcegitcommit: 33a8e21b3bf6521bdb8346f81f79fce88091ddfd
+ms.openlocfilehash: 9326f821f9970ba2254ab804814e369abb677eb0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/10/2021
-ms.locfileid: "6016632"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304754"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbeide med API-er for Customer Insights
 
-Dynamics 365 Customer Insights inneholder API-er for å utvikle dine egne programmer basert på dataene dine i Customer Insights.
+Dynamics 365 Customer Insights inneholder API-er for å bygge dine egne programmer basert på dataene dine i Customer Insights.
 
 > [!IMPORTANT]
-> Detaljer om disse API-ene vises i [Referanse for API-er i Customer Insights](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights). De inneholder tilleggsinformasjon om operasjoner, parametere og svar.
+> Detaljer om disse API-ene vises i [Customer Insights-API-referansen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights). De inneholder tilleggsinformasjon om operasjoner, parametere og svar.
 
-Denne artikkelen veileder deg om hvordan du får tilgang til API-ene for Customer Insights, registrerer en Azure-app og hjelper deg med å komme i gang med de tilgjengelige klientbibliotekene.
+Denne artikkelen beskriver hvordan du får tilgang til API-ene for Customer Insights, oppretter en Azure-appregistrering og kommer i gang med de tilgjengelige klientbibliotekene.
 
 ## <a name="get-started-trying-the-customer-insights-apis"></a>Kom i gang med å prøve API-ene for Customer Insights
 
@@ -32,6 +32,7 @@ Denne artikkelen veileder deg om hvordan du får tilgang til API-ene for Custome
 1. For å aktivere API-er i Customer Insights-miljøet går du til **Administrasjon** > **Tillatelser**. Du må ha administratortillatelser for å gjøre dette.
 
 1. Gå til fanen **API-er**, og velg **Aktiver**-knappen.    
+ 
    Når du aktiverer API-ene, opprettes en primær og en sekundær abonnementsnøkkel for forekomsten som blir brukt i API-forespørslene. Du kan generere nøklene på nytt ved å merke av for **Generer primær på nytt** eller **Generer sekundær på nytt** på **Administrasjon** > **Tillatelser** > **API-er**.
 
    :::image type="content" source="media/enable-apis.gif" alt-text="Aktivere API-er for Customer Insights":::
@@ -40,7 +41,7 @@ Denne artikkelen veileder deg om hvordan du får tilgang til API-ene for Custome
 
 1. Velg en API-operasjon, og velg **Prøv den**.
 
-1. I sideruten angir du verdien i på rullegardinmenyen **Autorisasjon** til **Implisitt**. Overskriften `Authorization` får et bærertoken tilføyd. Abonnementsnøkkelen fylles ut automatisk.
+1. Angi verdien i rullegardinmenyen **Autorisasjon** til **Implisitt**. Hodet `Authorization`legges til med et bærertoken. Abonnementsnøkkelen fylles ut automatisk.
   
 1. Du kan eventuelt legge til alle nødvendige spørringsparametere.
 
@@ -48,27 +49,27 @@ Denne artikkelen veileder deg om hvordan du får tilgang til API-ene for Custome
 
 HTTP-svaret vises snart nedenfor.
 
-
-   :::image type="content" source="media/try-apis.gif" alt-text="Animert gif som viser hvordan du velger testing av API-ene.":::
+   :::image type="content" source="media/try-apis.gif" alt-text="Slik tester du API-ene.":::
 
 ## <a name="create-a-new-app-registration-in-the-azure-portal"></a>Opprett en ny appregistrering i Azure Portal
 
-Disse trinnene hjelper deg med å komme i gang med å bruke API-ene for Customer Insights i et Azure-program ved hjelp av delegerte tillatelser. Du må ha fullført [Komme i gang-delen](#get-started-trying-the-customer-insights-apis) først.
+Disse trinnene hjelper deg å komme i gang med å bruke API-ene for Customer Insights i et Azure-program som bruker delegerte tillatelser. Sørg for at du fullfører [Komme i gang-delen](#get-started-trying-the-customer-insights-apis) først.
 
 1. Logg på [Azure Portal](https://portal.azure.com) med kontoen som har tilgang til Customer Insights -dataene.
 
 1. Til venstre velger du **Appregistreringer**.
 
 1. Velg **Ny registrering**, angi et programnavn, og velg kontotypen.
+ 
    Du kan også legge til en URL-adresse for omdirigering. http://localhost er tilstrekkelig for utvikling av et program på den lokale datamaskinen.
 
 1. I den nye appregistreringen går du til **API-tillatelser**.
 
-   :::image type="content" source="media/app-registration-1.gif" alt-text="Animert gif for å angi API-tillatelse i appregistrering.":::
+   :::image type="content" source="media/app-registration-1.gif" alt-text="Slik angir du API-tillatelser i appregistrering.":::
 
 1. Velg **Legg til en tillatelse**, og velg **Customer Insights** i sideruten.
 
-1. For **Tillatelsestype** velger du **Delegerte tillatelser** og velger deretter tillatelsen **user_impersonation**.
+1. For **Tillatelsestype** velger du **Delegerte tillatelser**, og deretter velger du **user_impersonation**-tillatelsen.
 
 1. Velg **Legg til tillatelser**. Hvis du trenger tilgang til API-en uten at en bruker logger på, ser du gjennom [Server-til-server-programtillatelser](#server-to-server-application-permissions).
 
@@ -76,13 +77,13 @@ Disse trinnene hjelper deg med å komme i gang med å bruke API-ene for Customer
 
 Du kan bruke program-/klient-ID-en for denne appregistreringen med Microsoft Authentication Library (MSAL) for å få et bærertoken for å sende forespørselen til API-en.
 
-:::image type="content" source="media/grant-admin-consent.gif" alt-text="Animert gif for å gi administratorsamtykke.":::
+:::image type="content" source="media/grant-admin-consent.gif" alt-text="Gi administratortillatelse":::
 
 Hvis du vil ha mer informasjon om MSAL, kan du se [Oversikt over Microsoft Authentication Library (MSAL)](/azure/active-directory/develop/msal-overview).
 
-Hvis du vil ha mer informasjon om appregistrering i Azure, kan du se [Den nye appregistreringsopplevelsen i Azure Portal](/azure/active-directory/develop/app-registration-portal-training-guide).
+Hvis du vil ha mer informasjon om appregistrering i Azure, kan se [Registrere et program](/azure/active-directory/develop/quickstart-register-app.md#register-an-application).
 
-Hvis du vil ha informasjon om hvordan du bruker API-ene i klientbibliotekene, kan du se [Customer Insights-klilentbiblioteker](#customer-insights-client-libraries).
+Hvis du vil ha informasjon om hvordan du bruker API-ene i klientbibliotekene, kan du se [Customer Insights-klientbiblioteker](#customer-insights-client-libraries).
 
 ### <a name="server-to-server-application-permissions"></a>Server-til-server-programtillatelser
 
@@ -94,7 +95,7 @@ Hvis du vil ha informasjon om hvordan du bruker API-ene i klientbibliotekene, ka
 
 1. Velg fanen **API-ene organisasjonen** bruker, og velg deretter **Dynamics 365 AI for Customer Insights** fra listen. 
 
-1. For **Tillatelsestype** velger du **Apptillatelser** og velger deretter tillatelsen **CustomerInsights.Api.All**.
+1. For **Tillatelsestype** velger du **Programtillatelser**, og deretter velger du **CustomerInsights.Api.All**-tillatelsen.
 
 1. Velg **Legg til tillatelser**.
 
@@ -102,9 +103,10 @@ Hvis du vil ha informasjon om hvordan du bruker API-ene i klientbibliotekene, ka
 
 1. Velg **Gi admin-tillatelse for ...** for å fullføre appregistreringen.
 
-   :::image type="content" source="media/grant-admin-consent.gif" alt-text="Animert gif for å gi administratorsamtykke.":::
+   :::image type="content" source="media/grant-admin-consent.gif" alt-text="Gi administratortillatelse":::
 
-1. For å fullføre må vi legge til navnet på appregistreringen som en bruker i Customer Insights.    
+1. For å fullføre må vi legge til navnet på appregistreringen som en bruker i Customer Insights.  
+   
    Åpne Customer Insights, gå til **Administrasjon** > **Tillatelser**, og velg **Legg til bruker**.
 
 1. Søk etter navnet på appregistreringen, velg det fra søkeresultatene, og velg **Lagre**.
@@ -124,6 +126,7 @@ Lær hvordan du kommer i gang med C#-klientbibliotekene fra NuGet.org. Hvis du v
 1. Søk etter **Microsoft.Dynamics.CustomerInsights.Api**.
 
 1. Velg **Installer** for å legge til pakken i prosjektet.
+ 
    Du kan også kjøre denne kommandoen i **pakkebehandlingskonsollen for NuGet**: `Install-Package -Id Microsoft.Dynamics.CustomerInsights.Api -Source nuget.org -ProjectName <project name> [-Version <version>]`
 
    :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="Legg til NuGet-pakken i Visual Studio-prosjektet":::
@@ -132,7 +135,8 @@ Lær hvordan du kommer i gang med C#-klientbibliotekene fra NuGet.org. Hvis du v
 
 1. Bruk [Microsoft Authentication Library (MSAL)](/azure/active-directory/develop/msal-overview) for å få et `AccessToken` ved å bruke den eksisterende [Azure-appregistreringen](#create-a-new-app-registration-in-the-azure-portal).
 
-1. Når du har godkjent og skaffet deg et token, kan du konstruere en ny eller bruke en eksisterende `HttpClient` med den ekstra **godkjenningen DefaultRequestHeaders** angitt til **Bærer <access token>** og **Ocp-Apim-Subscription-Key** angitt til [**abonnementsnøkkelen** fra Customer Insights-miljøet](#get-started-trying-the-customer-insights-apis).    
+1. Når du har godkjent og skaffet deg et token, kan du konstruere en ny eller bruke en eksisterende `HttpClient` med den ekstra **godkjenningen DefaultRequestHeaders** angitt til **Bærer <access token>** og **Ocp-Apim-Subscription-Key** angitt til [**abonnementsnøkkelen** fra Customer Insights-miljøet](#get-started-trying-the-customer-insights-apis).   
+ 
    Tilbakestill **Godkjenning**-hodet når det er nødvendig. For eksempel når tokenet utløper.
 
 1. Send denne `HttpClient` til konstruksjonen av `CustomerInsights`-klienten.
@@ -142,6 +146,7 @@ Lær hvordan du kommer i gang med C#-klientbibliotekene fra NuGet.org. Hvis du v
 1. Foreta kall til klienten for utvidelsesmetoder, for eksempel `GetAllInstancesAsync`. Hvis tilgang til den underliggende `Microsoft.Rest.HttpOperationResponse` foretrekkes, bruker du http-meldingsmetoder, for eksempel `GetAllInstancesWithHttpMessagesAsync`.
 
 1. Svaret vil sannsynligvis være av typen `object` fordi metoden kan returnere flere typer (for eksempel `IList<InstanceInfo>` og `ApiErrorResult`). Hvis du vil kontrollere returtypen, kan du endre objektene på en sikker måte til svartypene som er angitt på [siden API-detaljer](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) for den operasjonen.    
+   
    Hvis du trenger mer informasjon om forespørselen, kan du bruke **http-meldingsmetodene** til å få tilgang råsvarobjektet.
 
 ### <a name="nodejs-package"></a>NodeJS-pakke

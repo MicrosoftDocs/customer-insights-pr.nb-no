@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: b6c010d84119c2fa8b3ef99017c65f9939bf28c4
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 917ab9559416f3ee0ffd66e471e590e8da3faffc
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760293"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305398"
 ---
 # <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Bruk Customer Insights-segmenter i Adobe Campaign Standard (forhåndsversjon)
 
-Som bruker av målgruppeinnsikt for Dynamics 365 Customer Insights har du kanskje opprettet segmenter for å gjøre markedsføringskampanjene mer effektive ved å rette deg mot relevante målgrupper. Hvis du vil bruke et segment fra målgruppeinnsikt i Adobe Experience Platform og programmer som Adobe Campaign Standard, må du følge noen få trinn som er beskrevet i denne artikkelen.
+Som bruker av målgruppeinnsikt i Dynamics 365 Customer Insights har du kanskje opprettet segmenter for å gjøre markedsføringskampanjene mer effektive ved å rette deg mot relevante målgrupper. Hvis du vil bruke et segment fra målgruppeinnsikt i Adobe Experience Platform og programmer som Adobe Campaign Standard, må du følge noen få trinn som er beskrevet i denne artikkelen.
 
 :::image type="content" source="media/ACS-flow.png" alt-text="Prosessdiagram for trinnene beskrevet i denne artikkelen.":::
 
@@ -54,7 +54,7 @@ Når målgruppen er identifisert, kan vi konfigurere eksporten fra målgruppeinn
 
 1. I målgruppeinnsikt går du til **Administrator** > **Tilkoblinger**.
 
-1. Velg **Legg til tilkobling**, og velg **Adobe Campaign** for å konfigurere tilkoblingen, eller velg **Konfigurer** i **Adobe Campaign**-flisen
+1. Velg **Legg til tilkobling**, og velg **Adobe Campaign** for å konfigurere tilkoblingen, eller velg **Konfigurer** i **Adobe Campaign**-flisen.
 
    :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Konfigurasjonsflis for Adobe Campaign Standard.":::
 
@@ -80,7 +80,7 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Velg **Legg til eksport** for å opprette en ny eksport.
 
-1. Velg en tilkobling fra Adobe Campaign-delen i feltet **Tilkobling for eksport**. Hvis du ikke ser dette inndelingsnavnet, er ingen tilkoblinger av denne typen tilgjengelige for deg.
+1. Velg en tilkobling fra Adobe Campaign-delen i feltet **Tilkobling for eksport**. Hvis navnet på denne delen ikke vises, er ingen tilkoblinger av denne typen tilgjengelige for deg.
 
 1. Velg segmentet du vil eksportere. I dette eksemplet er det **ChurnProneCustomers**.
 
@@ -118,7 +118,7 @@ Når et segment fra målgruppeinnsikt eksporteres, inneholder det kolonnene du v
 
 Hvis du vil bruke segmentet i Adobe Campaign Standard, må vi utvide profilskjemaet i Adobe Campaign Standard til å inkludere to tilleggsfelter. Lær hvordan du [utvider profilressursen](https://experienceleague.adobe.com/docs/campaign-standard/using/developing/use-cases--extending-resources/extending-the-profile-resource-with-a-new-field.html#developing) med nye felt i Adobe Campaign Standard.
 
-I vårt eksempel er disse feltene *Segmentnavn og Segmentdato (valgfritt).*
+I vårt eksempel er disse feltene *Segmentnavn og Segmentdato (valgfritt)*.
 
 Vi skal bruke disse feltene til å identifisere profilene i Adobe Campaign Standard som vi vil målrette for denne kampanjen.
 
@@ -128,7 +128,7 @@ Hvis det ikke finnes andre oppføringer i Adobe Campaign Standard enn den du ska
 
 Nå som alt er klart, må vi importere de klargjorte målgruppedataene fra målgruppeinnsikt til Adobe Campaign Standard for å opprette profiler. Lær [hvordan du importerer profiler i Adobe Campaign Standard](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/creating-profiles.html#profiles-and-audiences) ved hjelp av en arbeidsflyt.
 
-Importarbeidsflyten i bildet nedenfor er konfigurert til å kjøre hver 8. time og ser etter eksporterte målgruppeinnsiktssegmenter (CSV-fil i Azure Blob Storage). Arbeidsflyten pakker ut CSV-filinnholdet i en bestemt kolonnerekkefølge. Denne arbeidsflyten er bygget for å utføre grunnleggende feilhåndtering og sikre at hver oppføring har en e-postadresse før dataene samles inn i Adobe Campaign Standard. Arbeidsflyten pakker også ut segmentnavnet fra filnavnet før det blir satt opp i ACS-profildata.
+Importarbeidsflyten i bildet nedenfor er konfigurert til å kjøre hver åttende time og se etter eksporterte målgruppeinnsiktssegmenter (CSV-fil i Azure Blob Storage). Arbeidsflyten pakker ut CSV-filinnholdet i en bestemt kolonnerekkefølge. Denne arbeidsflyten er bygget for å utføre grunnleggende feilhåndtering og sikre at hver oppføring har en e-postadresse før dataene samles inn i Adobe Campaign Standard. Arbeidsflyten pakker også ut segmentnavnet fra filnavnet før oppdatering til Adobe Campaign Standard-profildataene.
 
 :::image type="content" source="media/ACS-import-workflow.png" alt-text="Skjermbilde av en importarbeidsflyt i brukergrensesnittet til Adobe Campaign Standard.":::
 

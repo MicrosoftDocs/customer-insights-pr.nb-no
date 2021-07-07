@@ -1,5 +1,5 @@
 ---
-title: Berike med tredjeparts supplering fra HERE Technologies
+title: Berikelse med tredjeparts supplering fra HERE Technologies
 description: Generell informasjon om tredjeparts supplering fra HERE Technologies.
 ms.date: 04/09/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 5d1f037377010153045c9255d2d01f98ebf1fdfd
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: b3c1da0f541efb85b2ca9d87a2e3b97bbfb6ca7f
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896063"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305306"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Supplering av kundeprofiler med HERE Technologies (forhåndsversjon)
 
@@ -26,7 +26,7 @@ For å konfigure HERE Technologies-suppleringer må følgende forhåndskrav vær
 
 - Du har et aktivt abonnement på HERE Technologies. Hvis du vil ha et abonnement, kan du [registrere deg her](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) eller [kontakte HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) direkte. [Finn ut mer om lokasjonssupplement fra HERE Technologies.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- Det er en HERE [tilkobling](connections.md) tilgjengelig *eller* du har [administrator](permissions.md#administrator)-tillatalser og API-nøkkel for HERE Technologies.
+- En HERE [-tilkobling](connections.md) er tilgjengelig, *eller* du har [administrator](permissions.md#administrator)- tillatelser og API-nøkkelen for HERE Technologies.
 
 ## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
 
@@ -37,7 +37,7 @@ For å konfigure HERE Technologies-suppleringer må følgende forhåndskrav vær
    > [!div class="mx-imgBorder"]
    > ![HERE Technologies-flis](media/HERE-tile.png "HERE Technologies-flis")
 
-1. Velg en [tilkobling](connections.md) fra rullegardinlisten. Kontakt en administrator hvis ingen tilkobling er tilgjengelig. Hvis du er en administrator, kan du opprette en tilkobling ved å velge **Legg til tilkobling**. Velg **HERE Technologies** fra rullegardinlisten. 
+1. Velg en [tilkobling](connections.md) fra rullegardinlisten. Kontakt en administrator hvis ingen tilkobling er tilgjengelig. Hvis du er en administrator, kan du opprette en tilkobling ved å velge **Legg til tilkobling**. Velg **HERE Technologies** i rullegardinlisten. 
 
 1. Velg **Koble til HERE Technologies** for å bekrefte valget.
 
@@ -58,7 +58,7 @@ For å konfigure HERE Technologies-suppleringer må følgende forhåndskrav vær
 
 1. Velg **Lagre supplering** etter at du har sett gjennom valgene.
 
-## <a name="configure-the-connection-for-here-technologies"></a>Konfigurere tilkoblingen for HERE technologies 
+## <a name="configure-the-connection-for-here-technologies"></a>Konfigurere tilkoblingen for HERE Technologies 
 
 Du må være en administrator for å konfigurere tilkoblinger. Velg **Legg til tilkobling** når du konfigurerer en supplering *eller* gå til **Administrasjon** > **Tilkoblinger** og velg **Konfigurer** i HERE technologies-filen.
 
@@ -66,13 +66,13 @@ Du må være en administrator for å konfigurere tilkoblinger. Velg **Legg til t
 
 1. Angi en gyldig API-nøkkel for HERE Technologies.
 
-1. Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**
+1. Gå gjennom og gi ditt samtykke til **Datapersonvern og -samsvar** ved å velge **Jeg er enig**.
 
 1. Velg **Bekreft** for å validere konfigurasjonen.
 
 1. Velg **Lagre** etter at verifiseringen er fullført.
 
-> [!div class="mx-imgBorder"]
+   > [!div class="mx-imgBorder"]
    > ![Konfigurasjonsside for HERE technologies-tilkobling](media/enrichment-HERE-connection.png "Konfigurasjonsside for HERE technologies-tilkobling")
 
 ## <a name="enrichment-results"></a>Resultater av supplering
@@ -85,7 +85,7 @@ Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velg
 
 ## <a name="next-steps"></a>Neste trinn
 
-Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md), [mål](measures.md) og til og med [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
+Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md) og [mål](measures.md), og [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
 
 ## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
 

@@ -136,6 +136,8 @@
           items:
             - name: Oversikt over eksporter
               href: audience-insights/export-destinations.md
+            - name: Aktiv kampanje
+              href: audience-insights/export-active-campaign.md
             - name: AdRoll
               href: audience-insights/export-adroll.md
             - name: Autopilot
@@ -144,7 +146,7 @@
               href: audience-insights/export-azure-blob-storage.md
             - name: Azure Data Lake Storage Gen2
               href: audience-insights/export-azure-data-lake-storage-gen2.md
-            - name: Azure Synapse-analyse
+            - name: Azure Synapse Analytics
               href: audience-insights/export-azure-synapse-analytics.md
             - name: Adobe Campaign Standard
               href: audience-insights/export-adobe-campaign-standard.md
@@ -178,8 +180,12 @@
               href: audience-insights/export-omnisend.md
             - name: RollWorks
               href: audience-insights/export-rollworks.md
+            - name: Salesforce Marketing Cloud
+              href: audience-insights/export-salesforce.md
             - name: SendGrid
               href: audience-insights/export-sendgrid.md
+            - name: SendInBlue
+              href: audience-insights/export-sendinblue.md
             - name: Snapchat
               href: audience-insights/export-snapchat.md
             - name: SFTP
@@ -240,15 +246,15 @@
           href: engagement-insights/get-started.md
         - name: Opprett et arbeidsområde
           href: engagement-insights/create-workspace.md
-        - name: Instrumenter nettstedet ditt
-          href: engagement-insights/instrument-website.md
+        - name: Registrere hendelser fra nettsteder og mobilapper
+          href: engagement-insights/developer-resources.md
         - name: Konsepter og terminologi
           href: engagement-insights/glossary.md
     - name: Hendelser
       items:
         - name: Opprett og endre hendelser
           href: engagement-insights/refined-events.md
-        - name: Eksportere hendelser
+        - name: Eksporter hendelser
           href: engagement-insights/export-events.md
     - name: Rapporter
       items:
@@ -272,10 +278,18 @@
       items:
         - name: Oversikt over utviklerressurser
           href: engagement-insights/developer-resources.md
-        - name: Opplæring i SDK for nett
+        - name: Opplæring for Web SDK
           href: engagement-insights/advanced-SDK-implementation.md
         - name: Eksempel på SDK for nett
           href: engagement-insights/websdk-sample.md
+        - name: Android SDK-opplæring
+          href: engagement-insights/get-started-android.md
+        - name: Android SDK-eksempel
+          href: engagement-insights/androidsdk-sample.md
+        - name: Opplæring for iOS SDK
+          href: engagement-insights/get-started-ios.md
+        - name: Eksempel på iOS SDK
+          href: engagement-insights/iossdk-sample.md
     - name: Administrasjon
       items:
         - name: Roller og tillatelser
