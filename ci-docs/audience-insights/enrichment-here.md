@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b3c1da0f541efb85b2ca9d87a2e3b97bbfb6ca7f
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 00be15367001a5f4342d60bb284726ef7154d05c
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305306"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555319"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Supplering av kundeprofiler med HERE Technologies (forhåndsversjon)
 
@@ -35,7 +35,7 @@ For å konfigure HERE Technologies-suppleringer må følgende forhåndskrav vær
 1. Velg **Suppler dataene** på HERE Technologies-flisen, og velg **Kom i gang**.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies-flis](media/HERE-tile.png "HERE Technologies-flis")
+   > ![HERE Technologies-flis.](media/HERE-tile.png "HERE Technologies-flis")
 
 1. Velg en [tilkobling](connections.md) fra rullegardinlisten. Kontakt en administrator hvis ingen tilkobling er tilgjengelig. Hvis du er en administrator, kan du opprette en tilkobling ved å velge **Legg til tilkobling**. Velg **HERE Technologies** i rullegardinlisten. 
 
@@ -50,7 +50,7 @@ For å konfigure HERE Technologies-suppleringer må følgende forhåndskrav vær
 1. Definer hvilke felt fra de enhetlige profilene som skal brukes til å søke etter samsvarende stedsdata fra HERE Technologies. Feltene **Gate/vei 1** og **Postnummer** kreves for den valgte primære og/eller sekundære adressen. Flere felt kan legges til for å oppnå høyere nøyaktighet.
 
    > [!div class="mx-imgBorder"]
-   > ![Konfigurasjonsside for HERE Technologies-supplering](media/enrichment-HERE-configuration.png "Konfigurasjonsside for HERE Technologies-supplering")
+   > ![Konfigurasjonsside for HERE Technologies-supplering.](media/enrichment-HERE-configuration.png "Konfigurasjonsside for HERE Technologies-supplering")
 
 1. Velg **Neste** for å fullføre felttilordningen.
 
@@ -73,7 +73,7 @@ Du må være en administrator for å konfigurere tilkoblinger. Velg **Legg til t
 1. Velg **Lagre** etter at verifiseringen er fullført.
 
    > [!div class="mx-imgBorder"]
-   > ![Konfigurasjonsside for HERE technologies-tilkobling](media/enrichment-HERE-connection.png "Konfigurasjonsside for HERE technologies-tilkobling")
+   > ![Konfigurasjonsside for HERE Technologies-tilkobling.](media/enrichment-HERE-connection.png "Konfigurasjonsside for HERE technologies-tilkobling")
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 

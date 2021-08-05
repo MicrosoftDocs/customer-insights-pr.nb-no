@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: ameetj
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 71881f7e1f9448fe0a7d6d92b8102b8b42de7c2a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2eb44604e72b32292f971754d4f8c4fd1988c697
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598351"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555181"
 ---
 # <a name="use-models-based-on-azure-machine-learning-studio-classic"></a>Bruke modeller basert på Azure Machine Learning Studio (klassisk)
 
@@ -41,7 +41,7 @@ I det første trinnet må vi opprette et arbeidsområde for og åpne Machine Lea
 
 1. Når du har opprettet ressursen, vises instrumentbordet for Machine Learning Studio-arbeidsområdet. Velg **Start Machine Learning Studio**.
 
-   ![Brukergrensesnittet i Azure Machine Learning Studio](media/azure-machine-learning-studio.png)
+   ![Brukergrensesnittet i Azure Machine Learning Studio.](media/azure-machine-learning-studio.png)
 
 ## <a name="work-with-azure-machine-learning-studio"></a>Arbeide med Azure Machine Learning Studio
 
@@ -55,7 +55,7 @@ Du kan nå opprette et nytt eksperiment eller importere en eksisterende eksperim
 
 1. Hvis du oppretter et nytt eksperiment eller bruker en eksperimentmal fra galleriet, må du konfigurere egenskapene for **Importer data**. Bruk den veiledede opplevelsen eller legg inn detaljer direkte for å få tilgang til Azure Blob Storage som inneholder dataene dine.  
 
-   ![Azure Machine Learning Studio-eksperiment](media/azure-machine-learning-studio-experiment.png)
+   ![Azure Machine Learning Studio-eksperiment.](media/azure-machine-learning-studio-experiment.png)
 
 1. Nå kan du bygge en egendefinert behandlingspipeline for å rense og forhåndsbehandle dataene, trekke ut funksjoner og lære opp en passende modell.
 
@@ -63,15 +63,15 @@ Du kan nå opprette et nytt eksperiment eller importere en eksisterende eksperim
 
 1. Når du er fornøyd med kvaliteten på en modell, velger du **Konfigurer nettjeneste** > **Prediktiv nettjeneste**. Dette alternativet importerer den opplærte modellen og pipelinen for funksjonisering fra opplæringseksperimentet til en prediktiv tjeneste. Den prediktive tjenesten kan ta imot et annet sett med inndata med skjemaet som brukes i opplæringseksperimentet, til å lage prediksjoner.
 
-   ![Konfigurere en prediktiv nettjeneste](media/predictive-webservice-control.png)
+   ![Konfigurer en prediktiv nettjeneste.](media/predictive-webservice-control.png)
 
 1. Når det prediktive nettjenesteeksperimentet er vellykket, kan du distribuere det for automatisk planlegging. Hvis du vil at nettjenesten skal fungere med Customer Insights, velger du **Distribuer nettjeneste** > **Distribuer nettjeneste [Ny] – forhåndsversjon**. [Finn ut mer om hvordan du distribuerer en nettjeneste](/azure/machine-learning/studio/deploy-a-machine-learning-web-service).
 
-   ![Distribuere en prediktiv nettjeneste](media/predictive-webservice-deploy.png)
+   ![Distribuer en prediktiv nettjeneste.](media/predictive-webservice-deploy.png)
 
 ## <a name="sample-models-from-the-gallery"></a>Eksempelmodeller fra galleriet
 
-Vi bruker et fiktivt scenario med Contoso Hotel for modellene i denne artikkelen. Contoso Hotel samler inn følgende data:
+Vi bruker et fiktivt scenario av Contoso Hotel for modellene i denne artikkelen. Contoso Hotel samler inn følgende data:
 
 - CRM-data som består av aktivitet under hotelloppholdet. Datasettet inneholder informasjon om oppholdsdatoene for hver registrerte kunde. Det inneholder også informasjon om bestilling, romtyper, utgiftsdetaljer og så videre. Dataene strekker seg over fire år fra januar 2014 til januar 2018.
 - Kundeprofiler for hotellgjester. Disse profilene inneholder informasjon om hver kunde, inkludert navn, fødselsdato, postadresse, kjønn og telefonnummer.
@@ -87,13 +87,13 @@ Definisjonen av frafall kan variere etter scenario. I dette eksemplet skal en gj
 
 Eksperimentmalen kan importeres fra galleriet. Sørg først for at du importerer dataene for **Aktivitet under hotellopphold**, **Kundedata** og **Tjenestebruksdata** fra Azure Blob Storage.
 
-   ![Importere data for frafallsmodellen](media/import-data-azure-blob-storage.png)
+   ![Importer data for frafallsmodellen.](media/import-data-azure-blob-storage.png)
 
 ### <a name="featurization"></a>Funksjonisering
 
 Basert på definisjonen av frafall identifiserer vi først råfunksjonene som påvirker etiketten. Deretter konverterer vi disse råfunksjonene til numeriske funksjoner som kan brukes med maskinlæringsmodeller. Dataintegrering skjer i Customer Insights, så vi kan føye sammen disse tabellene ved hjelp av *kunde-ID-en*.
 
-   ![Føye sammen importerte data](media/join-imported-data.png)
+   ![Føy sammen importerte data.](media/join-imported-data.png)
 
 Funksjoniseringen for å bygge modellen for frafallsanalyse kan være litt vanskelig. Dataene er en funksjon av tid med registrering av ny hotellaktivitet daglig. Under funksjonisering ønsker vi å generere statiske funksjoner fra de dynamiske dataene. I dette tilfellet genererer vi flere funksjoner fra hotellaktivitet med et glidevindu på ett år. Vi utvider også de kategoriske funksjonene, for eksempel romtype eller bestillingstype, til separate funksjoner ved hjelp av one-hot-koding.  
 
@@ -114,7 +114,7 @@ Nå må vi velge den optimale algoritmen som skal brukes. I dette tilfellet er d
 
 Følgende bilde viser modellopplæringen og evalueringspipelinen fra Azure Machine Learning Studio:
 
-![Frafallsmodell i Azure Machine Learning Studio](media/azure-machine-learning-model.png)
+![Frafallsmodell i Azure Machine Learning Studio.](media/azure-machine-learning-model.png)
 
 Vi bruker også en teknikk kalt **Funksjonsviktighet ved permutasjon**, et viktig aspekt ved modelloptimalisering. Innebygde modeller har liten til ingen innsikt i virkningen av en bestemt funksjon på den endelige prediksjonen. Kalkulatoren for funksjonsviktighet bruker en egendefinert algoritme til å beregne innvirkningen til enkeltfunksjoner på resultatet for en bestemt modell. Funksjonsviktigheten normaliseres mellom +1 og -1. En negativ innvirkning betyr at den tilsvarende funksjonen har en kontraintuitiv innvirkning på resultatet, og bør fjernes fra modellen. En positiv innvirkning indikerer at funksjonen bidrar kraftig i retning av prediksjonen. Disse verdiene er ikke korrelasjonskoeffisienter siden de er ulike måledata. Hvis du vil ha mer informasjon, kan du se[Funksjonsviktighet ved permutasjon](/azure/machine-learning/studio-module-reference/permutation-feature-importance).
 
@@ -148,7 +148,7 @@ Vi definerer målet som å maksimere dollarbeløpet på bruk av tjenester ved å
 
 På samme måte som med frafallsmodellen føyer vi til hotellets ServiceCustomerID sammen med CustomerID for å lage anbefalinger konsekvent per CustomerID.
 
-![Funksjonisering av anbefalingsmodellen](media/azure-machine-learning-model-featurization.png)
+![Funksjonisering av anbefalingsmodellen.](media/azure-machine-learning-model-featurization.png)
 
 Dataene stammer fra tre ulike enheter, og funksjoner utledes fra dem. Funksjoniseringen for anbefalingsproblemet er annerledes i forhold til scenarioene med frafall eller verdi for kundelevetid. Anbefalingsmodellen trenger inndata i form av tre sett med funksjoner.
 
@@ -156,13 +156,13 @@ Dataene stammer fra tre ulike enheter, og funksjoner utledes fra dem. Funksjonis
 
 Vi forutsier produkter eller tjenester ved å bruke algoritmen kalt **Lær opp Matchbox-anbefaler** til å lære opp anbefalingsmodellen.
 
-![Algoritme for produktanbefaling](media/azure-machine-learning-model-recommendation-algorithm.png)
+![Algoritme for produktanbefaling.](media/azure-machine-learning-model-recommendation-algorithm.png)
 
 De tre inndataportene for modellen **Lær opp Matchbox-anbefaler** tar imot opplæringsdataene for tjenestebruk, kundebeskrivelse (valgfri) og tjenestebeskrivelse. Det er tre forskjellige måter å beregne poeng for modellen på. Den ene måten er for modellevaluering der en NDCG-poengsum (Normalized Discounted Cumulative Gain) beregnes for å rangere de vurderte elementene. I dette eksperimentet har vi NDCG-poengsummen 0,97. De to andre alternativene er å poengberegne modellen for hele tjenestekatalogen som anbefales, eller bare poengberegne elementer som brukere ikke har brukt før.
 
 Hvis vi ser nærmere på distribusjonen av anbefalingene for hele tjenestekatalogen, ser vi at telefon, WiFi og ilbud er de beste tjenestene som anbefales. Dette samsvarer med det vi fant for distribusjonene av tjenesteforbruksdataene:
 
-![Utdata fra anbefalingsmodell](media/azure-machine-learning-model-output.png)
+![Utdata fra anbefalingsmodell.](media/azure-machine-learning-model-output.png)
 
 Du får tilgang til hele [produktanbefalingseksperimentet i Azure AI-galleriet.](https://gallery.azure.ai/Experiment/Recommendation-4)
 

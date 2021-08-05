@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 385406b706890d741fec2694c190c0fada7809d7
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 49bab0605197912cd4b81ff193b914599a092792
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596557"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554906"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Knytte til en Common Data Model-mappe ved å bruke en Azure Data Lake-konto
 
@@ -45,7 +45,7 @@ Denne artikkelen inneholder informasjon om hvordan du tar inn data fra en Common
 
 1. Du kan velge mellom å bruke et ressursbasert alternativ og et abonnementsbasert alternativ for godkjenning. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). Skriv inn informasjon om **beholderen**, og velg **Neste**.
    > [!div class="mx-imgBorder"]
-   > ![Dialogboksen for å angi nye tilkoblingsdetaljer for Azure Data Lake](media/enter-new-storage-details.png)
+   > ![Dialogboksen for å angi nye tilkoblingsdetaljer for Azure Data Lake.](media/enter-new-storage-details.png)
    > [!NOTE]
    > Du må ha en av følgende roller i beholderen eller lagringskontoen nevnt ovenfor for å kunne koble til og opprette en datakilde:
    >  - Storage Blob-dataleser
@@ -58,11 +58,11 @@ Denne artikkelen inneholder informasjon om hvordan du tar inn data fra en Common
 
 1. Det vises en liste over tilgjengelige enheter i den valgte model.json- eller manifest.json-filen. Du kan se gjennom og velge fra listen over tilgjengelige enheter, og deretter velge **Lagre**. Alle de valgte enhetene tas inn fra den nye datakilden.
    > [!div class="mx-imgBorder"]
-   > ![Dialogboks som viser en liste over enheter fra en model.json-fil](media/review-entities.png)
+   > ![Dialogboks som viser en liste over enheter fra en model.json-fil.](media/review-entities.png)
 
 8. Angi hvilke dataenheter du vil aktivere dataprofilering for, og velg **Lagre**. Dataprofilering aktiverer analyse og andre funksjoner. Du kan velge hele enheten, noe som velger alle attributter fra enheten, eller du kan velge bestemte valgte attributter. Som standard er ingen enheter aktivert for dataprofilering.
    > [!div class="mx-imgBorder"]
-   > ![Dialogboks som viser dataprofilering](media/dataprofiling-entities.png)
+   > ![Dialogboks som viser dataprofilering.](media/dataprofiling-entities.png)
 
 9. Når du har lagret valgene, åpnes siden **Datakilder**. Nå skal du se Common Data Model-mappen som en datakilde.
 
@@ -81,12 +81,12 @@ Du kan oppdatere tilgangsnøkkelen for lagringskontoen som inneholder Common Dat
 
 4. Du kan eventuelt oppdatere **tilgangsnøkkelen** og velge **Neste**.
 
-   ![Dialogboks for å redigere og oppdatere en tilgangstast for en eksisterende datakilde](media/edit-access-key.png)
+   ![Dialogboks for å redigere og oppdatere en tilgangstast for en eksisterende datakilde.](media/edit-access-key.png)
 
 5. Du kan eventuelt oppdatere fra en kontonøkkeltilkobling til en ressursbasert eller abonnementsbasert tilkobling. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). Du kan ikke endre informasjon om en **beholder** når du oppdaterer tilkoblingen.
    > [!div class="mx-imgBorder"]
 
-   > ![Dialogboksen for å angi tilkoblingsdetaljer for Azure Data Lake til en eksisterende lagringskonto](media/enter-existing-storage-details.png)
+   > ![Dialogboksen for å angi tilkoblingsdetaljer for Azure Data Lake til en eksisterende lagringskonto.](media/enter-existing-storage-details.png)
 
    > [!NOTE]
    > Du må ha en av følgende roller i beholderen eller lagringskontoen nevnt ovenfor for å kunne koble til og opprette en datakilde:

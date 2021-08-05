@@ -9,12 +9,12 @@ author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 3f97e22687ae4f5536d492bac83bdf9c711e2c94
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597431"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554447"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Bruk Azure Machine Learning-baserte modeller
 
@@ -52,7 +52,7 @@ Du må opprette datasett for å bruke enhetsdata fra Customer Insights for bunke
      I designeren åpner du **Velg kolonner i datasett** og velger deretter **Angi som pipelineparameter**, der du oppgir et navn for parameteren.
 
      > [!div class="mx-imgBorder"]
-     > ![Datasettparametrisering i designeren](media/intelligence-designer-dataset-parameters.png "Datasettparametrisering i designeren")
+     > ![Datasettparametrisering i designeren.](media/intelligence-designer-dataset-parameters.png "Datasettparametrisering i designeren")
    
 * Datasettparameter i SDK (Python)
    
@@ -78,7 +78,7 @@ Du må opprette datasett for å bruke enhetsdata fra Customer Insights for bunke
 
 * Designeren har [Eksporter data-modulen](/azure/machine-learning/algorithm-module-reference/export-data) som tillater at utdataene fra en pipeline kan eksporteres til Azure Storage. For øyeblikket må modulen bruke datalagertypen **Azure Blob Storage** og parametrisere **datalageret** og den relative **banen**. Customer Insights overstyrer begge disse parameterne under kjøring av pipeline med et datalager og en bane som er tilgjengelig for produktet.
    > [!div class="mx-imgBorder"]
-   > ![Eksportere datamodulkonfigurasjon](media/intelligence-designer-importdata.png "Eksportere datamodulkonfigurasjon")
+   > ![Eksporter datamodulkonfigurasjon.](media/intelligence-designer-importdata.png "Eksportere datamodulkonfigurasjon")
    
 * Når du skriver beslultningsutdata ved hjelp av kode, kan du laste opp utdataene til en bane innenfor et *registrert datalager* i arbeidsområdet. Hvis banen og datalageret er parametrisert i pipelinen, kan Customer Insights lese og importere beslutningsutdataene. Det er for øyeblikket støtte for enkle tabellutdata i CSV-format. Banen må inneholde navnet på katalogen og filnavnet.
 

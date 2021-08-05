@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: f81128183b6e20e1078ad38c42c771d343909270
-ms.sourcegitcommit: c1841ab91fbef9ead9db0f63fbc669cc3af80c12
+ms.openlocfilehash: ac8b0671b20123091bef64e672fc53398fe8955a
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/17/2021
-ms.locfileid: "6049406"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6553987"
 ---
 # <a name="entities-in-audience-insights"></a>Enheter i målgruppeinnsikt
 
@@ -30,19 +30,19 @@ Siden **Enheter** viser enheter og inneholder flere kolonner:
 - **Sist oppdatert**: Dato og klokkeslett for den siste oppdateringen av enheten
 - **Siste oppdatering**: Dato og klokkeslett for den siste dataoppdateringen
 
-## <a name="exploring-a-specific-entitys-data"></a>Utforske dataene til en bestemt enhet
+## <a name="explore-a-specific-entitys-data"></a>Utforsk dataene til en bestemt enhet
 
 Velg en enhet for å utforske de forskjellige feltene og oppføringene som er inkludert i enheten.
 
 > [!div class="mx-imgBorder"]
-> ![Velg en enhet](media/data-manager-entities-data.png "Velg en enhet")
+> ![Velg en enhet.](media/data-manager-entities-data.png "Velg en enhet")
 
 - Fanen **Data** viser en tabell som viser detaljer om enkeltoppføringer for enheten.
 
 > [!div class="mx-imgBorder"]
-> ![Tabellen Felt](media/data-manager-entities-fields.PNG "Tabellen Felt")
+> ![Tabellen Felter.](media/data-manager-entities-fields.PNG "Tabellen Felt")
 
-- Fanen **Attributter** velges som standard og viser en tabell for å se gjennom detaljer for den valgte enheten, for eksempel feltnavn, datatyper og typer. **Type**-kolonnen viser Common Data Model-tilknyttede typer, som enten er automatisk identifiserte av systemet eller [manuelt tilordnede](map-entities.md) av brukere. Dette er semantiske typer som kan være forskjellige fra attributtenes datatyper – for eksempel har feltet *E-post* nedenfor datatypen *Tekst*, men (semantisk) Common Data Model-type kan være *E-post* eller *EmailAddress*.
+- Fanen **Attributter** velges som standard og viser en tabell for å se gjennom detaljer for den valgte enheten, for eksempel feltnavn, datatyper og typer. **Type**-kolonnen viser Common Data Model-tilknyttede typer, som enten er automatisk identifiserte av systemet eller [manuelt tilordnede](map-entities.md) av brukere. Disse typene er semantiske typer som kan være forskjellige fra datatypene for attributtene. Feltet *E-post* nedenfor har for eksempel datatypen *Tekst*, men typen Common Data Model (semantisk) kan være *E-post* eller *EmailAddress*.
 
 > [!NOTE]
 > Begge tabellene viser bare et eksempel på enhetens data. Hvis du vil vise hele datasettet, går du til siden **Datakilder**, velger en enhet, velger **Rediger** og deretter viser enhetens data med Power Query-redigeringsprogrammet som forklart i [Datakilder](data-sources.md).
@@ -52,11 +52,28 @@ Hvis du vil lære mer om data som hentes inn i enheten, gir kolonnen **Sammendra
 Velg diagramikonet for å vise sammendraget av dataene.
 
 > [!div class="mx-imgBorder"]
-> ![Sammendragssymbol](media/data-manager-entities-summary.png "Tabell for datasammendrag")
+> ![Sammendragssymbol.](media/data-manager-entities-summary.png "Tabell for datasammendrag")
 
-### <a name="next-step"></a>Neste trinn
+## <a name="entity-specific-information"></a>Enhetsbestemt informasjon
 
-Se emnet [Samle](data-unification.md) for å lære hvordan du *tilordner*, *samsvarer* og *slår sammen* de innhentede dataene.
+Delen nedenfor inneholder informasjon om noen systemopprettede enheter.
+
+### <a name="corrupted-data-sources"></a>Ødelagte datakilder
+
+Felter fra en inntatt datakilde kan inneholde ødelagte data. Oppføringer med ødelagte felter vises i systemopprettede enheter. Hvis du vet om ødelagte oppføringer, blir det enklere å identifisere hvilke data du vil se gjennom og oppdatere i kildesystemet. Etter den neste oppdateringen av datakilden, blir de korrigerte oppføringene overført til Customer Insights og videre til nedstrømsprosesser. 
+
+En fødselsdag-kolonne har for eksempel datatypen angitt som dato. En kundeoppføring har fødselsdag angitt som 01/01/19777. Denne oppføringen flagges som ødelagt. Noen kan nå endre fødselsdagen i kildesystemet til 1977. Etter en automatisk oppdatering av datakildene, har feltet nå et gyldig format, og oppføringen blir fjernet fra den ødelagte enheten. 
+
+Gå til **Data** > **Enheter**, og se etter de ødelagte enhetene i **System**-delen. Navneskjema for ødelagte enheter: DataSourceName_EntityName_corrupt.
+
+Customer Insights behandler fremdeles ødelagte oppføringer. Det kan imidlertid føre til problemer når du arbeider med de enhetlige dataene.
+
+Følgende kontroller kjører på de innhentede dataene for å vise skadede oppføringer: 
+
+- Verdien i et felt samsvarer ikke med datatypen for kolonnen.
+- Felter inneholder tegn som fører til at kolonnene ikke samsvarer med det forventede skjemaet. Eksempel: feil formaterte anførselstegn, anførselstegn som ikke er reserver, eller tegn for ny linje.
+- Hvis det finnes kolonner for datetime/dato/datetimeoffset, må formatet angis i modellen hvis ISO-formatet ikke overholdes.
+
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

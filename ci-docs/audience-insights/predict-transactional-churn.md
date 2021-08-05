@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 28c89693239393d93b7a816535b8c3fffe353935
+ms.sourcegitcommit: e57d51ae3cc233f7b6185c074c66efd9800c02c1
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095614"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "6559417"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Transaksjonell frafallsprognose (forhåndsversjon)
 
@@ -47,7 +47,7 @@ Transaksjonsell frafallsprognose bidrar til å forutse om en kunde ikke lenger k
         - **Hendelse:** Navnet på hendelsen du vil bruke. Et felt kalt "Brukerhandling" i en dagligvareforretning kan for eksempel være en kupong som brukes av kunden.
         - **Detaljer:** Detaljert informasjon om hendelsen. Et felt kalt "Kupongverdi" i et dagligvareforretning kan for eksempel være valutaverdien for kupongen.
 - Kjennetegn for foreslåtte data:
-    - Tilstrekkelige historiske data: Transaksjonsdata for minst det dobbelte av det valgte tidsvinduet. Fortrinnsvis to til tre år med abonnementsdata. 
+    - Tilstrekkelige historiske data: Transaksjonsdata for minst det dobbelte av det valgte tidsvinduet. Helst to til tre år med transaksjonslogg. 
     - Flere kjøp per kunde: Ideelt minst to transaksjoner per kunde.
     - Antall kunder: Minst 10 kundeprofiler, helst mer enn 1 000 unike kunder. Modellen vil mislykkes med færre enn 10 kunder og utilstrekkelige historiske data.
     - Datafullføring: Mindre enn 20 % av manglende verdier i datafeltet for den angitte enheten.

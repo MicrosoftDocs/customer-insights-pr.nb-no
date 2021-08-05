@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 9eb0593f93d713124e4113dcb62c588819f5b97b
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095660"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556319"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Forutsigelse av abonnementsfrafall (forhåndsversjon)
 
@@ -63,7 +63,7 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
 1. I Målgruppeinnsikt går du til **Intelligens** > **Prognoser**.
 1. Velg flisen **Modell for abonnementsfrafall (forhåndsversjon)**, og velg **Bruk denne modellen**.
    > [!div class="mx-imgBorder"]
-   > ![Flisen Modell for abonnementsfrafall med knappen Bruk denne modellen](media/subscription-churn-usethismodel.PNG "Flisen Modell for abonnementsfrafall med knappen Bruk denne modellen")
+   > ![Flisen Modell for abonnementsfrafall med knappen Bruk denne modellen.](media/subscription-churn-usethismodel.PNG "Flisen Modell for abonnementsfrafall med knappen Bruk denne modellen")
 
 ### <a name="name-model"></a>Gi navn til modell
 
@@ -86,11 +86,11 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
     1. Velg **kundeenheten** som samsvarer med den primære kundeenheten.
     1. Angi et navn som beskriver relasjonen.
        > [!div class="mx-imgBorder"]
-       > ![Siden for abonnementslogg med opprettelse av en relasjon til kunden](media/subscription-churn-subscriptionhistoryrelationship.PNG "Siden for abonnementslogg med opprettelse av en relasjon til kunden")
+       > ![Siden for abonnementslogg med opprettelse av en relasjon til kunden.](media/subscription-churn-subscriptionhistoryrelationship.PNG "Siden for abonnementslogg med opprettelse av en relasjon til kunden")
 1. Velg **Neste**.
 1. Tilordne de semantiske feltene til attributter i enheten for abonnementslogg, og velg **Lagre**. Hvis du vil ha beskrivelser av feltene, kan du se på [forhåndskravene](#prerequisites).
    > [!div class="mx-imgBorder"]
-   > ![Siden med abonnementslogg som viser semantiske attributter som er tilordnet til felt i den valgte enheten for abonnementslogg](media/subscription-churn-subscriptionhistorymapping.PNG "Siden med abonnementslogg som viser semantiske attributter som er tilordnet til felt i den valgte enheten for abonnementslogg")
+   > ![Siden med abonnementslogg som viser semantiske attributter som er tilordnet til felt i den valgte enheten for abonnementslogg.](media/subscription-churn-subscriptionhistorymapping.PNG "Siden med abonnementslogg som viser semantiske attributter som er tilordnet til felt i den valgte enheten for abonnementslogg")
 1. Velg **Legg til data** for **Kundeaktiviteter**, og velg enheten som inneholder informasjon om kundeaktiviteten, slik det er beskrevet i forhåndskravene.
 1. Velg en aktivitetstype som samsvarer med typen kundeaktivitet du skal konfigurere.  Velg **Opprett ny**, og angi et navn hvis du ikke ser et alternativ som samsvarer med aktivitetstypen du trenger.
 1. Du må konfigurere relasjonen fra kundeaktivitetsenheten til kundeenheten.
@@ -101,7 +101,7 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
 1. Tilordne de semantiske feltene til attributter i kundeaktivitetsenheten, og velg **Lagre**. Hvis du vil ha beskrivelser av feltene, kan du se på [forhåndskravene](#prerequisites).
 1. (Valgfritt) Hvis du har andre kundeaktiviteter som du vil ha med, gjentar du fremgangsmåten ovenfor.
    > [!div class="mx-imgBorder"]
-   > ![Definere enhetsrelasjonen](media/subscription-churn-customeractivitiesmapping.PNG "Siden med kundeaktiviteter som viser semantiske attributter som er tilordnet til felt i den valgte enheten for kundeaktivitet")
+   > ![Definer enhetsrelasjonen.](media/subscription-churn-customeractivitiesmapping.PNG "Siden med kundeaktiviteter som viser semantiske attributter som er tilordnet til felt i den valgte enheten for kundeaktivitet")
 1. Velg **Neste**.
 
 ### <a name="set-schedule-and-review-configuration"></a>Angi konfigurasjon for planlegging og gjennomgang
@@ -115,7 +115,7 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
 
 1. Gå til kategorien **Mine prediksjoner** i **Intelligens** > **Prediksjoner**.
    > [!div class="mx-imgBorder"]
-   > ![Visning av Mine prediksjoner-siden](media/subscription-churn-mypredictions.PNG "Visning av Mine prediksjoner-siden")
+   > ![Visning av Mine prediksjoner-siden.](media/subscription-churn-mypredictions.PNG "Visning av Mine prediksjoner-siden")
 1. Velg prognosen du vil gå gjennom.
    - **Navn på prediksjon:** Navnet på prediksjonen som ble angitt under opprettingen.
    - **Prediksjonstype:** Typen modell som brukes for prediksjonen.
@@ -131,7 +131,7 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
    - **Sist oppdatert:** Datoen da forutsigelsen oppdaterte resultater i utdataenheten.
 1. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil se gjennom resultatene for, og velg **Vis**.
    > [!div class="mx-imgBorder"]
-   > ![Visning av alternativer på loddrette ellipser-menyen for en forutsigelse, blant annet rediger, oppdater, vis, logger og slett](media/subscription-churn-verticalellipses.PNG "Visning av alternativer på loddrette ellipser-menyen for en forutsigelse, blant annet rediger, oppdater, vis, logger og slett")
+   > ![Visning av alternativer på loddrette ellipser-menyen for en forutsigelse, blant annet rediger, oppdater, vis, logger og slett.](media/subscription-churn-verticalellipses.PNG "Visning av alternativer på loddrette ellipser-menyen for en forutsigelse, blant annet rediger, oppdater, vis, logger og slett")
 1. Det er tre hoveddeler med data på resultatsiden:
     1. **Ytelse for opplæringsmodell:** A, B eller C er mulige resultater. Denne poengsummen angir ytelsen til forutsigelsen, og kan hjelpe deg med å ta beslutningen om å bruke resultatene som er lagret i utdataenheten.
         - Poengsummer blir fastslått basert på følgende regler:
@@ -139,13 +139,13 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
             - **B** når modellen har forutsagt minst 50 % av de totale prognosene, og når prosentandelen av nøyaktige prognoser for kunder som er frafalt, er opptil 10 % større enn den historiske gjennomsnittlige frafallsfrekvensen for den historiske gjennomsnittlige frafallsfrekvensen.
             - **C** når modellen nøyaktig har forutsagt mindre enn 50 % av de totale prognoser, eller når prosentandelen av nøyaktige prognoser for kunder som har frafalt, er mindre enn den historiske gjennomsnittlige frafallsfrekvensen.
                > [!div class="mx-imgBorder"]
-               > ![Visning av modellytelsesresultatet](media/subscription-churn-modelperformance.PNG "Visning av modellytelsesresultatet")
+               > ![Visning av modellytelsesresultatet.](media/subscription-churn-modelperformance.PNG "Visning av modellytelsesresultatet")
     1. **Sannsynligheten for frafall (antall kunder):** Grupper av kunder basert på den predikerte risikoen for frafall. Disse dataene kan hjelpe deg senere hvis du vil opprette et segment av kunder med høy frafallsrisiko. Slike segmenter hjelper deg med å forstå hvor grensen bør gå for segmentmedlemskap.
        > [!div class="mx-imgBorder"]
-       > ![Diagram som viser fordeling av frafallsresultater, delt opp i områder fra 0 til 100 %](media/subscription-churn-resultdistribution.PNG "Diagram som viser fordeling av frafallsresultater, delt opp i områder fra 0 til 100 %")
+       > ![Diagram som viser fordeling av frafallsresultater, delt opp i områder fra 0 til 100 %.](media/subscription-churn-resultdistribution.PNG "Diagram som viser fordeling av frafallsresultater, delt opp i områder fra 0 til 100 %")
     1. **Mest innflytelsesrike faktorer:** Det er mange faktorer du må ta hensyn til når du oppretter forutsigelsen. Hver av faktorene har sin viktighet beregnet for de aggregerte prognoser som opprettes av en modell. Du kan bruke disse faktorene til å validere forutsigelsesresultatene. Du kan også bruke denne informasjonen senere til å [opprette segmenter](segments.md) som kan ha innvirkning på frafallsrisiko for kunder.
        > [!div class="mx-imgBorder"]
-       > ![Liste med innflytelsesrike faktorer og viktigheten av dem, for å forutsi frafallsresultatet](media/subscription-churn-influentialfactors.PNG "Liste med innflytelsesrike faktorer og viktigheten av dem, for å forutsi frafallsresultatet")
+       > ![Liste med innflytelsesrike faktorer og viktigheten av dem, for å forutsi frafallsresultatet.](media/subscription-churn-influentialfactors.PNG "Liste med innflytelsesrike faktorer og viktigheten av dem, for å forutsi frafallsresultatet")
 
 ## <a name="manage-predictions"></a>Administrere prediksjoner
 

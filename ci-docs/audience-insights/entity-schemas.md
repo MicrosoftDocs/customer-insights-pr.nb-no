@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 6667e411a1b56e13105a6b59b7b5d249bc8141ea
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e21f8a9422357fbc5c9425f91f3ba241c9dec9d8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596373"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692317"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Enhetsskjemaer i Common Data Model
 
@@ -24,7 +24,7 @@ ms.locfileid: "5596373"
 
 Denne delte datamodellen gjør det mulig for programmer og dataintegrerere å samarbeide enklere ved å gi en enhetlig definisjon av data. Common Data Model inneholder et rikholdig metadatasystem med standard enheter, relasjoner, hierarkier, egenskaper og mer. Den kommer fra Dynamics 365-apper og har åpen kildekode på GitHub med over 260 standard enheter. Et stort system av interne og eksterne partnere bidrar med bransjespesifikke konsepter for Common Data Model.
 
-Flere systemer og plattformer implementerer Common Data Model i dag, inkludert Power BI-dataflyter og Azure Data Services. Den er allerede støttet i Common Data Service Dynamics 365, Power Apps, Power BI og kommende Azure Data Services, og gir direkte verdi mot [Open Data Initiative](https://www.microsoft.com/open-data-initiative).
+Flere systemer og plattformer implementerer Common Data Model i dag, inkludert Power BI-dataflyter og Azure Data Services. Det støttes allerede i Microsoft Dataverse, Dynamics 365, Power Apps, og Power BI og kommende Azure-datatjenester, som direkte påløper verdi i [Open Data Initiative](https://www.microsoft.com/open-data-initiative).
 
 ## <a name="customer-insights-entity-schemas"></a>Customer Insights-enhetsskjemaer
 
@@ -44,7 +44,7 @@ Hvis du vil ha mer informasjon, kan du se dokumentasjonen om [Customer Insights-
 
 Du kan vise enheter i [Common Data Model-enhetsnavigatoren](https://microsoft.github.io/CDM/). Velg knappen **Last inn fra GitHub!** , og naviger til **foundationCommon** > **crmCommon** > **løsninger** > **customerInsights**, der du finner en liste over Customer Insights-enheter og definisjoner.
 > [!div class="mx-imgBorder"]
-> ![CDM-enhetsnavigator som viser Kundeaktivitet-enhet](media/CDM-entity-navigator.png "CDM-enhetsnavigator som viser Kundeaktivitet-enhet")
+> ![CDM-enhetsnavigator som viser Kundeaktivitet-enhet.](media/CDM-entity-navigator.png "CDM-enhetsnavigator som viser Kundeaktivitet-enhet")
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

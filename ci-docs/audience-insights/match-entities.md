@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50b11e7d6f62d7a25eb25a0f2b1c4ad7d859def1
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: de53927f7ed1f58176a7ba83f89be7c39064947c
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306040"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650330"
 ---
 # <a name="match-entities"></a>Samsvare enheter
 
@@ -138,7 +138,7 @@ Det er ikke obligatorisk å angi dedupliseringsregler. Hvis ingen slike regler e
    - **Minst nylig**: Identifiserer vinneroppføringen, basert på den minst nye oppføringen. Krever en dato eller et numerisk felt for å definere den nyeste.
  
    > [!div class="mx-imgBorder"]
-   > ![Trinn 1 for dedupliseringsregler](media/match-selfconflation.png "Trinn 1 for dedupliseringsregler")
+   > ![Trinn 1 for dedupliseringsregler.](media/match-selfconflation.png "Trinn 1 for dedupliseringsregler")
  
 1. Når enhetene er valgt og innstillingen for sammenslåing er angitt, velger du **Legg til regel** for å definere regler for deduplisering på enhetsnivå.
    - **Velg felt** viser alle tilgjengelige felter fra enheten. Velg feltet du vil søke etter duplikater for. Velg felter som sannsynligvis er unike for hver enkelt kunde. For eksempel en e-postadresse eller en kombinasjon av navn, poststed og telefonnummer.
@@ -146,7 +146,7 @@ Det er ikke obligatorisk å angi dedupliseringsregler. Hvis ingen slike regler e
    - Definer flere betingelser ved å velge **Legg til betingelse**.
  
    > [!div class="mx-imgBorder"]
-   > ![Trinn 2 for dedupliseringsregler](media/match-selfconflation-rules.png "Trinn 2 for dedupliseringsregler")
+   > ![Trinn 2 for dedupliseringsregler.](media/match-selfconflation-rules.png "Trinn 2 for dedupliseringsregler")
 
   Du kan opprette flere dedupliseringsregler for en enhet. 
 
@@ -179,7 +179,9 @@ Gå til **Data** > **Samle** > **Samsvar**, og velg **Kjør** for å starte pros
 Du finner resultatet av en vellykket kjøring, enheten for enhetlig kundeprofil, på **Enheter**-siden. Enheten for enhetlig kunde kalles **Kunder** i **Profiler**-delen. Det første vellykkede samsvarskjøringen oppretter den enhetlige *Kunde*-enheten. Alle påfølgende samsvarskjøringer utvider enheten.
 
 > [!TIP]
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
+> Når du har kjørt samsvarsprosessen, velger du prosessstatusen for å åpne ruten **Oppgavedetaljer**. Den gir en oversikt over behandlingstiden, den siste behandlingsdatoen og alle feil og advarsler som er knyttet til oppgaven. Velg **Se detaljer** for å se hvilke enheter som deltok i samsvarsprosessen, hvilke regler som ble brukt på dem, og om oppdateringene ble publisert på riktig måte.  
+> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies).  
+> :::image type="content" source="media/process-detail-path.png" alt-text="Neddrillingsbane for å komme til å behandle detaljer fra aktivitetsstatuskoblingen.":::
 
 ## <a name="review-and-validate-your-matches"></a>Se gjennom og validere samsvarene
 

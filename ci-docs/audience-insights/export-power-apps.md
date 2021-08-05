@@ -9,12 +9,12 @@ ms.topic: how-to
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 3fa91553fd50a22ab62b5a2b1e3f13b9483776a8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2ab5a9059991611a2959a19cc688d232ec782e1e
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598167"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554125"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Microsoft Power Apps-kobling (forhåndsvisning)
 
@@ -56,12 +56,12 @@ Du legger for eksempel til kundeprofiler i en [gallerikontroll](/powerapps/maker
 1. Legg til en **Galleri**-kontroll i en app du skal bygge.
 
 > [!div class="mx-imgBorder"]
-> ![Legge til et gallerielement](media/connector-powerapps9.png "Legge til et gallerielement")
+> ![Legg til et gallerielement.](media/connector-powerapps9.png "Legge til et gallerielement")
 
 1. Velg **Kunde** som datakilde for varer.
 
     > [!div class="mx-imgBorder"]
-    > ![Velg en datakilde](media/choose-datasource-powerapps.png "Velg en datakilde")
+    > ![Velg en datakilde.](media/choose-datasource-powerapps.png "Velg en datakilde")
 
 1. Du kan endre datapanelet til høyre for å velge hvilket felt kundeenheten skal vise i galleriet.
 

@@ -1,7 +1,7 @@
 ---
 title: Supplere enhetlige kundeprofiler
 description: Bruk funksjoner for å supplere kundedataene.
-ms.date: 04/09/2021
+ms.date: 07/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,19 @@ ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c35e73b366fcd5db2ba5a757295ddda6db30efa0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.custom: intro-internal
+ms.openlocfilehash: d12c0a9dd65d31f9ae8a9cafeafab2767d57893e
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305260"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555273"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
 
 Bruk data fra kilder som Microsoft og andre partnere for å berike kundedataene.
 
-:::image type="content" source="media/enrichment-hub-page.png" alt-text="Side for suppleringshub":::
+:::image type="content" source="media/enrichment-hub-page.png" alt-text="Side for suppleringshub.":::
 
 I måltruppeinnsikt går du til **Data** > **Supplering** for å arbeide med suppleringsalternativer.  
 
@@ -42,17 +43,17 @@ I kategorien **Mine suppleringer** kan du se de suppleringene du har konfigurert
 
 Gå til fanen **Mine suppleringer** for å vise alle konfigurerte pårikninger. Hvert supplering vises som en rad som inneholder tilleggsinformasjon om suppleringen.
 
-Velg en supplering for å vise de tilgjengelige alternativene. Du kan også velge ellipsen (...) i et listeelement for å vise alternativene.
+Velg suppleringen for å vise de tilgjengelige alternativene. Du kan også velge ellipsen (...) i et listeelement for å vise alternativene. Hvis du har konfigurert flere suppleringer, kan du bruke søkeboksen til å finne den raskt.
 
-:::image type="content" source="media/enrichment-hub-options-run.png" alt-text="Alternativer for å behandle suppleringer i listen over suppleringer":::
+:::image type="content" source="media/enrichment-hub-options-run.png" alt-text="Alternativer for å behandle suppleringer i listen over suppleringer.":::
 
 - **Vis** suppleringsdetaljer med antall supplerte kundeprofiler.
 - **Rediger** suppleringskonfigurasjonen.
 - **Kjør** supplementet for å oppdatere kundeprofiler med de nyeste dataene.
 - **Deaktiver** en eksisterende supplering for å unngå at den oppdateres automatisk med hver planlagte oppdatering. Data fra den siste vellykkede oppdateringen er fortsatt tilgjengelige. **Aktiver** en inaktiv supplering for å starte automatisk oppdatering på nytt med hver planlagte oppdatering.
-- **Slett** en supplering.
+- **Slett** suppleringen.
 
-Du kan kjøre eller deaktivere flere supplementer samtidig ved å velge dem i listen. Alternativer for visning og redigering er ikke tilgjengelige som massehandling og fungerer bare for én supplering om gangen.
+Kjør eller deaktiver flere suppleringer samtidig ved å merke dem i listen. Visnings- og redigeringsalternativer er ikke tilgjengelige som massehandling. De fungerer bare for én supplering om gangen.
 
 ## <a name="enrichments-and-connections"></a>Suppleringer og tilkoblinger
 

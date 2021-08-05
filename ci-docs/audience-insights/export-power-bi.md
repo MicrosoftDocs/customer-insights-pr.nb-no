@@ -1,7 +1,7 @@
 ---
 title: Power BI-kobling
 description: Finn ut hvordan du bruker Dynamics 365 Customer Insights-koblingen i Power BI.
-ms.date: 09/21/2020
+ms.date: 07/23/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e43e2f9dbc84ebfbf2154990a752740f973296cb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: faeb95bd7d2fe3cb220308cdee559b3347c5af54
+ms.sourcegitcommit: f98b6b2058f384365f222d1f9ba0cc9ce801f09d
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596051"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "6661114"
 ---
 # <a name="connector-for-power-bi-preview"></a>Kobling for Power BI (forhåndsvisning)
 
@@ -39,7 +39,7 @@ Opprett visualiseringer for dataene med Power BI Desktop. Generer ekstra innsikt
 
 1. I **Navigator**-dialogboksen. Du ser listen over alle miljøer som du har tilgang til. Utvid et miljø, og åpne en av mappene (enheter, mål, segmenter, suppleringer). Åpne for eksempel **Enheter**-mappen for å se alle enhetene du kan importere.
 
-   ![Power BI-koblingsnavigator](media/power-bi-navigator.png "Power BI-koblingsnavigator")
+   ![Power BI-koblingsnavigator.](media/power-bi-navigator.png "Power BI-koblingsnavigator")
 
 1. Merk av i avmerkingsboksene ved siden av enhetene som skal inkluderes, og velg **Last inn**. Du kan velge flere enheter fra flere miljøer.
 
@@ -68,5 +68,11 @@ Du kan identifisere og fjerne de dupliserte relasjonene.
 3. Fjern eventuelle dupliserte relasjoner som er identifisert.
 
 Når du har fjernet dupliserte relasjoner, kan du prøve å konfigurere Power BI-koblingen på nytt. Miljøet skal være tilgjengelig nå.
+
+### <a name="errors-on-date-fields-when-loading-entities-in-power-bi-desktop"></a>Feil i datofelter under innlasting av enheter i Power BI Desktop
+
+Når du laster inn enheter som inneholder felter med datoformat som MM/DD/ÅÅÅÅ, kan det oppstå feil på grunn av formater for nasjonale innstillinger som ikke samsvarer. Dette manglende samsvaret oppstår når Power BI Desktop-filen er satt til en annen nasjonal innstilling enn Engelsk (USA) fordi datofelter i målgruppeinnsikt lagres i amerikansk format.
+
+Filen Power BI Desktop har én innstilling for nasjonale innstillinger, som brukes ved henting av data. Hent disse datofeltene tolkes riktig, og angi de nasjonale innstillingene for .BPI-filen til engelsk (USA). [Finn ut hvordan du endrer de nasjonale innstillingene for en Power BI Desktop-fil](/power-bi/fundamentals/supported-languages-countries-regions.md#choose-the-locale-for-importing-data-into-power-bi-desktop).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

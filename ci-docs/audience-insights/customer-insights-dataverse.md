@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 7157ad930f3cea17c12bd4f95028d291483329d3
-ms.sourcegitcommit: e5425f060c8d80f9510283dc610ce70a4e709b1e
+ms.openlocfilehash: 220e01a06711a5d35b8df09e265017a6d8fd0490
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/15/2021
-ms.locfileid: "6259203"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650054"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbeide med Customer Insights-data i Microsoft Dataverse
 
@@ -24,11 +24,11 @@ Med Customer Insights kan du gjøre utdataenheter tilgjengelige i [Microsoft Dat
 
 **Organisasjoner med eksisterende Dataverse-miljøer**
 
-Organisasjoner som allerede bruker Dataverse, kan [bruke et av de eksisterende Dataverse-miljøene sine](manage-environments.md#create-an-environment-in-an-existing-organization) når en administrator konfigurerer målgruppeinnsikt. Når du oppgir nettadressen til Dataverse-miljøet, knyttes det til det nye miljøet for målgruppeinnsikt. Customer Insights og Dataverse-miljøer må driftes i samme område for å sikre best mulig ytelse.
+Organisasjoner som allerede bruker Dataverse, kan [bruke et av de eksisterende Dataverse-miljøene sine](get-started-paid.md) når en administrator konfigurerer målgruppeinnsikt. Når du oppgir nettadressen til Dataverse-miljøet, knyttes det til det nye miljøet for målgruppeinnsikt. Customer Insights og Dataverse-miljøer må driftes i samme område for å sikre best mulig ytelse.
 
 Du knytter til et Dataverse-miljø ved å utvide **Avanserte innstillinger** når du oppretter miljøet for målgruppeinnsikt. Angi **nettadressen for Microsoft Dataverse-miljøet**, og merk av for **Aktiver datadeling**.
 
-:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="alt":::
+:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="alt.":::
 
 **Ny organisasjon**
 

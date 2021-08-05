@@ -9,12 +9,12 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3342328b9eead9bdcb8b41f119a1d0a5823001c8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 31b9b1b709540896c1dbc19f974df4ab056a7b8d
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595913"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692539"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Fyll ut de delvise dataene med prognoser
 
@@ -31,11 +31,11 @@ Med prognoser er det mulig å enkelt opprette predisjonsverdier som kan forbedre
 
 Før organisasjonen kan bruke prognosefunksjonen, må du kontrollere at følgende forhåndskrav er oppfylt:
 
-1. Organisasjonen har en forekomst [konfigurert i Common Data Service](/ai-builder/build-model#prerequisites), og den er i samme organisasjon som Customer Insights.
+1. Organisasjonen har [konfigurert en forekomst i Microsoft Dataverse](/ai-builder/build-model#prerequisites), og den er i samme organisasjon som Customer Insights.
 
-2. Miljøet ditt er knyttet til Common Data Service-forekomsten din.
+2. Ditt målgruppeinnsiktsmiljø er knyttet til Dataverse-forekomsten din.
 
-Hvis du [oppretter et nytt miljø](manage-environments.md), konfigurerer du det i dialogboksen **Opprett et miljø** og velger **Avansert**. Hvis du allerede har opprettet et miljø, går du til innstillingene og velger **Avansert**. Uansett går du til delen **Bruk prediksjoner** og angir URL-adressen til Common Data Service-forekomsten som du vil knytte miljøet ditt til.
+Hvis du [oppretter et nytt miljø](get-started-paid.md), konfigurerer du det i dialogboksen **Opprett et miljø** og velger **Avansert**. Hvis du allerede har opprettet et miljø, går du til innstillingene og velger **Avansert**. Uansett går du til delen **Bruk prediksjoner** og angir URL-adressen til Dataverse-forekomsten som du vil knytte miljøet ditt til.
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Opprette en prognose i kundeenheten
 
@@ -47,17 +47,17 @@ Hvis du [oppretter et nytt miljø](manage-environments.md), konfigurerer du det 
 
 4. Finn attributtnavnet du vil forutsi verdier for, og velg deretter ikonet **Oversikt** i kolonnen **Sammendrag**.
    > [!div class="mx-imgBorder"]
-   > ![Oversikt-ikon](media/intelligence-overviewicon.png "Oversikt-ikon")
+   > ![Oversikt-ikon.](media/intelligence-overviewicon.png "Oversikt-ikon")
 
 5. Hvis det er mange manglende verdier for attributtet, velger du **Forutsi manglende verdier** for å fortsette med prognosen.
    > [!div class="mx-imgBorder"]
-   > ![Oversiktsstatus med knappen for å forutsi manglende verdier](media/intelligence-overviewpredictmissingvalues.png "Oversiktsstatus med knappen for å forutsi manglende verdier")
+   > ![Oversiktsstatus med knappen for å forutsi manglende verdier.](media/intelligence-overviewpredictmissingvalues.png "Oversiktsstatus med knappen for å forutsi manglende verdier")
 
 6. Angi et **Visningsnavn** og et **Navn på utdataenhet** for resultatet av prognosen.
 
 7. En forhåndsvalgt liste over alternativer viser hvor du kan tilordne verdiene til en prognosekategori. I dette tilfellet vil de eneste kategorialternativene være 0 eller 1 fordi de tilordnes til den sanne/usanne eller binære typen av prognosen. I kolonnen Kategori tilordner du feltverdiene du vil klassifisere som "0" i den endelige prognosen, til "0", og elementene du vil klassifisere som "1" i den siste prognosen, til "1".
    > [!div class="mx-imgBorder"]
-   > ![Eksempel på tilordnede feltverdier i kategorier](media/intelligence-categorymapping.png "Eksempel på tilordnede feltverdier i kategorier")
+   > ![Eksempel på tilordnede feltverdier i kategorier.](media/intelligence-categorymapping.png "Eksempel på tilordnede feltverdier i kategorier")
 
 8. Velg **Ferdig**, og prognosen blir behandlet. Behandlingen vil ta litt tid, avhengig av størrelsen på og kompleksiteten av data. Resultater er tilgjengelige i en ny enhet basert på **Navn på utdataenhet** til den opprettede prognosen.
 
@@ -77,7 +77,7 @@ Som en del av denne flyten velger du et spesifikt attributt som du vil basere se
 
 5. Hvis segmentet du opprettet, har ufullstendige data i kildefeltet, kan du velge å forutsi de manglende verdiene.
    > [!div class="mx-imgBorder"]
-   > ![Prognose-knapp](media/segments-predictoption.png "Prognose-knapp")
+   > ![Prediksjon-knapp.](media/segments-predictoption.png "Prognose-knapp")
 
 6. Angi et **Visningsnavn** og et **Navn på utdataenhet** for resultatet av prognosen.
 
@@ -93,7 +93,7 @@ Som en del av denne flyten velger du et spesifikt attributt som du vil basere se
 
 4. Det vises en rekke datapunkter i visningen i prognosen.
    > [!div class="mx-imgBorder"]
-   > ![Prognoser-side](media/intelligence-predictionsviewpage.png "Prognoser-side")
+   > ![Prediksjoner-side.](media/intelligence-predictionsviewpage.png "Prognoser-side")
 
    - **Forespeilede verdier** viser tilordningen du opprettet under fasen for Felt-verdi til Kategoritilordning. Dette er verdiene i datasettet som er tilordnet en bestemt kategori.
    -**Beste påvirkere** er faktorene i datasettet som mest sannsynlig vil påvirke prognosens konfidens til feltverdien som tilordnes en spesifikk kategori.
@@ -139,7 +139,7 @@ Neste kjøring av prognosen vil bruke den oppdaterte modellen du har opprettet.
 
 ## <a name="troubleshooting"></a>Feilsøking
 
-Hvis du ikke kan fullføre tilleggsprosessen for Common Data Service på grunn av en feil, kan du prøve å fullføre prosessen manuelt. Det finnes to kjente problemer som kan oppstå i tilleggsprosessen:
+Hvis du ikke kan fullføre tilleggsprosessen for Dataverse på grunn av en feil, kan du prøve å fullføre prosessen manuelt. Det finnes to kjente problemer som kan oppstå i tilleggsprosessen:
 
 - Kundekort-tillegget er ikke installert.
     1. Fullfør instruksjonene for å [installere og konfigurere løsningen](customer-card-add-in.md).

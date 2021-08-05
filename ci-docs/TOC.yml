@@ -2,6 +2,8 @@
   href: index.yml
 - name: Produktoversikt
   href: overview.md
+- name: Opprett en prøveversjon
+  href: audience-insights/get-started-trial.md
 - name: Få tilgang til miljøet ditt
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Målgruppeinnsikt
@@ -10,12 +12,10 @@
       href: audience-insights/index.yml
     - name: Oversikt over funksjoner
       href: audience-insights/overview.md
-    - name: Gratis prøveversjon
-      href: 'https://dynamics.microsoft.com/get-started/?appname=customerinsights'
     - name: Nye og oppdaterte funksjoner
       href: audience-insights/whats-new-audience-insights.md
-    - name: Opprett et nytt miljø
-      href: audience-insights/home.md
+    - name: Opprett nytt miljø
+      href: audience-insights/get-started-paid.md
     - name: Lær moduler
       items:
         - name: Hent inn data
@@ -34,8 +34,8 @@
           href: audience-insights/connect-power-query.md
         - name: Legge til en Common Data Model-mappe i en datakilde
           href: audience-insights/connect-common-data-model.md
-        - name: Legge til Common Data Service-administrert datasjø
-          href: audience-insights/connect-common-data-service-lake.md
+        - name: Legge til Dataverse-administrert datasjø
+          href: audience-insights/connect-dataverse-managed-lake.md
         - name: Trinnvis oppdatering for datakilder
           href: audience-insights/incremental-refresh-data-sources.md
         - name: Datainntak i sanntid
@@ -76,11 +76,11 @@
           href: audience-insights/enrichment-experian.md
         - name: Suppler med egendefinert SFTP-import
           href: audience-insights/enrichment-SFTP-custom-import.md
-    - name: Segmenter og mål
+    - name: Segmenter
       items:
         - name: Oversikt over segmenter
           href: audience-insights/segments.md
-        - name: Opprette segmenter og kundegrupper
+        - name: Opprett segmenter
           href: audience-insights/segment-builder.md
         - name: Foreslåtte segmenter basert på tiltak
           href: audience-insights/suggested-segments.md
@@ -254,6 +254,8 @@
       items:
         - name: Opprett og endre hendelser
           href: engagement-insights/refined-events.md
+        - name: Gjenkjenne netthendelser fra tidligere godkjente besøkende
+          href: engagement-insights/unknown-to-known.md
         - name: Eksporter hendelser
           href: engagement-insights/export-events.md
     - name: Rapporter
@@ -304,6 +306,8 @@
       items:
         - name: Slette og eksportere personlige data
           href: engagement-insights/delete-export-personal-data.md
+    - name: Regional tilgjengelighet
+      href: engagement-insights/regional-availability.md
     - name: Tjenestegrenser
       href: engagement-insights/quotas.md
 - name: Kontakt kundestøtte

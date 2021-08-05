@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 01704f78cfe1f6ceeee19ff825fc65150894d4ed
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: bcbafa513c2c61b0280c91aa7ed71e211c32c35c
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095568"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556136"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Produktanbefalingsprediksjon (forhåndsversjon)
 
@@ -64,7 +64,7 @@ Hvis du er interessert i å prøve denne funksjonen, men ikke har data for å fu
 
 1. Velg flisen **Produktanbefalingsmodell (forhåndsversjon)**, og velg **Bruk denne modellen**.
    > [!div class="mx-imgBorder"]
-   > ![Flisen Produktanbefalingsmodell med Bruk denne modellen-knappen](media/product-recommendation-usethismodel.PNG "Flisen Produktanbefalingsmodell med Bruk denne modellen-knappen")
+   > ![Flisen Produktanbefalingsmodell med Bruk denne modellen-knappen.](media/product-recommendation-usethismodel.PNG "Flisen Produktanbefalingsmodell med Bruk denne modellen-knappen")
 
 1. Se gjennom informasjonen om modellkravene. Hvis du har de nødvendige dataene, velger du **Start**.
 
@@ -93,7 +93,7 @@ Hvis du er interessert i å prøve denne funksjonen, men ikke har data for å fu
 
 1. Tilordne de semantiske feltene til attributter i kjøpsloggenheten, og velg deretter **Neste**. Hvis du vil ha beskrivelser av feltene, kan du se på [forhåndskravene](#prerequisites).
    > [!div class="mx-imgBorder"]
-   > ![Definere enhetsrelasjonen](media/product-recommendation-purchasehistorymapping.PNG "Kjøpshistorikkside som viser semantiske attributter som er tilordnet til felter i den valgte kjøpshistorikkenheten")
+   > ![Definer enhetsrelasjonen.](media/product-recommendation-purchasehistorymapping.PNG "Kjøpshistorikkside som viser semantiske attributter som er tilordnet til felter i den valgte kjøpshistorikkenheten")
 
 1. Hvis feltene nedenfor ikke er fylt ut, konfigurerer du relasjonen fra kjøpsloggenheten til *kundeenheten*.
     1. Velg **Kjøpshistorikkenhet**.
@@ -101,7 +101,7 @@ Hvis du er interessert i å prøve denne funksjonen, men ikke har data for å fu
     1. Velg **kundeenheten** som samsvarer med den primære kundeenheten.
     1. Angi et navn som beskriver relasjonen.
        > [!div class="mx-imgBorder"]
-       > ![Side med kjøpshistorikk som viser opprettelsen av en relasjon til kunde](media/model-purchase-join.png "Side med kjøpshistorikk som viser opprettelsen av en relasjon til kunde")
+       > ![Side med kjøpshistorikk som viser opprettelsen av en relasjon til kunde.](media/model-purchase-join.png "Side med kjøpshistorikk som viser opprettelsen av en relasjon til kunde")
 
 1. Velg **Lagre**.
 
@@ -145,7 +145,7 @@ Noen ganger er bare visse produkter gunstige eller passende for den typen predik
 
 1. Gå til kategorien **Mine prediksjoner** i **Intelligens** > **Prediksjoner**.
    > [!div class="mx-imgBorder"]
-   > ![Visning av Mine prediksjoner-siden](media/product-recommendation-mypredictions.PNG "Visning av Mine prediksjoner-siden")
+   > ![Visning av Mine prediksjoner-siden.](media/product-recommendation-mypredictions.PNG "Visning av Mine prediksjoner-siden")
 
 1. Velg prognosen du vil gå gjennom.
    - **Navn på prediksjon:** Navnet på prediksjonen som ble angitt under opprettingen.
@@ -163,7 +163,7 @@ Noen ganger er bare visse produkter gunstige eller passende for den typen predik
 
 1. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil se gjennom resultatene for, og velg **Vis**.
    > [!div class="mx-imgBorder"]
-   > ![Visning av alternativer på loddrette ellipser-menyen for en forutsigelse, blant annet rediger, oppdater, vis, logger og slett](media/product-recommendation-verticalellipses.PNG "Visning av alternativer på loddrette ellipser-menyen for en forutsigelse, blant annet rediger, oppdater, vis, logger og slett")
+   > ![Visning av alternativer på loddrette ellipser-menyen for en forutsigelse, blant annet rediger, oppdater, vis, logger og slett.](media/product-recommendation-verticalellipses.PNG "Visning av alternativer på loddrette ellipser-menyen for en forutsigelse, blant annet rediger, oppdater, vis, logger og slett")
 
 1. Det finnes fem hoveddeler med data på resultatsiden:
     1. **Ytelse for opplæringsmodell:** A, B eller C er mulige resultater. Denne poengsummen angir ytelsen til forutsigelsen, og kan hjelpe deg med å ta beslutningen om å bruke resultatene som er lagret i utdataenheten.
@@ -173,13 +173,13 @@ Noen ganger er bare visse produkter gunstige eller passende for den typen predik
             - **C** Modellen blir betraktet som **C**-kvalitet hvis måleverdien Suksess ved K er mindre enn basisen.
                
                > [!div class="mx-imgBorder"]
-               > ![Visning av modellytelsesresultatet](media/product-recommendation-modelperformance.PNG "Visning av modellytelsesresultatet")
+               > ![Visning av modellytelsesresultatet.](media/product-recommendation-modelperformance.PNG "Visning av modellytelsesresultatet")
             - **Basis**: Modellen tar de mest anbefalte produktene etter kjøpsantall for alle kunder, og bruker lærte regler som identifiseres av modellen, til å opprette et sett med anbefalinger for kundene. Prediksjonene sammenlignes deretter med de mest populære produktene basert på antall kunder som hadde kjøpt produktet. Hvis en kunde har minst ett produkt i de anbefalte produktene som også ble sett blant de mest kjøpte produktene, regnes disse som en del av basisen. Hvis det var ti av disse kundene som hadde et anbefalt produkt kjøpt av 100 kunder totalt, ville den opprinnelige basisen vært 10 %.
             - **Suksess ved K**: Ved hjelp av et valideringssett med tidsperioder for transaksjoner opprettes anbefalinger for alle kunder og sammenlignes med valideringssettet for transaksjoner. I en periode på 12 måneder kan for eksempel 12 måneder settes til side som et valideringssett med data. Hvis modellen forutsier minst én ting du ville kjøpt i måned 12, basert på hva den har lært av de forrige 11 månedene, vil kunden øke måleverdien Suksess ved K.
     
     1. **De fleste foreslåtte produkter (med opptelling):** De fem beste produktene som ble forutsatt for kundene dine.
        > [!div class="mx-imgBorder"]
-       > ![Diagram som viser de fem mest anbefalte produktene](media/product-recommendation-topproducts.PNG "Diagram som viser de fem mest anbefalte produktene")
+       > ![Diagram som viser de fem mest anbefalte produktene.](media/product-recommendation-topproducts.PNG "Diagram som viser de fem mest anbefalte produktene")
     
     1. **Viktige anbefalingsfaktorer:** Modellen bruker kundenes transaksjonshistorikk til å gi produktanbefalinger. Den lærer mønstre basert på tidligere kjøp og finner likheter mellom kunder og produkter. Disse likhetene brukes deretter til å generere produktanbefalinger.
     Følgende er faktorene som kan påvirke en produktanbefaling som genereres av modellen. 
@@ -190,20 +190,20 @@ Noen ganger er bare visse produkter gunstige eller passende for den typen predik
         Hver produktanbefaling påvirkes av en eller flere av disse faktorene. Prosentandelen av anbefalinger der hver påvirkningsfaktor spilte en rolle, visualiseres i et diagram. I eksemplet nedenfor ble 100 % av anbefalingene påvirket av tidligere transaksjoner, 60 % av kundelikhet og 22 % av produktlikhet. Hold pekeren over stolpene i diagrammet for å se den nøyaktige prosentandelen der påvirkningsfaktorene bidro.
 
         > [!div class="mx-imgBorder"]
-        > ![Viktige anbefalingsfaktorer](media/product-recommendation-keyrecommendationfactors.png "Viktige anbefalingsfaktorer lært av modellen for å generere produktanbefalinger")
+        > ![Viktige anbefalingsfaktorer.](media/product-recommendation-keyrecommendationfactors.png "Viktige anbefalingsfaktorer lært av modellen for å generere produktanbefalinger")
        
      
    1. **Datastatistikk**: Gir en oversikt over antall transaksjoner, kunder og produkter modellen vurderte. Den er basert på inndata som ble brukt til å lære mønstre og generere produktanbefalinger.
 
       > [!div class="mx-imgBorder"]
-      > ![Datastatistikk](media/product-recommendation-datastatistics.png "Datastatistikk rundt inn-/utdata som brukes av modellen til å lære mønstre")
+      > ![Datastatistikk.](media/product-recommendation-datastatistics.png "Datastatistikk rundt inn-/utdata som brukes av modellen til å lære mønstre")
 
       Denne delen viser statistikk rundt datapunktene som ble brukt av modellen til å lære mønstre og generere produktanbefalinger. Filtrering, som konfigurert i modellkonfigurasjonen, vil gjelde for utdataene som genereres av modellen. Modellen bruker imidlertid alle tilgjengelige data til å lære mønstre. Hvis du bruker produktfiltrering i modellkonfigurasjonen, vil derfor denne delen vise totalt antall produkter som modellen analyserte for å lære mønstre, noe som kan avvike fra antall produkter som samsvarer med de definerte filtreringskriteriene.
 
    1. **Produktanbefalinger med høy sikkerhet**: Et eksempel på anbefalinger gitt til kundene som modellen tror det er sannsynlig at kunden vil kjøpe.    
       Hvis en produktkatalog legges til, erstattes produkt-IDene med produktnavn. Produktnavn gir en mer handlingsrettet og intuitiv informasjon om prediksjonene.
        > [!div class="mx-imgBorder"]
-       > ![Liste som viser forslag med høy sikkerhet for et utvalgt sett med individuelle kunder](media/product-recommendation-highconfidence.PNG "Liste som viser forslag med høy sikkerhet for et utvalgt sett med individuelle kunder")
+       > ![Liste som viser forslag med høy sikkerhet for et utvalgt sett med individuelle kunder.](media/product-recommendation-highconfidence.PNG "Liste som viser forslag med høy sikkerhet for et utvalgt sett med individuelle kunder")
 
 ## <a name="manage-predictions"></a>Administrere prediksjoner
 

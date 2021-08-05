@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 86ab3cefa70e5fab4bdb27cde363adee26efee4c
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 24b523786158ff36c314601846ee25ea64cfabbe
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305662"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650238"
 ---
 # <a name="merge-entities"></a>Slå sammen enheter
 
@@ -109,7 +109,7 @@ Noen enheter inneholder flere detaljer enn andre. Hvis en enhet inneholder de ny
 Uansett om du slår sammen attributter manuelt eller lar programmet slå dem sammen, kan du alltid kjøre flettingen. Velg **Kjør** på siden **Slå sammen** for å starte prosessen.
 
 > [!div class="mx-imgBorder"]
-> ![Lagre og kjøre datasammenslåing](media/configure-data-merge-save-run.png "Lagre og kjøre datasammenslåing")
+> ![Lagre og kjøre datasammenslåing.](media/configure-data-merge-save-run.png "Lagre og kjøre datasammenslåing")
 
 Velg **Kjør bare fletting** hvis du bare vil vise utdataene i enheten for enhetlig kunde. Nedstrømsprosesser oppdateres som [definert i oppdateringsplanen](system.md#schedule-tab).
 
@@ -118,7 +118,9 @@ Velg **Kjør fletting og nedstrømsprosesser** for å oppdatere systemet med end
 Hvis du vil gjøre flere endringer og kjøre trinnet på nytt, kan du avbryte en pågående fletting. Velg **Oppdaterer ...**, og velg **Avbryt jobb** i sideruten som vises.
 
 > [!TIP]
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
+> Når du har kjørt sammenslåingsprosessen, velger du prosessstatusen for å åpne ruten **Oppgavedetaljer**. Den gir en oversikt over behandlingstiden, den siste behandlingsdatoen og alle feil og advarsler som er knyttet til oppgaven. Velg **Se detaljer** for å se hvilke enheter som deltok i samsvarsprosessen, om konfliktoppløsningen er vellykket, og om oppdateringene ble publisert på riktig måte.  
+> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies).  
+> :::image type="content" source="media/process-detail-path.png" alt-text="Neddrillingsbane for å komme til å behandle detaljer fra aktivitetsstatuskoblingen.":::
 
 ## <a name="next-step"></a>Neste trinn
 

@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: f588f45ed11efffbb335003642a4b92810153017
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 96fbd18a20e0df7abd4e79ff77e2c3a396e33ccc
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596787"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554217"
 ---
 # <a name="similar-customers-preview"></a>Lignende kunder (forhåndsversjon)
 
@@ -50,7 +50,7 @@ Denne funksjonen gjør det mulig for deg å finne lignende kunder i kundebasen v
 Etter at du har behandlet det lignende segmentet, finner du det nye segmentet som vises på **Segmenter**-siden.
 
 > [!div class="mx-imgBorder"]
-> ![Segmentet Lignende kunder](media/expanded-segment.png "Segmentet Lignende kunder")
+> ![Segmentet Lignende kunder.](media/expanded-segment.png "Segmentet Lignende kunder")
 
 Velg **Vis** på handlingslinjen for å åpne segmentdetaljene. Denne visningen inneholder informasjon om resultatfordelingen på tvers av [likhetsresultater](#about-similarity-scores). Du finner også likhetspoengsummene i **Forhåndsvisning av segmentmedlemmer**.
 

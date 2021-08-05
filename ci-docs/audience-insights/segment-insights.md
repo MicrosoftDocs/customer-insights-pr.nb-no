@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2856888d6ac64d5daabcc5a234f13bc6f88bb3df
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 0803be651662480ddf1fd22952f6a69ee1603001
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306086"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554997"
 ---
 # <a name="segment-insights-preview"></a>Segmentinnsikt (forhåndsversjon)
 
@@ -44,7 +44,7 @@ Du kan også analysere hvordan overlappingen endres for bestemte attributter.
 Etter at du har fullført analysen, finner du mer informasjon om denne innsikten i **Segmenter** > **Innsikt (forhåndsversjon)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-overlap.png" alt-text="Innsiktsdetaljer om segmentoverlapping":::
+> :::image type="content" source="media/segment-overlap.png" alt-text="Innsiktsdetaljer om segmentoverlapping.":::
 
 Velg en innsikt for å vise analyseresultatene:
 
@@ -77,7 +77,7 @@ Ved hjelp av segmentdifferensiatorer kan du finne ut hva som skiller et segment 
 Etter at du har fullført analysen, finner du mer informasjon om denne innsikten i **Segmenter** > **Innsikt (forhåndsversjon)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-differentiators.png" alt-text="Innsiktsdetaljer om segmentdifferensiator":::
+> :::image type="content" source="media/segment-differentiators.png" alt-text="Innsiktsdetaljer om segmentdifferensiator.":::
 
 Velg en innsikt for å vise analyseresultatene. En differensiatoranalyse inneholder to kategorier. Kategorien **Attributter** viser profilattributter vurdert som differensiatorer. Kategorien **Mål** viser differensiatorer. Hver kategori inkluderer følgende detaljer:
 

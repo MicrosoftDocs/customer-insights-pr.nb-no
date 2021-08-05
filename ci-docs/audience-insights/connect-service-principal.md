@@ -9,18 +9,18 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c670b0065a2833a6dc311d9e86d2b351140382ce
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: cc94ad49f12067d513db4663bff60620d6501eb0
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596511"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692125"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Koble til en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver for målgruppeinnsikt
 
 Automatiske verktøy som bruker Azure-tjenester, bør alltid ha begrensede tillatelser. I stedet for at programmer skal logges på som en bruker med full rettigheter, tilbyr Azure tjenestekontohavere. Les videre for å lære hvordan du kobler til målgruppeinnsikt med en Azure Data Lake Storage Gen2-konto ved hjelp av en Azure-tjenestekontohaver i stedet for lagringskontonøkler. 
 
-Du kan bruke tjenestekontohaveren til å [legge til eller redigere en Common Data Model-mappe som en datakilde](connect-common-data-model.md) på en sikkwer måte eller [opprette et nytt eller oppdatere et eksisterende miljø](manage-environments.md#create-an-environment-in-an-existing-organization).
+Du kan bruke tjenestekontohaveren til å [legge til eller redigere en Common Data Model-mappe som en datakilde](connect-common-data-model.md) på en sikkwer måte eller [opprette et nytt eller oppdatere et eksisterende miljø](get-started-paid.md).
 
 > [!IMPORTANT]
 > - Lagringskontoen Azure Data Lake Gen2 som skal bruke Service Principal, må ha [hierarkisk navneområde (HNS) aktivert](/azure/storage/blobs/data-lake-storage-namespace).
@@ -81,7 +81,7 @@ Det kan ta opptil 15 minutter å overføre endringene.
 
 ## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-audience-insights"></a>Skriv inn Azure-ressurs-ID-en eller Azure-abonnementsdetaljene i lagringskontovedlegget for målgruppeinnsikt.
 
-Legg ved en Azure Data Lake-lagringskonto i målgruppeinnsikt for å [lagre utdata](manage-environments.md) eller [bruke den som en datakilde](connect-common-data-service-lake.md). Hvis du velger Azure Data Lake-alternativet, kan du velge mellom en ressursbasert eller abonnementsbasert tilnærming.
+Legg ved en Azure Data Lake-lagringskonto i målgruppeinnsikt for å [lagre utdata](manage-environments.md) eller [bruke den som en datakilde](connect-dataverse-managed-lake.md). Hvis du velger Azure Data Lake-alternativet, kan du velge mellom en ressursbasert eller abonnementsbasert tilnærming.
 
 Følg fremgangsmåten nedenfor for å gi den nødvendige informasjonen på den valgte tilnærmingen.
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 82f6f363497f8f1b45fa84acd49bcaed332e60e8
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 72ccb2d86c698939d0ff018b4d36203e793df9ae
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305655"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554860"
 ---
 # <a name="custom-machine-learning-models"></a>Egendefinerte modeller for maskinlæring
 
@@ -42,7 +42,7 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
 1. Gi den egendefinerte modellen et gjenkjennelig navn i **Navn**-feltet.
 
    > [!div class="mx-imgBorder"]
-   > ![Skjermbilde av ruten Ny arbeidsflyt](media/new-workflowv2.png "Skjermbilde av ruten Ny arbeidsflyt")
+   > ![Skjermbilde av ruten Ny arbeidsflyt.](media/new-workflowv2.png "Skjermbilde av ruten Ny arbeidsflyt")
 
 1. Velg organisasjonen som inneholder webtjenesten, i **Leier som inneholder webtjenesten**.
 
@@ -59,7 +59,7 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
    > Arbeidsflyten for egendefinert modell bruker heuristikk til å tilordne inndatafeltene for nettjenesten til enhetsattributtene basert på navnet og datatypen for feltet. Det vises en feilmelding hvis et nettjenestefelt ikke kan tilordnes til en enhet.
 
    > [!div class="mx-imgBorder"]
-   > ![Konfigurere en arbeidsflyt](media/intelligence-screen2-updated.png "Konfigurere en arbeidsflyt")
+   > ![Konfigurer en arbeidsflyt.](media/intelligence-screen2-updated.png "Konfigurere en arbeidsflyt")
 
 1. I trinnet **Parametere for modellutdata** angir du følgende egenskaper:
    - Machine Learning Studio (klassisk)
@@ -70,12 +70,12 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
       1. Velg **Navn på parameter for utdatabane** for bunkepipelinen fra rullegardinmenyen.
 
       > [!div class="mx-imgBorder"]
-      > ![Parameterrute for modelutdata](media/intelligence-screen3-outputparameters.png "Parameterrute for modelutdata")
+      > ![Parameterrute for modellutdata.](media/intelligence-screen3-outputparameters.png "Parameterrute for modelutdata")
 
 1. Velg det tilsvarende attributtet fra rullegardinlisten **Kunde-ID i resultater** som identifiserer kunder, og velg **Lagre**.
 
    > [!div class="mx-imgBorder"]
-   > ![Relater resultater til kundedataruten](media/intelligence-screen4-relatetocustomer.png "Relater resultater til kundedataruten")
+   > ![Relater resultater til kundedataruten.](media/intelligence-screen4-relatetocustomer.png "Relater resultater til kundedataruten")
 
 1. Du ser skjermbildet **Arbeidsflyt lagret** med detaljer om arbeidsflyten.    
    Hvis du har konfigurert en arbeidsflyt for en Azure Machine Learning-pipeline, vil målgruppe innsikt legge ved arbeidsområdet som inneholder pipelinen. Målgruppeinnsikt får en **Bidragsyter**-rolle på Azure-arbeidsområdet.

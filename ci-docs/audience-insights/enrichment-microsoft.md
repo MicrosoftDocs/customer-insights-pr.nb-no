@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 1b11c325649b91ebb47cde924227eacedae64b7a
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 3b10fb23cca03ed918aa7fd46478b568d5ebbf1a
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305168"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555503"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Supplere kundeprofiler med merke- og interesseaffiniteter (forhåndsvisning)
 
@@ -27,7 +27,7 @@ Hvis du vil konfigurere merkeaffinitet som skal berikes, går du til kategorien 
 Hvis du vil konfigurere interesseaffinitet som skal berikes, går du til kategorien **Utforsk** og velger **Suppler dataene** på **Interesser**-flisen.
 
    > [!div class="mx-imgBorder"]
-   > ![Fliser for merker og interesser](media/BrandsInterest-tile-Hub.png "Fliser for merker og interesser")
+   > ![Fliser for merker og interesser.](media/BrandsInterest-tile-Hub.png "Fliser for merker og interesser")
 
 ## <a name="how-we-determine-affinities"></a>Slik avgjør vi affiniteter
 
@@ -123,7 +123,7 @@ Avhengig av størrelsen på kundedataene kan det ta flere minutter å fullføre 
 
 Når du har kjørt suppleringsprosessen, går du til **Mine suppleringer** for å se du gjennom det totale antallet supplerte kunder, og en analyse over merker og interesser i de supplerte kundeprofilene.
 
-:::image type="content" source="media/my-enrichments.png" alt-text="Forhåndsvisning av resultater etter kjøring av suppleringsprosessen":::
+:::image type="content" source="media/my-enrichments.png" alt-text="Forhåndsvisning av resultater etter kjøring av suppleringsprosessen.":::
 
 Se gjennom de supplerte dataene ved å velge **Vis supplerte data** i diagrammet. Supplerte data for merker går til **BrandAffinityFromMicrosoft**-enheten. Data for interesser er i **InterestAffinityFromMicrosoft**-enheten. Du finner også disse enhetene oppført i gruppen **Supplering** i **Data** > **Enheter**.
 
@@ -131,7 +131,7 @@ Se gjennom de supplerte dataene ved å velge **Vis supplerte data** i diagrammet
 
 Merke- og interesseaffiniteter kan også vises på individuelle kundekort. Gå til **Kunder**, og velg en kundeprofil. På kundekortet finner du diagrammer for merker eller interesser som personer i kundens demografiske profil har affinitet for.
 
-:::image type="content" source="media/enrichment-customer-card.png" alt-text="Kundekort med supplerte data":::
+:::image type="content" source="media/enrichment-customer-card.png" alt-text="Kundekort med supplerte data.":::
 
 ## <a name="next-steps"></a>Neste trinn
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 03f76bcfc7336d8430146e8a26ffa649c6a17db0
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 1af2e4c42dc5890556c90bb3e5ef1aeb0621fda0
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596833"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554171"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinnvis oppdatering for datakilder som er baserte på Power Query
 
@@ -45,7 +45,7 @@ Målgruppeinnsikt tillater trinnvis oppdatering for datakilder importert via Pow
 1. I **Innstillinger for trinnvis oppdatering** konfigurerer du den trinnvise oppdateringen for alle enhetene som du valgte ved oppretting av datakilden.
 
    > [!div class="mx-imgBorder"]
-   > ![Konfigurere enheter i en datakilde for trinnvis oppdatering](media/incremental-refresh-settings.png "Konfigurere enheter i en datakilde for trinnvis oppdatering")
+   > ![Konfigurer enheter i en datakilde for trinnvis oppdatering.](media/incremental-refresh-settings.png "Konfigurere enheter i en datakilde for trinnvis oppdatering")
 
 1. Velg en enhet, og angi følgende detaljer:
 

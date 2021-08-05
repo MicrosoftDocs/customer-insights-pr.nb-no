@@ -9,12 +9,12 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 50c231070ff9930c1ea82971bf4f8541a89d5027
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: b37bb5dfeed2326784ef276a93a04bec626aaf6e
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305903"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554696"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Koble til et Power Query-datakilde
 
@@ -42,7 +42,7 @@ Power Query tilbyr et bredt sett med koblinger for å hente data. De fleste av d
 1. Dialogboksen **Power Query – Rediger spørringer** lar deg se gjennom og finjustere dataene. Enhetene som systemene identifiserte i den valgte datakilden, vises i venstre rute.
 
    > [!div class="mx-imgBorder"]
-   > ![Dialogboksen Rediger spørringer](media/data-manager-configure-edit-queries.png "Dialogboksen Rediger spørringer")
+   > ![Dialogboksen Rediger spørringer.](media/data-manager-configure-edit-queries.png "Dialogboksen Rediger spørringer")
 
 1. Du kan også endre dataene dine. Velg en enhet som skal redigeres eller transformeres. Bruk alternativene i Power Query-vinduet til å bruke transformasjoner. Hver transformasjon blir ført opp under **Brukte trinn**. Power Query inneholder en rekke forhåndsbygde transformeringsalternativer. For mer informasjon, kan du se [Power Query-transformeringer](/power-query/power-query-what-is-power-query#transformations).
 
@@ -75,7 +75,7 @@ Kontakter med en hake i kolonnen **Customer Insights (dataflyter)** er tilgjenge
 2. Velg den loddrette ellipsen ved siden av datakildene du vil endre, og velg **Rediger** fra rullegardinmenyen.
 
    > [!div class="mx-imgBorder"]
-   > ![Rediger-alternativet](media/edit-option-data-sources.png "Rediger-alternativet")
+   > ![Rediger-alternativet.](media/edit-option-data-sources.png "Rediger-alternativet")
 
 3. Ta i bruk endringene og transformasjonene i dialogboksen **Power Query – Rediger spørringer** slik det er beskrevet i delen [Opprett en ny datakilde](#create-a-new-data-source).
 

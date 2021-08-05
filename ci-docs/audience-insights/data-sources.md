@@ -9,12 +9,13 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 54dd7b629d4b4e7f640b932b0f9246e0602f46bd
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.custom: intro-internal
+ms.openlocfilehash: 0a017a37777adaaf7de079cf481ec10c70c7adba
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304708"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692447"
 ---
 # <a name="data-sources-overview"></a>Oversikt over datakilder
 
@@ -30,13 +31,13 @@ Du kan legge til en datakilde på tre hovedmåter:
 
 - [Gjennom dusinvis av Power Query-koblinger](connect-power-query.md)
 - [Fra en mappe i Common Data Model](connect-common-data-model.md)
-- [Fra din egen Microsoft Dataverse-datasjø](connect-common-data-service-lake.md)
+- [Fra din egen Microsoft Dataverse-datasjø](connect-dataverse-managed-lake.md)
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Legge til data fra lokale datakilder
 
-Inntak av data fra lokale datakilder i målgruppeinnsikt støttes basert på Microsoft Power Platform-dataflyter. Dataflyter kan aktiveres i Customer Insights ved å [angi Microsoft Dataverse-URL-adressen for miljøet](manage-environments.md#create-an-environment-in-an-existing-organization) under konfigurasjon av miljøet.
+Inntak av data fra lokale datakilder i målgruppeinnsikt støttes basert på Microsoft Power Platform-dataflyter. Dataflyter kan aktiveres i Customer Insights ved å [angi Microsoft Dataverse-URL-adressen for miljøet](get-started-paid.md) under konfigurasjon av miljøet.
 
-Datakilder som opprettes etter at et miljø er knyttet til et Dataverse-miljø med Customer Insights, bruker [Power Platform-dataflyter](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflyter støtter tilkobling på stedet ved hjelp av datagatewayen. Fjern og opprett på nytt datakilder som eksisterte før et Dataverse-miljø ble knyttet til, for å [bruke lokale datagatewayer](/data-integration/gateway/service-gateway-app.md).
+Datakilder som opprettes etter at et miljø er knyttet til et Dataverse-miljø med Customer Insights, bruker [Power Platform-dataflyter](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflyter støtter tilkobling på stedet ved hjelp av datagatewayen. Fjern og opprett på nytt datakilder som eksisterte før et Dataverse-miljø ble knyttet til, for å [bruke lokale datagatewayer](/data-integration/gateway/service-gateway-app).
 
 Datagatewayer fra et eksisterende Power BI- eller Power Apps-miljø vil være synlige og kan brukes på nytt i Customer Insights. Datakildesiden viser koblinger for å gå til Microsoft Power Platform-miljøet der du kan vise og konfigurere lokale datagatewayer.
 
@@ -45,7 +46,7 @@ Datagatewayer fra et eksisterende Power BI- eller Power Apps-miljø vil være sy
 Du ser navnet på hver integrerte datakilde, statusen og siste gang dataene ble oppdatert for kilden. Du kan sortere listen over datakilder etter hver kolonne.
 
 > [!div class="mx-imgBorder"]
-> ![Tillagt datakilde](media/configure-data-datasource-added.png "Tillagt datakilde")
+> ![Tillagt datakilde.](media/configure-data-datasource-added.png "Tillagt datakilde")
 
 |Status  |Beskrivelse  |
 |---------|---------|

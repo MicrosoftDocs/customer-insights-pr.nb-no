@@ -1,7 +1,7 @@
 ---
 title: Opprette og behandle segmenter
 description: Opprett segmenter av kunder for å gruppere dem basert på forskjellige attributter.
-ms.date: 05/03/2021
+ms.date: 07/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,14 +9,24 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 550e509a24701fe5fcdeb9d54311872dc954156c
-ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
+ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
+ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "6064949"
+ms.lasthandoff: 07/29/2021
+ms.locfileid: "6685474"
 ---
 # <a name="create-and-manage-segments"></a>Opprette og behandle segmenter
+
+> [!IMPORTANT]
+> Det er flere endringer som rulles ut til segmentopprettingsopplevelsen i september 2021: 
+> - Segmentbyggeren vil se litt annerledes ut med nye elementer og en forbedret brukerflyt.
+> - Nye datetime-operatorer og en forbedret datovelger aktiveres i segmentbyggeren.
+> - Du kan legge til eller fjerne betingelser og regler fra segmenter. 
+> - Nestede regler som starter med en OR-betingelse, blir tilgjengelige. Du trenger ikke lenger en AND-betingelse på det ytterste laget.
+> - En siderute for å velge attributter vil være tilgjengelig hele tiden.
+> - Et alternativ for å velge enhetsrelasjonsbaner.
+> For å prøve den nye segmentbyggeren må du send en e-post med emnet Be om å aktivere den nye segmentbyggeren til å cihelp [at] microsoft.com. Inkluder navnet på organisasjonen og ID-en til sandkassemiljøet.
 
 Definer komplekse filtre rundt enheten for enhetlig kunde og de relaterte enhetene. Hvert segment, etter behandlingen, oppretter et sett med kundeoppføringer som du kan eksportere og utføre handlinger på. Segmenter administreres på **Segmenter**-siden. 
 
@@ -50,7 +60,7 @@ Når du oppretter et segment, kan du lagre et utkast. Det blir lagret som et ina
 1. Velg en operator og en verdi for det valgte attributtet.
 
    > [!div class="mx-imgBorder"]
-   > ![Egendefinert gruppefilter](media/customer-group-numbers.png "Gruppefilter for kunde")
+   > ![Egendefinert gruppefilter.](media/customer-group-numbers.png "Gruppefilter for kunde")
 
    |Antall |Definisjon  |
    |---------|---------|
@@ -66,7 +76,7 @@ Når du oppretter et segment, kan du lagre et utkast. Det blir lagret som et ina
       - **OR**-operator: En av betingelsene må oppfylles som en del av segmenteringsprosessen. Dette alternativet er svært nyttig når du definerer flere betingelser for samme enhet.
 
       > [!div class="mx-imgBorder"]
-      > ![OR-operator der begge betingelser må oppfylles](media/segmentation-either-condition.png "OR-operator der begge betingelser må oppfylles")
+      > ![OR-operator der begge betingelser må oppfylles.](media/segmentation-either-condition.png "OR-operator der begge betingelser må oppfylles")
 
       Det er for øyeblikket mulig å neste en **OR**-operator under en **AND**-operator, men ikke motsatt.
 
@@ -74,12 +84,12 @@ Når du oppretter et segment, kan du lagre et utkast. Det blir lagret som et ina
    Velg **Legg til gruppe**.
 
       > [!div class="mx-imgBorder"]
-      > ![Legg til gruppe i kundegruppe](media/customer-group-add-group.png "Legg til gruppe i kundegruppe")
+      > ![Legg til gruppe i kundegruppe.](media/customer-group-add-group.png "Legg til gruppe i kundegruppe")
 
    1. Velg en av de angitte operatorer: **Union**, **Skjæringspunkt** eller **Unntatt**.
 
    > [!div class="mx-imgBorder"]
-   > ![Legg til union i kundegruppe](media/customer-group-union.png "Legg til union i kundegruppe")
+   > ![Legg til union i kundegruppe.](media/customer-group-union.png "Legg til union i kundegruppe")
 
    - **Union** forener de to gruppene.
 
@@ -90,7 +100,7 @@ Når du oppretter et segment, kan du lagre et utkast. Det blir lagret som et ina
 1. Hvis enheten er koblet til den enhetlige kundeenheten via [relasjoner](relationships.md), må du definere relasjonsbanen for å opprette et gyldig segment. Legg til enhetene fra relasjonsbanen til du kan velge **Kunde: CustomerInsights**-enheten fra rullegardinlisten. Deretter velger du **Alle oppføringer** for hvert trinn.
 
    > [!div class="mx-imgBorder"]
-   > ![Relasjonsbane under opprettelse av segment](media/segments-multiple-relationships.png "Relasjonsbane under opprettelse av segment")
+   > ![Relasjonsbane under opprettelse av segment.](media/segments-multiple-relationships.png "Relasjonsbane under opprettelse av segment")
 
 1. Som standard genererer segmenter en utdataenhet som inneholder alle attributter for kundeprofiler som samsvarer med de definerte filtrene. Hvis et segment er basert på andre enheter enn *Kunde*-enheten, kan du legge til flere attributter fra disse enhetene i utdataenheten. Velg **Prosjektattributter** for å velge attributtene som skal legges til i utdataenheten.  
   
@@ -127,7 +137,7 @@ Med hurtigsegmenter kan du bygge enkle segmenter med én operator raskt for rask
 4. Systemet gir deg en **Beregnet segmentstørrelse**. Du kan velge om du vil generere segmentet du har definert, eller først gå til det igjen for å få en annen segmentstørrelse.
 
     > [!div class="mx-imgBorder"]
-    > ![Navn og beregning for et hurtigsegment](media/quick-segment-name.png "Navn og beregning for et hurtigsegment")
+    > ![Navn og beregning for et hurtigsegment.](media/quick-segment-name.png "Navn og beregning for et hurtigsegment")
 
 5. Angi et **Navn** for segmentet. Alternativt kan du angi et **Visningsnavn**.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: c9adb4d7db74573d0512ae7a68a0e7ab51c994a0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 8ab55d101f98169b8f794ce580ddd0a71ede6642
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304616"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554630"
 ---
 # <a name="customer-profiles"></a>Kundeprofiler
 
@@ -23,11 +23,11 @@ ms.locfileid: "6304616"
 Kunder kan være enkeltpersoner eller organisasjoner (forhåndsvisning). Hver kunde eller organisasjonsprofil representeres av en flis. Velg en flis for å vise ytterligere informasjon om den bestemte kunden eller organisasjonen. Bruk pagineringskontrollene nederst på siden for å vise flere oppføringer.
 
 > [!div class="mx-imgBorder"] 
-> ![B2C-kundeprofiler](media/profiles-customers.png "B2C-kundeprofiler")
+> ![B2C-kundeprofiler.](media/profiles-customers.png "B2C-kundeprofiler")
 
 Organisasjoner (forhåndsvisning)
 > [!div class="mx-imgBorder"] 
-> ![B2B-kundeprofiler](media/profile-customers-b2b.png "B2B-kundeprofiler")
+> ![B2B-kundeprofiler.](media/profile-customers-b2b.png "B2B-kundeprofiler")
 
 > [!NOTE]
 > Hvis du ikke kan se flisene når du velger **Kunder** i navigasjon, må administrator [definere minst ett søkbart attributt](search-filter-index.md) i **søk- og filterindeksen**.
@@ -47,7 +47,7 @@ Du kan filtrere kunder etter feltene i kundeprofilenheten. På samme måte som i
 2. Merk av i boksene ved siden av attributtene du vil filtrere kunder etter.
 
    > [!div class="mx-imgBorder"] 
-   > ![Kundeprofiler](media/profiles-customers3.png "Kundeprofiler")
+   > ![Kundeprofiler.](media/profiles-customers3.png "Kundeprofiler")
 
 3. Fjern filtrene ved å velge **Fjern filtre** på **Kunder**-siden.
 
