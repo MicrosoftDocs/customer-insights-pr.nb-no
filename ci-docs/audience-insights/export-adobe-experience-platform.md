@@ -1,6 +1,6 @@
 ---
 title: Eksporter Customer Insights-data til Adobe Experience Platform
-description: Lær hvordan du bruker målgruppeinnsiktssegmenter på Adobe Experience Platform.
+description: Finn ut hvordan du bruker målgruppeinnsiktssegmenter i Adobe Experience Platform.
 ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 1045d0e373fd5ea8987684e51bd9a07b7b535ee3
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: fac976a49b1b5c5485b75e1262135738c913bd2230be7df8aa0ec12c59734053
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305536"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7032129"
 ---
 # <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Bruk Customer Insights-segmenter i Adobe Experience Platform (forhåndsversjon)
 
-Som bruker av målgruppeinnsikt i Dynamics 365 Customer Insights har du kanskje opprettet segmenter for å gjøre markedsføringskampanjene mer effektive ved å rette deg mot relevante målgrupper. Hvis du vil bruke et segment fra målgruppeinnsikt i Adobe Experience Platform og programmer som Adobe Campaign Standard, må du følge noen få trinn som er beskrevet i denne artikkelen.
+Som bruker av målgruppeinnsikt i Dynamics 365 Customer Insights har du kanskje opprettet segmenter for å gjøre markedsføringskampanjene mer effektive ved å rette deg mot relevante målgrupper. Hvis du vil bruke et segment fra målgruppeinnsikt i Adobe Experience Platform og programmer som Adobe Campaign Standard, må du følge noen få trinn som beskrives i denne artikkelen.
 
 :::image type="content" source="media/AEP-flow.png" alt-text="Prosessdiagram for trinnene beskrevet i denne artikkelen.":::
 
@@ -31,9 +31,9 @@ Som bruker av målgruppeinnsikt i Dynamics 365 Customer Insights har du kanskje 
 
 ## <a name="campaign-overview"></a>Kampanjeoversikt
 
-For en bedre forståelse av hvordan du kan bruke segmenter fra målgruppeinnsikt i Adobe Experience Platform, kan vi se på en fiktiv eksempelkampanje.
+La oss se på en fiktiv eksempelkampanje for å få en bedre forståelse av hvordan du kan bruke segmenter fra målgruppeinnsikt i Adobe Experience Platform.
 
-La oss anta at firmaet ditt tilbyr en månedlig abonnementsbasert tjeneste til kundene i USA. Du ønsker å identifisere kunder som har abonnementer som skal fornyes i løpet av de neste åtte dagene, men som ennå ikke har fornyet abonnementet. Hvis du vil beholde disse kundene, må du sende dem et kampanjetilbud via e-post ved hjelp av Adobe Experience Platform.
+La oss anta at firmaet ditt tilbyr en månedlig abonnementsbasert tjeneste til kundene i USA. Du ønsker å identifisere kunder som har abonnementer som skal fornyes i løpet av de neste åtte dagene, men som ennå ikke har fornyet abonnementet. Hvis du vil beholde disse kundene, vil du sende dem et kampanjetilbud via e-post ved hjelp av Adobe Experience Platform.
 
 I dette eksemplet skal vi kjøre den promoterende e-postkampanjen én gang. Denne artikkelen dekker ikke brukstilfellet for kjøring av kampanjen flere ganger.
 
@@ -105,23 +105,23 @@ Eksempel: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-2
 
 Eksempel: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/ChurnSegmentDemo/model.json
 
-## <a name="define-experience-data-model-xdm-in-adobe-experience-platform"></a>Definer Experience Data Model (XDM) i Adobe Experience Platform
+## <a name="define-experience-data-model-xdm-in-adobe-experience-platform"></a>Definer opplevelsesdatamodell (XDM) i Adobe Experience Platform
 
-Før de eksporterte dataene fra målgruppeinnsikt kan brukes i Adobe Experience Platform, må vi definere Experience Data Model-skjemaet og [konfigurere dataene for kundeprofilen i sanntid](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
+Før de eksporterte dataene fra målgruppeinnsikt kan brukes i Adobe Experience Platform, må vi definere skjemaet for opplevelsesdatamodell og [konfigurere dataene for sanntidskundeprofilen](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
 
 Finn ut [hva XDM er](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html) og forstå det [grunnleggende innen skjemakomposisjon](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html#schema).
 
-## <a name="import-data-into-adobe-experience-platform"></a>Importer data til Adobe Experience Platform
+## <a name="import-data-into-adobe-experience-platform"></a>Importere data til Adobe Experience Platform
 
-Nå som alt er klart, må vi importere de klargjorte målgruppedataene fra målgruppeinnsikt til Adobe Experience Platform.
+Nå som alt er på plass, må vi importere de klargjorte målgruppedataene fra målgruppeinnsikt til Adobe Experience Platform.
 
 Først må du [opprette en Azure Blob Storage-kildetilkobling](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/cloud-storage/blob.html#getting-started).    
 
-Når du har definert kildetilkoblingen, må du [konfigurere en dataflyt](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) for en skylagringstilkobling for å importere segmentutdataene fra målgruppeinnsikt til Adobe Experience Platform.
+Når du har definert kildetilkoblingen, må du [konfigurere en dataflyt](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) for en gruppetilkobling for skylagring for å importere segmentutdataene fra målgruppeinnsikt i Adobe Experience Platform.
 
 ## <a name="create-an-audience-in-adobe-campaign-standard"></a>Opprett en målgruppe i Adobe Campaign Standard
 
-Hvis du vil sende e-posten for denne kampanjen, bruker vi Adobe Campaign Standard. Når du har importert dataene til Adobe Experience Platform, må vi [opprette en målgruppe](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) i Adobe Campaign Standard ved å bruke dataene i Adobe Experience Platform.
+Hvis du vil sende e-posten for denne kampanjen, bruker vi Adobe Campaign Standard. Etter importen av dataene til Adobe Experience Platform, må vi [opprette en målgruppe](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) i Adobe Campaign Standard ved hjelp av dataene i Adobe Experience Platform.
 
 
 Lær hvordan du [bruker segmentverktøyet](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) i Adobe Campaign Standard til å definere en målgruppe basert på dataene i Adobe Experience Platform.
