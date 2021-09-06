@@ -4,17 +4,17 @@ metadata:
   author: m-hartmann
   description: Finn relevante artikler for å starte med innhold i hjelp.
   ms.author: mhart
-  ms.date: 10/29/2020
+  ms.date: 07/30/2021
   ms.service: customer-insights
   ms.topic: landing-page
-  ms.openlocfilehash: e9c4aa3347d6f477751804790bd3dc9b20eb5dbe
-  ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+  ms.openlocfilehash: 1446a2bcb24739187a37b2024c9a6070ab008989d722ebf84ef5259ec2ee4d5c
+  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
   ms.translationtype: HT
   ms.contentlocale: nb-NO
-  ms.lasthandoff: 03/15/2021
-  ms.locfileid: "5598477"
+  ms.lasthandoff: 08/10/2021
+  ms.locfileid: "7036569"
 title: Dynamics 365 Customer Insights-dokumentasjon
-summary: Finn nyttige ressurser for å komme i gang og lære om funksjoner og egenskaper i Customer Insights.
+summary: Finn nyttige ressurser for å komme i gang og lær om funksjoner og egenskapene i Customer Insights.
 landingContent:
 - title: Møt Customer Insights
   linkLists:
@@ -23,9 +23,9 @@ landingContent:
     - text: Oversikt over Customer Insights
       url: overview.md
     - text: Lanseringsplaner
-      url: /dynamics365-release-plan/2020wave2/customer-data-platform/dynamics365-customer-insights/planned-features
-    - text: Få tilgang til miljøet ditt
-      url: https://home.ci.ai.dynamics.com/
+      url: /dynamics365-release-plan/
+    - text: Oppdag CDP-en
+      url: https://dynamics.microsoft.com/ai/customer-insights/
 - title: Kom i gang med målgruppeinnsikt
   linkLists:
   - linkListType: get-started

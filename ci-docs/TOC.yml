@@ -166,6 +166,8 @@
               href: audience-insights/export-facebook.md
             - name: Google Ads
               href: audience-insights/export-google-ads.md
+            - name: Klaviyo
+              href: audience-insights/export-klaviyo.md
             - name: LinkedIn-annonser
               href: audience-insights/export-linkedin-ads.md
             - name: LiveRamp
@@ -310,5 +312,13 @@
       href: engagement-insights/regional-availability.md
     - name: Tjenestegrenser
       href: engagement-insights/quotas.md
-- name: Kontakt kundestøtte
-  href: 'https://admin.powerplatform.microsoft.com/support'
+- name: Integrer målgruppe- og engasjementsinnsikt
+  items:
+    - name: Koble målgruppeinnsikt og engasjementsinnsikt
+      href: engagement-insights/integrate-audience-insights-engagement-insights.md
+    - name: Bruk målgruppeinnsiktssegmenter i engasjementsinnsiktrapporter
+      href: engagement-insights/integrate-audience-insights-segments.md
+    - name: Bruk demografiske dimensjoner for deling av virkemåtedata
+      href: engagement-insights/curate-dimensions.md
+- name: Få støtte
+  href: 'https://dynamics.microsoft.com/en-us/support/'

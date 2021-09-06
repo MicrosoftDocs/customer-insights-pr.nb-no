@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
-ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
+ms.openlocfilehash: e759872643cc7387cf732d73c7a320ae8901e5a9
+ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/29/2021
-ms.locfileid: "6685474"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "7377800"
 ---
 # <a name="create-and-manage-segments"></a>Opprette og behandle segmenter
 
@@ -27,6 +27,23 @@ ms.locfileid: "6685474"
 > - En siderute for å velge attributter vil være tilgjengelig hele tiden.
 > - Et alternativ for å velge enhetsrelasjonsbaner.
 > For å prøve den nye segmentbyggeren må du send en e-post med emnet Be om å aktivere den nye segmentbyggeren til å cihelp [at] microsoft.com. Inkluder navnet på organisasjonen og ID-en til sandkassemiljøet.
+> :::image type="content" source="media/segment-builder-overview.png" alt-text="Elementer i segmentverktøyet." lightbox="media/segment-builder-overview.png":::
+>
+> 1 – Ordne segmentet med regler og underregler. Hver regel eller underregel består av betingelser. Kombiner betingelsene med logiske operatorer
+>
+> 2 – Velg [relasjonsbanen](relationships.md) mellom enheter som gjelder en regel. Relasjonsbanen avgjør hvilke attributter som kan brukes i en betingelse.
+>
+> 3 – Administrer regler og underregler. Endre plasseringen av en regel eller slett den.
+>
+> 4 – Legg til betingelser og bygg riktig nestingsnivå ved hjelp av underregler.
+>
+> 5 – Bruk angitte operasjoner på tilkoblede regler.
+>
+> 6 – Bruk attributtruten til å legge til tilgjengelige enhetsattributter eller opprette betingelser basert på attributter. Ruten viser listen over enheter og attributter, basert på den valgte relasjonsbanen, som er tilgjengelige for den valgte regelen.
+>
+> 7 – Legg til betingelser basert på attributter i eksisterende regler og underregler, eller legg den til i en ny regel.
+>
+> 8 – Angre og gjør om endringer når du bygger segmentet.
 
 Definer komplekse filtre rundt enheten for enhetlig kunde og de relaterte enhetene. Hvert segment, etter behandlingen, oppretter et sett med kundeoppføringer som du kan eksportere og utføre handlinger på. Segmenter administreres på **Segmenter**-siden. 
 
@@ -147,6 +164,6 @@ Med hurtigsegmenter kan du bygge enkle segmenter med én operator raskt for rask
 
 ## <a name="next-steps"></a>Neste trinn
 
-[Eksporter et segment](export-destinations.md) og utforsk [Kundekort](customer-card-add-in.md) og [Koblinger](export-power-bi.md) for å få innsikt på kundenivået.
+[Eksporter et segment](export-destinations.md), og utforsk [kundekortintegreringen](customer-card-add-in.md) for å bruke segmenter i andre programmer.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

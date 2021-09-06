@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
-ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
+ms.openlocfilehash: 1853fcd8db2918a0b4a19fa0934e2f0ddbcf6d093c85fdf2068a13f954035dec
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/03/2021
-ms.locfileid: "6171176"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7035243"
 ---
 # <a name="relationships-between-entities"></a>Relasjoner mellom enheter
 
@@ -82,7 +82,7 @@ Denne siden har et sett med alternativer for eksisterende og nye relasjoner:
 
 ### <a name="explore-the-relationship-visualizer"></a>Utforske relasjonsvisualiseringen
 
-Relasjonsvisualiseringen viser et nettverksdiagram over eksisterende relasjoner mellom tilkoblede enheter og kardinaliteten deres.
+Relasjonsvisualiseringen viser et nettverksdiagram over eksisterende relasjoner mellom tilkoblede enheter og kardinaliteten deres. Den visualiserer også relasjonsbanen.
 
 Hvis du vil tilpasse visningen, kan du endre plasseringen til boksene ved å dra dem på lerretet.
 
@@ -92,6 +92,20 @@ Tilgjengelige alternativer:
 - **Eksporter som bilde**: Lagre gjeldende visning som en bildefil.
 - **Endre til vannrett/loddrett oppsett**: Endre justeringen av enhetene og relasjonene.
 - **Rediger**: Oppdater egenskaper for egendefinerte relasjoner i redigeringsruten, og lagre endringer.
+
+### <a name="relationship-path"></a>Relasjonsbane
+
+Relasjonsbanen beskriver enhetene som er koblet til relasjoner mellom en kildeenhet og en målenhet. Den brukes når du oppretter et segment eller et mål som inkluderer andre enheter enn enheten for enhetlig profil, og når det finnes flere alternativer for å nå enheten for enhetlig profil.
+
+Relasjonsbanen informerer systemet om hvilke relasjoner som skal åpnes for enheten for den enhetlige profilen. Forskjellige relasjonsbaner kan gi forskjellige resultater.
+
+Enheten *eCommerce_eCommercePurchases* har for eksempel følgende relasjoner for enheten for den enhetlige profilen *Kunde*:
+
+- eCommerce_eCommercePurchases > Kunde
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > Kunde
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Kunde 
+
+Relasjonsbanen avgjør hvilke enheter du kan bruke når du oppretter regler for målinger eller segmenter. Valg av alternativet med den lengste relasjonsbanen vil sannsynligvis gi færre resultater fordi de samsvarende oppføringene må være en del av alle enheter. I dette eksemplet må en kunde ha kjøpt varer via e-handel(eCommerce_eCommercePurchases), på et salgssted (POS_posPurchases) og delta i fordelsprogrammet (loyaltyScheme_loyCustomers). Når du velger det første alternativet, får du sannsynligvis flere resultater fordi kunder bare trenger å eksistere i én tilleggsenhet.
 
 ## <a name="manage-existing-relationships"></a>Administrere eksisterende relasjoner 
 
@@ -105,6 +119,6 @@ Velg en relasjon, og velg ett av følgende alternativer:
 
 ## <a name="next-step"></a>Neste trinn
 
-Systemrelasjoner og egendefinerte relasjoner brukes til å [opprette segmenter](segments.md) basert på flere datakilder som ikke lenger er i siloer.
+Systemrelasjoner og egendefinerte relasjoner brukes til å [opprette segmenter](segments.md) og [målinger](measures.md) basert på flere datakilder som ikke lenger finnes i siloer.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
