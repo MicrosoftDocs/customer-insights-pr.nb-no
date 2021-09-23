@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e53d87c4f633cba09fecbc1c219f0ac2ec6bb5598a7902cbcf7398d26d6d7c6b
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 9eaeb0c93481283324f21122c9528ff5896b9866
+ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7029411"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "7470013"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Kundeprofiler: Søk- og filterindeks
 
@@ -56,7 +56,7 @@ Menyen **Filter** på siden **Kunder** kan inneholde et varierende antall attrib
 
 2. Velg **Lagre** for å ta i bruk endringene.
 
-3. Velg **Kjør** når du er klar til å bruke innstillingene.
+3. Velg **Kjør** når du er klar til å bruke innstillingene. Når endringene er behandlet, finner du dem i [kundekortene på kundesiden](customer-profiles.md). 
 
 ## <a name="next-steps"></a>Neste trinn
 

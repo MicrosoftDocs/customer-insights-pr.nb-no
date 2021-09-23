@@ -1,20 +1,20 @@
 ---
 title: Produktanbefalingsprediksjon
 description: Forutsi produktene en kunde sannsynligvis kommer til å kjøpe eller samhandle med.
-ms.date: 03/17/2021
+ms.date: 09/13/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: zacookmsft
-ms.author: zacook
+author: wmelewong
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 60d511181aa85e3e939eff3e5931f0de7807c01c8f38134ebca5c5604cd53871
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034968"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494551"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Produktanbefalingsprediksjon (forhåndsversjon)
 
@@ -89,23 +89,24 @@ Hvis du er interessert i å prøve denne funksjonen, men ikke har data for å fu
 
 ### <a name="add-required-data"></a>Legg til obligatoriske data
 
-1. Velg **Legg til data** for **Historikk for kundetransaksjon**, og velg enheten som inneholder informasjon om transaksjons-/kjøpshistorikken, slik dette er beskrevet i [forhåndskravene](#prerequisites).
+1. Velg **Legg til data**, og velg aktivitetstypen i sideruten som inneholder den nødvendige informasjonen om transaksjonen eller innkjøpsloggen.
 
-1. Tilordne de semantiske feltene til attributter i kjøpsloggenheten, og velg deretter **Neste**. Hvis du vil ha beskrivelser av feltene, kan du se på [forhåndskravene](#prerequisites).
-   > [!div class="mx-imgBorder"]
-   > ![Definer enhetsrelasjonen.](media/product-recommendation-purchasehistorymapping.PNG "Kjøpshistorikkside som viser semantiske attributter som er tilordnet til felter i den valgte kjøpshistorikkenheten")
+1. Under **Velg aktivitetene** velger du de bestemte aktivitetene fra den valgte aktiviteten du vil at beregningen skal fokusere på.
 
-1. Hvis feltene nedenfor ikke er fylt ut, konfigurerer du relasjonen fra kjøpsloggenheten til *kundeenheten*.
-    1. Velg **Kjøpshistorikkenhet**.
-    1. Velg **feltet** som identifiserer kunden i kjøpshistorikkenheten. Det må relateres til den primære kunde-ID-en til *kundeenheten*.
-    1. Velg **kundeenheten** som samsvarer med den primære kundeenheten.
-    1. Angi et navn som beskriver relasjonen.
-       > [!div class="mx-imgBorder"]
-       > ![Side med kjøpshistorikk som viser opprettelsen av en relasjon til kunde.](media/model-purchase-join.png "Side med kjøpshistorikk som viser opprettelsen av en relasjon til kunde")
+   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="Sideruten som viser hvordan du velger bestemte aktiviteter under semantisk type.":::
+
+1. Hvis du ikke har tilordnet aktiviteten til en semantisk type ennå, velger du **Rediger** for å gjøre dette. Den veiledede opplevelsen for kartlegging av semantiske aktiviteter åpnes. Tilordne dataene til de tilsvarende feltene i den valgte aktivitetstypen.
+
+   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Sideinnstilling for aktivitetstype.":::
+
+1. Når du har kartlagt aktiviteten til den tilsvarende semantiske typen, velger du **Neste** for å fortsette 
+ 
+1. Tilordne semantiske attributter til feltene som kreves for å kjøre modellen.
 
 1. Velg **Lagre**.
 
 1. Velg **Neste**.
+
 
 ### <a name="configure-product-filters"></a>Konfigurere produktfiltre
 

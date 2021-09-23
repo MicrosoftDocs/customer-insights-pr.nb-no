@@ -4,17 +4,17 @@ description: Finne ut hvordan du tilpasser og kjører iOS SDK
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 06/23/2021
+ms.date: 09/15/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: de8291fc429ae6433301a47bfdf9a3271b1b77294fd58448c7aa6bd0783edc97
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f05929435eeee9cf3f891ab18842c5861e39d5ba
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036885"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494242"
 ---
 # <a name="get-started-with-the-ios-sdk"></a>Komme i gang med iOS SDK
 
@@ -45,11 +45,36 @@ Start prosessen ved å velge et arbeidsområde du vil arbeide i, velg iOS-mobilp
 
 - Hvis du ikke har et eksisterende arbeidsområde, velger du **Nytt arbeidsområde** og følger fremgangsmåten for å opprette [et nytt arbeidsområde](create-workspace.md).
 
+- Når du har opprettet et arbeidsområde, går du til **Administrator** > **Arbeidsområde**, og deretter velger du **Installasjonsveiledning**.
+
 ## <a name="configure-the-sdk"></a>Konfigurere SDKen
 
-Når du har lastet ned SDKen, kan du arbeide med den i Xcode for å aktivere og definere hendelser.
+Når du har lastet ned SDKen, kan du arbeide med den i Xcode for å aktivere og definere hendelser. Du kan gjøre dette på to ulike måter
 
-1. Når du har opprettet et arbeidsområde, går du til **Administrator** > **Arbeidsområde**, og deretter velger du **Installasjonsveiledning**.
+### <a name="option-1-using-cocoapods-recommended"></a>Alternativ 1: Bruk av CocoaPods (anbefales)
+CocoaPods er avhengighetsansvarlig for Swift- og Objective-C-cocoa-prosjekter. Ved hjelp av det blir det enklere å integrere engasjementsinnsikts-SDK for iOS. Med CocoaPods kan du også oppgradere til den nyeste versjonen av engasjementsinnsikts-SDK. Slik bruker CocoaPods til å integrere engasjementsinnsikts-SDK i Xcode-prosjektet. 
+
+1. Installer CocoaPods. 
+
+1. Opprett en ny fil med navnet Podfile i rotkatalogen for prosjektet, og legg til følgende setninger i den. Bytt YOUR_TARGET_PROJECT_NAME med navnet på Xcode-prosjektet. 
+```objectivec
+platform :ios, '9.0'  
+
+ target '${YOUR_TARGET_PROJECT_NAME}' do 
+
+     use_frameworks!   
+
+     pod 'EIObjC.framework.debug' 
+
+     pod 'EIObjC.framework.release' 
+
+ end 
+```
+Pod-konfigurasjonen ovenfor inneholder både feilrettings- og lanseringsversjonene for SDK-en. Velg hvilken som helst av dem som passer best for prosjektet.
+
+1. Installer poden ved å utføre følgende kommando: `pod install --repo-update `
+
+### <a name="option-2-using-download-link"></a>Alternativ 2: Bruk av nedlastingskobling
 
 1. Last ned [Engasjementinnsikt iOS SDK](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-ios-sdk.zip), og plasser `EIObjC.xcframework`-filen i `Frameworks`-mappen.
 

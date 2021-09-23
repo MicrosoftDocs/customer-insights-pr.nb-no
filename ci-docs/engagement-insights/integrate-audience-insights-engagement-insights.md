@@ -1,19 +1,19 @@
 ---
 title: Opprett en kobling mellom målgruppeinnsikt og engasjementsinnsikt
 description: Opprett en aktiv kobling mellom målgruppeinnsikt og engasjementsinnsikt for å muliggjøre toveis deling av data.
-ms.date: 07/22/2021
+ms.date: 09/08/2021
 ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 870209a7e19fec464ec41462a02365771bd653bd
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 0fdbc93292291814b2e1a62fee2c5ff796ae14e2
+ms.sourcegitcommit: 4e5b7ec50c7612765a9ec2c8673e0cc43b357abb
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461025"
+ms.lasthandoff: 09/10/2021
+ms.locfileid: "7487119"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Opprett en kobling mellom målgruppeinnsikt og engasjementsinnsikt
 
@@ -26,14 +26,14 @@ Bruk enhetlige profiler og segmenter fra målgruppeinnsikt til å få flere anal
 ## <a name="prerequisites"></a>Forutsetninger
 
 - Målgruppeinnsiktsprofiler må lagres i en Azure Data Lake Storage-konto som du eier, eller i en [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md)-administrert datasjø. 
-
+- Målgruppeinnsiktmiljøet må også ha et tilknyttet Dataverse-miljø. Og hvis det miljøet også bruker Dataverse for datalagring, må du kontrollere at du merker av for alternativet **Aktiver datadeling** i målgruppeinnsikt. Hvis du vil ha mer informasjon, kan du se [Opprett og konfigurer et betalt miljø i målgruppeinnsikt](../audience-insights/get-started-paid.md).
 - Du trenger administratortillatelser for både engasjementsinnsikts- og målgruppeinnsiktsmiljøene.
-
 - Koblede miljøer må være i samme geografiske område.
 
 > [!NOTE]
 > - Hvis abonnementet for målgruppeinnsikt er en prøveversjon, som bruker en målgruppeinnsiktinternt administrert datasjø, kan du kontakte [pirequest@microsoft.com](mailto:pirequest@microsoft.com) for å få hjelp. 
-> - Hvis målgruppeinnsiktmiljøet bruker din egen Azure Data Lake Storage til å lagre data, må du legge til en Azure-tjenestekontohaver for engasjementsinnsikt i lagringskontoen. Hvis du vil ha mer informasjon, kan du gå til [Koble til en Azure Data Lake Storage-konto med en Azure-tjenestekontohaver for målgruppeinnsikt](../audience-insights/connect-service-principal.md). Målgruppeinnsiktmiljøet må også ha et tilknyttet [Dataverse-miljø](../audience-insights/get-started-paid.md). 
+> - Hvis målgruppeinnsiktmiljøet bruker din egen Azure Data Lake Storage til å lagre data, må du legge til en Azure-tjenestekontohaver for engasjementsinnsikt i lagringskontoen. Hvis du vil ha mer informasjon, kan du gå til [Koble til en Azure Data Lake Storage-konto med en Azure-tjenestekontohaver for målgruppeinnsikt](../audience-insights/connect-service-principal.md). 
+
 
 ## <a name="create-an-environment-link"></a>Opprett en miljøkobling
 
@@ -75,6 +75,7 @@ Når du har koblet miljøer, kan du velge valgfrie funksjoner for de koblede mil
 
    > [!IMPORTANT]
    > Hvis du ikke eksplisitt legger til brukere i dette trinnet, blir dataene skjult for brukere i engasjementsinnsikt.
+   > Hvis målgruppeinnsiktssegmenter skal vises i engasjementsinnsikt, må du først [kjøre sammenslåings- og nedstrømsprosesser](../audience-insights/merge-entities.md). Nedstrømsprosesser er viktige fordi de genererer en unik tabell som klargjør målgruppeinnsiktssegmenter som skal deles med engasjementsinnsikt. (Hvis en systemoppdatering planlegges, vil den automatisk inkludere nedstrømsprosesser.)
 
 1. Se gjennom det du har valgt, og velg deretter **Fullfør**.
 

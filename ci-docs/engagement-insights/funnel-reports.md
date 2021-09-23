@@ -4,17 +4,17 @@ description: Slik bruker du traktrapporter til å forstå hvordan målgrupper ta
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 06/23/2021
+ms.date: 09/17/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 7c6b7b7285556f8a531ce9e29f0d1de162562be6fb43dd826a65fd9e00d87b30
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 901e7ec50037d66c7c5ceb635d1c6cda6cfff83b
+ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032267"
+ms.lasthandoff: 09/17/2021
+ms.locfileid: "7498654"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Opprette og administrere traktrapporter
 
@@ -158,4 +158,21 @@ Du kan endre navnet på en traktrapport, slette den eller endre trinnene i rappo
 1. Velg et navn for å åpne rapporten.
 
 1. Velg trinnet du vil fjerne, og velg **Slett**.
+
+## <a name="funnel-insights"></a>Traktinnsikt 
+
+Engasjementsinnsikt tilbyr nå traktinnsikt for kunder. Bruk traktinnsikt til å få bedre innsikt i kundeatferd om trinnene i traktrapporten. Når du oppretter og lagrer en ny traktrapport, genereres traktinnsikt automatisk for rapporten. 
+
+Du kan vise traktinnsikt fra følgende kategorier både på hoved- og trinnivå: 
+
+ - Konverteringsforhold 
+ - Overgangstid 
+ - Fullføringstidspunkt 
+
+Bruk denne innsikten til å finne ut mer om kundeatferd og få bedre innsikt i frafallspunkter og konverteringer for traktrapporten. 
+
+Traktinnsikt beregnes på nytt hver 24. time, eller når du **lagrer** traktrapporten. 
+
+> [!NOTE]
+> Hvis du vil vise innsikt for trakten, må du lagre rapporten hver gang du gjør endringer. 
 

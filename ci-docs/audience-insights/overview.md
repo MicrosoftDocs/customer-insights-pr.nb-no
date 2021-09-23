@@ -10,12 +10,12 @@ author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 15cc495359af1faefe32225ae490fd7e7b6b08cc7a411e0a9804da6ec704099c
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 925cb5c2ccb4279ae5db2eb927a356708d310360
+ms.sourcegitcommit: 048d65bded22abadcbbad1e22f15b05828bb977b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034372"
+ms.lasthandoff: 09/06/2021
+ms.locfileid: "7474069"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Oversikt over målgruppeinnsikt for Dynamics 365 Customer Insights
 
@@ -57,11 +57,5 @@ ms.locfileid: "7034372"
 
   - Bygg egendefinerbare profiler, definer mål og opprett segmenter og dra nytte av prediktiv analyse for å få en helhetlig visning av kunden som er spesifikk for organisasjonen.  
   - Bruk bruksklare koblinger for flere Microsoft- og tredjepartsprogrammer eller API-er til å behandle innsikten.
-
-## <a name="pricing-and-licensing"></a>Priser og lisenser
-
-Customer Insights er lisensiert per leier og inneholder flere funksjoner. De berettigede kapasitetene omfatter et sett med profiler, daglige systemoppdateringer og Power Platform-forespørsler samt to miljøer. Du kan kjøpe mer kapasitet og flere lisenser for å øke standardkvoten. 
-- Detaljert kapasitet og rettigheter: [Lisensveiledning for Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544)
-- Prisoversikt: [Prisalternativer for Dynamics 365](https://dynamics.microsoft.com/pricing/#CustomerDataPlatform)
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

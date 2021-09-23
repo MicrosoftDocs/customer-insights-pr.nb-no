@@ -1,20 +1,20 @@
 ---
 title: Kundeaktiviteter
-description: Definer kundeaktiviteter og vis dem på kundetidslinjen.
-ms.date: 04/07/2021
+description: Definer kundeaktiviteter, og vis dem på en tidslinje i kundeprofiler.
+ms.date: 09/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: 6ebe899d3e3da43c4108678cd2e4f9a986e18ab35e839044becab4619adb0f14
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c5697df8a7d011c70384c8bc5e4773d7fcc25a62
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033643"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494423"
 ---
 # <a name="customer-activities"></a>Kundeaktiviteter
 
@@ -60,12 +60,15 @@ Datakildene kan inneholde enheter med transaksjons- og aktivitetsdata fra flere 
       - **Tilleggsdetaljer**: Felt med relevant informasjon for denne aktiviteten.
       - **Ikon**: Ikon som best representerer denne aktivitetstypen.
       - **Webadresse**: Felt som inneholder en URL-adresse med informasjon om denne aktiviteten. For eksempel transaksjonssystemet som er kilde for denne aktiviteten. Denne URL-adressen kan være et hvilket som helst felt fra datakilde, eller den kan konstrueres som et nytt felt ved hjelp av en Power Query-transformasjon. URL-dataene lagres i *Enhetlig aktivitet*-enheten, som kan brukes nedstrøms ved hjelp av [API-er](apis.md).
-   
-   :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Angi kundeaktivitetsdataene i en Enhetlig aktivitet-enhet.":::
+
+   - **Vis på tidslinje**
+      - Velg om du vil vise denne aktiviteten i tidslinjevisningen for kundeprofilene dine. Velg **Ja** for å vise aktiviteten på tidslinjen, eller **Nei** for å skjule den.
+
+      :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Angi kundeaktivitetsdataene i en Enhetlig aktivitet-enhet.":::
 
 1. Velg **Neste** for å gå til neste trinn. Du kan velge **Fullfør og se gjennom** for å lagre aktiviteten nå med aktivitetstypen satt til **Annet**. 
 
-1. Velg aktivitetstypen i **Aktivitetstype**-trinnet, og velg eventuelt hvis du vil semantisk tilordne noen av aktivitetstypene for bruk i andre områder av Customer Insights. Aktivitetstypene *Abonnement* og *SalesOrderLine* kan tilordnes semantisk etter at du har godtatt å tilordne feltene. Hvis en aktivitetstype ikke er relevant for den nye aktiviteten, kan du velge *Annet* eller *Opprett ny* for en egendefinert type.
+1. Velg aktivitetstypen i **Aktivitetstype**-trinnet, og velg eventuelt hvis du vil semantisk tilordne noen av aktivitetstypene for bruk i andre områder av Customer Insights. Aktivitetstypene *Tilbakemelding*, *Lojalitet*, *SalesOrder*, *SalesOrderLine* og *Abonnement* kan tilordnes semantisk etter at du har godtatt å tilordne feltene. Hvis en aktivitetstype ikke er relevant for den nye aktiviteten, kan du velge *Annet* eller *Opprett ny* for en egendefinert type.
 
 1. Velg **Neste** for å gå til neste trinn. 
 

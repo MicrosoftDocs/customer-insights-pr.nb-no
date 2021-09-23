@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Funksjon for engasjementsinnsikt (forhåndsversjon) i Dynamics 365 Customer Insights
+title: Engasjementsinnsiktsfunksjon i Dynamics 365 Customer Insights (forhåndsversjon)
 summary: Samle inn data for nettstedene dine. Forstå kundesamhandlinger og bruk på tvers av områdene, interaktivt. Bruk den grundige integrasjonen mellom engasjementsinnsikt og målgruppeinnsikt til supplere atferdsanalysen i sanntid med rapporter for kundeprofiler. Suppler kundeprofiler med nettaktiviteter for å få atferdsdata i sanntid sammen med relevante kundedata. Transformer virksomheten slik at du kan utlede verdi fra kundedataene umiddelbart.
 metadata:
   title: Dokumentasjon for engasjementsinnsikt (forhåndsversjon)
@@ -10,24 +10,24 @@ metadata:
   author: m-hartmann
   ms.author: mhart
   ms.reviewer: mhart
-  ms.date: 07/30/2021
-  ms.openlocfilehash: 9951b1834d18acf0c4961a776d9d6247d4ae3505b5721a41314266e41f8ae928
-  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+  ms.date: 09/15/2021
+  ms.openlocfilehash: bf2e40b1ca304e7b26687eaff298d2e70615cd2b
+  ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
   ms.translationtype: HT
   ms.contentlocale: nb-NO
-  ms.lasthandoff: 08/10/2021
-  ms.locfileid: "7036250"
+  ms.lasthandoff: 09/15/2021
+  ms.locfileid: "7494196"
 landingContent:
 - title: Om
   linkLists:
   - linkListType: overview
     links:
-    - text: Oversikt over funksjoner
+    - text: Fordeler ved funksjoner
       url: overview.md
-    - text: Begreper og konsepter
+    - text: Ordliste
       url: glossary.md
-    - text: Oppdag engasjementsinnsikt
-      url: https://dynamics.microsoft.com/ai/customer-insights/engagement-insights-capability/
+    - text: Nye og oppdaterte funksjoner
+      url: /dynamics365-release-plan/2021wave1/customer-data-platform/engagement-insights/planned-features
 - title: Pålasting
   linkLists:
   - linkListType: how-to-guide
@@ -38,33 +38,35 @@ landingContent:
       url: create-workspace.md
     - text: Instrumenter nettstedet ditt
       url: instrument-website.md
-- title: Rapporter
+- title: Vise og filtrere rapporter
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Vis rapporter
       url: view-reports.md
-    - text: Opprett egendefinerte rapporter
-      url: custom-reports.md
     - text: Vise rapport om enhetlige profiler
       url: profile-reports.md
-    - text: Opprette traktrapporter
-      url: funnel-reports.md
-- title: Hendelser
+    - text: Bruk målgruppesegmenter til å filtrere rapporter
+      url: integrate-audience-insights-segments.md
+- title: Analyser
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Opprette traktrapporter
+      url: funnel-reports.md
+    - text: Analyser virkemåtedata
+      url: curate-dimensions.md
+    - text: Opprett egendefinerte rapporter
+      url: custom-reports.md
     - text: Opprett begrensede hendelser
       url: refined-events.md
     - text: Eksporter hendelser
       url: export-events.md
-    - text: Slette og eksportere personlige data
-      url: delete-export-personal-data.md
-- title: Ressurser for utvikler
+- title: Utviklerressurser
   linkLists:
   - linkListType: reference
     links:
-    - text: Ressurser for utvikler
+    - text: Utviklerressurser
       url: developer-resources.md
     - text: WebSDK-eksempel
       url: websdk-sample.md
@@ -81,6 +83,10 @@ landingContent:
     - text: Administrere miljøer og arbeidsområder
       url: manage-environments-workspaces.md
     - text: Koble til målgruppeinnsikt
-      url: configure-connections.md
+      url: integrate-audience-insights-engagement-insights.md
     - text: Administrere informasjonskapsler og brukersamtykke
       url: user-consent-storage.md
+    - text: Slette og eksportere personlige data
+      url: delete-export-personal-data.md
+    - text: Tjenestegrenser
+      url: ../service-limits.md

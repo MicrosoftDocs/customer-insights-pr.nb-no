@@ -1,7 +1,7 @@
 ---
 title: Slå sammen enheter i dataforening
 description: Slå sammen enheter for å opprette enhetlige kundeprofiler.
-ms.date: 05/10/2021
+ms.date: 09/14/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6e64154dc58f679d13033fa55a60cd0c306f62f31548b8ce98ea1ed5f423b3e9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b038cd3f5b433fedf918d34bbfaf2261e11c5c17
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035014"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494331"
 ---
 # <a name="merge-entities"></a>Slå sammen enheter
 
@@ -66,7 +66,7 @@ Endre visningsnavnet for sammenslåtte attributter. Du kan ikke endre navnet på
 
 Utelat et attributt fra den enhetlige kundeprofilen. Hvis feltet brukes i andre prosesser, for eksempel i et segment, fjerner du det fra disse prosessene før du utelater det fra kundeprofilen. 
 
-1. Velg det sammenslåtte feltet.
+1. Velg et flettet felt.
   
 1. Velg **Vis mer** og velg **Utelat**.
 
@@ -76,17 +76,40 @@ Utelat et attributt fra den enhetlige kundeprofilen. Hvis feltet brukes i andre 
 
 Velg **Utelatte felter** på **Slå sammen**-siden for å vise listen over alle utelatte felter. I denne ruten kan du legge til utelatte felter på nytt.
 
+## <a name="edit-a-merged-field"></a>Rediger et sammenslått felt
+
+1.  Velg et flettet felt.
+
+1.  Velg **Vis mer** og velg **Rediger**.
+
+1.  Angi hvordan du vil kombinere eller flette feltene fra et av tre alternativer:
+    - **Viktighet**: Identifiserer vinnerverdien basert på viktighetsrangering angitt for de deltagende feltene. Dette er standardalternativet for sammenslåing. Velg **Flytt opp/ned** for å angi viktighetsrangering.
+    :::image type="content" source="media/importance-merge-option.png" alt-text="Viktighetsalternativ i dialogboksen for flettefelter."::: 
+    - **Nyeste**: Identifiserer vinnerverdien basert på mest nylige. Krever en dato eller et numerisk felt for hver enhet som deltar i omfanget for flettefeltene, for å definere nyligheten.
+    :::image type="content" source="media/recency-merge-option.png" alt-text="Nylighetsalternativ i dialogboksen for flettefelter.":::
+    - **Minst nylig**: Identifiserer vinnerverdien basert på minste nylighet. Krever en dato eller et numerisk felt for hver enhet som deltar i omfanget for flettefeltene, for å definere nyligheten.
+
+1.  Du kan legge til flere felter for å delta i fletteprosessen.
+
+1.  Du kan gi nytt navn til det flettede feltet.
+
+1. Velg **Ferdig** for å ta i bruk endringene.
+
+1. Velg **Lagre** og **Kjør** for å behandle endringene. 
+
 ## <a name="manually-combine-fields"></a>Kombiner felter manuelt
 
 Angi et sammenslått attributt manuelt. 
 
 1. Velg **Kombiner felter** på **Slå sammen**-siden.
 
-1. Angi et **navn** og et **navn på utdatafelt**.
+1. Angi vinnerregelen for sammenslåing i **Kombiner felter etter** rullegardinmenyen.
 
 1. Veg et felt du vil legge til. Velg **Legg til felter** for å kombinere flere felter.
 
-1. Bekreft utelatelsen.
+1. Angi et **navn** og et **navn på utdatafelt**.
+
+1. Velg **Ferdig** for å ta i bruk endringene.
 
 1. Velg **Lagre** og **Kjør** for å behandle endringene. 
 
@@ -103,6 +126,27 @@ Noen enheter inneholder flere detaljer enn andre. Hvis en enhet inneholder de ny
 1. Bekreft endringen.
 
 1. Velg **Lagre** og **Kjør** for å behandle endringene.
+
+## <a name="configure-customer-id-generation"></a>Konfigurer kunde-ID-generering 
+
+Når du har konfigurert sammenslåingsfelter, kan du definere hvordan du vil generere CustomerId-verdier, de unike kundeprofilidentifikatorene. Flettetrinnet i datasammenslåingsprosessen genererer den unike kundeprofilidentifikatoren. Identifikatoren er CustomerId i *Kunde*-enheten som er et resultat av dataenhetsprosessen. 
+
+CustomerId i kundeenheten er basert på et nummer for den første verdien til primærnøklene som ikke er nullvinner. Disse nøklene kommer fra enhetene som brukes i samsvars- og sammenslåingsfasen, og påvirkes av samsvarsrekkefølgen. Den genererte CustomerID kan derfor endres når en primærnøkkelverdi endres i primærenheten i samsvarsordren. Derfor er det ikke sikkert at primærnøkkelverdien alltid representerer samme kunde.
+
+Konfigurasjon av en stabil kunde-ID gjør det mulig å unngå denne virkemåten.
+
+**Konfigurer en unik kunde-ID**
+
+1. Gå til **Samle** > **Slå sammen**.
+
+1. På **Slå sammen**-siden velger du **Nøkler**-fanen. 
+
+1. Hold markøren over **CustomerId**-raden, og velg alternativet **Konfigurer**.
+   :::image type="content" source="media/customize-stable-id.png" alt-text="Kontroller for å tilpasse ID-genereringen.":::
+
+1. Velg opptil fem felter som vil bestå av en unik kunde-ID og er mer stabil. Oppføringer som ikke samsvarer med konfigurasjonen, bruker i stedet en systemkonfigurert ID.  
+
+1. Velg **Fullført**, og kjør fletteprosessen for å ta i bruk endringene.
 
 ## <a name="run-your-merge"></a>Kjøre flettingen
 

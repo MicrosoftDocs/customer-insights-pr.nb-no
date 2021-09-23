@@ -4,17 +4,17 @@ description: Slik oppretter du, gir nytt navn til og sletter arbeidsområder og 
 author: jusali
 ms.reviewer: mhart
 ms.author: jusali
-ms.date: 07/01/2021
+ms.date: 09/09/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: bf310b1a50ba7baac5d11d5f22ff42003fbba516efd7d165c00b59adc958da2e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: a5b48db5ae23ea65bf608d67348d493bfdc7678f
+ms.sourcegitcommit: 0ceb46c4f57ab49d3a2ebb1c8a816bbafe979e3d
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034054"
+ms.lasthandoff: 09/09/2021
+ms.locfileid: "7486047"
 ---
 # <a name="manage-environments-and-workspaces"></a>Administrere miljøer og arbeidsområder
 
@@ -85,13 +85,11 @@ Hvis du sletter et arbeidsområde, fjernes alt innhold, data, innstillinger og t
 
 1. Velg **Legg til medlemmer** for å gi tilgang til og [tilordne roller](user-roles.md). For øyeblikket er bare **arbeidsområdeadministrator** tilgjengelig.
 
-1. Hvis du konfigurerer en [tilkobling til målgruppeinnsikt](configure-connections.md), kan du velge **Tillat tilgang til profildata** slik at medlemmet kan se rapporter basert på [brukerprofiler](profile-reports.md).
-
 1. Velg **Legg til medlemmer** for å legge dem til i arbeidsområdet.
 
 ## <a name="manage-an-environment"></a>Administrere et miljø
 
-Som miljøadministrator kan du få tilgang til et miljø fra den venstre navigasjonsruten. Du kan konfigurere miljøinnstillinger, andre miljøadministratorer, arbeidsområder og [tilkoblinger til målgruppeinnsikt](configure-connections.md). Velg faner for å gå mellom ulike områder i administrasjonssenteret.
+Som miljøadministrator kan du få tilgang til et miljø fra den venstre navigasjonsruten. Du kan konfigurere miljøinnstillinger, andre miljøadministratorer og arbeidsområder. Velg faner for å gå mellom ulike områder i administrasjonssenteret.
 
 :::image type="content" source="media/New-environment.png" alt-text="Administrasjonssenter for miljø.":::
 
@@ -123,8 +121,6 @@ Som miljøadministrator kan du få tilgang til et miljø fra den venstre navigas
 
 1. Velg **Legg til medlemmer** for å oppdatere medlemmer og [tilordne roller](user-roles.md). For øyeblikket er bare **miljøadministrator** tilgjengelig.
 
-1. Hvis du konfigurerer en [tilkobling til målgruppeinnsikt](configure-connections.md), kan du velge **Tillat tilgang til profildata** slik at medlemmet kan se rapporter basert på [brukerprofiler](profile-reports.md).
-
 1. Velg **Legg til medlemmer** for å legge dem til i miljøet.
 
 ### <a name="delete-an-environment"></a>Slette et miljø
@@ -143,7 +139,7 @@ Miljøadministratorer kan slette miljøer. Før du kan slette et miljø, må du 
 
 Ved å opprette målgruppeinnsikt kan du vise rapporter i engasjementsinnsikt basert på enhetlige kundeprofiler. 
 
-Hvis du vil ha mer informasjon, kan du se [Konfigurer tilkoblinger](configure-connections.md).
+Hvis du vil ha mer informasjon, kan du se [Opprett en kobling mellom målgruppeinnsikt og engasjementsinnsikt](integrate-audience-insights-engagement-insights.md).
 
 ## <a name="manage-personal-data"></a>Administrer personopplysninger
 

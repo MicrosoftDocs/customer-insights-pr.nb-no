@@ -1,7 +1,7 @@
 ---
 title: Supplere enhetlige kundeprofiler
 description: Bruk funksjoner for å supplere kundedataene.
-ms.date: 07/01/2021
+ms.date: 08/31/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: a64bbd754d4013d0a6243074ac9f55991547be82b269047a9937b583baf98697
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 992c45e30e2dff00f5207290940b56b2fe1c08ad
+ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032540"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "7470012"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
 
@@ -29,6 +29,7 @@ Du må ha tillatelse som bidragsyter eller administrator for å opprette eller r
 
 I kategorien **Oppdag** finner du følgende suppleringer:
 
+- [Azure Maps](enrichment-azure-maps.md) levert av Microsoft
 - [Merker](enrichment-microsoft.md) levert av Microsoft
 - [Interesser](enrichment-microsoft.md) levert av Microsoft
 - [Forbedrede adresser](enrichment-enhanced-addresses.md) levert av Microsoft
@@ -62,5 +63,17 @@ Tredjeparts suppleringer konfigureres ved hjelp av [tilkoblinger](connections.md
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flere suppleringer av samme type
 
 Enheten som skal suppleres, angis under suppleringskonfigurasjonen, noe som gjør at du bare kan supplere et delsett av profilene. Du kan for eksempel bare supplere data for et bestemt segment. Du kan konfigurere flere suppleringer av samme type og bruke samme tilkobling på nytt. Noen suppleringer vil ha begrensninger på antall suppleringer av samme type som kan opprettes. Du kan se grensene og gjeldende bruk på **Supplering**-siden.
+
+## <a name="see-the-progress-of-the-enrichment-process"></a>Se fremdriften for suppleringsprosessen
+
+Du kan finne detaljer om behandlingen av en supplering, blant annet status og potensielle problemer når den oppdateres eller etter at en oppdatering er fullført. Forstå hvilke prosesser som er involvert i oppdatering av en supplering, og hvor lang tid det tok å kjøre prosessene. Suppleringsstatusen støttes for Experian, Leadspace, HERE Technologies, SFTP-import og Azure Maps.
+
+Slik viser du statusen for en supplering
+
+1. Gå til **Data** > **Supplering**. 
+1. I fanen **Mine supplering** velger du statusen for en supplering for å åpne en siderute. 
+1. Utvid **Suppleringer**-delen i **Fremdrift**-detaljruten. 
+1. Velg **Se detaljer** under suppleringen du vil vise fremdriften for. 
+1. Velg **Vis detaljer** i **Oppgavedetaljer**-ruten for å vise prosessene som er involvert i oppdatering av suppleringen og statusen deres. 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
