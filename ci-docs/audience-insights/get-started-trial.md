@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: f038dedd369ac9e623146b66528efa87c47a8c23769037d8709fa9b804a0b723
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3a235e924395a606b9332de3d205289288a597a9
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035427"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7558835"
 ---
 # <a name="set-up-a-trial-environment"></a>Konfigurer et prøveversjonsmiljø 
 
@@ -95,7 +95,7 @@ Du kan nå bruke de inntatte dataene til å skreddersy Customer Insights til sce
 
 - Prøveversjoner er aktive i 30 dager som standard. Du kan imidlertid utvide dem etter dag 23 når du logger på prøveversjonen.
 - Du kan ikke bruke din egen Azure Data Lake-lagringskonto til å lagre utdata under en prøveversjon. Du kan imidlertid innta data fra en Data Lake-lagringskonto.
-- Du kan lagre opptil 3 GB data i Dataverse-miljøet som klargjøres automatisk når du starter en Customer Insights-prøveversjon.
+- Du kan lagre opptil 3 GB data i Dataverse-miljøet som klargjøres automatisk når du starter en prøveversjon av Customer Insights.
 
 ## <a name="copy-data-from-a-trial-to-a-paid-subscription"></a>Kopier data fra en prøveversjon til et betalt abonnement
 

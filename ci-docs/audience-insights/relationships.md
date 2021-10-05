@@ -1,20 +1,20 @@
 ---
 title: Relasjoner mellom enheter og enhetsbaner
 description: Opprett og administrer relasjoner mellom enheter fra flere datakilder.
-ms.date: 06/01/2020
+ms.date: 09/27/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: 1853fcd8db2918a0b4a19fa0934e2f0ddbcf6d093c85fdf2068a13f954035dec
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c639cfca30cf1b57ada7d728311210b7210a37ac
+ms.sourcegitcommit: f72d5b86dfdc7282c6c1918b1ab3962d7a1c9852
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035243"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7557364"
 ---
 # <a name="relationships-between-entities"></a>Relasjoner mellom enheter
 
@@ -93,11 +93,11 @@ Tilgjengelige alternativer:
 - **Endre til vannrett/loddrett oppsett**: Endre justeringen av enhetene og relasjonene.
 - **Rediger**: Oppdater egenskaper for egendefinerte relasjoner i redigeringsruten, og lagre endringer.
 
-### <a name="relationship-path"></a>Relasjonsbane
+## <a name="relationship-paths"></a>Relasjonsbaner
 
-Relasjonsbanen beskriver enhetene som er koblet til relasjoner mellom en kildeenhet og en målenhet. Den brukes når du oppretter et segment eller et mål som inkluderer andre enheter enn enheten for enhetlig profil, og når det finnes flere alternativer for å nå enheten for enhetlig profil.
+En relasjonsbane beskriver enhetene som er koblet til relasjoner en kildeenhet og en målenhet. Den brukes når du oppretter et segment eller et mål som inkluderer andre enheter enn enheten for enhetlig profil, og når det finnes flere alternativer for å nå enheten for enhetlig profil. 
 
-Relasjonsbanen informerer systemet om hvilke relasjoner som skal åpnes for enheten for den enhetlige profilen. Forskjellige relasjonsbaner kan gi forskjellige resultater.
+En relasjonsbane informerer systemet om relasjoner for å få tilgang til enheten for den enhetlige profilen. Forskjellige relasjonsbaner kan gi forskjellige resultater.
 
 Enheten *eCommerce_eCommercePurchases* har for eksempel følgende relasjoner for enheten for den enhetlige profilen *Kunde*:
 
@@ -105,7 +105,43 @@ Enheten *eCommerce_eCommercePurchases* har for eksempel følgende relasjoner for
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > Kunde
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Kunde 
 
-Relasjonsbanen avgjør hvilke enheter du kan bruke når du oppretter regler for målinger eller segmenter. Valg av alternativet med den lengste relasjonsbanen vil sannsynligvis gi færre resultater fordi de samsvarende oppføringene må være en del av alle enheter. I dette eksemplet må en kunde ha kjøpt varer via e-handel(eCommerce_eCommercePurchases), på et salgssted (POS_posPurchases) og delta i fordelsprogrammet (loyaltyScheme_loyCustomers). Når du velger det første alternativet, får du sannsynligvis flere resultater fordi kunder bare trenger å eksistere i én tilleggsenhet.
+En relasjonsbane avgjør hvilke enheter du kan bruke når du oppretter regler for målinger eller segmenter. Valg av alternativet med den lengste relasjonsbanen vil sannsynligvis gi færre resultater fordi de samsvarende oppføringene må være en del av alle enheter. I dette eksemplet må en kunde ha kjøpt varer via e-handel(eCommerce_eCommercePurchases), på et salgssted (POS_posPurchases) og delta i fordelsprogrammet (loyaltyScheme_loyCustomers). Når du velger det første alternativet, får du sannsynligvis flere resultater fordi kunder bare trenger å eksistere i én tilleggsenhet.
+
+### <a name="direct-relationship"></a>Direkte relasjon
+
+En relasjon klassifiseres som en **direkte relasjon** når en kildeenhet er relatert til en målenhet med bare én relasjon.
+
+Hvis for eksempel en aktivitetsenhet med navnet *eCommerce_eCommercePurchases* kobles til en målenhet *eCommerce_eCommerceContacts* bare via *ContactId*, er det en direkte relasjon.
+
+:::image type="content" source="media/direct_Relationship.png" alt-text="Kildeenhet kobler direkte til målenheten.":::
+
+#### <a name="multi-path-relationship"></a>Relasjon med flere baner
+
+En **relasjon med flere baner** er en spesiell type direkte relasjon som kobler en kildeenhet til mer enn én målenhet.
+
+Hvis for eksempel en aktivitetsenhet med navnet *eCommerce_eCommercePurchases* er relatert til to målenheter, er både *eCommerce_eCommerceContacts* og *loyaltyScheme_loyCustomers* en relasjon med flere baner.
+
+:::image type="content" source="media/multi-path_relationship.png" alt-text="Kildeenhet kobler direkte til mer enn én målenhet via en relasjon med flere mellomstasjoner.":::
+
+### <a name="indirect-relationship"></a>Indirekte relasjon
+
+En relasjon klassifiseres som en **indirekte relasjon** når en kildeenhet er relatert til en eller flere enheter før den relateres til en relasjon.
+
+#### <a name="multi-hop-relationship"></a>Relasjon med flere mellomstasjoner
+
+En *relasjon med flere mellomstasjoner* er en indirekte relasjon som gjør det mulig å koble en kildeenhet til en målenhet via en eller flere andre *mellomenheter*.
+
+Hvis for eksempel en aktivitetsenhet som heter *eCommerce_eCommercePurchasesWest* kobler til en midlertidig enhet kalt *eCommerce_eCommercePurchasesEast* og deretter kobler til en målenhet som heter *eCommerce_eCommerceContacts*, er det en relasjon med flere mellomstasjoner.
+
+:::image type="content" source="media/multi-hop_relationship.png" alt-text="Kildeenhet kobler direkte til en målenhet med en midlertidig enhet.":::
+
+### <a name="multi-hop-multi-path-relationship"></a>Relasjon med flere baner og flere mellomstasjoner
+
+Relasjoner for flere mellomstasjoner og flere baner kan brukes sammen til å opprette **flere mellomstasjoner, flere baner**. Denne spesialtypen kombinerer funksjonene for **flere mellomstasjoner** og **relasjoner med flere baner**. Den lar deg koble til mer enn én målenhet når du bruker mellomliggende enheter.
+
+Hvis for eksempel en aktivitetsenhet som heter *eCommerce_eCommercePurchasesWest* kobler til en midlertidig enhet kalt *eCommerce_eCommercePurchasesEast* og deretter kobler til to målenheter, både *eCommerce_eCommerceContacts* og *loyaltyScheme_loyCustomers*, er det en relasjon med flere mellomstasjoner og flere baner.
+
+:::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Kildeenhet kobler direkte til én målenhet og kobler til en annen målenhet via en mellomliggende enhet.":::
 
 ## <a name="manage-existing-relationships"></a>Administrere eksisterende relasjoner 
 

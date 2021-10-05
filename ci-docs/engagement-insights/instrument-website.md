@@ -1,26 +1,26 @@
 ---
 title: Legg til kode på nettstedet
-description: Slik legger du til en kodesnutt for å registrere hendelser på nettstedet ditt.
+description: Slik legger du til en kodesnutt for å registrere Dynamics 365 Customer Insights-hendelser på nettstedet ditt.
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 04/30/2021
+ms.date: 09/27/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: b5467da775a621c436bd9ddedb272506acc1e2b31dcf7c87feb5dd11e2daae2b
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: ad835f762226d62fdb0f544627f2a76ff09a1ffd
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035106"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7558905"
 ---
-# <a name="install-the-code-snippet-on-a-website"></a>Installer kodesnutten på et nettsted
+# <a name="install-the-web-sdk-on-a-website"></a>Installer nett-SDK på et nettsted
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Denne artikkelen beskriver hvordan en administrator installerer kodesnutten på et nettstedet. Du vil se hendelser i arbeidsområdet kort tid etter at du har lagt til skriptet på nettstedet. Hvis du vil ha mer informasjon, kan du se [Administrer arbeidsområder og miljøer](manage-environments-workspaces.md). Hvis du vil registrere hendelser i mobilapper, kan du se [Oversikt over utviklerressurser](developer-resources.md).
+Denne artikkelen beskriver hvordan en administrator installerer SDK (Software Development Kit) på et nettsted. Du vil se hendelser i arbeidsområdet kort tid etter at du har instrumentert nettstedet. Hvis du vil ha mer informasjon, kan du se [Administrer arbeidsområder og miljøer](manage-environments-workspaces.md). Hvis du vil registrere hendelser i mobilapper, kan du se [Oversikt over utviklerressurser](developer-resources.md).
 
 
 ### <a name="prerequisites"></a>Forutsetninger
@@ -29,19 +29,30 @@ Denne artikkelen beskriver hvordan en administrator installerer kodesnutten på 
 * Nettstedet eller prosjektet må være driftet på nettet for å sende aktivitetsdata. Data som sendes fra en lokal fil, blir ikke godtatt av serveren.
 
 
-## <a name="add-code-to-your-website"></a>Legg til kode på nettstedet
-1.  Gå til **Administrator** > **Arbeidsområde** og velg **Installasjonsveiledning**.
+## <a name="add-web-sdk-to-your-website"></a>Legg til nett-SDK på nettstedet
+
+Gå til **Administrator** > **Arbeidsområde** og velg **Installasjonsveiledning**. Du kan spore to alternativer for å installere nett-SDK. Den første er å bruke en nedlastingskobling, og den andre er å installere en pakke for Node Package Manager (NMP).
+
+### <a name="option-1-using-the-download-link"></a>Alternativ 1. Bruk av nedlastingskoblingen
+
 1. Velg **Kopier kode** for å kopiere kodesnutten. Inntaksnøkkelen for arbeidsområdet er som standard innebygd i kodesnutten.
-:::image type="content" source="media/copy-code.png" alt-text="Skjermbilde av kodesnuttsiden.":::
-3. Legg til den kopierte kodesnutten på nettstedet, i nærheten av <head> -koden og foran andre skripter eller CSS-koder.
-4.  Publiser det oppdaterte nettstedet, og vent noen minutter på å registrere den innkommende nettrafikken.
-5.  Hvis du vil vise dataene, velger du arbeidsområdet fra arbeidsområdebytteren i navigasjonsruten. Velg deretter en av rapportene i **Oppdag**-delen.
+  :::image type="content" source="media/copy-code.png" alt-text="Skjermbilde av kodesnuttsiden.":::
+
+1. Legg til den kopierte koden på nettstedet ditt, i nærheten av <head> -koden og foran andre skripter eller CSS-koder.
+1. Publiser det oppdaterte nettstedet, og vent noen minutter på å registrere den innkommende nettrafikken.
+1. Hvis du vil vise dataene, velger du arbeidsområdet fra arbeidsområdebytteren i navigasjonsruten. Velg deretter en av rapportene i **Oppdag**-delen.
+
+### <a name="option-2-using-the-npm-package-recommended-for-javascript-based-web-apps"></a>Alternativ 2: Bruk av NPM-pakken (anbefales for JavaScript-baserte nettapper)
+
+1. Gå til [NPM-nettsiden](https://www.npmjs.com/package/engagementinsights-web), og følg instruksjonene for å installere og konfigurere nett-SDK-en for NPM-pakken.
+1. Publiser det oppdaterte nettstedet, og vent noen minutter på å registrere den innkommende nettrafikken.
+1. Hvis du vil vise dataene, velger du arbeidsområdet fra arbeidsområdebytteren i navigasjonsruten. Velg deretter en av rapportene i **Oppdag**-delen.
 
 ## <a name="configuration-options"></a>Konfigurasjonsalternativer
 
 Du kan endre følgende konfigurasjonsalternativer i kodesnutten:
 
-- **ingestionKey**: Inntaksnøkkelen som brukes til å sende hendelser til arbeidsområdet. Du kan endre inntaksnøkkelen for å sende hendelser til et annet arbeidsområde. En inntaksnøkkel er unik for hvert arbeidsområde. 
+- **ingestionKey**: Inntaksnøkkelen som brukes til å sende hendelser til arbeidsområdet. Du kan endre inntaksnøkkelen for å sende hendelser til et annet arbeidsområde. En inntaksnøkkel er unik for hvert arbeidsområde.
 - **autoCapture**: Angir om sidevisninger og samhandlinger med nettstedet skal registreres. Den har to alternativer:
     - **view**: Sett til *true* for å registrere sidevisninger. Sidevisninger registreres som *visnings[hendelser](glossary.md#event)*, en type [basishendelse](glossary.md#base-event).
     - **click** : Sett til *true* for å registrere besøkendes samhandlinger på nettstedet. Samhandlinger registreres som *handlings[hendelser](glossary.md#event)*, en type [basishendelse](glossary.md#base-event).
