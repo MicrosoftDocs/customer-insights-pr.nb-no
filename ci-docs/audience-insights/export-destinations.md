@@ -1,7 +1,7 @@
 ---
 title: Eksportere data fra Customer Insights
 description: Administrer eksporter for å dele data.
-ms.date: 06/14/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,25 +10,48 @@ author: pkieffer
 ms.author: philk
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: be4d142e0f9f422cac459f603aa5dd8bb490321cfe1b2de58f4a128ae56f4ba3
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 45a4c964e9810640c764357a72b9794f4fda89f4
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034694"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623128"
 ---
 # <a name="exports-preview-overview"></a>Oversikt over Eksporter (forhåndsversjon)
 
-**Eksporter**-siden viser alle konfigurerte eksporter. Eksporter deler bestemte data med forskjellige programmer. De kan omfatte kundeprofiler eller enheter, skjemaer og tilordningsdetaljer. Hver eksport krever en [tilkobling, konfigurert av en administrator, for å administrere godkjenning og tilgang](connections.md).
+**Eksporter**-siden viser alle konfigurerte eksporter. Eksporter deler bestemte data med forskjellige programmer. De kan omfatte kundeprofiler, enheter, skjemaer og tilordningsdetaljer. Hver eksport krever en [tilkobling, konfigurert av en administrator, for å administrere godkjenning og tilgang](connections.md).
 
 Gå til **Data** > **Eksporter** for å vise eksportsiden. Alle brukerroller kan vise konfigurerte eksporter. Bruk søkefeltet på kommandolinjen til å søke etter eksporter etter navn, tilkoblingsnavn eller tilkoblingstype.
 
-## <a name="set-up-a-new-export"></a>Konfigurer en ny eksport
+## <a name="export-types"></a>Eksporttyper
 
+Det finnes to hovedtyper av eksporter:  
+
+- Med **Data-ut-eksporter** kan du eksportere alle typer enheter som er tilgjengelig i målgruppeinnsikt. Enhetene du velger for eksport, eksporteres med alle datafelt, metadata, skjemaer og tilordningsdetaljer. 
+- **Segmenteksporter** lar deg eksportere segmentenheter fra målgruppeinnsikt. Segmenter representerer en liste over kundeprofiler. Når du konfigurerer eksporten, velger du de inkluderte datafeltene, avhengig av målsystemet du eksporterer data til. 
+
+### <a name="export-segments"></a>Eksportere segmenter
+
+**Eksporterer segmenter i miljøer for forretningskontoer (B2B) eller enkeltkunder (B2C)**  
+De fleste eksportalternativ støtter begge typer miljøer. Eksport av segmenter til forskjellige målsystemer har spesifikke krav. Et segmentmedlem, kundeprofilen, inneholder generelt sett kontaktinformasjon. Selv om dette vanligvis er tilfellet for segmenter som er bygd på enkeltkunder (B2C), er det ikke nødvendigvis tilfellet for segmenter basert på forretningskontoer (B2B). 
+
+**Segmenteksportmiljøer for forretningskontoer (B2B)**  
+- Segmenter i konteksten for miljøer for forretningskontoer er bygd på *forretningsforbindels*-enheten. Hvis du vil eksportere forretningsforbindelsessegmenter som de er, må målsystemet støtte rene forretningsforbindelsessegmenter. Dette er tilfellet for [LinkedIn](export-linkedin-ads.md) når du velger **firma**-alternativet mens du definerer eksporten.
+- Alle andre målsystemer krever felt fra kontaktenheten. For å sikre at segmenter for forretningsforbindelser kan hente data fra relaterte kontakter, må segmentdefinisjonen din projisere attributter for kontaktenheten. Lær mer om hvordan du [konfigurerer segmenter og prosjektattributter](segment-builder.md).
+
+**Segmenteksporter i miljøer for enkeltkunder (B2C)**  
+- Segmenter i konteksten for miljøer for individuelle kunder er bygd på enheten for *enhetlig kundeprofil*. Hvert segment som oppfyller kravene i målsystemet (for eksempel en e-postadresse), kan eksporteres.
+
+**Begrensninger for segmenteksporter**  
+- Tredjeparts målsystemer kan begrense antallet kundeprofiler du kan eksportere. 
+- For enkeltkunder vises det faktiske antallet segmentmedlemmer når du velger et segment for eksport. Du får en advarsel hvis et segment er for stort. 
+- For forretningskontoer vises antall forretningsforbindelser i et segment. Antall kontakter som kan projiseres, vises imidlertid ikke. I noen tilfeller kan dette føre til at det eksporterte segmentet faktisk inneholder flere kundeprofiler enn målsystemet godtar. Hvis du overskrider grensene for målsystemresultatene, hopper du over eksporten. 
+
+## <a name="set-up-a-new-export"></a>Konfigurer en ny eksport  
 Hvis du vil konfigurere eller redigere en eksport, må du ha tilkoblinger tilgjengelige for deg. Tilkoblinger avhenger av [brukerrollen din](permissions.md):
-- Administratorer har tilgang til alle tilkoblinger. De kan også opprette nye tilkoblinger når de konfigurerer en eksport.
-- Bidragsytere kan ha tilgang til bestemte tilkoblinger. De er avhengig av administratorer for å konfigurere og dele tilkoblinger. Eksporter-listen viser bidragsytere om de kan redigere eller bare vise en eksport, i kolonnen **Tillatelsene dine**. Hvis du vil ha mer informasjon, se [Tillate bidragsytere å bruke en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
-- Visningsprogrammer kan bare vise eksisterende eksporter, men ikke opprette dem.
+- **Administratorer** har tilgang til alle tilkoblinger. De kan også opprette nye tilkoblinger når de konfigurerer en eksport.
+- **Bidragsytere** kan ha tilgang til bestemte tilkoblinger. De er avhengig av administratorer for å konfigurere og dele tilkoblinger. Eksporter-listen viser bidragsytere om de kan redigere eller bare vise en eksport, i kolonnen **Tillatelsene dine**. Hvis du vil ha mer informasjon, kan du gå til [Tillat bidragsytere å bruke en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- **Lesere** kan bare vise eksisterende eksporter – ikke opprette dem.
 
 ### <a name="define-a-new-export"></a>Definere en ny eksport
 

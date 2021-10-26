@@ -1,72 +1,97 @@
 ---
-title: Opprett og endre finjusterte hendelser
-description: Slik oppretter og endrer du begrensede hendelser.
+title: Opprett og endre hendelser
+description: Opprette og endre hendelser.
 ms.reviewer: mhart
 ms.author: jefhar
 author: mochimochi016
-ms.date: 04/30/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 0344bac5f4d43df853309f43c94d95f962937f77c936ed7305c5de4a08835f04
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 935dc4cd41218842e8406b747daef47de04e337a
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034786"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606247"
 ---
-# <a name="create-and-modify-refined-events"></a>Opprett og endre finjusterte hendelser
+# <a name="create-and-modify-events"></a>Opprett og endre hendelser
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
-
 
 En hendelse er data som representerer brukeratferd, for eksempel aktivitet på et nettsted.
 
 - En *basishendelse* registrerer når en bruker viser en side (visningshendelse) eller samhandler med innhold (handlingshendelse).
 - En *begrenset* hendelse er en virtuell visning av en basishendelse. Du definerer begrensede hendelser ved å fjerne og legge til egenskaper eller ved å filtrere hendelser basert på egenskapsverdier.
 
+## <a name="prerequisites"></a>Forutsetninger
+
+Hvis du vil se hendelser, må nettstedsdataene dine først kobles til engasjementsinnsikt med en kodesnutt. Hvis du vil ha mer informasjon, kan du se [Installere web-SDK-en på et webområde](instrument-website.md).
+
+ :::image type="content" source="media/new-events-connect-data.png" alt-text="Koble til dataene dine først.":::
+
+## <a name="create-refined-events"></a>Opprett begrensede hendelser
+
 Bruk begrensede hendelser for å redusere omfanget for en basishendelse for [eksport](export-events.md) eller til å fjerne egenskaper som ikke er nødvendig for eksport.
 
-## <a name="create-refined-events"></a>Opprette finjusterte hendelser
+> [!NOTE]
+> Når du har lagt til web-SDK-en på webområdet, kan du vise basishendelsene og opprette begrensede hendelser. 
 
-Du kan opprette en begrenset hendelse fra en basishendelse på tre måter. 
+Slik viser du basishendelsene:
 
-1. Gå til **Data**> **Hendelse** og velg et av følgende alternativer:
-    - Velg **Nye hendelser**, og velg deretter **Opprett begrensede hendelser**.
-    - Velg en basishendelse for å åpne en detaljert visning, og velg **Opprett begrensede hendelser** fra toppmenyen.
-    - Velg **Mer [...]** for å åpne hurtigmenyen for en basishendelse. Velg deretter **Opprett begrensede hendelser**.
-    
-    :::image type="content" source="media/create-refined-events-options.png" alt-text="Alternativer for å opprette begrensede hendelser.":::
+1. Gå til **Data** i venstre navigasjonsrute.
 
-1. Angi følgende informasjon i dialogboksen **Opprett begrensede hendelser**:
+1. Velg **Hendelser** for å vise en liste over alle hendelsene i arbeidsområdet.
 
-- Velg en hendelse i rullegardinlisten **Basishendelser** hvis du oppretter en ny hendelse.
-- Angi et navn i boksen **Visningsnavn for begrensede hendelser**.
-- Du kan eventuelt oppdatere det foreslåtte **faktiske navnet** uten å bruke mellomrom.
+    :::image type="content" source="media/data-events.png" alt-text="Vis hendelser.":::
 
-3. Velg **Opprett** for å bruke innstillingene.
+Slik oppretter du en finjustert hendelse fra en basishendelse: 
 
-1. I den detaljerte visningen av den begrensede hendelsen velger du **Legg til og fjern egenskaper** for å åpne ruten **Rediger egenskap**. 
+1. Gå til **Data** > **Hendelser** og velg **+ Nye hendelser** øverst på skjermen.
 
-1. Bruk avmerkingsboksene til å velge egenskapene du vil vise, og de du vil skjule. 
-   :::image type="content" source="media/edit-properties-refined-events.png" alt-text="Rediger egenskaper for begrensede hendelser.":::
+1. Velg **Opprett begrensede hendelser** i dialogboksen **Nye hendelser**, og velg deretter **Neste**.
+   
+     :::image type="content" source="media/new-events-wizard.png" alt-text="Veiviser for nye hendelser.":::
+     
+1. Skriv inn følgende informasjon i dialogboksen **Nye hendelser**.
 
-1. Velg **Bekreft** for å ta i bruk valget.
+   - Velg en hendelse fra rullegardinlisten **Basishendelser**.
+   - Angi et navn i boksen **Visningsnavn for begrensede hendelser**.
+   - Du kan eventuelt oppdatere det foreslåtte **faktiske navnet** uten å bruke mellomrom.
 
-1. Velg **Lagre** for å lagre konfigurasjonen.
+1. Velg **Opprett** for å bruke innstillingene.
 
-## <a name="edit-refined-events"></a>Rediger begrensede hendelser
-
-Du kan endre navnet og egenskapene for en begrenset hendelse.
+Den finjusterte hendelsen vises nå i **Hendelse**-listen.
 
 ### <a name="edit-event-name"></a>Rediger hendelsesnavn
 
-1. Gå til **Data** > **Hendelser**. 
-1. Velg **Mer [...]** for en hendelse, og velg **Rediger navn**.
-1. Oppdater hendelsesnavnet og velg **Gi nytt navn**.
+Du kan endre navnet og egenskapene for en basishendelse eller finjustert hendelse.
 
-### <a name="edit-selected-properties"></a>Rediger valgte egenskaper
+1. Gå til **Data** > **Hendelser**. 
+
+1. Velg **Mer [...]** for en hendelse, og velg **Rediger navn**.
+    
+     :::image type="content" source="media/create-refined-events-options.png" alt-text="Alternativer for å opprette begrensede hendelser.":::
+
+3. Oppdater hendelsesnavnet og velg **Gi nytt navn**.
+
+### <a name="view-the-details-of-a-refined-event"></a>Vise detaljene for en finjustert hendelse:
+
+1. Velg den grunnleggende eller finjusterte hendelsen i listen **Hendelse**. 
+
+1. Velg **Legg til og fjern egenskaper** øverst på skjermen for å åpne ruten **Rediger egenskaper**. 
+
+     :::image type="content" source="media/add-remove-properties.png" alt-text="Legg til og fjern egenskaper.":::
+
+1. Bruk avmerkingsboksene til å velge egenskapene du vil vise, og de du vil skjule. 
+
+   :::image type="content" source="media/edit-properties-refined-events.png" alt-text="Rediger egenskaper for begrensede hendelser.":::
+
+1. Velg **Bekreft** for å ta i bruk valget, og velg deretter **Lagre**.
+
+
+### <a name="edit-selected-properties-for-a-refined-event"></a>Redigere valgte egenskaper for en finjustert hendelse
 
 1. Gå til **Data** > **Hendelser**, og velg de begrensede hendelsene for å åpne den detaljerte visningen.
 1. Velg **Legg til og fjern egenskaper**. 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: c639cfca30cf1b57ada7d728311210b7210a37ac
-ms.sourcegitcommit: f72d5b86dfdc7282c6c1918b1ab3962d7a1c9852
+ms.openlocfilehash: bd80d0315f4f501b8f8108b99c144082c21e0d4c
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7557364"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623181"
 ---
 # <a name="relationships-between-entities"></a>Relasjoner mellom enheter
 
@@ -67,6 +67,20 @@ Relasjonen består av en *kildeenhet* som inneholder sekundærnøkkelen og en *m
    - **Målprogramfelt**: Nøkkelfeltet for målenheten. Eksempel: Kunde kan bruke nøkkelfeltet **CustomerID**.
 
 4. Velg **Lagre** for å opprette den egendefinerte relasjonen.
+
+## <a name="set-up-account-hierarchies"></a>Opprette kontohierarkier
+
+Miljøer som er konfigurert til å bruke forretningsforbindelser som primær målgruppe, kan konfigurere forretningsforbindelseshierarkier for relaterte forretningsforbindelser. For eksempel et selskap som har separate forretningsenheter. 
+
+Organisasjoner oppretter forretningsforbindelseshierarkier for bedre å administrere forretningsforbindelser og relasjoner med hverandre. Funksjonen målgruppeinnsikt støtter overordnede-underordnede-forretningsforbindelseshierarkier som allerede finnes i innsatte kundedata. For eksempel forretningsforbindelser fra Dynamics 365 Sales. Disse hierarkiene kan konfigureres på **Relasjoner**-siden i målgruppeinnsikt, under kategorien forretningsforbindelseshierarki.
+
+1. Gå til **Data** > **Relasjoner**.
+1. Velg kategorien **Kontohierarki**.
+1. Velg **Nytt hierarki for forretningsforbindelse**. 
+1. Angi et navn på hierarkiet i ruten **Kontohierarki**. Systemet oppretter et navn for utdataenheten. Du kan endre navnet på utdatanavnenheten.
+1. Velg enheten som inneholder kontohierarkiet. Det er vanligvis i samme enhet som inneholder forretningsforbindelsene.
+1. Velg **Forretningsforbindelses-ID** og **ID for overordnet forretningsforbindelse** fra den valgte enheten 
+1. Velg **Lagre** for å bruke innstillingene og fullføre kontohierarkiet.
 
 ## <a name="view-relationships"></a>Vise relasjoner
 

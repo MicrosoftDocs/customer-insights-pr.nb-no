@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: fcc45c24e9d89516dba9964ee16f57caf439eff0
-ms.sourcegitcommit: 2abe9b661b8c3c01e9730c629e383402e3f6a655
+ms.openlocfilehash: 5262ad20019e90e73ab121a5ab90e602c1a32b7e
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/31/2021
-ms.locfileid: "7465217"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606110"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Nyheter i funksjonaliteten for målgruppeinnsikt i Dynamics 365 Customer Insights
 
@@ -26,6 +26,20 @@ Vi ruller ut oppdateringer for hver region. Enkelte områder kan se funksjoner f
 
 > [!TIP]
 > For å sende inn og stemme på funksjonsforespørsler og produktforslag, går du til [ideportalen for Dynamics 365-apper](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="september-2021-updates"></a>September 2021-oppdateringer
+
+Oppdateringene i september 2021 inkluderer nye funksjoner, ytelsesoppgraderinger og feilrettinger.
+
+### <a name="activities"></a>Aktiviteter
+
+- **Forbedringer på tidslinje for aktivitet** Vi har utvidet filtrene for aktivitetstidslinjen for kundeprofiler. I tillegg kan du bruke den nye filterruten til å filtrere etter aktivitetstype og dato. Datoer kan filtreres ved hjelp av forskjellige betingelser. Hvis du vil ha mer informasjon, kan du se [Vise tidslinjer for aktiviteter i kundeprofiler](activities.md#view-activity-timelines-on-customer-profiles).
+
+### <a name="relationships"></a>Relasjoner
+
+- **Relasjon med flere mellomstasjoner** Bruk relasjoner med flere mellomstasjoner når du konfigurerer aktiviteter og definerer relasjoner mellom enheter. Relasjoner med mellomstasjoner bruker en mellomliggende enhet til å koble sammen to enheter. Når du konfigurerer en aktivitet, kan du bruke en relasjon med flere mellomstasjoner til å koble aktivitetsenheten til en mellomliggende enhet og deretter til en kundeenhet. Du kan kombinere relasjoner med flere mellomstasjoner med relasjoner med flere baner. For mer informasjon, se [Relasjon med flere mellomstasjoner](relationships.md#multi-hop-relationship).
+
+- **Relasjon med flere baner** Bruk relasjoner med flere baner når du konfigurerer aktiviteter og definerer relasjoner mellom enheter. Relasjoner med flere baner relaterer en kildeenhet til mer enn én enhet. Når du konfigurerer en aktivitet, kan du bruke en relasjon med flere baner til å koble aktivitetsenheten til mer enn én kundeenhet. Du kan kombinere relasjoner med flere baner med relasjoner med flere mellomstasjoner. For mer informasjon, se [Relasjon med flere baner](relationships.md#multi-path-relationship).
 
 ## <a name="august-2021-updates"></a>Oppdateringer for august 2021
 

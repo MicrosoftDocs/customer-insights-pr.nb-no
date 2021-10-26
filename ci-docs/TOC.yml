@@ -2,8 +2,14 @@
   href: index.yml
 - name: Produktoversikt
   href: overview.md
-- name: Opprett en prøveversjon
-  href: audience-insights/get-started-trial.md
+- name: Gratis prøveversjon
+  items:
+    - name: Registrere deg for en gratis prøveversjon
+      href: trial-signup.md
+    - name: Vanlige spørsmål om prøveversjon
+      href: trial-FAQ.md
+- name: Start med en betalt lisens
+  href: paid-license.md
 - name: Få tilgang til miljøet ditt
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Målgruppeinnsikt
@@ -19,9 +25,11 @@
         - name: Hurtigstartveiledning
           href: audience-insights/get-started.md
         - name: Opprett nytt miljø
-          href: audience-insights/get-started-paid.md
+          href: audience-insights/create-environment.md
         - name: Utforsk målgruppeinnsikt
           href: audience-insights/home.md
+    - name: Arbeide med forretningskontoer
+      href: audience-insights/work-with-business-accounts.md
     - name: Lær moduler
       items:
         - name: Hent inn data
@@ -66,6 +74,8 @@
           href: audience-insights/relationships.md
         - name: Vise kundeaktiviteter
           href: audience-insights/activities.md
+        - name: Definere semantiske tilordninger
+          href: audience-insights/semantic-mappings.md
     - name: Datasupplering
       items:
         - name: Supplere kundeprofiler
@@ -114,7 +124,7 @@
               href: audience-insights/predict-product-recommendation.md
             - name: Forutsi abonnementsfrafall
               href: audience-insights/predict-subscription-churn.md
-            - name: Forutse transaksjonelt frafall
+            - name: Forutsi transaksjonsfrafall
               href: audience-insights/predict-transactional-churn.md
             - name: Bruke egendefinerte modeller fra Azure Machine Learning
               href: audience-insights/custom-models.md
@@ -126,7 +136,7 @@
               href: audience-insights/sample-guide-predict-clv.md
             - name: Eksempelveiledning for prognose på abonnementsfrafall
               href: audience-insights/sample-guide-predict-subscription-churn.md
-            - name: Eksempelveiledning for prognose på transaksjonelt frafall
+            - name: Eksempelveiledning for prediksjon for transaksjonsfrafall
               href: audience-insights/sample-guide-predict-transactional-churn.md
             - name: Eksempelveiledning for prediksjon for produktanbefaling
               href: audience-insights/sample-guide-predict-product-recommendation.md
@@ -222,10 +232,14 @@
           href: audience-insights/connections.md
         - name: Behandle flere miljøer
           href: audience-insights/manage-environments.md
-        - name: Koble til en ADLS-lagringskonto ved å bruke en tjenestekontohaver
-          href: audience-insights/connect-service-principal.md
         - name: Språk som støttes
           href: audience-insights/supported-languages.md
+        - name: Sikkerhet
+          items:
+            - name: Hente ditt eget Azure Key Vault
+              href: audience-insights/use-azure-key-vault.md
+            - name: Koble til en ADLS-lagringskonto ved å bruke en tjenestekontohaver
+              href: audience-insights/connect-service-principal.md
     - name: Utvidbarhet
       items:
         - name: Integrere nettdata fra engasjementsinnsikt
@@ -248,6 +262,8 @@
       items:
         - name: Hurtigstartveiledning
           href: engagement-insights/get-started.md
+        - name: Opprette et miljø
+          href: engagement-insights/create-new-environment.md
         - name: Opprett et arbeidsområde
           href: engagement-insights/create-workspace.md
         - name: Registrere hendelser fra nettsteder og mobilapper

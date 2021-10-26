@@ -1,7 +1,7 @@
 ---
 title: Kundeaktiviteter
 description: Definer kundeaktiviteter, og vis dem på en tidslinje i kundeprofiler.
-ms.date: 09/12/2021
+ms.date: 09/27/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: c5697df8a7d011c70384c8bc5e4773d7fcc25a62
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: c250efcd54ec126c0726b22a971cdedd89760d6b
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494423"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617981"
 ---
 # <a name="customer-activities"></a>Kundeaktiviteter
 
@@ -24,8 +24,7 @@ Kombiner kundeaktiviteter fra [ulike datakilder](data-sources.md) i Dynamics 365
 
 Datakildene kan inneholde enheter med transaksjons- og aktivitetsdata fra flere datakilder. Identifiser disse enhetene, og velg aktivitetene du vil vise på kundens tidslinje. Velg enheten som inneholder målaktiviteten eller -aktivitetene.
 
-> [!NOTE]
-> En enhet må ha minst ett attributt av typen **Dato** som inkluderes på en kundetidslinje, og du kan ikke legge til enheter uten **Dato**-feltene. Kontrollen **Legg til aktivitet** er deaktivert hvis det ikke finnes en slik enhet.
+En enhet må ha minst ett attributt av typen **Dato** som inkluderes på en kundetidslinje, og du kan ikke legge til enheter uten **Dato**-feltene. Kontrollen **Legg til aktivitet** er deaktivert hvis det ikke finnes en slik enhet.
 
 1. I Målgruppeinnsikt går du til **Data** > **Aktiviteter**.
 
@@ -41,13 +40,16 @@ Datakildene kan inneholde enheter med transaksjons- og aktivitetsdata fra flere 
 
 1. Velg **Neste** for å gå til neste trinn.
 
-1. Konfigurer detaljene i **Relasjon**-trinnet til å koble aktivitetsdataene til den tilsvarende kunden. Dette trinnet visualiserer tilkoblingen mellom enheter.  
+1. Konfigurer detaljene for å koble aktivitetsdataene til de tilsvarende kundeoppføringen i **Relasjoner**-trinnet. Dette trinnet visualiserer tilkoblingen mellom enheter.  
 
    - **Først**: Eksterne felt i aktivitetsenheten som skal brukes til å opprette en relasjon til en annen enhet.
    - **Sekund**: Tilsvarende kildekundeenhet som aktivitetsenheten skal være i relasjon med. Du kan bare relatere til kildekundeenheter som brukes i dataforeningsprosessen.
    - **Tredje**: Hvis det allerede finnes en relasjon mellom aktivitetsenheten og den valgte kildekundeenheten, vil relasjonsnavnet være i skrivebeskyttet modus. Hvis det ikke finnes noen slik relasjon, opprettes det en ny relasjon med navnet du angir i denne boksen.
 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Definer enhetsrelasjonen.":::
+
+   > [!TIP]
+   > I B2B-miljøer kan du velge mellom forretningsforbindelsesenheter og andre enheter. Hvis du velger en forretningsforbindelsesenhet, angis relasjonsbanen automatisk. For andre enheter må du definere relasjonsbanen over én eller flere mellomliggende enheter til du når en forretningsforbindelsesenhet.
 
 1. Velg **Neste** for å gå til neste trinn. 
 
@@ -95,5 +97,34 @@ Handlingene nedenfor er tilgjengelige når du velger en aktivitet.
 - **Gi nytt navn**: Åpner en dialogboks der du kan angi et annet navn for den valgte aktiviteten. Velg **Lagre** for å ta i bruk endringene.
 
 - **Slett**: Åpner en dialogboks for å bekrefte slettingen av den valgte aktiviteten. Du kan også slette mer enn én aktivitet samtidig ved å velge aktivitetene og deretter velge sletteikonet. Velg **Slett** for å bekrefte slettingen.
+
+## <a name="view-activity-timelines-on-customer-profiles"></a>Vise aktivitetstidslinjer på kundeprofiler
+
+Når du har konfigurert kundeaktiviteter, velger du **Vis i tidslinje** i aktivitetskonfigurasjonen for å finne alle kundeaktivitetene i kundeprofilen.
+
+Hvis du vil åpne tidslinjen for en kunde, går du til **Kunder** og velger kundeprofilen du vil vise.
+
+Hvis en kunde har deltatt i en aktivitet du har konfigurert, finner du den i delen **Aktivitetstidslinje**.
+
+:::image type="content" source="media/Activity_Timeline1.PNG" alt-text="Vise konfigurerte aktiviteter i kundeprofiler.":::
+
+Du kan filtrere aktiviteter på flere måter på tidslinjen for aktiviteter:
+
+- Du kan velge ett eller mange av aktivitetsikonene for å finjustere resultatene slik at de bare inkluderer de valgte typene.
+
+  :::image type="content" source="media/Activity_Timeline2.PNG" alt-text="Filtrer aktiviteter etter type ved hjelp av ikonene.":::
+
+- Du kan velge **Filter** for å åpne et filterpanel for å konfigurere tidslinjefiltrene.
+
+   1. Du kan filtrere etter *ActivityType* og *Dato*
+   1. Velg **Bruk** for å bruke filtrene på tidslinjen for aktiviteten.
+
+   :::image type="content" source="media/Activity_Timeline3.PNG" alt-text="Bruk filterpanelet til å konfigurere filterbetingelser.":::
+
+Hvis du vil fjerne filtre, velger du **x** ved siden av hvert filter som brukes på tidslinjen eller velger **Fjern filtre**.
+
+
+> [!NOTE]
+> Aktivitetsfiltre fjernes når du forlater en kundeprofil. Du må bruke dem hver gang du åpner dem i en kundeprofil.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b67aa7477033222b0bc9512a962a1580edd973b4882ce925620ff5ec14f83fe3
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: fa1d4ffd9f77e128b5d804e4562e964561f4684f
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032724"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618717"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Supplere kundeprofiler med egendefinerte data (forhåndsversjon)
 
@@ -44,6 +44,8 @@ For å konfigure egendefinert SFTP-import må følgende forhåndskrav være oppf
 1.  Velg **Neste**, og angi **Bane** og **Filnavn** for datafilen du vil importere.
 
     :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Skjermbilde når du angir dataplassering.":::
+
+1. Velg **Neste**, og velg kundedatasettet. Dette kan enten være alle kundeprofiler eller et segment.
 
 1. Velg **Neste** angi et navn for suppleringen og et navn for utdataenheten. 
 
@@ -123,6 +125,6 @@ Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velg
 
 ## <a name="next-steps"></a>Neste trinn
 
-Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md) og [mål](measures.md), og [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

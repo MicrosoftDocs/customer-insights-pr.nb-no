@@ -4,27 +4,33 @@ description: Oversikt over tilgjengelige roller og tillatelser for arbeidsområd
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 07/06/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 6d7f4db4a130fc15a69b380c892538db5492d96d8e13f3c070c6a6b9bd098371
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 68e28caf1c14c23acd506da5f7b441f1e3b72e8b
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036705"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645549"
 ---
 # <a name="roles-and-permissions"></a>Roller og tillatelser
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Et arbeidsområde er hvordan du lagrer og administrerer hendelser og rapporter. Et medlem er en bruker som har tilgang til et arbeidsområde. Du kan tilordne medlemmer til arbeidsområdet og definere deres roller og tillatelser. Administratorroller administrerer arbeidsområder og miljøer og konfigurerer engasjementsinnsikt for andre brukere. De bidragsyterrollene er rettet mot analytikere som ikke trenger å konfigurere engasjementsinnsikt, men som ønsker å lage sine egne rapporter, trakter eller segmenter.
+Et arbeidsområde er en sted der du kan lagre og administrere hendelser og rapporter. Hvis du vil ha mer informasjon, kan du se [Opprette et arbeidsområde og legge til medlemmer](create-workspace.md). 
+
+Et arbeidsområde kan inneholde følgende roller og tillatelser:
+
+- *Medlem*-roller er brukere som har tilgang til et arbeidsområde. Du kan tilordne medlemmer til arbeidsområdet og definere deres roller og tillatelser. 
+- *Administrator*-roller administrerer arbeidsområder og miljøer og konfigurerer engasjementsinnsikt for andre brukere. 
+- *Bidragsyter*-roller er rettet mot analytikere som ikke trenger å konfigurere engasjementinnsikt, men som vil opprette sine egne rapporter, trakter eller segmenter.
 
 ## <a name="permissions"></a>Tillatelser
   
-Diagrammet nedenfor viser tillatelser for hver rolle. 
+Tabellen nedenfor viser tillatelser for hver rolle. 
 
 | Tillatelse | Miljøadministrator | Administrator for arbeidsområde | Miljøbidragsyter | Bidragsyter for arbeidsområde | 
 |--|--|--|--|--|

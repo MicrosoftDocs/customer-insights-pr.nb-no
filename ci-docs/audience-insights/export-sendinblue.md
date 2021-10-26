@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til Sendinblue
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til Sendinblue.
-ms.date: 06/29/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: be52554763b57e1c1ef2f960d52bbae79ac9827913c97ac73b429f66bbf4db37
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b5924b2d4e7f0b11ce6478a31015fcbaaf44ff93
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036067"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617797"
 ---
 # <a name="export-segments-to-sendinblue-preview"></a>Eksportere segmenter til Sendinblue (forhåndsvisning)
 
@@ -29,10 +29,10 @@ Eksporter segmenter for enhetlige kundeprofiler for å generere kampanjer, lever
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-- Opptil 1 million profiler per eksport til Sendinblue.
+- Opptil 1 million kundeprofiler per eksport til Sendinblue.
 - Eksport til Sendinblue er begrenset til segmenter.
-- Det kan ta opptil 90 minutter å eksportere segmenter med totalt 1 million profiler. 
-- Antall profiler du kan eksportere til Sendinblue, er avhengig av og begrenset til kontrakten med Sendinblue.
+- Det kan ta opptil 90 minutter å eksportere segmenter med totalt 1 million kundeprofiler. 
+- Antall kundeprofiler du kan eksportere til Sendinblue, avhenger av og begrenses til kontrakten med Sendinblue.
 
 ## <a name="set-up-connection-to-sendinblue"></a>Konfigurere tilkobling til Sendinblue
 
@@ -64,7 +64,7 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Angi **Sendinblue-liste-IDen** 
 
-1. I **Datasamsvar**-delen, i feltet **E-post** velger du feltet i den enhetlige kundeprofilen som representerer en kundes e-postadresse. 
+1. Velg feltet som representerer en kundes e-postadressen, i delen **Datasamsvar** i **E-post**-feltet. 
 
 1. Du kan eventuelt eksportere **Fornavn**, **Etternavn** og **Telefon** for å opprette mer tilpassede e-postmeldinger. Velg **Legg til attributt** for å tilordne disse feltene.
 

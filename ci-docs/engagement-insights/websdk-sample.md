@@ -4,17 +4,17 @@ description: Finn ut hvordan du tilpasser og kjører et eksempel på nett-SDK.
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 10/30/2020
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 97e50a51231bcf05f3e381397f0cf41e49afc10e3c3674d7c709c8f521979e12
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 545f4a7e9660e339dee1070ad727d5d398eb6254
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036615"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606249"
 ---
 # <a name="run-the-web-sdk-sample-for-dynamics-365-customer-insights-engagement-insights-capability"></a>Kjør nett-SDK-eksempelet for Dynamics 365 Customer Insights-engasjementsinnsiktfunksjonalitet
 
@@ -26,7 +26,7 @@ Biblioteket for nett-SDK for engasjementsinnsikt er et JavaScript-bibliotek med 
 
 - Installer [Visual Studio Code](https://code.visualstudio.com/).
 - [Installer Live Server-utvidelsen](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) i Visual Studio Code, og gjør deg kjent med hvordan du kjører Live Server.
-- Du må ha [inntaksnøkkelen](instrument-website.md).
+- Du må ha et [arbeidsområde for engasjementsinnsikt](create-workspace.md).
 
 ## <a name="run-sample"></a>Kjør eksempel
 
@@ -36,7 +36,11 @@ Biblioteket for nett-SDK for engasjementsinnsikt er et JavaScript-bibliotek med 
 
 1. Åpne den utpakkede mappen i Visual Studio Code.
 
-1. Erstatt strengen INGESTION_KEY i `ei_websdk_sample.html`-filen med inntaksnøkkelen fra portalen for engasjementsinnsikt, og strengen NAME med det globale navnet du vil at SDK-en skal startes i. Kontroller at du erstatter alle forekomster.
+1. Gå til engasjementinnsiktportalen for arbeidsområdet. Velg **Administrator** > **Arbeidsområde** og deretter **Installasjonsveiledning**. Følg det første alternativet, og velg **Kopier kode** for å kopiere JavaScript-kodesnutten.
+
+1. I `ei_websdk_sample.html`-filen limer du inn kodesnutten du nettopp kopierte, under denne linjen:
+
+   - <- LIM INN JAVASCRIPT-KODESNUTT FRA ENGASJEMENTINNSIKTSPORTALEN HER UNDER DENNE LINJEN – >
 
 1. Åpne `ei_websdk_sample.html`-filen ved hjelp av Live Server i Visual Studio Code ved å velge **Bli tilkoblet** fra statuslinjen.
 

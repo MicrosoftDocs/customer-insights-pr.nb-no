@@ -1,7 +1,7 @@
 ---
 title: Supplere enhetlige kundeprofiler
 description: Bruk funksjoner for å supplere kundedataene.
-ms.date: 08/31/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 992c45e30e2dff00f5207290940b56b2fe1c08ad
-ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
+ms.openlocfilehash: 5d5e12ee44dfa40c470738eaee5c68fdf23d1b2d
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "7470012"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617567"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
 
@@ -27,16 +27,26 @@ I måltruppeinnsikt går du til **Data** > **Supplering** for å arbeide med sup
 
 Du må ha tillatelse som bidragsyter eller administrator for å opprette eller redigere berikelser. Du finner mer informasjon i [Tillatelser](permissions.md).
 
-I kategorien **Oppdag** finner du følgende suppleringer:
+I kategorien **Oppdag** finner du alle støttede suppleringsalternativer.
 
-- [Azure Maps](enrichment-azure-maps.md) levert av Microsoft
+# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
+
 - [Merker](enrichment-microsoft.md) levert av Microsoft
 - [Interesser](enrichment-microsoft.md) levert av Microsoft
-- [Forbedrede adresser](enrichment-enhanced-addresses.md) levert av Microsoft
-- [Firmadata](enrichment-leadspace.md) levert av Leadspace
+- [Forbedrede adresser](enrichment-enhanced-addresses.md) levert av Microsoft 
 - [Demografi](enrichment-experian.md) levert av Experian
-- [Stedsdata](enrichment-here.md) levert av HERE Technologies
-- [Egendefinerte data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP)
+- [Egendefinerte data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
+- [Azure Maps](enrichment-azure-maps.md) levert av Microsoft
+
+# <a name="business-accounts-b2b"></a>[Forretningsforbindelser (B2B)](#tab/b2b)
+
+- [Firmadata](enrichment-leadspace.md) levert av Leadspace
+- [Forbedrede adresser](enrichment-enhanced-addresses.md) levert av Microsoft 
+- [Stedsdata](enrichment-here.md) levert av HERE Technologies 
+- [Egendefinerte data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
+- [Azure Maps](enrichment-azure-maps.md) levert av Microsoft
+
+---
 
 I kategorien **Mine suppleringer** kan du se de suppleringene du har konfigurert, og redigere egenskapene deres.
 
@@ -58,7 +68,7 @@ Kjør eller deaktiver flere suppleringer samtidig ved å merke dem i listen. Vis
 
 ## <a name="enrichments-and-connections"></a>Suppleringer og tilkoblinger
 
-Tredjeparts suppleringer konfigureres ved hjelp av [tilkoblinger](connections.md), som en administrator konfigurerer med legitimasjon og gir samtykketil dataoverføringer. Tilkoblingen kan brukes av administratorer og bidragsytere til å konfigurere suppleringer.  
+Tredjeparts suppleringer konfigureres ved hjelp av [tilkoblinger](connections.md), som en administrator konfigurerer med legitimasjon og gir samtykketil dataoverføringer. Tilkoblingene kan brukes av administratorer og bidragsytere til å konfigurere suppleringer.  
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flere suppleringer av samme type
 

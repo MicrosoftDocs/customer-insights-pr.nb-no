@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til Mailchimp
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til Mailchimp.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: a6bdf43bb40345b868bf2e7d2c91de169c8ba841ba77f732f455f4c4d496a7f5
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 94a9fead56ce8c40b35d4eb41ebdc0d672798dce
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033551"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618625"
 ---
 # <a name="export-segments-to-mailchimp-preview"></a>Eksportere segmenter til Mailchimp (forhåndsversjon)
 
@@ -29,10 +29,10 @@ Eksporter segmenter av enhetlige kundeprofiler til MailChimp for å opprette nyh
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-- Opptil 1 million profiler per eksport til Mailchimp.
+- Opptil 1 million kundeprofiler per eksport til Mailchimp.
 - Eksport til Mailchimp er begrenset til segmenter.
-- Det kan ta opptil tre timer å eksportere segmenter med 1 million profiler. 
-- Antallet profiler du kan eksportere til Mailchimp, er avhengig av og begrenset til kontrakten din med Mailchimp.
+- Det kan ta opptil tre timer å eksportere segmenter med 1 million kundeprofiler. 
+- Antall kundeprofiler du kan eksportere til Mailchimp, avhenger av og begrenses til kontrakten med Mailchimp.
 
 ## <a name="set-up-connection-to-mailchimp"></a>Konfigurer tilkoblingen til Mailchimp
 
@@ -66,7 +66,7 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Angi **[ID for Mailchimp-målgruppe](https://mailchimp.com/help/find-audience-id/)**
 
-3. I **Datasamsvar**-delen, i feltet **E-post** velger du feltet i den enhetlige kundeprofilen som representerer en kundes e-postadresse. 
+1. Velg feltet som representerer en kundes e-postadressen, i delen **Datasamsvar** i **E-post**-feltet. 
 
 1. Du kan eventuelt eksportere **fornavn** og **etternavn** for å opprette mer tilpassede e-poster. Velg **Legg til attributt** for å tilordne disse feltene.
 

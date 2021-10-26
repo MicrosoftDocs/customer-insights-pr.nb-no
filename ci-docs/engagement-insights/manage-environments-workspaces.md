@@ -4,17 +4,17 @@ description: Slik oppretter du, gir nytt navn til og sletter arbeidsområder og 
 author: jusali
 ms.reviewer: mhart
 ms.author: jusali
-ms.date: 09/09/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: a5b48db5ae23ea65bf608d67348d493bfdc7678f
-ms.sourcegitcommit: 0ceb46c4f57ab49d3a2ebb1c8a816bbafe979e3d
+ms.openlocfilehash: 279af24358a1d6ea2b4cc75d5496042af73a7cae
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/09/2021
-ms.locfileid: "7486047"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645458"
 ---
 # <a name="manage-environments-and-workspaces"></a>Administrere miljøer og arbeidsområder
 
@@ -22,42 +22,20 @@ ms.locfileid: "7486047"
 
 ## <a name="overview"></a>Oversikt
 
-Et arbeidsområde er en sted der du kan lagre og administrere hendelser og rapporter. Det er her du kan vise brukeraktivitet i sanntid. Når du oppretter et arbeidsområde, velger du datatypen du vil sende til arbeidsområdet. For øyeblikket støttes webdata og mobilapper.
+Dette emnet beskriver hvordan du behandler arbeidsområder og miljøer når de allerede er opprettet. 
 
-Et miljø er et sted der du administrerer arbeidsområder og tilkoblinger. Hvordan du bruker miljøer avhenger av organisasjonen og brukssaken. Du kan for eksempel opprette:
+- Et *arbeidsområde* er en sted der du kan lagre og administrere hendelser og rapporter. Det er her du kan vise brukeraktivitet i sanntid. Når du oppretter et arbeidsområde, velger du datatypen du vil sende til arbeidsområdet. For øyeblikket støttes webdata og mobilapper. Hvis du vil ha mer informasjon, kan du se [Opprette et arbeidsområde og legge til medlemmer](create-workspace.md).
 
--   Et enkeltstående miljø.
--   Separate miljøer for test og produksjon.
--   Separate miljøer for bestemte team eller avdelinger i organisasjonen som inneholder relevante hendelser for hver målgruppe.
--   Separate miljøer for forskjellige globale filialer av firmaet.
--   Tilkoblinger til Customer Insights-målgruppeinnsiktfunksjon.
+- Et *miljø* er et sted der du administrerer arbeidsområder og tilkoblinger. Hvis du vil ha mer informasjon, kan du se [Opprette et nytt miljø](create-new-environment.md).
 
-## <a name="choose-an-environment-and-create-a-workspace"></a>Velg et miljø og opprett et arbeidsområde 
-
-Hvert arbeidsområde må være i et miljø. Du kan velge et eksisterende miljø eller opprette et nytt når du oppretter et arbeidsområde. Deretter kan du velge å legge til arbeidsområdemedlemmer og begynne å samle inn data.
-
-**Slik oppretter du ditt første arbeidsområde**
-
-1. Velg **Nytt** i arbeidsområdebytteren i engasjementsinnsikt. 
-
-   :::image type="content" source="media/New-workspace.png" alt-text="Arbeidsområdevelger for Customer Insights-side.":::
-
-1. Velg et miljø fra listen, eller velg **Opprett nytt miljø**.
-
-1. Angi et navn i **Navn på arbeidsområde**. 
-
-1. Velg hvilken type miljø du vil opprette, avhengig av om du vil måle hva som skjer på et nettsted eller i en mobilapp. 
-
-1. Du kan legge til medlemmer og tilordne tilgangsnivået deres fra **Rolle**-listen. Deretter velger du **Fullfør** for å opprette arbeidsområdet eller **Neste** for å installere kode. 
-
-1. Installer kodesnutten for å begynne å motta data, og velg deretter **Fullført**. 
-
-## <a name="manage-a-workspace"></a>Administrer et arbeidsområde
+## <a name="manage-an-existing-workspace"></a>Administrere et eksisterende arbeidsområde
 
 Du kan vedlikeholde flere arbeidsområder samtidig i et miljø. Din [rolle](user-roles.md) avgjør hvordan du kan arbeide i dem. 
 
  - Du må være miljøadministrator eller arbeidsområdeadministrator for å kunne administrere arbeidsområdet.
  - Som arbeidsområdeadministrator kan du gi nytt navn til eksisterende arbeidsområder eller slette dem. 
+
+:::image type="content" source="media/workspace-edit.png" alt-text="Administrasjonssenter for arbeidsområde.":::
 
 ### <a name="edit-a-workspace-name"></a>Rediger et navn på arbeidsområde
 
@@ -75,7 +53,7 @@ Hvis du sletter et arbeidsområde, fjernes alt innhold, data, innstillinger og t
 
 1. Velg **Slett arbeidsområde**. 
 
-1. Angi **BEKREFT SLETTING** i dialogen **Slett arbeidsområde**. 
+1. I dialogboksen **Slett arbeidsområde** angir du **BEKREFT SLETTING**. 
 
 1. Velg **Slett** for å slette arbeidsområdet permanent.
 
@@ -87,27 +65,11 @@ Hvis du sletter et arbeidsområde, fjernes alt innhold, data, innstillinger og t
 
 1. Velg **Legg til medlemmer** for å legge dem til i arbeidsområdet.
 
-## <a name="manage-an-environment"></a>Administrere et miljø
+## <a name="manage-an-existing-environment"></a>Administrere et eksisterende miljø
 
 Som miljøadministrator kan du få tilgang til et miljø fra den venstre navigasjonsruten. Du kan konfigurere miljøinnstillinger, andre miljøadministratorer og arbeidsområder. Velg faner for å gå mellom ulike områder i administrasjonssenteret.
 
-:::image type="content" source="media/New-environment.png" alt-text="Administrasjonssenter for miljø.":::
-
-### <a name="create-an-environment"></a>Opprett et miljø
-
-1. Velg **+Ny** i arbeidsområdevelgeren.
-
-1. Åpne rullegardinlisten **Miljø** i den veiledede opplevelsen, og velg **Opprett nytt miljø**. 
-
-1. Oppgi et **miljønavn**.
-
-   :::image type="content" source="media/create-environment.png" alt-text="Trinn i den veiledede opplevelsen for å angi miljødetaljene.":::
-
-1. Velg **Område**, og velg **Neste**. 
-
-1. Angi et navn på arbeidsområdet, og velg hvilken type arbeidsområde du vil opprette. 
-
-1.  Du kan eventuelt legge til medlemmer og kopiere kodesnutt fullføre opprettingsprosessen.
+:::image type="content" source="media/environment-edit.png" alt-text="Administrasjonssenter for miljø.":::
 
 ### <a name="rename-an-environment"></a>Endre navn på et miljø
 
@@ -131,7 +93,7 @@ Miljøadministratorer kan slette miljøer. Før du kan slette et miljø, må du 
 
 1. Velg **Slett miljø**. 
 
-1. Angi **BEKREFT SLETTING** i dialogen **Slett arbeidsområde**. 
+1. I dialogboksen **Slett arbeidsområde** angir du **BEKREFT SLETTING**. 
 
 1. Velg **Slett** for å slette miljøet permanent.
 

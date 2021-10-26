@@ -1,7 +1,7 @@
 ---
 title: Opprette og behandle miljøer
 description: Lær hvordan du registrerer deg for tjenesten og hvordan du administrerer miljøer.
-ms.date: 07/22/2021
+ms.date: 10/14/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e3f99f8f151aea5f120084382babd5e46e109545a4f63aafc51c3ecb1400cc33
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: ce2fdd435a81bb04148057554c5958e3ab59f125
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034189"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645138"
 ---
 # <a name="manage-environments"></a>Behandle miljøer
 
@@ -26,7 +26,7 @@ Velg kontrollen **Miljø** øverst i høyre hjørne på siden for å endre milj�
 
 :::image type="content" source="media/home-page-environment-switcher.png" alt-text="Skjermbilde av kontrollen for å bytte miljø.":::
 
-Administratorer kan [opprette](get-started-paid.md) og behandle miljøer.
+Administratorer kan [opprette](create-environment.md) og behandle miljøer.
 
 ## <a name="edit-an-existing-environment"></a>Redigere et eksisterende miljø
 
@@ -36,23 +36,9 @@ Du kan redigere noen av detaljene i eksisterende miljøer.
 
 2.  Velg **Rediger**-ikonet.
 
-3. I **Rediger miljø**-boksen kan du oppdatere miljøets **visningsnavn**, men du kan ikke endre **område** eller **type**.
+3. I **Rediger miljø**-boksen kan du oppdatere miljøinnstillingene.
 
-4. Hvis et miljø er konfigurert til å lagre data i Azure Data Lake Storage, kan du oppdatere **Nøkkel for forretningsforbindelse**. Du kan imidlertid ikke endre **Kontonavn** eller **Beholder**-navn.
-
-5. Du kan eventuelt oppdatere fra en tilkobling basert på en kontonøkkel til en ressursbasert eller abonnementsbasert tilkobling. Når du har oppgradert, kan du ikke tilbakestille til kontonøkkelen etter oppdateringen. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). Du kan ikke endre informasjon om en **beholder** når du oppdaterer tilkoblingen.
-
-6. Alternativt kan du angi en URL-adresse for Microsoft Dataverse-miljøet under **Konfigurere datadeling med Microsoft Dataverse og aktivere flere funksjoner**. Disse funksjonene omfatter datadeling med programmer og løsninger basert på Microsoft Dataverse, datainntak fra lokale datakilder eller bruk av [prediksjoner](predictions.md). Velg **Aktiver datadeling** for å dele Customer Insights-utdata med en Microsoft Dataverse-administrert Data Lake.
-
-   > [!NOTE]
-   > - Det er for øyeblikket ikke støtte for datadeling med Microsoft Dataverse-styrt datasjø når du lagrer alle dataene i din egen Azure Data Lake Storage.
-   > - [Prediksjon for manglende verdier i en enhet](predictions.md) og PowerBI Embedded-rapporter i målgruppeinnsikt (hvis aktivert i miljøet) støttes for øyeblikket ikke når du aktiverer deling av data med administrert Microsoft Dataverse-datasjø.
-
-   Etter at du har aktivert datadeling med Microsoft Dataverse, starter en fullstendig oppdatering av datakildene og andre prosesser. Hvis prosesser kjører, vises ikke alternativet for å aktivere datadeling med Microsoft Dataverse. Vent til disse prosessene er fullført eller avbrutt for å aktivere datadeling. 
-   
-   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Konfigurasjonsalternativer for å aktivere datadeling med Microsoft Dataverse.":::
-   
-   Når du kjører prosesser, for eksempel datainntak eller segmentopprettelse, blir tilsvarende mapper opprettet i lagringskontoen du angav ovenfor. Datafiler og model.json-filer blir opprettet og lagt til i de respektive undermappene, avhengig av prosessen du kjører.
+Hvis du vil ha mer informasjon om miljøinnstillinger, kan du se [Opprette et nytt miljø](create-environment.md).
 
 ## <a name="copy-the-environment-configuration"></a>Kopier miljøkonfigurasjonen
 

@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til Microsoft Advertising
 description: Finn ut hvordan du konfigurerer tilkoblingen og eksporten til Microsoft Advertising.
-ms.date: 05/12/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 8f8a4cbb9590f9c5311789154319283530e0a10343cccbe9c7aec99765b4fbf2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 12fd221acb7c0eed443c9b860aca42dcb2b3788c
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031484"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618073"
 ---
 # <a name="export-segments-to-microsoft-advertising-preview"></a>Eksportere segmenter til Microsoft Advertising (forhåndsversjon)
 
@@ -29,9 +29,9 @@ Eksporter Customer Insights-segmenter til Microsoft Advertising for å opprette 
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-- Du kan eksportere opptil 500 000 profiler per eksport til Microsoft Advertising.
+- Du kan eksportere opptil 500 000 kundeprofiler per eksport til Microsoft Advertising.
 - Eksport til Microsoft Advertising er begrenset til segmenter.
-- Det kan ta opptil 10 minutter å eksportere 500 000 profiler til Microsoft Advertising. 
+- Det kan ta opptil 10 minutter å eksportere 500 000 kundeprofiler til Microsoft Advertising. 
 
 
 ## <a name="set-up-the-connection-to-microsoft-advertising"></a>Konfigurere tilkoblingen til Microsoft Advertising
@@ -68,7 +68,7 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Angi **Kunde-ID og konto-ID for Microsoft Advertising**. Du finner kunde-ID-en (`cid`) og konto-ID-en (`aid`) i parameterne for nettadressen når du er logget på Microsoft Advertising.
 
-1. Velg feltet i den enhetlige kundeprofilen med e-postadressen til en kunde i feltet **E-post** i delen **Datasamsvar**. Det kreves for å eksportere segmenter til Microsoft Advertising.
+1. Velg feltet med e-postadressen til en kunde, i delen **Datasamsvar** i **E-post**-feltet. Det kreves for å eksportere segmenter til Microsoft Advertising.
 
 1. Velg **Lagre**.
 

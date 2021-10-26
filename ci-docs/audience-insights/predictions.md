@@ -9,12 +9,12 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6ce72486faa97e6f630a991044ca5e6d4714d0b8b8395a60fad12f3e3a49fa29
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 7ca42334420a27a8739d7c28bb72606c3ed91f3c
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032447"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645046"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Fyll ut de delvise dataene med prognoser
 
@@ -35,7 +35,7 @@ Før organisasjonen kan bruke prognosefunksjonen, må du kontrollere at følgend
 
 2. Ditt målgruppeinnsiktsmiljø er knyttet til Dataverse-forekomsten din.
 
-Hvis du [oppretter et nytt miljø](get-started-paid.md), konfigurerer du det i dialogboksen **Opprett et miljø** og velger **Avansert**. Hvis du allerede har opprettet et miljø, går du til innstillingene og velger **Avansert**. Uansett går du til delen **Bruk prediksjoner** og angir URL-adressen til Dataverse-forekomsten som du vil knytte miljøet ditt til.
+Hvis du vil ha mer informasjon, kan du se [Opprette et nytt miljø](create-environment.md).
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Opprette en prognose i kundeenheten
 

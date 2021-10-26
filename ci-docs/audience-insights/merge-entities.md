@@ -1,7 +1,7 @@
 ---
 title: Slå sammen enheter i dataforening
 description: Slå sammen enheter for å opprette enhetlige kundeprofiler.
-ms.date: 09/14/2021
+ms.date: 10/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,12 +9,14 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b038cd3f5b433fedf918d34bbfaf2261e11c5c17
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+searchScope:
+- ci-merge
+ms.openlocfilehash: 6b3002b21ea043315e50724ec103aef8a3ced98e
+ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494331"
+ms.lasthandoff: 10/18/2021
+ms.locfileid: "7648266"
 ---
 # <a name="merge-entities"></a>Slå sammen enheter
 
@@ -89,7 +91,7 @@ Velg **Utelatte felter** på **Slå sammen**-siden for å vise listen over alle 
     :::image type="content" source="media/recency-merge-option.png" alt-text="Nylighetsalternativ i dialogboksen for flettefelter.":::
     - **Minst nylig**: Identifiserer vinnerverdien basert på minste nylighet. Krever en dato eller et numerisk felt for hver enhet som deltar i omfanget for flettefeltene, for å definere nyligheten.
 
-1.  Du kan legge til flere felter for å delta i fletteprosessen.
+1.  Du kan legge til flere felt for å delta i fletteprosessen.
 
 1.  Du kan gi nytt navn til det flettede feltet.
 
@@ -131,7 +133,7 @@ Noen enheter inneholder flere detaljer enn andre. Hvis en enhet inneholder de ny
 
 Når du har konfigurert sammenslåingsfelter, kan du definere hvordan du vil generere CustomerId-verdier, de unike kundeprofilidentifikatorene. Flettetrinnet i datasammenslåingsprosessen genererer den unike kundeprofilidentifikatoren. Identifikatoren er CustomerId i *Kunde*-enheten som er et resultat av dataenhetsprosessen. 
 
-CustomerId i kundeenheten er basert på et nummer for den første verdien til primærnøklene som ikke er nullvinner. Disse nøklene kommer fra enhetene som brukes i samsvars- og sammenslåingsfasen, og påvirkes av samsvarsrekkefølgen. Den genererte CustomerID kan derfor endres når en primærnøkkelverdi endres i primærenheten i samsvarsordren. Derfor er det ikke sikkert at primærnøkkelverdien alltid representerer samme kunde.
+CustomerId i kundeenheten er basert på et nummer for den første verdien til primærnøklene som ikke er nullvinner. Disse nøklene kommer fra enhetene som brukes i samsvars- og sammenslåingsfasen, og påvirkes av samsvarsrekkefølgen. Den genererte CustomerID kan derfor endres når en primærnøkkelverdi endres i primærenheten i samsvarsordren. Primærnøkkelverdien representerer kanskje ikke alltid samme kunde.
 
 Konfigurasjon av en stabil kunde-ID gjør det mulig å unngå denne virkemåten.
 
@@ -139,7 +141,7 @@ Konfigurasjon av en stabil kunde-ID gjør det mulig å unngå denne virkemåten.
 
 1. Gå til **Samle** > **Slå sammen**.
 
-1. På **Slå sammen**-siden velger du **Nøkler**-fanen. 
+1. Velg kategorien **Nøkler**. 
 
 1. Hold markøren over **CustomerId**-raden, og velg alternativet **Konfigurer**.
    :::image type="content" source="media/customize-stable-id.png" alt-text="Kontroller for å tilpasse ID-genereringen.":::
@@ -147,6 +149,30 @@ Konfigurasjon av en stabil kunde-ID gjør det mulig å unngå denne virkemåten.
 1. Velg opptil fem felter som vil bestå av en unik kunde-ID og er mer stabil. Oppføringer som ikke samsvarer med konfigurasjonen, bruker i stedet en systemkonfigurert ID.  
 
 1. Velg **Fullført**, og kjør fletteprosessen for å ta i bruk endringene.
+
+## <a name="group-profiles-into-households-or-clusters"></a>Grupper profiler i husholdninger eller klynger
+
+Som en del av konfigurasjonsprosessen for kundeprofilgenerering kan du definere regler for å gruppere relaterte profiler i en klynge. Det finnes for øyeblikket to typer klynger som er tilgjengelige – husholdning og tilpassede klynger. Systemet velger automatisk en husholdning med forhåndsdefinerte regler hvis *Kunde*-enheten inneholder de semantiske felter *Person.LastName* og *Location.Address*. Du kan også opprette en klynge med dine egne regler og betingelser, omtrent som [samsvarsregler](match-entities.md#define-rules-for-match-pairs).
+
+**Definere en husholdning eller en klynge**
+
+1. Gå til **Samle** > **Slå sammen**.
+
+1. Velg **Avansert** > **Opprett klynge** i kategorien **Opprett klynge**.
+
+   :::image type="content" source="media/create-cluster.png" alt-text="Kontroll for å opprette en ny klynge.":::
+
+1. Velg mellom en **Husholdning** eller en **Egendefinert**. Hvis de semantiske feltene *Person.LastName* og *Location.Address* finnes i *Kunde*-enheten, velges husholdning automatisk.
+
+1. Angi et navn for klyngen, og velg **Fullført**.
+
+1. Velg kategorien **Klynger** for å finne klyngen du opprettet.
+
+1. Angi reglene og betingelsene for å definere klyngen.
+
+1. Velg **Kjør** for å kjøre fletteprosessen og opprette klyngen.
+
+Når du har kjørt sammenslåingsprosessen, legges klyngeidentifikatorene til som nye felt i *Kunde*-enheten.
 
 ## <a name="run-your-merge"></a>Kjøre flettingen
 

@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til Marketo
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til Marketo.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 0d5eaa769973c861d89287bba0ed29509ab2efc653bdd8e177cc49b3560c698e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 71a16bd71a58b5cc0a6a2ed421561d91f782dd8e
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033505"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619177"
 ---
 # <a name="export-segments-to-marketo-preview"></a>Eksportere segmenter til Marketo (forhåndsvisning)
 
@@ -29,10 +29,10 @@ Du kan eksportere segmenter av enhetlige kundeprofiler for å generere kampanjer
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-- Opptil 1 million profiler per eksport til Marketo.
+- Opptil 1 million kundeprofiler per eksport til Marketo.
 - Eksport til Marketo er begrenset til segmenter.
-- Eksport av segmenter med totalt 1 million profiler kan ta opptil tre timer. 
-- Antallet profiler du kan eksportere til Marketo, er avhengig av og begrenset til kontrakten din med Marketo.
+- Det kan ta opptil 3 timer å eksportere segmenter med totalt 1 million kundeprofiler. 
+- Antall kundeprofiler du kan eksportere til Marketo, avhenger av og begrenses til kontrakten med Marketo.
 
 ## <a name="set-up-connection-to-marketo"></a>Konfigurere tilkobling til Marketo
 
@@ -64,7 +64,7 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Angi **[ID-en for Marketo-listen](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**. Liste-ID-en er en ren numerisk verdi. Hvis Marketo-liste-ID-en for eksempel er ST12345A7, fjerner du tegnet før og etter tallene og angir `12345`. 
 
-1. I **Datasamsvar**-delen, i feltet **E-post** velger du feltet i den enhetlige kundeprofilen som representerer en kundes e-postadresse. 
+1. Velg feltet som representerer en kundes e-postadressen, i delen **Datasamsvar** i **E-post**-feltet. 
 
 1. Du kan eventuelt eksportere **Fornavn**, **Etternavn**, **Poststed**, **Delstat** og **Land/område** for å opprette mer tilpassede e-poster. Velg **Legg til attributt** for å tilordne disse feltene.
 

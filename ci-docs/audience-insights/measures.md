@@ -1,7 +1,7 @@
 ---
 title: Opprett og administrer mål
 description: Definer mål som skal analyseres og gjenspeile selskapets ytelse.
-ms.date: 04/12/2021
+ms.date: 09/30/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3593a02ce89233cf1e66c6beee669dd6dd261ba3b0e1d2d0cc966731349d7d0b
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 39acca78c022bc15ebc15dc80f21fe175da04d4d
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7037020"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7622982"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere mål
 
@@ -26,15 +26,15 @@ Bruk måleverktøyet til å planlegge forretningsaktiviteter ved å spørre ette
 
 ## <a name="build-your-own-measure-from-scratch"></a>Bygg ditt eget mål fra bunnen av
 
-Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan bygge et mål med dataattributter fra dataenheter som har en relasjon konfigurert til å koble til kundeenheten. 
+Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan bygge et mål med dataattributter fra dataenheter som har en relasjon konfigurert til å koble til enheten for enhetlig kundeprofil.
+
+# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
 
 1. I Målgruppeinnsikt går du til **Mål**.
 
 1. Velg **Ny** og deretter **Bygg din egen**.
 
 1. Velg **Rediger navn**, og angi et **navn** for målet. 
-   > [!NOTE]
-   > Hvis den nye målkonfigurasjonen bare har to felter, for eksempel Kunde-ID og én beregning, legges utdataene til som en ny kolonne i den systemgenererte enheten Customer_Measure. Du kan også se målets verdi i den enhetlige kundeprofilen. Andre tiltak vil generere sine egne enheter.
 
 1. Velg aggregasjonsfunksjon fra rullegardinlisten **Velg funksjon** i konfigurasjonsområdet. Aggregasjonsfunksjonene omfatter: 
    - **Sum**
@@ -73,11 +73,11 @@ Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan by
    1. Velg **Rediger dimensjoner** for å legge til dataattributter du vil gruppere målverdiene etter. For eksempel poststed eller kjønn. Som standard velges *CustomerID*-dimensjonen for å opprette *mål på kundenivå*. Du kan fjerne standarddimensjonen hvis du vil opprette *tiltak på forretningsnivå*.
    1. Velg **Ferdig** for å legge til dimensjonene i målet.
 
-1. Hvis det finnes verdier i dataene som du må erstatte med et heltall, for eksempel erstatte *null* med *0*, velger du **Regler**. Konfigurer regelen, og pass på at du bare velger hele tall som erstatning.
+1. Hvis det finnes verdier i dataene som du må erstatte med et heltall, velger du **Regler**. Konfigurer regelen, og pass på at du bare velger hele tall som erstatning. Du kan for eksempel erstatte *null* med *0*.
 
 1. Hvis det finnes flere baner mellom dataenheten du tilordnet og *Kunde*-enheten, må du velge en av de identifiserte [enhetsrelasjonsbanene](relationships.md). Måleresultatene kan variere avhengig av den valgte banen. 
    
-   1. Velg **Datainnstillinger**, og velg enhetsbanen som skal brukes til å identifisere målet. Hvis det bare finnes én enkelt bane til *Kunde*-enheten, vises ikke denne kontrollen.
+   1. Velg **Relasjonsbane**, og velg enhetsbanen som skal brukes til å identifisere målet. Hvis det bare finnes én enkelt bane til *Kunde*-enheten, vises ikke denne kontrollen.
    1. Velg **Fullført** for å ta i bruk valget. 
 
    :::image type="content" source="media/measures-data-preferences.png" alt-text="Velg enhetsbanen for målet.":::
@@ -92,7 +92,79 @@ Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan by
 
 1. Gå til **Mål** for å vise det nylig opprettede målet i listen.
 
+# <a name="business-accounts-b2b"></a>[Forretningsforbindelser (B2B)](#tab/b2b)
+
+1. I Målgruppeinnsikt går du til **Mål**.
+
+1. Velg **Ny** og deretter **Bygg din egen**.
+
+1. Velg **Rediger navn**, og angi et **navn** for målet. 
+
+1. Velg aggregasjonsfunksjon fra rullegardinlisten **Velg funksjon** i konfigurasjonsområdet. Aggregasjonsfunksjonene omfatter: 
+   - **Sum**
+   - **Gjennomsnitt**
+   - **Antall**
+   - **Antall unike**
+   - **Max**
+   - **Min**
+   - **Første**: tar den første verdien i dataoppføringen
+   - **Siste**: tar den siste verdien som ble lagt til i dataoppføringen
+
+   :::image type="content" source="media/measure-operators.png" alt-text="Operatorer for måleberegninger.":::
+
+1. Velg **Legg til attributt** for å velge dataene du vil opprette dette målet.
+   
+   1. Velg fanen **Attributtene**. 
+   1. Dataenhet: Velg enheten som inneholder attributtet du vil måle. 
+   1. Dataattributt: Velg attributtet du vil bruke i aggregasjonsfunksjonen, for å beregne målet. Du kan bare velge ett attributt om gangen.
+   1. Du kan også velge et dataattributt fra et eksisterende mål ved å velge fanen **Mål**. Du kan også søke etter et enhets- eller målnavn. 
+   1. Velg **Legg til** for å legge til det valgte attributtet i målet.
+
+   :::image type="content" source="media/measure-attribute-selection.png" alt-text="Velg et attributt som skal brukes i beregninger.":::
+
+1. Hvis du vil bygge mer komplekse tiltak, kan du legge til flere attributter eller bruke operatorer for målefunksjon.
+
+   :::image type="content" source="media/measure-math-operators.png" alt-text="Opprett et komplekst mål med matteoperatorer.":::
+
+1. Hvis du vil legge til filtre, velger du **Filter** i konfigurasjonsområdet. 
+  
+   1. I delen **Legg til attributt** i **Filtre**-ruten velger du attributtet du vil bruke til å opprette filtre.
+   1. Angi filteroperatorene for å definere filteret for hvert valgte attributt.
+   1. Velg **Bruk** for å legge til filtrene i målet.
+
+1. Hvis du vil legge til dimensjoner, velger du **Dimensjon** i konfigurasjonsområdet. Dimensjoner vises som kolonner i målutdataenheten.
+ 
+   1. Velg **Rediger dimensjoner** for å legge til dataattributter du vil gruppere målverdiene etter. For eksempel poststed eller kjønn. Som standard velges *CustomerID*-dimensjonen for å opprette *mål på kundenivå*. Du kan fjerne standarddimensjonen hvis du vil opprette *tiltak på forretningsnivå*.
+   1. Velg **Ferdig** for å legge til dimensjonene i målet.
+
+1. Hvis det finnes verdier i dataene som du må erstatte med et heltall, velger du **Regler**. Konfigurer regelen, og pass på at du bare velger hele tall som erstatning. Du kan for eksempel erstatte *null* med *0*.
+
+1. Du kan bruke veksleknappen **Rull opp underordnede kontoer** hvis du [bruker forretningsforbindelser med hierarkier](relationships.md#set-up-account-hierarchies).
+   - Hvis den er satt til **Av**, beregnes målet for hver forretningsforbindelse. Hver forretningsforbindelse får eget resultat.
+   - Hvis den er satt til **På**, velger du **Rediger** for å velge kontohierarkiet i henhold til de innlagte hierarkiene. Målet gir bare ett resultat fordi det er aggregert med underordnede forretningsforbindelser.
+
+1. Hvis det finnes flere baner mellom dataenheten du tilordnet og *Kunde*-enheten, må du velge en av de identifiserte [enhetsrelasjonsbanene](relationships.md). Måleresultatene kan variere avhengig av den valgte banen. 
+   
+   1. Velg **Relasjonsbane**, og velg enhetsbanen som skal brukes til å identifisere målet. Hvis det bare finnes én enkelt bane til *Kunde*-enheten, vises ikke denne kontrollen.
+   1. Velg **Fullført** for å ta i bruk valget. 
+
+   :::image type="content" source="media/measures-data-preferences.png" alt-text="Velg enhetsbanen for målet.":::
+
+1. Velg **...** i beregningen til **Duplikat**, **Gi nytt navn** eller **Fjern** en beregning fra et mål.
+
+1. I området **Forhåndsvisning** vises dataskjemaet for målutdataenheten, inkludert filtre og dimensjoner. Forhåndsvisningen reagerer dynamisk på endringer i konfigurasjonen.
+
+1. Velg **Kjør** for å beregne resultater for det konfigurerte målet. Velg **Lagre og lukk** hvis du vil beholde gjeldende konfigurasjon og kjøre tiltaket senere.
+
+1. Gå til **Mål** for å vise det nylig opprettede målet i listen.
+
+---
+
 ## <a name="use-a-template-to-build-a-measure"></a>Bruke en mal til å bygge et mål
+
+Du kan bruke forhåndsdefinerte maler for vanlige mål for å opprette dem. Detaljerte beskrivelser av malene og en veiledet opplevelse hjelper deg med effektiv måloppretting. Maler bygger på tilordnede data fra *Enhetlig aktivitet*-enheten. Sørg derfor for at du har konfigurert [kundeaktiviteter](activities.md) før du oppretter et mål fra en mal.
+
+# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
 
 Du kan bruke forhåndsdefinerte maler for vanlige mål for å opprette dem. Detaljerte beskrivelser av malene og en veiledet opplevelse hjelper deg med effektiv måloppretting. Maler bygger på tilordnede data fra *Enhetlig aktivitet*-enheten. Sørg derfor for at du har konfigurert [kundeaktiviteter](activities.md) før du oppretter et mål fra en mal.
 
@@ -140,6 +212,12 @@ Fremgangsmåten nedenfor beskriver hvordan du bygger et nytt mål ved hjelp av e
 
 1. Du kan nå velge **Kjør** for å beregne resultatene av målet. Hvis du vil finjustere det senere, velger du **Lagre utkast**.
 
+# <a name="business-accounts-b2b"></a>[Forretningsforbindelser (B2B)](#tab/b2b)
+
+Denne funksjonen er bare tilgjengelig for tiltak som er opprettet i miljøer med individuelle kunder som primær målgruppe.
+
+---
+
 ## <a name="manage-your-measures"></a>Administrer målene dine
 
 Du finner mållisten på **Mål**-siden.
@@ -166,6 +244,5 @@ Velg et mål fra listen for følgende alternativer:
 ## <a name="next-step"></a>Neste trinn
 
 Du kan bruke eksisterende målinger til å opprette [et kundesegment](segments.md).
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
