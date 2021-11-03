@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 39acca78c022bc15ebc15dc80f21fe175da04d4d
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: d77d1901fee4771537554c05d3963316d0fb37cb
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622982"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673481"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere mål
 
@@ -28,7 +28,7 @@ Bruk måleverktøyet til å planlegge forretningsaktiviteter ved å spørre ette
 
 Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan bygge et mål med dataattributter fra dataenheter som har en relasjon konfigurert til å koble til enheten for enhetlig kundeprofil.
 
-# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrukere (B-til-C)](#tab/b2c)
 
 1. I Målgruppeinnsikt går du til **Mål**.
 
@@ -92,7 +92,7 @@ Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan by
 
 1. Gå til **Mål** for å vise det nylig opprettede målet i listen.
 
-# <a name="business-accounts-b2b"></a>[Forretningsforbindelser (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
 
 1. I Målgruppeinnsikt går du til **Mål**.
 
@@ -164,7 +164,7 @@ Denne delen beskriver hvordan du oppretter et nytt mål fra bunnen av. Du kan by
 
 Du kan bruke forhåndsdefinerte maler for vanlige mål for å opprette dem. Detaljerte beskrivelser av malene og en veiledet opplevelse hjelper deg med effektiv måloppretting. Maler bygger på tilordnede data fra *Enhetlig aktivitet*-enheten. Sørg derfor for at du har konfigurert [kundeaktiviteter](activities.md) før du oppretter et mål fra en mal.
 
-# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrukere (B-til-C)](#tab/b2c)
 
 Du kan bruke forhåndsdefinerte maler for vanlige mål for å opprette dem. Detaljerte beskrivelser av malene og en veiledet opplevelse hjelper deg med effektiv måloppretting. Maler bygger på tilordnede data fra *Enhetlig aktivitet*-enheten. Sørg derfor for at du har konfigurert [kundeaktiviteter](activities.md) før du oppretter et mål fra en mal.
 
@@ -212,7 +212,7 @@ Fremgangsmåten nedenfor beskriver hvordan du bygger et nytt mål ved hjelp av e
 
 1. Du kan nå velge **Kjør** for å beregne resultatene av målet. Hvis du vil finjustere det senere, velger du **Lagre utkast**.
 
-# <a name="business-accounts-b2b"></a>[Forretningsforbindelser (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
 
 Denne funksjonen er bare tilgjengelig for tiltak som er opprettet i miljøer med individuelle kunder som primær målgruppe.
 

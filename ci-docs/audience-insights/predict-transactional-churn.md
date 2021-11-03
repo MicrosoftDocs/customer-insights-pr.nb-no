@@ -1,7 +1,7 @@
 ---
 title: Prediksjon for transaksjonsfrafall
 description: Forutsi om en kunde er i faresonen for ikke lenger å kjøpe produktene eller tjenestene dine.
-ms.date: 10/11/2021
+ms.date: 10/20/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: ac484f74e388aa23422a89e25dabb555f2ad4118
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: 9fa6a044989d523e1068aff24266cfb475632736
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643423"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673057"
 ---
 # <a name="transaction-churn-prediction-preview"></a>Prediksjon for transaksjonsfrafall (forhåndsversjon)
 
@@ -28,6 +28,32 @@ For miljøer basert på forretningskontoer kan vi forutsi transaksjonsfrafall fo
 > Prøv opplæringen for prediksjon for transaksjonsfrafall ved hjelp av eksempeldata: [Eksempelveiledningen Prediksjon for transaksjonsfrafall (forhåndsversjon)](sample-guide-predict-transactional-churn.md).
 
 ## <a name="prerequisites"></a>Forutsetninger
+
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrukere (B-til-C)](#tab/b2c)
+
+- Minst [Bidragsyter-tillatelser](permissions.md) i Customer Insights.
+- Forretningskunnskap for å forstå hva frafall betyr for bedriften din. Vi støtter tidsbaserte frafallsdefinisjoner, som betyr at en kunde anses å ha frafalt etter en periode der det ikke er kjøp.
+- Data om dine transaksjoner/kjøp og deres historikk:
+    - Transaksjons-ID-er for å skille innkjøp/transaksjoner.
+    - Kunde-ID-er for å samsvare transaksjoner for kundene.
+    - Dato for transaksjonshendelser, som definerer datoene da transaksjonen forekom.
+    - Det semantiske dataskjemaet for kjøp/transaksjoner krever følgende informasjon:
+        - **Transaksjons-ID**: En unik identifikator for et innkjøp eller en transaksjon.
+        - **Transaksjonsdato**: Datoen for innkjøpet eller transaksjonen.
+        - **Verdien av transaksjonen**: Valutabeløpet / det numeriske verdibeløpet for transaksjonen/varen.
+        - (Valgfritt) **Unik produkt-ID**: ID-en til produktet eller tjenesten som er kjøpt, hvis dataene er på et linjevarenivå.
+        - (Valgfritt) **Om denne transaksjonen var en tilbakeføring**: Et sant/usant-felt som registrerer om transaksjonen var en retur eller ikke. Hvis **Verdien av transaksjonen** er negativ, vil vi også bruke denne informasjonen til å utlede en retur.
+- (Valgfritt) Data om kundeaktiviteter:
+    - Aktivitets-ID-er for å skille mellom aktiviteter av samme type.
+    - Kunde-ID-er for å tilordne aktiviteter til kundene.
+    - Aktivitetsinformasjon som inneholder navnet på og datoen for aktiviteten.
+    - Det semantiske dataskjemaet for kundeaktiviteter omfatter følgende:
+        - **Primærnøkkel:** En unik identifikator for en aktivitet. Et besøk på et nettsted eller en bruksoppføring som for eksempel viser at kunden prøvde et prøveeksemplar av produktet ditt.
+        - **Tidsstempel:** Dato og klokkeslett for hendelsen som er identifisert ved hjelp av primærnøkkelen.
+        - **Hendelse:** Navnet på hendelsen du vil bruke. Et felt kalt "Brukerhandling" i en dagligvareforretning kan for eksempel være en kupong som brukes av kunden.
+        - **Detaljer:** Detaljert informasjon om hendelsen. Et felt kalt "Kupongverdi" i et dagligvareforretning kan for eksempel være valutaverdien for kupongen.
+
+# <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
 
 - Minst [Bidragsyter-tillatelser](permissions.md) i Customer Insights.
 - Forretningskunnskap for å forstå hva frafall betyr for bedriften din. Vi støtter tidsbaserte frafallsdefinisjoner, som betyr at en kunde anses å ha frafalt etter en periode der det ikke er kjøp.
@@ -59,6 +85,9 @@ For miljøer basert på forretningskontoer kan vi forutsi transaksjonsfrafall fo
         - **Land:** Landet til en kunde.
         - **Bransje:** Bransjetypen til en kunde. Et felt kalt Bransje for en kaffebrenner kan for eksempel angi om kunden var detaljist.
         - **Klassifisering:** Kategoriseringen av en kunde for virksomheten. Et felt som kalles "ValueSegment" for en kaffebrenner, kan for eksempel være kundenivået basert på kundestørrelsen.
+
+---
+
 - Kjennetegn for foreslåtte data:
     - Tilstrekkelige historiske data: Transaksjonsdata for minst det dobbelte av det valgte tidsvinduet. Helst to til tre år med transaksjonslogg. 
     - Flere kjøp per kunde: Ideelt minst to transaksjoner per kunde.
@@ -114,6 +143,32 @@ For miljøer basert på forretningskontoer kan vi forutsi transaksjonsfrafall fo
 
 1. Velg **Neste**.
 
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrukere (B-til-C)](#tab/b2c)
+
+### <a name="add-additional-data-optional"></a>Legge til tilleggsdata (valgfritt)
+
+Konfigurer relasjonen fra kundeaktivitetsenheten til *kundeenheten*.
+
+1. Velg feltet som identifiserer kunden i kundeaktivitetstabellen. Den kan være direkte relatert til den primære kunde-ID-en til *kundeenheten*.
+
+1. Velg enheten som er hovedenhet for enheten *Kunde*.
+
+1. Angi et navn som beskriver relasjonen.
+
+#### <a name="customer-activities"></a>Kundeaktiviteter
+
+1. Du kan eventuelt velge **Legg til data** for **Kundeaktiviteter**.
+
+1. Velg den semantiske aktivitetstypen som inneholder dataene du vil bruke, og velg deretter én eller flere aktiviteter i **Aktiviteter**-delen.
+
+1. Velg en aktivitetstype som samsvarer med typen kundeaktivitet du skal konfigurere. Velg **Opprett ny**, og velg en tilgjengelig aktivitetstype, eller opprett en ny type.
+
+1. Velg **Neste** og deretter **Lagre**.
+
+1. Hvis du har andre kundeaktiviteter som du vil ha med, gjentar du fremgangsmåten ovenfor.
+
+# <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
+
 ### <a name="select-prediction-level"></a>Velge prediksjonsnivå
 
 De fleste prediksjoner opprettes på kundenivå. I enkelte situasjoner er det ikke sikkert at dette er detaljert nok til å løse dine forretningsbehov. Du kan bruke denne funksjonen til å forutsi forfall for en gren av en kunde, for eksempel i stedet for kunden som helhet.
@@ -122,9 +177,9 @@ De fleste prediksjoner opprettes på kundenivå. I enkelte situasjoner er det ik
 
 1. Utvid enhetene du vil velge sekundært nivå fra, eller bruk søkefilterboksen til å filtrere de valgte alternativene.
 
-1. Velg attributtet du vil bruke som sekundært nivå, og velg deretter **Legg til**
+1. Velg attributtet du vil bruke som sekundært nivå, og velg deretter **Legg til**.
 
-1. Velg **Neste**
+1. Velg **Neste**.
 
 > [!NOTE]
 > Enhetene som er tilgjengelige i denne delen, vises fordi de har en relasjon til enheten du valgte i forrige del. Hvis enheten du vil legge til, ikke vises, kontrollerer du at den har en gyldig relasjon i **Relasjoner**. Bare én-til-én- og mange-til-én-relasjoner er gyldige for denne konfigurasjonen.
@@ -159,7 +214,7 @@ Konfigurer relasjonen fra kundeaktivitetsenheten til *kundeenheten*.
 
 1. Velg **Neste**.
 
-### <a name="provide-an-optional-list-of-benchmark-accounts-business-accounts-only"></a>Gi en valgfri liste over referansekontoer (bare forretningskontoer)
+### <a name="provide-an-optional-list-of-benchmark-accounts"></a>Gi en valgfri liste over referansekontoer
 
 Legg til en liste over forretningskunder og forretningsforbindelser som du vil bruke som referanse. Du får [detaljer om disse referansekontoene](#review-a-prediction-status-and-results), inkludert deres frafallspoengsum og de mest innflytelsesrike funksjonene som har påvirket deres frafallspoengsum.
 
@@ -168,6 +223,8 @@ Legg til en liste over forretningskunder og forretningsforbindelser som du vil b
 1. Velg kundene som fungerer som en referanse.
 
 1. Velg **Neste** for å fortsette.
+
+---
 
 ### <a name="set-schedule-and-review-configuration"></a>Angi konfigurasjon for planlegging og gjennomgang
 
@@ -201,6 +258,25 @@ Legg til en liste over forretningskunder og forretningsforbindelser som du vil b
 1. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil se gjennom resultatene for, og velg **Vis**.
 
    :::image type="content" source="media/model-subs-view.PNG" alt-text="Vise kontroll for å se resultatene av en prediksjon.":::
+
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrukere (B-til-C)](#tab/b2c)
+
+1. Det er tre hoveddeler med data på resultatsiden:
+   - **Ytelse for opplæringsmodell**: A, B eller C er mulige resultater. Denne poengsummen angir ytelsen til prediksjonen og kan hjelpe deg med å ta beslutningen om å bruke resultatene som er lagret i utdataenheten. Poengsummer blir fastslått basert på følgende regler: 
+        - **A** Når modellen har forutsett nøyaktig minst 50 % av de totale prognosene, og når prosentandelen av nøyaktige prognoser for kunder som har frafalt, er større enn grunnlinjen med minst 10 %.
+            
+        - **B** Når modellen har forutsett nøayktig minst 50 % av de totale prognosene, og når prosentandelen av nøyaktige prognoser for kunder som har frafalt, er opptil 10 %større enn grunnlinjen.
+            
+        - **C** Når modellen har forutsett nøayktig mindre enn 50 % av de totale prognosene, eller når prosentandelen av nøyaktige prognoser for kunder som har frafalt, er mindre enn grunnlinjen.
+               
+        - **Grunnlinje** tar inndataene i tidsvinduets for prediksjonen for modellen (for eksempel ett år), og modellen oppretter forskjellige fraksjoner av tiden ved å dele den på 2 til den når én måned eller mindre. Den bruker disse brøkene til å opprette en forretningsregel for kunder som ikke har kjøpt i denne tidsrammen. Disse kundene anses som frafalt. Den tidsbaserte forretningsregelen med høyest mulig evne til å forutse hvem som sannsynligvis vil frafalle, velges som grunnlinjemodellen.
+            
+    - **Sannsynligheten for frafall (antall kunder)**: Grupper av kunder basert på den predikerte risikoen for frafall. Disse dataene kan hjelpe deg senere hvis du vil opprette et segment av kunder med høy frafallsrisiko. Slike segmenter hjelper deg med å forstå hvor grensen bør gå for segmentmedlemskap.
+       
+    - **Mest innflytelsesrike faktorer**: Det er mange faktorer du må ta hensyn til når du oppretter forutsigelsen. Hver av faktorene har sin viktighet beregnet for de aggregerte prognosene som en modell oppretter. Du kan bruke disse faktorene til å validere resultatene for prediksjon, eller du kan bruke denne informasjonen senere til å [opprette segmenter](segments.md) som kan ha innvirkning på frafallsrisikoen for kundene.
+
+
+# <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
 
 1. Det er tre hoveddeler med data på resultatsiden:
    - **Ytelse for opplæringsmodell**: A, B eller C er mulige resultater. Denne poengsummen angir ytelsen til prediksjonen og kan hjelpe deg med å ta beslutningen om å bruke resultatene som er lagret i utdataenheten. Poengsummer blir fastslått basert på følgende regler: 
@@ -237,6 +313,11 @@ Legg til en liste over forretningskunder og forretningsforbindelser som du vil b
        Når du forutsier frafall på forretningsforbindelsesnivå, vurderes alle forretningsforbindelser ved utlede de gjennomsnittlige funksjonsverdiene for frafallssegmenter. For frafallsprognoser på sekundært nivå for hver forretningsforbindelse avhenger utledingen av frafallssegmenter på sekundært nivå av elementet som er valgt i sideruten. Hvis et element for eksempel har et sekundært produktkategorinivå = kontorrekvisita, vurderes bare elementene som har kontorrekvisita som produktkategorien, når de gjennomsnittlige funksjonsverdiene for frafallssegmenter hentes ut. Denne logikken brukes for å sikre en rettferdig sammenligning av elementets funksjonsverdier med de gjennomsnittlige verdiene på tvers av segmenter med lavt, middels og høyt frafall.
 
        I noen tilfeller er den gjennomsnittlige verdien av frafallssegmenter med lavt, middels eller høyt nivå, ikke tilgjengelige fordi det ikke finnes elementer som tilhører de tilsvarende frafallssegmentene basert på definisjonen ovenfor.
+       
+       > [!NOTE]
+       > Tolkning av verdier under kolonnene for gjennomsnittlig lav, middels og høy er forskjellig for kategoriske funksjoner som land eller bransje. Ettersom anseelsen om gjennomsnittlig funksjonsverdi ikke gjelder kategoriske funksjoner, er verdiene i disse kolonnene en andel av kundene i segmenter med lavt, middels eller høyt frafall som har samme verdi i den kategoriske funksjonen sammenlignet med elementet som er valgt i sidepanelet.
+
+---
 
 ## <a name="manage-predictions"></a>Administrere prediksjoner
 

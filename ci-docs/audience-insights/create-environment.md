@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 95afd1fedb98a451e4978ee66be2ea98ad7a4a76
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 914af46d2d82f3556d149f2836680c902f826d50
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645714"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673403"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Opprette et miljø i målgruppeinnsikt
 
@@ -46,7 +46,7 @@ I trinnet for **Grunnleggende informasjon** velger du om du vil opprette et milj
 
 Angi følgende detaljer:
    - **Navn**: Navnet på dette miljøet. Dette feltet er allerede fylt ut hvis du har kopiert et eksisterende miljø, men du kan endre det.
-   - **Velg forretning**: Velg primærmålgruppe for det nye miljøet. Du kan arbeide med individuelle kunder (B2C) eller [forretningsforbindelser](work-with-business-accounts.md) (B2B).
+   - **Velg forretningen**: Velg primærmålgruppe for det nye miljøet. Du kan arbeide med individuelle kunder (B-til-C) eller [forretningskontoer](work-with-business-accounts.md) (B-til-B).
    - **Type**: Velg om du vil opprette et produksjons- eller sandkassemiljø. Sandkassemiljøer tillater ikke oppdatering av planlagte data og er beregnet for forhåndsimplementering og testing. Sandkassemiljøer bruker samme målgruppe som produksjonsmiljøet som er valgt.
    - **Område**: Området som servicen er distribuert i, og driftet.
 
@@ -54,7 +54,7 @@ Angi følgende detaljer:
 
 Velg hvor du vil lagre dataene fra målgruppeinnsikt, i trinnet **Datalagring**.
 
-Du har to alternativer: **Customer Insights-lagring** (et Azure Data Lake som administreres av Customer Insights-teamet) og **Azure Data Lake Storage** (din egen Azure Data Lake Storage). Som standard er det merket av for lagringsalternativet Customer Insights.
+Du har to alternativer: **Customer Insights-lagring** (en Azure Data Lake som administreres av Customer Insights-teamet) og **Azure Data Lake Storage** (din egen Azure Data Lake Storage). Som standard er det merket av for lagringsalternativet Customer Insights.
 
 :::image type="content" source="media/data-storage-environment.png" alt-text="Velg Azure Data Lake Storage du vil lagre målgruppeinnsiktsdata i.":::
 
@@ -66,7 +66,7 @@ Ved å lagre data til Azure Data Lake Storage godtar du at data overføres til o
 > - Azure Data Lake Storage-kontoer fra samme Azure-område som du valgte da du opprettet miljøet.
 > - Azure Data Lake Storage-forretningsforbindelser som har *hierarkisk navneområde* aktivert.
 
-For Azure Data Lake Storage-alternativet kan du velge mellom et ressursbasert alternativ og et abonnementsbasert alternativ for godkjenning. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). **Beholder**-navnet vil være `customerinsights` og kan ikke endres.
+For Azure Data Lake Storage-alternativet kan du velge mellom et ressursbasert alternativ og et abonnementsbasert alternativ for godkjenning. Hvis du vil ha mer informasjon, kan du se [Koble til en Azure Data Lake Storage-konto ved å bruke en Azure-tjenestekontohaver](connect-service-principal.md). **Beholder**-navnet vil være `customerinsights` og kan ikke endres.
 
 Når systemprosesser som datainntak er fullført, oppretter systemet tilsvarende mapper i lagringskontoen du angav. Datafiler og *model.json*-filer opprettes og legges til i mapper basert på prosessnavnet.
 
@@ -82,8 +82,8 @@ For å bruke [standard prediksjonsmodeller](predictions-overview.md#out-of-box-m
 
 > [!NOTE]
 > Customer Insights støtter ikke følgende datadelingsscenarioer:
-> - Hvis du lagrer alle dataene til din egen Azure Data Lake Storage, vil du ikke kunne aktivere datadeling med en Microsoft Dataverse-administrert Data Lake.
-> - Hvis du aktiverer datadeling med en Microsoft Dataverse-administrert Data Lake, kan du ikke [opprette beregnede eller manglende verdier i en enhet](predictions.md).
+> - Hvis du lagrer alle dataene til din egen Azure Data Lake Storage, vil du ikke kunne aktivere datadeling med en Dataverse-administrert datasjø.
+> - Hvis du aktiverer datadeling med Dataverse, kan du ikke [opprette beregnede eller manglende verdier i en enhet](predictions.md).
 
 ### <a name="step-4-finalize-the-settings"></a>Trinn 4: Fullfør innstillingen
 
@@ -93,10 +93,10 @@ Du kan også endre de fleste av innstillingene senere. Du finner mer informasjon
 
 ## <a name="work-with-your-new-environment"></a>Arbeide med det nye miljøet
 
-Se gjennom følgende artikler for å hjelpe deg med å komme i gang med konfigureringen av Customer Insights. 
+Les gjennom følgende artikler for å hjelpe deg å komme i gang med å konfigurere Customer Insights: 
 
 - [Legg til flere brukere og tilordne tillatelser](permissions.md).
 - [Innta datakildene](data-sources.md) og kjør dem gjennom [dataforeningsprosessen](data-unification.md) for å få [enhetlige kundeprofiler](customer-profiles.md).
 - [Suppler de enhetlige kundeprofilene](enrichment-hub.md) eller [kjør prediktive modeller](predictions-overview.md).
-- [Opprett segmenter](segments.md) for å gruppere kunder og [målingers](measures.md) gjennomgangs-KPIer.
+- [Opprett segmenter](segments.md) for å gruppere kunder og [mål](measures.md) for å gjennomgå KPI-er.
 - [Konfigurer tilkoblinger](connections.md) og [eksporter](export-destinations.md) for å behandle delsett av dataene i andre programmer.

@@ -1,7 +1,7 @@
 ---
 title: Opprett segmenter med segmentverktøyet
 description: Opprett segmenter av kunder for å gruppere dem basert på forskjellige attributter.
-ms.date: 09/07/2021
+ms.date: 10/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e089c475234935742fc42fc3f2bada47711305bf
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: bd01edfe7d63d6c7712a808224171f1bb8ad8a2b
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623041"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673562"
 ---
 # <a name="create-segments"></a>Opprett segmenter
 
@@ -23,6 +23,7 @@ Definer komplekse filtre rundt enheten for enhetlig kunde og de relaterte enhete
 > [!TIP]
 > - Hurtigsegmenter støttes bare i miljøer for **enkeltkunder**.    
 > - Segmenter basert på **individuelle kunder** inkluderer automatisk tilgjengelig kontaktinformasjon for segmentmedlemmer. I miljøer for **forretningsforbindelser** er segmenter basert på forretningsforbindelser (selskaper eller datterselskaper). Hvis du vil inkludere kontaktinformasjon i et segment, bruker du funksjonen **Prosjektattributter** i segmentverktøyet.
+>    - Kontroller at kontaktdataene er [tilordnet semantisk til ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping)-enheten.
 
 ## <a name="segment-builder"></a>Segmentverktøy
 
@@ -52,7 +53,7 @@ Eksemplet ovenfor illustrerer segmenteringsfunksjonen. Vi har definert et segmen
 
 Du kan opprette et nytt segment på flere måter. Denne delen beskriver hvordan du bygger ditt eget segment fra bunnen av. Du kan også opprette et *hurtigsegment* basert på eksisterende enheter eller bruke maskinlæringsmodeller til å få *foreslåtte segmenter*. Hvis du vil ha mer informasjon, kan du gå til [Segmentoversikt](segments.md).
 
-Når du oppretter et segment, kan du lagre et utkast. I fasen utkast lagres et segment som et inaktivt segment. Når du fullfører segmentkonfigurasjonen, kjører du den for å aktivere segmentet. Du kan også ***Aktivere** _ et segment fra siden _ *Alle segmenter**.
+Når du oppretter et segment, kan du lagre et utkast. I fasen utkast lagres et segment som et inaktivt segment. Når du fullfører segmentkonfigurasjonen, kjører du den for å aktivere segmentet. Du kan også **Aktivere** et segment fra siden **Alle segmenter**.
 
 1. Gå til siden **Segmenter**.
 
@@ -93,10 +94,18 @@ Når du oppretter et segment, kan du lagre et utkast. I fasen utkast lagres et s
    - Velg en av de angitte operatorer: **Union**, **Skjæringspunkt** eller **Unntatt**.
 
       - **Union** forener de to gruppene.
-      - **Intersect** overlapper de to gruppene. Bare data som *er felles* for begge gruppene, beholdes i den enhetlige gruppen.
-      - **Bortsett fra** kombinerer de to gruppene. Bare data i gruppe A som *ikke er felles* med data i gruppe B, beholdes.
+      - **Intersect** overlapper de to gruppene. Bare data som *er felles* for begge gruppene, forblir i den enhetlige gruppen.
+      - **Bortsett fra** kombinerer de to gruppene. Bare data i gruppe A som *ikke er felles* for data i gruppe B, beholdes.
 
-1. Som standard genererer segmenter utdataenheten som inneholder alle attributtene, til kundeprofiler som samsvarer med de definerte filtrene. Hvis et segment er basert på andre enheter enn *Kunde*-enheten, kan du legge til flere attributter fra disse enhetene i utdataenheten. Velg **Prosjektattributter** for å velge attributtene som skal legges til i utdataenheten.  
+1. Som standard genererer segmenter utdataenheten som inneholder alle attributtene, til kundeprofiler som samsvarer med de definerte filtrene. Hvis et segment er basert på andre enheter enn *Kunde*-enheten, kan du legge til flere attributter fra disse enhetene i utdataenheten. Velg **Prosjektattributter** for å velge attributtene som skal legges til i utdataenheten. 
+
+   > [!IMPORTANT]
+   > For segmenter som er basert på forretningsforbindelser, må detaljer om én eller flere kontakter for hver konto fra enheten *ContactProfile* inkluderes i segmentet for å tillate at dette segmentet aktiveres eller eksporteres til mål som krever kontaktinformasjon. Hvis du vil ha mer informasjon om *ContactProfile*-enheten, kan du se [Semantiske tilordninger](semantic-mappings.md).
+   > Et eksempel på utdata for et segment basert på forretningskontoer med beregnede attributter for kontakter, kan se slik ut: 
+   >
+   > |ID  |Kontonavn  |Omsetning  |Kontaktnavn  | Kontaktrolle|
+   > |---------|---------|---------|---------|---|
+   > |10021     | Contoso | 100 000 | [Abbie Moss, Ruth Soto]  | [CEO, prosjektbehandling]
 
    :::image type="content" source="media/segments-project-attributes.png" alt-text="Eksempel på beregnede attributter som er valgt i sideruten, som skal legges til i utdataenheten.":::
   
@@ -107,13 +116,14 @@ Når du oppretter et segment, kan du lagre et utkast. I fasen utkast lagres et s
    > - Hvis attributtet du vil prosjektere, er mer enn én stasjon borte fra *Kunde*-enheten, som definert av relasjonen, må dette attributtet brukes i hver regel i segmentspørringen du bygger. 
    > - Hvis attributtet du vil prosjektere, bare er én stasjon borte fra *Kunde*-enheten, må ikke dette attributtet finnes i hver regel i segmentspørringen du bygger. 
    > - **Beregnede attributter** beregner ved bruk av angitte operatorer.
-   > - For segmenter som er basert på forretningsforbindelser, må detaljer om én eller flere kontakter for hver forretningsforbindelse inkluderes i segmentet for å tillate at dette segmentet aktiveres eller eksporteres til mål som krever kontaktinformasjon.
 
 1. Før du lagrer og kjører segmentet, velger du **Rediger detaljer** ved siden av segmentnavnet. Angi et navn for segmentet, og oppdater det foreslåtte **utdataentitetsnavnet** for segmentet. Du kan også legge til en beskrivelse i segmentet.
 
 1. Velg **Kjør** for å lagre segmentet, aktiver det, og begynn å behandle segmentet basert på alle regler og betingelser. Ellers lagres det som et inaktivt segment.
-
+   
 1. Velg **Tilbake til Segmenter** for å gå tilbake til **Segmenter**-siden.
+
+1. Som standard opprettes segmentet som et dynamisk segment. Det betyr at segmentet oppdateres under systemoppdateringer. Hvis du vil [stoppe den automatiske oppdateringen](segments.md#manage-existing-segments), velger du segmentet og velger alternativet **Gjør statisk**. Statiske segmenter kan [oppdateres manuelt](segments.md#refresh-segments) når som helst.
 
 > [!TIP]
 > - Segmentverktøyet foreslår ikke gyldige verdier fra enheter når du angir operatorene for betingelsene. Du kan gå til **Data** > **Enheter** og laste ned enhetsdataene for å se hvilke verdier som er tilgjengelige.

@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 5d5e12ee44dfa40c470738eaee5c68fdf23d1b2d
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: bc0128c222c032e8cfe35e6f3baa0ea722bce7cb
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617567"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673011"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
 
@@ -29,7 +29,7 @@ Du må ha tillatelse som bidragsyter eller administrator for å opprette eller r
 
 I kategorien **Oppdag** finner du alle støttede suppleringsalternativer.
 
-# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrukere (B-til-C)](#tab/b2c)
 
 - [Merker](enrichment-microsoft.md) levert av Microsoft
 - [Interesser](enrichment-microsoft.md) levert av Microsoft
@@ -38,7 +38,7 @@ I kategorien **Oppdag** finner du alle støttede suppleringsalternativer.
 - [Egendefinerte data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
 - [Azure Maps](enrichment-azure-maps.md) levert av Microsoft
 
-# <a name="business-accounts-b2b"></a>[Forretningsforbindelser (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
 
 - [Firmadata](enrichment-leadspace.md) levert av Leadspace
 - [Forbedrede adresser](enrichment-enhanced-addresses.md) levert av Microsoft 

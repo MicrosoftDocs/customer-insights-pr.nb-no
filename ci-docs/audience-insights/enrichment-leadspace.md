@@ -9,16 +9,16 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c57eb0ceb50e3b778acac72a4bbfd733a5b0c401
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 685b1683b0c90eab04b130552d2cb23a8ab7a235
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617413"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673244"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Supplering av firmaprofiler med Leadspace (forhåndsversjon)
 
-Leadspace er et datavitenskapsfirma som tilbyr en B2B-kundedataplattform. Det gjør det mulig for miljøer med enhetlige kundeprofiler, basert på forretningsforbindelser, å supplere dataene. Suppler *Kundeprofiler* med attributter som firmastørrelse, sted eller bransje. Suppler *Kontaktprofiler* med attributter som tittel, persona eller e-postbekreftelse.
+Leadspace er et datavitenskapsselskap som tilbyr en B-til-B-kundedataplattform. Det gjør det mulig for miljøer med enhetlige kundeprofiler, basert på forretningsforbindelser, å supplere dataene. Suppler *Kundeprofiler* med attributter som firmastørrelse, sted eller bransje. Suppler *Kontaktprofiler* med attributter som tittel, persona eller e-postbekreftelse.
 
 ## <a name="prerequisites"></a>Forutsetninger
 

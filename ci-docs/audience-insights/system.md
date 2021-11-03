@@ -1,7 +1,7 @@
 ---
 title: Systemkonfigurasjon i målgruppeinnsikt
 description: Lær om systeminnstillinger i funksjonen for målgruppeinnsikt i Dynamics 365 Customer Insights.
-ms.date: 02/12/2021
+ms.date: 10/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2af8728009b4f1d53ebc2557bab8c79537a0dc5dda54477493ab1ad16f3f9a8a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3ce767939b8fedf676dc569ede47104ecfe930dd
+ms.sourcegitcommit: cd9f9a9d3da71c5420ef5c4c6ead91bc820d17a9
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035928"
+ms.lasthandoff: 10/19/2021
+ms.locfileid: "7651852"
 ---
 # <a name="system-configuration"></a>Systemkonfigurasjon
 
@@ -24,9 +24,9 @@ ms.locfileid: "7035928"
 - [API-bruk](#api-usage-tab)
 - [Om](#about-tab)
 - [Generelt](#general-tab)
+- [Sikkerhet](#security-tab)
 
-> [!div class="mx-imgBorder"]
-> ![Systemside.](media/system-tabs.png "Systemside")
+:::image type="content" source="media/system-tabs.png" alt-text="Innstillinger-faner på systemsiden.":::
 
 ## <a name="status-tab"></a>Kategorien Status
 
@@ -84,9 +84,15 @@ Kategorien **Om** inneholder organisasjonens **visningsnavn**, den aktive **milj
 
 ## <a name="general-tab"></a>Generelt, kategori
 
-Det finnes to alternativer i kategorien **Generelt**, **Språk** og **Lands-/områdeformat**.
+Du kan endre språk- og land-/områdeformatet i fanen **Generelt**.
 
-Appen [støtter flere språk](supported-languages.md). Hvis du vil endre foretrukket språk, velger du et **Språk** fra rullegardinlisten.
+Customer Insights [støtter flere språk](/dynamics365/get-started/availability). Appen bruker språkpreferansen din til å vise elementer som menyen, etiketttekst og systemmeldinger på språket du foretrekker.
+
+Importerte data og informasjon du har angitt manuelt, blir ikke oversatt.
+
+### <a name="update-the-settings"></a>Oppdater innstillingene
+
+Hvis du vil endre foretrukket språk, velger du et **Språk** fra rullegardinlisten.
 
 Hvis du vil endre foretrukket formatering for datoer, klokkeslett og tall, bruker du rullegardinlisten **Lands-/områdeformat**. Det vises en formateringsforhåndsvisning under dette feltet. Systemet vil automatisk foreslå et valg når du velger et nytt språk.
 
@@ -105,6 +111,13 @@ Finn detaljer om API-bruk i sanntid, og se hvilke hendelser som har skjedd i en 
 
    Operasjoner som bruker [inntak av data i sanntid](real-time-data-ingestion.md), inneholder en knapp med et kikkertsymbol for å vise API-bruk i sanntid. Velg knappen for å åpne en siderute som inneholder bruksdetaljer for API-bruk i sanntid i det gjeldende miljøet.   
    Bruk **Grupper etter**-boksen i ruten for **API-bruk i sanntid** til å velge hvordan du best kan presentere samhandlinger i sanntid. Du kan gruppere dataene etter API-metode, enhetskvalifisertnavn (hentet enhet), opprettet av (kilde for hendelsen), resultat (vellykket eller mislykket) eller feilkoder. Dataene er tilgjengelige som et historikkdiagram og som en tabell.
+
+## <a name="security-tab"></a>Sikkerhet-fane
+
+I fanen **Sikkerhet** kan du koble og administrere ditt eget [Azure Key Vault](/azure/key-vault/general/basic-concepts) til miljøet.
+Det dedikerte key vault kan brukes til å fase og bruke hemmeligheter i overholdelsesgrensen for en organisasjon. Målgruppeinnsikt kan bruke hemmelighetene i Azure Key Vault til å [konfigurere tilkoblinger](connections.md) tredjepartssystemer.
+
+Hvis du vil ha mer informasjon, kan du se [Ta med ditt eget Azure Key Vault](use-azure-key-vault.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
