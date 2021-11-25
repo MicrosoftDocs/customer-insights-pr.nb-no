@@ -1,6 +1,6 @@
 ---
-title: Aktivere samtykkeregler for segmenter i målgruppeinnsikt
-description: Trinn for å koble samtykkedata og aktivere samtykkekontroller i målgruppeinnsikt.
+title: Aktivere samtykkeregler for segmenter
+description: Følg disse trinnene for å koble samtykkedata og aktivere samtykkekontroller i målgruppeinnsikt. En administrator kan også deaktivere samtykkekontroller.
 ms.date: 11/03/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,20 +9,20 @@ author: smithy7
 ms.author: smithc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 33ec3a684c2ca47badb4e5461f069d1b2e4a4f3d
-ms.sourcegitcommit: 2a0947cffb52eaf885aa2e50c95b3693f7e4c589
+ms.openlocfilehash: 45899738d39bd5caa433e123f9fe59020e831998
+ms.sourcegitcommit: 79b09498d1328e5551fb8684c44af1fb149f9881
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "7753073"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "7790788"
 ---
 # <a name="activate-consent-rules"></a>Aktivere samtykkeregler
 
-[Samtykkesenter (forhåndsversjon)](../consent-management/overview.md) hjelper deg med å avstemme samtykkedata fra ulike kilder. Bruk den enhetlige *Samtykke*-enheten for å ta i bruk standard samtykkekontroll. Når du har importert samtykkedata i Samtykkesenter og konfigurert reglene for de importerte samtykkedataene, synkroniseres *Samtykke*-enheten automatisk til målgruppeinnsikt.
+[Samtykkesenter (forhåndsversjon)](../consent-management/overview.md) hjelper deg med å avstemme samtykkedata fra ulike kilder. Bruk den enhetlige *Samtykke*-enheten for å ta i bruk standard samtykkekontroll. Når du har importert samtykkedata til Samtykkesenter og konfigurert reglene for dataene, synkroniseres *Samtykke*-enheten automatisk til målgruppeinnsikt.
 
 ## <a name="enable-consent-checks"></a>Aktiver samtykkekontroller
 
-Når samtykkedata er importert til Samtykkesenter (forhåndsversjon) og regler er konfigurert, kan du aktivere samtykkekontroller i målgruppeinnsikt. 
+Når samtykkedata er importert til Samtykkesenter (forhåndsversjon) og reglene er konfigurert, kan du aktivere samtykkekontroller. 
 
 :::image type="content" source="../consent-management/media/enable-consent-checks-audience-insights.png" alt-text="Samtykke-fanen i innstillinger for målgruppeinnsikt med aktiverte samtykkedata.":::
 
@@ -30,7 +30,7 @@ Når samtykkedata er importert til Samtykkesenter (forhåndsversjon) og regler e
 
 1. Velg fanen **Samtykke (forhåndsvisning)**.
 
-1. I delen **Aktiver samtykkekontroller** angir du veksleknappen for området du vil aktivere, til **På**.
+1. I delen **Aktiver samtykkekontroller** angir du veksleknappen til **På** for områdene du vil aktivere.
 
 1. Merk av for **Tillat overstyring av standard samtykkeregler** for å fjerne standard samtykkekontroller som håndheves av et bestemt segment. 
 
