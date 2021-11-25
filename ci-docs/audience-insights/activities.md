@@ -1,7 +1,7 @@
 ---
 title: Kundeaktiviteter
 description: Definer kundeaktiviteter, og vis dem på en tidslinje i kundeprofiler.
-ms.date: 09/27/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: bcb8d42963719f5d225556c31b3fc06db8573e5b
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: c99ec2e7d5e4bf32a509bbe4c0c53999129b2305
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673150"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732472"
 ---
 # <a name="customer-activities"></a>Kundeaktiviteter
 
@@ -82,9 +82,7 @@ En enhet må ha minst ett attributt av typen **Dato** som inkluderes på en kund
 
 1. På **Aktiviteter**-siden velger du **Kjør** for å behandle aktiviteten. 
 
-> [!TIP]
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
-
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-activities"></a>Behandle eksisterende aktiviteter
 

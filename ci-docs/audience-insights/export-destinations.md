@@ -1,7 +1,7 @@
 ---
 title: Eksportere data fra Customer Insights
 description: Administrer eksporter for å dele data.
-ms.date: 10/08/2021
+ms.date: 11/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: pkieffer
 ms.author: philk
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 61e95e47489495e367498547687b0065169519e6
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: bff0486fdb3a02ecb0aa86e81abe1c506e234bc5
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673335"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732162"
 ---
 # <a name="exports-preview-overview"></a>Oversikt over Eksporter (forhåndsversjon)
 
@@ -97,7 +97,9 @@ Når du har opprettet eksportmål, vises de i **Data** > **Eksporter**. Alle bru
 
 Hver eksport du konfigurerer, har en oppdateringsplan. Under en oppdatering ser systemet etter nye eller oppdaterte data som skal tas med i en eksport. Eksporter kjører som standard som en del av hver [planlagte systemoppdatering](system.md#schedule-tab). Du kan tilpasse oppdateringsplanen eller deaktivere den for å kjøre eksporter manuelt.
 
-Eksportplaner er avhengig av tilstanden til miljøet. Hvis det pågår oppdateringer for [avhengigheter](system.md#refresh-policies) når en planlagt eksport skal starte, fullføres oppdateringene først, og deretter kjøres eksporten. Du kan se når en eksport sist ble oppdatert, i kolonnen **Oppdatert**.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+
+Eksportplaner er avhengig av tilstanden til miljøet. Hvis det pågår oppdateringer for [avhengigheter](system.md#refresh-processes) når en planlagt eksport skal starte, fullføres oppdateringene først, og deretter kjøres eksporten. Du kan se når en eksport sist ble oppdatert, i kolonnen **Oppdatert**.
 
 ### <a name="schedule-exports"></a>Planlegge eksporter
 

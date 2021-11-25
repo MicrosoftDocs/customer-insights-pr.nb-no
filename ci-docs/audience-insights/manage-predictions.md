@@ -1,7 +1,7 @@
 ---
 title: Delte oppgaver for prediksjonsscenarioer
 description: Finn ut hvordan du administrerer, feilsøker og forbedrer prediksjoner.
-ms.date: 05/17/2021
+ms.date: 11/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: eaccf23a81ca4de19763b761cc5a27c14515fe522ee36dc78f294208b681966e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 4e7e21a610564b30463b27ab703c291275725895
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036477"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732000"
 ---
 # <a name="manage-predictions"></a>Administrere prediksjoner
 
@@ -50,12 +50,12 @@ Følgende kolonner i rapporten inneholder nyttig informasjon for å forbedre dat
 
 :::image type="content" source="media/input-data-usability-report.png" alt-text="Eksempel på en brukbarhetsrapport for inndata som viser en tabell med feil, advarsler og anbefalinger.":::
 
-- Navn: Beskrivende navn på feilen, advarselen eller anbefalingen.
-- Trinn: Modellfasen (Lær opp eller Poengsum) som informasjonen refererer til.
-- Tilstand: Alvorsgraden til informasjonen (feil, advarsel, anbefaling).
-- Kolonnenavn: Kolonne i en enhet som må endres for at modellytelsen skal bli bedre.
-- Enhetsnavn: Navnet på enheten som må endres for at modellytelsen skal bli bedre.
-- Detaljer: Detaljer om feilen, advarselen eller anbefalingen.
+- **Navn**: Beskrivende navn på feilen, advarselen eller anbefalingen.
+- **Trinn**: Modellfasen (Lær opp eller Poengsum) som informasjonen refererer til.
+- **Tilstand:** Alvorsgraden til informasjonen (feil, advarsel, anbefaling).
+- **Kolonnenavn:** Kolonne i en enhet som må endres for at modellytelsen skal bli bedre.
+- **Enhetsnavn:** Navnet på enheten som må endres for at modellytelsen skal bli bedre.
+- **Detaljer:** Detaljer om feilen, advarselen eller anbefalingen.
 
 ## <a name="refresh-a-prediction"></a>Oppdatere en prediksjon
 
@@ -66,6 +66,8 @@ Prognoser oppdateres automatisk på samme [tidsplan som dataene dine oppdateres]
 1. Velg de loddrette ellipsene ved siden av den forutsigelsen du vil oppdatere.
 
 1. Velg **Oppdater**.
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="delete-a-prediction"></a>Slette en prediksjon
 

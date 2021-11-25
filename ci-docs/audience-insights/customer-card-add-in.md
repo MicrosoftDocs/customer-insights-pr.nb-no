@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: c9c7cfbf9f47cca53e5543e2cda2584e25ad855d
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: dbcdcbea8ffd1755b58c322233c08c70a065db36
+ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643442"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "7792039"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillegg for kundekort (forhåndsversjon)
 
@@ -34,7 +34,7 @@ Få en 360-graders visning av kundene direkte i Dynamics 365-apper. Når tillegg
   - **Målkontroll**: Krever [konfigurerte målinger](measures.md) av typen kundeattributter.
   - **Intelligenskontroll**: Krever data generert ved hjelp av [prediksjoner](predictions.md) eller [egendefinerte modeller](custom-models.md).
   - **Kundedetaljer-kontroll**: Alle felt fra profilen er tilgjengelige i den enhetlige kundeprofilen.
-  - **Suppleringskontroll**: Krever at aktive [suppleringer](enrichment-hub.md) brukes på kundeprofiler.
+  - **Suppleringskontroll**: Krever at aktive [suppleringer](enrichment-hub.md) brukes på kundeprofiler. Korttillegget støtter disse suppleringene: [Merker](enrichment-microsoft.md) fra Microsoft, [Interesser](enrichment-microsoft.md) som leveres av Microsoft.
   - **Kontakter**-kontroll: Krever definisjon av semantisk enhet av typekontakter.
   - **Tidslinjekontroll**: Krever [konfigurerte aktiviteter](activities.md).
 

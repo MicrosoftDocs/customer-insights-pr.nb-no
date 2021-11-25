@@ -1,7 +1,7 @@
 ---
 title: Opprette og behandle miljøer
 description: Lær hvordan du registrerer deg for tjenesten og hvordan du administrerer miljøer.
-ms.date: 10/14/2021
+ms.date: 11/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 2d977ef4eb585e26b36139681552db22d84759c9
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: 65c6a68f550c2873ec30c6ac54f1752d880ce12c
+ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673756"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "7799648"
 ---
 # <a name="manage-environments"></a>Behandle miljøer
 
@@ -39,6 +39,19 @@ Du kan redigere noen av detaljene i eksisterende miljøer.
 3. I **Rediger miljø**-boksen kan du oppdatere miljøinnstillingene.
 
 Hvis du vil ha mer informasjon om miljøinnstillinger, kan du se [Opprette et nytt miljø](create-environment.md).
+
+## <a name="connect-to-microsoft-dataverse"></a>Koble til Microsoft Dataverse
+   
+Trinnet **Microsoft Dataverse** lar deg koble til Customer Insights med Dataverse-miljøet.
+
+For å bruke [standard prediksjonsmodeller](predictions-overview.md#out-of-box-models) konfigurerer du datadeling med Dataverse. Du kan også aktivere datainntak fra lokale datakilder og angi URL-adressen som Microsoft Dataverse-miljøet administrerer. Velg **Aktiver datadeling** for å dele Customer Insights-utdata med en Dataverse-administrert datasjø.
+
+:::image type="content" source="media/dataverse-data-sharing.png" alt-text="Konfigurasjonsalternativer for å aktivere datadeling med Microsoft Dataverse.":::
+
+> [!NOTE]
+> Customer Insights støtter ikke følgende datadelingsscenarioer:
+> - Hvis du lagrer alle dataene til din egen Azure Data Lake Storage, vil du ikke kunne aktivere datadeling med en Dataverse-administrert datasjø.
+> - Hvis du aktiverer datadeling med Dataverse, kan du ikke [opprette beregnede eller manglende verdier i en enhet](predictions.md).
 
 ## <a name="copy-the-environment-configuration"></a>Kopier miljøkonfigurasjonen
 

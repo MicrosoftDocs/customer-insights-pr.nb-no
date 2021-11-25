@@ -1,7 +1,7 @@
 ---
 title: Semantiske tilordninger (forhåndsversjon)
 description: Oversikt over semantiske tilordninger og hvordan du bruker dem.
-ms.date: 09/28/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: b0884b8b6a2c5abe4b3967d1b57d11a3a6d65c5b
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: f23c622572ff9f967eca07de7898419d1ffc18b0
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622947"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7731955"
 ---
 # <a name="semantic-mappings"></a>Semantiske tilordninger
 
@@ -75,8 +75,7 @@ Med semantiske tilordninger kan du tilordne ikke-aktivitetsdata til forhåndsdef
 
 1. Hvis du vil kjøre en semantisk tilordning senere, velger du semantisk tilordning og velger **Oppdater**.
 
-> [!TIP]
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-semantic-mappings"></a>Behandle eksisterende semantiske tilordninger
 
@@ -91,5 +90,6 @@ På **Data** > **Semantiske tilordninger (forhåndsversjon)** kan du vise alle l
 - **Gi nytt navn**: Åpner en dialogboks der du kan angi et annet navn for den valgte semantiske tilordningen. Velg **Lagre** for å ta i bruk endringene.
 
 - **Slett:** Åpner en dialogboks for å bekrefte slettingen av den valgte semantiske tilordningen. Du kan også slette mer enn én semantisk tilordning samtidig ved å velge semantiske tilordninger og sletteikonet. Velg **Slett** for å bekrefte slettingen.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

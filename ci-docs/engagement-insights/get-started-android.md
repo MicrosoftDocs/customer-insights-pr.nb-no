@@ -4,17 +4,17 @@ description: Finn ut hvordan du tilpasser og kjører Android SDK
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 09/15/2021
+ms.date: 10/19/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: a060ac60db71a7b0fb8c0d7a3b0e266004fbee6a
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: c678c2dafbb77926269b5602bca363c678ec6b3f
+ms.sourcegitcommit: ef823f3d7fa28d3a90cfde9409be9465ffa2cf09
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494287"
+ms.lasthandoff: 10/19/2021
+ms.locfileid: "7655354"
 ---
 # <a name="get-started-with-the-android-sdk"></a>Komme i gang med Android SDK
 
@@ -42,12 +42,12 @@ Start prosessen ved å velge et arbeidsområde, velg Android-mobilplattformen, o
 
 - Hvis du ikke har et eksisterende arbeidsområde, velger du **Nytt arbeidsområde** og følger fremgangsmåten for å opprette [et nytt arbeidsområde](create-workspace.md).
 
-- Når du har opprettet et arbeidsområde, går du til **Administrator** > **Arbeidsområde**, og deretter velger du **Installasjonsveiledning**. 
+- Når du har opprettet et arbeidsområde, går du til **Administrator** > **Arbeidsområde**, og deretter velger du **Installasjonsveiledning**.
 
 ## <a name="configure-the-sdk"></a>Konfigurere SDKen
 
 Når du har lastet ned SDKen, kan du arbeide med den i Android Studio for å aktivere og definere hendelser. Du kan gjøre dette på to ulike måter:
-### <a name="option-1-using-jitpack-recommended"></a>Alternativ 1: Bruk av JitPack (anbefales)
+### <a name="option-1-use-jitpack-recommended"></a>Alternativ 1: Bruke JitPack (anbefales)
 1. Legg til JitPack-repositorium i roten `build.gradle`:
     ```gradle
     allprojects {
@@ -61,12 +61,12 @@ Når du har lastet ned SDKen, kan du arbeide med den i Android Studio for å akt
 1. Legg til avhengigheten:
     ```gradle
     dependencies {
-        implementation 'com.github.microsoft:engagementinsights-sdk-android:1.0.0'
+        implementation 'com.github.microsoft:engagementinsights-sdk-android:v1.0.0'
         api 'com.google.code.gson:gson:2.8.1'
     }
     ```
 
-### <a name="option-2-using-download-link"></a>Alternativ 2: Bruk av nedlastingskobling
+### <a name="option-2-use-download-link"></a>Alternativ 2: Bruke av nedlastingskobling
 1. Last ned [Engasjementinnsikt Android SDK](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-android-sdk.zip), og plasser `eiandroidsdk-debug.aar`-filen i `libs`-mappen.
 
 1. Åpne filen `build.gradle` for prosjektnivå, og legg til følgende snutter:
@@ -83,22 +83,23 @@ Når du har lastet ned SDKen, kan du arbeide med den i Android Studio for å akt
     }
     ```
 
-1. Legg til tillatelse for nettverk og Internett i `AndroidManifest.xml`-filen under `manifests`-mappen. 
+## <a name="enable-auto-instrumentation"></a>Aktivere automatisk instrumentering
+
+1. Legg til tillatelse for nettverk og Internett i `AndroidManifest.xml`-filen under `manifests`-mappen.
     ```xml
     <manifest>
         ...
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     ```
-    
-1. Konfigurer engasjementsinnsikt-SDK-konfigurasjonen via `AndroidManifest.xml`-filen. 
 
-## <a name="enable-auto-instrumentation"></a>Aktivere automatisk instrumentering
+1. Konfigurer engasjementsinnsikt-SDK-konfigurasjonen via `AndroidManifest.xml`-filen.
+
 1. Kopier XML-snutten fra **installasjonsveiledningen**. `Your-Ingestion-Key` fylles ut automatisk.
 
    > [!NOTE]
    > Du trenger ikke å erstatte `${applicationId}`-delen. Den fylles ut automatisk.
-   
+
 
    ```xml
    <application>
@@ -116,20 +117,24 @@ Når du har lastet ned SDKen, kan du arbeide med den i Android Studio for å akt
    </application>
    ```
 
-1. Aktiver eller deaktiver autosporing for `View`-hendelser ved å sette `autoCapture`-feltet ovenfor til `true` eller `false`. For øyeblikket må `Action`-hendelser legges til manuelt.
+1. Aktiver eller deaktiver autosporing for `View`-hendelser ved å sette `autoCapture`-feltet ovenfor til `true` eller `false`. 
 
-1. (Valgfritt) Andre konfigurasjoner inkluderer angivelse av samle-URL for endepunkt. De kan legges til under inkluderingsnøkkelmetadataene i `AndroidManifest.xml`:
-    ```xml
+   >[!NOTE]
+   >`Action`-hendelser må legges til manuelt.
+
+1. (Valgfritt) Andre konfigurasjoner inkluderer angivelse av samle-URL for endepunkt. De kan legges til under inkluderingsnøkkelmetadataene i `AndroidManifest.xml`.
+
+   ```xml
         <meta-data
             android:name="com.microsoft.engagementinsights.endpointUrl"
             android:value="https://some-endpoint-url.com" />
-    ```
+   ```
 
 ## <a name="implement-custom-events"></a>Implementere egendefinerte hendelser
 
 Når du har initialisert SDK-en, kan du arbeide med hendelser og egenskapene deres i `MainActivity`-miljøet.
 
-    
+
 Java:
 ```java
 Analytics analytics = new Analytics();
@@ -141,7 +146,7 @@ var analytics = Analytics()
 ```
 
 ### <a name="set-property-for-all-events-optional"></a>Angi egenskap for alle hendelser (valgfritt)
-    
+
 Java:
 ```java
 analytics.setProperty("year", 2021);

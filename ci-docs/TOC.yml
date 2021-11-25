@@ -84,6 +84,8 @@
           href: audience-insights/enrichment-microsoft.md
         - name: Forbedrede adresser
           href: audience-insights/enrichment-enhanced-addresses.md
+        - name: Forbedre firmadata
+          href: audience-insights/enrichment-enhanced-company-data.md
         - name: Suppler med Azure Maps
           href: audience-insights/enrichment-azure-maps.md
         - name: Suppler med HERE Technologies
@@ -250,6 +252,40 @@
           href: audience-insights/apis.md
         - name: API-referanser
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+- name: Samtykkeadministrasjon (forhåndsversjon)
+  items:
+    - name: Hjelpesenter
+      href: consent-management/index.yml
+    - name: Oversikt over funksjoner
+      href: consent-management/overview.md
+    - name: Kom i gang
+      items:
+        - name: Kom i gang
+          href: consent-management/get-started.md
+        - name: Konsepter og terminologi
+          href: consent-management/glossary.md
+    - name: Importer samtykkedata
+      items:
+        - name: Importer samtykkedata
+          href: consent-management/import-consent-data.md
+        - name: Angi samtykkedata og bruke samtykkeinnstillinger
+          href: consent-management/set-consent-rules.md
+    - name: Administrere samtykkedata
+      items:
+        - name: Aktivere samtykkeregler i målgruppeinnsikt
+          href: audience-insights/activate-consent.md
+        - name: Behandle standard samtykkeregler i målgruppeinnsiktsegmenter
+          href: audience-insights/change-default-consent-rules.md
+    - name: Administrer innstillinger og brukere
+      items:
+        - name: Konfigurere systeminnstillinger
+          href: consent-management/system-settings.md
+        - name: Administrere brukere og tillatelser
+          href: consent-management/manage-users.md
+    - name: Bruke samtykkedata
+      items:
+        - name: Opprette prognoser med samtykkedata
+          href: consent-management/predictions-consent-data.md
 - name: Engasjementsinnsikt (forhåndsversjon)
   items:
     - name: Hjelpesenter

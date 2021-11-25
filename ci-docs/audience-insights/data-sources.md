@@ -1,7 +1,7 @@
 ---
 title: Bruke datakildene til å ta inn data
 description: Lær hvordan du importerer data fra ulike kilder.
-ms.date: 04/12/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: de31e1f25c08d0bcb5341c5f465b1999de48acf3
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 27cbd0346b1219c7812f4b90327dd27b645c2b8e
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645367"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732167"
 ---
 # <a name="data-sources-overview"></a>Oversikt over datakilder
 
@@ -48,14 +48,7 @@ Du ser navnet på hver integrerte datakilde, statusen og siste gang dataene ble 
 > [!div class="mx-imgBorder"]
 > ![Tillagt datakilde.](media/configure-data-datasource-added.png "Tillagt datakilde")
 
-|Status  |Beskrivelse  |
-|---------|---------|
-|Vellykket   |Datakilden ble tatt inn hvis et klokkeslett er nevnt i **Oppdatert**-kolonnen.
-|Ikke startet   |Datakilden har ingen data som er tatt inn ennå, eller den er fremdeles i utkastmodus.         |
-|Oppdaterer    |Datainntak pågår. Du kan avbryte denne operasjonen ved å velge **Stopp oppdatering** i kolonnen **Handlinger**. Hvis du stopper oppdateringen av en datakilde, blir den tilbakestilt til siste oppdateringstilstand.       |
-|Mislyktes     |Det oppstod en feil i datainnhentingen.         |
-
-Velg verdien i **Status**-kolonnen for en datakilde for å se gjennom flere detaljer. Utvid **Datakilder** i ruten **Fremdriftsdetaljer**. Velg **Se detaljer** for mer informasjon om oppdateringsstatusen, inkludert informasjon om feil og prosessoppdateringer nedstrøms.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 Det kan ta tid å laste inn data. Etter en vellykket oppdatering kan de innhentede dataene gjennomgås fra siden **Enheter**. Hvis du vil ha mer informasjon, se [Enheter](entities.md).
 

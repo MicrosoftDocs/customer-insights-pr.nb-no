@@ -1,7 +1,7 @@
 ---
 title: Opprett og administrer mål
 description: Definer mål som skal analyseres og gjenspeile selskapets ytelse.
-ms.date: 09/30/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: d77d1901fee4771537554c05d3963316d0fb37cb
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: f6be11bd97be71bc0c3a58eaee4d8ed45f535877
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673481"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732738"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere mål
 
@@ -238,8 +238,7 @@ Velg et mål fra listen for følgende alternativer:
 - **Slett** målet.
 - **Aktiver** eller **Deaktiver**. Inaktive tiltak oppdateres ikke under en [planlagt oppdatering](system.md#schedule-tab).
 
-> [!TIP]
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Når du har valgt **Se detaljer** for en av jobbens oppgaver, finner du ytterligere informasjon: behandlingstid, siste behandlingsdato og alle feil og advarsler knyttet til oppgaven.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="next-step"></a>Neste trinn
 

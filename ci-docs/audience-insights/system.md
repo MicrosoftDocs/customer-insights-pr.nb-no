@@ -1,7 +1,7 @@
 ---
 title: Systemkonfigurasjon i målgruppeinnsikt
 description: Lær om systeminnstillinger i funksjonen for målgruppeinnsikt i Dynamics 365 Customer Insights.
-ms.date: 10/15/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,14 +9,16 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3ce767939b8fedf676dc569ede47104ecfe930dd
-ms.sourcegitcommit: cd9f9a9d3da71c5420ef5c4c6ead91bc820d17a9
+ms.openlocfilehash: 1b790106f8b9617d0c1f244e1d15a74c7ef9a82b
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/19/2021
-ms.locfileid: "7651852"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732382"
 ---
 # <a name="system-configuration"></a>Systemkonfigurasjon
+
+Hvis du vil ha tilgang til systemkonfigurasjoner i målgruppeinnsikt, velger du **Admin** > **System** i det venstre navigasjonsfeltet for å vise en liste over systemoppgaver og -prosesser.
 
 **System**-siden inneholder følgende faner:
 - [Status](#status-tab)
@@ -30,39 +32,55 @@ ms.locfileid: "7651852"
 
 ## <a name="status-tab"></a>Kategorien Status
 
-I fanen **Status** kan du spore fremdriften for datainntak, dataeksporter og flere andre viktige produktprosesser. Se gjennom informasjonen i denne kategorien for å sikre at aktive prosesser er fullført.
+I **Kategorien Status** kan du spore fremdriften for oppgaver, datainntak, dataeksporter og flere andre viktige produktprosesser. Se gjennom informasjonen i denne kategorien for å sikre at de aktive oppgavene og prosessene er fullstendige.
 
-Denne fanen inneholder tabeller med status og behandlingsinformasjon for ulike prosesser. Hver tabell sporer **navnet** på oppgaven og den tilsvarende enheten, **statusen** for den nyeste kjøringen og når den **sist ble oppdatert**.
+Denne fanen inneholder tabeller med status og behandlingsinformasjon for ulike prosesser. Hver tabell sporer **navnet** på oppgaven og den tilsvarende enheten, **statusen** for den nyeste kjøringen og når den **sist ble oppdatert**. Du kan vise detaljene for de siste kjøringene ved å velge oppgave- eller prosessnavnet. 
 
-Du kan vise detaljene for de siste kjøringene av oppgaven ved å velge navnet på den.
+Velg statusen ved siden av oppgaven eller prosessen i **Status**-kolonnen for å åpne **Fremdriftsdetaljer**-ruten.
 
-### <a name="status-types"></a>Statustyper
+   :::image type="content" source="media/system-progress-details.png" alt-text="Detaljruten for systemfremdrift":::
 
-Det finnes seks typer statuser for oppgaver. Følgende statustyper vises også på sidene *Samsvar*, *Slå sammen*, *Datakilder*, *Segmenter*, *Mål*, *Supplering*, *Aktiviteter* og *Prediksjoner*:
+### <a name="status-definitions"></a>Statusdefinisjoner
 
-- **Behandling:** Oppgave pågår. Statusen kan endres til vellykket eller mislykket.
-- **Vellykket:** Oppgaven er fullført.
-- **Hoppet over:** Oppgaven ble hoppet over. Én eller flere av de prosessene nedstrøms som denne oppgaven avhenger av, mislykkes eller blir hoppet over.
-- **Feil:** Behandlingen av oppgaven mislyktes.
-- **Avbrutt:** Behandlingen ble avbrutt av brukeren før den var ferdig.
-- **I kø:** Behandlingen blir lagt i kø og starter når alle oppstrømsoppgavene er fullført. Hvis du vil ha mer informasjon, kan du se [Oppdateringspolicyer](#refresh-policies).
+Systemet bruker følgende statuser for oppgaver og prosesser:
 
-### <a name="refresh-policies"></a>Oppdateringspolicyer
+|Status  |Definisjon  |
+|---------|---------|
+|Kansellert |Behandlingen ble avbrutt av brukeren før den ble fullført.   |
+|Mislyktes   |Det oppstod en feil i datainnhentingen.         |
+|Feil  |Behandling har mislyktes.  |
+|Ikke startet   |Datakilden har ingen data som er tatt inn ennå, eller den er fremdeles i utkastmodus.         |
+|Behandles  |Oppgave eller prosess pågår.  |
+|Oppdaterer    |Datainntak pågår. Du kan avbryte denne operasjonen ved å velge **Stopp oppdatering** i kolonnen **Handlinger**. Hvis du stopper oppdateringen av en datakilde, blir den tilbakestilt til siste oppdateringstilstand.       |
+|Hoppet over  |Hoppet over oppgave eller prosess. Én eller flere av de prosessene nedstrøms som denne oppgaven avhenger av, mislykkes eller blir hoppet over.|
+|Vellykket  |Oppgave eller prosess er fullført. For datakilder, angir at dataene er inntakte hvis et tidspunkt er nevnt i kolonnen **Oppdatert**.|
+|I kø | Behandlingen blir lagt i kø og starter når alle oppstrømsoppgaver og -prosesser er fullført. Hvis du vil ha mer informasjon, kan du se [Forretningsprosesser](#refresh-processes).|
 
-Denne listen viser oppdateringspolicyene for hver av hovedprosessene:
+### <a name="refresh-processes"></a>Oppdateringsprosesser
 
-- **Datakilder:** Kjører i henhold til den [konfigurerte tidsplanen](#schedule-tab). Er ikke avhengig av andre prosesser. Samsvar avhenger av at denne prosessen er fullført.
-- **Samsvar:** Kjører i henhold til den [konfigurerte tidsplanen](#schedule-tab). Avhenger av behandlingen av datakildene som brukes i samsvarsdefinisjonen. Slå sammen avhenger av at denne prosessen er fullført.
-- **Slå sammen**: Kjører i henhold til den [konfigurerte tidsplanen](#schedule-tab). Avhenger av at samsvarsprosessen er fullført. Segmenter, mål, supplering, søk, aktiviteter, prediksjoner og klargjøring av data avhenger av at denne prosessen er fullført.
-- **Segmenter**: Kjører manuelt (engangsoppdatering) og i henhold til den [konfigurerte tidsplanen](#schedule-tab). Avhenger av fletting. Innsikt avhenger av behandlingen.
-- **Mål**: Kjører manuelt (engangsoppdatering) og i henhold til den [konfigurerte tidsplanen](#schedule-tab). Avhenger av fletting.
-- **Aktiviteter**: Kjører manuelt (engangsoppdatering) og i henhold til den [konfigurerte tidsplanen](#schedule-tab). Avhenger av fletting.
-- **Supplering**: Kjører manuelt (engangsoppdatering) og i henhold til den [konfigurerte tidsplanen](#schedule-tab). Avhenger av fletting.
-- **Søk**: Kjører manuelt (engangsoppdatering) og i henhold til den [konfigurerte tidsplanen](#schedule-tab). Avhenger av fletting.
-- **Dataforberedelse**: Kjører i henhold til den [konfigurerte tidsplanen](#schedule-tab). Avhenger av fletting.
-- **Innsikt**: Kjører manuelt (engangsoppdatering) og i henhold til den [konfigurerte tidsplanen](#schedule-tab). Avhenger av segmenter.
+Oppdatering for oppgaver og prosesser kjøres i henhold til den [konfigurerte tidsplanen](#schedule-tab). 
 
-Velg statusen for en oppgave for å vise detaljer om fremdriften for hele jobben den var i. Oppdateringspolicyene over kan hjelpe deg med å forstå hva du kan gjøre for å løse en oppgave av typen **Hoppet over** eller **I kø**.
+|Behandle  |Beskrivelse  |
+|---------|---------|
+|Aktivitet  |Kjører manuelt (oppdatering én gang). Avhenger av sammenslåingsprosessen. Innsikt avhenger av behandlingen.|
+|Analysekobling |Kjører manuelt (oppdatering én gang). Avhenger av segmenter.  |
+|Analyseforberedelse |Kjører manuelt (oppdatering én gang). Avhenger av segmenter.  |
+|Dataforberedelse   |Avhenger av fletting.   |
+|Datakilder   |Er ikke avhengig av andre prosesser. Samsvar avhenger av at denne prosessen er fullført.  |
+|Suppleringer   |Kjører manuelt (oppdatering én gang). Avhenger av sammenslåingsprosessen. |
+|Eksportmål |Kjører manuelt (oppdatering én gang). Avhenger av segmenter.  |
+|Innsikt |Kjører manuelt (oppdatering én gang). Avhenger av segmenter.  |
+|Intelligens   |Avhenger av fletting.   |
+|Treff |Avhenger av behandlingen av datakildene som brukes i samsvarsdefinisjonen.      |
+|Mål  |Kjører manuelt (oppdatering én gang). Avhenger av sammenslåingsprosessen.  |
+|Flett   |Avhenger av at samsvarsprosessen er fullført. Segmenter, mål, supplering, søk, aktiviteter, prediksjoner og klargjøring av data avhenger av at denne prosessen er fullført.   |
+|Profiler   |Kjører manuelt (oppdatering én gang). Avhenger av sammenslåingsprosessen. |
+|Søk   |Kjører manuelt (oppdatering én gang). Avhenger av sammenslåingsprosessen. |
+|Segmenter  |Kjører manuelt (oppdatering én gang). Avhenger av sammenslåingsprosessen. Innsikt avhenger av behandlingen.|
+|System   |Avhenger av at samsvarsprosessen er fullført. Segmenter, mål, supplering, søk, aktiviteter, prediksjoner og klargjøring av data avhenger av at denne prosessen er fullført.   |
+|User  |Kjører manuelt (oppdatering én gang). Avhengig av enheter.  |
+
+Velg statusen for en prosess for å vise fremdriftsdetaljene for hele jobben den var i. Oppdateringsprosessene ovenfor kan hjelpe deg med å forstå hva du kan gjøre for å løse en oppgave eller prosess som er **Hoppet over** eller **Lagt i kø**.
 
 ## <a name="schedule-tab"></a>Kategorien Tidsplan
 
@@ -86,7 +104,7 @@ Kategorien **Om** inneholder organisasjonens **visningsnavn**, den aktive **milj
 
 Du kan endre språk- og land-/områdeformatet i fanen **Generelt**.
 
-Customer Insights [støtter flere språk](/dynamics365/get-started/availability). Appen bruker språkpreferansen din til å vise elementer som menyen, etiketttekst og systemmeldinger på språket du foretrekker.
+Customer Insights [støtter mange språk](/dynamics365/get-started/availability). Appen bruker språkpreferansen din til å vise elementer som menyen, etiketttekst og systemmeldinger på språket du foretrekker.
 
 Importerte data og informasjon du har angitt manuelt, blir ikke oversatt.
 

@@ -1,7 +1,7 @@
 ---
 title: Samsvare enheter for dataforening
 description: Samsvar enheter for å kombinere datasett og opprette enhetlige kundeprofiler.
-ms.date: 02/23/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-match
-ms.openlocfilehash: 67e17495fa6da1cfac7ee4ee165e798364f6cb27
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+ms.openlocfilehash: cabeddbc9d485108d166e6355175a01721b75a55
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648220"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732646"
 ---
 # <a name="match-entities"></a>Samsvare enheter
 
@@ -180,10 +180,7 @@ Gå til **Data** > **Samle** > **Samsvar**, og velg **Kjør** for å starte pros
 
 Du finner resultatet av en vellykket kjøring, enheten for enhetlig kundeprofil, på **Enheter**-siden. Enheten for enhetlig kunde kalles **Kunder** i **Profiler**-delen. Det første vellykkede samsvarskjøringen oppretter den enhetlige *Kunde*-enheten. Alle påfølgende samsvarskjøringer utvider enheten.
 
-> [!TIP]
-> Når du har kjørt samsvarsprosessen, velger du prosessstatusen for å åpne ruten **Oppgavedetaljer**. Den gir en oversikt over behandlingstiden, den siste behandlingsdatoen og alle feil og advarsler som er knyttet til oppgaven. Velg **Se detaljer** for å se hvilke enheter som deltok i samsvarsprosessen, hvilke regler som ble brukt på dem, og om oppdateringene ble publisert på riktig måte.  
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies).  
-> :::image type="content" source="media/process-detail-path.png" alt-text="Neddrillingsbane for å komme til å behandle detaljer fra aktivitetsstatuskoblingen.":::
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="review-and-validate-your-matches"></a>Se gjennom og validere samsvarene
 

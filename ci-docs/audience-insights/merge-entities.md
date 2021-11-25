@@ -1,7 +1,7 @@
 ---
 title: Slå sammen enheter i dataforening
 description: Slå sammen enheter for å opprette enhetlige kundeprofiler.
-ms.date: 10/10/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-merge
-ms.openlocfilehash: 6b3002b21ea043315e50724ec103aef8a3ced98e
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+ms.openlocfilehash: c218f9c1a1b7711ee48419470bf6c352450ffc0c
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648266"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732784"
 ---
 # <a name="merge-entities"></a>Slå sammen enheter
 
@@ -187,10 +187,9 @@ Velg **Kjør fletting og nedstrømsprosesser** for å oppdatere systemet med end
 
 Hvis du vil gjøre flere endringer og kjøre trinnet på nytt, kan du avbryte en pågående fletting. Velg **Oppdaterer ...**, og velg **Avbryt jobb** i sideruten som vises.
 
-> [!TIP]
-> Når du har kjørt sammenslåingsprosessen, velger du prosessstatusen for å åpne ruten **Oppgavedetaljer**. Den gir en oversikt over behandlingstiden, den siste behandlingsdatoen og alle feil og advarsler som er knyttet til oppgaven. Velg **Se detaljer** for å se hvilke enheter som deltok i samsvarsprosessen, om konfliktoppløsningen er vellykket, og om oppdateringene ble publisert på riktig måte.  
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies).  
-> :::image type="content" source="media/process-detail-path.png" alt-text="Neddrillingsbane for å komme til å behandle detaljer fra aktivitetsstatuskoblingen.":::
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+
+:::image type="content" source="media/process-detail-path.png" alt-text="Neddrillingsbane for å komme til å behandle detaljer fra aktivitetsstatuskoblingen.":::
 
 ## <a name="next-step"></a>Neste trinn
 

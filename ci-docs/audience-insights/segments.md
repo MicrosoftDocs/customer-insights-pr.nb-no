@@ -1,7 +1,7 @@
 ---
 title: Segmenter i målgruppeinnsikt
 description: Oversikt over segmenter og hvordan du oppretter og administrerer dem.
-ms.date: 09/30/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ac33a6dcde4c710cecd3c6836aad3e26ce5c7de6
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: 56978c984a91e85e86956e7eac1d59609c349b6a
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673853"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732600"
 ---
 # <a name="segments-overview"></a>Oversikt over segmenter
 
@@ -65,8 +65,7 @@ Følgende handling er tilgjengelig når du velger et segment:
 
 Du kan oppdatere alle segmenter samtidig ved å velge **Oppdater alle** på **Segmenter**-siden, eller du kan oppdatere ett eller flere segmenter når du velger dem, og deretter velge **Oppdater** fra alternativene. Du kan også konfigurere en regelmessig oppdatering under **Admin** > **System** > **Tidsplan**.
 
-> [!TIP]
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="export-segments"></a>Eksportere segmenter
 
@@ -105,5 +104,6 @@ Den nedre delen inneholder en liste over medlemmene i segmentet.
 > Felt som vises i listen, er basert på attributtene til enhetene i segmentet.
 >
 >Listen er en forhåndsvisning av de samsvarende segmentmedlemmene og viser de første 100 oppføringene av segmentet, slik at du raskt kan evaluere det og se gjennom definisjonene hvis det er nødvendig. Hvis du vil vise alle samsvarende oppføringer, må du [eksportere segmentet](export-destinations.md).
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)] 

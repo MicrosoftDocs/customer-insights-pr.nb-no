@@ -1,7 +1,7 @@
 ---
 title: Supplere kundeprofiler med data fra Microsoft
 description: Bruk proprietære data fra Microsoft til å supplere kundedataene med merke- og interesseaffiniteter.
-ms.date: 06/14/2021
+ms.date: 11/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 51b150cbf5d9cfb3a5df42e680bcfa57ec5496cb
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: c25dbb7a877da2d3fccc1a4e5b219b9792bc6402
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617890"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732554"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Supplere kundeprofiler med merke- og interesseaffiniteter (forhåndsvisning)
 
@@ -116,8 +116,7 @@ Kjør suppleringen etter å ha konfigurert merker, interesser og felttilordninge
 
 Avhengig av størrelsen på kundedataene kan det ta flere minutter å fullføre en supplering.
 
-> [!TIP]
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Når du har valgt **Se detaljer** for en av jobbens oppgaver, finner du ytterligere informasjon: behandlingstid, siste behandlingsdato og alle feil og advarsler knyttet til oppgaven.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 
