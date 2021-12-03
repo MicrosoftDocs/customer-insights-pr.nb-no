@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 948a7e980df5714034009c92282e78cf2bdcb231
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 867a6541734746f75a35faaa8d3861e0479d6114
+ms.sourcegitcommit: 9558ff772ee6c944fcb8db4bfc8cda13b38a1bff
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618303"
+ms.lasthandoff: 11/29/2021
+ms.locfileid: "7866900"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Eksportere segmenter til LinkedIn-annonser (forhåndsversjon)
 
@@ -28,6 +28,7 @@ Eksporter segmenter av enhetlige kundeprofiler til LinkedIn-annonser for å oppr
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
+- Segmentet i Customer Insights må inneholde minst 300 unike profiler. 
 - Du kan eksportere opptil 100 000 kundeprofiler per eksport til LinkedIn Ads.
 - Eksport til LinkedIn-annonser er begrenset til segmenter.
 - Det kan ta opptil 10 minutter å eksportere 100 000 kundeprofiler til LinkedIn Ads. 

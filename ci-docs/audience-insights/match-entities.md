@@ -1,7 +1,7 @@
 ---
 title: Samsvare enheter for dataforening
-description: Samsvar enheter for å kombinere datasett og opprette enhetlige kundeprofiler.
-ms.date: 11/01/2021
+description: Samsvar enheter for å opprette enhetlige kundeprofiler.
+ms.date: 11/24/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-match
-ms.openlocfilehash: cabeddbc9d485108d166e6355175a01721b75a55
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 253c1614725252eb4c794d77669a00b401f0198d
+ms.sourcegitcommit: 740e41ec965cee2229592a6d2610c12def116311
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732646"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "7863823"
 ---
 # <a name="match-entities"></a>Samsvare enheter
 
@@ -224,17 +224,24 @@ Du kan omkonfigurere og finjustere de fleste av samsvarsparameterne.
 
 ## <a name="specify-custom-match-conditions"></a>Angi egendefinerte samsvarsbetingelser
 
-Du kan spesifisere vilkårene som bestemte oppføringer alltid skal samsvare med eller aldri samsvare med. Disse reglene kan lastes opp for å overstyre standard samsvarsprosess. Hvis det for eksempel er en Ola Nordmann I og Ola Nordmann II i oppføringene, kan det hende at systemet samsvarer dem som én person. Ved hjelp av egendefinerte samsvarsregler kan du angi at profilene deres refererer til forskjellige personer. 
+Du kan angi betingelser som overstyrer standard samsvarslogikk. Fire alternativer er tilgjengelige: 
+
+|Alternativ  |Description |Eksempel  |
+|---------|---------|---------|
+|Samsvar alltid     | Definerer verdier som alltid samsvarer.         |  Samsvar alltid *Mike* og *MikeR*.       |
+|Samsvar aldri     | Definerer verdier som aldri samsvarer.        | Samsvar aldri *John* og *Jonathan*.        |
+|Egendefinert utelatelse     | Definerer verdier som systemet alltid skal ignorere i samsvarsfasen. |  Ignorer verdiene *11111* og *Ukjent* under samsvar.        |
+|Aliastilordning    | Definere verdier som systemet skal anse som samme verdi.         | Anse *Joe* lik som *Joseph*.        |
 
 1. Gå til **Data** > **Samle** > **Samsvar**, og velg **Egendefinert samsvar** i delen **Detaljer om samsvarende oppføringer**.
 
-  :::image type="content" source="media/custom-match-create.png" alt-text="Skjermbilde av delen Samsvarsregler med Egendefinert samsvar-kontrollen uthevet.":::
+   :::image type="content" source="media/custom-match-create.png" alt-text="Skjermbilde av delen Samsvarsregler med Egendefinert samsvar-kontrollen uthevet.":::
 
-1. Hvis du ikke har angitt noen egendefinerte samsvarsregler, vises en ny **Egendefinert samsvar**-rute med flere detaljer.
+1. Gå til fanen **Oppføringer** i ruten **Egendefinert**.
 
-1. Velg **Fyll ut malen** for å få en malfil som kan angi hvilke oppføringer fra hvilke enheter som alltid skal samsvare eller aldri samsvare. Du må fylle ut oppføringene for "alltid samsvar" og "aldri samsvar" i to forskjellige filer.
+1. Velg alternativet for egendefinert samsvar fra rullegardinmenyen **Egendefinert type**, og velg **Last ned mal**. Du trenger en separat mal for hvert samsvarsalternativ.
 
-1. Malen inneholder felt for å angi enheten og primærnøkkelverdiene for enheten som skal brukes i det egendefinerte samsvaret. Hvis du for eksempel vil at primærnøkkelen *12345* fra *Salg*-enheten alltid skal samsvare med primærnøkkelen *34567* fra *Kontakt*-enheten, fyller du ut malen:
+1. En malfil lastes ned. Åpne den og fyll ut detaljene. Malen inneholder felt for å angi enheten og primærnøkkelverdiene for enheten som skal brukes i det egendefinerte samsvaret. Hvis du for eksempel vil at primærnøkkelen *12345* fra *Salg*-enheten alltid skal samsvare med primærnøkkelen *34567* fra *Kontakt*-enheten, fyller du ut malen:
     - Entity1: Salg
     - Entity1Key: 12345
     - Entity2: Kontakt
@@ -244,26 +251,32 @@ Du kan spesifisere vilkårene som bestemte oppføringer alltid skal samsvare med
    
    Hvis du vil angi egendefinert samsvar for deduplisering for en enhet, angir du samme enhet som både Enhet1 og Enhet2 og angir de forskjellige primærnøkkelverdiene.
 
-1. Når du har lagt til alle overstyringene du vil bruke, lagrer du malfilen.
+1. Når du har lagt til alle overstyringene, lagrer du malfilen.
 
-1. Gå til **Data** > **Datakilder**, og hent inn malfilene som nye enheter. Når de er lagt inn, kan du bruke dem til å angi samsvarskonfigurasjonen.
+1. Gå til **Data** > **Datakilder**, og hent inn malfilene som nye enheter.
 
-1. Etter at du har lastet opp filene og enhetene er tilgjengelige, velger du alternativet **Egendefinert samsvar** på nytt. Du vil se alternativer for å angi enhetene du vil inkludere. Velg de nødvendige enhetene på rullegardinmenyen.
+1. Etter at du har lastet opp filene og enhetene er tilgjengelige, velger du alternativet **Egendefinert samsvar** på nytt. Du vil se alternativer for å angi enhetene du vil inkludere. Velg de nødvendige enhetene på rullegardinmenyen, og velg **Fullført**.
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Skjermbilde av dialogen for å velge overstyringer for et egendefinert samsvarsscenario.":::
 
-1. Velg enhetene du vil bruke for **Samsvar alltid** og **Samsvar aldri**, og velg **Ferdig**.
+1. Bruk av det egendefinerte samsvaret avhenger av samsvarsalternativet du vil bruke. 
+
+   - Gå til neste trinn for **Samsvar alltid** eller **Samsvar aldri**.
+   - For **Egendefinert utelatelse** eller **Aliastildeling** velger du **Rediger** for en eksisterende samsvarsregel eller oppretter en ny regel. Velg alternativet **Egendefinert utelatelse** eller **Aliastildeling** i rullegardinlisten Normaliseringer, og velg **Fullført**.
 
 1. Velg **Lagre** på **Samsvar**-siden for å bruke den egendefinerte samsvarskonfigurasjonen.
 
 1. Velg **Kjør** på **Samsvar**-siden for å starte samsvarsprosessen. Andre angitte samsvarsregler overstyres av den egendefinerte samsvarskonfigurasjonen.
 
-> [!TIP]
-> Gå til **Data** > **Enheter**, og gå gjennom **ConflationMatchPair**-enheten for å bekrefte at overstyringene er brukt.
+### <a name="known-issues"></a>Kjente problemer
+
+- Selvkonflasjon viser ikke de normaliserte dataene i dedupliseringsenheter. Normaliseringen brukes imidlertid internt under deduplisering. Det er standard for alle normaliseringer. 
+- Hvis innstillingen for semantisk type fjernes i **tildelingsfasen** når en samsvarsregel bruker aliastildeling eller egendefinert utelatelse, brukes ikke normaliseringen. Det skjer bare hvis du fjerner semantisk type etter at du har konfigurert normaliseringen i samsvarsregelen fordi semantisk type vil være ukjent.
+
 
 ## <a name="next-step"></a>Neste trinn
 
-Når du har fullført samsvarsprosessen for minst ett samsvarspar, kan du løse mulige konflikter i dataene ved å gå gjennom emnet [**Slå sammen**](merge-entities.md).
+Når du har fullført samsvarsprosessen for minst ett samsvarspar, fortsetter du til trinnet for [**sammenslåing**](merge-entities.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
