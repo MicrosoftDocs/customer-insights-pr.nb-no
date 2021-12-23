@@ -1,7 +1,7 @@
 ---
 title: Aktivere samtykkeregler for segmenter
 description: Følg disse trinnene for å koble samtykkedata og aktivere samtykkekontroller i målgruppeinnsikt. En administrator kan også deaktivere samtykkekontroller.
-ms.date: 11/03/2021
+ms.date: 11/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: smithy7
 ms.author: smithc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 45899738d39bd5caa433e123f9fe59020e831998
-ms.sourcegitcommit: 79b09498d1328e5551fb8684c44af1fb149f9881
+ms.openlocfilehash: 552cb0739c4d17266dd028638df067f3384b738a
+ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "7790788"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "7884086"
 ---
 # <a name="activate-consent-rules"></a>Aktivere samtykkeregler
 
@@ -49,3 +49,6 @@ En administrator må oppdatere systeminnstillingene for å slutte å bruke samty
 1. Velg fanen **Samtykke (forhåndsvisning)**.
 
 1. I delen **Aktiver samtykkekontroller** setter du veksleknappen til **Av**.
+
+> [!TIP]
+> Hvis du vil slutte å bruke funksjonen for samtykkebehandling, kan du se [Systeminnstillinger i Samtykkesenter (forhåndsersjon)](../consent-management/system-settings.md).

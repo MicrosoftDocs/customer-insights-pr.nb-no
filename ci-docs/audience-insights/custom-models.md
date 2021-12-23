@@ -1,7 +1,7 @@
 ---
 title: Egendefinerte modeller for maskinlæring | Microsoft Docs
 description: Arbeide med egendefinerte modeller fra Azure Machine Learning i Dynamics 365 Customer Insights.
-ms.date: 03/22/2021
+ms.date: 12/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,20 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 187995cdf4d92a0609f8abb4c792e698ad4342cdb1f578744136add1bfcf3a53
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 47e2e5109ef8f21a782f6c8f87088009f8a40fdf
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032954"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881796"
 ---
 # <a name="custom-machine-learning-models"></a>Egendefinerte modeller for maskinlæring
+
+> [!NOTE]
+> Støtte for Machine Learning Studio (klassisk) slutter 31. august 2024. Vi anbefaler at du går over til [Azure Machine Learning](/azure/machine-learning/overview-what-is-azure-machine-learning) innen denne datoen.
+>
+> Per 1. desember 2021 kan du ikke opprette nye Machine Learning Studio-ressurser (klassisk). Til og med 31. august 2024 kan du fortsette å bruke de eksisterende Machine Learning Studio-ressursene (klassisk). Hvis du vil ha mer informasjon, kan du se [Overføre til Azure Machine Learning](/azure/machine-learning/migrate-overview).
+
 
 **Intelligens** > **Egendefinerte modeller** lar deg behandle arbeidsflyter basert på Azure Machine Learning-modeller. Arbeidsflyter hjelper deg med å velge dataene du vil generere innsikt fra, og tilordne resultatene til dine ensartede kundedata. Hvis du vil ha mer informasjon om utforming av egen definerte ML-modeller, kan du se [Bruk Azure Machine Learning-baserte modeller](azure-machine-learning-experiments.md).
 
@@ -24,9 +30,9 @@ ms.locfileid: "7032954"
 
 Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forretningsmulighetene og omsetningsstrømmer. Vi anbefaler på det sterkeste at du balanserer verdien i prediksjon mot innvirkningen den har, og vektlegger det som blir introdusert, på en etisk måte. Lær mer om hvordan Microsoft [håndterer ansvarlig kunstig intelligens](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Du kan også lære om [teknikker og prosesser for ansvarlig maskinlæring](/azure/machine-learning/concept-responsible-ml) som er spesifikke for Azure Machine Learning.
 
-## <a name="prerequisites"></a>Forutsetninger
+## <a name="prerequisites"></a>Krav
 
-- Denne funksjonen støtter for øyeblikket nettjenester som publiseres via [Machine Learning Studio (klassisk)](https://studio.azureml.net) og [bunkepipeliner i Azure Machine Learning](/azure/machine-learning/concept-ml-pipelines).
+- Denne funksjonen støtter webtjenester som er publisert via [Azure Machine Learning-gruppepipeliner](/azure/machine-learning/concept-ml-pipelines).
 
 - Du trenger en Azure Data Lake Gen2-lagringskonto som er tilknyttet Azure Studio-forekomsten, for å bruke denne funksjonen. Hvis du vil ha mer informasjon, se [Opprett en Azure Data Lake Storage Gen2-lagringskonto](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
 
@@ -48,11 +54,10 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
 
 1. Hvis Azure Machine Learning-abonnementet ditt er i en annen leier enn Customer Insights, velger du **Logg på** med legitimasjonen din for den valgte organisasjonen.
 
-1. Velg **arbeidsområdene** som er knyttet til nettjenesten. To deler vises, én for Azure Machine Learning v1 (Machine Learning Studio (klassisk)) og Azure Machine Learning v2 (Azure Machine Learning). Hvis du ikke er sikker på hvilket arbeidsområde som er det riktige for Machine Learning Studio (klassisk)-nettjenesten, velger du **Hvilken som helst**.
+1. Velg **arbeidsområdene** som er knyttet til nettjenesten. 
 
-1. Velg Machine Learning Studio (klassisk)-nettjenesten eller Azure Machine Learning-pipelinen i rullegardinmenyen **Nettjeneste som inneholder modellen**. Velg deretter **Neste**.
-   - Lær mer om [publisering av en nettjeneste i Machine Learning Studio (klassisk)](/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Lær mer om [publisering av en pipeline i Azure Machine Learning ved hjelp av designeren](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK-et](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Pipelinen må publiseres under et [pipelineendepunkt](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+1. Velg Azure Machine Learning-pipelinen i rullegardinlisten **Nettjeneste som inneholder modellen**. Velg deretter **Neste**.    
+   Lær mer om [publisering av en pipeline i Azure Machine Learning ved hjelp av designeren](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK-et](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Pipelinen må publiseres under et [pipelineendepunkt](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. For hver **nettjenesteinndata** velger du den samsvarende **enheten** fra målgruppeinnsikt og velger **Neste**.
    > [!NOTE]
@@ -62,9 +67,6 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
    > ![Konfigurer en arbeidsflyt.](media/intelligence-screen2-updated.png "Konfigurere en arbeidsflyt")
 
 1. I trinnet **Parametere for modellutdata** angir du følgende egenskaper:
-   - Machine Learning Studio (klassisk)
-      1. Angi **enhetsnavnet** for utdataene der du vil at utdataresultatene fra nettjenesten skal flytes.
-   - Azure Machine Learning
       1. Angi **enhetsnavnet** for utdataene der du vil at utdataresultatene for pilelinen skal flytes.
       1. Velg **Navn på parameter for utdatalager** for bunkepipelinen fra rullegardinmenyen.
       1. Velg **Navn på parameter for utdatabane** for bunkepipelinen fra rullegardinmenyen.
@@ -93,9 +95,6 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
 1. For hver **nettjenesteinndata** kan du oppdatere den samsvarende **enheten** fra målgruppeinnsikt. Velg deretter **Neste**.
 
 1. I trinnet **Parametere for modellutdata** angir du følgende egenskaper:
-   - Machine Learning Studio (klassisk)
-      1. Angi **enhetsnavnet** for utdataene der du vil at utdataresultatene fra nettjenesten skal flytes.
-   - Azure Machine Learning
       1. Angi **enhetsnavnet** for utdataene der du vil at utdataresultatene for pilelinen skal flytes.
       1. Velg **Navn på parameter for utdatalager** for testpipelinen.
       1. Velg **Navn på parameter for utdatabane** for testpipelinen.

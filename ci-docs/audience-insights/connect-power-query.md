@@ -1,7 +1,7 @@
 ---
-title: Ta inn data via en Power Query-kobling
+title: Hente data via en Power Query-tilkobling (video)
 description: Koblinger til datakilder basert på Power Query.
-ms.date: 11/01/2020
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,16 +9,18 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 5d54d33c235e646644e8874e5b0c28898dcff11a
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 38c447d80a25feca087ca9f110278b8401423018
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732230"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7903852"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Koble til et Power Query-datakilde
 
-Power Query tilbyr et bredt sett med koblinger for å hente data. De fleste av disse koblingene støttes av Dynamics 365 Customer Insights. Når du legger til datakilder basert på Power Query-koblingene, følges generelt fremgangsmåtene som er beskrevet i neste del. Avhengig av hvilken kontakt du bruker, er det imidlertid nødvendig med forskjellig informasjon. Hvis du vil ha mer informasjon, kan du se dokumentasjonen for enkeltkoblinger i [Power Query-koblingsreferanse](/power-query/connectors/).
+Power Query tilbyr et bredt sett med koblinger for å hente data. De fleste av disse koblingene støttes av Dynamics 365 Customer Insights. 
+
+Når du legger til datakilder basert på Power Query-koblinger, følger du trinnene som beskrives i denne delen. Avhengig av hvilken kontakt du bruker, er det imidlertid nødvendig med forskjellig informasjon. Hvis du vil vite mer, kan du se dokumentasjonen for individuelle koblinger i [Power Query-koblingsreferansen](/power-query/connectors/).
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN6EK]
 
@@ -28,14 +30,11 @@ Power Query tilbyr et bredt sett med koblinger for å hente data. De fleste av d
 
 1. Velg **Legg til datakilde**.
 
-1. Velg **Importer data**-metoden, og velg deretter **Neste**.
+1. Velg **Microsoft Power Query**, og velg deretter **Neste**.
 
-1. Angi et **Navn** for datakilden, og velg deretter **Neste** for å opprette datakilden. Navneretningslinjer: 
-   - Start med en bokstav.
-   - Bruk bare bokstaver og tall. Spesialtegn og mellomrom er ikke tillatt.
-   - Bruk mellom 3 og 64 tegn.
+1. Angi et **Navn** for datakilden, og velg deretter **Neste** for å opprette datakilden.
 
-1. Velg én av de [tilgjengelige koblingene](#available-power-query-data-sources). I dette eksemplet velger vi **Tekst/CSV**-koblingen.
+1. Velg én av de [tilgjengelige koblingene](#available-power-query-data-sources). I dette eksemplet velger vi **Tekst-/CSV**-koblingen.
 
 1. Angi de nødvendige detaljene i **Tilkoblingsinnstillinger** for den valgte koblingen, og velg **Neste** for å vise en forhåndsvisning av dataene.
 
@@ -50,7 +49,7 @@ Power Query tilbyr et bredt sett med koblinger for å hente data. De fleste av d
 
 1. Du kan legge til flere enheter i datakilden ved å velge **Hent data** i dialogboksen **Rediger spørringer**.
 
-   Disse transformasjonene anbefales på det sterkeste:
+   Vi anbefaler at du bruker følgende transformasjoner:
 
    - Hvis du heter data fra en CSV-fil, inneholder den første raden ofte overskrifter. Gå til **Transformer tabell**, og velg **Bruk overskrifter som første rad**.
    - Kontroller at datatypen er angitt riktig.
@@ -61,7 +60,7 @@ Power Query tilbyr et bredt sett med koblinger for å hente data. De fleste av d
 
 ## <a name="available-power-query-data-sources"></a>Tilgjengelige Power Query-datakilder
 
-Se [Power Query-referansekobling](/power-query/connectors/) for å få en oppdatert liste over koblinger som du kan velge for å importere data til Customer Insights. 
+Se [Power Query-koblingsreferansen](/power-query/connectors/) for en liste over koblinger som du kan bruke til å importere data til Customer Insights. 
 
 Kontakter med en hake i kolonnen **Customer Insights (dataflyter)** er tilgjengelige for oppretting av nye datakilder basert på Power Query. Se gjennom dokumentasjonen for en bestemt kobling for å finne ut mer om forhåndskravene, begrensningene og andre detaljer.
 

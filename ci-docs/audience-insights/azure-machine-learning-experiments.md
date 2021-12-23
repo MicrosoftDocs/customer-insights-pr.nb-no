@@ -1,7 +1,7 @@
 ---
 title: Azure Machine Learning-eksperimenter
 description: Bruk Azure Machine Learning-baserte modeller i Dynamics 365 Customer Insights.
-ms.date: 11/30/2020
+ms.date: 12/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,16 +9,16 @@ author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4c04a1d08aba152ce91d452ae2300c1ce0fc79e5d6980ac506dc40d9914c9fca
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: e37eec503c9df83ef72497e22afa1266296e642c
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033184"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881750"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Bruk Azure Machine Learning-baserte modeller
 
-De ensartede dataene i Dynamics 365 Customer Insights er en kilde for bygging av maskinlæringsmodeller som kan generere ytterligere forretningsinnsikt. Customer Insights integreres med Machine Learning Studio (klassisk) og Azure Machine Learning, slik at du kan bruke dine egne, tilpassede modeller. Se [Eksperimenter i Machine Learning Studio (klassisk)](machine-learning-studio-experiments.md) for eksempler på eksperimenter som er basert på Machine Learning Studio (klassisk). 
+De ensartede dataene i Dynamics 365 Customer Insights er en kilde for bygging av maskinlæringsmodeller som kan generere ytterligere forretningsinnsikt. Customer Insights integreres med Azure Machine Learning slik at dine egendefinerte modeller brukes.
 
 ## <a name="prerequisites"></a>Forutsetninger
 
@@ -35,7 +35,7 @@ De ensartede dataene i Dynamics 365 Customer Insights er en kilde for bygging av
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Arbeide med Azure Machine Learning-designer
 
-Azure Machine Learning-designer har et visuelt lerret der du kan dra og slippe datasett og moduler, på samme måte som Machine Learning Studio (klassisk). En bunkepipeline som opprettes fra designeren, kan integreres i Customer Insights hvis den er konfigurert i henhold til dette. 
+Azure Machine Learning-utformingen har et visuelt lerret der du kan dra og slippe datasett og moduler. En bunkepipeline som opprettes fra designeren, kan integreres i Customer Insights hvis den er konfigurert i henhold til dette. 
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Arbeide med SDK-et for Azure Machine Learning
 

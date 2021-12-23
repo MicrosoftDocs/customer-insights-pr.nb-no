@@ -1,7 +1,7 @@
 ---
 title: Bruke datakildene til å ta inn data
 description: Lær hvordan du importerer data fra ulike kilder.
-ms.date: 11/01/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 27cbd0346b1219c7812f4b90327dd27b645c2b8e
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 6846c73cb156aaa049e2656c8e327bcba1f73abc
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732167"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900391"
 ---
 # <a name="data-sources-overview"></a>Oversikt over datakilder
 
@@ -25,19 +25,22 @@ Funksjonen for målgruppeinnsikt i Dynamics 365 Customer Insights kobler til dat
 
 ## <a name="add-a-data-source"></a>Legg til en datakilde
 
-Se i de detaljerte artiklene om hvordan du legger til en datakilde, avhengig av hvilket alternativ du velger.
+Se de detaljerte artiklene om hvordan du legger til datakilde, avhengig av alternativet du velger.
 
-Du kan legge til en datakilde på tre hovedmåter:
+Du kan legge til følgende datakilder:
 
-- [Gjennom dusinvis av Power Query-koblinger](connect-power-query.md)
-- [Fra en mappe i Common Data Model](connect-common-data-model.md)
-- [Fra din egen Microsoft Dataverse-datasjø](connect-dataverse-managed-lake.md)
+- [Power Query-koblinger](connect-power-query.md)
+- [Common Data Model](connect-common-data-model.md)
+- [Microsoft Dataverse sjø](connect-dataverse-managed-lake.md)
+
+> [!NOTE]
+> Hvis du bruker prøveversjonen, inneholder importmetodedelen et alternativ for **Customer Insights-databibliotek**. Velg dette alternativet for å velge et eksempeldatasett tilgjengelig for ulike bransjer. Se [Dynamics 365 Customer Insights-prøveversjon](../trial-signup.md) hvis du vil ha mer informasjon.
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Legge til data fra lokale datakilder
 
-Inntak av data fra lokale datakilder i målgruppeinnsikt støttes basert på Microsoft Power Platform-dataflyter. Dataflyter kan aktiveres i Customer Insights ved å [angi Microsoft Dataverse-URL-adressen for miljøet](create-environment.md) under konfigurasjon av miljøet.
+Inntak av data fra lokale datakilder i målgruppeinnsikt støttes basert på Microsoft Power Platform-dataflyter. Du kan aktivere dataflyter i Customer Insights ved [å angi Microsoft Dataverse URL-adressen for miljøet](create-environment.md) når du konfigurerer miljøet.
 
-Datakilder som opprettes etter at et miljø er knyttet til et Dataverse-miljø med Customer Insights, bruker [Power Platform-dataflyter](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflyter støtter tilkobling på stedet ved hjelp av datagatewayen. Fjern og opprett på nytt datakilder som eksisterte før et Dataverse-miljø ble knyttet til, for å [bruke lokale datagatewayer](/data-integration/gateway/service-gateway-app).
+Datakilder som opprettes etter at et miljø er knyttet til et Dataverse-miljø med Customer Insights, bruker [Power Platform dataflyter](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflyter støtter tilkobling på stedet ved hjelp av datagatewayen. Du kan fjerne og opprette datakilder som eksisterte før et Dataverse miljø ble knyttet til, [ved å bruke lokale datagatewayer](/data-integration/gateway/service-gateway-app).
 
 Datagatewayer fra et eksisterende Power BI- eller Power Apps-miljø vil være synlige og kan brukes på nytt i Customer Insights. Datakildesiden viser koblinger for å gå til Microsoft Power Platform-miljøet der du kan vise og konfigurere lokale datagatewayer.
 

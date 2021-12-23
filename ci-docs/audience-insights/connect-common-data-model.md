@@ -1,7 +1,7 @@
 ---
 title: Koble Common Data Model-til en Azure Data Lake-konto
 description: Arbeid med Common Data Model-data ved hjelp av Azure Data Lake Storage.
-ms.date: 05/29/2020
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 93871f8029053d4ed4a116d3af3550b7684ee11ea8633e937138245e193a44e6
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 5f9010f78ea4c24094e0df4f8e153fb832e05cc8
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033138"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900209"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Knytte til en Common Data Model-mappe ved å bruke en Azure Data Lake-konto
 
@@ -30,7 +30,7 @@ Denne artikkelen inneholder informasjon om hvordan du tar inn data fra en Common
 
 - Azure Data Lake-forekomsten du vil koble til og ta inn data fra, må være i samme Azure-område som Dynamics 365 Customer Insights-miljøet. Tilkoblinger til en Common Data Model-mappe fra en Data Lake-forekomst i et annet Azure-område støttes ikke. Hvis du vil vite Azure-området i miljøet, går du til **Administrasjon** > **System** > **Om** i Målgruppeinnsikt.
 
-- Data som er lagret i onlinetjenester, kan lagres på en annen plassering enn der data behandles eller lagres i Dynamics 365 Customer Insights.Ved å importere eller koble til data som er lagret i en onlinetjeneste, godtar du at dataene kan overføres til og lagres med Dynamics 365 Customer Insights. [Finn ut mer på Microsoft Klareringssenter.](https://www.microsoft.com/trust-center)
+- Data som er lagret i onlinetjenester, kan lagres på en annen plassering enn der data behandles eller lagres i Dynamics 365 Customer Insights. Ved å importere eller koble til data som er lagret i en onlinetjeneste, godtar du at dataene kan overføres til og lagres med Dynamics 365 Customer Insights. [Finn ut mer om Microsofts klareringssenter](https://www.microsoft.com/trust-center).
 
 ## <a name="connect-to-a-common-data-model-folder"></a>Koble til en mappe i Common Data Model
 
@@ -38,12 +38,11 @@ Denne artikkelen inneholder informasjon om hvordan du tar inn data fra en Common
 
 1. Velg **Legg til datakilde**.
 
-1. Velg **Koble til en mappe i Common Data Model**, angi et **navn** for datakilden, og velg **Neste**. Navneretningslinjer: 
-   - Start med en bokstav.
-   - Bruk bare bokstaver og tall. Spesialtegn og mellomrom er ikke tillatt.
-   - Bruk mellom 3 og 64 tegn.
+1. Velg **Azure Data Lake Storage**, angi et **navn** for datakilden, og velg deretter **Neste**.
 
-1. Du kan velge mellom å bruke et ressursbasert alternativ og et abonnementsbasert alternativ for godkjenning. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). Skriv inn informasjon om **beholderen**, og velg **Neste**.
+   - Hvis du blir bedt om det, velger du et av eksempeldatasettene som gjelder for bransjen, og deretter velger du **Neste**. 
+
+1. Du kan velge mellom å bruke et ressursbasert alternativ og et abonnementsbasert alternativ for godkjenning. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md). Skriv inn **Server-adressen**, velg **Logg på**, og velg deretter **Neste**.
    > [!div class="mx-imgBorder"]
    > ![Dialogboksen for å angi nye tilkoblingsdetaljer for Azure Data Lake.](media/enter-new-storage-details.png)
    > [!NOTE]
@@ -56,11 +55,11 @@ Denne artikkelen inneholder informasjon om hvordan du tar inn data fra en Common
    > [!NOTE]
    > En model.json- eller manifest.json-fil som er tilknyttet en annen datakilde i miljøet, vises ikke i listen.
 
-1. Det vises en liste over tilgjengelige enheter i den valgte model.json- eller manifest.json-filen. Du kan se gjennom og velge fra listen over tilgjengelige enheter, og deretter velge **Lagre**. Alle de valgte enhetene tas inn fra den nye datakilden.
+1. Du ser en liste over tilgjengelige enheter i den valgte model.json- eller manifest.json-filen. Se gjennom og velg fra listen over tilgjengelige enheter, og velg deretter **Lagre**. Alle de valgte enhetene tas inn fra den nye datakilden.
    > [!div class="mx-imgBorder"]
    > ![Dialogboks som viser en liste over enheter fra en model.json-fil.](media/review-entities.png)
 
-8. Angi hvilke dataenheter du vil aktivere dataprofilering for, og velg **Lagre**. Dataprofilering aktiverer analyse og andre funksjoner. Du kan velge hele enheten, noe som velger alle attributter fra enheten, eller du kan velge bestemte valgte attributter. Som standard er ingen enheter aktivert for dataprofilering.
+8. Angi hvilke dataenheter du vil aktivere dataprofilering for, og velg deretter **Lagre**. Dataprofilering aktiverer analyse og andre funksjoner. Du kan velge hele enheten, noe som velger alle attributter fra enheten, eller du kan velge bestemte valgte attributter. Som standard er ingen enheter aktivert for dataprofilering.
    > [!div class="mx-imgBorder"]
    > ![Dialogboks som viser dataprofilering.](media/dataprofiling-entities.png)
 

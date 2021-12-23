@@ -1,20 +1,20 @@
 ---
-title: Kundekort-tillegget for Dynamics 365-apper
+title: Kundekorttillegg for Dynamics 365-apper (Video)
 description: Vis data fra målgruppeinnsikt i Dynamics 365-apper med dette tillegget.
-ms.date: 09/30/2021
+ms.date: 12/07/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: pkieffer
-ms.author: philk
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: dbcdcbea8ffd1755b58c322233c08c70a065db36
-ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
+ms.openlocfilehash: e15d73bfc7af2cd9c8b5d983f01922459ec4a2ee
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "7792039"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7904025"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillegg for kundekort (forhåndsversjon)
 
@@ -34,7 +34,7 @@ Få en 360-graders visning av kundene direkte i Dynamics 365-apper. Når tillegg
   - **Målkontroll**: Krever [konfigurerte målinger](measures.md) av typen kundeattributter.
   - **Intelligenskontroll**: Krever data generert ved hjelp av [prediksjoner](predictions.md) eller [egendefinerte modeller](custom-models.md).
   - **Kundedetaljer-kontroll**: Alle felt fra profilen er tilgjengelige i den enhetlige kundeprofilen.
-  - **Suppleringskontroll**: Krever at aktive [suppleringer](enrichment-hub.md) brukes på kundeprofiler. Korttillegget støtter disse suppleringene: [Merker](enrichment-microsoft.md) fra Microsoft, [Interesser](enrichment-microsoft.md) som leveres av Microsoft.
+  - **Suppleringskontroll**: Krever at aktive [suppleringer](enrichment-hub.md) brukes på kundeprofiler. Korttillegget støtter disse suppleringene: [Merker](enrichment-microsoft.md) fra Microsoft, [Interesser](enrichment-microsoft.md) fra Microsoft og [Office-engasjementsdata](enrichment-office.md) fra Microsoft.
   - **Kontakter**-kontroll: Krever definisjon av semantisk enhet av typekontakter.
   - **Tidslinjekontroll**: Krever [konfigurerte aktiviteter](activities.md).
 

@@ -1,7 +1,7 @@
 ---
 title: Koble til en Azure Data Lake Storage-konto ved hjelp av en tjenestekontohaver
 description: Bruk en Azure-tjenestekontohaver til å koble til din egen datasjø.
-ms.date: 09/08/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,26 +9,26 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b901d799dbd73841a6ddbae754c4e4275f61146a
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645184"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900287"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Koble til en Azure Data Lake Storage-konto ved hjelp av en Azure-tjenestekontohaver
 
-Automatiske verktøy som bruker Azure-tjenester, bør alltid ha begrensede tillatelser. I stedet for at programmer skal logges på som en bruker med full rettigheter, tilbyr Azure tjenestekontohavere. Les videre for å lære hvordan du kobler Dynamics 365 Customer Insights til en Azure Data Lake Storage-konto ved hjelp av en Azure-tjenestekontohaver i stedet for lagringskontonøkler. 
+Denne artikkelen beskriver hvordan du kobler Dynamics 365 Customer Insights til en Azure Data Lake Storage konto ved hjelp av en Azure-tjenestekontohaver i stedet for lagringskontonøkler. 
 
-Du kan bruke tjenestekontohaveren til sikkert å [legge til eller redigere en Common Data Service-mappe som en datakilde](connect-common-data-model.md) eller [opprette eller oppdatere et miljø](create-environment.md).
+Automatiske verktøy som bruker Azure-tjenester, bør alltid ha begrensede tillatelser. I stedet for at programmer skal logges på som en bruker med full rettigheter, tilbyr Azure tjenestekontohavere. Du kan bruke tjenestekontohavere til sikkert å [legge til eller redigere en Common Data Model-mappe som en datakilde](connect-common-data-model.md) eller [opprette eller oppdatere et miljø](create-environment.md).
 
 > [!IMPORTANT]
 > - Data Lake Storage-kontoen som skal bruke tjenestekontohaveren, må ha [hierarkisk navneområde aktivert](/azure/storage/blobs/data-lake-storage-namespace).
-> - Du trenger administratortillatelser for Azure-abonnementet for å opprette tjenestekontohaveren.
+> - Du må ha administratortillatelser for Azure-abonnementet for å opprette en tjenestekontohaver.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Opprett en Azure-tjenestekontohaver for Customer Insights
 
-Før du oppretter en ny tjenestekontohaver for målgruppeinnsikt eller engasjementsinnsikt, bør du kontrollere om den allerede finnes i organisasjonen.
+Før du oppretter en ny tjenestekontohaver for Customer Insights, kontrollerer du om den allerede finnes i organisasjonen.
 
 ### <a name="look-for-an-existing-service-principal"></a>Se etter en eksisterende tjenestekontohaver
 

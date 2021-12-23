@@ -1,7 +1,7 @@
 ---
 title: Enheter og datasett
 description: Vise data på Enheter-siden.
-ms.date: 11/01/2021
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,51 +9,57 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 2a207a3dcad4bf192efb6ee1554195f10b19670b
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 00c5ee50fb9f0906622c91699852ffba0acb5c15
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732093"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900439"
 ---
 # <a name="entities-in-audience-insights"></a>Enheter i målgruppeinnsikt
 
 Når du har [konfigurert datakildene](data-sources.md), går du til siden **Enheter** for å vurdere kvaliteten på de innhentede dataene. Enheter anses som datasett. Flere funksjoner i Dynamics 365 Customer Insights er bygget rundt disse enhetene. Når du ser gjennom dem, kan det hjelpe deg med å validere utdataene fra disse funksjonene.
 
-Siden **Enheter** viser enheter og inneholder flere kolonner:
+**Enheter**-siden viser enheter og inneholder disse kolonnene:
 
 - **Navn**: Navnet på dataenheten. Hvis du ser et varselsymbol ved siden av et enhetsnavn, betyr det at dataene for enheten ikke ble lastet inn på riktig måte.
-- **Kilde**: Typen datakilde som hentet inn enheten
-- **Opprettet av**: Navnet på personen som opprettet enheten
-- **Opprettet**: Dato og klokkeslett for enhetsopprettingen
-- **Oppdatert**: Navn på personen som oppdaterte enheten
-- **Status**: Detaljer om den siste oppdateringen av enheten
+- **Kilde**: Typen datakilde som inkluderte enheten.
+- **Oppdatert**: Klokkeslett for når enheten sist ble oppdatert.
+- **Status**: Detaljer om den siste oppdateringen av enheten.
 
 [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="explore-a-specific-entitys-data"></a>Utforsk dataene til en bestemt enhet
 
-Velg en enhet for å utforske de forskjellige feltene og oppføringene som er inkludert i enheten.
+1. I Målgruppeinnsikt går du til **Data** > **Enheter**.
+1. Velg en enhet for å åpne detaljsiden fra **Enheter**-siden.  
+1. Utforsk de forskjellige feltene og oppføringene for enheten.
 
-> [!div class="mx-imgBorder"]
-> ![Velg en enhet.](media/data-manager-entities-data.png "Velg en enhet")
-
-- Fanen **Data** viser en tabell som viser detaljer om enkeltoppføringer for enheten.
+- Fanen **Attributter** velges som standard og viser en tabell for å se gjennom detaljer for den valgte enheten, for eksempel feltnavn, datatyper og typer. **Type**-kolonnen viser Common Data Model-tilknyttede typer, som enten er automatisk identifiserte av systemet eller [manuelt tilordnede](map-entities.md) av brukere. Disse typene er semantiske typer som kan være forskjellige fra datatypene for attributtene. Feltet *E-post* nedenfor har for eksempel datatypen *Tekst*, men typen Common Data Model (semantisk) kan være *E-post* eller *EmailAddress*.
 
 > [!div class="mx-imgBorder"]
 > ![Tabellen Felter.](media/data-manager-entities-fields.PNG "Tabellen Felt")
 
-- Fanen **Attributter** velges som standard og viser en tabell for å se gjennom detaljer for den valgte enheten, for eksempel feltnavn, datatyper og typer. **Type**-kolonnen viser Common Data Model-tilknyttede typer, som enten er automatisk identifiserte av systemet eller [manuelt tilordnede](map-entities.md) av brukere. Disse typene er semantiske typer som kan være forskjellige fra datatypene for attributtene. Feltet *E-post* nedenfor har for eksempel datatypen *Tekst*, men typen Common Data Model (semantisk) kan være *E-post* eller *EmailAddress*.
-
 > [!NOTE]
-> Begge tabellene viser bare et eksempel på enhetens data. Hvis du vil vise hele datasettet, går du til siden **Datakilder**, velger en enhet, velger **Rediger** og deretter viser enhetens data med Power Query-redigeringsprogrammet som forklart i [Datakilder](data-sources.md).
+> Denne siden viser bare et eksempel på enhetsdataene. Hvis du vil vise hele datasettet, går du til siden **Datakilder**, velger en enhet, velger **Rediger** og deretter viser enhetens data med Power Query-redigeringsprogrammet som forklart i [Datakilder](data-sources.md).
 
-Hvis du vil lære mer om data som hentes inn i enheten, gir kolonnen **Sammendrag** deg noen viktige egenskaper for dataene, for eksempel nuller, manglende verdier, unike verdier, antall og fordelinger, i henhold til hva som gjelder for dataene dine.
-
-Velg diagramikonet for å vise sammendraget av dataene.
+Hvis du vil lære mer om data som hentes inn i enheten, gir kolonnen **Sammendrag** deg noen viktige egenskaper for dataene, for eksempel nuller, manglende verdier, unike verdier, antall og fordelinger, i henhold til hva som gjelder for dataene dine. Velg diagramikonet for å vise sammendraget av dataene.
 
 > [!div class="mx-imgBorder"]
 > ![Sammendragssymbol.](media/data-manager-entities-summary.png "Tabell for datasammendrag")
+
+- Fanen **Data** viser en tabell som viser detaljer om enkeltoppføringer for enheten. Hvilke detaljer som vises, avhenger av datatypen for enheten.
+
+> [!div class="mx-imgBorder"]
+> ![Velg en enhet.](media/data-manager-entities-data.png "Velg en enhet")
+
+- I kategorien **Rapporter** (tilgjengelig for enkelte enheter) kan du visualisere dataene ved å opprette en rapport og inkluderer disse kolonnene:
+
+  - **Rapportnavn**: Navnet på rapporten.
+  - **Opprettet av**: Navnet på personen som opprettet enheten.
+  - **Opprettet**: Dato og klokkeslett for enhetsopprettingen.
+  - **Redigert av**: Navnet på personen som endret enheten.
+  - **Redigert**: Dato og klokkeslett for enhetsendringen. 
 
 ## <a name="entity-specific-information"></a>Enhetsbestemt informasjon
 
@@ -73,8 +79,7 @@ Følgende kontroller kjører på de innhentede dataene for å vise skadede oppf�
 
 - Verdien i et felt samsvarer ikke med datatypen for kolonnen.
 - Felter inneholder tegn som fører til at kolonnene ikke samsvarer med det forventede skjemaet. Eksempel: feil formaterte anførselstegn, anførselstegn som ikke er reserver, eller tegn for ny linje.
-- Hvis det finnes kolonner for datetime/dato/datetimeoffset, må formatet angis i modellen hvis ISO-formatet ikke overholdes.
-
+- Hvis det finnes kolonner for datetime/date/datetimeoffset, må formatet angis i modellen hvis det ikke følger ISO-standardformatet.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

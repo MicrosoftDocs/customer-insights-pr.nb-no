@@ -1,7 +1,7 @@
 ---
 title: Semantiske tilordninger (forhåndsversjon)
 description: Oversikt over semantiske tilordninger og hvordan du bruker dem.
-ms.date: 11/01/2021
+ms.date: 12/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: f23c622572ff9f967eca07de7898419d1ffc18b0
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 08b257b97704b219bb3277042516e00deb886a49
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7731955"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881842"
 ---
-# <a name="semantic-mappings"></a>Semantiske tilordninger
+# <a name="semantic-mappings-preview"></a>Semantiske tilordninger (forhåndsversjon)
 
 Med semantiske tilordninger kan du tilordne ikke-aktivitetsdata til forhåndsdefinerte skjemaer. Disse skjemaene hjelper målgruppeinnsikt med å forstå dataattributtene bedre. Semantisk tilordning og de angitte dataene gir deg ny innsikt og nye funksjoner i målgruppeinnsikt. Hvis du vil tilordne aktivitetsdataene til skjemaene, ser du gjennom dokumentasjonen for [aktivitetene](activities.md).
 
@@ -91,5 +91,40 @@ På **Data** > **Semantiske tilordninger (forhåndsversjon)** kan du vise alle l
 
 - **Slett:** Åpner en dialogboks for å bekrefte slettingen av den valgte semantiske tilordningen. Du kan også slette mer enn én semantisk tilordning samtidig ved å velge semantiske tilordninger og sletteikonet. Velg **Slett** for å bekrefte slettingen.
 
+## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Bruke en semantisk ContactProfile-enhetstilordning til å opprette aktiviteter på kontaktnivå
+
+Når du har opprettet en semantisk enhetstilordning for *ContactProfile*, kan du registrere aktiviteter for kontakter. Den gjør det mulig å se på aktivitetstidslinjen for en forretningsforbindelse hvilken kontakt som var ansvarlig for hver aktivitet. De fleste trinnene følger den vanlige konfigurasjonen av aktivitetstilordninger.
+
+   > [!NOTE]
+   > For at aktiviteter på kontaktnivå skal fungere, må du ha både **AccountID**- og **ContactID**-attributtene for hver oppføring for aktivitetsdataene.
+
+1. [Definere en *ContactProfile*-semantisk enhetstilordning.](#define-a-contactprofile-semantic-entity-mapping) og kjøre den semantiske tilordningen.
+
+1. I Målgruppeinnsikt går du til **Data** > **Aktiviteter**.
+
+1. Velg **Legg til aktivitet** for å opprette en ny aktivitet.
+
+1. Gi aktiviteten et navn, velg kildeaktivitetsenheten, og velg hovednøkkelen for aktivitetsenheten.
+
+1. I trinnet **Relasjoner** oppretter du en indirekte relasjon mellom aktivitetskildedataene til forretningsforbindelser ved å bruke kontaktdataene som en mellomenhet. Hvis du vil ha mer informasjon, kan du se [direkte og indirekte relasjonsbaner](relationships.md#relationship-paths).
+   - Eksempelrelasjon for en aktivitet kalt *Kjøp*:
+      - **Aaktivitetsdata for kilde for kjøp** > **Kontakdata** på attributtet **ContactID**
+      - **Kontaktdata** > **Data om forretningsforbindelse** på attributtet **AccountID**
+
+   :::image type="content" source="media/Contact_Activities1.png" alt-text="Eksempel på relasjonsoppsett.":::
+
+1. Når du har satt opp Relasjoner, velger du **Neste** og fullfører konfigurasjonen av aktivitetstilordningen. Hvis du vil ha detaljerte trinn for oppretting av aktiviteter, kan du se [definere en aktivitet](activities.md).
+
+1. Kjør aktivitetstilordningene.
+
+1. Aktivitetene på kontaktnivå vil nå være synlige på tidslinjen for kunden.
+
+   :::image type="content" source="media/Contact_Activities2.png" alt-text="Endelig resultat etter konfigurasjon av kontaktaktiviteter":::
+
+### <a name="contact-level-activity-timeline-filtering"></a>Tidslinjefiltrering av aktivitet på kontaktnivå
+
+Når du har konfigurert en aktivitetstilordning på kontaktnivå og kjørt den, oppdateres tidslinjen for aktiviteten for kundene. Den inkluderer IDer eller navn, avhengig av *ContactProfile*-konfigurasjonen, for aktivitetene de handlet på. Du kan filtrere aktiviteter etter kontakter på tidslinjen for å se bestemte kontakter du er interessert i. I tillegg kan du vise alle aktiviteter som ikke er tilordnet til en bestemt kontakt, ved å velge **Aktiviteter som ikke er tilordnet til en kontakt**.
+
+   :::image type="content" source="media/Contact_Activities3.png" alt-text="Filtreringsalternativer som er tilgjengelige for aktiviteter på kontaktnivå.":::
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

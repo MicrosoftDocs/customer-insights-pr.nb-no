@@ -1,7 +1,7 @@
 ---
 title: Trinnvis oppdatering for Power Query-baserte datakilder
 description: Oppdatere nye og oppdaterte data for store datakilder basert på Power Query.
-ms.date: 09/28/2020
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,16 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: d204228f8d6881cbf0e7fac6609bf50dd5296610
-ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
+ms.openlocfilehash: f614d701aeb06720a60b14549a7fe666f8fe0617
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7377846"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900280"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinnvis oppdatering for datakilder som er baserte på Power Query
+
+Denne artikkelen beskriver hvordan du konfigurerer trinnvis oppdatering for datakilder basert på Power Query.
 
 Trinnvis oppdatering for datakilder gir følgende fordeler:
 
@@ -30,9 +32,9 @@ Målgruppeinnsikt tillater trinnvis oppdatering for datakilder importert via Pow
 
 1. [Opprett en ny datakilde basert på Power Query ](connect-power-query.md).
 
-1. Skriv inn et navn på datakilden.
+1. Skriv inn et **navn** på datakilden.
 
-1. Velg en datakilde som støtter trinnvis oppdatering, for eksempel Azure SQL-database.
+1. Velg en datakilde som støtter trinnvis oppdatering, for eksempel [Azure SQL-database](/power-query/connectors/azuresqldatabase).
 
 1. Velg enhetene eller tabellene som skal inkluderes.
 
