@@ -1,5 +1,5 @@
 ---
-title: Forutsigelse av abonnementsfrafall (Video)
+title: Prediksjon for abonnementsfrafall (inneholder video)
 description: Du kan forutsi om en kunde er i faresonen for ikke lenger å bruke selskapets abonnementsprodukter eller tjenester.
 ms.date: 08/19/2020
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 1ef2ff642731ee1ba0a142433745fc5a5b398c88
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 52ef7a8584cbae5dff0c800650b0238cc09fd6d5
+ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904001"
+ms.lasthandoff: 01/13/2022
+ms.locfileid: "7967713"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Forutsigelse av abonnementsfrafall (forhåndsversjon)
 
@@ -77,7 +77,7 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
 1. Angi et antall for **Dager siden abonnement ble avsluttet** som bedriften anser at en kunde er i frafalt tilstand. Denne perioden er vanligvis knyttet til forretningsaktiviteter som tilbud eller andre markedsføringstiltak som prøver å hindre at bedriften mister kunden.
 1. Angi antall **dager å se inn i fremtiden for å forutsi frafall** for å angi et vindu å forutsi frafall for. Hvis du for eksempel vil forutsi risikoen for frafall for kundene dine i løpet av de neste 90 dagene, og justere markedsføringstiltak. Å forutsi frafallsrisiko i lengre eller kortere perioder kan gjøre det vanskeligere å håndtere faktorene i profilen for frafallsrisiko, avhengig av dine spesielle forretningskrav. Velg **Neste** for å fortsette
    >[!TIP]
-   > Du kan velge **Lagre og lukk** når som helst for å lagre forutsigelsen som et utkast. Du finner utkastforutsigelsen i **Mine prediksjoner**-fanen for å fortsette.
+   > Du kan velge **Lagre utkast** når som helst for å lagre prediksjonen som utkast. Du finner utkastforutsigelsen i **Mine prediksjoner**-fanen for å fortsette.
 
 ### <a name="add-required-data"></a>Legg til obligatoriske data
 

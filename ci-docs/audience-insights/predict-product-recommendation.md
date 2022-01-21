@@ -1,7 +1,7 @@
 ---
 title: Produktanbefalingsprediksjon
 description: Forutsi produktene en kunde sannsynligvis kommer til å kjøpe eller samhandle med.
-ms.date: 09/13/2021
+ms.date: 01/13/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: 62b829b6ca3074e0ca52fb52584b74572bb05f05
+ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494551"
+ms.lasthandoff: 01/13/2022
+ms.locfileid: "7967851"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Produktanbefalingsprediksjon (forhåndsversjon)
 
@@ -79,11 +79,11 @@ Hvis du er interessert i å prøve denne funksjonen, men ikke har data for å fu
 1. Angi **antall produkter** du vil anbefale til en kunde. Denne verdien avhenger av hvordan leveringsmåten fyller ut data. Hvis du kan anbefale tre produkter, angir du denne verdien i henhold til dette.
    
    >[!TIP]
-   > Du kan velge **Lagre og lukk** når som helst for å lagre forutsigelsen som et utkast. Du finner utkastprediksjonen på fanen **Mine prediksjoner**.
+   > Du kan velge **Lagre utkast** når som helst for å lagre prediksjonen som utkast. Du finner utkastprediksjonen på fanen **Mine prediksjoner**.
 
-1. Velg om du vil **Foreslå produkter som kunder nylig har kjøpt**.
+1. Velg om du vil ta med produkter som kunder nylig har kjøpt, i feltet **Forventet å gjenta innkjøp**.
 
-1. Hvis du har valgt *ikke* å anbefale nylig innkjøpte produkter, angir du vinduet **Se tilbake**. Denne innstillingen angir tidsrammen modellen vurderer før du anbefaler produktet på nytt til brukeren. Angi for eksempel at en kunde kjøper en bærbar datamaskin annethvert år. Dette vinduet vil se på kjøpshistorikken for de siste to årene, og hvis de finner en vare, filtreres varen fra anbefalingene.
+1. Angi **Se tilbake-vindu**. Denne innstillingen angir tidsrammen modellen vurderer før du anbefaler produktet på nytt til brukeren. Angi for eksempel at en kunde kjøper en bærbar datamaskin annethvert år. Dette vinduet vil se på kjøpshistorikken for de siste to årene, og hvis de finner en vare, filtreres varen fra anbefalingene.
 
 1. Velg **Neste**
 

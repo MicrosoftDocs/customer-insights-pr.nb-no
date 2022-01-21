@@ -1,5 +1,5 @@
 ---
-title: Eksportere Customer Insights-data til SFTP-verter (video)
+title: Eksportere Customer Insights-data til SFTP-verter (inneholder video)
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til en SFTP-plassering.
 ms.date: 03/03/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bb73c49cf87657b71e0c2f5934662b062eeffb21
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 542bd908010cf0a8ccc12f15d54e0a3d5b72f189
+ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904140"
+ms.lasthandoff: 12/18/2021
+ms.locfileid: "7934899"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Eksportere segmenter og andre data til SFTP (forhåndsversjon)
 
@@ -28,6 +28,7 @@ Bruk kundedataene i tredjepartsprogrammer ved å eksportere dem til en plasserin
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
+- SFTP-mål bak brannmurer støttes for øyeblikket ikke. 
 - Kjøretiden for en eksport avhenger av systemytelsen. Vi anbefaler to CPU-kjerner og 1 GB minne som minimal konfigurasjon av serveren. 
 - Det kan ta tre timer å eksportere enheter med opptil 100 millioner kundeprofiler når du bruker den anbefalte minimumskonfigurasjonen av to CPU-kjerner og 1 GB minne. 
 

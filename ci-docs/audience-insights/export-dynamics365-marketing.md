@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: b8e63a738abaf4fbb902e3edbf83f5a815978478
-ms.sourcegitcommit: 8e89575fe2acb4b289fc157fa7c4c29caf9be967
+ms.openlocfilehash: 2c673c432f308efa289625a159de608d07f8d2b3
+ms.sourcegitcommit: f988114ac7a288ccadf2db35b02dbef5cacea4d9
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/24/2021
-ms.locfileid: "7417217"
+ms.lasthandoff: 01/14/2022
+ms.locfileid: "7975136"
 ---
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Bruke segmenter i Dynamics 365 Marketing (forhåndsversjon)
 
@@ -45,7 +45,7 @@ Hvis du bruker de nye funksjonene i Dynamics 365 Marketing til orkestrering av k
 
 1. I delen **Serveradministratorkonto** velger du **Logg på** og velger en Dynamics 365 Marketing-konto.
 
-1. Tilordne et kunde-ID-felt til Dynamics 365-kontakt-ID-en.
+1. Tilordne Kontakt-ID-feltet i kundeenheten til kontakt-ID-en for Dynamics 365.
 
 1. Velg **Lagre** for å fullføre tilkoblingen. 
 

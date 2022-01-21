@@ -1,7 +1,7 @@
 ---
-title: Prediksjon for transaksjonsfrafall (Video)
+title: Prediksjon for transaksjonsfrafall (inneholder video)
 description: Forutsi om en kunde er i faresonen for ikke lenger å kjøpe produktene eller tjenestene dine.
-ms.date: 10/20/2021
+ms.date: 01/13/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: ad87e0fd848168d1a18f28f2ac5c507bb01e1f28
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 602a86a67006925faac00add8e089d28f7071c14
+ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904084"
+ms.lasthandoff: 01/13/2022
+ms.locfileid: "7967759"
 ---
 # <a name="transaction-churn-prediction-preview"></a>Prediksjon for transaksjonsfrafall (forhåndsversjon)
 
@@ -103,10 +103,10 @@ For miljøer basert på forretningskontoer kan vi forutsi transaksjonsfrafall fo
 
 1. Velg flisen **Modell for kundefrafall (forhåndsversjon)**, og velg **Bruk denne modellen**.
 
-1. I ruten **Modell for kundefrafall** velger du **Transaksjon**, og deretter velger du **Start**.
+1. I ruten **Modell for kundefrafall (forhåndsversjon)** velger du **Transaksjon**, og deretter velger du **Kom i gang**.
 
 :::image type="content" source="media/select-transaction-churn.PNG" alt-text="Skjermbilde med det valgte transaksjonsalternativet i ruten Modell for kundefrafall.":::
-
+ 
 ### <a name="name-model"></a>Gi navn til modell
 
 1. Angi et navn på modellen for å skille den fra andre modeller.
@@ -117,11 +117,11 @@ For miljøer basert på forretningskontoer kan vi forutsi transaksjonsfrafall fo
 
 ### <a name="define-customer-churn"></a>Definer kundefrafall
 
-1. Angi et vindu med dager for å forutse frafall i feltet **Identifiser kunder som kan frafalle de neste**. Du kan for eksempel forutse risikoen for frafall for kundene dine i løpet av de neste 90 dagene, for å rette inn tiltak for å beholde kundene i markedsføringen. Å forutse frafallsrisiko for en lengre eller kortere tidsperiode kan gjøre det vanskeligere å håndtere faktorene i din frafallsrisikoprofil, men det avhenger av dine spesifikke forretningskrav.
+1. Angi **Prediksjonsvindu**. Du kan for eksempel forutse risikoen for frafall for kundene dine i løpet av de neste 90 dagene, for å rette inn tiltak for å beholde kundene i markedsføringen. Å forutse frafallsrisiko for en lengre eller kortere tidsperiode kan gjøre det vanskeligere å håndtere faktorene i din frafallsrisikoprofil, men det avhenger av dine spesifikke forretningskrav.
    >[!TIP]
-   > Du kan velge **Lagre og lukk** når som helst for å lagre forutsigelsen som et utkast. Du finner utkastforutsigelsen i **Mine prediksjoner**-fanen for å fortsette.
+   > Du kan velge **Lagre utkast** når som helst for å lagre prediksjonen som utkast. Du finner utkastforutsigelsen i **Mine prediksjoner**-fanen for å fortsette.
 
-1. Angi hvor mange dager det skal defineres frafall, i feltet **En kunde har frafalt hvis de ikke har foretatt noen kjøp på**. Hvis for eksempel en kunde ikke har gjort noen kjøp i løpet av de siste 30 dagene, kan de anses som frafalt for bedriften din. 
+1. Angi antallet dager som skal defineres som frafall, i feltet **Frafallsdefinisjon**. Hvis for eksempel en kunde ikke har gjort noen kjøp i løpet av de siste 30 dagene, kan de anses som frafalt for bedriften din. 
 
 1. Velg **Neste** for å fortsette.
 
@@ -129,19 +129,16 @@ For miljøer basert på forretningskontoer kan vi forutsi transaksjonsfrafall fo
 
 1. Velg **Legg til data**, og velg aktivitetstypen i sideruten som inneholder den nødvendige informasjonen om transaksjonen eller innkjøpsloggen.
 
-1. Under **Velg aktivitetene** velger du de bestemte aktivitetene fra den valgte aktiviteten du vil at beregningen skal fokusere på.
+1. Velg de bestemte aktivitetene fra den valgte aktivitetstypen du vil at beregningen skal fokusere på, under **Velg aktiviteter**.
 
-   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="Sideruten som viser hvordan du velger bestemte aktiviteter under semantisk type.":::
+   :::image type="content" source="media/transaction-churn-select-activity.PNG" alt-text="Sideruten som viser hvordan du velger bestemte aktiviteter under semantisk type.":::
 
-1. Hvis du ikke har tilordnet aktiviteten til en semantisk type ennå, velger du **Rediger** for å gjøre dette. Den veiledede opplevelsen for kartlegging av semantiske aktiviteter åpnes. Tilordne dataene til de tilsvarende feltene i den valgte aktivitetstypen.
+   Hvis du ikke har tilordnet aktiviteten til en semantisk type ennå, velger du **Rediger** for å gjøre dette. Den veiledede opplevelsen for kartlegging av semantiske aktiviteter åpnes. Tilordne dataene til de tilsvarende feltene i den valgte aktivitetstypen.
 
-   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Sideinnstilling for aktivitetstype.":::
+1. Tilordne semantiske attributter til feltene som kreves for å kjøre modellen. Hvis feltene nedenfor ikke fylles ut, konfigurerer du relasjonen fra kjøpsloggenheten til enheten *Kunde*. Velg **Lagre**.
 
-1. Når du har kartlagt aktiviteten til den tilsvarende semantiske typen, velger du **Neste** for å fortsette
+1. Velg **Neste** i trinnet **Legg til obligatoriske data** for å fortsette hvis du ikke vil legge til flere aktiviteter.
 
-1. Tilordne semantiske attributter til feltene som kreves for å kjøre modellen. Hvis feltene nedenfor ikke fylles ut, konfigurerer du relasjonen fra kjøpsloggenheten til enheten *Kunde*.
-
-1. Velg **Neste**.
 
 # <a name="individual-consumers-b-to-c"></a>[Individuelle forbrukere (B-til-C)](#tab/b2c)
 
