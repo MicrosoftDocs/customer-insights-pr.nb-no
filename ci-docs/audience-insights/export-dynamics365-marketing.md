@@ -9,16 +9,11 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 2c673c432f308efa289625a159de608d07f8d2b3
-ms.sourcegitcommit: f988114ac7a288ccadf2db35b02dbef5cacea4d9
-ms.translationtype: HT
-ms.contentlocale: nb-NO
-ms.lasthandoff: 01/14/2022
-ms.locfileid: "7975136"
 ---
+
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Bruke segmenter i Dynamics 365 Marketing (forhåndsversjon)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Bruk [segmenter](segments.md) til å generere kampanjer og kontakte spesifikke grupper med kunder med Dynamics 365 Marketing. Hvis du vil ha mer informasjon, kan du se [Bruke segmenter fra Dynamics 365 Customer Insights med Dynamics 365 Marketing](/dynamics365/marketing/customer-insights-segments).
 

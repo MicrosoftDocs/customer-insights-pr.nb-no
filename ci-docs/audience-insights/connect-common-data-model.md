@@ -1,7 +1,7 @@
 ---
 title: Koble Common Data Model-til en Azure Data Lake-konto
 description: Arbeid med Common Data Model-data ved hjelp av Azure Data Lake Storage.
-ms.date: 12/06/2021
+ms.date: 01/25/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,13 +9,8 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 5f9010f78ea4c24094e0df4f8e153fb832e05cc8
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
-ms.translationtype: HT
-ms.contentlocale: nb-NO
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900209"
 ---
+
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Knytte til en Common Data Model-mappe ved å bruke en Azure Data Lake-konto
 
 Denne artikkelen inneholder informasjon om hvordan du tar inn data fra en Common Data Model-mappe ved hjelp av en Azure Data Lake Storage Gen2-konto.
@@ -25,6 +20,8 @@ Denne artikkelen inneholder informasjon om hvordan du tar inn data fra en Common
 - Data i Azure Data Lake må følge Common Data Model-standarden. Andre formater støttes ikke for øyeblikket.
 
 - Datainntak støtter kun Azure Data Lake *Gen2*-lagringskontoer. Du kan ikke bruke Azure Data Lake Gen1-lagringskontoer til å ta inn data.
+
+- Azure Data Lake-lagringskontoen må ha [hierarkisk navneområde aktivert](/azure/storage/blobs/data-lake-storage-namespace).
 
 - Når du skal godkjenne med en Azure-tjenestekontohaver, må den være konfigurert i leieren. Hvis du vil ha mer informasjon, kan du se [Koble til målgruppeinnsikt i en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekontohaver](connect-service-principal.md).
 

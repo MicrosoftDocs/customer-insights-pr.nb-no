@@ -9,16 +9,11 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 66d846c3e9404ca7993cae742ea6e16833233fba
-ms.sourcegitcommit: 205f931ec671a0ab1850f2c1c94df3307ffb62c9
-ms.translationtype: HT
-ms.contentlocale: nb-NO
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7380755"
 ---
+
 # <a name="entity-schemas-in-common-data-model"></a>Enhetsskjemaer i Common Data Model
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 [Common Data Model](/common-data-model/) er en deklarativ spesifikasjon og en definisjon av standardenheter som representerer vanlig brukte konsepter og aktiviteter på tvers av forretnings- og produktivitetsprogrammer. Denne modellen blir også utvidet til observasjonsmessige og analytiske data. Common Data Model tilbyr veldefinerte, modulbaserte og utvidbare forretningsenheter, som konto, forretningsenhet, sak, kontakt, kundeemne, salgsmulighet og produkt, samt samhandlinger med leverandører, arbeidere og kunder, for eksempel aktiviteter og servicenivåavtaler. Alle kan bygge på og utvide Common Data Model-definisjoner for å fange opp flere forretningsspesifikke ideer.
 

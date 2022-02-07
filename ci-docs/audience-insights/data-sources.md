@@ -9,16 +9,11 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 78379c827e132b3b172aa7381f4c5ef2c70b9771
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
-ms.translationtype: HT
-ms.contentlocale: nb-NO
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977841"
 ---
+
 # <a name="data-sources-overview"></a>Oversikt over datakilder
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Funksjonen for målgruppeinnsikt i Dynamics 365 Customer Insights kobler til data fra et bredt sett med kilder. Tilkobling til en datakilde kalles ofte *datainntak*. Når du har integrert dataene, kan du [samle](data-unification.md) og utføre handlinger på dataene.
 
@@ -30,7 +25,7 @@ Du kan legge til følgende datakilder:
 
 - [Power Query-koblinger](connect-power-query.md)
 - [Common Data Model](connect-common-data-model.md)
-- [Microsoft Dataverse sjø](connect-dataverse-managed-lake.md)
+- [Microsoft Dataverse-sjø](connect-dataverse-managed-lake.md)
 
 > [!NOTE]
 > Hvis du bruker prøveversjonen, inneholder importmetodedelen et alternativ for **Customer Insights-databibliotek**. Velg dette alternativet for å velge et eksempeldatasett tilgjengelig for ulike bransjer. Se [Dynamics 365 Customer Insights-prøveversjon](../trial-signup.md) hvis du vil ha mer informasjon.

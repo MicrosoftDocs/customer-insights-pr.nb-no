@@ -1,5 +1,5 @@
 ---
-title: Semantisk analyse for tilbakemelding fra kunder
+title: Sentimentanalyse for tilbakemelding fra kunder
 description: Finn ut hvordan du bruker en sentimentanalysemodell på tilbakemelding fra kunder i Dynamics 365 Customer Insights.
 ms.date: 12/23/2021
 ms.service: customer-insights
@@ -9,13 +9,8 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 05e530a1bc96c5fd9c7a3bc0197563d8fe330387
-ms.sourcegitcommit: cb71e39de9b891c24bd5cd9c014eb3eeb537ac24
-ms.translationtype: HT
-ms.contentlocale: nb-NO
-ms.lasthandoff: 01/10/2022
-ms.locfileid: "7951086"
 ---
+
 # <a name="analyze-sentiment-in-customer-feedback-preview"></a>Analysere sentiment i tilbakemelding fra kunder (forhåndsversjon)
 
 I dag forventer kunder produkter, tjenester og opplevelser av høy kvalitet. Særlig kunder som gir tilbakemelding. Det er svært utfordrende for organisasjoner å analysere en økende mengde data uten å redusere nøyaktigheten og øke arbeidskostnadene. Dynamics 365 Customer Insights har en sentimentanalysemodell for tilbakemelding fra kunder som gjør at organisasjoner kan analysere dataene mer nøyaktig til en lavere pris.
@@ -38,7 +33,7 @@ For å sikre at du kan ha tillit til resultatene av modellene, gir vi klar infor
 
 Vi bruker to **modeller for naturlig språkbehandling (NLP)**: Den første tilordner hver tilbakemeldingskommentar til en sentimentpoengsum. Den andre modellen knytter hver tilbakemelding til alle aktuelle forretningsaspekter. Modellene er opplært på offentlige data fra kilder på tvers av sosiale medier, detaljhandelsbransjen, restaurantbransjen, forbrukerprodukter og bilindustrien.    
   
-- Forhåndsdefinerte forretningsaspekter som modellen knytter til tilbakemeldingsdata, omfatter følgende:
+Forhåndsdefinerte forretningsaspekter som modellen knytter til tilbakemeldingsdata, omfatter følgende:
 -   Kontoadministrasjon
 -   Utsjekking og betaling
 -   Kundestøtte

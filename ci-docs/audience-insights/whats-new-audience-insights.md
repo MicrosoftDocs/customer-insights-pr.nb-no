@@ -1,7 +1,7 @@
 ---
 title: Nye og kommende funksjoner
-description: Informasjon om nye funksjoner, forbedringer og feilrettinger.
-ms.date: 12/02/2021
+description: 'Informasjon om nye funksjoner, forbedringer og feilrettinger.'
+ms.date: 01/27/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,23 +9,62 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 346ef93e8471580b782618550ca4eb71b3f3c921
-ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
-ms.translationtype: HT
-ms.contentlocale: nb-NO
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "7884274"
 ---
+
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Nyheter i funksjonaliteten for målgruppeinnsikt i Dynamics 365 Customer Insights
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Vi har gleden av å kunngjøre de nyeste oppdateringene! Denne artikkelen oppsummerer funksjoner i offentlig forhåndsversjon, generelle tilgjengelighetsforbedringer og funksjonsoppdateringer. Hvis du vil se de langsiktige funksjonsplanene, kan du se [Dynamics 365 og Power Platform-utgivelsesplanene](/dynamics365/release-plans/).
 
 Vi ruller ut oppdateringer for hver region. Enkelte områder kan se funksjoner før andre. Med mindre det er angitt noe annet, trenger du ikke å gjøre noe, og vi oppdaterer appen automatisk uten nedetid.
 
 > [!TIP]
-> For å sende inn og stemme på funksjonsforespørsler og produktforslag, går du til [ideportalen for Dynamics 365-apper](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+> For å sende inn og stemme på funksjonsforespørsler og produktforslag går du til [ideportalen for Dynamics 365-apper](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+
+## <a name="december-2021-updates"></a>Oppdateringer desember 2021
+
+Oppdateringene i desember 2021 inkluderer nye funksjoner, ytelsesoppgraderinger og feilrettinger.
+
+### <a name="forward-customer-insights-logs-to-azure-monitor"></a>Videresend Customer Insights-logger til Azure Monitor
+
+Customer Insights gir direkte integrasjon med Azure Monitor. Denne funksjonen inkluderer hendelser for sporing av endringer og driftshendelser. Med Azure Monitor-ressurslogger kan du overvåke og sende logger til Azure Storage, Azure Log Analytics, eller strømme dem til Azure Event Hubs.
+
+Hvis du vil ha mer informasjon, kan du se [Logg videresending i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversjon)](diagnostics.md).
+
+### <a name="enrich-customer-profiles-with-engagement-data"></a>Supplere kundeprofiler med engasjementsdata
+
+Bruk data fra Microsoft Office 365 til å forbedre kundekontoprofilene dine med innsikt i engasjementer gjennom Office 365-apper. Engasjementsdataene består av e-post og møteaktivitet, som samles på kontonivå. For eksempel antall e-poster fra en forretningsforbindelse eller antall møter med forretningsforbindelsen. Ingen data om enkeltbrukere deles. Denne suppleringen er tilgjengelig i følgende regioner: Storbritannia, Europa og Nord-Amerika.
+
+Hvis du vil ha mer informasjon, kan du se [Suppler kundeprofiler med engasjementsdata (forhåndsversjon)](enrichment-office.md)
+
+### <a name="advanced-data-unification-features"></a>Avanserte funksjoner for datasamling
+
+#### <a name="enable-conflict-resolution-policies-at-the-individual-attribute-level"></a>Aktiver konfliktløsningspolicyer på individuelt attributtnivå
+
+Når du dedupliserer kundeoppføringer i en enhet, er det ikke sikkert du trenger å velge en fullstendig oppføring som vinner. Nå kan du slå sammen de beste feltene fra forskjellige oppføringer basert på regler for hvert attributt. Du kan for eksempel velge å beholde den nyeste e-postadressen OG den mest fullstendige adressen fra forskjellige oppføringer. 
+
+Du kan nå definere separate fletteregler for enkeltattributter når du dedupliserer og slår sammen oppføringer i én enkelt enhet. Tidligere kunne du bare velge én enkelt fletteregel (holde oppføringer basert på fullføring av besøksdata), og denne regelen ble brukt på oppføringsnivå for alle attributter. Det er ikke ideelt når noen av dataene du vil beholde, finnes i oppføring A og andre gode data som finnes i oppføring B.
+
+Hvis du vil ha mer informasjon, kan du se [Definere deduplisering på en samsvarsenhet](match-entities.md#define-deduplication-on-a-match-entity).
+
+#### <a name="custom-rules-for-matching"></a>Egendefinerte regler for samsvar
+
+Noen ganger må du angi et unntak fra generelle regler for IKKE å samsvare oppføringer. Dette kan skje når flere enkeltpersoner deler nok informasjon slik at systemet samsvarer med dem som én enkelt person. Eksempler på dette kan være etternavn, bo i samme by og dele fødselsdato.
+
+Unntak sikrer at ukorrekt datasamling kan løses i foreningsreglene. Du kan legge til flere unntak i en regel.
+
+Hvis du vil ha mer informasjon, kan du se [Legg til unntak i en regel](match-entities.md#add-exceptions-to-a-rule).
+
+#### <a name="provide-additional-conflict-resolution-policies-and-enable-grouping-of-attributes"></a>Tilby ytterligere konfliktløsningspolicyer og aktiver gruppering av attributter
+
+Med denne funksjonen kan du behandle en gruppe felter som én enkelt enhet. Hvis oppføringene for eksempel inneholder feltene Adresse1, Adresse2, Poststed og Postnummer. Vi vil sannsynligvis ikke slå sammen Adresse2 for en annen oppføring, da det kan tenkes at det vil gjøre dataene mer fullstendige.
+
+Du kan nå kombinere en gruppe med relaterte felter og bruke én enkelt flettepolicy på gruppen. 
+
+Hvis du vil ha mer informasjon, kan du se [Kombinere en gruppe felter](merge-entities.md#combine-a-group-of-fields).
+
 
 ## <a name="november-2021-updates"></a>Oppdateringer november 2021
 

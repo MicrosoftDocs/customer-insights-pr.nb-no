@@ -1,7 +1,7 @@
 ---
 title: Slå sammen enheter i dataforening
 description: Slå sammen enheter for å opprette enhetlige kundeprofiler.
-ms.date: 11/01/2021
+ms.date: 01/28/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,14 +10,9 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-merge
-ms.openlocfilehash: c218f9c1a1b7711ee48419470bf6c352450ffc0c
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: HT
-ms.contentlocale: nb-NO
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732784"
+  - ci-merge
 ---
+
 # <a name="merge-entities"></a>Slå sammen enheter
 
 Sammenslåingsfasen er den siste fasen i datasamlingsprosessen. Formålet er avstemming av data er i konflikt. Eksempler på motstridende data kan omfatte et kundenavn som finnes i to av datasettene, men som vises litt ulikt i hvert sett ("Kari Nordmann" kontra "Kari Nordman"), eller et telefonnummer som er forskjellig i format (617-803-091X kontra 617803091X). Sammenslåing av de motstridende datapunktene utføres på attributtbasis.
@@ -99,11 +94,13 @@ Velg **Utelatte felter** på **Slå sammen**-siden for å vise listen over alle 
 
 1. Velg **Lagre** og **Kjør** for å behandle endringene. 
 
-## <a name="manually-combine-fields"></a>Kombiner felter manuelt
+## <a name="combine-fields-manually"></a>Slå sammen felter manuelt
 
-Angi et sammenslått attributt manuelt. 
+Angi et sammenslått attributt manuelt.
 
-1. Velg **Kombiner felter** på **Slå sammen**-siden.
+1. Velg **Kombiner** på **Slå sammen**-siden.
+
+1. Velg **Felter**-alternativet.
 
 1. Angi vinnerregelen for sammenslåing i **Kombiner felter etter** rullegardinmenyen.
 
@@ -114,6 +111,26 @@ Angi et sammenslått attributt manuelt.
 1. Velg **Ferdig** for å ta i bruk endringene.
 
 1. Velg **Lagre** og **Kjør** for å behandle endringene. 
+
+## <a name="combine-a-group-of-fields"></a>Slå sammen en gruppe felter
+
+Behandle en gruppe felter som én enkelt enhet. Hvis oppføringene for eksempel inneholder feltene Adresse1, Adresse2, Poststed og Postnummer. Vi vil sannsynligvis ikke slå sammen Adresse2 for en annen oppføring, da det kan tenkes at det vil gjøre dataene mer fullstendige
+
+1. Velg **Kombiner** på **Slå sammen**-siden.
+
+1. Velg **Gruppe felter**-alternativet.
+
+1. Angi vinnerregelen for sammenslåing i **Ranger grupper etter**-rullegardinlisten.
+
+1. Velg **Legg til**, og velg om du vil legge til flere felter eller tilleggsgrupper i feltene.
+
+1. Angi et **navn** og et **utdatanavn** for hvert kombinerte felt.
+
+1. Oppgi et **navn** for gruppen felter. 
+
+1. Velg **Ferdig** for å ta i bruk endringene.
+
+1. Velg **Lagre** og **Kjør** for å behandle endringene.
 
 ## <a name="change-the-order-of-fields"></a>Endre rekkefølgen på feltene
 

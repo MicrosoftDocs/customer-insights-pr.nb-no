@@ -1,7 +1,7 @@
 ---
 title: Forbedrede firmadata
 description: Suppler og normaliser firmadata med Microsoft-modeller.
-ms.date: 12/16/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,13 +9,8 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 616efe723313a6fbec7f1c7219c236a8f0aab3b2
-ms.sourcegitcommit: e141a6a34a985cca68f03082a700ed27f2f3c0c1
-ms.translationtype: HT
-ms.contentlocale: nb-NO
-ms.lasthandoff: 12/17/2021
-ms.locfileid: "7927594"
 ---
+
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Supplering av firmaprofiler med forbedrede firmadata
 
 Bruk Microsofts-modeller og kompilerte firmadata til å korrigere, supplere og standardisere firmaprofilene. Vi skal bruke formatet [Common Data Model-formatet](/common-data-model/schema/core/applicationcommon/account) for bedre nøyaktighet og innsikt.
@@ -82,17 +77,17 @@ Hvis du vil starte den omfattende prosessen, velger du **Kjør** fra kommandolin
 
 Når suppleringsprosessen fullføres, kan du se gjennom de nylig klargjorte kundeprofildataene under **Mine suppleringer**. I tillegg finner du tidspunktet for den siste oppdateringen og antall supplerte profiler.
 
-Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velge **Vis supplerte data**.
+Du kan se et eksempel på de supplerte dataene på **forhåndsvisningsflisen for supplerte kunder**. Velg **Vis mer**, og velg fanen **Data** for å få tilgang til en detaljert visning av hver supplerte profil.
 
 ### <a name="overview-card"></a>Oversiktskort
 
 Oversiktskortet viser detaljer om dekningen til suppleringen. 
 
-* **Kunder som er behandlet og endret**: Antall kundeprofiler som er supplert.
+* **Selskaper som er behandlet og endret**: Antall kundeselskapsprofiler som er supplert.
 
-* **Kunder som er behandlet og uendret**: Antall kundeprofiler som er gjenkjent, men ikke endret. Det skjer vanligvis når inndataene er gyldige og ikke kan forbedres av suppleringen.
+* **Selskaper som er behandlet og uendret**: Antall kundeselskapsprofiler som er gjenkjent, men ikke endret. Dette skjer vanligvis når inndataene er gyldige og ikke kan forbedres av suppleringen.
 
-* **Kunder som ikke er behandlet og ikke endret**: Antall profiler som ikke ble gjenkjent. Dette skjer vanligvis for inndata som er ugyldige eller ikke støttes av suppleringen.
+* **Selskaper som ikke er behandlet og uendret**: Antall kundeselskapsprofiler som ikke ble gjenkjent. Dette skjer vanligvis for inndata som er ugyldige eller ikke støttes av suppleringen.
 
 ## <a name="next-steps"></a>Neste trinn
 
