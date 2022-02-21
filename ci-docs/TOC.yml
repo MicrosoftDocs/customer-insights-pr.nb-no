@@ -2,6 +2,22 @@
   href: index.yml
 - name: Produktoversikt
   href: overview.md
+- name: Læringskatalog
+  items:
+    - name: Kom i gang
+      href: /learn/modules/get-started-customer-data-platform/
+    - name: Hent inn data
+      href: /learn/modules/ingest-data-customer-insights/
+    - name: Opprette en samlet kundeprofil
+      href: /learn/modules/unified-customer-profile/
+    - name: Arbeide med målgruppeinnsikt
+      href: /learn/modules/working-with-customer-insights/
+    - name: Forbedre data og lage prognoser
+      href: /learn/modules/enrich-data/
+    - name: Behandle eksterne tilkoblinger
+      href: /learn/modules/configure-third-party-connections/
+    - name: Administrere Customer Insights
+      href: /learn/modules/administer-customer-data-platform/
 - name: Gratis prøveversjon
   items:
     - name: Registrere deg for en gratis prøveversjon
@@ -30,21 +46,11 @@
           href: audience-insights/home.md
     - name: Arbeide med forretningskontoer
       href: audience-insights/work-with-business-accounts.md
-    - name: Lær moduler
-      items:
-        - name: Hent inn data
-          href: /learn/modules/ingest-data-customer-insights/
-        - name: Opprette en samlet kundeprofil
-          href: /learn/modules/unified-customer-profile/
-        - name: Arbeide med appen
-          href: /learn/modules/working-with-customer-insights/
-        - name: Suppler data og prognoser
-          href: /learn/modules/enrich-data/
     - name: Datakilder
       items:
         - name: Oversikt over datakilder
           href: audience-insights/data-sources.md
-        - name: Legge til datakilder via Power Query-koblinger
+        - name: Legge til datakilder via Power Query-tilkoblinger
           href: audience-insights/connect-power-query.md
         - name: Legge til en Common Data Model-mappe i en datakilde
           href: audience-insights/connect-common-data-model.md
@@ -372,3 +378,5 @@
   href: service-limits.md
 - name: DSR-rettigheter og -forespørsler
   href: dsr-rights-requests.md
+- name: Få støtte
+  href: /power-platform/admin/get-help-support

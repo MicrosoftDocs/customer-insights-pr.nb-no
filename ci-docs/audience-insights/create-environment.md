@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 4f26220f6ba7f5b5ae00c11216129f9ad814b77d
-ms.sourcegitcommit: 626d485dae1e001e63e4d4bf78f6770766822ba0
+ms.openlocfilehash: d29992c88bd54fcfcf5e6429a89a34b6f73148c8
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/06/2021
-ms.locfileid: "7892350"
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088125"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Opprette et miljø i målgruppeinnsikt
 
@@ -64,7 +64,7 @@ Ved å lagre data til Azure Data Lake Storage godtar du at data overføres til o
 > Customer Insights støtter for øyeblikket følgende:
 > - Registrerte enheter fra Power BI-dataflyter som er lagret i en Microsoft Dataverse-administrert Data Lake.  
 > - Azure Data Lake Storage-kontoer fra samme Azure-område som du valgte da du opprettet miljøet.
-> - Azure Data Lake Storage-forretningsforbindelser som har *hierarkisk navneområde* aktivert.
+> - Azure Data Lake Storage-forretningsforbindelser som er Gen2 og har *hierarkisk navneområde* aktivert. Azure Data Lake Gen1-lagringskontoer støttes ikke.
 
 For Azure Data Lake Storage-alternativet kan du velge mellom et ressursbasert alternativ og et abonnementsbasert alternativ for godkjenning. Hvis du vil ha mer informasjon, kan du se [Koble til en Azure Data Lake Storage-konto ved å bruke en Azure-tjenestekontohaver](connect-service-principal.md). **Beholder**-navnet vil være `customerinsights` og kan ikke endres.
 

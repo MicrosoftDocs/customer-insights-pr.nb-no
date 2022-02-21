@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+ms.openlocfilehash: 1af01e5579f85d7c8bc8976a003f53ef2dd280d1
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900287"
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088159"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Koble til en Azure Data Lake Storage-konto ved hjelp av en Azure-tjenestekontohaver
 
@@ -23,7 +23,7 @@ Denne artikkelen beskriver hvordan du kobler Dynamics 365 Customer Insights til 
 Automatiske verktøy som bruker Azure-tjenester, bør alltid ha begrensede tillatelser. I stedet for at programmer skal logges på som en bruker med full rettigheter, tilbyr Azure tjenestekontohavere. Du kan bruke tjenestekontohavere til sikkert å [legge til eller redigere en Common Data Model-mappe som en datakilde](connect-common-data-model.md) eller [opprette eller oppdatere et miljø](create-environment.md).
 
 > [!IMPORTANT]
-> - Data Lake Storage-kontoen som skal bruke tjenestekontohaveren, må ha [hierarkisk navneområde aktivert](/azure/storage/blobs/data-lake-storage-namespace).
+> - Data Lake Storage-kontoen som skal bruke tjenestekontohaveren, må være Gen2 og ha [hierarkisk navneområde aktivert](/azure/storage/blobs/data-lake-storage-namespace). Azure Data Lake Gen1-lagringskontoer støttes ikke.
 > - Du må ha administratortillatelser for Azure-abonnementet for å opprette en tjenestekontohaver.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Opprett en Azure-tjenestekontohaver for Customer Insights

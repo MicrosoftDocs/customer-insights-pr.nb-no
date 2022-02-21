@@ -3,18 +3,18 @@ title: Vanlige spørsmål om prøveversjon – Dynamics 365 Customer Insights
 description: Svar på vanlige spørsmål knyttet til konfigurasjon og administrasjon av Customer Insights-prøveversjon. Finn ut hvordan du løser plattform- og appspesifikke problemer.
 author: m-hartmann
 ms.author: mhart
-ms.date: 09/30/2021
+ms.date: 02/10/2022
 ms.topic: get-started
 ms.service: customer-insights
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 2837ae13b4150310193a2d09d59aed66b4a69c69
-ms.sourcegitcommit: e6020c178a61beb0ee31a031c11ded914d10d995
+ms.openlocfilehash: f63ed39ba8c710d0c0149e0944efaafe27e7b9bb
+ms.sourcegitcommit: 5dd32dc2b18027cf2aa954356dded4bc6aab9801
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/13/2021
-ms.locfileid: "7642896"
+ms.lasthandoff: 02/12/2022
+ms.locfileid: "8115980"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Vanlige spørsmål om prøveversjonen av Dynamics 365 Customer Insights
 
@@ -43,7 +43,7 @@ Når du registrerer deg for prøveversjonen, mottar du en e-postmelding med deta
 
 ### <a name="how-do-i-add-more-users-to-a-trial"></a>Hvordan legger jeg til flere brukere i en prøveversjon?
 
-Du kan legge til brukere ved å gå til [administrasjonssenteret for Microsoft 365](https://admin.microsoft.com) ved å bruke administratorkontoen for prøveversjon. Følg [veiledningen for administrasjonssenteret](/microsoft-365/admin/add-users/add-users) for å legge til brukere opptil lisensgrensen for prøveversjonen. Hvis brukeren du legger til, allerede har en Microsoft 365-konto, tilordner du en aktuell sikkerhetsrolle til vedkommende i organisasjonen for prøveversjonen. Hvis du vil ha mer informasjon, kan du se [Tilordne en sikkerhetsrolle til en bruker](/power-platform/admin/create-users-assign-online-security-roles#assign-a-security-role-to-a-user).
+Du kan legge til brukere ved å gå til [administrasjonssenteret for Microsoft 365](https://admin.microsoft.com) ved å bruke administratorkontoen for prøveversjon. Følg [veiledningen for administrasjonssenteret](/microsoft-365/admin/add-users/add-users) for å legge til brukere opptil lisensgrensen for prøveversjonen. Hvis brukeren du legger til, allerede har en Microsoft 365-konto, tilordner du en aktuell sikkerhetsrolle til vedkommende i prøveorganisasjonen. Hvis du vil ha mer informasjon, kan du se [Tilordne en sikkerhetsrolle til en bruker](/power-platform/admin/create-users-assign-online-security-roles#assign-a-security-role-to-a-user).
 
 ### <a name="how-many-users-can-i-add-to-my-trial-environment"></a>Hvor mange brukere kan jeg legge til i prøvemiljøet?
 
@@ -63,7 +63,7 @@ Du kan utvide prøveversjonen i appen direkte. Du kan utvide prøveversjonen én
 
 Generelt anbefaler vi at du starter på nytt med dine egne data når du oppgraderer til den betalte versjonen av Customer Insights. 
 
-Hvis du bare bruker målgruppeinnsikt, kan du eventuelt kopiere dataene fra et prøvemiljø hvis du kjøper Customer Insights. Du må være administrator for prøveversjonen av Customer Insights og den globale administratoren for Microsoft 365-leieren, eller Dynamics 365-administrator i organisasjonen for å overføre innstillingene fra et prøveversjonsmiljø til et betalt miljø. 
+Hvis du bare bruker målgruppeinnsikt, kan du eventuelt kopiere dataene fra et prøvemiljø hvis du kjøper Customer Insights. Du må være administrator for prøveversjonen av Customer Insights og den globale administratoren av Microsoft 365-leieren din eller Dynamics 365-administrator i organisasjonen for å overføre innstillingene fra et prøvemiljø til et betalt miljø. 
 
 Etter at du har logget på den betalte forekomsten av Customer Insights for første gang, blir du bedt om å opprette et nytt miljø. I denne prosessen kan du velge å kopiere konfigurasjonen fra et eksisterende miljø og overføre de fleste innstillingene. Hvis du har tillatelsene nevnt ovenfor, vises prøveversjonsmiljøet i denne listen. Hvis du vil ha mer informasjon, kan du se [Kopier miljøkonfigurasjonen](audience-insights/manage-environments.md#copy-the-environment-configuration).
 
@@ -82,8 +82,9 @@ Etter at du har registrert deg for prøveversjonen, vises hovedskjermen i appen.
 
 De fleste funksjonene i Customer Insights er tilgjengelige i prøveversjonen.
 
-Følgende funksjon er ikke tilgjengelig: 
+Følgende funksjoner er **ikke tilgjengelige**: 
 - Du kan ikke opprette nye miljøer som bruker din egen Azure Data Lake Storage-konto.
+- Du kan ikke slette prøveversjonsmiljøet. 
 
 ### <a name="how-long-does-the-trial-last"></a>Hvor lenge varer prøveversjonen?
 

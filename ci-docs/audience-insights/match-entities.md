@@ -1,7 +1,7 @@
 ---
 title: Samsvare enheter for dataforening
 description: Samsvar enheter for å opprette enhetlige kundeprofiler.
-ms.date: 01/28/2022
+ms.date: 02/07/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,9 +10,14 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-  - ci-match
+- ci-match
+ms.openlocfilehash: 20f21a6601a1a6f13d076878b10c15be947dac9f
+ms.sourcegitcommit: a399bd17523c8d06afd7d78af4fc711f93c0e8be
+ms.translationtype: HT
+ms.contentlocale: nb-NO
+ms.lasthandoff: 02/07/2022
+ms.locfileid: "8098847"
 ---
-
 # <a name="match-entities"></a>Samsvare enheter
 
 Samsvarfasen angir hvordan du kombinerer datasettene til et enhetlig kundeprofildatasett. Etter å ha fullført [tilordningstrinnet](map-entities.md) i dataforeningsprosessen, er du klar til å samsvare enhetene. Samsvarsfasen krever minst to tilordnede enheter.
@@ -24,13 +29,7 @@ Samsvarssiden består av tre deler:
 
 ## <a name="specify-the-match-order"></a>Angi samsvarsrekkefølgen
 
-Gå til **Data** > **Samle** > **Samsvar**, og velg **Angi ordre** for å starte samsvarsfasen.
-
-Hvert samsvar forener to eller flere enheter i én konsolidert enhet. Samtidig beholdes de unike kundeoppføringene. Vi valgte for eksempel to enheter: **eCommerce:eCommerceContacts** som den primære enheten og **LoyaltyScheme:loyCustomers** som en sekundær enhet. Rekkefølgen til enhetene angir i hvilken rekkefølge systemet prøver å samsvare oppføringene.
-
-:::image type="content" source="media/match-page.png" alt-text="Skjermbilde av Samsvar-siden i Unify-området i dataforeningsprosessen.":::
-  
-Den primære enheten *eCommerce:eCommerceContacts* samsvares med den neste enheten *LoyaltyScheme:loyCustomers*. Datasettet som er et resultat av det første samsvarstrinnet, samsvares med enheten nedenfor hvis du har flere enn to enheter.
+Hvert samsvar forener to eller flere enheter i én konsolidert enhet. Samtidig beholdes de unike kundeoppføringene. Samsvarsrekkefølgen angir rekkefølgen systemet prøver å samsvare oppføringene i.
 
 > [!IMPORTANT]
 > Enheten du velger som primær enhet, fungerer som grunnlag for det enhetlige profildatasettet. Flere enheter som velges under samsvarsfasen, blir lagt til i enheten. Dette betyr ikke at den enhetlige enheten vil inkludere *alle* dataene som er inkludert i denne enheten.
@@ -38,9 +37,18 @@ Den primære enheten *eCommerce:eCommerceContacts* samsvares med den neste enhet
 > Det er to hensyn som kan hjelpe deg med å velge enhetshierarkiet:
 >
 > - Velg enheten med de mest fullstendige og pålitelige profildataene om kundene som den primære enheten.
-> - Velg en enhet som har flere attributter felles med andre enheter (for eksempel navn, telefonnummer eller e-postadresse) som den primære enhet.
+> - Velg enheten som har flere attributter til felles med andre enheter (for eksempel navn, telefonnummer eller e-postadresse) som primær enhet.
 
-Når du har angitt samsvarsrekkefølgen, ser du de definerte samsvarsparene i delen **Detaljer om samsvarende oppføringer** under **Data** > **Samle** > **Samsvar**. Nøkkelmåledataene vil være tomme til samsvarsprosessen er fullført.
+1. Gå til **Data** > **Samle** > **Samsvar**, og velg **Angi ordre** for å starte samsvarsfasen.
+1. Velg **Enhetsrekkefølge**. Velg for eksempel **eCommerce:eCommerceContacts** som hovedenhet og **LojalitetScheme:loyCustomers** som andre enhet. 
+1. For å inkludere alle oppføringer i enheten som en unik kunde som blir samsvart med hver påfølgende enhet, velger du **Inkluder alle**.
+1. Velg **Ferdig**. 
+
+Når du har angitt samsvarsrekkefølgen, vises de definerte samsvarsparene i delen **Detaljer om samsvarende oppføringer** i **Data** > **Samle** > **Treff**. Nøkkeltallene er tomme til samsvarsprosessen er fullført.
+
+:::image type="content" source="media/match-page.png" alt-text="Skjermbilde av Samsvar-siden i Unify-området i dataforeningsprosessen.":::
+  
+Den primære enheten *eCommerce:eCommerceContacts* samsvares med den neste enheten *LoyaltyScheme:loyCustomers*. Datasettet som er et resultat av det første samsvarstrinnet, samsvares med enheten nedenfor hvis du har flere enn to enheter.
 
 ## <a name="define-rules-for-match-pairs"></a>Definer regler for samsvarspar
 
@@ -50,7 +58,7 @@ Advarselen **Trenger regler** ved siden av et enhetsnavn antyder at ingen samsva
 
 :::image type="content" source="media/match-rule-add.png" alt-text="Skjermbilde av delen Detaljer om samsvarende oppføringer med kontroll for å legge til regler uthevet.":::
 
-1. Velg **Legg til regler** under en enhet i delen **Detaljer om samsvarende oppføringer** for å definere samsvarsregler.
+1. Velg **Legg til regel** under en enhet i delen **Detaljer om samsvarende oppføringer** for å definere samsvarsregler.
 
 1. I ruten **Opprett regel** konfigurerer du betingelsene for regelen.
 
@@ -61,15 +69,15 @@ Advarselen **Trenger regler** ved siden av et enhetsnavn antyder at ingen samsva
    - **Enhet/felt (andre rad)**: Velg et attributt som er relatert til attributtet for enheten som er angitt i den første raden.
 
    - **Normaliser**: Velg blant følgende normaliseringsalternativer for de valgte attributtene. 
-     - Mellomrom: Fjerner alle mellomrom. *Hello   World* blir *HelloWorld*.
+     - Tall: Konverterer andre tallsystemer, for eksempel romertall, til arabiske tall. *VIII* blir *8*.
      - Symboler: Fjerner alle symboler og spesialtegn. *Head&Shoulder* blir *HeadShoulder*.
      - Tekst til små bokstaver: Konverterer alle tegn til små bokstaver. *BARE STORE BOKSTAVER og Store forbokstaver* blir *bare store bokstaver og store forbokstaver*.
+     - Type (telefon, navn, adresse, organisasjon): standardiserer navn, titler, telefonnumre, adresser osv. 
      - Unicode til ASCII: Konverterer Unicode-notasjon til ASCII-tegn. */u00B2* blir *2*.
-     - Tall: Konverterer andre tallsystemer, for eksempel romertall, til arabiske tall. *VIII* blir *8*.
-     - Semantiske typer: Standardiserer navn, titler, telefonnumre, adresser osv. 
+     - Mellomrom: Fjerner alle mellomrom. *Hello   World* blir *HelloWorld*.
 
    - **Presisjon:** Angir presisjonsnivået som skal brukes for denne betingelsen. 
-     - **Grunnleggende**: Velg mellom *Lav*, *Middels*, *Høy* og *Nøyaktig*. Velg **Nøyaktig** hvis du bare vil at oppføringer som samsvarer med 100 prosent, skal samsvare. Velg ett av de andre nivåene for å samsvare oppføringer som ikke er 100 prosent identiske.
+     - **Grunnleggende**: Velg mellom *Lav*, *Middels*, *Høy* og *Nøyaktig*. Velg **Eksakt** for å samsvare bare med oppføringer som samsvarer med 100 prosent. Velg ett av de andre nivåene for å samsvare oppføringer som ikke er 100 prosent identiske.
      - **Egendefinert:** Angi en prosentandel som oppføringer må samsvare med. Systemet samsvarer bare oppføringer som passerer denne terskelen.
 
 1. Oppgi et **Navn** for regelen.
@@ -117,7 +125,7 @@ Du kan endre rekkefølgen på enheter for samsvarsregler for å endre rekkefølg
 
 I tillegg til [samsvarsregler på tvers av enheter](#define-rules-for-match-pairs) kan du også angi dedupliseringsregler. *Deduplisering* er en annen prosess ved samsvar av oppføringer. Den identifiserer duplikatoppføringer og slår dem sammen til én oppføring. Kildeoppføringer kobles til den flettede oppføringen med alternative ID-er.
 
-Dedupliserte oppføringer brukes i samsvarsprosessen på tvers av enheter. Deduplisering skjer for enkeltenheter og kan konfigureres for hver enhet som brukes i samsvarspar.
+Dupliserede oppføringer brukes i samsvarsprosessen på tvers av enheter. Deduplisering skjer for enkeltenheter og kan konfigureres for hver enhet som brukes i samsvarspar.
 
 Det er ikke obligatorisk å angi dedupliseringsregler. Hvis ingen slike regler er konfigurert, brukes reglene som er angitt av systemet. De kombinerer alle oppføringene i én enkelt oppføring før de sender enhetsdataene til samsvar på tvers av enheter for å forbedre ytelsen.
 

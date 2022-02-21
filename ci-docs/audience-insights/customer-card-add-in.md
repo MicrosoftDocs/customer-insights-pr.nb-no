@@ -1,7 +1,7 @@
 ---
 title: Tillegg for kundekort for Dynamics 365-apper (inneholder video)
 description: Vis data fra målgruppeinnsikt i Dynamics 365-apper med dette tillegget.
-ms.date: 12/22/2021
+ms.date: 02/02/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,8 +9,13 @@ ms.topic: conceptual
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
+ms.openlocfilehash: ce6c8fab84fd4c5dfc9f78b91dde3483a1d358c1
+ms.sourcegitcommit: 11308ed275b4b25a35576eccfcae9dda9e2c2784
+ms.translationtype: HT
+ms.contentlocale: nb-NO
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "8085260"
 ---
-
 # <a name="customer-card-add-in-preview"></a>Tillegg for kundekort (forhåndsversjon)
 
 
@@ -113,5 +118,26 @@ Tillegget for kundekort oppgraderes ikke automatisk. Hvis du vil oppgradere til 
 
 1. Når du har startet oppgraderingsprosessen, vises en innlastingsindikator til oppgraderingen er fullført. Hvis det ikke finnes en nyere versjon, vises en feilmelding for oppgraderingen.
 
+## <a name="troubleshooting"></a>Feilsøking
+
+### <a name="controls-from-customer-card-add-in-dont-find-data"></a>Kontroller fra tillegget for kundekort finner ikke data
+
+**Problem:**
+
+Selv med ID-felt som er riktig konfigurert, kan ikke kontrollene finne data for noen kunde.  
+
+**Løsning.**
+
+1. Kontroller at du har konfigurert Tillegg for kundekort i henhold til instruksjonene: [Konfigurere tillegget for kundekort](#configure-the-customer-card-add-in) 
+
+1. Se gjennom datainntakskonfigurasjonen. Rediger datakilde for Dynamics 365-systemet som inneholder GUID for kontakt-ID. Hvis GUID for kontakt-ID vises med store bokstaver i Power Query-redigeringsprogrammet, kan du prøve følgende: 
+    1. Rediger datakilde for å åpne datakilde i Power Query-redigeringsprogrammet.
+    1. Velg kontakt-ID-kolonnen.
+    1. Velg **Transformer** på overskriftslinjen for å vise tilgjengelige handlinger.
+    1. Velg **små bokstaver**. Kontroller om det nå er små bokstaver i GUIDene i tabellen.
+    1. Lagre datakilden.
+    1. Kjør datainntaks-, forenings- og nedstrømsprosesser for å overføre endringene til GUID. 
+
+Etter at oppdateringen er fullført, skal kontroller fra tillegget for kundekort vise de forventede dataene. 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

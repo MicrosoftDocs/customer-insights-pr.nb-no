@@ -1,7 +1,7 @@
 ---
 title: Nye og kommende funksjoner
-description: 'Informasjon om nye funksjoner, forbedringer og feilrettinger.'
-ms.date: 01/27/2022
+description: Informasjon om nye funksjoner, forbedringer og feilrettinger.
+ms.date: 03/02/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,8 +9,13 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
+ms.openlocfilehash: 0e25ed4e4e25b130fda410d4ba1c78caded7f0f9
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
+ms.translationtype: HT
+ms.contentlocale: nb-NO
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088297"
 ---
-
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Nyheter i funksjonaliteten for målgruppeinnsikt i Dynamics 365 Customer Insights
 
 
@@ -21,6 +26,17 @@ Vi ruller ut oppdateringer for hver region. Enkelte områder kan se funksjoner f
 
 > [!TIP]
 > For å sende inn og stemme på funksjonsforespørsler og produktforslag går du til [ideportalen for Dynamics 365-apper](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+
+## <a name="january-2022-updates"></a>Januar 2022-oppdateringer
+
+Oppdateringene i januar 2022 inkluderer nye funksjoner, ytelsesoppgraderinger og feilrettinger.
+
+### <a name="sentiment-analysis-of-your-customers-feedback"></a>Sentimentanalyse for tilbakemelding fra kunder
+
+Customer Insights gir en ny AI-dreven funksjon for å syntetisere kundesentiment og identifisere bestemte forretningsaspekter som salgsmuligheter for målrettede forbedringer. Ved å analysere de skriftlige tilbakemeldingene fra kundene kan du få nøyaktig innsikt til lave kostnader. Sentimentanalyse som drives av NLP-modeller (Natural Language Processing) som genererer to utledede innsikter for hver kunde-ID. En sentimentpoengsum (på –5 til 5) og en liste over aktuelle forretningsaspekter. 
+
+Hvis du vil ha mer informasjon, kan du se [Analysere sentiment i tilbakemeldinger fra kunder (forhåndsversjon)](sentiment-analysis.md).
 
 
 ## <a name="december-2021-updates"></a>Oppdateringer desember 2021
@@ -37,7 +53,7 @@ Hvis du vil ha mer informasjon, kan du se [Logg videresending i Dynamics 365 Cus
 
 Bruk data fra Microsoft Office 365 til å forbedre kundekontoprofilene dine med innsikt i engasjementer gjennom Office 365-apper. Engasjementsdataene består av e-post og møteaktivitet, som samles på kontonivå. For eksempel antall e-poster fra en forretningsforbindelse eller antall møter med forretningsforbindelsen. Ingen data om enkeltbrukere deles. Denne suppleringen er tilgjengelig i følgende regioner: Storbritannia, Europa og Nord-Amerika.
 
-Hvis du vil ha mer informasjon, kan du se [Suppler kundeprofiler med engasjementsdata (forhåndsversjon)](enrichment-office.md)
+Hvis du vil ha mer informasjon, kan du se [Suppler kundeprofiler med engasjementsdata (forhåndsversjon)](enrichment-office.md).
 
 ### <a name="advanced-data-unification-features"></a>Avanserte funksjoner for datasamling
 
