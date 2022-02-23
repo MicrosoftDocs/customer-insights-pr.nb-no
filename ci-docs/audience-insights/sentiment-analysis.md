@@ -9,8 +9,13 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
+ms.openlocfilehash: 8a4473c1c395bbcf8efa2bfa24cddb82e1784279
+ms.sourcegitcommit: 15ec8c5f54242feda9489e7665726ec5e0983dc9
+ms.translationtype: HT
+ms.contentlocale: nb-NO
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "8008777"
 ---
-
 # <a name="analyze-sentiment-in-customer-feedback-preview"></a>Analysere sentiment i tilbakemelding fra kunder (forhåndsversjon)
 
 I dag forventer kunder produkter, tjenester og opplevelser av høy kvalitet. Særlig kunder som gir tilbakemelding. Det er svært utfordrende for organisasjoner å analysere en økende mengde data uten å redusere nøyaktigheten og øke arbeidskostnadene. Dynamics 365 Customer Insights har en sentimentanalysemodell for tilbakemelding fra kunder som gjør at organisasjoner kan analysere dataene mer nøyaktig til en lavere pris.

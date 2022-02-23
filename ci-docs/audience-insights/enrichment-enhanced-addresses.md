@@ -9,8 +9,13 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
+ms.openlocfilehash: ba43d24ac5ae8846da87f0d41234d8616c2f8070
+ms.sourcegitcommit: 4c9db6c124d7244e7e8bb2f8bfdc697523781c31
+ms.translationtype: HT
+ms.contentlocale: nb-NO
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "8010921"
 ---
-
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Supplering av kundeprofiler med forbedrede adresser
 
 Adresser i dataene kan være ustrukturerte, ufullstendige eller feil. Bruk Microsofts modeller til å normalisere og forbedre adressene i [Common Data Model-formatet](/common-data-model/schema/core/applicationcommon/address) for bedre nøyaktighet og innsikt.
