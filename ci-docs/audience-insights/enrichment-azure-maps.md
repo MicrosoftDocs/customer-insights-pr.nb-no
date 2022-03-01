@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: cbeac7e25d83df152c38d1c59cc6734a3d1fee97
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 63f241c27ec86f357c83a301d6797f9ff87c2241
+ms.sourcegitcommit: 2acda3c5adf40bc3f5bbb4b2b4b6c22f84371da7
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618579"
+ms.lasthandoff: 09/01/2021
+ms.locfileid: "7466774"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Supplering av kundeprofiler med Azure Maps (forhåndsversjon)
 
@@ -86,7 +86,7 @@ Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velg
 
 ## <a name="next-steps"></a>Neste trinn
 
-[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
+Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md), [mål](measures.md) og til og med [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
 
 ## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
 

@@ -1,7 +1,7 @@
 ---
 title: Forbedrede firmadata
 description: Suppler og normaliser firmadata med Microsoft-modeller.
-ms.date: 01/19/2022
+ms.date: 11/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 693e2f410a77cbf2e87ff0132ce963aab7e8e3e4
-ms.sourcegitcommit: 4c9db6c124d7244e7e8bb2f8bfdc697523781c31
+ms.openlocfilehash: d11700c87f31cedc40d32b201251d8a9e2e2c312
+ms.sourcegitcommit: dfc4843cc78857f1e3ca49d7b938e3ba77969169
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "8010941"
+ms.lasthandoff: 11/15/2021
+ms.locfileid: "7813930"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Supplering av firmaprofiler med forbedrede firmadata
 
@@ -82,17 +82,7 @@ Hvis du vil starte den omfattende prosessen, velger du **Kjør** fra kommandolin
 
 Når suppleringsprosessen fullføres, kan du se gjennom de nylig klargjorte kundeprofildataene under **Mine suppleringer**. I tillegg finner du tidspunktet for den siste oppdateringen og antall supplerte profiler.
 
-Du kan se et eksempel på de supplerte dataene på **forhåndsvisningsflisen for supplerte kunder**. Velg **Vis mer**, og velg fanen **Data** for å få tilgang til en detaljert visning av hver supplerte profil.
-
-### <a name="overview-card"></a>Oversiktskort
-
-Oversiktskortet viser detaljer om dekningen til suppleringen. 
-
-* **Selskaper som er behandlet og endret**: Antall kundeselskapsprofiler som er supplert.
-
-* **Selskaper som er behandlet og uendret**: Antall kundeselskapsprofiler som er gjenkjent, men ikke endret. Dette skjer vanligvis når inndataene er gyldige og ikke kan forbedres av suppleringen.
-
-* **Selskaper som ikke er behandlet og uendret**: Antall kundeselskapsprofiler som ikke ble gjenkjent. Dette skjer vanligvis for inndata som er ugyldige eller ikke støttes av suppleringen.
+Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velge **Vis supplerte data**.
 
 ## <a name="next-steps"></a>Neste trinn
 

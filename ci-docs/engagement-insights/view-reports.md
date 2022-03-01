@@ -4,17 +4,17 @@ description: Bruk de tilgjengelige rapportene til å se aktivitet i sanntid på 
 author: darrinw-docs
 ms.reviewer: mhart
 ms.author: darrinw
-ms.date: 10/01/2021
+ms.date: 06/18/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 5ccdcb47db597154cf79b9f2e8fc238ab75dfde9
-ms.sourcegitcommit: d9965f4bfc09391698a34042f6b44367e53819e3
+ms.openlocfilehash: cb6d9ab75b95a5f677d2267f5412a55327930987b2fc3a1a21958633a8116bd2
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/30/2021
-ms.locfileid: "7582934"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036660"
 ---
 # <a name="view-reports"></a>Vis rapporter
 
@@ -92,18 +92,12 @@ Mobilrapporter grupperes i sanntidsbruk, app og brukerkategorier. Du kan få til
 
 - **Steder** viser informasjon om appbrukere etter land, område og by.
 
-## <a name="filter-by-time-or-date-range"></a>Filtrere etter klokkeslett eller datointervall
+## <a name="filter-by-time-or-value"></a>Filtrer etter klokkeslett eller verdi
 
-Du kan velge datotidsramme eller datointervall i en web- eller mobilrapport for å fokusere på en verdi eller tidsperiode. 
+Du kan velge tidsramme eller verdi i en web- eller mobilrapport for å fokusere på en verdi eller et tidsrom. 
 
-- For å velge en tidsramme velger du en verdi fra rullegardinlisten for rapporten i øvre høyre hjørne av rapportvisningen. Du kan også velge **Fast datointervall**. 
+- Hvis du vil velge tidsramme, velger du **Mer [...]** fra rullegardinlisten for rapporten. Tidsintervallvalget er deaktivert for en rapport om sanntidsbruk. Tidsintervallet for en rapport om sanntidsbruk er «nå».
 
-  :::image type="content" source="media/filter-by-time.png" alt-text="Filtrere etter klokkeslett eller datointervall.":::   
-
-- For de fleste rapporter velger du en verdi i et diagram eller en liste for å filtrere rapporten.
-
-> [!NOTE]
-> Tidsintervallvalget er deaktivert for en rapport om sanntidsbruk. Tidsintervallet for en rapport om sanntidsbruk er «nå».
-
+- I de fleste rapporter velger du en verdi i et diagram eller en liste for å filtrere rapporten etter den valgte verdien.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

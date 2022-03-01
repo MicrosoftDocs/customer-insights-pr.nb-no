@@ -4,17 +4,17 @@ description: Avanserte scenarioer du bør vurdere når du instrumenterer nettste
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 09/27/2021
+ms.date: 11/12/2020
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 4c6646ecadbb604000d6c95b685cf6e420969a6d
-ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
+ms.openlocfilehash: 7455d276035bfaf1f8a93d0e3b0b0884353a4010715c05d1d696309f7eb4b233
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7558714"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036340"
 ---
 # <a name="advanced-web-sdk-instrumentation"></a>Avansert nett-SDK-instrumentering
 
@@ -33,20 +33,20 @@ Med SDK-en kan du definere brukerinformasjon som kan sendes med hver hendelse. D
 - **authType**: Godkjenningstypen som brukes til å hente den godkjente bruker-ID-en.
 - **name**: Brukerens navn.
 - **email**: Brukerens e-postadresse.
-
-Eksemplet nedenfor viser en kodesnutt som sender brukerinformasjon. Der du ser funksjoner med et stjernesymbol * foran, erstatter du funksjonen med den egendefinerte implementeringen:
+    
+Eksemplet nedenfor viser en kodesnutt som sender brukerinformasjon. Der du ser Funksjoner angitt med *, erstatter du den med implementeringen av kall til disse verdiene:  
 
 ```
 […]
-window, document
+window, document 
 {
-    src:"https://download.pi.dynamics.com/sdk/web/msei-1.min.js",
-    name:"myproject",
-    cfg:{
-      ingestionKey:<paste your ingestion key>",
-      autoCapture:{
-        view:true,
-        click:true
+    src:"https://download.pi.dynamics.com/sdk/web/mspi-0.min.js", 
+    name:"myproject",      
+    cfg:{ 
+      ingestionKey:<paste your ingestion key>", 
+      autoCapture:{ 
+        view:true, 
+        click:true 
       }
     },
     user:{
@@ -58,25 +58,25 @@ window, document
 […]
 ```
 
-Du kan også angi brukerinformasjon ved å kalle opp `setUser(user: IUser)`-API-en. Telemetri som sendes etter oppkall til `setUser`-API-en, inneholder brukerinformasjonen.
+Du kan også angi brukerinformasjon ved å kalle `setUser(user: IUser)`-API-en på SDK-en. Telemetri som sendes etter kall til `setUser API`, inneholder brukerinformasjonen.
 
 ## <a name="adding-custom-properties-for-each-event"></a>Legge til egendefinerte egenskaper for hver hendelse
 
-Med SDK-en kan du angi egendefinerte egenskaper som kan sendes med hver hendelse. Du kan angi de egendefinerte egenskapene som et objekt som inneholder nøkkelverdipar (verdien kan være av typen `string | number | boolean`). Du kan legge til objektet i en egenskap som kalles, `props`, som ligner `src`, `name` og `cfg` i kodesnuttkonfigurasjonen.
+Med SDK-en kan du angi egendefinerte egenskaper som kan sendes med hver hendelse. Du kan angi de egendefinerte egenskapene som et objekt som inneholder nøkkelverdipar (verdien kan være av typen `string | number | boolean`). Objektet kan legges til i en egenskap som kalles `props`, som ligner `src`, `name` og `cfg` i kodesnuttkonfigurasjonen. 
 
 Eksemplet nedenfor viser en kodesnutt som sender egendefinerte egenskaper:
 
 ```
 […]
-window, document
+window, document 
 {
-    src:"https://download.pi.dynamics.com/sdk/web/msei-1.min.js",
-    name:"myproject",
-    cfg:{
-      ingestionKey:<paste your ingestion key>",
-      autoCapture:{
-        view:true,
-        click:true
+    src:"https://download.pi.dynamics.com/sdk/web/mspi-0.min.js", 
+    name:"myproject",      
+    cfg:{ 
+      ingestionKey:<paste your ingestion key>", 
+      autoCapture:{ 
+        view:true, 
+        click:true 
       }
     },
     props:{
@@ -87,7 +87,7 @@ window, document
 […]
 ```
 
-Du kan også angi egendefinerte egenskaper individuelt ved å kalle opp `setProperty(name: string, value: string | number | boolean)`-API-en.
+Du kan også angi egendefinerte egenskaper individuelt ved å kalle `setProperty(name: string, value: string | number | boolean)`-API-en på SDK-en.
 
 ## <a name="sending-custom-events"></a>Sende egendefinerte hendelser
 

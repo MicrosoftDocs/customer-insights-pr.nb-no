@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: c116f7ce208c0288851a4b2230e27784ba3a5337
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 6faaeb6a1ee34c3e5c8e7d465b37cee589bc920c
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732692"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483692"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>DSR-forespørsler (Data Subject Rights) under GDPR
 
@@ -79,14 +79,7 @@ En leieradministrator kan følge disse trinnene for å eksportere data:
 2. Godta bekreftelsen om å eksportere dataene for den forespurte brukeren.
 3. Motta de eksporterte dataene via e-postadressen for leieradministratoren.
 
-## <a name="consent-management-preview"></a>Samtykkeadministrasjon (forhåndsversjon)
-
-Funksjonen for samtykkeadministrasjon samler ikke inn brukerdata direkte. Den importerer og behandler bare samtykkedata som leveres av brukere i andre programmer.
-
-Hvis du vil fjerne samtykkedata om bestemte brukere, fjerner du dem i datakildene som er innlagt i samtykkebehandlingsmulighetene. Etter oppdateringen av datakilden slettes de fjernede dataene også i Samtykkesenter. Programmer som bruker samtykkeenheten, sletter også data som ble fjernet i kilden etter en [oppdatering](audience-insights/system.md#refresh-processes). Vi anbefaler at du oppdaterer datakilder raskt etter at du har svart på en dataemneforespørsel for å fjerne brukerens data fra alle andre prosesser og programmer.
-
-
-## <a name="engagement-insights-preview"></a>Engasjementsinnsikt (forhåndsversjon)
+## <a name="engagement-insights"></a>Engasjementsinnsikt
 
 ### <a name="deleting-and-exporting-event-data-containing-end-user-identifiable-information"></a>Slette og eksportere hendelsesdata som inneholder identifiserbar informasjon om sluttbrukeren
 

@@ -4,17 +4,17 @@ description: Hvordan du oppretter, redigerer og sletter segmenter, og hvor du br
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 10/01/2021
+ms.date: 06/09/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: f6bba645a78173fb00dc75e6080f2aeda0b5a143
-ms.sourcegitcommit: 565637f49cbdd05a82f42784f594c19cac299140
+ms.openlocfilehash: cedcd58373428dd35ba29ce8fdd00007257f8fa59b0d25bc584b4e832df13604
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623599"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036160"
 ---
 # <a name="view-and-create-segments"></a>Vise og opprette segmenter
 
@@ -44,27 +44,22 @@ Denne delen beskriver hvordan du oppretter et *tomt segment* fra bunnen av.
 
 1. Velg **Nytt segment**.
 
-1. I **Ressursbibliotek** velger du (+) ved siden av attributtet du vil filtrere etter. For øyeblikket kan du bare opprette segmenter basert på dimensjoner.
+1. Velg attributtet du vil filtrere etter, i **Ressursbibliotek**. For øyeblikket kan du bare opprette segmenter basert på dimensjoner.
 
-   :::image type="content" source="media/create-new-segment.png" alt-text="Opprett et nytt segment.":::
-
-1. Velg en operator og en verdi for det valgte attributtet i **Regel**-delen. Følgende operasjoner støttes ikke.
-
-   :::image type="content" source="media/choose-operator-segment.png" alt-text="Velg en operator for det nye segmentet.":::
-
+1. Velg en operator og en verdi for det valgte attributtet. Følgende operasjoner støttes ikke.
    - **er**: krever nøyaktig treff for å ta med verdier. Bruker **er lik** for én verdi eller **noen av** for å ta med flere verdier.
    - **er ikke**: krever nøyaktig treff for å utelate verdier. Bruker **er lik** for én verdi eller **noen av** for å ta med flere verdier.
    - **begynner med**: en streng som de samsvarende verdiene begynner med.
    - **slutter med**: en streng som de samsvarende verdiene slutter med.
    - **inneholder**: en streng i samsvarende verdier.
 
-1. Hvis du vil legge til flere betingelser for en gruppe, kan du bruke logiske operatorer. Beregnede attributter beregner ved bruk av angitte operatorer.
+1. Hvis du vil legge til flere betingelser i en gruppe, kan du bruke to logiske operatorer. Beregnede attributter beregner ved bruk av angitte operatorer.
    - **AND**-operator: Begge betingelser må oppfylles som en del av segmentprosessen. Dette alternativet er svært nyttig når du definerer betingelser på tvers av forskjellige enheter.
    - **OR**-operator: En av betingelsene må oppfylles som en del av segmenteringsprosessen. Dette alternativet er svært nyttig når du definerer flere betingelser for samme enhet.
 
 1. Velg **Lagre**, og gi segmentet et navn. 
 
-Segmentet vises på **Segmenter**-siden, og du kan bruke det på alle rapporter og trakter i arbeidsområdet.
+Segmentet vises på Segmenter-siden, og du kan bruke det på alle rapporter og trakter i arbeidsområdet.
 
 ## <a name="use-a-segment-in-a-report-or-funnel"></a>Bruke et segment på en rapport eller trakt
 
@@ -72,7 +67,7 @@ Du kan bruke segmenter på en rapport eller trakt for å filtrere dem basert på
 
 :::image type="content" source="media/segment-reports-filter.png" alt-text="En sidevisningsrapport med en utvidet rullegardinliste for å velge hvilke segmenter som skal brukes.":::
 
-Åpne rapporten eller trakten for å bruke et segment. Velg **+ Legg til betingelse**, og velg **Filtrer etter segment**. Velg segmentet du vil bruke, fra listen. Segmentet brukes på rapporten. Hvis et diagram ikke støtter segmentet, vises det en feil. Hvis du vil ha mer informasjon, kan du se [Opprette og behandle traktrapporter](funnel-reports.md).
+Åpne rapporten eller trakten for å bruke et segment. Velg **Legg til betingelse**, og velg **Filtrer etter segment**. Velg segmentet du vil bruke, fra listen. Segmentet brukes på rapporten. Hvis et diagram ikke støtter segmentet, vises det en feil.
  
 Du kan bruke *opptil tre segmenter* på en rapport eller trakt.
 
@@ -96,7 +91,5 @@ Du kan bruke *opptil tre segmenter* på en rapport eller trakt.
 1. Velg **Mer [...]** i segmentlisten. 
 1. Velg **Slett** i rullegardinlisten.
 1. Velg **Slett** for å bekrefte.
-
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

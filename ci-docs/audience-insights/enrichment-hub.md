@@ -1,7 +1,7 @@
 ---
 title: Supplere enhetlige kundeprofiler
 description: Bruk funksjoner for å supplere kundedataene.
-ms.date: 02/07/2022
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 5c3dda3b9bae828857258025ff79958ee22bdb6f
-ms.sourcegitcommit: a399bd17523c8d06afd7d78af4fc711f93c0e8be
+ms.openlocfilehash: bc0128c222c032e8cfe35e6f3baa0ea722bce7cb
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/07/2022
-ms.locfileid: "8098801"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673011"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
 
@@ -37,17 +37,14 @@ I kategorien **Oppdag** finner du alle støttede suppleringsalternativer.
 - [Demografi](enrichment-experian.md) levert av Experian
 - [Egendefinerte data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
 - [Azure Maps](enrichment-azure-maps.md) levert av Microsoft
-- [Stedsdata](enrichment-here.md) levert av HERE Technologies 
 
 # <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
 
 - [Firmadata](enrichment-leadspace.md) levert av Leadspace
 - [Forbedrede adresser](enrichment-enhanced-addresses.md) levert av Microsoft 
-- [Forbedrede firmadata](enrichment-enhanced-company-data.md) fra Microsoft
 - [Stedsdata](enrichment-here.md) levert av HERE Technologies 
 - [Egendefinerte data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
 - [Azure Maps](enrichment-azure-maps.md) levert av Microsoft
-- [Kontoengasjementsdata](enrichment-office.md) fra Microsoft
 
 ---
 

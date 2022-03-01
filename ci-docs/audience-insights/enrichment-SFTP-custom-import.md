@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: fa1d4ffd9f77e128b5d804e4562e964561f4684f
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: f92b36ac5364ea8586f9cbba7ba03178641555c0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618717"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304662"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Supplere kundeprofiler med egendefinerte data (forhåndsversjon)
 
@@ -45,8 +45,6 @@ For å konfigure egendefinert SFTP-import må følgende forhåndskrav være oppf
 
     :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Skjermbilde når du angir dataplassering.":::
 
-1. Velg **Neste**, og velg kundedatasettet. Dette kan enten være alle kundeprofiler eller et segment.
-
 1. Velg **Neste** angi et navn for suppleringen og et navn for utdataenheten. 
 
 1. Velg **Lagre supplering** etter at du har sett gjennom valgene.
@@ -66,7 +64,7 @@ Du må være en administrator for å konfigurere tilkoblinger. Velg **Legg til t
 1. Når verifiseringen er fullført, kan tilkoblingen lagres ved å velge **Lagre**.
 
    > [!div class="mx-imgBorder"]
-   > ![Experian-tilkoblingskonfigurasjonsside.](media/enrichment-SFTP-connection.png "Experian-tilkoblingskonfigurasjonsside")
+   > ![Experian-tilkoblingskonfigurasjonsside](media/enrichment-SFTP-connection.png "Experian-tilkoblingskonfigurasjonsside")
 
 
 ## <a name="defining-field-mappings"></a>Definere felttilordninger 
@@ -125,6 +123,6 @@ Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velg
 
 ## <a name="next-steps"></a>Neste trinn
 
-[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
+Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md) og [mål](measures.md), og [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

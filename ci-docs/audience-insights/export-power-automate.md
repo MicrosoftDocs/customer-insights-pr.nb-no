@@ -1,20 +1,20 @@
 ---
 title: Power Automate-kobling | Microsoft Docs
 description: Opprett flyter i Microsoft Power Automate fra Dynamics 365 Customer Insights.
-ms.date: 06/24/2021
-ms.reviewer: mhart
+ms.date: 08/03/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
+ms.reviewer: philk
 manager: shellyha
-ms.openlocfilehash: 95e0fcbfb43f2b3e7e2d0e8a1690dc7ff5a44433402b7ef3d437710eb0efff15
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: ffe92414365b0b777691a4a2d585100e4fbea591
+ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035611"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "4406491"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate-kobling (forhåndsvisning)
 
@@ -22,35 +22,28 @@ Utløs bestemte hendelser som skal skje automatisk når dataene endres og admini
 
 ## <a name="power-automate-triggers"></a>Power Automate-utløsere
 
-Bruk utløsere til å opprette skyflyter og automatisere repeterende oppgaver, for eksempel varsler eller mer avanserte handlinger. 
+Du kan bruke en rekke utløsere som gjør det mulig for deg å opprette flyter for å automatisere repeterende oppgaver, for eksempel varslinger eller mer avanserte handlinger. 
 
 - Utløs når en oppdatering av datakilde mislykkes. 
 - Utløs når en oppdatering av datakilde er vellykket.
 - Utløs når en terskel blir overskredet i et segment. Utløseren er begrenset til overgang over grensen.
-- Utløs når en terskel blir overskredet i et forretningsmål. Bare forretningsmål uten en dimensjon støttes. Utløseren er begrenset til overgang over grensen.
+- Utløs når en terskel blir overskredet i et forretningsmål. Utløseren er begrenset til overgang over grensen.
 - Utløses når en full oppdatering av (datakilder, segmenter, mål ...) er fullført.
 - Utløs når en oppdatering av samlingsprosessen (tilordning, samsvar, sammenslåing) er fullført.
 
-[Konfigurere utløsere i Power Automate.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
+[Konfigurere utløsere i Power Automate](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/).
 
 ## <a name="power-automate-actions"></a>Power Automate-handlinger
+Power Automate-koblingen gir andre handlinger enn de tilgjengelige utløserne. Hvis du vil ha mer informasjon, kan du se [Dynamics 365 Customer Insights Connector](https://docs.microsoft.com/connectors/customerinsights/).
 
-Power Automate-koblingen gir andre handlinger enn de tilgjengelige utløserne. Hvis du vil ha mer informasjon, kan du se [Dynamics 365 Customer Insights Connector](/connectors/customerinsights/).
+## <a name="create-a-power-automate-flow-in-audience-insights"></a>Opprette en Power Automate-flyt i målgruppeinnsikt
 
-## <a name="create-a-power-automate-flow"></a>Opprett en Power Automate-flyt
+1. I Målgruppeinnsikt går du til **Administrasjon** > **System**.
 
-1. I Målgruppeinnsikt går du til **Administrasjon** > **Eksportmål**.
+1. På **System**-siden velger du kategorien **Status**.
 
-1. Velg **Konfigurer** på **Power Automate**-flisen.
+1. I **Datakilder**-delen velger du **Flyter** og deretter **Opprett en flyt** fra rullegardinlisten.
+   > [!div class="mx-imgBorder"]
+   > ![Power Automate-koblingen som viser Opprett en flyt-handlingen](media/power-automate-connector-create-flow.png "Power Automate-koblingen viser Opprett en flyt-handling")
 
-1. Customer Insights-koblingen (forhåndsversjon) i Power Automate åpnes. **Logg på** Power Automate.
-
-1. Velg en av de tilgjengelige utløserne, og legg til flere trinn i den nye flyten. Hvis du vil ha mer informasjon, kan du se [Opprett en skyflyt i Power Automate](/power-automate/get-started-logic-flow).
-
-Eksempler på hvordan du bruker flyter: 
-- Publiser en melding på en Microsoft Teams-kanal hvis en datakildeoppdatering mislykkes. 
-- Send en e-postmelding til dataeierne når en grense for et segment krysses.
-
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+1. I Power Automate velger du en av de tilgjengelige utløserne for å opprette den foretrukne flyten. Hvis du oppretter din første flyt, må du først godkjenne med Power Automate-koblingen.

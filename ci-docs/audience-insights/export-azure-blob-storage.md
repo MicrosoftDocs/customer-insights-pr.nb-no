@@ -1,75 +1,50 @@
 ---
-title: Eksportere Customer Insights-data til Azure Blob Storage
-description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til Blob Storage.
-ms.date: 10/06/2021
-ms.reviewer: mhart
+title: Eksportere Customer Insights-data til Azure Blob storage
+description: Lær hvordan du konfigurerer tilkoblingen til Azure Blob Storage.
+ms.date: 09/18/2020
+ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: d02c09a1869d0099db4861b65ac8ff006914873e
-ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
+ms.openlocfilehash: 925b53260e7c633e17d7f172d2dd2d581e982e10
+ms.sourcegitcommit: 334633cbd58f5659d20b4f87252c1a10cc7130db
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "7605862"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "4667151"
 ---
-# <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Eksporter segmentliste og andre data til Azure Blob Storage (forhåndsvisning)
+# <a name="connector-for-azure-blob-storage-preview"></a>Kobling for Azure Blob Storage (forhåndsvisning)
 
-Lagre Customer Insights-data i en Blob Storage, eller bruk den til å overføre dataene dine til andre programmer.
+Lagre Customer Insights-data i Azure Blob Storage, eller bruk dette til å overføre dataene dine til andre programmer.
 
-## <a name="known-limitations"></a>Kjente begrensninger
+## <a name="configure-the-connector-for-azure-blob-storage"></a>Konfigurere koblingen for Azure Blob Storage
 
-1. For Azure Blob Storage kan du velge mellom [Standard/ytelse og Premium-ytelse](/azure/storage/blobs/storage-blob-performance-tiers). Hvis du velger Premium-ytelse, velger du [premiumblokkblobene som kontotype](/azure/storage/common/storage-account-overview#types-of-storage-accounts).
+1. I Målgruppeinnsikt går du til **Administrasjon** > **Eksportmål**.
 
-## <a name="set-up-the-connection-to-blob-storage"></a>Konfigurer tilkoblingen til Blob Storage
+1. Velg **Konfigurer** under **Azure Blob Storage**.
 
-1. Gå til **Administrator** > **Tilkoblinger**.
+1. Angi **Kontonavn**, **Kontonøkkel** og **Beholder** for Azure Blob Storage-kontoen.
+    - Hvis du vil vite mer om hvordan du finner navnet og nøkkelen til Azure Blob Storage-kontoen, kan du se [Administrere lagringskontoinnstillinger i Azure-portalen](https://docs.microsoft.com/azure/storage/common/storage-account-manage).
+    - Hvis du vil lære hvordan du oppretter en beholder, kan du se [Opprette en beholder](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-1. Velg **Legg til tilkobling**, og velg **Azure Blob Storage** for å konfigurere tilkoblingen.
+1. Gi målet et gjenkjennelig navn i feltet **Visningsnavn**.
 
-1. Gi tilkoblingen et gjenkjennelig navn i **Visningsnavn**-feltet. Navnet og tilkoblingstypen beskriver denne tilkoblingen. Vi anbefaler at du velger et navn som forklarer formålet med og målet for tilkoblingen.
-
-1. Velg hvem som kan bruke denne tilkoblingen. Hvis du ikke gjør noe, vil standarden være Administratorer. Hvis du vil ha mer informasjon, se [Tillate bidragsytere å bruke en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
-
-1. Angi **Kontonavn**, **Kontonøkkel** og **Beholder** for Blob Storage-kontoen.
-    - Hvis du vil finne ut mer om hvordan du finner navn på forretningsforbindelse og kontonøkkel for Blob Storage, kan du se [Behandle innstillinger for lagringskonto i Azure Portal](/azure/storage/common/storage-account-manage).
-    - Hvis du vil lære hvordan du oppretter en beholder, kan du se [Opprette en beholder](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
-
-1. Velg **Lagre** for å fullføre tilkoblingen. 
-
-## <a name="configure-an-export"></a>Konfigurere en eksport
-
-Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denne typen. Hvis du vil ha mer informasjon, se [Tillatelser som kreves for å konfigurere en eksport](export-destinations.md#set-up-a-new-export).
-
-> [!IMPORTANT]
-> Hvis du har aktivert innstillingen for myk sletting for Azure Blob Storage-kontoen, vil eksporten mislykkes. Deaktiver myk sletting for å eksportere data til blober. Hvis du vil ha mer informasjon, kan du se [Aktiver myk sletting av blober](/azure/storage/blobs/soft-delete-blob-enable.md)
-
-1. Gå til **Data** > **Eksporter**.
-
-1. Velg **Legg til mål** for å opprette en ny eksport.
-
-1. Velg en tilkobling fra Azure Blob Storage-delen i feltet **Tilkobling for eksport**. Hvis navnet på denne delen ikke vises, er ingen tilkoblinger av denne typen tilgjengelige for deg.
+1. Velg **Neste**.
 
 1. Merk av i boksen ved siden av hver av enhetene du vil eksportere til dette stedet.
 
 1. Velg **Lagre**.
 
-Hvis du lagrer en eksport, kjøres ikke eksporten umiddelbart.
+Eksporterte data lagres i Azure Blob Storage-beholderen du har konfigurert. Følgende mappebaner opprettes automatisk i beholderen:
 
-Eksporten kjører med hver [planlagte oppdatering](system.md#schedule-tab).     
-
-Du kan også [eksportere data ved behov](export-destinations.md#run-exports-on-demand). 
-
-Eksporterte data lagres i Blob Storage-beholderen du konfigurerte. Følgende mappebaner opprettes automatisk i beholderen:
-
-- For kildeenheter og enheter generert av systemet:   
-  `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`  
+- For kildeenheter og enheter generert av systemet: `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`
   - Eksempel: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/HighValueSegment/2020/08/24/1433/HighValueSegment_1.csv`
- 
-- Model.json for de eksporterte enhetene er på %ExportDestinationName%-nivå.  
+- Model.json for de eksporterte enhetene vil ligge på %ExportDestinationName%-nivået.
   - Eksempel: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/model.json`
 
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+## <a name="export-the-data"></a>Eksportere dataene
+
+Du kan [eksportere data etter behov](/export-destinations.md#export-data-on-demand). Eksporten blir også kjørt med hver [planlagte oppdatering](system.md#schedule-tab).

@@ -2,19 +2,19 @@
 title: Datainntak i sanntid og begrensninger
 description: Generell informasjon om sanntidsfunksjoner i målgruppeinnsikt.
 ms.date: 10/27/2020
-ms.reviewer: mhart
+ms.reviewer: nikeller
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: Nils-2m
-ms.author: nikeller
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 897c876306a39cd9d5842487b96cb2f0a8df7e656de0fb7f10fe8c7f53e2db6b
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b00a72e6a67e33c8e70ccc6139c5e62020f9d3e1
+ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035289"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "4689187"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Datainntak i sanntid (forhåndsversjon)
 
@@ -54,7 +54,7 @@ I sanntids-API-en kan du publisere en ny aktivitet fra kildesystemet (en individ
 
 Du kan koble deg til sanntids-API-en på to måter:
 
-- [indirekte](#connect-via-the-dynamics-365-customer-insights-connector) ved hjelp av [Dynamics 365 Customer Insights-koblingen](/connectors/customerinsights/)
+- [indirekte](#connect-via-the-dynamics-365-customer-insights-connector) ved hjelp av [Dynamics 365 Customer Insights-koblingen](https://docs.microsoft.com/connectors/customerinsights/)
 - [direkte](#connect-directly-to-the-real-time-api), med kode
 
 Følgende forutsetninger gjelder for begge:
@@ -66,13 +66,13 @@ Følgende forutsetninger gjelder for begge:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Koble til via Dynamics 365 Customer Insights-koblingen
 
-Sanntids-API-en kan inkludere data fra en dedikert Power Platform-kobling, [Dynamics 365 Customer Insights-koblingen](/connectors/customerinsights/), uten å måtte skrive og distribuere kode.    
-Koblingen kan utføre samme sanntidshandlinger som API-en. Du trenger en gyldig lisens for Premium-koblinger. Hvis du vil ha mer informasjon, kan du se [Vanlige spørsmål om om lisensiering for Power Apps og Power Automate](/power-platform/admin/powerapps-flow-licensing-faq).
+Sanntids-API-en kan inkludere data fra en dedikert Power Platform-kobling, [Dynamics 365 Customer Insights-koblingen](https://docs.microsoft.com/connectors/customerinsights/), uten å måtte skrive og distribuere kode.    
+Koblingen kan utføre samme sanntidshandlinger som API-en. Du trenger en gyldig lisens for Premium-koblinger. Hvis du vil ha mer informasjon, kan du se [Vanlige spørsmål om om lisensiering for Power Apps og Power Automate](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps og/eller Power Automate](/connectors/)
-- Azure [Logic Apps](/azure/connectors/apis-list)
+- Power Platform [Power Apps og/eller Power Automate](https://docs.microsoft.com/connectors/)
+- Azure [Logic Apps](https://docs.microsoft.com/azure/connectors/apis-list)
 
-Hvis du vil ha informasjon om hvordan du oppretter flyter, kan du se i [Power Automate-dokumentasjonen](/power-automate/).
+Hvis du vil ha informasjon om hvordan du oppretter flyter, kan du se i [Power Automate-dokumentasjonen](https://docs.microsoft.com/power-automate/).
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Koble direkte til API i sanntid
 
@@ -83,7 +83,6 @@ Detaljer om denne API-en, inkludert parametere og svar, finner du i **EntityData
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Forstå sanntidsbruk med telemetri
 
-Få en oversikt over volumet av forespørsler til sanntids-API-en og informasjon om problemer som systemet kan støte på. Du får [tilgang til telemetrien i sanntid](system.md#api-usage-tab). 
+Få en oversikt over volumet av forespørsler til sanntids-API-en og informasjon om problemer som systemet kan støte på. Du kan [få tilgang til sanntidstelemetri](system.md#api-usage-tab) ved å gå til **Admin** > **System** > **API-bruk**. I **Operasjoner**-tabellen inneholder rader for API-operasjoner som bruker sanntidsmetoder, en knapp som brukes til å vise API-bruk i sanntid. Knappen er visualisert med et kikkertsymbol. Velg knappen for å åpne en siderute som inneholder bruksdetaljer for API-bruk i sanntid i det gjeldende miljøet.
 
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+Bruk velgeren **Grupper etter** til å velge hvordan du best vil presentere interaksjon i sanntid på en tidslinje fra de siste 24 timene til de siste 30 dagene. Du kan gruppere dataene etter API-metode, enhetskvalifisertnavn (hentet enhet), opprettet av (kilde for hendelsen), resultat (vellykket eller mislykket) eller feilkoder. Dataene er tilgjengelige som et historikkdiagram og som en tabell.

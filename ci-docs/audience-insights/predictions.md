@@ -1,7 +1,7 @@
 ---
 title: Fullføre delvise data ved hjelp av prognoser
 description: Bruk prognoser til å fylle ut ufullstendige kundedata.
-ms.date: 11/01/2021
+ms.date: 05/05/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,17 +9,16 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3100acf383d85c00a6ff0a8ebc54e038bd813427
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 6ce72486faa97e6f630a991044ca5e6d4714d0b8b8395a60fad12f3e3a49fa29
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732433"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7032447"
 ---
-# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fullfør de delvise dataene med prognoser (avskrevet)
+# <a name="complete-your-partial-data-with-predictions"></a>Fyll ut de delvise dataene med prognoser
 
-> [!IMPORTANT]
-> Denne funksjonen blir **avskrevet** fra og med **5. november 2021**. Gjeldende implementeringer vil fortsette å fungere til funksjonen er fjernet, men du kan ikke opprette nye integreringer ved hjelp av instruksjonene nedenfor.
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 Med prognoser er det mulig å enkelt opprette predisjonsverdier som kan forbedre forståelsen av en kunde. På siden **Intelligens** > **Prediksjoner** kan du velge **Mine prediksjoner** for å se prediksjoner som du har konfigurert i andre deler av målgruppeinnsikt, og du kan tilpasse dem ytterligere.
 
@@ -36,7 +35,7 @@ Før organisasjonen kan bruke prognosefunksjonen, må du kontrollere at følgend
 
 2. Ditt målgruppeinnsiktsmiljø er knyttet til Dataverse-forekomsten din.
 
-Hvis du vil ha mer informasjon, kan du se [Opprette et nytt miljø](create-environment.md).
+Hvis du [oppretter et nytt miljø](get-started-paid.md), konfigurerer du det i dialogboksen **Opprett et miljø** og velger **Avansert**. Hvis du allerede har opprettet et miljø, går du til innstillingene og velger **Avansert**. Uansett går du til delen **Bruk prediksjoner** og angir URL-adressen til Dataverse-forekomsten som du vil knytte miljøet ditt til.
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Opprette en prognose i kundeenheten
 
@@ -61,8 +60,6 @@ Hvis du vil ha mer informasjon, kan du se [Opprette et nytt miljø](create-envir
    > ![Eksempel på tilordnede feltverdier i kategorier.](media/intelligence-categorymapping.png "Eksempel på tilordnede feltverdier i kategorier")
 
 8. Velg **Ferdig**, og prognosen blir behandlet. Behandlingen vil ta litt tid, avhengig av størrelsen på og kompleksiteten av data. Resultater er tilgjengelige i en ny enhet basert på **Navn på utdataenhet** til den opprettede prognosen.
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Opprette en prognose når du oppretter et segment
 

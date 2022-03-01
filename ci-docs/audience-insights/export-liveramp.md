@@ -1,39 +1,37 @@
 ---
 title: LiveRamp-kobling
-description: Lær hvordan du konfigurerer tilkoblingen og eksporten til LiveRamp.
-ms.date: 10/08/2021
-ms.reviewer: mhart
+description: Lær hvordan du eksporterer data til LiveRamp.
+ms.date: 12/02/2020
+ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: kishorem-ms
-ms.author: kishorem
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: f9a0a88fb58897e4d279c181f4cdb4f6c852da60
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 86aa8c66a47ee61741082c95f05d2e5ce3f06f35
+ms.sourcegitcommit: 334633cbd58f5659d20b4f87252c1a10cc7130db
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618947"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "4667196"
 ---
-# <a name="export-segments-to-liverampreg-preview"></a>Eksportere segmenter til LiveRamp&reg; (forhåndsvisning)
+# <a name="liverampreg-connector-preview"></a>Kobling for LiveRamp&reg; (forhåndsvisning)
 
-Aktiver dataene i LiveRamp for å koble til over 500 plattformer på tvers av digitale og sosiale systemer og TV-er. Du kan arbeide med dataene dine i LiveRamp for å målrette, undertrykke og tilpasse annonsekampanjer.
+Aktiver dataene i LiveRamp for å koble til over 500 plattformer på tvers av digitale og sosiale systemer og TV-økosystemer. Du kan arbeide med dataene dine i LiveRamp for å målrette, undertrykke og tilpasse annonsekampanjer.
 
-## <a name="prerequisites-for-a-connection"></a>Forutsetninger for en tilkobling
+## <a name="prerequisites"></a>Forutsetninger
 
 - Du må ha et LiveRamp-abonnement for å bruke denne koblingen.
 - Hvis du vil ha et abonnement, [kontakter du LiveRamp](https://liveramp.com/contact/) direkte. [Finn ut mer om LiveRamp Onboarding](https://liveramp.com/our-platform/data-onboarding/).
 
-## <a name="set-up-connection-to-liveramp"></a>Konfigurere tilkobling til LiveRamp
+## <a name="connect-to-liveramp"></a>Koble til LiveRamp
 
-1. Gå til **Administrator** > **Tilkoblinger**.
+1. I Målgruppeinnsikt går du til **Administrasjon** > **Eksportmål**.
 
-1. Velg **Legg til tilkobling**, og velg **LiveRamp** for å konfigurere tilkoblingen.
+1. I **LiveRamp**-flisen velger du **Oppsett**.
 
-1. Gi tilkoblingen et gjenkjennelig navn i **Visningsnavn**-feltet. Navnet og tilkoblingstypen beskriver denne tilkoblingen. Vi anbefaler at du velger et navn som forklarer formålet med og målet for tilkoblingen.
-
-1. Velg hvem som kan bruke denne tilkoblingen. Hvis du ikke gjør noe, vil standarden være Administratorer. Hvis du vil ha mer informasjon, se [Tillate bidragsytere å bruke en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Gi målet et gjenkjennelig navn i feltet **Visningsnavn**.
 
 1. Angi et **brukernavn** og **passord** for din LiveRamp sikker FTP (SFTP)-konto.
 Denne legitimasjonen kan være forskjellig fra din LiveRamp Onboarding-legitimasjon.
@@ -42,23 +40,13 @@ Denne legitimasjonen kan være forskjellig fra din LiveRamp Onboarding-legitimas
 
 1. Etter vellykket verifisering må du gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**.
 
-1. Velg **Lagre** for å fullføre tilkoblingen.
+1. Velg **Neste** for å konfigurere LiveRamp-koblingen.
 
-## <a name="configure-an-export"></a>Konfigurere en eksport
-
-Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denne typen. Hvis du vil ha mer informasjon, se [Tillatelser som kreves for å konfigurere en eksport](export-destinations.md#set-up-a-new-export).
-
-1. Gå til **Data** > **Eksporter**.
-
-1. Velg **Legg til mål** for å opprette en ny eksport.
-
-1. Velg en tilkobling fra LiveRamp-delen i feltet **Tilkobling for eksport**. Hvis du ikke ser dette inndelingsnavnet, er ingen tilkoblinger av denne typen tilgjengelige for deg.
+## <a name="configure-the-connector"></a>Konfigurere koblingen
 
 1. I feltet **Velg nøkkelidentifikator** velger du **E-post**, **Navn og adresse** eller **Telefon** for å sende til LiveRamp for identitetsløsning.
-   > [!div class="mx-imgBorder"]
-   > ![LiveRamp-kobling med attributtilordning.](media/export-liveramp-segments.png "LiveRamp-kobling med attributtilordning")
 
-1. Tilordne de tilsvarende attributtene fra *Kunde*-enheten for den valgte nøkkel-IDen.
+1. Tilordne de tilsvarende attributtene fra den enhetlige kundeenheten for den valgte nøkkelidentifikatoren.
 
 1. Velg **Legg til attributt** for å tilordne flere attributter som skal sendes til LiveRamp.
 
@@ -69,14 +57,15 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Velg **Lagre**.
 
-Hvis du lagrer en eksport, kjøres ikke eksporten umiddelbart.
+> [!div class="mx-imgBorder"]
+> ![LiveRamp-kobling med attributtilordning](media/export-liveramp-segments.png "LiveRamp-kobling med attributtilordning")
 
-Eksporten kjører med hver [planlagte oppdatering](system.md#schedule-tab). Du kan også [eksportere data ved behov](export-destinations.md#run-exports-on-demand). 
+## <a name="export-the-data"></a>Eksportere dataene
 
+Eksporten starter om kort tid hvis alle forhåndskravene for eksport er fullført. Eksporten blir også kjørt med hver [planlagte oppdatering](system.md#schedule-tab).
+Når eksporten er fullført, kan du logge på LiveRamp Onboarding for å aktivere og distribuere dataene.
 
 ## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
 
 Når du aktiverer Dynamics 365 Customer Insights for overføring av data til LiveRamp, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data, for eksempel personlige data. Microsoft overfører slike data etter instruksjon fra deg, men du er ansvarlig for å sørge for at LiveRamp oppfyller alle forpliktelser til personvern eller sikkerhet du måtte ha. Hvis du vil ha mer informasjon, kan du se [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insights-administratoren kan fjerne dette eksportmålet når som helst for å slutte å bruke denne funksjonaliteten.
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

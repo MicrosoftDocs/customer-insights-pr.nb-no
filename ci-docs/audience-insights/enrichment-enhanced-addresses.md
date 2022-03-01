@@ -1,7 +1,7 @@
 ---
 title: Supplering av utvidede adresser (inneholder video)
 description: Suppler og normaliser adresseinformasjonen for kundeprofiler med Microsofts modeller.
-ms.date: 01/19/2022
+ms.date: 12/16/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: ba43d24ac5ae8846da87f0d41234d8616c2f8070
-ms.sourcegitcommit: 4c9db6c124d7244e7e8bb2f8bfdc697523781c31
+ms.openlocfilehash: afb1a6b4805702697889bb91ca36a96a714cba3d
+ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "8010921"
+ms.lasthandoff: 12/18/2021
+ms.locfileid: "7934935"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Supplering av kundeprofiler med forbedrede adresser
 
@@ -100,17 +100,17 @@ Hvis du vil starte den omfattende prosessen, velger du **Kjør** fra kommandolin
 
 Når suppleringsprosessen fullføres, kan du se gjennom de nylig klargjorte kundeprofildataene under **Mine suppleringer**. I tillegg finner du tidspunktet for den siste oppdateringen og antall supplerte profiler.
 
-Du kan se et eksempel på de supplerte dataene på **forhåndsvisningsflisen for supplerte kunder**. Velg **Vis mer**, og velg fanen **Data** for å få tilgang til en detaljert visning av hver supplerte profil.
+Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velge **Vis supplerte data**.
 
 ### <a name="overview-card"></a>Oversiktskort
 
 Oversiktskortet viser detaljer om dekningen til suppleringen. 
 
-* **Adresser som er behandlet og endret**: Antall kundeprofiler med adresser som er supplert.
+* **Kunder som er behandlet og endret**: Antall kundeprofiler som er supplert.
 
-* **Adresser som er behandlet og uendret**: Antall kundeprofiler med adresser som er gjenkjent, men ikke endret. Det skjer vanligvis når inndataene er gyldige og ikke kan forbedres av suppleringen.
+* **Kunder som er behandlet og uendret**: Antall kundeprofiler som er gjenkjent, men ikke endret. Det skjer vanligvis når inndataene er gyldige og ikke kan forbedres av suppleringen.
 
-* **Adresser som ikke er behandlet og uendret**: Antall kundeprofiler med adresser som ikke er gjenkjent. Dette skjer vanligvis for inndata som er ugyldige eller ikke støttes av suppleringen.
+* **Kunder som ikke er behandlet og ikke endret**: Antall profiler som ikke ble gjenkjent. Dette skjer vanligvis for inndata som er ugyldige eller ikke støttes av suppleringen.
 
 ## <a name="next-steps"></a>Neste trinn
 

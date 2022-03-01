@@ -1,7 +1,7 @@
 ---
 title: Søke etter og filtrere kundeprofiler
 description: Finn informasjon raskt om enhetlige kundeprofiler, og filtrer etter bestemte attributter.
-ms.date: 11/01/2021
+ms.date: 01/19/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,20 +9,19 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e17d745974958b73683f1f9406c5ae95f2cbcb3c
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 9eaeb0c93481283324f21122c9528ff5896b9866
+ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732046"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "7470013"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Kundeprofiler: Søk- og filterindeks
 
 Resultatet av å samle kundedata er en kundeprofilenhet som gir en enhetlig visning av den totale kundebasen. Hvis du raskt vil [finne informasjon om en bestemt kunde eller kundegruppe](customer-profiles.md), kan du konfigurere funksjonene **Søk** og **Filter** på siden **Kunder**. Les videre for å finne ut hvordan administratorer kan redigere attributtene på siden **Søk- og filterindeks**, som er tilgjengelige for brukere for søk og filtrering.
 
-   :::image type="content" source="media/search-filter.png" alt-text="Søkefilter":::
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+> [!div class="mx-imgBorder"]
+> ![Søkefilter.](media/search-filter.png "Søkefilter")
 
 ## <a name="add-fields-and-specify-attributes"></a>Legge til felt og angi attributter
 

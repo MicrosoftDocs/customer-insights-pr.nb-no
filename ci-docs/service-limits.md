@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: eb25e050b8aa768e6e1d8d4c5adce6095cccc346
-ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
+ms.openlocfilehash: eba7871faf304d5945191b5b9bc215243b4f8a05
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "7791993"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483693"
 ---
 # <a name="service-limits-in-customer-insights-capabilities"></a>Tjenestegrenser i Customer Insights-funksjoner
 
@@ -24,9 +24,9 @@ Denne artikkelen beskriver de innebygde grensene i Customer Insights-tjenesten, 
 
 ### <a name="service-limits-in-dynamics-365-customer-insights-audience-insights-capability"></a>Tjenestegrenser i funksjonen for målgruppeinnsikt i Dynamics 365 Customer Insights
 
-| Areal  | Grenser  | Notater |
+| Område  | Grenser  | Merknader |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Segmenter, mål og prediksjoner | 300  | Det totale antallet [segmenter](audience-insights/segments.md), [mål](audience-insights/measures.md) og [prognoser](audience-insights/predictions.md) til sammen kan ikke overskride 300.  |
+| Segmenter og mål | 100 segmenter eller mål. | Det totale antallet aktive [segmenter](audience-insights/segments.md) og [mål](audience-insights/measures.md) kombinert kan ikke overskride 100.  |
 | Relasjoner | 20 dybdenivåer på relasjoner i enhetsbaner. | Når du oppretter [segmenter](audience-insights/segments.md) eller [mål](audience-insights/measures.md) ved hjelp av byggergrensesnittet, kan enhetsbaner ha opptil 20 relasjonshopp mellom startenheten og målenheten.  |
 
 

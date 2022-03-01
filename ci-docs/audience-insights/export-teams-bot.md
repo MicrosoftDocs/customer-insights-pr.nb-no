@@ -1,27 +1,27 @@
 ---
 title: Robot for Microsoft Teams
 description: Slå opp enhetlige kundeprofiler i Microsoft Teams ved hjelp av en robot.
-ms.date: 10/08/2021
+ms.date: 04/21/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
+ms.topic: conceptual
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 6a9575de922bc2ff9c9d2212b99b4c0c8b61ab0e
-ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.openlocfilehash: 45ea23fbefe5f1d44c3961183b76d2cc5c45355e
+ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "7967831"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "4406524"
 ---
 # <a name="teams-bot-for-dynamics-365-customer-insights-preview"></a>Teams-robot for Dynamics 365 Customer Insights (forhåndsversjon)
 
 Koble til Microsoft Teams for å la en robot slå opp enhetlige kundeprofiler i Teams-kanaler.
 
 > [!div class="mx-imgBorder"]
-> ![Teams-robot som viser en kundeoppføring.](media/teams-bot.png "Teams-robot som viser en kundeoppføring")
+> ![Teams-robot som viser en kundeoppføring](media/teams-bot.png "Teams-robot som viser en kundeoppføring")
 
 ## <a name="prerequisites"></a>Forutsetninger
 
@@ -31,10 +31,7 @@ Når du skal konfigurere roboten, må følgende forhåndskrav være oppfylt:
 - [Samlingsprosessen](data-unification.md) er fullført.
 - Felt er lagt til i [søke- og filterindeksen](search-filter-index.md).
 - Customer Insights og Teams er i samme organisasjon.
-- Miljøet har primær målgruppe satt til individuelle kunder. Forretningskontoer støttes ikke.
 
-
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWRElj]
 ## <a name="configure-the-bot"></a>Konfigurere roboten
 
 1. I Målgruppeinnsikt går du til **Administrasjon** > **Eksportmål**.
@@ -55,6 +52,3 @@ Roboten har oppslagsfunksjoner for enhetlige kundeprofiler.
 - Hvis organisasjonen din vedlikeholder flere Customer Insights-miljøer i den samme organisasjonen, kan du angi **switchinstance** for å velge hvilket miljø du vil koble den til.
 
 - Angi **hjelp** for å vise en liste over tilgjengelige kommandoer for roboten.  
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

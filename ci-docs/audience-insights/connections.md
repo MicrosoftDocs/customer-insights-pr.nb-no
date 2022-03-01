@@ -5,16 +5,16 @@ ms.date: 04/09/2021
 ms.reviewer: nikeller
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
+ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: e78e18b75ee9797b5fc76486615992e301e4c650
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977749"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304984"
 ---
 # <a name="connections-preview-overview"></a>Oversikt over tilkoblinger (forhåndsversjon)
 
@@ -47,7 +47,6 @@ Hvis du vil legge til tilkoblinger, må du ha [administratortillatelser](permiss
 1. Angi de nødvendige detaljene i ruten **Konfigurer tilkobling**. 
    1. **Visningsnavnet** og tilkoblingstypen beskriver en tilkobling. Vi anbefaler at du velger et navn som forklarer formålet med og målet for denne tilkoblingen.
    1. De nøyaktige feltene avhenger av hvilken tjeneste du kobler til. Du kan lære om detaljer om en bestemt tilkoblingstype i artikkelen om måltjenesten.
-   1. Hvis du [bruker ditt eget Key Vault](use-azure-key-vault.md) til å lagre hemmeligheter, aktiverer du **Bruk Key Vault** og velger hemmeligheten fra listen.
 
 1. Velg **Lagre** for å opprette tilkoblingen.
 
@@ -94,6 +93,3 @@ Frakoblede suppleringer og eksporter blir inaktive. Du aktiverer dem på nytt ve
 
 1. Velg **Fjern** for å bekrefte slettingen.
 
-## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Konfigurere tilkoblinger med hemmeligheter administrert av din egen Key Vault
-
-Noen tilkoblinger trenger hemmeligheter, for eksempel API-nøkler eller passord. Noen tilkoblinger støtter hemmeligheter lagret i din egen Key Vault. Lær mer om støttede tilkoblinger og hvordan du konfigurerer i [ditt eget Key Vault for målgruppeinnsikt](use-azure-key-vault.md).

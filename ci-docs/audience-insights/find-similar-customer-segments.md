@@ -1,5 +1,5 @@
 ---
-title: Finn lignende kunder med kunstig intelligens (inneholder video)
+title: Finn lignende kunder med kunstig intelligens
 description: Finn lignende kundesegmenter med kunstig intelligens.
 ms.date: 06/25/2020
 ms.service: customer-insights
@@ -9,18 +9,16 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: de337ae989558c81fff25a6ff7cca01890ed306b
-ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
+ms.openlocfilehash: ee4d24ae0ae39c689956f70efe46c4226876484e6da6282dc874cec37bd287e2
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/18/2021
-ms.locfileid: "7934852"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7034555"
 ---
 # <a name="similar-customers-preview"></a>Lignende kunder (forhåndsversjon)
 
 Denne funksjonen gjør det mulig for deg å finne lignende kunder i kundebasen ved hjelp av kunstig intelligens. Du må ha minst ett opprettet segment for å bruke denne funksjonen. Ved å utvide kriteriene for et eksisterende segment kan du finne kunder som ligner på dette segmentet.
-
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOFou]
 
 > [!NOTE]
 > *Finn lignende kunder* bruker automatiske metoder til å evaluere data og lage prognoser basert på dataene, og kan derfor brukes som en metode for profilering, slik denne termen defineres av EUs personvernforordning ("GDPR"). Kundens bruk av denne funksjonen til å behandle data kan være underlagt GDPR eller andre lover eller bestemmelser. Du er ansvarlig for å sikre at bruken av Dynamics 365 Customer Insights, inkludert prognoser, samsvarer med alle gjeldende lover og bestemmelser, inkludert lover som er relatert til personvern, personlige data, biometriske data, databeskyttelse og konfidensialitet for kommunikasjon.

@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til Snapchat
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til Snapchat.
-ms.date: 10/08/2021
+ms.date: 03/22/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: b7a929d65a730b60e77ae111b458c68d3cce2020
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: d3dae7f0fef1fc3792c90c8ac0d3b037f5c0923d
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618695"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760595"
 ---
-# <a name="export-segments-to-snapchat-preview"></a>Eksportere segmenter til Snapchat (forhåndsversjon)
+# <a name="export-segment-lists-to-snapchat-preview"></a>Eksportere segmentlister til Snapchat (forhåndsvisning)
 
 Eksporter segmenter av enhetlige kundeprofiler til Snapchat, og bruk dem til reklame. 
 
@@ -29,7 +29,7 @@ Eksporter segmenter av enhetlige kundeprofiler til Snapchat, og bruk dem til rek
 ## <a name="known-limitations"></a>Kjente begrensninger
 
 - Eksport til Snapchat er begrenset til segmenter.
-- Det kan ta opptil 15 minutter å eksportere 1 million kundeprofiler til Snapchat. 
+- Det kan ta opptil 15 minutter å eksportere opptil 1 million profiler til Snapchat. 
 
 ## <a name="set-up-connection-to-snapchat"></a>Konfigurere tilkobling til Snapchat
 
@@ -63,7 +63,7 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Angi [**ID for Snapchat-målgruppe**](https://businesshelp.snapchat.com/s/article/custom-audiences).
 
-1. Velg feltet som representerer en kundes e-postadressen, i delen **Datasamsvar** i **E-post**-feltet. Det kreves for å eksportere segmenter til Snapchat.
+1. I **Datasamsvar**-delen, i feltet **E-post** velger du feltet i den enhetlige kundeprofilen som representerer en kundes e-postadresse. Det kreves for å eksportere segmenter til Snapchat.
 
 1. Velg segmentene du vil eksportere. 
 

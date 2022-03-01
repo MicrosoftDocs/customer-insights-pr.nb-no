@@ -2,30 +2,8 @@
   href: index.yml
 - name: Produktoversikt
   href: overview.md
-- name: Læringskatalog
-  items:
-    - name: Kom i gang
-      href: /learn/modules/get-started-customer-data-platform/
-    - name: Hent inn data
-      href: /learn/modules/ingest-data-customer-insights/
-    - name: Opprette en samlet kundeprofil
-      href: /learn/modules/unified-customer-profile/
-    - name: Arbeide med målgruppeinnsikt
-      href: /learn/modules/working-with-customer-insights/
-    - name: Forbedre data og lage prognoser
-      href: /learn/modules/enrich-data/
-    - name: Behandle eksterne tilkoblinger
-      href: /learn/modules/configure-third-party-connections/
-    - name: Administrere Customer Insights
-      href: /learn/modules/administer-customer-data-platform/
-- name: Gratis prøveversjon
-  items:
-    - name: Registrere deg for en gratis prøveversjon
-      href: trial-signup.md
-    - name: Vanlige spørsmål om prøveversjon
-      href: trial-FAQ.md
-- name: Start med en betalt lisens
-  href: paid-license.md
+- name: Opprett en prøveversjon
+  href: audience-insights/get-started-trial.md
 - name: Få tilgang til miljøet ditt
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Målgruppeinnsikt
@@ -41,16 +19,24 @@
         - name: Hurtigstartveiledning
           href: audience-insights/get-started.md
         - name: Opprett nytt miljø
-          href: audience-insights/create-environment.md
+          href: audience-insights/get-started-paid.md
         - name: Utforsk målgruppeinnsikt
           href: audience-insights/home.md
-    - name: Arbeide med forretningskontoer
-      href: audience-insights/work-with-business-accounts.md
+    - name: Lær moduler
+      items:
+        - name: Hent inn data
+          href: /learn/modules/ingest-data-customer-insights/
+        - name: Opprette en samlet kundeprofil
+          href: /learn/modules/unified-customer-profile/
+        - name: Arbeide med appen
+          href: /learn/modules/working-with-customer-insights/
+        - name: Suppler data og prognoser
+          href: /learn/modules/enrich-data/
     - name: Datakilder
       items:
         - name: Oversikt over datakilder
           href: audience-insights/data-sources.md
-        - name: Legge til datakilder via Power Query-tilkoblinger
+        - name: Legge til datakilder via Power Query-koblinger
           href: audience-insights/connect-power-query.md
         - name: Legge til en Common Data Model-mappe i en datakilde
           href: audience-insights/connect-common-data-model.md
@@ -80,18 +66,14 @@
           href: audience-insights/relationships.md
         - name: Vise kundeaktiviteter
           href: audience-insights/activities.md
-        - name: Definere semantiske tilordninger
-          href: audience-insights/semantic-mappings.md
     - name: Datasupplering
       items:
         - name: Supplere kundeprofiler
           href: audience-insights/enrichment-hub.md
-        - name: Merker og interesser
+        - name: Merke- og interesseaffiniteter
           href: audience-insights/enrichment-microsoft.md
         - name: Forbedrede adresser
           href: audience-insights/enrichment-enhanced-addresses.md
-        - name: Forbedrede firmadata
-          href: audience-insights/enrichment-enhanced-company-data.md
         - name: Suppler med Azure Maps
           href: audience-insights/enrichment-azure-maps.md
         - name: Suppler med HERE Technologies
@@ -100,8 +82,6 @@
           href: audience-insights/enrichment-leadspace.md
         - name: Supplere med Experian
           href: audience-insights/enrichment-experian.md
-        - name: Suppler med Office 365 data
-          href: audience-insights/enrichment-office.md
         - name: Suppler med egendefinert SFTP-import
           href: audience-insights/enrichment-SFTP-custom-import.md
     - name: Segmenter
@@ -134,10 +114,8 @@
               href: audience-insights/predict-product-recommendation.md
             - name: Forutsi abonnementsfrafall
               href: audience-insights/predict-subscription-churn.md
-            - name: Forutsi transaksjonsfrafall
+            - name: Forutse transaksjonelt frafall
               href: audience-insights/predict-transactional-churn.md
-            - name: Analysere sentiment i tilbakemelding fra kunder
-              href: audience-insights/sentiment-analysis.md
             - name: Bruke egendefinerte modeller fra Azure Machine Learning
               href: audience-insights/custom-models.md
             - name: Gjøre delvis manglende data komplette
@@ -148,12 +126,14 @@
               href: audience-insights/sample-guide-predict-clv.md
             - name: Eksempelveiledning for prognose på abonnementsfrafall
               href: audience-insights/sample-guide-predict-subscription-churn.md
-            - name: Eksempelveiledning for prediksjon for transaksjonsfrafall
+            - name: Eksempelveiledning for prognose på transaksjonelt frafall
               href: audience-insights/sample-guide-predict-transactional-churn.md
             - name: Eksempelveiledning for prediksjon for produktanbefaling
               href: audience-insights/sample-guide-predict-product-recommendation.md
             - name: Eksperimenter med Azure Machine Learning
               href: audience-insights/azure-machine-learning-experiments.md
+            - name: Eksperimenter med Azure Machine Learning Studio
+              href: audience-insights/machine-learning-studio-experiments.md
         - name: Administrere prediksjoner
           href: audience-insights/manage-predictions.md
         - name: Opprette segmenter basert på prediksjoner
@@ -242,14 +222,10 @@
           href: audience-insights/connections.md
         - name: Behandle flere miljøer
           href: audience-insights/manage-environments.md
-        - name: Sikkerhet
-          items:
-            - name: Hente ditt eget Azure Key Vault
-              href: audience-insights/use-azure-key-vault.md
-            - name: Koble til en ADLS-lagringskonto ved å bruke en tjenestekontohaver
-              href: audience-insights/connect-service-principal.md
-            - name: Eksporter diagnoselogger
-              href: audience-insights/diagnostics.md
+        - name: Koble til en ADLS-lagringskonto ved å bruke en tjenestekontohaver
+          href: audience-insights/connect-service-principal.md
+        - name: Språk som støttes
+          href: audience-insights/supported-languages.md
     - name: Utvidbarhet
       items:
         - name: Integrere nettdata fra engasjementsinnsikt
@@ -262,40 +238,6 @@
           href: audience-insights/apis.md
         - name: API-referanser
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
-- name: Samtykkeadministrasjon (forhåndsversjon)
-  items:
-    - name: Hjelpesenter
-      href: consent-management/index.yml
-    - name: Oversikt over funksjoner
-      href: consent-management/overview.md
-    - name: Kom i gang
-      items:
-        - name: Kom i gang
-          href: consent-management/get-started.md
-        - name: Konsepter og terminologi
-          href: consent-management/glossary.md
-    - name: Importer samtykkedata
-      items:
-        - name: Importer samtykkedata
-          href: consent-management/import-consent-data.md
-        - name: Angi samtykkedata og bruke samtykkeinnstillinger
-          href: consent-management/set-consent-rules.md
-    - name: Administrere samtykkedata
-      items:
-        - name: Aktivere samtykkeregler i målgruppeinnsikt
-          href: audience-insights/activate-consent.md
-        - name: Behandle standard samtykkeregler i målgruppeinnsiktsegmenter
-          href: audience-insights/change-default-consent-rules.md
-    - name: Administrer innstillinger og brukere
-      items:
-        - name: Konfigurere systeminnstillinger
-          href: consent-management/system-settings.md
-        - name: Administrere brukere og tillatelser
-          href: consent-management/manage-users.md
-    - name: Bruke samtykkedata
-      items:
-        - name: Opprette prognoser med samtykkedata
-          href: consent-management/predictions-consent-data.md
 - name: Engasjementsinnsikt (forhåndsversjon)
   items:
     - name: Hjelpesenter
@@ -306,8 +248,6 @@
       items:
         - name: Hurtigstartveiledning
           href: engagement-insights/get-started.md
-        - name: Opprett et miljø
-          href: engagement-insights/create-new-environment.md
         - name: Opprett et arbeidsområde
           href: engagement-insights/create-workspace.md
         - name: Registrere hendelser fra nettsteder og mobilapper
@@ -378,5 +318,3 @@
   href: service-limits.md
 - name: DSR-rettigheter og -forespørsler
   href: dsr-rights-requests.md
-- name: Få støtte
-  href: /power-platform/admin/get-help-support

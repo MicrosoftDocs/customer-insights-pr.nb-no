@@ -1,20 +1,20 @@
 ---
 title: Segmenter i målgruppeinnsikt
 description: Oversikt over segmenter og hvordan du oppretter og administrerer dem.
-ms.date: 11/01/2021
+ms.date: 09/30/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
+ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 740d293b21f43b50201f23fcba109318823ef3af
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+ms.openlocfilehash: 6840f4bc345b0821fb2349666130b39d542878e7
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7978071"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617387"
 ---
 # <a name="segments-overview"></a>Oversikt over segmenter
 
@@ -26,7 +26,7 @@ Kundeprofiler som samsvarer med filtrene i en segmentdefinisjon, kalles *medlemm
 
 Du kan opprette et nytt segment på flere måter: 
 
-# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrukere (B-til-C)](#tab/b2c)
+# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
 
 - Komplekst segment med segmentbygger: [Bygg din egen](segment-builder.md#create-a-new-segment) 
 - Enkle segmenter med én operator: [Hurtigsegment](segment-builder.md#quick-segments) 
@@ -34,7 +34,7 @@ Du kan opprette et nytt segment på flere måter:
 - AI-drevne forslag basert på mål eller attributter: [Foreslåtte segmenter for å forbedre tiltak](suggested-segments.md) 
 - Forslag basert på aktiviteter: [Foreslåtte segmenter basert på kundeaktivitet](suggested-segments-activity.md) 
 
-# <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
+# <a name="business-accounts-b2b"></a>[Forretningsforbindelser (B2B)](#tab/b2b)
 
 - Komplekst segment med segmentbygger: [Bygg din egen](segment-builder.md#create-a-new-segment)
 
@@ -65,7 +65,8 @@ Følgende handling er tilgjengelig når du velger et segment:
 
 Du kan oppdatere alle segmenter samtidig ved å velge **Oppdater alle** på **Segmenter**-siden, eller du kan oppdatere ett eller flere segmenter når du velger dem, og deretter velge **Oppdater** fra alternativene. Du kan også konfigurere en regelmessig oppdatering under **Admin** > **System** > **Tidsplan**.
 
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+> [!TIP]
+> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
 
 ## <a name="export-segments"></a>Eksportere segmenter
 
@@ -104,6 +105,5 @@ Den nedre delen inneholder en liste over medlemmene i segmentet.
 > Felt som vises i listen, er basert på attributtene til enhetene i segmentet.
 >
 >Listen er en forhåndsvisning av de samsvarende segmentmedlemmene og viser de første 100 oppføringene av segmentet, slik at du raskt kan evaluere det og se gjennom definisjonene hvis det er nødvendig. Hvis du vil vise alle samsvarende oppføringer, må du [eksportere segmentet](export-destinations.md).
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)] 
