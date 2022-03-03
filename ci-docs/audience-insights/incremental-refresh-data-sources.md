@@ -1,22 +1,24 @@
 ---
 title: Trinnvis oppdatering for Power Query-baserte datakilder
-description: Oppdatere nye og oppdaterte data for store datakilder basert på Power Query.
+description: Oppdater nye og oppdaterte data for store datakilder basert på Power Query.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: f614d701aeb06720a60b14549a7fe666f8fe0617
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-system-schedule
+- customerInsights
+ms.openlocfilehash: 62632efda3c0c7e53fcdd8864b053ba93e2918bc
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900280"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353694"
 ---
-# <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinnvis oppdatering for datakilder som er baserte på Power Query
+# <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinnvis oppdatering for datakilder basert på Power Query
 
 Denne artikkelen beskriver hvordan du konfigurerer trinnvis oppdatering for datakilder basert på Power Query.
 
@@ -28,9 +30,9 @@ Trinnvis oppdatering for datakilder gir følgende fordeler:
 
 ## <a name="configure-incremental-refresh"></a>Konfigurer trinnvis oppdatering
 
-Målgruppeinnsikt tillater trinnvis oppdatering for datakilder importert via Power Query som støtter trinnvis inkludering. For eksempel Azure SQL-databaser med dato- og klokkeslettfelt, som angir når dataoppføringer sist ble oppdatert.
+Målgruppe tillater trinnvis oppdatering for datakilder som importeres via Power Query som støtter trinnvis inntak. For eksempel Azure SQL-databaser med dato- og klokkeslettfelt, som angir når dataoppføringer sist ble oppdatert.
 
-1. [Opprett en ny datakilde basert på Power Query ](connect-power-query.md).
+1. [Opprett en ny datakilde basert på Power Query](connect-power-query.md).
 
 1. Skriv inn et **navn** på datakilden.
 

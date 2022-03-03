@@ -1,24 +1,26 @@
 ---
 title: Eksportere Customer Insights-data til Google Ads
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til Google Ads.
-ms.date: 03/03/2021
-ms.service: customer-insights
+ms.date: 09/27/2021
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c16967bf8ea1fd02b3f991d7b7d3715a71fa8681
-ms.sourcegitcommit: 9a99e48e96dfb3d895db428f37c30ae55eea66b7
+ms.openlocfilehash: 28e2b35c5a47a025b8cdcccdb3f61c79878bf056
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "6604289"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8227022"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Eksportere segmenter til Google Ads (forhåndsvisning)
 
 Eksporter segmenter av enhetlige kundeprofiler til en Google Ads-målgruppeliste, og bruk dem til å annonsere på Google Search, Gmail og YouTube og Google Displaynettverk. 
+
+> [!IMPORTANT]
+> For øyeblikket kan du bare opprette en ny tilkobling og eksportere data til Google Ads hvis du allerede har et godkjent utviklertoken for Google Ads. På grunn av policyendringer oppdaterer vi snart Google Ads-eksporten og angi et eksportalternativ som ikke krever et utviklertoken for å sikre kontinuitet i brukeropplevelsen og forenkle eksporten til Google Ads. Vi anbefaler at du ikke konfigurerer flere tilkoblinger til Google Ads slik at det blir enklere å bytte til det nye eksportalternativet.
 
 ## <a name="prerequisites-for-connection"></a>Forutsetninger for tilkobling
 
@@ -32,9 +34,9 @@ Eksporter segmenter av enhetlige kundeprofiler til en Google Ads-målgruppeliste
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-- Opptil 1 million profiler per eksport til Google Ads.
+- Opptil 1 million kundeprofiler per eksport til Google Ads.
 - Eksport til Google Ads er begrenset til segmenter.
-- Eksport av segmenter med totalt 1 million profiler kan ta opptil fem minutter på grunn av begrensninger på leverandørsiden. 
+- Eksport av segmenter med totalt 1 million kundeprofiler kan ta opptil 5 minutter på grunn av begrensninger på leverandørsiden. 
 - Samsvaret i Google Ads kan ta opptil 48 timer.
 
 ## <a name="set-up-connection-to-google-ads"></a>Konfigurer tilkobling til Google Ads
@@ -71,7 +73,7 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Angi **[ID-en for Google Ads-målgruppen](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)**, og velg **Koble til** for å initialisere tilkoblingen til Google Ads.
 
-1. I **Datasamsvar**-delen, i feltet **E-post** velger du feltet i den enhetlige kundeprofilen som representerer en kundes e-postadresse.
+1. Velg feltet som representerer en kundes e-postadressen, i delen **Datasamsvar** i **E-post**-feltet.
 
 1. Velg segmentene du vil eksportere. Du kan eksportere opptil 1 million kundeprofiler totalt til Google Ads.
 

@@ -3,18 +3,18 @@ title: Komme i gang med Android SDK
 description: Finn ut hvordan du tilpasser og kjører Android SDK
 author: britl
 ms.reviewer: mhart
+ms.custom: intro-internal
 ms.author: britl
 ms.date: 10/19/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: c678c2dafbb77926269b5602bca363c678ec6b3f
-ms.sourcegitcommit: ef823f3d7fa28d3a90cfde9409be9465ffa2cf09
+ms.openlocfilehash: b06822b2c2d6a859bdf808f7800baef43c4ab874
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/19/2021
-ms.locfileid: "7655354"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226181"
 ---
 # <a name="get-started-with-the-android-sdk"></a>Komme i gang med Android SDK
 

@@ -1,97 +1,144 @@
 ---
-title: Eksportmål
-description: Eksporter data og administrer eksportmål.
-ms.date: 07/21/2020
-ms.reviewer: philk
-ms.service: customer-insights
+title: Eksportere data fra Customer Insights
+description: Administrer eksporter for å dele data.
+ms.date: 11/01/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
-ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+ms.topic: overview
+author: pkieffer
+ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 9032d99357db86e66588eda544211a5f8eb2f23b
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+searchScope:
+- ci-export
+- ci-connections
+- customerInsights
+ms.openlocfilehash: 33f59c62565560517c480be63e581465605c5f7b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643875"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354337"
 ---
-# <a name="export-destinations-preview"></a>Eksportmål (forhåndsvisning)
+# <a name="exports-preview-overview"></a>Oversikt over Eksporter (forhåndsversjon)
 
-Siden **Eksportmål** viser alle stedene du har konfigurert til å eksportere data til. Du kan også legge til nye mål for eksport. I tillegg vises det tilgjengelige alternativer for eksport. Få en rask oversikt og en beskrivelse, og finn ut hva du kan gjøre med hvert utvidelsesalternativ. Eksporter samlede profiler, mål og segmenter til apper som støttes for virksomheten din.
+**Eksporter**-siden viser alle konfigurerte eksporter. Eksporter deler bestemte data med forskjellige programmer. De kan omfatte kundeprofiler, enheter, skjemaer og tilordningsdetaljer. Hver eksport krever en [tilkobling, konfigurert av en administrator, for å administrere godkjenning og tilgang](connections.md).
 
-Gå til **Admin** > **Eksportmål** for å finne følgende utvidelsesalternativer:
+Gå til **Data** > **Eksporter** for å vise eksportsiden. Alle brukerroller kan vise konfigurerte eksporter. Bruk søkefeltet på kommandolinjen til å søke etter eksporter etter navn, tilkoblingsnavn eller tilkoblingstype.
 
-- [Dynamics 365-kundekorttillegg](customer-card-add-in.md)
-- [Kobling for Facebook Annonseadministrasjon](export-facebook.md)
-- [Power Automate-kobling](export-power-automate.md)
-- [Power Apps-kobling](export-power-apps.md)
-- [Power BI-kobling](export-power-bi.md)
-- [DotDigital](export-dotdigital.md)
-- [Dynamics 365 for salg](export-dynamics365-sales.md)
-- [Dynamics 365 Marketing](export-dynamics365-marketing.md)
-- [Azure Blob Storage](export-azure-blob-storage.md)
-- [LiveRamp&reg;-kobling](export-liveramp.md)
-- [Robot for Microsoft Teams](export-teams-bot.md)
-- [Mailchimp](export-mailchimp.md)
-- [Customer Insights-API](apis.md)
+## <a name="export-types"></a>Eksporttyper
 
-## <a name="add-a-new-export-destination"></a>Legge til et nytt eksportmål
+Det finnes to hovedtyper av eksporter:  
 
-Hvis du vil legge til eksportmål, må du ha [administratortillatelser](permissions.md). Hvis du eksporterer til Microsoft-tjenester, antas det at begge tjenestene er i samme organisasjon.
+- Med **Data-ut-eksporter** kan du eksportere alle typer enheter som er tilgjengelig i målgruppeinnsikt. Enhetene du velger for eksport, eksporteres med alle datafelt, metadata, skjemaer og tilordningsdetaljer. 
+- **Segmenteksporter** lar deg eksportere segmentenheter fra målgruppeinnsikt. Segmenter representerer en liste over kundeprofiler. Når du konfigurerer eksporten, velger du de inkluderte datafeltene, avhengig av målsystemet du eksporterer data til. 
 
-1. Gå til **Admin** > **Eksporter mål**.
+### <a name="export-segments"></a>Eksportere segmenter
 
-1. Bytt til kategorien **Mine eksportmål**.
+**Eksporterer segmenter i miljøer for forretningskontoer (B-til-B) eller enkeltforbrukere (B-til-C)**  
+De fleste eksportalternativ støtter begge typer miljøer. Eksport av segmenter til forskjellige målsystemer har spesifikke krav. Et segmentmedlem, kundeprofilen, inneholder generelt sett kontaktinformasjon. Selv om dette vanligvis er tilfellet for segmenter som er bygd på enkeltforbrukere (B-til-C), er det ikke nødvendigvis tilfellet for segmenter basert på forretningskontoer (B-til-B). 
 
-1. Velg **Legg til mål** for å opprette et nytt eksportmål.
+**Segmenteksportmiljøer for forretningskontoer (B-til-B)**  
+- Segmenter i konteksten for miljøer for forretningskontoer er bygd på *forretningsforbindels*-enheten. Hvis du vil eksportere forretningsforbindelsessegmenter som de er, må målsystemet støtte rene forretningsforbindelsessegmenter. Dette er tilfellet for [LinkedIn](export-linkedin-ads.md) når du velger **firma**-alternativet mens du definerer eksporten.
+- Alle andre målsystemer krever felt fra kontaktenheten. For å sikre at segmenter for forretningsforbindelser kan hente data fra relaterte kontakter, må segmentdefinisjonen din projisere attributter for kontaktenheten. Lær mer om hvordan du [konfigurerer segmenter og prosjektattributter](segment-builder.md).
 
-1. I ruten **Legg til mål** velger du **Type** eksportmål i rullegardinlisten.
+**Segmenteksporter i miljøer for enkeltforbrukere (B-til-C)**  
+- Segmenter i konteksten for miljøer for individuelle kunder er bygd på enheten for *enhetlig kundeprofil*. Hvert segment som oppfyller kravene i målsystemet (for eksempel en e-postadresse), kan eksporteres.
 
-1. Angi de nødvendige detaljene, og velg deretter **Neste** for å opprette eksportmålet.
+**Begrensninger for segmenteksporter**  
+- Tredjeparts målsystemer kan begrense antallet kundeprofiler du kan eksportere. 
+- For enkeltkunder vises det faktiske antallet segmentmedlemmer når du velger et segment for eksport. Du får en advarsel hvis et segment er for stort. 
+- For forretningskontoer vises antall forretningsforbindelser i et segment. Antall kontakter som kan projiseres, vises imidlertid ikke. I noen tilfeller kan dette føre til at det eksporterte segmentet faktisk inneholder flere kundeprofiler enn målsystemet godtar. Hvis du overskrider grensene for målsystemresultatene, hopper du over eksporten. 
 
-Du kan også velge **Konfigurer** på en flis i kategorien **Oppdag**.
+## <a name="set-up-a-new-export"></a>Konfigurer en ny eksport  
+Hvis du vil konfigurere eller redigere en eksport, må du ha tilkoblinger tilgjengelige for deg. Tilkoblinger avhenger av [brukerrollen din](permissions.md):
+- **Administratorer** har tilgang til alle tilkoblinger. De kan også opprette nye tilkoblinger når de konfigurerer en eksport.
+- **Bidragsytere** kan ha tilgang til bestemte tilkoblinger. De er avhengig av administratorer for å konfigurere og dele tilkoblinger. Eksporter-listen viser bidragsytere om de kan redigere eller bare vise en eksport, i kolonnen **Tillatelsene dine**. Hvis du vil ha mer informasjon, kan du gå til [Tillat bidragsytere å bruke en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- **Lesere** kan bare vise eksisterende eksporter – ikke opprette dem.
 
-## <a name="view-export-destinations"></a>Vise eksportmål
+### <a name="define-a-new-export"></a>Definere en ny eksport
 
-Når du har opprettet eksportmålene, finner du dem i en tabell i kategorien **Mine eksportmål**. Denne tabellen har tre kolonner:
+1. Gå til **Data** > **Eksporter**.
 
-- **Visningsnavn**: Navnet du angav da du opprettet målet.
-- **Type**: Typen eksportmål du angir når du oppretter målet.
-- **Opprettet**: Datoen du opprettet målet.
+1. Velg **Legg til eksport** for å opprette en ny eksport.
 
-## <a name="edit-an-export-destination"></a>Redigere et eksportmål
+1. Velg hvilken tilkobling som skal brukes, i ruten **Konfigurer eksport**. [Tilkoblinger](connections.md) administreres av administratorer. 
 
-1. Velg den loddrette ellipsen for eksportmålet du vil redigere.
+1. Oppgi de nødvendige detaljene, og velg **Lagre** for å opprette eksporten.
 
-   > [!div class="mx-imgBorder"]
-   > ![Loddrett ellipse](media/export-destinations-page-ellipsis.png "Loddrett ellipse")
+### <a name="define-a-new-export-based-on-an-existing-export"></a>Definere en ny eksport basert på en eksisterende eksport
 
-1. Velg **Rediger** på rullegardinmenyen.
+1. Gå til **Data** > **Eksporter**.
 
-1. Endre verdiene som krever oppdatering, og velg **Lagre**.
+1. Velg eksporten du vil duplisere, i listen over eksporter.
 
-## <a name="export-data-on-demand"></a>Eksportere data etter behov
+1. Velg **Opprett duplikat** på kommandolinjen for å åpne ruten **Konfigurer eksport** med detaljene for den valgte eksporten.
 
-Når du har konfigurert en kobling for et eksportmål, kjøres eksporter med alle [planlagte oppdateringer](system.md#schedule-tab).
+1. Se gjennom og tilpass eksporten, og velg **Lagre** for å opprette en ny eksport.
 
-Hvis du vil eksportere data uten å vente på en planlagt oppdatering, kan du gå til kategorien **Mine eksportmål** på **Administrator** > **Eksportmål**.
+### <a name="edit-an-export"></a>Rediger en eksport
 
-> [!div class="mx-imgBorder"]
-> ![Loddrett ellipse](media/export-destinations-page-ellipsis.png "Loddrett ellipse")
+1. Gå til **Data** > **Eksporter**.
 
-- Velg **Eksporter** over listen for å kjøre eksporten til alle eksportmålene samtidig.
-- Velg ellipsen (...) etter et listeelement, og velg deretter **Eksporter**-alternativet for å kjøre eksporten for et enkelt eksportmål.
+1. Velg eksporten du vil redigere, i listen over eksporter.
 
-## <a name="remove-an-export-destination"></a>Fjerne et eksportmål
+1. Velg **Rediger** på kommandolinjen.
 
-Hvis du vil fjerne et eksportmål, starter du fra hovedsiden for **Eksportmål**.
+1. Endre verdiene du vil oppdatere, og velg **Lagre**.
 
-1. Velg den loddrette ellipsen for eksportmålet du vil fjerne.
+## <a name="view-exports-and-export-details"></a>Vise eksporter og eksportdetaljer
 
-   > [!div class="mx-imgBorder"]
-   > ![Loddrett ellipse](media/export-destinations-page-ellipsis.png "Loddrett ellipse")
+Når du har opprettet eksportmål, vises de i **Data** > **Eksporter**. Alle brukere kan se hvilke data som deles, og den nyeste statusen.
 
-2. Velg **Fjern** fra rullegardinmenyen.
+1. Gå til **Data** > **Eksporter**.
 
-3. Bekreft fjerningen ved å velge **Fjern** i bekreftelsesdialogboksen.
+1. Brukere uten redigeringstillatelser velger **Vis** i stedet for **Rediger** for å vise eksportdetaljene.
+
+1. Sideruten viser konfigurasjonen av en eksport. Du kan ikke endre verdier uten redigeringstillatelser. Velg **Lukk** for å gå tilbake til eksportsiden.
+
+## <a name="schedule-and-run-exports"></a>Planlegge og kjøre eksporter
+
+Hver eksport du konfigurerer, har en oppdateringsplan. Under en oppdatering ser systemet etter nye eller oppdaterte data som skal tas med i en eksport. Eksporter kjører som standard som en del av hver [planlagte systemoppdatering](system.md#schedule-tab). Du kan tilpasse oppdateringsplanen eller deaktivere den for å kjøre eksporter manuelt.
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+
+Eksportplaner er avhengig av tilstanden til miljøet. Hvis det pågår oppdateringer for [avhengigheter](system.md#refresh-processes) når en planlagt eksport skal starte, fullføres oppdateringene først, og deretter kjøres eksporten. Du kan se når en eksport sist ble oppdatert, i kolonnen **Oppdatert**.
+
+### <a name="schedule-exports"></a>Planlegge eksporter
+
+Du kan definere egendefinerte oppdateringsplaner for individuelle eksporter eller flere eksporter samtidig. Den gjeldende definerte tidsplanen vises i **Tidsplan**-kolonnen i eksportlisten. Tillatelsen til å endre tidsplanen er den samme som for [redigering og definisjon av eksporter](export-destinations.md#set-up-a-new-export). 
+
+1. Gå til **Data** > **Eksporter**.
+
+1. Velg eksporten du vil planlegge.
+
+1. Velg **Planlegg** på kommandolinjen.
+
+1. Sett **Planlegg kjøring** til **På** i ruten **Planlegg eksport** for å kjøre eksporten automatisk. Sett den til **Av** for å oppdatere den manuelt.
+
+1. Velg en verdi for **Gjentakelse** for automatisk oppdaterte eksporter, og angi detaljene for den. Den angitte tiden gjelder for alle forekomster av en gjentakelse. Det tidspunktet når en eksport skal begynne å oppdateres.
+
+1. Bruk og aktiver endringene ved å velge **Lagre**.
+
+Når du redigerer tidsplanen for flere eksporter, må du foreta et valg under **Behold eller overstyr tidsplaner**:
+- **Behold individuelle tidsplaner**: Behold den tidligere definerte tidsplanen for de valgte eksportene, og bare deaktiver eller aktiver dem.
+- **Definer ny tidsplan for alle valgte eksporter**: Overstyr de eksisterende tidsplanene for de valgte eksportene.
+
+### <a name="run-exports-on-demand"></a>Kjør eksporter ved behov
+
+Hvis du vil eksportere data uten å vente på en planlagt oppdatering, går du til **Data** > **Eksporter**.
+
+- Hvis du vil kjøre alle eksporter, velger du **Kjør alle** på kommandolinjen. Denne handlingen kjører bare eksporter som har en aktiv tidsplan.
+- Hvis du vil kjøre én eksport, merker du den i listen og velger **Kjør** på kommandolinjen. Det er slik du kjører eksporter uten en aktiv tidsplan. 
+
+## <a name="remove-an-export"></a>Fjerne en eksport
+
+1. Gå til **Data** > **Eksporter**.
+
+1. Velg eksporten du vil fjerne.
+
+1. Velg **Fjern** på kommandolinjen.
+
+1. Bekreft fjerningen ved å velge **Fjern** i bekreftelsesdialogboksen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

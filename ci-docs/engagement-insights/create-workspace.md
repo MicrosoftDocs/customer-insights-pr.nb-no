@@ -5,16 +5,15 @@ author: jusali
 ms.reviewer: mhart
 ms.author: jusali
 ms.date: 10/01/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 816f948331a06794c15000eb779f93cc7fdda202
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 76b3466afd84aa439ea55afe90ae037825884f2d
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645322"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229089"
 ---
 # <a name="create-a-new-workspace-and-add-members"></a>Opprette et nytt arbeidsområde og legge til medlemmer
 
@@ -26,11 +25,11 @@ Når du oppretter et arbeidsområde, velger du datatypen du vil fokusere på. Du
 
 ## <a name="create-a-new-workspace"></a>Opprett nytt arbeidsområde
 
-Prosessen med å opprette et arbeidsområde omfatter konfigurasjon av *miljøet* for å organisere arbeidsområdet. Et miljø er plass som kan inneholde ett eller flere arbeidsområder. Du kan bruke et miljø til å administrere arbeidsområdene og tilkoblingene til Customer Insights-målgruppeinnsiktfunksjonen.
+Prosessen med å opprette et arbeidsområde omfatter konfigurasjon av *miljøet* for å organisere arbeidsområdet. Et miljø er plass som kan inneholde ett eller flere arbeidsområder. Du kan bruke et miljø til å administrere arbeidsområdene og tilkoblingene til målgruppeinnsiktfunksjonen.
 
-1. Velg **Nytt** fra arbeidsområdebytteren.
+1. Velg **+Nytt** fra arbeidsområdebytteren.
 
-   :::image type="content" source="media/new-workspace.png" alt-text="Kundeinnsikt-siden med bildeforklaring i navigasjonsruten og beskrivelse.":::
+   :::image type="content" source="media/new-workspace.png" alt-text="Customer Insights-siden med bildeforklaring i navigasjonsruten og beskrivelse.":::
 
 1. Angi et **navn på arbeidsområde** i **Arbeidsområde**-ruten.
 

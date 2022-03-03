@@ -1,30 +1,35 @@
 ---
 title: Koble til tabeller i Microsoft Dataverse
 description: Importer data fra et Microsoft Dataverse-administrert datasjø.
-ms.date: 07/23/2021
-ms.service: customer-insights
+ms.date: 12/06/2021
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
 ms.reviewer: mhart
-ms.openlocfilehash: f92d64723e6a4d2fcebdbb3758519d4bfd4aeaf4
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+searchScope:
+- ci-dataverse
+- customerInsights
+ms.openlocfilehash: 8e11b60295fa5c187b1ac4877fb347e2d9bb41a1
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692586"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354154"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Koble til data i en Microsoft Dataverse-administrert datasjø
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Denne artikkelen inneholder informasjon om hvordan Dataverse-brukere raskt kan koble seg til analytiske enheter i en administrert Dataverse-sjø. Du må være administrator i Dataverse-organisasjonen for å fortsette og vise listen over enheter som er tilgjengelige i den administrerte datasjøen.
+
+Denne artikkelen inneholder informasjon om hvordan Dataverse-brukere raskt kan koble til analytiske enheter i en Microsoft Dataverse-administrert sjø. 
+
+> [!NOTE]
+> Du må være administrator i Dataverse organisasjonen for å fortsette og vise listen over enheter som er tilgjengelig i den administrerte sjøen.
 
 ## <a name="important-considerations"></a>Viktige hensyn
 
-Data som lagres i onlinetjenester, for eksempel Azure Data Lake Storage, kan lagres på et annet sted enn der data behandles eller lagres i Dynamics 365 Customer Insights.Ved å importere eller koble til data som er lagret i en onlinetjeneste, godtar du at dataene kan overføres til og lagres med Dynamics 365 Customer Insights. [Finn ut mer på Microsoft Klareringssenter.](https://www.microsoft.com/trust-center)
+Data som lagres i onlinetjenester, for eksempel Azure Data Lake Storage, kan lagres på et annet sted enn der data behandles eller lagres i Dynamics 365 Customer Insights. Ved å importere eller koble til data som er lagret i en onlinetjeneste, godtar du at dataene kan overføres til og lagres med Dynamics 365 Customer Insights. [Finn ut mer om Microsofts klareringssenter](https://www.microsoft.com/trust-center).
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Koble til en Dataverse-administrert sjø
 
@@ -32,12 +37,9 @@ Data som lagres i onlinetjenester, for eksempel Azure Data Lake Storage, kan lag
 
 2. Velg **Legg til datakilde**.
 
-3. Velg **Koble til administrert Microsoft Dataverse-sjø**, og velg **Neste**.
+3. Velg **Microsoft Dataverse** og deretter **Neste**.
 
-4. Skriv inn et **navn** for datakilden, og klikk deretter **Neste**. Navneretningslinjer: 
-   - Start med en bokstav.
-   - Bruk bare bokstaver og tall. Spesialtegn og mellomrom er ikke tillatt.
-   - Bruk mellom 3 og 64 tegn.
+4. Skriv inn et **navn** for datakilden, og klikk deretter **Neste**. 
 
 5. Angi **serveradressen** til for Dataverse-organisasjonen, og velg **Logg på**.
 

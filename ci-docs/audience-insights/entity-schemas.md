@@ -1,24 +1,23 @@
 ---
 title: Customer Insights-enhetsskjemaer i Common Data Model
 description: Arbeid med enheter i Common Data Model.
-ms.date: 04/17/2020
+ms.date: 08/13/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: e21f8a9422357fbc5c9425f91f3ba241c9dec9d8
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+ms.openlocfilehash: f0af2a6d8a90ff01ea9d4eeb29f34113261fd0d4
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692317"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231051"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Enhetsskjemaer i Common Data Model
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 [Common Data Model](/common-data-model/) er en deklarativ spesifikasjon og en definisjon av standardenheter som representerer vanlig brukte konsepter og aktiviteter på tvers av forretnings- og produktivitetsprogrammer. Denne modellen blir også utvidet til observasjonsmessige og analytiske data. Common Data Model tilbyr veldefinerte, modulbaserte og utvidbare forretningsenheter, som konto, forretningsenhet, sak, kontakt, kundeemne, salgsmulighet og produkt, samt samhandlinger med leverandører, arbeidere og kunder, for eksempel aktiviteter og servicenivåavtaler. Alle kan bygge på og utvide Common Data Model-definisjoner for å fange opp flere forretningsspesifikke ideer.
 
@@ -42,7 +41,7 @@ Hvis du vil ha mer informasjon, kan du se dokumentasjonen om [Customer Insights-
 
 ## <a name="view-entities-using-the-common-data-model-entity-navigator"></a>Vise enheter ved hjelp av enhetsnavigatoren for Common Data Model
 
-Du kan vise enheter i [Common Data Model-enhetsnavigatoren](https://microsoft.github.io/CDM/). Velg knappen **Last inn fra GitHub!** , og naviger til **foundationCommon** > **crmCommon** > **løsninger** > **customerInsights**, der du finner en liste over Customer Insights-enheter og definisjoner.
+Du kan vise enheter i [Common Data Model-enhetsnavigatoren](https://microsoft.github.io/CDM/). Velg en enhet i Insights Application-delen for å få listen over Customer Insights-enheter og deres definisjoner.
 > [!div class="mx-imgBorder"]
 > ![CDM-enhetsnavigator som viser Kundeaktivitet-enhet.](media/CDM-entity-navigator.png "CDM-enhetsnavigator som viser Kundeaktivitet-enhet")
 

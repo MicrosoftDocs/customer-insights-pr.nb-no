@@ -1,20 +1,19 @@
 ---
 title: Eksporter Customer Insights-data til Klaviyo
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til Klaviyo.
-ms.date: 08/13/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7c1297fd5381c00c07d6501186c51fe4798773d1
-ms.sourcegitcommit: 205f931ec671a0ab1850f2c1c94df3307ffb62c9
+ms.openlocfilehash: 027aee70d9fdab0a92d7fd99209a6ac2ca3cc361
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7385800"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8225480"
 ---
 # <a name="export-segment-lists-to-klaviyo-preview"></a>Eksporter segmentlister til Klaviyo (forhåndsversjon)
 
@@ -28,10 +27,10 @@ Eksporter segmenter av enhetlige kundeprofiler til Klaviyo, og bruk dem for mark
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-- Du kan eksportere opptil 100 000 profiler per eksport til Klaviyo.
+- Du kan eksportere opptil 100 000 kundeprofiler per eksport til Klaviyo.
 - Eksport til Klaviyo er begrenset til segmenter.
-- Det kan ta opptil 20 minutter å eksportere opptil 1 million profiler til Klaviyo. 
-- Antall profiler du kan eksportere til Klaviyo, er avhengig av og begrenset til kontrakten med Klaviyo.
+- Det kan ta opptil 20 minutter å eksportere 1 million kundeprofiler til Klaviyo. 
+- Antall kundeprofiler du kan eksportere til Klaviyo, avhenger av og begrenses til kontrakten med Klaviyo.
 
 ## <a name="set-up-connection-to-klaviyo"></a>Konfigurer tilkoblingen til Klaviyo
 
@@ -67,7 +66,7 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Angi [**Klaviyo-liste-ID-en**](https://help.klaviyo.com/hc/articles/115005078647-How-to-Find-a-List-ID).     
 
-3. I **Datasamsvar**-delen, i feltet **E-post** velger du feltet i den enhetlige kundeprofilen som representerer en kundes e-postadresse. Det kreves at du eksporterer segmenter til Klaviyo.
+3. Velg feltet som representerer en kundes e-postadressen, i delen **Datasamsvar** i **E-post**-feltet. Det kreves at du eksporterer segmenter til Klaviyo.
 
 1. Velg **Lagre**.
 

@@ -1,22 +1,21 @@
 ---
 title: Produktanbefalingsprediksjon
 description: Forutsi produktene en kunde sannsynligvis kommer til å kjøpe eller samhandle med.
-ms.date: 09/13/2021
+ms.date: 01/13/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: b9a9c7eb4ee3f2f0510a609757a36e5d5796a2f7
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494551"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355763"
 ---
-# <a name="product-recommendation-prediction-preview"></a>Produktanbefalingsprediksjon (forhåndsversjon)
+# <a name="product-recommendation-prediction"></a>Produktanbefalingsprediksjon
 
 Produktanbefalingsmodellen oppretter sett med prediktive produktanbefalinger. Anbefalingene er basert på tidligere kjøpsatferd og kunder med lignende kjøpsmønstre. Du kan opprette nye produktanbefalingsprediksjoner på siden **Intelligens** > **Prediksjoner**. Velg **Mine prediksjoner** for å se andre prediksjoner du har opprettet.
 
@@ -54,7 +53,7 @@ Hvis du er interessert i å prøve denne funksjonen, men ikke har data for å fu
 
 > [!NOTE]
 > - Modellen krever kundenes transaksjonshistorikk. Definisjonen av en transaksjon er ganske fleksibel. Alle data som beskriver en brukerproduktinteraksjon, kan fungere som inndata. For eksempel å kjøpe et produkt, ta et kurs eller delta på et arrangement.
-> - Bare én transaksjonsloggenhet kan konfigureres for øyeblikket. Hvis det er flere innkjøpsenheter, kan du slå dem sammen i Power Query før datainntak.
+> - Bare én transaksjonsloggenhet kan konfigureres for øyeblikket. Hvis det finnes flere kjøpsenheter, kan du forene dem i Power Query før datainntak begynner.
 > - Hvis ordre- og ordredetaljer er forskjellige enheter, slår du dem sammen før du bruker dem i modellen. Modellen fungerer ikke bare med en ordre-ID eller kvitterings-ID i en enhet.
 
 
@@ -62,7 +61,7 @@ Hvis du er interessert i å prøve denne funksjonen, men ikke har data for å fu
 
 1. Gå til **Intelligens** > **Prognoser** i Customer Insights.
 
-1. Velg flisen **Produktanbefalingsmodell (forhåndsversjon)**, og velg **Bruk denne modellen**.
+1. Velg flisen **Modell for produktanbefalinger** og velg **Bruk denne modellen**.
    > [!div class="mx-imgBorder"]
    > ![Flisen Produktanbefalingsmodell med Bruk denne modellen-knappen.](media/product-recommendation-usethismodel.PNG "Flisen Produktanbefalingsmodell med Bruk denne modellen-knappen")
 
@@ -79,11 +78,11 @@ Hvis du er interessert i å prøve denne funksjonen, men ikke har data for å fu
 1. Angi **antall produkter** du vil anbefale til en kunde. Denne verdien avhenger av hvordan leveringsmåten fyller ut data. Hvis du kan anbefale tre produkter, angir du denne verdien i henhold til dette.
    
    >[!TIP]
-   > Du kan velge **Lagre og lukk** når som helst for å lagre forutsigelsen som et utkast. Du finner utkastprediksjonen på fanen **Mine prediksjoner**.
+   > Du kan velge **Lagre utkast** når som helst for å lagre prediksjonen som utkast. Du finner utkastprediksjonen på fanen **Mine prediksjoner**.
 
-1. Velg om du vil **Foreslå produkter som kunder nylig har kjøpt**.
+1. Velg om du vil ta med produkter som kunder nylig har kjøpt, i feltet **Forventet å gjenta innkjøp**.
 
-1. Hvis du har valgt *ikke* å anbefale nylig innkjøpte produkter, angir du vinduet **Se tilbake**. Denne innstillingen angir tidsrammen modellen vurderer før du anbefaler produktet på nytt til brukeren. Angi for eksempel at en kunde kjøper en bærbar datamaskin annethvert år. Dette vinduet vil se på kjøpshistorikken for de siste to årene, og hvis de finner en vare, filtreres varen fra anbefalingene.
+1. Angi **Se tilbake-vindu**. Denne innstillingen angir tidsrammen modellen vurderer før du anbefaler produktet på nytt til brukeren. Angi for eksempel at en kunde kjøper en bærbar datamaskin annethvert år. Dette vinduet vil se på kjøpshistorikken for de siste to årene, og hvis de finner en vare, filtreres varen fra anbefalingene.
 
 1. Velg **Neste**
 

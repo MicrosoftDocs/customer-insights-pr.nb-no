@@ -3,18 +3,17 @@ title: Eksempelveiledning for prediksjon om kundens levetidsverdi
 description: Bruk denne eksempelveiledningen til å teste prediksjonsmodellen for kundens levetidsverdi.
 ms.date: 05/25/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 73d294a285b4ad706bec7fe925c1daa0b839ddd6
-ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
+ms.openlocfilehash: c130e5f699f7eb921b69a20bc6d4ba9eab5b2779
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6129957"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354843"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Eksempelveiledning for prediksjon om kundens levetidsverdi (CLV)
 
@@ -22,7 +21,7 @@ Denne veiledningen går gjennom et komplett eksempel på prediksjon om kundens l
 
 ## <a name="scenario"></a>Scenario
 
-Contoso er et selskap som produserer kaffe og kaffemaskiner av høy kvalitet. De selger produktene via nettstedet Contoso Coffee. Selskapet ønsker å forstå verdien (omsetningen) som kundene kan generere i løpet av de neste 12 månedene. Hvis de vet den forventede verdien kundene kan generere i løpet av de neste 12 månedene, kan de styre markedsføringen mot kunder som genererer høy verdi.
+Contoso er et selskap som produserer kaffe og kaffemaskiner av høy kvalitet. De selger produktene via nettstedet til Contoso Coffee. Selskapet ønsker å forstå verdien (omsetningen) som kundene kan generere i løpet av de neste 12 månedene. Hvis de vet den forventede verdien kundene kan generere i løpet av de neste 12 månedene, kan de styre markedsføringen mot kunder som genererer høy verdi.
 
 ## <a name="prerequisites"></a>Forutsetninger
 
@@ -31,7 +30,7 @@ Contoso er et selskap som produserer kaffe og kaffemaskiner av høy kvalitet. De
 
 ## <a name="task-1---ingest-data"></a>Oppgave 1 – hente inn data
 
-Se gjennom artiklene [om datainntak](data-sources.md) og [import av datakilder ved hjelp av Power Query-koblinger](connect-power-query.md). Følgende informasjon forutsetter at du kjenner til datainntakt generelt.
+Se gjennom artiklene [om datainntak](data-sources.md) og [import av datakilder ved å bruke Power Query-koblinger](connect-power-query.md). Følgende informasjon forutsetter at du kjenner til datainntakt generelt.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Hente inn kundedata fra eCommerce-plattform
 
@@ -123,9 +122,9 @@ Etter å ha tatt inn dataene begynner vi nå dataforeningsprosessen for å oppre
 
 1. Gå til **Samsvar**-fanen, og velg **Angi rekkefølge**.
 
-1. I rullegardinlisten **Primær** velger du **eCommerceContacts : eCommerce** som primærkilden og inkluderer alle oppføringene.
+1. I rullegardinlisten **Primær** velger du **eCommerceContacts: eCommerce** som hovedkilde , og inkluder alle oppføringer.
 
-1. I rullegardinlisten **Enhet 2** velger du **loyCustomers : LoyaltyScheme** og inkluderer alle oppføringer.
+1. I nedtrekkslisten **Enhet 2** velger du **loyCustomers: LoyaltyScheme** og inkluderer alle oppføringer.
 
    ![Samle treff for eCommerce og lojalitet.](media/unify-match-order.png)
 
@@ -135,14 +134,14 @@ Etter å ha tatt inn dataene begynner vi nå dataforeningsprosessen for å oppre
 
    - For eCommerceContacts velger du **FullName** i rullegardinlisten.
    - For loyCustomers velger du **FullName** i rullegardinlisten.
-   - Velg rullegardinlisten **Normaliser**, og velg **Type (telefon, navn, adresse ...)**.
+   - Velg **Normaliser**-rullegardinlisten, og velg **Type (telefon, navn, adresse ...)**.
    - Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
 
 1. Angi navnet **FullName, Email** for den nye regelen.
 
    - Legg til en ny betingelse for e-postadresse ved å velge **Legg til betingelse**.
-   - For enheten eCommerceContacts velger du **EMail** i rullegardinlisten.
-   - For enheten loyCustomers velger du **EMail** i rullegardinlisten.
+   - Velg **E-post** i rullegardinmenyen for enheten eCommerceContacts.
+   - Velg **E-post** i rullegardinmenyen for enheten loyCustomers.
    - La Normaliser være tomt.
    - Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
 
@@ -164,7 +163,7 @@ Etter å ha tatt inn dataene begynner vi nå dataforeningsprosessen for å oppre
 
 ## <a name="task-3---configure-customer-lifetime-value-prediction"></a>Oppgave 3 – konfigurere prediksjon om kundens levetidsverdi
 
-Når de enhetlige kundeprofilene er på plass, kan vi nå kjøre prediksjonen om kundens levetidsverdi. Hvis du vil se detaljerte trinn, kan du se [Prediksjon om kundens levetidsverdi (forhåndsversjon)](predict-customer-lifetime-value.md).
+Når de enhetlige kundeprofilene er på plass, kan vi nå kjøre prediksjonen om kundens levetidsverdi. Hvis du vil ha detaljerte trinn, kan du se [Prediksjon for kundens levetidsverdi](predict-customer-lifetime-value.md).
 
 1. Gå til **Intelligens**  > **Prediksjoner**, og velg **Modell for kundens levetidsverdi**.
 

@@ -5,16 +5,15 @@ author: jusali
 ms.reviewer: mhart
 ms.author: jusali
 ms.date: 10/01/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 279af24358a1d6ea2b4cc75d5496042af73a7cae
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: ded9e98f06109b7cdc27f449455b7f58d633722f
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645458"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350649"
 ---
 # <a name="manage-environments-and-workspaces"></a>Administrere miljøer og arbeidsområder
 
@@ -24,7 +23,7 @@ ms.locfileid: "7645458"
 
 Dette emnet beskriver hvordan du behandler arbeidsområder og miljøer når de allerede er opprettet. 
 
-- Et *arbeidsområde* er en sted der du kan lagre og administrere hendelser og rapporter. Det er her du kan vise brukeraktivitet i sanntid. Når du oppretter et arbeidsområde, velger du datatypen du vil sende til arbeidsområdet. For øyeblikket støttes webdata og mobilapper. Hvis du vil ha mer informasjon, kan du se [Opprette et arbeidsområde og legge til medlemmer](create-workspace.md).
+- Et *arbeidsområde* er en sted der du kan lagre og administrere hendelser og rapporter. Det er her du kan vise brukeraktivitet i sanntid. Når du oppretter et arbeidsområde, velger du datatypen du vil sende til arbeidsområdet. For øyeblikket støttes webdata og mobilapper. Hvis du vil ha mer informasjon, kan du se [Opprette et nytt arbeidsområde og legge til medlemmer](create-workspace.md).
 
 - Et *miljø* er et sted der du administrerer arbeidsområder og tilkoblinger. Hvis du vil ha mer informasjon, kan du se [Opprette et nytt miljø](create-new-environment.md).
 
@@ -47,7 +46,7 @@ Du kan vedlikeholde flere arbeidsområder samtidig i et miljø. Din [rolle](user
 
 ### <a name="delete-a-workspace"></a>Slett et arbeidsområde
 
-Hvis du sletter et arbeidsområde, fjernes alt innhold, data, innstillinger og tillatelser permanent. Det kan ikke angres.
+Hvis du sletter arbeidsområdet, fjernes alt innhold, data, innstillinger og tillatelser permanent. Det kan ikke angres.
 
 1. Gå til **Administrator** > **Arbeidsområde** og velg **Innstillinger**.
 
@@ -71,19 +70,11 @@ Som miljøadministrator kan du få tilgang til et miljø fra den venstre navigas
 
 :::image type="content" source="media/environment-edit.png" alt-text="Administrasjonssenter for miljø.":::
 
-### <a name="rename-an-environment"></a>Endre navn på et miljø
+### <a name="edit-an-environment-name"></a>Redigere et miljønavn
 
 1. Gå til **Administrator** > **Miljø** og velg **Innstillinger**.
 
 1. Oppdater **miljønavnet** og velg **Lagre** for å ta i bruk endringene.
-
-### <a name="manage-environment-members"></a>Administrer miljømedlemmer
-
-1. Gå til **Administrator** > **Miljø** og velg **Medlemmer**.
-
-1. Velg **Legg til medlemmer** for å oppdatere medlemmer og [tilordne roller](user-roles.md). For øyeblikket er bare **miljøadministrator** tilgjengelig.
-
-1. Velg **Legg til medlemmer** for å legge dem til i miljøet.
 
 ### <a name="delete-an-environment"></a>Slette et miljø
 
@@ -97,6 +88,14 @@ Miljøadministratorer kan slette miljøer. Før du kan slette et miljø, må du 
 
 1. Velg **Slett** for å slette miljøet permanent.
 
+### <a name="manage-environment-members"></a>Administrer miljømedlemmer
+
+1. Gå til **Administrator** > **Miljø** og velg **Medlemmer**.
+
+1. Velg **Legg til medlemmer** for å oppdatere medlemmer og [tilordne roller](user-roles.md). For øyeblikket er bare **miljøadministrator** tilgjengelig.
+
+1. Velg **Legg til medlemmer** for å legge dem til i miljøet.
+
 ## <a name="manage-connections"></a>Administrer tilkoblinger
 
 Ved å opprette målgruppeinnsikt kan du vise rapporter i engasjementsinnsikt basert på enhetlige kundeprofiler. 
@@ -107,7 +106,6 @@ Hvis du vil ha mer informasjon, kan du se [Opprett en kobling mellom målgruppei
 
 Du kan beskytte kundens personlige opplysninger ved å slette eller eksportere identifiserbare data for sluttbrukeren.
 
-Hvis du vil ha mer informasjon, kan du se [Slett og eksporter hendelsesdata som inneholder personlige opplysninger](delete-export-personal-data.md).
-
+Hvis du vil ha mer informasjon, kan du se [Slett og eksporter hendelsesdata som inneholder personlige opplysninger](../dsr-rights-requests.md).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

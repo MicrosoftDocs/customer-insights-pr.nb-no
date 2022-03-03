@@ -3,20 +3,24 @@ title: Prediksjon av verdi for kundelevetid (CLV)
 description: Forutsi omsetningspotensialet for aktive kunder i fremtiden.
 ms.date: 02/05/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 740d6a5a749e156414b0e80193334051b7f2632fe4d1f4291d74b99250f35bc2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+searchScope:
+- ci-predictions
+- ci-create-prediction
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 07790604b06f21095a9220a6f57727cac80789c5
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035381"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355801"
 ---
-# <a name="customer-lifetime-value-clv-prediction-preview"></a>Prediksjon av verdi for kundelevetid (CLV) (forhåndsversjon)
+# <a name="customer-lifetime-value-clv-prediction"></a>Prediksjon av verdi for kundelevetid (CLV)
 
 Forutsi potensiell verdi (omsetning) som individuelle aktive kunder kommer til å innføre i virksomheten i løpet av en definert fremtidig tidsperiode. Denne funksjonen kan hjelpe deg med å oppnå ulike mål: 
 - Identifisere verdifulle kunder og behandle denne innsikten
@@ -65,7 +69,7 @@ Følgende data er obligatoriske, og der det er merket som valgfritt, anbefales d
     - Datafullstendighet: Mindre enn 20 % mangler verdier i obligatoriske felter i inndataene   
 
 > [!NOTE]
-> - Modellen krever kundenes transaksjonshistorikk. Bare én transaksjonsloggenhet kan konfigureres for øyeblikket. Hvis det er flere innkjøps-/transaksjonsenheter, kan du slå dem sammen i Power Query før datainntak.
+> - Modellen krever kundenes transaksjonshistorikk. Bare én transaksjonsloggenhet kan konfigureres for øyeblikket. Hvis det finnes flere kjøps-/transaksjonsenheter, kan du forene dem i Power Query før datainntak begynner.
 > - For flere kundeaktivitetsdata (valgfritt) kan du imidlertid legge til så mange kundeaktivitetsenheter som du vil ta hensyn til etter modellen.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Opprett en prediksjon av verdi for kundelevetid
@@ -74,7 +78,7 @@ Følgende data er obligatoriske, og der det er merket som valgfritt, anbefales d
 
 1. Velg flisen **Verdi for kundelevetid** og velg **Bruk modell**. 
 
-1. Velg **Komme i gang** i ruten **Verdi for kundelevetid (forhåndsversjon)**.
+1. Velg **Kom i gang** i ruten **Kundens levetidsverdi**.
 
 1. **Gi navn til denne modellen** og **Navn på utdataenheten** for å skille dem fra andre modeller eller enheter.
 

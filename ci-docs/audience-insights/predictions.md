@@ -1,24 +1,28 @@
 ---
 title: Fullføre delvise data ved hjelp av prognoser
 description: Bruk prognoser til å fylle ut ufullstendige kundedata.
-ms.date: 05/05/2020
-ms.service: customer-insights
+ms.date: 11/01/2021
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6ce72486faa97e6f630a991044ca5e6d4714d0b8b8395a60fad12f3e3a49fa29
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+searchScope:
+- ci-predictions
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 9634523f61e27a0ed183186a788ab0cef3c0491b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032447"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354015"
 ---
-# <a name="complete-your-partial-data-with-predictions"></a>Fyll ut de delvise dataene med prognoser
+# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fullfør de delvise dataene med prognoser (avskrevet)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+> [!IMPORTANT]
+> Denne funksjonen blir **avskrevet** fra og med **5. november 2021**. Gjeldende implementeringer vil fortsette å fungere til funksjonen er fjernet, men du kan ikke opprette nye integreringer ved hjelp av instruksjonene nedenfor.
 
 Med prognoser er det mulig å enkelt opprette predisjonsverdier som kan forbedre forståelsen av en kunde. På siden **Intelligens** > **Prediksjoner** kan du velge **Mine prediksjoner** for å se prediksjoner som du har konfigurert i andre deler av målgruppeinnsikt, og du kan tilpasse dem ytterligere.
 
@@ -35,7 +39,7 @@ Før organisasjonen kan bruke prognosefunksjonen, må du kontrollere at følgend
 
 2. Ditt målgruppeinnsiktsmiljø er knyttet til Dataverse-forekomsten din.
 
-Hvis du [oppretter et nytt miljø](get-started-paid.md), konfigurerer du det i dialogboksen **Opprett et miljø** og velger **Avansert**. Hvis du allerede har opprettet et miljø, går du til innstillingene og velger **Avansert**. Uansett går du til delen **Bruk prediksjoner** og angir URL-adressen til Dataverse-forekomsten som du vil knytte miljøet ditt til.
+Hvis du vil ha mer informasjon, kan du se [Opprette et nytt miljø](create-environment.md).
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Opprette en prognose i kundeenheten
 
@@ -60,6 +64,8 @@ Hvis du [oppretter et nytt miljø](get-started-paid.md), konfigurerer du det i d
    > ![Eksempel på tilordnede feltverdier i kategorier.](media/intelligence-categorymapping.png "Eksempel på tilordnede feltverdier i kategorier")
 
 8. Velg **Ferdig**, og prognosen blir behandlet. Behandlingen vil ta litt tid, avhengig av størrelsen på og kompleksiteten av data. Resultater er tilgjengelige i en ny enhet basert på **Navn på utdataenhet** til den opprettede prognosen.
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Opprette en prognose når du oppretter et segment
 
@@ -110,7 +116,7 @@ Som en del av denne flyten velger du et spesifikt attributt som du vil basere se
 
 ## <a name="edit-a-prediction"></a>Redigere en prognose
 
-Når du har opprettet en prognose, kan du tilpasse modellen i AI Builder for å øke effektiviteten i modellen.  
+Når du har opprettet en prediksjon, kan du tilpasse modellen i AI Builder for å øke effektiviteten til modellen.  
 
 1. I Målgruppeinnsikt går du til **Intelligens** > **Prediksjoner** > **Mine prediksjoner**.
 
@@ -125,7 +131,7 @@ Når du har opprettet en prognose, kan du tilpasse modellen i AI Builder for å 
 Neste kjøring av prognosen vil bruke den oppdaterte modellen du har opprettet.
 
 > [!NOTE]
-> Nye modeller som opprettes i AI Builder, vises ikke i målgruppeinsights hvis ikke modellen ble opprettet fra opplevelsene som er oppført ovenfor.
+> Nye modeller som er opprettet i AI Builder, vises ikke i målgruppeinnsikt med mindre modellen ble opprettet fra opplevelsene oppført ovenfor.
 
 ## <a name="remove-a-prediction"></a>Fjerne en prognose
 

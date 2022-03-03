@@ -3,20 +3,19 @@ title: Prediksjon for abonnementsfrafall (inneholder video)
 description: Du kan forutsi om en kunde er i faresonen for ikke lenger å bruke selskapets abonnementsprodukter eller tjenester.
 ms.date: 08/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 52ef7a8584cbae5dff0c800650b0238cc09fd6d5
-ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.openlocfilehash: b61e87ad833dd7a8e51c6619945a9e216d85f221
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "7967713"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354706"
 ---
-# <a name="subscription-churn-prediction-preview"></a>Forutsigelse av abonnementsfrafall (forhåndsversjon)
+# <a name="subscription-churn-prediction"></a>Frafallsprediksjon for abonnement
 
 Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i faresonen for ikke lenger å bruke selskapets abonnementsprodukter eller tjenester. Du kan opprette en ny forutsigelse av abonnementsfrafalla på siden **Inntelligens** > **Prediksjoner**. Velg **Mine prediksjoner** for å se andre prediksjoner du har opprettet.
 
@@ -63,7 +62,7 @@ Forutsigelse av abonnementsfrafall hjelper deg med å forutsi om en kunde er i f
 ## <a name="create-a-subscription-churn-prediction"></a>Opprette en forutsigelse av abonnementsfrafall
 
 1. I Målgruppeinnsikt går du til **Intelligens** > **Prognoser**.
-1. Velg flisen **Modell for abonnementsfrafall (forhåndsversjon)**, og velg **Bruk denne modellen**.
+1. Velg flisen **Modell for abonnementsfrafall** og velg **Bruk denne modellen**.
    > [!div class="mx-imgBorder"]
    > ![Flisen Modell for abonnementsfrafall med knappen Bruk denne modellen.](media/subscription-churn-usethismodel.PNG "Flisen Modell for abonnementsfrafall med knappen Bruk denne modellen")
 

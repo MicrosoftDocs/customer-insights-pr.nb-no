@@ -4,16 +4,15 @@ author: m-hartmann
 description: Gjør deg kjent med den første opplevelsen i Dynamics 365 Customer Insights, og utforsk mulighetene i den.
 ms.author: mhart
 ms.date: 10/05/2021
-ms.service: customer-insights
-ms.topic: overview
+ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: b4228a36069f4adb8098ea96cefec0eef81a6560
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: c9517ed2b50ff37e361a27538dfb9f9ccbf3df8f
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645713"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350143"
 ---
 # <a name="get-started-after-purchasing-customer-insights"></a>Komme i gang etter å ha kjøpt Customer Insights
 
@@ -40,10 +39,7 @@ Førstegangsopplevelsen hjelper deg med å velge første fokus med Customer Insi
 
 ## <a name="create-your-own-environment"></a>Opprette ditt eget miljø 
 
-Etter den første påloggingen ser du et miljø med eksempeldata. Du kan bruke disse dataene til å utforske funksjoner og gjøre deg kjent med appen. Hvis du vil bruke dine egne data, må du opprette et miljø med funksjonen du vil arbeide i.
-
-- [Opprette et miljø i målgruppeinnsikt.](audience-insights/get-started-paid.md)
-- [Opprette et miljø i engasjementinnsikt.](engagement-insights/create-new-environment.md) 
+Etter den første påloggingen ser du et miljø med eksempeldata. Du kan bruke disse dataene til å utforske funksjoner og gjøre deg kjent med appen. Hvis du vil bruke dine egne data, må du [opprette et miljø](audience-insights/get-started-paid.md).
 
 
 

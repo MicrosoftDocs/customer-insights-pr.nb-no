@@ -1,20 +1,32 @@
 ---
 title: Relasjoner mellom enheter og enhetsbaner
 description: Opprett og administrer relasjoner mellom enheter fra flere datakilder.
-ms.date: 06/01/2020
+ms.date: 09/27/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
-ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
+searchScope:
+- ci-semantic-mapping
+- ci-entities
+- ci-relationships
+- ci-activities
+- ci-activities-wizard
+- ci-measures
+- ci-segments
+- ci-segment-builder
+- ci-measure-builder
+- ci-measure-template
+- ci-permissions
+- customerInsights
+ms.openlocfilehash: db8822aa9e89afb9dc16428af6ca202de789ba1c
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/03/2021
-ms.locfileid: "6171176"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355717"
 ---
 # <a name="relationships-between-entities"></a>Relasjoner mellom enheter
 
@@ -68,6 +80,20 @@ Relasjonen består av en *kildeenhet* som inneholder sekundærnøkkelen og en *m
 
 4. Velg **Lagre** for å opprette den egendefinerte relasjonen.
 
+## <a name="set-up-account-hierarchies"></a>Opprette kontohierarkier
+
+Miljøer som er konfigurert til å bruke forretningsforbindelser som primær målgruppe, kan konfigurere forretningsforbindelseshierarkier for relaterte forretningsforbindelser. For eksempel et selskap som har separate forretningsenheter. 
+
+Organisasjoner oppretter forretningsforbindelseshierarkier for bedre å administrere forretningsforbindelser og relasjoner med hverandre. Funksjonen målgruppeinnsikt støtter overordnede-underordnede-forretningsforbindelseshierarkier som allerede finnes i innsatte kundedata. For eksempel forretningsforbindelser fra Dynamics 365 Sales. Disse hierarkiene kan konfigureres på **Relasjoner**-siden i målgruppeinnsikt, under kategorien forretningsforbindelseshierarki.
+
+1. Gå til **Data** > **Relasjoner**.
+1. Velg kategorien **Kontohierarki**.
+1. Velg **Nytt hierarki for forretningsforbindelse**. 
+1. Angi et navn på hierarkiet i ruten **Kontohierarki**. Systemet oppretter et navn for utdataenheten. Du kan endre navnet på utdatanavnenheten.
+1. Velg enheten som inneholder kontohierarkiet. Det er vanligvis i samme enhet som inneholder forretningsforbindelsene.
+1. Velg **Forretningsforbindelses-ID** og **ID for overordnet forretningsforbindelse** fra den valgte enheten 
+1. Velg **Lagre** for å bruke innstillingene og fullføre kontohierarkiet.
+
 ## <a name="view-relationships"></a>Vise relasjoner
 
 Relasjoner-siden viser alle relasjonene som er opprettet. Hver rad representerer en relasjon, som også omfatter detaljer om kildeenheten, målenheten og kardinaliteten. 
@@ -82,7 +108,7 @@ Denne siden har et sett med alternativer for eksisterende og nye relasjoner:
 
 ### <a name="explore-the-relationship-visualizer"></a>Utforske relasjonsvisualiseringen
 
-Relasjonsvisualiseringen viser et nettverksdiagram over eksisterende relasjoner mellom tilkoblede enheter og kardinaliteten deres.
+Relasjonsvisualiseringen viser et nettverksdiagram over eksisterende relasjoner mellom tilkoblede enheter og kardinaliteten deres. Den visualiserer også relasjonsbanen.
 
 Hvis du vil tilpasse visningen, kan du endre plasseringen til boksene ved å dra dem på lerretet.
 
@@ -92,6 +118,56 @@ Tilgjengelige alternativer:
 - **Eksporter som bilde**: Lagre gjeldende visning som en bildefil.
 - **Endre til vannrett/loddrett oppsett**: Endre justeringen av enhetene og relasjonene.
 - **Rediger**: Oppdater egenskaper for egendefinerte relasjoner i redigeringsruten, og lagre endringer.
+
+## <a name="relationship-paths"></a>Relasjonsbaner
+
+En relasjonsbane beskriver enhetene som er koblet til relasjoner en kildeenhet og en målenhet. Den brukes når du oppretter et segment eller et mål som inkluderer andre enheter enn enheten for enhetlig profil, og når det finnes flere alternativer for å nå enheten for enhetlig profil. 
+
+En relasjonsbane informerer systemet om relasjoner for å få tilgang til enheten for den enhetlige profilen. Forskjellige relasjonsbaner kan gi forskjellige resultater.
+
+Enheten *eCommerce_eCommercePurchases* har for eksempel følgende relasjoner for enheten for den enhetlige profilen *Kunde*:
+
+- eCommerce_eCommercePurchases > Kunde
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > Kunde
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Kunde 
+
+En relasjonsbane avgjør hvilke enheter du kan bruke når du oppretter regler for målinger eller segmenter. Valg av alternativet med den lengste relasjonsbanen vil sannsynligvis gi færre resultater fordi de samsvarende oppføringene må være en del av alle enheter. I dette eksemplet må en kunde ha kjøpt varer via e-handel(eCommerce_eCommercePurchases), på et salgssted (POS_posPurchases) og delta i fordelsprogrammet (loyaltyScheme_loyCustomers). Når du velger det første alternativet, får du sannsynligvis flere resultater fordi kunder bare trenger å eksistere i én tilleggsenhet.
+
+### <a name="direct-relationship"></a>Direkte relasjon
+
+En relasjon klassifiseres som en **direkte relasjon** når en kildeenhet er relatert til en målenhet med bare én relasjon.
+
+Hvis for eksempel en aktivitetsenhet med navnet *eCommerce_eCommercePurchases* kobles til en målenhet *eCommerce_eCommerceContacts* bare via *ContactId*, er det en direkte relasjon.
+
+:::image type="content" source="media/direct_Relationship.png" alt-text="Kildeenhet kobler direkte til målenheten.":::
+
+#### <a name="multi-path-relationship"></a>Relasjon med flere baner
+
+En **relasjon med flere baner** er en spesiell type direkte relasjon som kobler en kildeenhet til mer enn én målenhet.
+
+Hvis for eksempel en aktivitetsenhet med navnet *eCommerce_eCommercePurchases* er relatert til to målenheter, er både *eCommerce_eCommerceContacts* og *loyaltyScheme_loyCustomers* en relasjon med flere baner.
+
+:::image type="content" source="media/multi-path_relationship.png" alt-text="Kildeenhet kobler direkte til mer enn én målenhet via en relasjon med flere mellomstasjoner.":::
+
+### <a name="indirect-relationship"></a>Indirekte relasjon
+
+En relasjon klassifiseres som en **indirekte relasjon** når en kildeenhet er relatert til en eller flere enheter før den relateres til en relasjon.
+
+#### <a name="multi-hop-relationship"></a>Relasjon med flere mellomstasjoner
+
+En *relasjon med flere mellomstasjoner* er en indirekte relasjon som gjør det mulig å koble en kildeenhet til en målenhet via en eller flere andre *mellomenheter*.
+
+Hvis for eksempel en aktivitetsenhet som heter *eCommerce_eCommercePurchasesWest* kobler til en midlertidig enhet kalt *eCommerce_eCommercePurchasesEast* og deretter kobler til en målenhet som heter *eCommerce_eCommerceContacts*, er det en relasjon med flere mellomstasjoner.
+
+:::image type="content" source="media/multi-hop_relationship.png" alt-text="Kildeenhet kobler direkte til en målenhet med en midlertidig enhet.":::
+
+### <a name="multi-hop-multi-path-relationship"></a>Relasjon med flere baner og flere mellomstasjoner
+
+Relasjoner for flere mellomstasjoner og flere baner kan brukes sammen til å opprette **flere mellomstasjoner, flere baner**. Denne spesialtypen kombinerer funksjonene for **flere mellomstasjoner** og **relasjoner med flere baner**. Den lar deg koble til mer enn én målenhet når du bruker mellomliggende enheter.
+
+Hvis for eksempel en aktivitetsenhet som heter *eCommerce_eCommercePurchasesWest* kobler til en midlertidig enhet kalt *eCommerce_eCommercePurchasesEast* og deretter kobler til to målenheter, både *eCommerce_eCommerceContacts* og *loyaltyScheme_loyCustomers*, er det en relasjon med flere mellomstasjoner og flere baner.
+
+:::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Kildeenhet kobler direkte til én målenhet og kobler til en annen målenhet via en mellomliggende enhet.":::
 
 ## <a name="manage-existing-relationships"></a>Administrere eksisterende relasjoner 
 
@@ -105,6 +181,6 @@ Velg en relasjon, og velg ett av følgende alternativer:
 
 ## <a name="next-step"></a>Neste trinn
 
-Systemrelasjoner og egendefinerte relasjoner brukes til å [opprette segmenter](segments.md) basert på flere datakilder som ikke lenger er i siloer.
+Systemrelasjoner og egendefinerte relasjoner brukes til å [opprette segmenter](segments.md) og [målinger](measures.md) basert på flere datakilder som ikke lenger finnes i siloer.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

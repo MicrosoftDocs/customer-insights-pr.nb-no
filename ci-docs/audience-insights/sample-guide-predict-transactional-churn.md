@@ -3,26 +3,25 @@ title: Eksempelveiledning for prognose på transaksjonelt frafall
 description: Bruk denne eksempelveiledningen til å prøve ut den medfølgende prediksjonsmodellen for transaksjonelt frafall.
 ms.date: 11/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 19befa17524aba4543f0d8a5f5f7d6f5a88b2322f1264b88fa0b31641610592a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 93841358d110bd16c7b7f8beb079bed704b22260
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7029457"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354613"
 ---
-# <a name="transactional-churn-prediction-preview-sample-guide"></a>Eksempelveiledning for prognose på transaksjonelt frafall (forhåndsversjon)
+# <a name="transactional-churn-prediction-sample-guide"></a>Eksempelveiledning for prognose på transaksjonelt frafall
 
-Vi tar deg gjennom et helhetlig eksempel på prediksjon av transaksjonelt frafall i Customer Insights ved å bruke dataene som vises nedenfor. Alle data som brukes i denne veiledningen, er ikke virkelige kundedata, og er en del av Contoso-datasettet som finnes i *Demo*-miljøet i Customer Insights-abonnementet.
+Vi tar deg gjennom et helhetlig eksempel på prediksjon av transaksjonelt frafall i Customer Insights ved å bruke dataene som vises nedenfor. Ingen data som brukes i denne veiledningen, er reelle kundedata. De er en del av Contoso-datasettet som finnes i *demonstrasjonsmiljøet* i Customer Insights-abonnementet.
 
 ## <a name="scenario"></a>Scenario
 
-Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som de selger via nettstedet sitt, Contoso Coffee. Målet er å vite hvilke kunder som vanligvis kjøper produktene deres regelmessig, og som vil slutte å være aktive kunder i løpet av de neste 60 dagene. Det å vite hvilke av kundene som har **sannsynlighet for frafall**, kan hjelpe dem med å spare markedsføringsinnsats ved å fokusere på å beholde dem.
+Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som de kan selge via nettstedet Contoso Coffee. Målet er å vite hvilke kunder som vanligvis kjøper produktene deres regelmessig, og som vil slutte å være aktive kunder i løpet av de neste 60 dagene. Det å vite hvilke av kundene som har **sannsynlighet for frafall**, kan hjelpe dem med å spare markedsføringsinnsats ved å fokusere på å beholde dem.
 
 ## <a name="prerequisites"></a>Forutsetninger
 
@@ -31,7 +30,7 @@ Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som 
 
 ## <a name="task-1---ingest-data"></a>Oppgave 1 – hente inn data
 
-Se gjennom artiklene [om datainntak](data-sources.md) og [importering av datakilder ved hjelp av Power Query-koblinger](connect-power-query.md) spesifikt. Følgende informasjon forutsetter at du kjenner til datainntakt generelt. 
+Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av datakilder ved å bruke Power Query-koblinger](connect-power-query.md). Følgende informasjon forutsetter at du kjenner til datainntakt generelt. 
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Hente inn kundedata fra eCommerce-plattform
 
@@ -149,7 +148,7 @@ Etter å ha hentet inn dataene, begynner vi nå med prosessen for å **tilordne,
 
 ## <a name="task-3---configure-transaction-churn-prediction"></a>Oppgave 3 – Konfigurere prognosen for transaksjonelt frafall
 
-Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abonnementsfrafall. Hvis du vil ha detaljerte trinn, kan du se artikkelen om [prognose på abonnementsfrafall (forhåndsversjon)](predict-subscription-churn.md). 
+Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abonnementsfrafall. Hvis du vil ha detaljerte trinn, kan du se artikkelen [Prediksjon for abonnementsfrafall](predict-subscription-churn.md). 
 
 1. Gå til **Intelligens** > **Utforsk**, og velg å bruke **kundefrafallsmodellen**.
 

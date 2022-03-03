@@ -5,16 +5,15 @@ author: m-hartmann
 ms.author: mhart
 ms.date: 09/30/2021
 ms.topic: get-started
-ms.service: customer-insights
 ms.custom: template-trial-setup
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: dc1ea94ad55886c605d27caea031e00964f6f7c8
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 1b50da077cb0584ca9f277b276d0e9ebb46b2c5d
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645503"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350235"
 ---
 # <a name="sign-up-for-a-free-dynamics-365-customer-insights-trial"></a>Registrere deg for en gratis prøveversjon av Dynamics 365 Customer Insights
 
@@ -32,23 +31,12 @@ Det tar litt tid å laste inn prøveversjonen, og deretter kan du begynne å bru
 
 Prøveversjonsmiljøet har de samme funksjonene som den betalte versjonen. Koblingene nedenfor veileder deg gjennom noen viktige funksjoner.
 
-### <a name="audience-insights"></a>Målgruppeinnsikt
-
 - [Hurtigstart for målgruppeinnsikt.](audience-insights/get-started.md)
 - [Legg til flere brukere og tilordne tillatelser.](audience-insights/permissions.md)
 - [Innta datakildene](audience-insights/data-sources.md) og kjør dem gjennom [dataforeningsprosessen](audience-insights/data-unification.md) for å få [enhetlige kundeprofiler](audience-insights/customer-profiles.md).
 - [Suppler de enhetlige kundeprofilene](audience-insights/enrichment-hub.md) eller [kjør prediktive modeller](audience-insights/predictions-overview.md).
 - Opprett [segmenter](audience-insights/segments.md) for å gruppere kunder og [mål](audience-insights/measures.md) for å gjennomgå KPIer.
 - Konfigurer [tilkoblinger](audience-insights/connections.md) og [eksporter](audience-insights/export-destinations.md) for å behandle delsett av dataene i andre programmer.
-
-### <a name="engagement-insights"></a>Engasjementsinnsikt
-
-- [Hurtigstart for engasjementinnsikt.](engagement-insights/get-started.md)
-- [Opprett et arbeidsområde](engagement-insights/create-workspace.md) og legg til medlemmer.
-- [Legg til kode på nettstedet](engagement-insights/instrument-website.md) eller [mobilappen](engagement-insights/developer-resources.md#capture-events-from-mobile-apps).
-- Vise en [rapport i sanntid](engagement-insights/view-reports.md) eller opprette [egendefinerte rapporter](engagement-insights/custom-reports.md).
-- [Opprett begrensede hendelser](engagement-insights/refined-events.md) for eksport.
-- [Eksporter dataene](engagement-insights/export-events.md) til Azure Data Lake Storage.
 
 ## <a name="additional-resources"></a>Ytterligere ressurser
 

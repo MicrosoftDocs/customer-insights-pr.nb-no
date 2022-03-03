@@ -1,20 +1,23 @@
 ---
-title: Tilordne enheter for dataforening
-description: Tilordne data for å opprette enhetlige kundeprofiler.
-ms.date: 09/25/2020
-ms.service: customer-insights
+title: Tilordne enheter og attributter for dataforening
+description: Velg enheter, attributter, primærnøkler og semantiske typer for å tilordne data til den enhetlige kundeprofilen.
+ms.date: 10/18/2020
 ms.subservice: audience-insights
-ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: adkuppa
+ms.topic: tutorial
+author: adkuppa
+ms.author: adkuppa
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e98c7717f7707d43a9fd1fc6f6b0e9c49e4e7ee0
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+searchScope:
+- ci-map
+- ci-match
+- customerInsights
+ms.openlocfilehash: 81f1e97dfbecd9292c50529ca21da8dab9295b5d
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406528"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354970"
 ---
 # <a name="map-entities-and-attributes"></a>Tilordne enheter og attributter
 
@@ -35,14 +38,14 @@ Hvis du vil ha mer informasjon om den generelle flyten for datasamling, se [Saml
 3. Velg enhetene og attributtene du vil bruke i *samsvars*- og *sammenslåings*-fasene. Du kan velge obligatoriske attributter enkeltvis fra en enhet eller inkludere alle attributter fra en enhet ved å merke av for **Inkluder alle felt** på enhetsnivå. Vi anbefaler at du velger minst to enheter for å dra nytte av datasamlingsprosessen.
 
    > [!div class="mx-imgBorder"]
-   > ![Legg til enhet-eksempel](media/data-manager-configure-map-add-entities-example.png "Legg til enhet-eksempel")
+   > ![Legg til enhet-eksempel.](media/data-manager-configure-map-add-entities-example.png "Legg til enhet-eksempel")
 
    I dette eksemplet skal vi legge til enhetene **eCommerceContacts** og **loyCustomers**. Ved å velge disse enhetene kan du avlede innsikt om hvilke av de elektroniske forretningskundene som er medlemmer av loyalitetsprogrammet.
    
    Du kan søke i nøkkelord på tvers av alle attributter og enheter for å velge de nødvendige attributtene du vil tilordne.
    
      > [!div class="mx-imgBorder"]
-   > ![Eksempler på søkefelt](media/data-manager-configure-map-search-fields-example.png "Eksempler på søkefelt")
+   > ![Eksempler på søkefelt.](media/data-manager-configure-map-search-fields-example.png "Eksempler på søkefelt")
 
 4. Velg **Bruk** for å bekrefte valgene.
 
@@ -55,7 +58,7 @@ Etter at du har valgt enhetene, viser **Tilordne**-siden de valgte enhetene for 
 - **Semantisk type for attributt**: Kategorier av attributter, for eksempel e-postadresse eller navn. Hvis du vil bruke AI-modeller for smart prediksjon av semantikk, spare tid og forbedre nøyaktigheten, angir du **Intelligent tilordning** til **På**. Intelligent tilordning fremhever AI-basert semantikkanbefaling i **Type**-feltet. Hvis du setter den til **AV**, vil du se våre vanlige tilordningsanbefalinger. Du kan velge en hvilken som helst semantisk type fra den tilgjengelige listen over alternativer og overstyre det foreslåtte valget.
 
 > [!div class="mx-imgBorder"]
-> ![Attributtype og semantisk prediksjon](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Attributtype og semantisk prediksjon")
+> ![Attributtype og semantisk prediksjon.](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Attributtype og semantisk prediksjon")
 
 Det er også mulig å legge til en egendefinert semantisk type. Velg typefeltet for et attributt, og skriv inn det egendefinerte semantiske typenavnet. På denne måten kan du også endre attributtypene som ble identifisert av systemet.
 
@@ -64,7 +67,7 @@ Alle attributter som en semantisk type identifiseres for, grupperes automatisk i
 Attributter som ikke tilordnes automatisk til en semantisk type, grupperes i delen **Definer dataene i feltene som ikke er tilordnet**. Velg feltet for semantisk type for attributter som ikke er tilordnet, eller skriv inn det egendefinerte navnet på attributtet.
 
 > [!div class="mx-imgBorder"]
-> ![Primærnøkkel og attributtype](media/data-manager-configure-map-add-attributes.png "Primærnøkkel og attributtype")
+> ![Primærnøkkel og attributtype.](media/data-manager-configure-map-add-attributes.png "Primærnøkkel og attributtype")
 
 > [!NOTE]
 > Ett felt må være tilordnet den semantiske typen Person.FullName for å fylle ut kundenavnet i kundekortet. Ellers vises kundekortene uten navn. 
@@ -76,7 +79,7 @@ Attributter som ikke tilordnes automatisk til en semantisk type, grupperes i del
 2. Legg til eller Fjern attributter og enheter i **Rediger felt**-ruten. Bruk søket eller rull for å finne og velge ønskede attributter og enheter. Du kan ikke fjerne et attributt eller en enhet hvis de allerede er samsvart.
 
    > [!div class="mx-imgBorder"]
-   > ![Legge til eller fjerne attributter](media/configure-data-map-edit.png "Legge til eller fjerne attributter")
+   > ![Legg til eller fjern attributter.](media/configure-data-map-edit.png "Legge til eller fjerne attributter")
 
 3. Velg **Bruk**.
 
@@ -94,7 +97,7 @@ Fortsett med samlingstrinnene, og kontroller at attributtet som inneholder bilde
 
 For organisasjoner (forhåndsvisning) må attributtypen tilordnes "Organization.Name"
 > [!div class="mx-imgBorder"]
-> ![Primærnøkkel og attributtype B2B](media/configure-data-map-edit-b2b.png "Primærnøkkel og attributtype B2B")
+> ![Primærnøkkel og attributtype B-til-B.](media/configure-data-map-edit-b2b.png "Primærnøkkel og attributtype B-til-B")
 
 ## <a name="next-step"></a>Neste trinn
 
@@ -102,3 +105,6 @@ Som en del av datasamlingsprosessen går du til **Samsvar**-siden. Gå [**Samsva
 
 > [!TIP]
 > Se følgende video: [Komme i gang: Opprette en enhetlig kundeprofil](https://youtu.be/oBfGEhucAxs).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

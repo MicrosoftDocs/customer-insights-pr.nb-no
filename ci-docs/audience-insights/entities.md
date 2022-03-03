@@ -3,18 +3,20 @@ title: Enheter og datasett
 description: Vise data på Enheter-siden.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 00c5ee50fb9f0906622c91699852ffba0acb5c15
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-entities
+- customerInsight
+ms.openlocfilehash: 1e1abdf49a3c1fe6f9fdd2cf5353a7723454f47b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900439"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355332"
 ---
 # <a name="entities-in-audience-insights"></a>Enheter i målgruppeinnsikt
 
@@ -71,7 +73,9 @@ Felter fra en inntatt datakilde kan inneholde ødelagte data. Oppføringer med �
 
 En fødselsdag-kolonne har for eksempel datatypen angitt som dato. En kundeoppføring har fødselsdag angitt som 01/01/19777. Denne oppføringen flagges som ødelagt. Noen kan nå endre fødselsdagen i kildesystemet til 1977. Etter en automatisk oppdatering av datakildene, har feltet nå et gyldig format, og oppføringen blir fjernet fra den ødelagte enheten. 
 
-Gå til **Data** > **Enheter**, og se etter de ødelagte enhetene i **System**-delen. Navneskjema for ødelagte enheter: DataSourceName_EntityName_corrupt.
+Gå til **Data** > **Enheter**, og se etter de ødelagte enhetene i **System**-delen. Navneskjema for ødelagte enheter: DataSourceName_EntityName_corrupt. Velg en skadet enhet for å identifisere alle de skadede feltene og årsaken til dette på enkeltoppføringsnivå.
+> [!div class="mx-imgBorder"]
+> ![Skadeårsak.](media/corruption-reason.png "Skadeårsak")
 
 Customer Insights behandler fremdeles ødelagte oppføringer. Det kan imidlertid føre til problemer når du arbeider med de enhetlige dataene.
 

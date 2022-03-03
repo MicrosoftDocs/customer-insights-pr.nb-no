@@ -3,18 +3,20 @@ title: Tilkoblinger til andre tjenester fra Customer Insights.
 description: Del data med andre tjenester.
 ms.date: 04/09/2021
 ms.reviewer: nikeller
-ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+searchScope:
+- ci-connections
+- customerInsights
+ms.openlocfilehash: ccad090d3bf6eab96eff37f7a96289ca2882d369
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304984"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354396"
 ---
 # <a name="connections-preview-overview"></a>Oversikt over tilkoblinger (forhåndsversjon)
 
@@ -47,6 +49,7 @@ Hvis du vil legge til tilkoblinger, må du ha [administratortillatelser](permiss
 1. Angi de nødvendige detaljene i ruten **Konfigurer tilkobling**. 
    1. **Visningsnavnet** og tilkoblingstypen beskriver en tilkobling. Vi anbefaler at du velger et navn som forklarer formålet med og målet for denne tilkoblingen.
    1. De nøyaktige feltene avhenger av hvilken tjeneste du kobler til. Du kan lære om detaljer om en bestemt tilkoblingstype i artikkelen om måltjenesten.
+   1. Hvis du [bruker ditt eget Key Vault](use-azure-key-vault.md) til å lagre hemmeligheter, aktiverer du **Bruk Key Vault** og velger hemmeligheten fra listen.
 
 1. Velg **Lagre** for å opprette tilkoblingen.
 
@@ -93,3 +96,6 @@ Frakoblede suppleringer og eksporter blir inaktive. Du aktiverer dem på nytt ve
 
 1. Velg **Fjern** for å bekrefte slettingen.
 
+## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Konfigurere tilkoblinger med hemmeligheter administrert av din egen Key Vault
+
+Noen tilkoblinger trenger hemmeligheter, for eksempel API-nøkler eller passord. Noen tilkoblinger støtter hemmeligheter lagret i din egen Key Vault. Lær mer om støttede tilkoblinger og hvordan du konfigurerer i [ditt eget Key Vault for målgruppeinnsikt](use-azure-key-vault.md).

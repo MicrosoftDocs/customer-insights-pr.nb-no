@@ -1,24 +1,27 @@
 ---
-title: Hente data via en Power Query-tilkobling (inneholder video)
-description: Koblinger til datakilder basert på Power Query.
+title: Hentee data via en Power Query-tilkobling (inneholder video)
+description: Koblinger for datakilder basert på Power Query.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: aae49be4364676ecc7a307e60eeca13859f1662a
-ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
+searchScope:
+- ci-data-sources
+- ci-create-data-source
+- customerInsights
+ms.openlocfilehash: 4c12933a0684094702843be309525dd6d5d9b6f4
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 12/18/2021
-ms.locfileid: "7934990"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355533"
 ---
-# <a name="connect-to-a-power-query-data-source"></a>Koble til et Power Query-datakilde
+# <a name="connect-to-a-power-query-data-source"></a>Koble til en Power Query-datakilde
 
-Power Query tilbyr et bredt sett med koblinger for å hente data. De fleste av disse koblingene støttes av Dynamics 365 Customer Insights. 
+Power Query har et bredt sett med koblinger som kan brukes til å legge inn data. De fleste av disse koblingene støttes av Dynamics 365 Customer Insights. 
 
 Når du legger til datakilder basert på Power Query-koblinger, følger du trinnene som beskrives i denne delen. Avhengig av hvilken kontakt du bruker, er det imidlertid nødvendig med forskjellig informasjon. Hvis du vil vite mer, kan du se dokumentasjonen for individuelle koblinger i [Power Query-koblingsreferansen](/power-query/connectors/).
 
@@ -30,7 +33,7 @@ Når du legger til datakilder basert på Power Query-koblinger, følger du trinn
 
 1. Velg **Legg til datakilde**.
 
-1. Velg **Microsoft Power Query**, og velg deretter **Neste**.
+1. Velg **Microsoft Power Query**.
 
 1. Angi et **Navn** for datakilden, og velg deretter **Neste** for å opprette datakilden.
 
@@ -40,21 +43,21 @@ Når du legger til datakilder basert på Power Query-koblinger, følger du trinn
 
 1. Velg **Transformere data**. I dette trinnet skal du legge til enheter i datakilden. Enheter er datasett. Hvis du har en database som inneholder flere datasett, er hvert datasett sin egen enhet.
 
-1. Dialogboksen **Power Query – Rediger spørringer** lar deg se gjennom og finjustere dataene. Enhetene som systemene identifiserte i den valgte datakilden, vises i venstre rute.
+1. Med dialogboksen **Power Query - Rediger spørringer** kan du se gjennom og finjustere dataene. Enhetene som systemene identifiserte i den valgte datakilden, vises i venstre rute.
 
    > [!div class="mx-imgBorder"]
    > ![Dialogboksen Rediger spørringer.](media/data-manager-configure-edit-queries.png "Dialogboksen Rediger spørringer")
 
-1. Du kan også endre dataene dine. Velg en enhet som skal redigeres eller transformeres. Bruk alternativene i Power Query-vinduet til å bruke transformasjoner. Hver transformasjon blir ført opp under **Brukte trinn**. Power Query inneholder en rekke forhåndsbygde transformeringsalternativer. For mer informasjon, kan du se [Power Query-transformeringer](/power-query/power-query-what-is-power-query#transformations).
-
-1. Du kan legge til flere enheter i datakilden ved å velge **Hent data** i dialogboksen **Rediger spørringer**.
+1. Du kan også endre dataene dine. Velg en enhet som skal redigeres eller transformeres. Bruk alternativene i vinduet Power Query til å bruke transformasjoner. Hver transformasjon blir ført opp under **Brukte trinn**. Power Query inneholder en rekke forhåndsbygde transformasjonsalternativer. Hvis du vil ha mer informasjon, kan du se [Power Query-transformasjoner](/power-query/power-query-what-is-power-query#transformations).
 
    Vi anbefaler at du bruker følgende transformasjoner:
 
-   - Hvis du heter data fra en CSV-fil, inneholder den første raden ofte overskrifter. Gå til **Transformer tabell**, og velg **Bruk overskrifter som første rad**.
-   - Kontroller at datatypen er angitt riktig.
+   - Hvis du heter data fra en CSV-fil, inneholder den første raden ofte overskrifter. Gå til **Transformasjon** og velg **Bruk første rad som overskrifter**.
+   - Kontroller at datatypen er angitt riktig. For datofelt velger du for eksempel en datotype.
 
-1. Velg **Lagre** nederst i Power Query-vinduet for å lagre transformeringene. Etter at du har lagret, finner du datakilden på **Data** > **Datakilder**.
+1. Hvis du vil legge til flere enheter i datakilde i dialogboksen **Rediger spørringer**, går du til **Hjem** og velger **Hent data**.
+
+1. Velg **Lagre** nederst i Power Query-vinduet for å lagre transformasjonene. Etter at du har lagret, finner du datakilden på **Data** > **Datakilder**.
 
 1. På **Data kilder**-siden vil du legge merke til at den nye datakilden har **Oppdatering**-status.
 
@@ -62,9 +65,9 @@ Når du legger til datakilder basert på Power Query-koblinger, følger du trinn
 
 Se [Power Query-koblingsreferansen](/power-query/connectors/) for en liste over koblinger som du kan bruke til å importere data til Customer Insights. 
 
-Kontakter med en hake i kolonnen **Customer Insights (dataflyter)** er tilgjengelige for oppretting av nye datakilder basert på Power Query. Se gjennom dokumentasjonen for en bestemt kobling for å finne ut mer om forhåndskravene, begrensningene og andre detaljer.
+Koblinger med et merke i kolonnen **Customer Insights (dataflyter)** er tilgjengelige for oppretting av nye datakilder basert på Power Query. Se gjennom dokumentasjonen for en bestemt kobling for å finne ut mer om forhåndskravene, begrensningene og andre detaljer.
 
-## <a name="edit-power-query-data-sources"></a>Redigere Power Query-datakilder
+## <a name="edit-power-query-data-sources"></a>Rediger Power Query-datakilder
 
 > [!NOTE]
 > Det kan hende at det ikke er mulig å gjøre endringer i datakilder som for øyeblikket brukes i en av appenes prosesser (*segmentering*, *samsvar* eller *sammenslåing*, for eksempel). 
@@ -80,9 +83,9 @@ Kontakter med en hake i kolonnen **Customer Insights (dataflyter)** er tilgjenge
 
    [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
    
-3. Ta i bruk endringene og transformasjonene i dialogboksen **Power Query – Rediger spørringer** slik det er beskrevet i delen [Opprett en ny datakilde](#create-a-new-data-source).
+3. Bruk endringene og transformasjonene i dialogboksen **Power Query - Rediger spørringer** som beskrevet under [Opprette en ny datakilde](#create-a-new-data-source).
 
-4. Velg **Lagre** i Power Query når du har fullført endringene, for å lagre endringene.
+4. Velg **Lagre** i Power Query etter at redigeringene er fullført, for å lagre endringene.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

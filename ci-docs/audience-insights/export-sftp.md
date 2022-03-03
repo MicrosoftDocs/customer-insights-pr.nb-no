@@ -1,24 +1,25 @@
 ---
-title: Eksportere Customer Insights-data til SFTP-verter
+title: Eksportere Customer Insights-data til SFTP-verter (inneholder video)
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til en SFTP-plassering.
 ms.date: 03/03/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: b19ca6b8085846785682046f83d0ed4758269e5b98303692c703d995407ca7dd
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 7b09da093d6332c5081da1beadc1df59f63c31d2
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035473"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231166"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Eksportere segmenter og andre data til SFTP (forhåndsversjon)
 
 Bruk kundedataene i tredjepartsprogrammer ved å eksportere dem til en plassering i Secure File Transfer Protocol (SFTP).
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWO94X]
 
 ## <a name="prerequisites-for-connection"></a>Forutsetninger for tilkobling
 
@@ -26,6 +27,7 @@ Bruk kundedataene i tredjepartsprogrammer ved å eksportere dem til en plasserin
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
+- SFTP-mål bak brannmurer støttes for øyeblikket ikke. 
 - Kjøretiden for en eksport avhenger av systemytelsen. Vi anbefaler to CPU-kjerner og 1 GB minne som minimal konfigurasjon av serveren. 
 - Det kan ta tre timer å eksportere enheter med opptil 100 millioner kundeprofiler når du bruker den anbefalte minimumskonfigurasjonen av to CPU-kjerner og 1 GB minne. 
 

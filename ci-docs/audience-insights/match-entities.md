@@ -1,8 +1,7 @@
 ---
 title: Samsvare enheter for dataforening
-description: Samsvar enheter for å kombinere datasett og opprette enhetlige kundeprofiler.
-ms.date: 02/23/2021
-ms.service: customer-insights
+description: Samsvar enheter for å opprette enhetlige kundeprofiler.
+ms.date: 02/07/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: adkuppa
@@ -11,12 +10,15 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-match
-ms.openlocfilehash: 67e17495fa6da1cfac7ee4ee165e798364f6cb27
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+- ci-merge
+- ci-map
+- customerInsights
+ms.openlocfilehash: 49729a13d26885c30039f9fa426eaee92c172424
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648220"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355165"
 ---
 # <a name="match-entities"></a>Samsvare enheter
 
@@ -29,13 +31,7 @@ Samsvarssiden består av tre deler:
 
 ## <a name="specify-the-match-order"></a>Angi samsvarsrekkefølgen
 
-Gå til **Data** > **Samle** > **Samsvar**, og velg **Angi ordre** for å starte samsvarsfasen.
-
-Hvert samsvar forener to eller flere enheter i én konsolidert enhet. Samtidig beholdes de unike kundeoppføringene. Vi valgte for eksempel to enheter: **eCommerce:eCommerceContacts** som den primære enheten og **LoyaltyScheme:loyCustomers** som en sekundær enhet. Rekkefølgen til enhetene angir i hvilken rekkefølge systemet prøver å samsvare oppføringene.
-
-:::image type="content" source="media/match-page.png" alt-text="Skjermbilde av Samsvar-siden i Unify-området i dataforeningsprosessen.":::
-  
-Den primære enheten *eCommerce:eCommerceContacts* samsvares med den neste enheten *LoyaltyScheme:loyCustomers*. Datasettet som er et resultat av det første samsvarstrinnet, samsvares med den påfølgende enheten hvis du har flere enn to enheter.
+Hvert samsvar forener to eller flere enheter i én konsolidert enhet. Samtidig beholdes de unike kundeoppføringene. Samsvarsrekkefølgen angir rekkefølgen systemet prøver å samsvare oppføringene i.
 
 > [!IMPORTANT]
 > Enheten du velger som primær enhet, fungerer som grunnlag for det enhetlige profildatasettet. Flere enheter som velges under samsvarsfasen, blir lagt til i enheten. Dette betyr ikke at den enhetlige enheten vil inkludere *alle* dataene som er inkludert i denne enheten.
@@ -43,9 +39,18 @@ Den primære enheten *eCommerce:eCommerceContacts* samsvares med den neste enhet
 > Det er to hensyn som kan hjelpe deg med å velge enhetshierarkiet:
 >
 > - Velg enheten med de mest fullstendige og pålitelige profildataene om kundene som den primære enheten.
-> - Velg en enhet som har flere attributter felles med andre enheter (for eksempel navn, telefonnummer eller e-postadresse) som den primære enhet.
+> - Velg enheten som har flere attributter til felles med andre enheter (for eksempel navn, telefonnummer eller e-postadresse) som primær enhet.
 
-Når du har angitt samsvarsrekkefølgen, ser du de definerte samsvarsparene i delen **Detaljer om samsvarende oppføringer** under **Data** > **Samle** > **Samsvar**. Nøkkelmåledataene vil være tomme til samsvarsprosessen er fullført.
+1. Gå til **Data** > **Samle** > **Samsvar**, og velg **Angi ordre** for å starte samsvarsfasen.
+1. Velg **Enhetsrekkefølge**. Velg for eksempel **eCommerce:eCommerceContacts** som hovedenhet og **LojalitetScheme:loyCustomers** som andre enhet. 
+1. For å inkludere alle oppføringer i enheten som en unik kunde som blir samsvart med hver påfølgende enhet, velger du **Inkluder alle**.
+1. Velg **Ferdig**. 
+
+Når du har angitt samsvarsrekkefølgen, vises de definerte samsvarsparene i delen **Detaljer om samsvarende oppføringer** i **Data** > **Samle** > **Treff**. Nøkkeltallene er tomme til samsvarsprosessen er fullført.
+
+:::image type="content" source="media/match-page.png" alt-text="Skjermbilde av Samsvar-siden i Unify-området i dataforeningsprosessen.":::
+  
+Den primære enheten *eCommerce:eCommerceContacts* samsvares med den neste enheten *LoyaltyScheme:loyCustomers*. Datasettet som er et resultat av det første samsvarstrinnet, samsvares med enheten nedenfor hvis du har flere enn to enheter.
 
 ## <a name="define-rules-for-match-pairs"></a>Definer regler for samsvarspar
 
@@ -55,7 +60,7 @@ Advarselen **Trenger regler** ved siden av et enhetsnavn antyder at ingen samsva
 
 :::image type="content" source="media/match-rule-add.png" alt-text="Skjermbilde av delen Detaljer om samsvarende oppføringer med kontroll for å legge til regler uthevet.":::
 
-1. Velg **Legg til regler** under en enhet i delen **Detaljer om samsvarende oppføringer** for å definere samsvarsregler.
+1. Velg **Legg til regel** under en enhet i delen **Detaljer om samsvarende oppføringer** for å definere samsvarsregler.
 
 1. I ruten **Opprett regel** konfigurerer du betingelsene for regelen.
 
@@ -66,15 +71,15 @@ Advarselen **Trenger regler** ved siden av et enhetsnavn antyder at ingen samsva
    - **Enhet/felt (andre rad)**: Velg et attributt som er relatert til attributtet for enheten som er angitt i den første raden.
 
    - **Normaliser**: Velg blant følgende normaliseringsalternativer for de valgte attributtene. 
-     - Mellomrom: Fjerner alle mellomrom. *Hello   World* blir *HelloWorld*.
+     - Tall: Konverterer andre tallsystemer, for eksempel romertall, til arabiske tall. *VIII* blir *8*.
      - Symboler: Fjerner alle symboler og spesialtegn. *Head&Shoulder* blir *HeadShoulder*.
      - Tekst til små bokstaver: Konverterer alle tegn til små bokstaver. *BARE STORE BOKSTAVER og Store forbokstaver* blir *bare store bokstaver og store forbokstaver*.
+     - Type (telefon, navn, adresse, organisasjon): standardiserer navn, titler, telefonnumre, adresser osv. 
      - Unicode til ASCII: Konverterer Unicode-notasjon til ASCII-tegn. */u00B2* blir *2*.
-     - Tall: Konverterer andre tallsystemer, for eksempel romertall, til arabiske tall. *VIII* blir *8*.
-     - Semantiske typer: Standardiserer navn, titler, telefonnumre, adresser osv. 
+     - Mellomrom: Fjerner alle mellomrom. *Hello   World* blir *HelloWorld*.
 
    - **Presisjon:** Angir presisjonsnivået som skal brukes for denne betingelsen. 
-     - **Grunnleggende**: Velg mellom *Lav*, *Middels*, *Høy* og *Nøyaktig*. Velg **Nøyaktig** hvis du bare vil at oppføringer som samsvarer med 100 prosent, skal samsvare. Velg ett av de andre nivåene for å samsvare oppføringer som ikke er 100 prosent identiske.
+     - **Grunnleggende**: Velg mellom *Lav*, *Middels*, *Høy* og *Nøyaktig*. Velg **Eksakt** for å samsvare bare med oppføringer som samsvarer med 100 prosent. Velg ett av de andre nivåene for å samsvare oppføringer som ikke er 100 prosent identiske.
      - **Egendefinert:** Angi en prosentandel som oppføringer må samsvare med. Systemet samsvarer bare oppføringer som passerer denne terskelen.
 
 1. Oppgi et **Navn** for regelen.
@@ -122,7 +127,7 @@ Du kan endre rekkefølgen på enheter for samsvarsregler for å endre rekkefølg
 
 I tillegg til [samsvarsregler på tvers av enheter](#define-rules-for-match-pairs) kan du også angi dedupliseringsregler. *Deduplisering* er en annen prosess ved samsvar av oppføringer. Den identifiserer duplikatoppføringer og slår dem sammen til én oppføring. Kildeoppføringer kobles til den flettede oppføringen med alternative ID-er.
 
-Dedupliserte oppføringer brukes i samsvarsprosessen på tvers av enheter. Deduplisering skjer for enkeltenheter og kan konfigureres for hver enhet som brukes i samsvarspar.
+Dupliserede oppføringer brukes i samsvarsprosessen på tvers av enheter. Deduplisering skjer for enkeltenheter og kan konfigureres for hver enhet som brukes i samsvarspar.
 
 Det er ikke obligatorisk å angi dedupliseringsregler. Hvis ingen slike regler er konfigurert, brukes reglene som er angitt av systemet. De kombinerer alle oppføringene i én enkelt oppføring før de sender enhetsdataene til samsvar på tvers av enheter for å forbedre ytelsen.
 
@@ -130,17 +135,21 @@ Det er ikke obligatorisk å angi dedupliseringsregler. Hvis ingen slike regler e
 
 1. Gå til **Data** > **Samle** > **Samsvar**.
 
-1. I delen **Sammenslåtte duplikater** velger du **Angi enheter**. Hvis regler for deduplisering allerede er opprettet, velger du **Rediger**.
+1. Velg **Angi enheter** i delen **Detaljer for deduplisert oppføring**. Hvis regler for deduplisering allerede er opprettet, velger du **Rediger**.
 
 1. I ruten **Innstillinger for sammenslåing** velger du enhetene du vil kjøre deduplisering på.
 
-1. Angi hvordan du vil kombinere duplikatoppføringer, og velg ett av tre alternativer:
-   - **Mest fylte**: Identifiserer oppføringen med de mest utfylte attributtfeltene som vinneroppføringen. Dette er standardalternativet for sammenslåing.
-   - **Nyeste**: Identifiserer vinneroppføringen, basert på den nyeste oppføringen. Krever en dato eller et numerisk felt for å definere den nyeste.
-   - **Minst nylig**: Identifiserer vinneroppføringen, basert på den minst nye oppføringen. Krever en dato eller et numerisk felt for å definere den nyeste.
+   1. Angi hvordan du vil kombinere duplikatoppføringer, og velg ett av tre alternativer:
+      - **Mest fylte**: Identifiserer oppføringen med de mest utfylte attributtfeltene som vinneroppføringen. Dette er standardalternativet for sammenslåing.
+      - **Nyeste**: Identifiserer vinneroppføringen, basert på den nyeste oppføringen. Krever en dato eller et numerisk felt for å definere den nyeste.
+      - **Minst nylig**: Identifiserer vinneroppføringen, basert på den minst nye oppføringen. Krever en dato eller et numerisk felt for å definere den nyeste.
+
+   1. Du kan eventuelt velge **Avansert** for å definere dedupliseringsregler for enkeltattributter for en enhet. Du kan for eksempel velge å beholde den nyeste e-postadressen OG den mest fullstendige adressen fra forskjellige oppføringer. Utvid enheten for å vise alle attributtene, og definer hvilket alternativ som skal brukes for enkeltattributter. Hvis du velger et besøksbasert alternativ, må du også angi et dato-/klokkeslettfelt som definerer ventetiden. 
  
-   > [!div class="mx-imgBorder"]
-   > ![Trinn 1 for dedupliseringsregler.](media/match-selfconflation.png "Trinn 1 for dedupliseringsregler")
+      > [!div class="mx-imgBorder"]
+      > ![Trinn 1 for dedupliseringsregler.](media/match-selfconflation.png "Trinn 1 for dedupliseringsregler")
+
+   1. Velg **Fullført** for å bruke fletteinnstillingene for deduplisering.
  
 1. Når enhetene er valgt og innstillingen for sammenslåing er angitt, velger du **Legg til regel** for å definere regler for deduplisering på enhetsnivå.
    - **Velg felt** viser alle tilgjengelige felter fra enheten. Velg feltet du vil søke etter duplikater for. Velg felter som sannsynligvis er unike for hver enkelt kunde. For eksempel en e-postadresse eller en kombinasjon av navn, poststed og telefonnummer.
@@ -158,7 +167,7 @@ Det er ikke obligatorisk å angi dedupliseringsregler. Hvis ingen slike regler e
 
 1. Eventuelle egendefinerte samsvarsregler som er definert, overskriver dedupliseringsregler. Hvis en dedupliseringsregel identifiserer samsvarende oppføringer, og en egendefinert samsvarsregel er angitt til aldri å samsvare med disse oppføringene, samsvares ikke disse to oppføringene.
 
-1. Når du har [kjørt samsvarsprosessn](#run-the-match-process), vises dedupliseringsstatistikken i flisene med nøkkelmåledata.
+1. Når du har [kjørt samsvarsprosessen](#run-the-match-process), ser du dedupliseringsstatistikken i flisene for nøkkelmåledata.
 
 ### <a name="deduplication-output-as-an-entity"></a>Dedupliseringsutdata som en enhet
 
@@ -180,10 +189,7 @@ Gå til **Data** > **Samle** > **Samsvar**, og velg **Kjør** for å starte pros
 
 Du finner resultatet av en vellykket kjøring, enheten for enhetlig kundeprofil, på **Enheter**-siden. Enheten for enhetlig kunde kalles **Kunder** i **Profiler**-delen. Det første vellykkede samsvarskjøringen oppretter den enhetlige *Kunde*-enheten. Alle påfølgende samsvarskjøringer utvider enheten.
 
-> [!TIP]
-> Når du har kjørt samsvarsprosessen, velger du prosessstatusen for å åpne ruten **Oppgavedetaljer**. Den gir en oversikt over behandlingstiden, den siste behandlingsdatoen og alle feil og advarsler som er knyttet til oppgaven. Velg **Se detaljer** for å se hvilke enheter som deltok i samsvarsprosessen, hvilke regler som ble brukt på dem, og om oppdateringene ble publisert på riktig måte.  
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies).  
-> :::image type="content" source="media/process-detail-path.png" alt-text="Neddrillingsbane for å komme til å behandle detaljer fra aktivitetsstatuskoblingen.":::
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="review-and-validate-your-matches"></a>Se gjennom og validere samsvarene
 
@@ -225,19 +231,42 @@ Du kan omkonfigurere og finjustere de fleste av samsvarsparameterne.
 
 - **Slett en regel** ved å velge **Slett**-symbolet.
 
-## <a name="specify-custom-match-conditions"></a>Angi egendefinerte samsvarsbetingelser
+## <a name="advanced-options"></a>Avanserte alternativer
 
-Du kan spesifisere vilkårene som bestemte oppføringer alltid skal samsvare med eller aldri samsvare med. Disse reglene kan lastes opp for å overstyre standard samsvarsprosess. Hvis det for eksempel er en Ola Nordmann I og Ola Nordmann II i oppføringene, kan det hende at systemet samsvarer dem som én person. Ved hjelp av egendefinerte samsvarsregler kan du angi at profilene deres refererer til forskjellige personer. 
+### <a name="add-exceptions-to-a-rule"></a>Legge til unntak i en regel
+
+I de fleste tilfeller samsvarer enheten med kundeemner til unike brukerprofiler med konsoliderte data. Hvis du vil adressere sjeldne tilfeller av falske positive og falske negativer dynamisk, kan du definere unntak for en samsvarsregel. Unntak brukes etter behandling av samsvarsreglene og unngår samsvar for alle oppføringer, som oppfyller unntaksvilkårene.
+
+Hvis for eksempel samsvarsregelen kombinerer etternavn, poststed og fødselsdato, vil systemet identifisere tvillinger med samme etternavn som bor i samme by som har samme profil. Du kan angi et unntak som ikke samsvarer med profilene hvis fornavn i enhetene du kombinerer, ikke er de samme.
+
+1. Gå til **Data** > **Samle** > **Samsvar**, og velg **Rediger** for regelen du vil legge til betingelser for.
+
+1. Velg **Legg til unntak** i **Rediger regel**-ruten.
+
+1. Angi unntaksvilkårene. 
+
+1. Velg **Ferdig** for å lagre regelen.
+
+### <a name="specify-custom-match-conditions"></a>Angi egendefinerte samsvarsbetingelser
+
+Du kan angi betingelser som overstyrer standard samsvarslogikk. Fire alternativer er tilgjengelige: 
+
+|Alternativ  |Description |Eksempel  |
+|---------|---------|---------|
+|Samsvar alltid     | Definerer verdier som alltid samsvarer.         |  Samsvar alltid *Mike* og *MikeR*.       |
+|Samsvar aldri     | Definerer verdier som aldri samsvarer.        | Samsvar aldri *John* og *Jonathan*.        |
+|Egendefinert utelatelse     | Definerer verdier som systemet alltid skal ignorere i samsvarsfasen. |  Ignorer verdiene *11111* og *Ukjent* under samsvar.        |
+|Aliastilordning    | Definere verdier som systemet skal anse som samme verdi.         | Anse *Joe* lik som *Joseph*.        |
 
 1. Gå til **Data** > **Samle** > **Samsvar**, og velg **Egendefinert samsvar** i delen **Detaljer om samsvarende oppføringer**.
 
-  :::image type="content" source="media/custom-match-create.png" alt-text="Skjermbilde av delen Samsvarsregler med Egendefinert samsvar-kontrollen uthevet.":::
+   :::image type="content" source="media/custom-match-create.png" alt-text="Skjermbilde av delen Samsvarsregler med Egendefinert samsvar-kontrollen uthevet.":::
 
-1. Hvis du ikke har angitt noen egendefinerte samsvarsregler, vises en ny **Egendefinert samsvar**-rute med flere detaljer.
+1. Gå til fanen **Oppføringer** i ruten **Egendefinert**.
 
-1. Velg **Fyll ut malen** for å få en malfil som kan angi hvilke oppføringer fra hvilke enheter som alltid skal samsvare eller aldri samsvare. Du må fylle ut oppføringene for "alltid samsvar" og "aldri samsvar" i to forskjellige filer.
+1. Velg alternativet for egendefinert samsvar fra rullegardinmenyen **Egendefinert type**, og velg **Last ned mal**. Du trenger en separat mal for hvert samsvarsalternativ.
 
-1. Malen inneholder felt for å angi enheten og primærnøkkelverdiene for enheten som skal brukes i det egendefinerte samsvaret. Hvis du for eksempel vil at primærnøkkelen *12345* fra *Salg*-enheten alltid skal samsvare med primærnøkkelen *34567* fra *Kontakt*-enheten, fyller du ut malen:
+1. Åpne den nedlastede malfilen, og fyll ut detaljene. Malen inneholder felt for å angi enheten og primærnøkkelverdiene for enheten som skal brukes i det egendefinerte samsvaret. Hvis du for eksempel vil at primærnøkkelen *12345* fra *Salg*-enheten alltid skal samsvare med primærnøkkelen *34567* fra *Kontakt*-enheten, fyller du ut malen:
     - Entity1: Salg
     - Entity1Key: 12345
     - Entity2: Kontakt
@@ -247,26 +276,32 @@ Du kan spesifisere vilkårene som bestemte oppføringer alltid skal samsvare med
    
    Hvis du vil angi egendefinert samsvar for deduplisering for en enhet, angir du samme enhet som både Enhet1 og Enhet2 og angir de forskjellige primærnøkkelverdiene.
 
-1. Når du har lagt til alle overstyringene du vil bruke, lagrer du malfilen.
+1. Når du har lagt til alle overstyringene, lagrer du malfilen.
 
-1. Gå til **Data** > **Datakilder**, og hent inn malfilene som nye enheter. Når de er lagt inn, kan du bruke dem til å angi samsvarskonfigurasjonen.
+1. Gå til **Data** > **Datakilder**, og hent inn malfilene som nye enheter.
 
-1. Etter at du har lastet opp filene og enhetene er tilgjengelige, velger du alternativet **Egendefinert samsvar** på nytt. Du vil se alternativer for å angi enhetene du vil inkludere. Velg de nødvendige enhetene på rullegardinmenyen.
+1. Etter at du har lastet opp filene og enhetene er tilgjengelige, velger du alternativet **Egendefinert samsvar** på nytt. Du vil se alternativer for å angi enhetene du vil inkludere. Velg de nødvendige enhetene på rullegardinmenyen, og velg **Fullført**.
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Skjermbilde av dialogen for å velge overstyringer for et egendefinert samsvarsscenario.":::
 
-1. Velg enhetene du vil bruke for **Samsvar alltid** og **Samsvar aldri**, og velg **Ferdig**.
+1. Bruk av det egendefinerte samsvaret avhenger av samsvarsalternativet du vil bruke. 
+
+   - Gå til neste trinn for **Samsvar alltid** eller **Samsvar aldri**.
+   - For **Egendefinert utelatelse** eller **Aliastildeling** velger du **Rediger** for en eksisterende samsvarsregel eller oppretter en ny regel. Velg alternativet **Egendefinert utelatelse** eller **Aliastildeling** i rullegardinlisten Normaliseringer, og velg **Fullført**.
 
 1. Velg **Lagre** på **Samsvar**-siden for å bruke den egendefinerte samsvarskonfigurasjonen.
 
 1. Velg **Kjør** på **Samsvar**-siden for å starte samsvarsprosessen. Andre angitte samsvarsregler overstyres av den egendefinerte samsvarskonfigurasjonen.
 
-> [!TIP]
-> Gå til **Data** > **Enheter**, og gå gjennom **ConflationMatchPair**-enheten for å bekrefte at overstyringene er brukt.
+#### <a name="known-issues"></a>Kjente problemer
+
+- Selvkonflasjon viser ikke de normaliserte dataene i dedupliseringsenheter. Normaliseringen brukes imidlertid internt under deduplisering. Det er standard for alle normaliseringer. 
+- Hvis innstillingen for semantisk type fjernes i **tildelingsfasen** når en samsvarsregel bruker aliastildeling eller egendefinert utelatelse, brukes ikke normaliseringen. Det skjer bare hvis du fjerner semantisk type etter at du har konfigurert normaliseringen i samsvarsregelen fordi semantisk type vil være ukjent.
+
 
 ## <a name="next-step"></a>Neste trinn
 
-Når du har fullført samsvarsprosessen for minst ett samsvarspar, kan du løse mulige konflikter i dataene ved å gå gjennom emnet [**Slå sammen**](merge-entities.md).
+Når du har fullført samsvarsprosessen for minst ett samsvarspar, fortsetter du til trinnet for [**sammenslåing**](merge-entities.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

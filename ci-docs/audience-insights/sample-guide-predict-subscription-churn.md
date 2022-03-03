@@ -3,26 +3,28 @@ title: Eksempelveiledning for prognose på abonnementsfrafall
 description: Bruk denne eksempelveiledningen til å prøve ut den medfølgende prediksjonsmodellen for abonnementsfrafall.
 ms.date: 11/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: diegogranados117
-ms.author: digranad
+author: m-hartmann
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: fa460fa5c79bc8a356ec5e90050ec85e05c55be8
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+searchScope:
+- ci-create-prediction
+- customerInsights
+ms.openlocfilehash: 5de57155b47b74efa4c5ef2fe63a3c87505644be
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306315"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355625"
 ---
-# <a name="subscription-churn-prediction-preview-sample-guide"></a>Eksempelveiledning for prognose på abonnementsfrafall (forhåndsversjon)
+# <a name="subscription-churn-prediction-sample-guide"></a>Eksempelveiledning for prognose på abonnementsfrafall
 
 Vi tar deg gjennom et helhetlig eksempel på prediksjon av abonnementsfrafall ved å bruke eksempeldataene som vises nedenfor. 
 
 ## <a name="scenario"></a>Scenario
 
-Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som de selger via nettstedet sitt, Contoso Coffee. De har nylig startet et abonnementsselskap for kundene for å få kaffe på en jevn basis. Målet deres er å forstå hvilke kunder med abonnement som kanskje vil annullere abonnementet i løpet av de neste månedene. Det å vite hvilke av kundene som har **sannsynlighet for frafall**, kan hjelpe dem med å spare markedsføringsinnsats ved å fokusere på å beholde dem.
+Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som de kan selge via nettstedet Contoso Coffee. De har nylig startet et abonnementsselskap for kundene for å få kaffe på en jevn basis. Målet deres er å forstå hvilke kunder med abonnement som kanskje vil annullere abonnementet i løpet av de neste månedene. Det å vite hvilke av kundene som har **sannsynlighet for frafall**, kan hjelpe dem med å spare markedsføringsinnsats ved å fokusere på å beholde dem.
 
 ## <a name="prerequisites"></a>Forutsetninger
 
@@ -31,7 +33,7 @@ Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som 
 
 ## <a name="task-1---ingest-data"></a>Oppgave 1 – hente inn data
 
-Se gjennom artiklene [om datainntak](data-sources.md) og [importering av datakilder ved hjelp av Power Query-koblinger](connect-power-query.md) spesifikt. Følgende informasjon forutsetter at du kjenner til datainntakt generelt. 
+Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av datakilder ved å bruke Power Query-koblinger](connect-power-query.md). Følgende informasjon forutsetter at du kjenner til datainntakt generelt. 
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Hente inn kundedata fra eCommerce-plattform
 
@@ -168,7 +170,7 @@ Etter å ha hentet inn dataene, begynner vi nå med prosessen for å **tilordne,
 
 ## <a name="task-3---configure-the-subscription-churn-prediction"></a>Oppgave 3 – Konfigurere prognosen for abonnementsfrafall
 
-Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abonnementsfrafall. Hvis du vil ha detaljerte trinn, kan du se artikkelen om [prognose på abonnementsfrafall (forhåndsversjon)](predict-subscription-churn.md). 
+Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abonnementsfrafall. Hvis du vil ha detaljerte trinn, kan du se artikkelen [Prediksjon for abonnementsfrafall](predict-subscription-churn.md). 
 
 1. Gå til **Intelligens** > **Utforsk**, og velg å bruke **kundefrafallsmodellen**.
 

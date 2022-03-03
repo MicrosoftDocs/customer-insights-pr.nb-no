@@ -1,20 +1,19 @@
 ---
 title: Eksportere Customer Insights-data til ActiveCampaign
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til ActiveCampaign.
-ms.date: 06/29/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 6d85fa9836618e27f7f3da6ce17c07b4bc89e187
-ms.sourcegitcommit: 057079532e31c12bac36f374857ba3dc847d6ad0
+ms.openlocfilehash: 089b9b0d76437e695f797f941ed384734d8f772e
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2021
-ms.locfileid: "6314653"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8227821"
 ---
 # <a name="export-segments-to-activecampaign-preview"></a>Eksportere segmenter til ActiveCampaign (forhåndsvisning)
 
@@ -28,9 +27,9 @@ Eksporter segmenter av enhetlige kundeprofiler til ActiveCampaign, og bruk dem f
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-- Du kan eksportere opptil 1 million profiler per eksport til ActiveCampaign, og det kan ta opptil 90 minutter å fullføre den.
+- Det kan ta opptil 90 minutter å eksportere 1 million kundeprofiler per eksport til ActiveCampaign.
 - Eksport til ActiveCampaign er begrenset til segmenter.
-- Antall profiler du kan eksportere til ActiveCampaign, avhenger av kontrakten med ActiveCampaign.
+- Antall kundeprofiler du kan eksportere til per export til ActiveCampaign avhenger av kontrakten med ActiveCampaign.
 
 ## <a name="set-up-connection-to-activecampaign"></a>Konfigurere tilkobling til ActiveCampaign
 
@@ -64,7 +63,7 @@ Du kan konfigurere en eksport hvis du har tilgang til en tilkobling av denne typ
 
 1. Angi [**ActiveCampaign-liste-IDen**](https://help.activecampaign.com/hc/articles/360000030559-How-to-create-a-list-in-ActiveCampaign).    
 
-3. I **Datasamsvar**-delen, i feltet **E-post** velger du feltet i den enhetlige kundeprofilen som representerer en kundes e-postadresse. Det kreves at du eksporterer segmenter til ActiveCampaign. Du kan eventuelt eksportere Fornavn, Etternavn og Telefon for å opprette mer tilpassede e-postmeldinger. Velg Legg til attributt for å tilordne disse feltene.
+1. Velg feltet som representerer en kundes e-postadressen, i delen **Datasamsvar** i **E-post**-feltet. Det kreves at du eksporterer segmenter til ActiveCampaign. Du kan eventuelt eksportere Fornavn, Etternavn og Telefon for å opprette mer tilpassede e-postmeldinger. Velg Legg til attributt for å tilordne disse feltene.
 
 1. Velg **Lagre**.
 
