@@ -2,17 +2,18 @@
 title: Opprett en kobling mellom målgruppeinnsikt og engasjementsinnsikt
 description: Opprett en aktiv kobling mellom målgruppeinnsikt og engasjementsinnsikt for å muliggjøre toveis deling av data.
 ms.date: 09/08/2021
+ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 56adc206d83bc6e34a55f11383393b5ac66da531
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 8d93a49a29c29103e189a6d4a42294c18dc28abd
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229884"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7559030"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Opprett en kobling mellom målgruppeinnsikt og engasjementsinnsikt
 
@@ -24,8 +25,8 @@ Bruk enhetlige profiler og segmenter fra målgruppeinnsikt til å få flere anal
 
 ## <a name="prerequisites"></a>Forutsetninger
 
-- Målgruppeinnsiktsprofiler må lagres i en Azure Data Lake Storage-konto som du eier, eller i en [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro)-administrert datasjø. 
-- Målgruppeinnsiktmiljøet må også ha et tilknyttet Dataverse-miljø. Og hvis det miljøet også bruker Dataverse for datalagring, må du kontrollere at du merker av for alternativet **Aktiver datadeling** i målgruppeinnsikt. Hvis du vil ha mer informasjon, kan du se [Opprette og konfigurere et miljø i målgruppeinnsikt](../audience-insights/create-environment.md).
+- Målgruppeinnsiktsprofiler må lagres i en Azure Data Lake Storage-konto som du eier, eller i en [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md)-administrert datasjø. 
+- Målgruppeinnsiktmiljøet må også ha et tilknyttet Dataverse-miljø. Og hvis det miljøet også bruker Dataverse for datalagring, må du kontrollere at du merker av for alternativet **Aktiver datadeling** i målgruppeinnsikt. Hvis du vil ha mer informasjon, kan du se [Opprett og konfigurer et betalt miljø i målgruppeinnsikt](../audience-insights/get-started-paid.md).
 - Du trenger administratortillatelser for både engasjementsinnsikts- og målgruppeinnsiktsmiljøene.
 - Koblede miljøer må være i samme geografiske område.
 

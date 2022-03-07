@@ -5,20 +5,21 @@ author: mkisel11
 ms.reviewer: mhart
 ms.author: mkisel
 ms.date: 09/28/2021
+ms.service: customer-insights
 ms.topic: article
 ms.manager: shellyha
-ms.openlocfilehash: 08435e651c3706257b8c0548e6e9bbf98f39dce9
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: d4ae7a085ba68c482372868e75376b6f769325d7
+ms.sourcegitcommit: ce2c011f06999dba2e886b8804d3439fbf67074d
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228118"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "7564606"
 ---
 # <a name="regional-availability-for-dynamics-365-customer-insights"></a>Regional tilgjengelighet for Dynamics 365 Customer Insights
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Engasjementsinnsikt, en funksjon i Dynamics 365 Customer Insights, introduserer gradvis flere områder der kundene kan velge å lagre dataene sine. Administratorer kan velge et område når de [oppretter et nytt miljø](create-new-environment.md). 
+Engasjementsinnsikt, en funksjon i Dynamics 365 Customer Insights, introduserer gradvis flere områder der kundene kan velge å lagre dataene sine. Administratorer kan velge et område når de [oppretter et nytt miljø](manage-environments-workspaces.md#create-an-environment). 
 
 Når du konfigurerer engasjementsinnsikt for første gang, kan du velge området mens de går gjennom den [veiledede førstegangsopplevelsen](quickstart.md). Hvert nye miljø gjør det mulig å velge området dataene skal lagres i.
 

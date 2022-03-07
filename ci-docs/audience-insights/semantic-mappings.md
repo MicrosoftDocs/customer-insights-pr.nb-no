@@ -1,24 +1,22 @@
 ---
 title: Semantiske tilordninger (forhåndsversjon)
 description: Oversikt over semantiske tilordninger og hvordan du bruker dem.
-ms.date: 12/01/2021
+ms.date: 09/28/2021
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-searchScope:
-- ci-semantic-mapping
-- customerInsights
-ms.openlocfilehash: 37696f3e82eb9b75fbf9f78363adc890891efcc3
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: b0884b8b6a2c5abe4b3967d1b57d11a3a6d65c5b
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8353969"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7622947"
 ---
-# <a name="semantic-mappings-preview"></a>Semantiske tilordninger (forhåndsversjon)
+# <a name="semantic-mappings"></a>Semantiske tilordninger
 
 Med semantiske tilordninger kan du tilordne ikke-aktivitetsdata til forhåndsdefinerte skjemaer. Disse skjemaene hjelper målgruppeinnsikt med å forstå dataattributtene bedre. Semantisk tilordning og de angitte dataene gir deg ny innsikt og nye funksjoner i målgruppeinnsikt. Hvis du vil tilordne aktivitetsdataene til skjemaene, ser du gjennom dokumentasjonen for [aktivitetene](activities.md).
 
@@ -77,7 +75,8 @@ Med semantiske tilordninger kan du tilordne ikke-aktivitetsdata til forhåndsdef
 
 1. Hvis du vil kjøre en semantisk tilordning senere, velger du semantisk tilordning og velger **Oppdater**.
 
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+> [!TIP]
+> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Etter at du har valgt **Vis detaljer** for en av jobbenes oppgaver, finner du tilleggsinformasjon: behandlingstid, dato for siste behandling og alle feil og advarsler som er knyttet til oppgaven.
 
 ## <a name="manage-existing-semantic-mappings"></a>Behandle eksisterende semantiske tilordninger
 
@@ -92,41 +91,5 @@ På **Data** > **Semantiske tilordninger (forhåndsversjon)** kan du vise alle l
 - **Gi nytt navn**: Åpner en dialogboks der du kan angi et annet navn for den valgte semantiske tilordningen. Velg **Lagre** for å ta i bruk endringene.
 
 - **Slett:** Åpner en dialogboks for å bekrefte slettingen av den valgte semantiske tilordningen. Du kan også slette mer enn én semantisk tilordning samtidig ved å velge semantiske tilordninger og sletteikonet. Velg **Slett** for å bekrefte slettingen.
-
-## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Bruke en semantisk ContactProfile-enhetstilordning til å opprette aktiviteter på kontaktnivå
-
-Når du har opprettet en semantisk enhetstilordning for *ContactProfile*, kan du registrere aktiviteter for kontakter. Den gjør det mulig å se på aktivitetstidslinjen for en forretningsforbindelse hvilken kontakt som var ansvarlig for hver aktivitet. De fleste trinnene følger den vanlige konfigurasjonen av aktivitetstilordninger.
-
-   > [!NOTE]
-   > For at aktiviteter på kontaktnivå skal fungere, må du ha både **AccountID**- og **ContactID**-attributtene for hver oppføring for aktivitetsdataene.
-
-1. [Definere en *ContactProfile*-semantisk enhetstilordning.](#define-a-contactprofile-semantic-entity-mapping) og kjøre den semantiske tilordningen.
-
-1. I Målgruppeinnsikt går du til **Data** > **Aktiviteter**.
-
-1. Velg **Legg til aktivitet** for å opprette en ny aktivitet.
-
-1. Gi aktiviteten et navn, velg kildeaktivitetsenheten, og velg hovednøkkelen for aktivitetsenheten.
-
-1. I trinnet **Relasjoner** oppretter du en indirekte relasjon mellom aktivitetskildedataene til forretningsforbindelser ved å bruke kontaktdataene som en mellomenhet. Hvis du vil ha mer informasjon, kan du se [direkte og indirekte relasjonsbaner](relationships.md#relationship-paths).
-   - Eksempelrelasjon for en aktivitet kalt *Kjøp*:
-      - **Aaktivitetsdata for kilde for kjøp** > **Kontakdata** på attributtet **ContactID**
-      - **Kontaktdata** > **Data om forretningsforbindelse** på attributtet **AccountID**
-
-   :::image type="content" source="media/Contact_Activities1.png" alt-text="Eksempel på relasjonsoppsett.":::
-
-1. Når du har satt opp Relasjoner, velger du **Neste** og fullfører konfigurasjonen av aktivitetstilordningen. Hvis du vil ha detaljerte trinn for oppretting av aktiviteter, kan du se [definere en aktivitet](activities.md).
-
-1. Kjør aktivitetstilordningene.
-
-1. Aktivitetene på kontaktnivå vil nå være synlige på tidslinjen for kunden.
-
-   :::image type="content" source="media/Contact_Activities2.png" alt-text="Endelig resultat etter konfigurasjon av kontaktaktiviteter":::
-
-### <a name="contact-level-activity-timeline-filtering"></a>Tidslinjefiltrering av aktivitet på kontaktnivå
-
-Når du har konfigurert en aktivitetstilordning på kontaktnivå og kjørt den, oppdateres tidslinjen for aktiviteten for kundene. Den inkluderer IDer eller navn, avhengig av *ContactProfile*-konfigurasjonen, for aktivitetene de handlet på. Du kan filtrere aktiviteter etter kontakter på tidslinjen for å se bestemte kontakter du er interessert i. I tillegg kan du vise alle aktiviteter som ikke er tilordnet til en bestemt kontakt, ved å velge **Aktiviteter som ikke er tilordnet til en kontakt**.
-
-   :::image type="content" source="media/Contact_Activities3.png" alt-text="Filtreringsalternativer som er tilgjengelige for aktiviteter på kontaktnivå.":::
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

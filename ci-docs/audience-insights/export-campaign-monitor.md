@@ -3,17 +3,18 @@ title: Eksportere Customer Insights-data til Campaign Monitor
 description: Lær hvordan du konfigurerer tilkoblingen og eksporten til Campaign Monitor.
 ms.date: 10/08/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: be9c92a087ab4664077d18fe8585bf96715c1535
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 063de14c4ffd51b3afd89786606d7b37626695dc
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228165"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618993"
 ---
 # <a name="export-segments-to-campaign-monitor-preview"></a>Eksportere segmenter til Campaign Monitor (forhåndsversjon)
 

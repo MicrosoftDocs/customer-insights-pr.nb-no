@@ -3,23 +3,19 @@ title: Supplere enhetlige kundeprofiler
 description: Bruk funksjoner for å supplere kundedataene.
 ms.date: 02/07/2022
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-searchScope:
-- ci-enrichments
-- ci-enrichment-details
-- ci-enrichment-wizard
-- customerInsights
-ms.openlocfilehash: e8cac35ccf7012524dc22cb4a499dc605dd66346
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 5c3dda3b9bae828857258025ff79958ee22bdb6f
+ms.sourcegitcommit: a399bd17523c8d06afd7d78af4fc711f93c0e8be
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355395"
+ms.lasthandoff: 02/07/2022
+ms.locfileid: "8098801"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
 

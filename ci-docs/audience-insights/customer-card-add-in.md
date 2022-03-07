@@ -1,52 +1,47 @@
 ---
-title: Tillegg for kundekort for Dynamics 365-apper (inneholder video)
+title: Kundekort-tillegget for Dynamics 365-apper
 description: Vis data fra målgruppeinnsikt i Dynamics 365-apper med dette tillegget.
-ms.date: 02/02/2022
+ms.date: 05/18/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: Nils-2m
-ms.author: nikeller
+author: pkieffer
+ms.author: philk
 manager: shellyha
-searchScope:
-- ci-customers-page
-- ci-search-filter
-- ci-customer-card
-- customerInsights
-ms.openlocfilehash: d67d8e2cb30cf20de204bfb293bb8ce81c7bb2f4
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 6a7137730ab8cc43bc93daf647d9d55d02d96cd8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8353877"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692217"
 ---
 # <a name="customer-card-add-in-preview"></a>Tillegg for kundekort (forhåndsversjon)
 
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-
-Få en 360-graders visning av kundene direkte i Dynamics 365-apper. Når tillegget for kundekort er installert i en støttet Dynamics 365-app, kan du velge å vise kundeprofilfelt, innsikt og tidslinje for aktivitet. Tillegget henter data fra Customer Insights uten at det påvirker dataene i den tilkoblede Dynamics 365-appen.
-
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN1qv]
+Få en 360-graders visning av kundene direkte i Dynamics 365-apper. Når tillegget for kundekort installert i en støttet Dynamics 365-app, kan du velge å vise demografi, innsikt og aktivitetstidslinjer. Tillegget henter data fra Customer Insights uten at det påvirker dataene i den tilkoblede Dynamics 365-appen. 
 
 ## <a name="prerequisites"></a>Forutsetninger
 
 - Tillegget fungerer bare med modelldrevne Dynamics 365-apper, for eksempel Sales eller Customer Service, versjon 9.0 og nyere.
-- Hvis Dynamics 365-dataene skal tilordnes til kundeprofilene for målgruppeinnsikten, anbefaler vi at de [hentes fra Dynamics 365-appen ved hjelp av Microsoft Dataverse-koblingen](connect-power-query.md). Hvis du bruker en annen metode til å hente Dynamics 365-kontakter (eller forretningsforbindelser), må du kontrollere at feltet `contactid` (eller `accountid`) er angitt som [primærnøkkel for denne datakilden i tilordningstrinnet i dataforeningsprosessen](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
+- Hvis Dynamics 365-dataene skal tilordnes til kundeprofilene for målgruppeinnsikten, må de være [hentet fra Dynamics 365-appen ved hjelp av Microsoft Dataverse-koblingen](connect-power-query.md).
 - Alle Dynamics 365-brukere av tillegget for kundekort må [legges til som brukere](permissions.md) i målgruppeinnsikt for å se dataene.
 - [Konfigurerte søke- og filterfunksjoner](search-filter-index.md) i målgruppeinnsikt er nødvendig for at oppslag av data skal fungere.
-- Hver tilleggskontroll er avhengig av bestemte data i målgruppeinnsikt. Noen data og kontroller er bare tilgjengelige i miljøer av bestemte typer. Konfigurasjonen av tillegget informerer deg hvis en kontroll ikke er tilgjengelig på grunn av den valgte miljøtypen. Finn ut mer om [miljøbrukstilfeller](work-with-business-accounts.md).
-  - **Målkontroll**: Krever [konfigurerte målinger](measures.md) av typen kundeattributter.
-  - **Intelligenskontroll**: Krever data generert ved hjelp av [prediksjoner eller egendefinerte modeller](predictions-overview.md).
-  - **Kundedetaljer-kontroll**: Alle felt fra profilen er tilgjengelige i den enhetlige kundeprofilen.
-  - **Suppleringskontroll**: Krever at aktive [suppleringer](enrichment-hub.md) brukes på kundeprofiler. Korttillegget støtter disse suppleringene: [Merker](enrichment-microsoft.md) fra Microsoft, [Interesser](enrichment-microsoft.md) fra Microsoft og [Office-engasjementsdata](enrichment-office.md) fra Microsoft.
-  - **Kontakter**-kontroll: Krever definisjon av semantisk enhet av typekontakter.
-  - **Tidslinjekontroll**: Krever [konfigurerte aktiviteter](activities.md).
+- Hver tilleggskontroll er avhengig av bestemte data i målgruppeinnsikt:
+  - Målkontroll: Krever [konfigurerte mål](measures.md).
+  - Intelligenskontroll: Krever data generert ved hjelp av [prediksjoner](predictions.md) eller [egendefinerte modeller](custom-models.md).
+  - Demografisk kontroll: Demografiske felter (for eksempel alder eller kjønn) er tilgjengelige i den enhetlige kundeprofilen.
+  - Suppleringskontroll: Krever at aktive [suppleringer](enrichment-hub.md) er brukt på kundeprofiler.
+  - Tidslinjekontroll: Krever [konfigurerte aktiviteter](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Installere tillegget Kundekort
 
 Kundekorttillegget er en løsning for Customer Engagement-apper i Dynamics 365. Gå til AppSource og søk etter **Dynamics-kundekort** for å installere løsningen. Velg [Tillegg for kundekort på AppSource](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) og velg **Hent det nå**.
 
-Det kan hende at du må logge på med administratorlegitimasjonen for Dynamics 365-appen for å kunne installere løsningen. Det kan ta litt tid før løsningen installeres i miljøet ditt.
+Det kan hende at du må logge på med administratorlegitimasjonen for Dynamics 365-appen for å kunne installere løsningen.
+
+Det kan ta litt tid før løsningen installeres i miljøet ditt.
 
 ## <a name="configure-the-customer-card-add-in"></a>Konfigurere tillegget for kundekort
 
@@ -55,7 +50,7 @@ Det kan hende at du må logge på med administratorlegitimasjonen for Dynamics 3
 1. Velg **Visningsnavn**-koblingen for løsningen **Dynamics 365 Customer Insights-kundekorttillegg (forhåndsversjon)**.
 
    > [!div class="mx-imgBorder"]
-   > ![Velg visningsnavn.](media/select-display-name.png "Velg visningsnavn.")
+   > ![Velg visningsnavn.](media/select-display-name.png "Velg visningsnavn")
 
 1. Velg **Logg på**, og angi legitimasjonen for administratorkontoen du bruker til å konfigurere Customer Insights.
 
@@ -69,7 +64,7 @@ Det kan hende at du må logge på med administratorlegitimasjonen for Dynamics 3
    - Hvis du vil tilordne med en forretningsforbindelse, velger du feltet i kundeenheten som samsvarer med ID-en til forretningsforbindelsesenheten.
 
    > [!div class="mx-imgBorder"]
-   > ![Kontakt-ID-felt.](media/contact-id-field.png "Kontakt-ID-felt.")
+   > ![Kontakt-ID-felt.](media/contact-id-field.png "Kontakt-ID-felt")
 
 1. Velg **Lagre konfigurasjon** for å lagre innstillingene.
 
@@ -78,9 +73,7 @@ Det kan hende at du må logge på med administratorlegitimasjonen for Dynamics 3
 1. Tilordne rollen **Korttilpasser for Customer Insights** til brukere som skal tilpasse innholdet som vises på kortet for hele organisasjonen.
 
 ## <a name="add-customer-card-controls-to-forms"></a>Legge til Kundekort-kontroller i skjemaer
-
-Avhengig av scenarioet kan du velge å legge til kontroller i enten **Kontakt**-skjemaet eller **Forretningsforbindelse**-skjemaet. Hvis miljøet for målgruppeinnsikt er for forretningskontoer, anbefaler vi å legge til kontrollene i Forretningsforbindelse-skjemaet. I det tilfellet erstatter du "kontakt" i trinnene nedenfor med "forretningsforbindelse".
-
+  
 1. Hvis du vil legge til kundekortkontrollene i kontaktskjemaet, går du til **Innstillinger** > **Tilpassinger** i Dynamics 365.
 
 1. Velg **Tilpasse systemet**.
@@ -90,7 +83,7 @@ Avhengig av scenarioet kan du velge å legge til kontroller i enten **Kontakt**-
 1. Velg kontaktskjemaet du vil legge til kundekortkontrollene i.
 
     > [!div class="mx-imgBorder"]
-    > ![Velg kontaktskjemaet.](media/contact-active-forms.png "Velg kontaktskjemaet.")
+    > ![Velg kontaktskjemaet.](media/contact-active-forms.png "Velg kontaktskjemaet")
 
 1. Hvis du vil legge til en kontroll, drar du et felt fra **Feltutforsker** i skjemaredigeringsprogrammet til stedet der du vil at kontrollen skal vises.
 
@@ -109,7 +102,6 @@ Avhengig av scenarioet kan du velge å legge til kontroller i enten **Kontakt**-
 1. Hvis du vil tilpasse det du vil vise på den egendefinerte kontrollen, velger du Rediger-knappen øverst i høyre hjørne.
 
 ## <a name="upgrade-customer-card-add-in"></a>Oppgrader tillegg for kundekort
-
 Tillegget for kundekort oppgraderes ikke automatisk. Hvis du vil oppgradere til den nyeste versjonen, følger du denne fremgangsmåten i Dynamics 365-appen der tillegget er installert.
 
 1. Gå til **Innstillinger** > **Tilpasning** i Dynamics 365-appen, og velg **Løsninger**.
@@ -122,26 +114,5 @@ Tillegget for kundekort oppgraderes ikke automatisk. Hvis du vil oppgradere til 
 
 1. Når du har startet oppgraderingsprosessen, vises en innlastingsindikator til oppgraderingen er fullført. Hvis det ikke finnes en nyere versjon, vises en feilmelding for oppgraderingen.
 
-## <a name="troubleshooting"></a>Feilsøking
-
-### <a name="controls-from-customer-card-add-in-dont-find-data"></a>Kontroller fra tillegget for kundekort finner ikke data
-
-**Problem:**
-
-Selv med ID-felt som er riktig konfigurert, kan ikke kontrollene finne data for noen kunde.  
-
-**Løsning.**
-
-1. Kontroller at du har konfigurert Tillegg for kundekort i henhold til instruksjonene: [Konfigurere tillegget for kundekort](#configure-the-customer-card-add-in) 
-
-1. Se gjennom datainntakskonfigurasjonen. Rediger datakilde for Dynamics 365-systemet som inneholder GUID for kontakt-ID. Hvis GUID for kontakt-ID vises med store bokstaver i Power Query-redigeringsprogrammet, kan du prøve følgende: 
-    1. Rediger datakilde for å åpne datakilde i Power Query-redigeringsprogrammet.
-    1. Velg kontakt-ID-kolonnen.
-    1. Velg **Transformer** på overskriftslinjen for å vise tilgjengelige handlinger.
-    1. Velg **små bokstaver**. Kontroller om det nå er små bokstaver i GUIDene i tabellen.
-    1. Lagre datakilden.
-    1. Kjør datainntaks-, forenings- og nedstrømsprosesser for å overføre endringene til GUID. 
-
-Etter at oppdateringen er fullført, skal kontroller fra tillegget for kundekort vise de forventede dataene. 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

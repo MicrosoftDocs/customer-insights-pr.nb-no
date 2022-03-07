@@ -4,22 +4,23 @@ description: Slik eksporterer du begrensede hendelser og basishendelser.
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 10/01/2021
+ms.date: 04/30/2021
+ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: d062e2982c1041454b083630404f2b68f0da9669
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: faa0c3afb08d1c0282b2164ed914637ce9aad88117af37ba44fdb81e7610e574
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8232900"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7032397"
 ---
 # <a name="export-events"></a>Eksportere hendelser
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-En hendelse representerer brukeratferd. Den registrerer når en bruker viser en side (visningshendelse) eller samhandler med innhold (handlingshendelse). Når du kan bestemme hvilke egenskaper for dataene du vil vise i en rapport, kalles denne virtuelle visningen av dataene for en *begrenset hendelse*. Hvis du vil ha mer informasjon, kan du se [Opprette og endre hendelser](refined-events.md).
+En hendelse representerer brukeratferd. Den registrerer når en bruker viser en side (visningshendelse) eller samhandler med innhold (handlingshendelse). Når du kan bestemme hvilke egenskaper for dataene du vil vise i en rapport, kalles denne virtuelle visningen av dataene for en *begrenset hendelse*. 
 
 - Du kan eksportere hendelser og begrensede hendelser til ekstern lagringsplass. 
 - Eksportene er en datastrøm for videresending. Du kan ikke fylle på strømmen. 
@@ -44,28 +45,26 @@ Før du konfigurerer en eksport, må du ha tilgang og et aktivt abonnement på A
 
 ## <a name="export-events"></a>Eksporter hendelser
 
-Dialogboksen **Eksporter hendelser** kan hentes inn på to måter: 
+Du kan eksportere hendelser på to ulike måter: 
 - Gå til **Data** > **Eksporter** og velg **Ny eksport**.
 - Gå til **Data** > **Hendelser**, velg **Mer [...]** ved siden av hendelsen du vil eksportere, og velg **Eksporter** på rullegardinmenyen. 
 
-:::image type="content" source="media/new-export.png" alt-text="Opprette en ny eksport.":::
-
 Du får veiledning for hvordan du oppretter en eksport:
 
-1. Angi et **Eksportnavn**, og velg deretter **Neste**.
+1. Oppgi et **eksportnavn**.
 
 1. Velg nedtrekkslisten **Valg av hendelser**, velg basishendelser og begrensede hendelser for inkludere i eksporten. 
 
-1. I **Filstruktur**-delen velger du hyppighet (time eller daglig) for å opprette nye filer i mållagringsområdet, og deretter velger du **Neste**. Hendelser eksporteres fortløpende etter hvert som de kommer.
+1. Under **Filstruktur** velger du frekvensen for å opprette nye filer i mållagringen. Hendelser eksporteres fortløpende etter hvert som de kommer.
 
-1. Velg formatet for eksporten i dialogboksen **Velg format**. Velg mellom formatene **Common Data Model**, **CSV** og **JSON**. Hvis du vil bruke eksporten med andre Dynamics 365-programmer, anbefaler vi formatet **Common Data Model**.
+1. Velg formatet for eksporten. Du kan velge mellom formatene **Common Data Model**, **CSV** og **JSON**. Hvis du vil bruke eksporten med andre Dynamics 365-programmer, anbefaler vi at du bruker Common Data Model-formatet.
 
-1. Angi Azure Data Lake Storage Gen 2-plassering i dialogboksen **Velg mål**.
+1. Angi Azure Data Lake Storage Gen 2-plasseringen i trinnet **Velg mål**.
     1. **ADLS Gen 2-kontonavn** er navnet på lagringskontoen du vil lagre eksporten til. 
     1. **Mappebanen** definerer hvor eksporten skal lagres i filsystemet og mappestrukturen til lagringskontoen.
     1. **Delt nøkkel** er tilgjengelig fra Azure Portal for lagringskontoen.
 
-1. Se gjennom og bekrefte valgene for å fullføre.
+1. Se gjennom og bekreft valgene.
 
 ## <a name="view-and-manage-exports"></a>Vis og administrer eksporter
 
