@@ -1,24 +1,27 @@
 ---
 title: Eksportere Customer Insights-data til Azure Blob Storage
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til Blob Storage.
-ms.date: 06/30/2021
+ms.date: 10/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e38fc06a948178fcbc62c08a4cf4816e1d030e79
-ms.sourcegitcommit: 656b1a6cdff37ba4f808311fd0327ab38e02ed13
+ms.openlocfilehash: 5ea8e58822e1bb901552ff1de960d5340d340003
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/30/2021
-ms.locfileid: "6318311"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231263"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Eksporter segmentliste og andre data til Azure Blob Storage (forhåndsvisning)
 
 Lagre Customer Insights-data i en Blob Storage, eller bruk den til å overføre dataene dine til andre programmer.
+
+## <a name="known-limitations"></a>Kjente begrensninger
+
+1. For Azure Blob Storage kan du velge mellom [Standard/ytelse og Premium-ytelse](/azure/storage/blobs/storage-blob-performance-tiers). Hvis du velger Premium-ytelse, velger du [premiumblokkblobene som kontotype](/azure/storage/common/storage-account-overview#types-of-storage-accounts).
 
 ## <a name="set-up-the-connection-to-blob-storage"></a>Konfigurer tilkoblingen til Blob Storage
 

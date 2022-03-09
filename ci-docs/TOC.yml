@@ -56,6 +56,8 @@
           href: audience-insights/connect-common-data-model.md
         - name: Legge til Dataverse-administrert datasjø
           href: audience-insights/connect-dataverse-managed-lake.md
+        - name: Legg til Azure Synapse Analytics
+          href: audience-insights/connect-synapse.md
         - name: Trinnvis oppdatering for datakilder
           href: audience-insights/incremental-refresh-data-sources.md
         - name: Datainntak i sanntid
@@ -120,8 +122,12 @@
           href: audience-insights/find-similar-customer-segments.md
     - name: Mål
       items:
-        - name: Definere mål og KPI-er
+        - name: Oversikt over mål
           href: audience-insights/measures.md
+        - name: Opprett et nytt mål
+          href: audience-insights/measure-builder.md
+        - name: Bruk en målmal
+          href: audience-insights/measure-templates.md
     - name: Prediksjoner
       items:
         - name: Forutsi data ved hjelp av kunstig intelligens
@@ -252,8 +258,6 @@
               href: audience-insights/diagnostics.md
     - name: Utvidbarhet
       items:
-        - name: Integrere nettdata fra engasjementsinnsikt
-          href: audience-insights/integrate-engagement-insights.md
         - name: Se gjennom enhetsskjemaer i Common Data Model
           href: audience-insights/entity-schemas.md
         - name: Customer Insights-data i Dataverse
@@ -297,83 +301,7 @@
         - name: Opprette prognoser med samtykkedata
           href: consent-management/predictions-consent-data.md
 - name: Engasjementsinnsikt (forhåndsversjon)
-  items:
-    - name: Hjelpesenter
-      href: engagement-insights/index.yml
-    - name: Om engasjementsinnsikt
-      href: engagement-insights/overview.md
-    - name: Kom i gang
-      items:
-        - name: Hurtigstartveiledning
-          href: engagement-insights/get-started.md
-        - name: Opprett et miljø
-          href: engagement-insights/create-new-environment.md
-        - name: Opprett et arbeidsområde
-          href: engagement-insights/create-workspace.md
-        - name: Registrere hendelser fra nettsteder og mobilapper
-          href: engagement-insights/developer-resources.md
-        - name: Konsepter og terminologi
-          href: engagement-insights/glossary.md
-    - name: Hendelser
-      items:
-        - name: Opprett og endre hendelser
-          href: engagement-insights/refined-events.md
-        - name: Gjenkjenne netthendelser fra tidligere godkjente besøkende
-          href: engagement-insights/unknown-to-known.md
-        - name: Eksporter hendelser
-          href: engagement-insights/export-events.md
-    - name: Rapporter
-      items:
-        - name: Vis rapporter
-          href: engagement-insights/view-reports.md
-        - name: Opprett egendefinerte rapporter
-          href: engagement-insights/custom-reports.md
-        - name: Opprette samlede profilrapporter
-          href: engagement-insights/profile-reports.md
-        - name: Vise og opprette dimensjoner
-          href: engagement-insights/dimensions.md
-        - name: Vise og opprette måledata
-          href: engagement-insights/metrics.md
-        - name: Vise og opprette segmenter
-          href: engagement-insights/segments.md
-    - name: Reiseanalyse
-      items:
-        - name: Opprette og administrere traktrapporter
-          href: engagement-insights/funnel-reports.md
-    - name: Ressurser for utvikler
-      items:
-        - name: Oversikt over utviklerressurser
-          href: engagement-insights/developer-resources.md
-        - name: Opplæring for Web SDK
-          href: engagement-insights/advanced-SDK-implementation.md
-        - name: Eksempel på SDK for nett
-          href: engagement-insights/websdk-sample.md
-        - name: Android SDK-opplæring
-          href: engagement-insights/get-started-android.md
-        - name: Android SDK-eksempel
-          href: engagement-insights/androidsdk-sample.md
-        - name: Opplæring for iOS SDK
-          href: engagement-insights/get-started-ios.md
-        - name: Eksempel på iOS SDK
-          href: engagement-insights/iossdk-sample.md
-    - name: Administrasjon
-      items:
-        - name: Roller og tillatelser
-          href: engagement-insights/user-roles.md
-        - name: Administrere miljøer og arbeidsområder
-          href: engagement-insights/manage-environments-workspaces.md
-        - name: Administrere informasjonskapsler og brukersamtykke
-          href: engagement-insights/user-consent-storage.md
-    - name: Regional tilgjengelighet
-      href: engagement-insights/regional-availability.md
-- name: Del data mellom funksjoner
-  items:
-    - name: Koble målgruppeinnsikt og engasjementsinnsikt
-      href: engagement-insights/integrate-audience-insights-engagement-insights.md
-    - name: Bruk målgruppeinnsiktssegmenter i engasjementsinnsiktrapporter
-      href: engagement-insights/integrate-audience-insights-segments.md
-    - name: Bruk demografiske dimensjoner for deling av virkemåtedata
-      href: engagement-insights/curate-dimensions.md
+  href: engagement-insights/overview.md
 - name: Tjenestegrenser
   href: service-limits.md
 - name: DSR-rettigheter og -forespørsler

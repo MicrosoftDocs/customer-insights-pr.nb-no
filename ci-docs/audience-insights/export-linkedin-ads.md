@@ -1,20 +1,19 @@
 ---
 title: Eksportere Customer Insights-data til LinkedIn-annonser
 description: Finn ut hvordan du konfigurerer tilkoblingen og eksporterer til LinkedIn-annonser.
-ms.date: 05/12/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 2cfaa37fd0ac697f29665792bab27a925d8ea1eede0519d424524a7e5accbfeb
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 7a6bb466652b8703a4784329a5e675965f557e82
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034235"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231115"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Eksportere segmenter til LinkedIn-annonser (forhåndsversjon)
 
@@ -28,9 +27,10 @@ Eksporter segmenter av enhetlige kundeprofiler til LinkedIn-annonser for å oppr
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-- Du kan eksportere opptil 100 000 profiler per eksport til LinkedIn-annonser.
+- Segmentet i Customer Insights må inneholde minst 300 unike profiler. 
+- Du kan eksportere opptil 100 000 kundeprofiler per eksport til LinkedIn Ads.
 - Eksport til LinkedIn-annonser er begrenset til segmenter.
-- Det kan ta opptil 10 minutter å eksportere opptil 100 000 profiler til LinkedIn-annonser. 
+- Det kan ta opptil 10 minutter å eksportere 100 000 kundeprofiler til LinkedIn Ads. 
 
 ## <a name="set-up-the-connection-to-linkedin-ads"></a>Konfigurere tilkoblingen til LinkedIn-annonser
 
@@ -66,7 +66,7 @@ Du kan konfigurere en eksport hvis du har tilgang til en tilkobling av denne typ
 
 1. Velg om du vil eksportere data for å foreta [kontaktmålretting](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) eller [firmamålretting](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) på LinkedIn. 
 
-1. Velg feltet i den enhetlige kundeprofilen som representerer e-postadressen til en kunde, i feltet E-post i delen **Datasamsvar**. Det kreves for å eksportere segmenter til LinkedIn-annonser.
+1. I delen **Datasamsvar** for kontaktmålretting velger du minst ett felt som representerer kundens e-postadresse, Apple Ad-ID, Google Ad-ID, Google-bruker-ID eller for- og etternavn. Hvis du velger firmamålretting, velger du minst ett felt som representerer firmanavn, e-postdomene, URL-adresse for LinkedIn-side, aksjesymbol eller webområde. Du kan velge flere felt for å definere eksporten ytterligere. 
 
 1. Velg segmentene du vil eksportere. De samsvarende målgruppene i LinkedIn Campaign Manager blir opprettet automatisk med navnet på segmentene du valgte å eksportere. Hvert segment fører til en egen samsvarende målgruppe. 
 

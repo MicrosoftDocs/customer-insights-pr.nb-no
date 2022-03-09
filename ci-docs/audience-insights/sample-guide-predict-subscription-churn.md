@@ -3,20 +3,22 @@ title: Eksempelveiledning for prognose på abonnementsfrafall
 description: Bruk denne eksempelveiledningen til å prøve ut den medfølgende prediksjonsmodellen for abonnementsfrafall.
 ms.date: 11/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: diegogranados117
-ms.author: digranad
+author: m-hartmann
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 324e5c19778230dd978b2f4e9156a2dd82b3d2bd
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+searchScope:
+- ci-create-prediction
+- customerInsights
+ms.openlocfilehash: 5de57155b47b74efa4c5ef2fe63a3c87505644be
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595530"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355625"
 ---
-# <a name="subscription-churn-prediction-preview-sample-guide"></a>Eksempelveiledning for prognose på abonnementsfrafall (forhåndsversjon)
+# <a name="subscription-churn-prediction-sample-guide"></a>Eksempelveiledning for prognose på abonnementsfrafall
 
 Vi tar deg gjennom et helhetlig eksempel på prediksjon av abonnementsfrafall ved å bruke eksempeldataene som vises nedenfor. 
 
@@ -31,7 +33,7 @@ Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som 
 
 ## <a name="task-1---ingest-data"></a>Oppgave 1 – hente inn data
 
-Se gjennom artiklene [om datainntak](data-sources.md) og [importering av datakilder ved hjelp av Power Query-koblinger](connect-power-query.md) spesifikt. Følgende informasjon forutsetter at du kjenner til datainntakt generelt. 
+Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av datakilder ved å bruke Power Query-koblinger](connect-power-query.md). Følgende informasjon forutsetter at du kjenner til datainntakt generelt. 
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Hente inn kundedata fra eCommerce-plattform
 
@@ -128,9 +130,9 @@ Etter å ha hentet inn dataene, begynner vi nå med prosessen for å **tilordne,
 
 1. Gå til **Samsvar**-fanen, og velg **Angi rekkefølge**.
 
-1. I rullegardinlisten **Primær** velger du **eCommerceContacts : eCommerce** som primærkilden og inkluderer alle oppføringene.
+1. I rullegardinlisten **Primær** velger du **eCommerceContacts: eCommerce** som hovedkilde , og inkluder alle oppføringer.
 
-1. I rullegardinlisten **Enhet 2** velger du **loyCustomers : LoyaltyScheme** og inkluderer alle oppføringer.
+1. I nedtrekkslisten **Enhet 2** velger du **loyCustomers: LoyaltyScheme** og inkluderer alle oppføringer.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="Samle treff for eCommerce og lojalitet.":::
 
@@ -146,8 +148,8 @@ Etter å ha hentet inn dataene, begynner vi nå med prosessen for å **tilordne,
 1. Angi navnet **FullName, Email** for den nye regelen.
 
    * Legg til en ny betingelse for e-postadresse ved å velge **Legg til betingelse**.
-   * For enheten eCommerceContacts velger du **EMail** i rullegardinlisten.
-   * For enheten loyCustomers velger du **EMail** i rullegardinlisten. 
+   * Velg **E-post** i rullegardinmenyen for enheten eCommerceContacts.
+   * Velg **E-post** i rullegardinmenyen for enheten loyCustomers. 
    * La Normaliser være tomt. 
    * Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
 
@@ -168,7 +170,7 @@ Etter å ha hentet inn dataene, begynner vi nå med prosessen for å **tilordne,
 
 ## <a name="task-3---configure-the-subscription-churn-prediction"></a>Oppgave 3 – Konfigurere prognosen for abonnementsfrafall
 
-Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abonnementsfrafall. Hvis du vil ha detaljerte trinn, kan du se artikkelen om [prognose på abonnementsfrafall (forhåndsversjon)](predict-subscription-churn.md). 
+Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abonnementsfrafall. Hvis du vil ha detaljerte trinn, kan du se artikkelen [Prediksjon for abonnementsfrafall](predict-subscription-churn.md). 
 
 1. Gå til **Intelligens** > **Utforsk**, og velg å bruke **kundefrafallsmodellen**.
 
@@ -205,7 +207,7 @@ Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abo
 
 1. Når du har sett gjennom alle detaljene, velger du **Lagre og kjør**.
 
-## <a name="task-4---review-model-results-and-explanations"></a>Oppgave 4 – Gå gjennom modellresultater og forklaringer
+## <a name="task-4---review-model-results-and-explanations"></a>Oppgave 4 – gå gjennom modellresultater og forklaringer
 
 La modellen fullføre opplæringen og beregne poengsum for dataene. Du kan nå se gjennom forklaringer av modellen for abonnementsfrafall. Hvis du vil ha mer informasjon, kan du se [Gå gjennom en prediksjonsstatus og resultater](predict-subscription-churn.md#review-a-prediction-status-and-results).
 

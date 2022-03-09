@@ -1,43 +1,49 @@
 ---
 title: Bruke datakildene til å ta inn data
 description: Lær hvordan du importerer data fra ulike kilder.
-ms.date: 04/12/2021
-ms.service: customer-insights
+ms.date: 12/06/2021
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.custom: intro-internal
-ms.openlocfilehash: 75d597158233f75f0eb5f94389f9dba199d81719f2bbe4e5cc58d2a3afc7dcf8
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+searchScope:
+- ci-data-sources
+- ci-create-data-source
+- customerInsights
+ms.openlocfilehash: e7bcf82c4fe3625ef791ec2b0a7651be0356a006
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032862"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354061"
 ---
 # <a name="data-sources-overview"></a>Oversikt over datakilder
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Funksjonen for målgruppeinnsikt i Dynamics 365 Customer Insights kobler til data fra et bredt sett med kilder. Tilkobling til en datakilde kalles ofte *datainntak*. Når du har integrert dataene, kan du [samle](data-unification.md) og utføre handlinger på dataene.
 
 ## <a name="add-a-data-source"></a>Legg til en datakilde
 
-Se i de detaljerte artiklene om hvordan du legger til en datakilde, avhengig av hvilket alternativ du velger.
+Se de detaljerte artiklene om hvordan du legger til datakilde, avhengig av alternativet du velger.
 
-Du kan legge til en datakilde på tre hovedmåter:
+Du kan legge til følgende datakilder:
 
-- [Gjennom dusinvis av Power Query-koblinger](connect-power-query.md)
+- [Gjennom en rekke Power Query-kontakter](connect-power-query.md)
 - [Fra en mappe i Common Data Model](connect-common-data-model.md)
 - [Fra din egen Microsoft Dataverse-datasjø](connect-dataverse-managed-lake.md)
+- [Fra en Azure Synapse Analytics-database](connect-synapse.md)
+
+> [!NOTE]
+> Hvis du bruker prøveversjonen, inneholder importmetodedelen et alternativ for **Customer Insights-databibliotek**. Velg dette alternativet for å velge et eksempeldatasett tilgjengelig for ulike bransjer. Se [Dynamics 365 Customer Insights-prøveversjon](../trial-signup.md) hvis du vil ha mer informasjon.
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Legge til data fra lokale datakilder
 
-Inntak av data fra lokale datakilder i målgruppeinnsikt støttes basert på Microsoft Power Platform-dataflyter. Dataflyter kan aktiveres i Customer Insights ved å [angi Microsoft Dataverse-URL-adressen for miljøet](get-started-paid.md) under konfigurasjon av miljøet.
+Inntak av data fra lokale datakilder i målgruppeinnsikt støttes basert på Microsoft Power Platform-dataflyter. Du kan aktivere dataflyter i Customer Insights ved [å angi Microsoft Dataverse URL-adressen for miljøet](create-environment.md) når du konfigurerer miljøet.
 
-Datakilder som opprettes etter at et miljø er knyttet til et Dataverse-miljø med Customer Insights, bruker [Power Platform-dataflyter](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflyter støtter tilkobling på stedet ved hjelp av datagatewayen. Fjern og opprett på nytt datakilder som eksisterte før et Dataverse-miljø ble knyttet til, for å [bruke lokale datagatewayer](/data-integration/gateway/service-gateway-app).
+Datakilder som opprettes etter at et miljø er knyttet til et Dataverse-miljø med Customer Insights, bruker [Power Platform dataflyter](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflyter støtter tilkobling på stedet ved hjelp av datagatewayen. Du kan fjerne og opprette datakilder som eksisterte før et Dataverse miljø ble knyttet til, [ved å bruke lokale datagatewayer](/data-integration/gateway/service-gateway-app).
 
 Datagatewayer fra et eksisterende Power BI- eller Power Apps-miljø vil være synlige og kan brukes på nytt i Customer Insights. Datakildesiden viser koblinger for å gå til Microsoft Power Platform-miljøet der du kan vise og konfigurere lokale datagatewayer.
 
@@ -48,14 +54,7 @@ Du ser navnet på hver integrerte datakilde, statusen og siste gang dataene ble 
 > [!div class="mx-imgBorder"]
 > ![Tillagt datakilde.](media/configure-data-datasource-added.png "Tillagt datakilde")
 
-|Status  |Beskrivelse  |
-|---------|---------|
-|Vellykket   |Datakilden ble tatt inn hvis et klokkeslett er nevnt i **Oppdatert**-kolonnen.
-|Ikke startet   |Datakilden har ingen data som er tatt inn ennå, eller den er fremdeles i utkastmodus.         |
-|Oppdaterer    |Datainntak pågår. Du kan avbryte denne operasjonen ved å velge **Stopp oppdatering** i kolonnen **Handlinger**. Hvis du stopper oppdateringen av en datakilde, blir den tilbakestilt til siste oppdateringstilstand.       |
-|Mislyktes     |Det oppstod en feil i datainnhentingen.         |
-
-Velg verdien i **Status**-kolonnen for en datakilde for å se gjennom flere detaljer. Utvid **Datakilder** i ruten **Fremdriftsdetaljer**. Velg **Se detaljer** for mer informasjon om oppdateringsstatusen, inkludert informasjon om feil og prosessoppdateringer nedstrøms.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 Det kan ta tid å laste inn data. Etter en vellykket oppdatering kan de innhentede dataene gjennomgås fra siden **Enheter**. Hvis du vil ha mer informasjon, se [Enheter](entities.md).
 

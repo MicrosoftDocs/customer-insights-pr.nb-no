@@ -1,56 +1,76 @@
 ---
 title: Supplering med egendefinert SFTP-import
 description: Generell informasjon om supplering med egendefinert SFTP-import.
-ms.date: 11/18/2020
-ms.reviewer: kishorem
-ms.service: customer-insights
+ms.date: 04/09/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
-author: jdahl
-ms.author: mhart
+author: jodahlMSFT
+ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: f25dcc08d96d36507e47af0d7b184003ae095819
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: e4b9a65eb50f75e0243fabfc10b501cf7acf4490
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269618"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229650"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Supplere kundeprofiler med egendefinerte data (forhåndsversjon)
 
-Med egendefinert SFTP-import (Secure File Transfer Protocol) kan du importere data som ikke trenger å gå gjennom dataforening. Det er en fleksibel, sikker og enkel måte å skaffe seg på dataene på. Egendefinert SFTP-import kan brukes i kombinasjon med [SFTP-eksport](export-sftp.md), noe som gjør at du kan eskportere kundeprofildataene som er nødvendig for supplering. Dataene kan deretter behandles og suppleres, og den egendefinerte SFTP-importen kan brukes til å hente de supplerte dataene tilbake til målgruppeinnsikt i Dynamics 365 Customer Insights.
+Med egendefinert SFTP-import (Secure File Transfer Protocol) kan du importere data som ikke trenger å gå gjennom dataforening. Det er en fleksibel, sikker og enkel måte å skaffe seg på dataene på. Egendefinert SFTP-import kan brukes i kombinasjon med [SFTP-eksport](export-sftp.md), noe som gjør at du kan eskportere kundeprofildataene som er nødvendig for supplering. Dataene kan deretter behandles og suppleres, og tilpasset SFTP-import kan brukes for å hente de supplerte dataene tilbake til målgruppeinnsiktsmulighetene i Dynamics 365 Customer Insights.
 
 ## <a name="prerequisites"></a>Forutsetninger
 
 For å konfigure egendefinert SFTP-import må følgende forhåndskrav være oppfylt:
 
-- Du har brukerlegitimasjon (brukernavn og passord) for SFTP-plasseringen der dataene som skal importeres, ligger.
-- Du har URL-adressen og portnummeret (vanligvis 22) for STFP-verten.
-- Du har filnavnet og plasseringen til filen som skal importeres på SFTP-verten.
-- Det finnes en *model.json*-fil som angir skjemaet for dataene som skal importeres. Denne filen må være i samme katalog som filen som skal importeres.
-- Du har [administratortillatelser](permissions.md#administrator).
+- Du har filnavnet og plasseringen (banen) til filen som skal importeres til SFTP-verten.
+- Det finnes en *model.json*-fil som angir [Common Data Model-skjemaet](/common-data-model/) for dataene som skal importeres. Denne filen må være i samme katalog som filen som skal importeres.
+- En SFTP-tilkobling er allerede konfigurert av en *administrator*, eller du har [administrator](permissions.md#administrator)-tillatelser. Du trenger legitimasjonen for brukeren, URL-adressen og portnummeret for SFTP-plasseringen der du vil importere data fra.
 
-## <a name="configuration"></a>Konfigurasjon
+
+## <a name="configure-the-import"></a>Konfigurer importen
 
 1. Gå til **Data** > **Supplering**, og velg **Oppdag**-fanen.
 
-1. På **flisen for egendefinert SFTP-import** velger du **Suppler dataene**.
+1. På **flisen for egendefinert SFTP-import** velger du **Suppler dataene** og deretter **Kom i gang**.
+
+   :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="Flis for egendefinert SFTP-import.":::
+
+1. Velg en [tilkobling](connections.md) fra rullegardinlisten. Kontakt en administrator hvis ingen tilkobling er tilgjengelig. Hvis du er en administrator, kan du opprette en tilkobling ved å velge **Legg til tilkobling** og velge **tilpasset SFTP-import** fra rullegardinlisten.
+
+1. Velg **Koble til egendefinert import** for å bekrefte valget av tilkobling.
+
+1.  Velg **Neste**, og angi **Bane** og **Filnavn** for datafilen du vil importere.
+
+    :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Skjermbilde når du angir dataplassering.":::
+
+1. Velg **Neste**, og velg kundedatasettet. Dette kan enten være alle kundeprofiler eller et segment.
+
+1. Velg **Neste** angi et navn for suppleringen og et navn for utdataenheten. 
+
+1. Velg **Lagre supplering** etter at du har sett gjennom valgene.
+
+## <a name="configure-the-connection-for-sftp-custom-import"></a>Konfigurere tilkoblingen for egendefinert import av SFTP 
+
+Du må være en administrator for å konfigurere tilkoblinger. Velg **Legg til tilkobling** når du konfigurerer en supplering *eller* gå til **Administrasjon** > **Tilkoblinger** og velg **Konfigurer** i Egendefinert import-flisen.
+
+1. Skriv inn et navn på tilkoblingen i **Visningsnavn**-boksen.
+
+1. Angi et gyldig brukernavn, passord og verts-URL for SFTP-serveren som dataene som skal importeres, finnes på.
+
+1. Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**.
+
+1. Velg **Bekreft** for å validere konfigurasjonen.
+
+1. Når verifiseringen er fullført, kan tilkoblingen lagres ved å velge **Lagre**.
 
    > [!div class="mx-imgBorder"]
-   > ![Flis for egendefinert SFTP-import](media/SFTP_Custom_Import_tile.png "Flis for egendefinert SFTP-import")
+   > ![Experian-tilkoblingskonfigurasjonsside.](media/enrichment-SFTP-connection.png "Experian-tilkoblingskonfigurasjonsside")
 
-1. Velg **Kom i gang**, og angi legitimasjonen og adressen for SFTP-serveren. Eksempel: sftp://mysftpserver.com:22.
-
-1. Skriv inn navnet på filen som inneholder dataene, og banen til filen på SFTP-serveren hvis den ikke finnes i rotmappen.
-
-1. Bekreft alle inndata ved å velge **Koble til egendefinert import**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Undermeny for konfigurasjon av egendefinert SFTP-import](media/SFTP_Custom_Import_Configuration_flyout.png "Undermeny for konfigurasjon av egendefinert SFTP-import")
 
 ## <a name="defining-field-mappings"></a>Definere felttilordninger 
 
-Katalogen som inneholder filen som skal importeres på SFTP-serveren, må også inneholde en *model.json*-fil. Denne filen definerer skjemaet som skal brukes til å importere dataene. Skjemaet må bruke [Common Data Model](https://docs.microsoft.com/common-data-model/) for å angi felttilordningen. Et enkelt eksempel på en model.json-fil ser slik ut:
+Katalogen som inneholder filen som skal importeres på SFTP-serveren, må også inneholde en *model.json*-fil. Denne filen definerer skjemaet som skal brukes til å importere dataene. Skjemaet må bruke [Common Data Model](/common-data-model/) for å angi felttilordningen. Et enkelt eksempel på en model.json-fil ser slik ut:
 
 ```
 {
@@ -104,9 +124,6 @@ Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velg
 
 ## <a name="next-steps"></a>Neste trinn
 
-Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md) og [mål](measures.md), og [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
-
-
-
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

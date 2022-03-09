@@ -1,37 +1,44 @@
 ---
 title: Supplere kundeprofiler med data fra Microsoft
-description: Bruk proprietære data fra Microsoft til å supplere kundedataene med merke- og interesseaffiniteter.
-ms.date: 06/14/2021
+description: Bruk proprietære data fra Microsoft til å forbedre kundedataene med Andel av omtale.
+ms.date: 11/11/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 3b10fb23cca03ed918aa7fd46478b568d5ebbf1a
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+searchScope:
+- ci-enrichments
+- ci-enrichment-wizard
+- customerInsights
+ms.openlocfilehash: 77972475c9a448186cee3b1b62eeda7b1996edfc
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6555503"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355341"
 ---
-# <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Supplere kundeprofiler med merke- og interesseaffiniteter (forhåndsvisning)
+# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Supplere kundeprofiler med tilknytninger og Andel av omtale (forhåndsversjon)
 
-Bruk proprietære data fra Microsoft til å supplere kundedataene med merke- og interesseaffiniteter. Disse affinitetene er basert på data fra personer med en lignende demografi til kundene dine. Ved hjelp av denne informasjonen kan du bedre forstå og segmentere kunder basert på deres affinitet til bestemte merker og interesser.
+Bruk proprietære data fra Microsoft til å supplere kundedataene med merketiltrekning, interessetiltrekning og Andel av omtale. Disse tiltrekningene og Andel av omtale er basert på data fra personer med en lignende demografi som kundene dine. Denne informasjonen hjelper deg med å bedre forstå og segmentere kundene basert på deres tilknytninger eller Andel av omtale til bestemte merker og interesser.
 
 I målgruppeinnsikt går du til **Data** > **Supplering** for å [konfigurere og vise suppleringer](enrichment-hub.md).
 
-Hvis du vil konfigurere merkeaffinitet som skal berikes, går du til kategorien **Utforsk** og velger **Suppler dataene** på **Merker**-flisen.
+Hvis du vil konfigurere merketiltrekning og Andel av omtale-supplering, går du til kategorien **Oppdag** og velger **Suppler dataene** på **Merker**-flisen.
 
-Hvis du vil konfigurere interesseaffinitet som skal berikes, går du til kategorien **Utforsk** og velger **Suppler dataene** på **Interesser**-flisen.
+Hvis du vil konfigurere interessetiltrekning og Andel av omtale-supplering, går du til kategorien **Oppdag** og velger **Suppler dataene** på **Interesser**-flisen.
 
    > [!div class="mx-imgBorder"]
    > ![Fliser for merker og interesser.](media/BrandsInterest-tile-Hub.png "Fliser for merker og interesser")
 
-## <a name="how-we-determine-affinities"></a>Slik avgjør vi affiniteter
+## <a name="how-we-determine-affinities-and-sov"></a>Slik avgjør vi tilknytninger og Andel av omtale
 
-Vi bruker Microsofts søkedata på Internett til å finne affiniteter for merker og interesser i ulike demografiske segmenter (definert av alder, kjønn eller sted). Det elektroniske søkevolumet for et merke eller en interesse avgjør hvor mye affinitet et demografisk segment, sammenlignet med andre segmenter, har til merket eller interessen.
+Vi bruker Microsoft-søkedata på Internett til å finne tilknytninger og Andel av omtale for merker og interesser i ulike demografiske segmenter (definert av alder, kjønn eller sted). Det elektroniske søkevolumet for et merke eller en interesse danner grunnlaget for fastsettelse av tilknytningen eller Andel av omtale. Hver av dem har imidlertid ulike perspektiv for å forstå kundene.
+
+- Affinitet er en sammenligning på tvers av demografiske segmenter. Du kan bruke denne informasjonen til å identifisere demografiske segmenter som har høyest affinitet for et bestemt merke eller en bestemt interesse sammenlignet med andre segmenter.
+
+- Andel av omtale er en sammenligning på tvers av valgte merker eller interesser. Du kan bruke denne informasjonen til å identifisere hvilket merke eller hvilken interesse som har høyest Andel av omtale for et gitt demografisk segment, sammenlignet med andre merker eller interesser du valgte.
 
 ## <a name="affinity-level-and-score"></a>Affinitetsnivå og poengsum
 
@@ -48,6 +55,10 @@ For hver supplerte kundeprofil oppgir vi to relaterte verdier: affinitetsnivå o
 |Lav     | 1–34        |
 
 Avhengig av detaljnivået du ønsker for å måle affiniteten, kan du bruke enten affinitetsnivå eller poengsum. Affinitetspoengsummen gir deg mer nøyaktig kontroll.
+
+## <a name="share-of-voice-sov"></a>Andel av omtale
+
+Vi beregner Andel av omtale på en 100-punktsskala. Det totale Andel av omtale-resultatet for alle merker eller interesser for hver supplerte kundeprofil utgjør opptil 100. I motsetning til affiniteter står Andel av omtale i forhold til merkene og interessene du velger. Andel av omtale-verdiene for "Microsoft" kan for eksempel være forskjellige hvis de valgte merkene er ('Microsoft', 'GitHub') versus ('Microsoft', 'LinkedIn').
 
 ## <a name="supported-countriesregions"></a>Støttede land/områder
 
@@ -82,7 +93,7 @@ Se gjennom standardinnstillingene for supplering, og oppdater dem etter behov.
 
 ### <a name="select-entity-to-enrich"></a>Velg enhet som skal suppleres
 
-Velg **Supplert enhet**, og velg kundedatasettet du vil supplere med firmadata fra Microsoft. Du kan velge kundeenheten for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
+Velg **Supplert enhet**, og velg datasettet du vil bruke supplere med data fra Microsoft. Du kan velge kundeenheten for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
 
 ### <a name="map-your-fields"></a>Tilordne feltene
 
@@ -116,8 +127,7 @@ Kjør suppleringen etter å ha konfigurert merker, interesser og felttilordninge
 
 Avhengig av størrelsen på kundedataene kan det ta flere minutter å fullføre en supplering.
 
-> [!TIP]
-> Det finnes [seks typer statuser](system.md#status-types) for oppgaver/prosesser. De fleste prosesser er i tillegg [avhengig av andre nedsstrømsprosesser](system.md#refresh-policies). Du kan velge statusen for en prosess for å vise detaljer om fremdriften for hele jobben. Når du har valgt **Se detaljer** for en av jobbens oppgaver, finner du ytterligere informasjon: behandlingstid, siste behandlingsdato og alle feil og advarsler knyttet til oppgaven.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 
@@ -125,17 +135,17 @@ Når du har kjørt suppleringsprosessen, går du til **Mine suppleringer** for �
 
 :::image type="content" source="media/my-enrichments.png" alt-text="Forhåndsvisning av resultater etter kjøring av suppleringsprosessen.":::
 
-Se gjennom de supplerte dataene ved å velge **Vis supplerte data** i diagrammet. Supplerte data for merker går til **BrandAffinityFromMicrosoft**-enheten. Data for interesser er i **InterestAffinityFromMicrosoft**-enheten. Du finner også disse enhetene oppført i gruppen **Supplering** i **Data** > **Enheter**.
+Du finner et diagram med antall supplerte kundeprofiler over tid, og forhåndsvisninger av de supplerte enhetene. Se gjennom de supplerte dataene ved å velge **Se mer** i diagrammene **Affinitetsnivå** eller **Andel av omtale**. Supplerte data for varemerker går til **BrandAffinityFromMicrosoft**- og **BrandShareOfVoiceFromMicrosoft**-enhetene. Data for interesser er i enhetene **InterestAffinityFromMicrosoft** og **InterestShareOfVoiceFromMicrosoft**. Du finner også disse enhetene oppført i gruppen **Supplering** i **Data** > **Enheter**.
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>Vise supplerte data på kundekortet
 
-Merke- og interesseaffiniteter kan også vises på individuelle kundekort. Gå til **Kunder**, og velg en kundeprofil. På kundekortet finner du diagrammer for merker eller interesser som personer i kundens demografiske profil har affinitet for.
+Andel av omtale for merke og interesse kan også vises på individuelle kundekort. Gå til **Kunder**, og velg en kundeprofil. På kundekortet finner du diagrammer for Andel av omtale-merket eller -interessen basert på personer i kundens demografiske profil.
 
 :::image type="content" source="media/enrichment-customer-card.png" alt-text="Kundekort med supplerte data.":::
 
 ## <a name="next-steps"></a>Neste trinn
 
-Bygg på toppen av de supplerte kundedataene. Opprett [Segmenter](segments.md) og [Mål](measures.md), og [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

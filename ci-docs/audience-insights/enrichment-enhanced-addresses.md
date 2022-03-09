@@ -1,20 +1,25 @@
 ---
-title: Supplering for adresseforbedring
+title: Supplering av utvidede adresser (inneholder video)
 description: Suppler og normaliser adresseinformasjonen for kundeprofiler med Microsofts modeller.
-ms.date: 04/21/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 07271d491460764f2c738e760e41c3492f2b6de9
-ms.sourcegitcommit: 27f9dd837304ef9fc00f055a6e900fbf6fce1429
+searchScope:
+- ci-data-sources-enrichment
+- ci-data-sources-enrichment-details
+- ci-enrichments
+- ci-enrichment-wizard
+- customerInsights
+ms.openlocfilehash: 067757019078d3a46b224ba259d2d097dfbbe381
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "5965590"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353648"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Supplering av kundeprofiler med forbedrede adresser
 
@@ -22,11 +27,13 @@ Adresser i dataene kan være ustrukturerte, ufullstendige eller feil. Bruk Micro
 
 ## <a name="how-we-enhance-addresses"></a>Slik forbedrer vi adressene
 
-Modellen vår går gjennom en totrinnsprosess for å forbedre en adresse. Først analyseres adressen for å identifisere komponentene og plassere dem i et strukturert format. Deretter bruker vi kunstig intelligens til å korrigere, fullføre og standardisere verdiene i adressen.
+Modellen vår går gjennom en totrinnsprosess for å forbedre en adresse. Først analyseres adressen for å identifisere komponentene og plassere dem i et strukturert format. Deretter bruker vi AI til å korrigere, fullføre og standardisere verdiene i adressen.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWNewo]
 
 ### <a name="example"></a>Eksempel
 
-Adresseinformasjon kan være i et format som ikke er standard, og inneholde stavefeil. Modellen kan løse disse problemene og opprette ensartede adresser i enhetlige kundeprofiler.
+Adresseinformasjon kan være i et format som ikke er standard, og inneholder stavefeil. Modellen kan løse disse problemene og opprette ensartede adresser i enhetlige kundeprofiler.
 
 ```Input
 4567 w main stret californa missouri 54321 us
@@ -50,7 +57,7 @@ Forbedrede adresser fungerer bare med verdiene som allerede finnes i de innlagte
 2. kontrollere om noen av verdiene, for eksempel postnumre eller gatenavn, er gyldige
 3. endre verdier den ikke gjenkjenner
 
-Modellen bruker maskinlæringsbaserte teknikker for å forbedre adressene. Selv om vi bruker en høy terskel for trygghet når modellen endrer en inndataverdi, som med alle ML-baserte modeller, er ikke nøyaktighet på 100 % garantert.
+Modellen bruker maskinlæringsbaserte teknikker for å forbedre adressene. Selv om vi bruker en terskel for høy konfidens for når modellen endrer en inndataverdi, på samme måte som med alle maskinlæringsbaserte modeller, er ikke 100 prosent nøyaktighet garantert.
 
 ## <a name="supported-countries-or-regions"></a>Støttede land eller områder
 
@@ -58,6 +65,10 @@ Vi støtter for øyeblikket supplering av adresser i disse landene eller område
 
 - Australia
 - Canada
+- Frankrike
+- Tyskland
+- Italia
+- Japan
 - Storbritannia
 - USA
 
@@ -76,7 +87,7 @@ Adresser må inneholde en land-/områdeverdi. Vi behandler ikke adresser for lan
 1. Velg hvordan adresser formateres i datasettet. Velg **Adresse for enkeltattributt** hvis adressene i dataene bruker ett enkelt felt. Velg **Adresse for flere attributter** hvis adressene i dataene bruker mer enn ett datafelt.
 
    > [!NOTE]
-   > Land/område er obligatorisk i adressen for både enkeltattributter og flere attributter. Adresser som ikke inneholder gyldige eller støttede land-/områdeverdier, blir ikke supplert
+   > Land/område er obligatorisk både i adresser med enkeltattributter og flere attributter. Adresser som ikke inneholder gyldige eller støttede land-/områdeverdier, blir ikke supplert.
 
 1.  Tilordne adressefeltene fra enheten for enhetlig kunde.
 
@@ -94,10 +105,20 @@ Hvis du vil starte den omfattende prosessen, velger du **Kjør** fra kommandolin
 
 Når suppleringsprosessen fullføres, kan du se gjennom de nylig klargjorte kundeprofildataene under **Mine suppleringer**. I tillegg finner du tidspunktet for den siste oppdateringen og antall supplerte profiler.
 
-Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velge **Vis supplerte data**.
+Du kan se et eksempel på de supplerte dataene på **forhåndsvisningsflisen for supplerte kunder**. Velg **Vis mer**, og velg fanen **Data** for å få tilgang til en detaljert visning av hver supplerte profil.
+
+### <a name="overview-card"></a>Oversiktskort
+
+Oversiktskortet viser detaljer om dekningen til suppleringen. 
+
+* **Adresser som er behandlet og endret**: Antall kundeprofiler med adresser som er supplert.
+
+* **Adresser som er behandlet og uendret**: Antall kundeprofiler med adresser som er gjenkjent, men ikke endret. Det skjer vanligvis når inndataene er gyldige og ikke kan forbedres av suppleringen.
+
+* **Adresser som ikke er behandlet og uendret**: Antall kundeprofiler med adresser som ikke er gjenkjent. Dette skjer vanligvis for inndata som er ugyldige eller ikke støttes av suppleringen.
 
 ## <a name="next-steps"></a>Neste trinn
 
-Bygg på toppen av de supplerte kundedataene. Opprett [segmenter](segments.md), [mål](measures.md) og til og med [eksporter dataene](export-destinations.md) for å levere tilpassede opplevelser til kundene.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
