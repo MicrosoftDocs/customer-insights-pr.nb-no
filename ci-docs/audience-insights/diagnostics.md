@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 2e0801c2b6af591e48a7df485a8523903c07617c
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: d84ae8301bdf384c2484cdb1e7dd8eb75d406769
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354420"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376428"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Logge videresending i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversjon)
 
@@ -37,7 +37,7 @@ Customer Insights sender følgende hendelseslogger:
 Hvis du vil konfigurere diagnose i Customer Insights, må følgende forhåndskrav oppfylles:
 
 - Du må ha et aktivt [Azure-abonnement](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-- Du har [administrator](permissions.md#administrator)-tillatelser i Customer Insights.
+- Du har [administrator](permissions.md#admin)-tillatelser i Customer Insights.
 - Du har rollen **Bidragsyter** og **Brukertilgangsadministrator** på målressursen i Azure. Ressursen kan være en Azure Storage-konto, en Azure-hendelseshub eller et Azure Log Analytics-arbeidsområde. Hvis du vil ha mer informasjon, kan du se [Legge til eller fjerne Azure-rolletilordninger ved hjelp av Azure-portalen](/azure/role-based-access-control/role-assignments-portal).
 - [Målkrav](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) for Azure Storage, Azure-hendelseshub eller Azure Log Analytics oppfylt.
 - Du har minst **leser**-rollen på ressursgruppen som ressursen tilhører.
@@ -132,7 +132,7 @@ API-hendelser og arbeidsflythendelser har en felles struktur og detaljer der de 
 | `resultSignature` | String    | Valgfritt          | Resultstatus for hendelsen. Hvis operasjonen tilsvarer et REST-API-kall, er det HTTP-statuskoden.        | `200`             |
 | `durationMs`      | Lang      | Valgfritt          | Varighet for operasjonen i millisekunder.     | `133`     |
 | `callerIpAddress` | String    | Valgfritt          | IP-adresse for oppringer hvis operasjonen samsvarer med et API-kall som kommer fra en allmenn tilgjengelig IP-adresse.                                                 | `144.318.99.233`         |
-| `identity`        | String    | Valgfritt          | JSON-objekt som beskriver identiteten til brukeren eller programmet som gjorde operasjonen.       | Se [Identitet](#identity-schema)-delen.     |  |
+| `identity`        | String    | Valgfritt          | JSON-objekt som beskriver identiteten til brukeren eller programmet som gjorde operasjonen.       | Se [Identitet](#identity-schema)-delen.     |  
 | `properties`      | String    | Valgfritt          | JSON-objekt med flere egenskaper for den bestemte kategorien av hendelser.      | Se [Egenskaper](#api-properties-schema)-delen.    |
 | `level`           | String    | Kreves          | Alvorsgradsnivå for hendelsen.    | `Informational`, `Warning`, `Error` eller `Critical`.           |
 | `uri`             | String    | Valgfritt          | URI for absolutt forespørsel.    |               |
@@ -230,7 +230,7 @@ Arbeidsflythendelser har følgende egenskaper.
 | ------------------------------- | -------- | ---- | ----------- |
 | `properties.eventType`                       | Ja      | Ja  | Alltid `WorkflowEvent`, merker logghendelsen som arbeidsflythendelse.                                                                                                                                                                                                |
 | `properties.workflowJobId`                   | Ja      | Ja  | Identifikator for arbeidsflytkjøringen. Alle arbeidsflyt- og oppgavehendelser i arbeidsflytkjøringen har samme `workflowJobId`.                                                                                                                                   |
-| `properties.operationType`                   | Ja      | Ja  | Identifikator for operasjonen, se [Operasjonstyper].(#operation-typer)                                                                                                                                                                                       |
+| `properties.operationType`                   | Ja      | Ja  | Identifikator for operasjonen, se [Operasjonstyper].(#operation-types)                                                                                                                                                                                       |
 | `properties.tasksCount`                      | Ja      | No   | Bare arbeidsflyt. Antall oppgaver arbeidsflyten utløser.                                                                                                                                                                                                       |
 | `properties.submittedBy`                     | Ja      | No   | Valgfritt. Bare arbeidsflythendelser. Azure Active Directory [objectId for brukeren](/azure/marketplace/find-tenant-object-id#find-user-object-id) som utløste arbeidsflythendelsen, se også `properties.workflowSubmissionKind`.                                   |
 | `properties.workflowType`                    | Ja      | No   | `full` eller `incremental` oppdater.                                                                                                                                                                                                                            |
@@ -239,7 +239,7 @@ Arbeidsflythendelser har følgende egenskaper.
 | `properties.startTimestamp`                  | Ja      | Ja  | UTC-timestamp `yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.endTimestamp`                    | Ja      | Ja  | UTC-timestamp `yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.submittedTimestamp`              | Ja      | Ja  | UTC-timestamp `yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
-| `properties.instanceId`                      | Ja      | Ja  | Customer Insights `instanceId`                                                                                                                                                                                                                              |  |
+| `properties.instanceId`                      | Ja      | Ja  | Customer Insights `instanceId`                                                                                                                                                                                                                              |  
 | `properties.identifier`                      | No       | Ja  | - For OperationType = `Export` er identifikatoren GUIDen for eksportkonfigurasjonen. <br> - For OperationType = `Enrichment` er det GUID-en for suppleringen <br> - For OperationType `Measures` og `Segmentation` er identifikatoren enhetsnavnet. |
 | `properties.friendlyName`                    | No       | Ja  | Brukervennlig navn på eksporten eller enheten som behandles.                                                                                                                                                                                           |
 | `properties.error`                           | No       | Ja  | Valgfritt. Feilmelding med flere detaljer.                                                                                                                                                                                                                  |

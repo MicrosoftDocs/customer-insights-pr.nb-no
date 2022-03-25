@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: 49729a13d26885c30039f9fa426eaee92c172424
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: ab4ab0dba1bd91b1893cd4b16b8d51381d5b6ef8
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355165"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376934"
 ---
 # <a name="match-entities"></a>Samsvare enheter
 
@@ -180,7 +180,19 @@ En utdataenhet for deduplisering inneholder følgende informasjon:
   - Deduplication_WinnerId: Dette feltet inneholder vinner-ID-en fra de identifiserte gruppene eller klyngene. Hvis Deduplication_WinnerId er den samme som primærnøkkelverdien for en oppføring, betyr det at oppføringen er vinneroppføringen.
 - Felter brukes til å definere dedupliseringsreglene.
 - Feltene Regel og Poengsum for å angi hvilke av dedupliseringsreglene som ble brukt, og poengsummen som ble returnert av den samsvarende algoritmen.
-   
+ 
+## <a name="include-enriched-entities-preview"></a>Inkludere supplerte enheter (forhåndsvisning)
+
+Hvis du supplerte enheter på datakildenivå, velger du dem før du kjører samsvarsprosessen. De supplerte enhetene kan forbedre foreningsresultatene. Hvis du vil ha mer informasjon, kan du se [Supplering for datakilder](data-sources-enrichment.md). 
+
+Den supplerte enheten inneholder de opprinnelige datakildefeltene og de supplerte feltene. Hvis du velger å arbeide med den pålagte enheten, påvirkes ikke den eksisterende konfigurasjonen. Det kan imidlertid hende du må oppdatere samsvarsreglene slik at de bruker de pålagte feltene i stedet.
+
+1. Gå til **Data** > **Samle** > **Samsvar**, og velg **Bruk supplerte enheter** øverst på siden.
+
+1. Velg én eller flere supplerte enheter på siden **Bruk supplerte enheter**.
+
+1. Velg **Ferdig**. Samme hvor kildeenheten brukes (for eksempel samsvarsrekkefølge eller regler), endres den automatisk til den supplerte enheten.
+  
 ## <a name="run-the-match-process"></a>Kjør samsvarsprosessen
 
 Med konfigurerte samsvarsregler, inkludert samsvar på tvers av enheter og dedupliseringsregler, kan du kjøre samsvarsprosessen. 

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: ae2a3b7c05e9ed860da31853c47af2aec8634e7a
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 18cc32a169e79794d2d3203d462620ab41efaafe
+ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229044"
+ms.lasthandoff: 03/17/2022
+ms.locfileid: "8455964"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Microsoft Power Apps-kobling (forhåndsvisning)
 
@@ -38,6 +38,8 @@ Etter at du har lagt til Customer Insights som en datatilkobling, kan du velge f
 ### <a name="retrievable-entities"></a>Enheter som kan hentes
 
 Du kan bare hente enhetene **Kunde**, **UnifiedActivity**, **Segmenter** og **ContactProfile** via Power Apps-koblingen. ContactProfile er bare tilgjengelig i målgruppeinnsiktforekomsten for forretningsforbindelser. Andre enheter vises fordi den underliggende koblingen støtter dem gjennom utløsere i Power Automate.
+
+Du kan ringe maksimalt 100 samtaler per 60 sekunder. Du kan kalle api-endepunkt flere ganger ved å bruke $skip-parameteren. [Lær mer om $skip-parameteren](/connectors/customerinsights/#get-items-from-an-entity).
 
 ### <a name="delegation"></a>Delegering
 

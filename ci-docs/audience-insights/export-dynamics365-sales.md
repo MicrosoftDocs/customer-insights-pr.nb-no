@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-export
 - customerInsights
-ms.openlocfilehash: cf680c21c55c71d99728be79fe68111dc89a79ec
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 4c1b5eaa3568b5c73013024d2da7e65276142f72
+ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355029"
+ms.lasthandoff: 03/17/2022
+ms.locfileid: "8455874"
 ---
 # <a name="use-segments-in-dynamics-365-sales-preview"></a>Bruke segmenter i Dynamics 365 Sales (forhåndsversjon)
 
@@ -31,7 +31,7 @@ Bruk kundedata til å opprette markedsføringslister, oppfølgingsarbeidsflyter 
 
 ## <a name="prerequisite-for-connection"></a>Forutsetninger for en tilkobling
 
-1. Kontaktoppføringer må finnes i Dynamics 365 Sales før du kan eksportere et segment fra Customer Insights til Sales. Les mer om hvordan du inntar kontakter i [Dynamics 365 Sales ved hjelp av Microsoft Dataverse](connect-power-query.md).
+1. Kontaktoppføringer må finnes i Dynamics 365 Sales før du kan eksportere et segment fra Customer Insights til Sales. Les mer om hvordan du tar inn kontakter fra [Dynamics 365 Sales ved hjelp av Microsoft Dataverse](connect-dataverse-managed-lake.md).
 
    > [!NOTE]
    > Hvis du eksporterer segmenter fra målgruppeinnsikt til Sales, opprettes ikke nye kontaktoppføringer i Sales-forekomstene. Kontaktoppføringene fra Sales må legges inn i målgruppeinnsikt og brukes som en datakilde. De må også inkluderes i den samlede kundeenhet for å tilordne kunde-ID-er til kontakt-ID-er før segmenter kan eksporteres.

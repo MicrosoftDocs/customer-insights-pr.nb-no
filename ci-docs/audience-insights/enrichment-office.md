@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 938a9de83fd8f5ff0c9ae815d626cdfa35228aba
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 47239bd7f0c89742cf9c673bb2ebe4c41d853233
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228486"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376842"
 ---
 # <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Supplere kundeprofiler med engasjementsdata (forhåndsversjon)
 
@@ -28,7 +28,7 @@ Følgende forutsetninger må være oppfylt for at du skal konfigurere supplering
 - Du må ha en aktiv Office 365-skylisens.
 - Du har [enhetlige kundeprofiler](customer-profiles.md) basert [på forretningsforbindelser](work-with-business-accounts.md).
 - Customer Insights-miljøet må ha en [Microsoft Dataverse vedlagt organisasjon](create-environment.md#step-3-connect-to-microsoft-dataverse).
-- Du har [administrator](permissions.md#administrator)-tillatelser.
+- Du har [administrator](permissions.md#admin)-tillatelser.
 - Du har, eller kan få, samtykke fra Office 365 leierdministratoren til å bruke Office 365 data til å gi **innsikt for organisasjonen** i Dynamics 365-programmer.
 
 ## <a name="configure-the-enrichment"></a>Konfigurere suppleringen

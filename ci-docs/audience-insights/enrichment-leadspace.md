@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: f89ef6842c21cf6b78154586f818beffbcdcffb9
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 0db0c984f6bf9f7ded0704b6fa0caf39c7dace3a
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8230646"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376796"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Supplering av firmaprofiler med Leadspace (forhåndsversjon)
 
@@ -25,7 +25,7 @@ Følgende forutsetninger må være oppfylt for at du skal kunne konfigurere Lead
 
 - Du har en aktiv Leadspace-lisens.
 - Du har [enhetlige kundeprofiler](customer-profiles.md) basert på forretningsforbindelser.
-- En Leadspace-tilkobling er allerede konfigurert av en administrator, eller du har [administrator](permissions.md#administrator)-tillatelser og den "permanente nøkkelen" (kalt **Leadspace-token**). Kontakt [Leadspace](https://www.leadspace.com/leadspace-microsoft-dynamics-365/) direkte hvis du vil ha mer informasjon om produktet.
+- En Leadspace-tilkobling er allerede konfigurert av en administrator, eller du har [administrator](permissions.md#admin)-tillatelser og den "permanente nøkkelen" (kalt **Leadspace-token**). Kontakt [Leadspace](https://www.leadspace.com/leadspace-microsoft-dynamics-365/) direkte hvis du vil ha mer informasjon om produktet.
 
 ## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
 

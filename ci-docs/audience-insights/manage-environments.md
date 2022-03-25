@@ -1,7 +1,7 @@
 ---
 title: Opprette og behandle miljøer
 description: Lær hvordan du registrerer deg for tjenesten og hvordan du administrerer miljøer.
-ms.date: 12/06/2021
+ms.date: 02/09/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 ms.reviewer: mhart
@@ -11,16 +11,14 @@ manager: shellyha
 searchScope:
 - ci-system-about
 - customerInsights
-ms.openlocfilehash: d9e0ee726dbbfcf330022c4d95747551d3114e7e
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 4f4e5a8415f6c2128b0480edf67f317124eeeba9
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354291"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376888"
 ---
 # <a name="manage-environments"></a>Behandle miljøer
-
-
 
 ## <a name="switch-environments"></a>Bytt miljøer
 
@@ -98,9 +96,29 @@ Etter at du har oppdatert datakildene, går du til **Data** > **Samle**. Her fin
 
 Når datasamlingen er fullført, kan du gå til **Mål** og **Segmenter** for å oppdatere dem også.
 
+## <a name="change-the-owner-of-an-environment"></a>Endre eieren av et miljø
+
+Selv om flere brukere kan ha administratortillatelser i Customer Insights, er bare én bruker eieren av et miljø. Som standard er det administratoren som oppretter et miljø til å begynne med. Som administrator for et miljø kan du tilordne eierskap til en annen bruker med administratortillatelser.
+
+1. Velg **Miljø**-velgeren i overskriften i appen.
+
+1. Velg **Rediger**-ikonet.
+
+1. Gå til trinnet **Grunnleggende informasjon** i boksen **Rediger miljø**.
+
+1. Velg den nye eieren av miljøet i feltet **Endre eier av miljø**-feltet.  
+
+1. Velg **Se gjennom og fullfør**, og **Oppdater** for å ta i bruk endringene. 
+
+## <a name="claim-ownership-of-an-environment"></a>Kreve eierskap for et miljø
+
+Hvis eieren av et miljø forlater organisasjonen eller brukerkontoen deres slettes, har ikke miljøet noen eier. En bruker med administratortillatelser kan kreve eierskap og bli ny eier. De kan fortsette å eie miljøet eller [endre eierskapet til en annen administrator](#change-the-owner-of-an-environment). 
+
+Hvis du vil kreve eierskap , velger du **Ta eierskap**-knappen som vises øverst på hver side i Customer Insights når den opprinnelige eieren sluttet i organisasjonen.
+
 ## <a name="reset-an-existing-environment"></a>Tilbakestille et eksisterende miljø
 
-Som en administrator kan du tilbakestille et miljø til en tom tilstand hvis du vil slette alle konfigurasjoner og fjerne data som er hentet inn.
+Som eier av et miljø kan du tilbakestille et miljø til en tom tilstand hvis du vil slette alle konfigurasjoner og fjerne de innlagte dataene.
 
 1.  Velg **Miljø**-velgeren i overskriften i appen. 
 
@@ -112,7 +130,7 @@ Som en administrator kan du tilbakestille et miljø til en tom tilstand hvis du 
 
 ## <a name="delete-an-existing-environment"></a>Slette et eksisterende miljø
 
-Som en administrator kan du slette et miljø du administrerer.
+Som eier av et miljø kan du slette et miljø du administrerer.
 
 1.  Velg **Miljø**-velgeren i overskriften i appen.
 

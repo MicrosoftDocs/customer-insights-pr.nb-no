@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 5b22c1464b3f089551f485f98d6d93840ff77136
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 418575f724090628da8bd01e2569a4cb9e646337
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355903"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376520"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Hente ditt eget Azure Key Vault (forhåndsvisning)
 
@@ -31,7 +31,7 @@ Hvis du vil konfigurere key vault i målgruppeinnsikt, må følgende forhåndskr
 
 - Du må ha et aktivt Azure-abonnement.
 
-- Du har en [Administrator](permissions.md#administrator)-brukerrolle i målgruppeinnsikt. Lær mer om [brukertillatelser i målgruppeinnsikt](permissions.md#assign-roles-and-permissions).
+- Du har en [Administrator](permissions.md#admin)-brukerrolle i målgruppeinnsikt. Lær mer om [brukertillatelser i målgruppeinnsikt](permissions.md#assign-roles-and-permissions).
 
 - Du har rollene [Bidragsyter](/azure/role-based-access-control/built-in-roles#contributor) og [Brukertilgangsadministrator](/azure/role-based-access-control/built-in-roles#user-access-administrator) i key vault eller ressursgruppen som key vault tilhører. Hvis du vil ha mer informasjon, kan du gå til [Legge til eller fjerne Azure-rolletilordninger ved hjelp av Azure-portalen](/azure/role-based-access-control/role-assignments-portal). Hvis du ikke har rollen Brukertilgangsadministrator i key vault, må du konfigurere de rollebaserte tilgangskontrolltillatelsene for Azure-tjenestekontohaveren for Dynamics 365 Customer Insights separat. Følg fremgangsmåten for å [bruke en Azure-tjenestekontohaver](connect-service-principal.md) for key vault som skal kobles.
 

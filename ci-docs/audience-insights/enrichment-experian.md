@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: ad1023135516ca9c49818d19aa84df68d16b2e3c
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: efa26fa82a950063e074a4ab930ed95383c55334
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229976"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376704"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Supplere kundeprofiler med demografi fra Experian (forhåndsvisning)
 
@@ -25,7 +25,7 @@ Følgende forutsetninger må være oppfylt for at du skal kunne konfigurere Expe
 
 - Du må ha et aktivt abonnement på Experian. Hvis du vil ha et abonnement, [kontakter du Experian](https://www.experian.com/marketing-services/contact) direkte. [Finn ut mer om Experian-datasupplering](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
 
-- En Experian-tilkobling er allerede konfigurert av en administrator, *eller* du har [administrator](permissions.md#administrator)-tillatelser. Du må også ha bruker-ID, parts-ID og modellnummer for den SSH-aktiverte ST-kontoen (Secure Transport) som Experian har opprettet for deg.
+- En Experian-tilkobling er allerede konfigurert av en administrator, *eller* du har [administrator](permissions.md#admin)-tillatelser. Du må også ha bruker-ID, parts-ID og modellnummer for den SSH-aktiverte ST-kontoen (Secure Transport) som Experian har opprettet for deg.
 
 ## <a name="supported-countriesregions"></a>Støttede land/områder
 

@@ -1,7 +1,7 @@
 ---
 title: Supplere enhetlige kundeprofiler
 description: Bruk funksjoner for å supplere kundedataene.
-ms.date: 02/07/2022
+ms.date: 02/18/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: e8cac35ccf7012524dc22cb4a499dc605dd66346
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
+ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355395"
+ms.lasthandoff: 03/02/2022
+ms.locfileid: "8372731"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
 
@@ -42,6 +42,7 @@ I kategorien **Oppdag** finner du alle støttede suppleringsalternativer.
 - [Egendefinerte data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
 - [Azure Maps](enrichment-azure-maps.md) levert av Microsoft
 - [Stedsdata](enrichment-here.md) levert av HERE Technologies 
+- [Identitet](enrichment-liveramp.md) angitt av LiveRamp AbiliTec
 
 # <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
 
@@ -80,6 +81,10 @@ Tredjeparts suppleringer konfigureres ved hjelp av [tilkoblinger](connections.md
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flere suppleringer av samme type
 
 Enheten som skal suppleres, angis under suppleringskonfigurasjonen, noe som gjør at du bare kan supplere et delsett av profilene. Du kan for eksempel bare supplere data for et bestemt segment. Du kan konfigurere flere suppleringer av samme type og bruke samme tilkobling på nytt. Noen suppleringer vil ha begrensninger på antall suppleringer av samme type som kan opprettes. Du kan se grensene og gjeldende bruk på **Supplering**-siden.
+
+## <a name="enrich-data-sources-before-unification"></a>Supplere datakilder før foreningen
+
+Du kan supplere kundedataene før dataforeningen, slik at kvaliteten på et datassamsvar økes. Hvis du vil ha mer informasjon, kan du se [datakildesupplering](data-sources-enrichment.md).
 
 ## <a name="see-the-progress-of-the-enrichment-process"></a>Se fremdriften for suppleringsprosessen
 

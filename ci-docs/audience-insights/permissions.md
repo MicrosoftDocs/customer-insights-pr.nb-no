@@ -1,7 +1,7 @@
 ---
 title: Administrasjon av brukertillatelser
 description: Lær om tillatelser og brukerroller.
-ms.date: 03/25/2021
+ms.date: 02/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -12,12 +12,12 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: a3d21d55d86950953611967bb66712312eb42b4b
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 85e1f4f93ac0e99ce6634dfc8fceab0c9a14885e
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355949"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376750"
 ---
 # <a name="user-permissions"></a>Brukertillatelser
 
@@ -48,7 +48,7 @@ Det finnes tre typer roller:
 - Administrer konfigurasjon og suppler kundeprofiler fra **Supplering**-siden (bare for førsteparts suppleringer).
 - Administrer og opprett eksporter basert på tilkoblinger delt med bidragsytere. [Lær mer om hvordan administratorer tillater at bidragsytere bruker en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-## <a name="administrator"></a>Administrator
+## <a name="admin"></a>Admin
 
 - Alle tillatelser som er tilgjengelige for bidragsyteren.
 - Endre innstillinger på siden **System**, inkludert arbeidsspråket, og oppdater planer for systemprosessene.
@@ -60,6 +60,12 @@ Det finnes tre typer roller:
 - Installere og bruk **Tillegg for kundekort**.
 - Legg til og bruk **Power Apps-koblingen**.
 - Aktiver bruk av [API-er for Customer Insights](apis.md).
+- [Tilordne miljøeierskap](manage-environments.md#change-the-owner-of-an-environment) til en annen administrator.
+
+## <a name="admin-owner"></a>Administrator (eier)
+
+- Alle tillatelser som er tilgjengelige for administratoren.
+- [Tilbakestill og slett](manage-environments.md#reset-an-existing-environment) miljøet.
 
 ## <a name="assign-roles-and-permissions"></a>Tilordne roller og tillatelser
 
