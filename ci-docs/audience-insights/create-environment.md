@@ -1,23 +1,23 @@
 ---
 title: Opprette miljøer i Customer Insights
 description: Fremgangsmåte for å opprette miljøer med et lisensiert abonnement for Dynamics 365 Customer Insights.
-ms.date: 02/24/2022
+ms.date: 03/28/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
-author: MichelleDevaney
-ms.author: midevane
+author: adkuppa
+ms.author: adkuppa
 manager: shellyha
 ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: c37afd5649f8cf40d5379f3d39d0cbd96cde3bd3
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: a538237322615f69f0a5cb43d394275bf79af00b
+ms.sourcegitcommit: ae02ac950810242e2505d7d371b80210dc8a0777
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354107"
+ms.lasthandoff: 03/29/2022
+ms.locfileid: "8491925"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Opprette et miljø i målgruppeinnsikt
 
@@ -83,14 +83,16 @@ Oppgi ditt eget Microsoft Dataverse-miljø for å dele data (profiler og innsikt
 Når du kobler til Dataverse-miljøet, kan du også [samle inn data fra lokale datakilder ved å bruke Power Platform-dataflyter og -gatewayer](data-sources.md#add-data-from-on-premises-data-sources). Du kan også bruke [standardmodellene for prediksjon](predictions-overview.md?tabs=b2c#out-of-box-models) ved å koble til et Dataverse-miljø.
 
 > [!IMPORTANT]
-> Customer Insights og Dataverse må være i samme region for å aktivere datadeling.
+> 1. Customer Insights og Dataverse må være i samme region for å aktivere datadeling.
+> 1. Du må ha en global administrator-rolle i Dataverse-miljøet. Kontroller om dette [Dataverse-miljøet er tilknyttet](/power-platform/admin/control-user-access#associate-a-security-group-with-a-dataverse-environment) bestemte sikkerhetsgrupper, og kontroller at du er lagt til i disse sikkerhetsgruppene.
+> 1. Ingen eksisterende Customer Insights-miljø er allerede tilknyttet Dataverse-miljøet. Lær hvordan du [fjerner en eksisterende tilkobling til et Dataverse-miljø ](manage-environments.md#remove-an-existing-connection-to-a-dataverse-environment).
 
 :::image type="content" source="media/dataverse-provisioning.png" alt-text="datadeling med Microsoft Dataverse automatisk aktivert for netto nye forekomster.":::
 
-> [!NOTE]
-> Customer Insights støtter ikke følgende datadelingsscenarioer:
-> - Hvis du lagrer alle dataene til din egen Azure Data Lake Storage, vil du ikke kunne aktivere datadeling med en Dataverse-administrert datasjø.
-> - Hvis du aktiverer datadeling med Dataverse, kan du ikke [opprette beregnede eller manglende verdier i en enhet](predictions.md).
+Hvis du vil ha mer informasjon om hvordan du aktiverer datadeling med Microsoft Dataverse fra din egen Azure Data Lake Storage, kan du se [Koble til Microsoft Dataverse](manage-environments.md#connect-to-microsoft-dataverse).
+
+Customer Insights støtter ikke følgende datadelingsscenarioer:
+- Hvis du aktiverer datadeling med Dataverse, kan du ikke [opprette beregnede eller manglende verdier i en enhet](predictions.md).
 
 ### <a name="step-4-finalize-the-settings"></a>Trinn 4: Fullfør innstillingen
 

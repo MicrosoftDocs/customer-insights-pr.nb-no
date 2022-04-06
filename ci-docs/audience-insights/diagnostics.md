@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: d84ae8301bdf384c2484cdb1e7dd8eb75d406769
-ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.openlocfilehash: 18fc072d129be6b4fc5470b1057f592dc2638216
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/03/2022
-ms.locfileid: "8376428"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523681"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Logge videresending i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversjon)
 
@@ -230,7 +230,7 @@ Arbeidsflythendelser har følgende egenskaper.
 | ------------------------------- | -------- | ---- | ----------- |
 | `properties.eventType`                       | Ja      | Ja  | Alltid `WorkflowEvent`, merker logghendelsen som arbeidsflythendelse.                                                                                                                                                                                                |
 | `properties.workflowJobId`                   | Ja      | Ja  | Identifikator for arbeidsflytkjøringen. Alle arbeidsflyt- og oppgavehendelser i arbeidsflytkjøringen har samme `workflowJobId`.                                                                                                                                   |
-| `properties.operationType`                   | Ja      | Ja  | Identifikator for operasjonen, se [Operasjonstyper].(#operation-types)                                                                                                                                                                                       |
+| `properties.operationType`                   | Ja      | Ja  | Identifikator for operasjonen, se [Operasjonstyper](#operation-types).                                                                                                                                                                               |
 | `properties.tasksCount`                      | Ja      | No   | Bare arbeidsflyt. Antall oppgaver arbeidsflyten utløser.                                                                                                                                                                                                       |
 | `properties.submittedBy`                     | Ja      | No   | Valgfritt. Bare arbeidsflythendelser. Azure Active Directory [objectId for brukeren](/azure/marketplace/find-tenant-object-id#find-user-object-id) som utløste arbeidsflythendelsen, se også `properties.workflowSubmissionKind`.                                   |
 | `properties.workflowType`                    | Ja      | No   | `full` eller `incremental` oppdater.                                                                                                                                                                                                                            |

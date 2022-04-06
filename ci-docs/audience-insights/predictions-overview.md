@@ -1,19 +1,19 @@
 ---
 title: Oversikt over støttede prediksjonsscenarioer
 description: Prediksjonsscenarioer og -alternativer som dekkes av Dynamics 365 Customer Insights.
-ms.date: 12/21/2021
+ms.date: 03/24/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: c692785c7d81ab660ba2e07411e986c67c1a5d0a
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 11b0efeecf8bea893272e67d29b1c6622771110c
+ms.sourcegitcommit: a5e4503cf9ce0cea562bab9389748d8ca1451f9d
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228256"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "8487547"
 ---
 # <a name="predictions-overview"></a>Oversikt over prediksjoner
 
@@ -36,6 +36,11 @@ Den enkleste måten å begynne å forutsi data på er med forhåndsdefinerte mod
 - [Transaksjonsfrafall](predict-transactional-churn.md): Forutsi om en kunde ikke lenger vil kjøpe produktene eller tjenestene dine innen et bestemt tidsramme.
 
 ---
+
+> [!TIP]
+> Vi anbefaler at du oppdaterer standardmodeller jevnlig med oppdaterte data for å sikre at de informerer virksomhetens brukssak nøyaktig. Data oppdateres ad hoc når nye eller oppdaterte datakilder brukes i systemet. Modellene vil imidlertid bare endre poengsummen i dette tilfellet og fortsette å bruke de eksisterende opplæringsdataene.
+> 
+> Du kan konfigurere en **Oppdateringsplan** ved å angi tidsplanen for omplanlegging av modellen i konfigurasjonsopplevelsen. Modellen beholder og endrer poengsummen for denne tidsplanen, noe som du kan endre når som helst.
 
 
 ## <a name="azure-machine-learning-integration"></a>Integrering med Azure Machine Learning

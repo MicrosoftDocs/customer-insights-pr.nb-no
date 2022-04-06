@@ -1,5 +1,5 @@
 ---
-title: Datainntak i sanntid og begrensninger
+title: Datainntak i sanntid (forhåndsversjon)
 description: Generell informasjon om sanntidsfunksjoner i målgruppeinnsikt.
 ms.date: 10/27/2020
 ms.reviewer: mhart
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 2fe5279eee1b3b30f5bc21464c85fe5f86d342a0
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 138704445d52df3336af6af60420f0bd0ee0c639
+ms.sourcegitcommit: a8e99cf8b23ccc00d76c1dee22afd808a160a5c8
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355487"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "8464110"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Datainntak i sanntid (forhåndsversjon)
 

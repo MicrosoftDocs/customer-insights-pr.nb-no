@@ -14,18 +14,20 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 3a17716508a14020c56640c7d68f300a9d721af4
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 074d84eff65d52b083fff6c161282d4fafa1af85
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354893"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523741"
 ---
 # <a name="customer-profiles"></a>Kundeprofiler
 
 **Kunder**-siden viser en kombinert visning av dine enhetlige kundeprofiler. Kundeprofilene er tilgjengelige når du har [opprettet den enhetlige Kunde-enheten](data-unification.md). På siden kan du søke etter kunder og definere indeksen for dette søket.
 
-Kunder kan være enkeltpersoner eller organisasjoner. Hver kundeprofil representeres av en flis. Bruk pagineringskontrollene til å hente flere oppføringer. Kortet viser felt fra *Kunde*-enheten som definert i **Søk- og filterindeks**. Velg en flis for å vise data for den valgte kunden på en egen side kalt [Kundedetaljer](customer-profiles.md#customer-details-page).
+Kunder kan være enkeltpersoner eller organisasjoner. Hver kundeprofil representeres av en flis. Bruk pagineringskontrollene til å hente flere oppføringer. Kortet viser felt fra *Kunde*-enheten som definert i **Søk- og filterindeks**. Rekkefølgen på feltene innenfor hvert kort plukkes av systemet.
+
+Velg en flis for å vise data for den valgte kunden på en egen side kalt [Kundedetaljer](customer-profiles.md#customer-details-page).
 
 > [!div class="mx-imgBorder"] 
 > ![Kundesiden viser resultatfliser](media/customers-page-result-tiles-B2C.png "Kundesiden viser resultatfliser")

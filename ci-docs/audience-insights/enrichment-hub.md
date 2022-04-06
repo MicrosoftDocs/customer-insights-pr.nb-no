@@ -1,7 +1,7 @@
 ---
 title: Supplere enhetlige kundeprofiler
 description: Bruk funksjoner for å supplere kundedataene.
-ms.date: 02/18/2022
+ms.date: 03/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
-ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
+ms.openlocfilehash: 510a20306e793a5ba522a6ac0d9c7194f03472d2
+ms.sourcegitcommit: ae02ac950810242e2505d7d371b80210dc8a0777
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/02/2022
-ms.locfileid: "8372731"
+ms.lasthandoff: 03/29/2022
+ms.locfileid: "8491971"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
 
@@ -97,5 +97,19 @@ Slik viser du statusen for en supplering
 1. Utvid **Suppleringer**-delen i **Fremdrift**-detaljruten. 
 1. Velg **Se detaljer** under suppleringen du vil vise fremdriften for. 
 1. Velg **Vis detaljer** i **Oppgavedetaljer**-ruten for å vise prosessene som er involvert i oppdatering av suppleringen og statusen deres. 
+
+## <a name="enrichment-results"></a>Resultater av supplering
+
+Etter en fullført suppleringskjøring, kan du se gjennom suppleringsresultatene.
+
+1. Gå til **Data** > **Supplering**. 
+1. Velg suppleringen du vil ha informasjon om.
+
+Alle suppleringer viser grunnleggende informasjon, for eksempel antall supplerte profiler, en forhåndsvisning av den genererte suppleringsenheten og antall supplerte profiler over tid. Hvis tilgjengelig gir **Antall kunder supplert av feltet** en neddrilling i dekningen av hvert supplerte felt.
+
+:::image type="content" source="media/enrichments-results.png" alt-text="Suppleringsresultater-siden.":::
+
+Noen suppleringer viser også informasjon som er spesifikk for suppleringstypen. Se dokumentasjonen for den relevante suppleringen hvis du vil ha mer informasjon.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

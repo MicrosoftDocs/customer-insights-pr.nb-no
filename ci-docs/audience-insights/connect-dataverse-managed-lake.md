@@ -1,7 +1,7 @@
 ---
 title: Koble til tabeller i Microsoft Dataverse
 description: Importer data fra et Microsoft Dataverse-administrert datasjø.
-ms.date: 12/06/2021
+ms.date: 03/18/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -11,16 +11,14 @@ ms.reviewer: mhart
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: 8e11b60295fa5c187b1ac4877fb347e2d9bb41a1
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 81412ea8259e690eb839676d82ab31847854a97e
+ms.sourcegitcommit: a8e99cf8b23ccc00d76c1dee22afd808a160a5c8
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354154"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "8464107"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Koble til data i en Microsoft Dataverse-administrert datasjø
-
-
 
 Denne artikkelen inneholder informasjon om hvordan Dataverse-brukere raskt kan koble til analytiske enheter i en Microsoft Dataverse-administrert sjø. 
 
@@ -29,7 +27,8 @@ Denne artikkelen inneholder informasjon om hvordan Dataverse-brukere raskt kan k
 
 ## <a name="important-considerations"></a>Viktige hensyn
 
-Data som lagres i onlinetjenester, for eksempel Azure Data Lake Storage, kan lagres på et annet sted enn der data behandles eller lagres i Dynamics 365 Customer Insights. Ved å importere eller koble til data som er lagret i en onlinetjeneste, godtar du at dataene kan overføres til og lagres med Dynamics 365 Customer Insights. [Finn ut mer om Microsofts klareringssenter](https://www.microsoft.com/trust-center).
+1. Data som lagres i onlinetjenester, for eksempel Azure Data Lake Storage, kan lagres på et annet sted enn der data behandles eller lagres i Dynamics 365 Customer Insights. Ved å importere eller koble til data som er lagret i en onlinetjeneste, godtar du at dataene kan overføres til og lagres med Dynamics 365 Customer Insights. [Finn ut mer om Microsofts klareringssenter](https://www.microsoft.com/trust-center).
+2. Bare Dataverse-enheter med [endringssporing](/power-platform/admin/enable-change-tracking-control-data-synchronization) aktivert, er synlige. Disse enhetene kan eksporteres til Dataverse-administrerte data lake og brukes i Customer Insights. Standard Dataverse-tabeller har endringssporing aktivert som standard. Du må aktivere endringssporing for egendefinerte tabeller. For å kontrollere om en Dataverse-tabell er aktivert for endringssporing, går du til [Power Apps](https://make.powerapps.com) > **Data** > **Tabeller**. Finn tabellen du er interessert i, og velg den. Gå til **Innstillinger** > **Avanserte alternativer**, og se gjennom innstillingen **Spor endringer**.
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Koble til en Dataverse-administrert sjø
 
