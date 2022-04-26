@@ -44,6 +44,8 @@
           href: audience-insights/create-environment.md
         - name: Utforsk målgruppeinnsikt
           href: audience-insights/home.md
+        - name: Arbeid med merker og kolonner
+          href: audience-insights/work-with-tags-columns.md
         - name: Arbeide med forretningskontoer
           href: audience-insights/work-with-business-accounts.md
     - name: Datakilder

@@ -1,23 +1,23 @@
 ---
 title: Finn lignende kunder med kunstig intelligens (inneholder video)
 description: Finn lignende kundesegmenter med kunstig intelligens.
-ms.date: 06/25/2020
+ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-segment-builder
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: 5626b980ad8802aae9657052e3ca51a70c49baf9
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 851ea2c3388de603c1beef4a58e359aa989c9c46
+ms.sourcegitcommit: e129a1fa8b020b6bfb6efc3c53fa9d89e1614ad1
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355257"
+ms.lasthandoff: 04/12/2022
+ms.locfileid: "8561582"
 ---
 # <a name="similar-customers-preview"></a>Lignende kunder (forhåndsversjon)
 
@@ -36,6 +36,8 @@ Denne funksjonen gjør det mulig for deg å finne lignende kunder i kundebasen v
 
 1. Se gjennom det foreslåtte navnet på det nye segmentet, og endre det hvis det er nødvendig.
 
+1. Du kan eventuelt legge til [merker](work-with-tags-columns.md#manage-tags) i det nye segmentet.
+
 1. Se gjennom feltene som definerer det nye segmentet. Disse feltene definerer grunnlaget for når systemet skal prøve å finne lignende kunder i kildesegmentet. Systemet velger anbefalte felt som standard.
   Felt som kan redusere modellytelsen betydelig, blir automatisk utelatt:
   
@@ -44,9 +46,9 @@ Denne funksjonen gjør det mulig for deg å finne lignende kunder i kundebasen v
 
 1. Velg om du vil inkludere **alle kunder** eller bare kunder i et **spesifikt eksisterende segment** i det nye segmentet.
 
-1. Utelat kunder i kildesegmentet ved å merke av for **Utelat alle i kildesegment**.
-
 1. Som standard foreslår systemet en inkludering på bare 20 % av målgruppestørrelsen i utdataene. Rediger denne terskelen etter behov. Hvis du øker terskelen, reduseres presisjonen.
+
+1. Inkluder kunder i kildesegmentet ved å merke av for **Inkluder medlemmer fra kildesegmentet i tillegg til kunder med lignende attributter**.
 
 1. Velg **Kjør** nederst på siden for å starte en binær klassifiseringsoppgave (en metode for maskinlæring) som analyserer datasettet.
 
@@ -67,7 +69,7 @@ Du kan [arbeide med utdataene fra et lignende segment](segments.md) som du gjør
 
 Hvis du vil oppdatere et lignende segment, velger du det på **Segmenter**-siden og velger **Oppdater** på handlingslinjen.
 
-Når du redigerer et lignende segment, behandles dataene på nytt. Det tidligere opprettede segmentet blir oppdatert med oppdaterte data.    
+Når du redigerer et lignende segment, behandles dataene på nytt. Det tidligere opprettede segmentet blir oppdatert med oppdaterte data.
 Hvis du vil redigere et lignende segment, velger du det på **Segmenter**-siden og velger **Rediger** på handlingslinjen. Ta i bruk endringene, og velg **Kjør** for å starte behandlingen.
 
 ## <a name="delete-a-similar-segment"></a>Slette et lignende segment
@@ -84,6 +86,5 @@ Maskinlæringsmodellen for binær klassifisering tilordner en poengsum til kunde
 - Likhetsresultater mellom 0,85 og 1 er kunder som systemet har klassifisert som *svært like*
 
 Kunder med likhetsresultater under 0,4, tas ikke med i modellutdataene. Systemet betrakter ikke de som like nok kildesegmentet.
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

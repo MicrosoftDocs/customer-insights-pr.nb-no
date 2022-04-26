@@ -6,7 +6,7 @@ ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-customers-page
@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 340a7b7326f5b4a8cbde8683b8d41cb53dc557b0
-ms.sourcegitcommit: 0bd5f53e4e7e37359afd087ee16b779a6b3a9183
+ms.openlocfilehash: 68e71df3853470af47228c7365f25db3a71d15b0
+ms.sourcegitcommit: 9ef2cf99b847e7bd8f890f83d84b3a4045aaf8cc
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 03/30/2022
-ms.locfileid: "8508578"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "8529551"
 ---
 # <a name="segments-overview"></a>Oversikt over segmenter
 
@@ -51,20 +51,26 @@ Gå til **Segmenter**-siden for å vise alle lagrede segmenter og behandle dem.
 
 Hvert segment representeres av en rad som inneholder tilleggsinformasjon om segmentet.
 
-:::image type="content" source="media/segments-selected-segment.png" alt-text="Valgt segment med rullegardinliste med alternativer og tilgjengelige alternativer.":::
+:::image type="content" source="media/segments-selected-segment.png" alt-text="Valgt segment med rullegardinliste med alternativer og tilgjengelige alternativer." lightbox="media/segments-selected-segment.png":::
 
-Følgende handling er tilgjengelig når du velger et segment:
+Følgende handlinger er tilgjengelige når du velger et segment:
 
 - **Vis** segmentdetaljene, inkludert medlemsantall, som viser en forhåndsvisning av segmentmedlemmer.
+- **Last ned** listen over medlemmer som en .CSV-fil.
 - **Rediger** segmentet for å endre egenskapene.
 - **Opprett duplikat** av et segment. Du kan velge å redigere egenskapene med en gang, eller ganske enkelt lagre duplikatet.
 - **Oppdater** segmentet slik at det inneholder de nyeste dataene.
-- **Aktiver** eller **Deaktiver** segmentet. Segmenter har to mulige tilstander – aktive eller inaktive. Disse tilstandene er nyttige når du redigerer et segment. For inaktive segmenter finnes segmentdefinisjonen, men den inneholder ingen kunder ennå. Når du aktiverer et segment, endres statusen fra inaktiv til aktiv, og den begynner å se etter kunder som samsvarer med segmentdefinisjonen. Hvis en [planlagt oppdatering](system.md#schedule-tab) er konfigurert, har inaktive segmenter **Status** oppført som **Hoppet over**, og dette tyder på at en oppdatering ikke ble forsøkt. Når et inaktivt segment blir aktivert, oppdateres det og tas med i planlagte oppdateringer.
+- **Aktiver** eller **Deaktiver** segmentet. For inaktive segmenter finnes segmentdefinisjonen, men den inneholder ingen kunder ennå. Et aktivt segment ser etter kunder som samsvarer med segmentdefinisjonen. Hvis en [planlagt oppdatering](system.md#schedule-tab) er konfigurert, har inaktive segmenter **Status** oppført som **Hoppet over**, og dette tyder på at en oppdatering ikke ble forsøkt. Når et inaktivt segment blir aktivert, oppdateres det og tas med i planlagte oppdateringer.
   Du kan også bruke funksjonen **Planlegg senere** i rullegardinlisten **Aktiver/Deaktiver** for å angi en fremtidig dato og klokkeslett for acktivering og deaktivering av et bestemt segment.
+- **[Finn lignende kunder](find-similar-customer-segments.md)** fra segmentet.
 - **Gi nytt navn** til segmentet.
+- **Merke** for å [administrere merker](work-with-tags-columns.md#manage-tags) for segmentet.
 - **Last ned** listen over medlemmer som en .CSV-fil.
 - **Behandle eksporter** for å se eksporter som er knyttet til segment, og administrere dem. [Finn ut mer om eksporter.](export-destinations.md)
 - **Slett** segmentet.
+- **Kolonner** for å [tilpasse kolonnene](work-with-tags-columns.md#customize-columns) som vises.
+- **Filtrer** for å [filtrere på merker](work-with-tags-columns.md#filter-on-tags).
+- **Søkenavn** for søk etter segmentnavn.
 
 ## <a name="refresh-segments"></a>Oppdatere segmenter
 

@@ -1,19 +1,19 @@
 ---
 title: Eksporter Customer Insights-data til Azure Synapse Analytics
 description: Finn ut hvordan du konfigurerer tilkoblingen til Azure Synapse Analytics.
-ms.date: 01/05/2022
+ms.date: 04/11/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 289c8d545f057b3f70679b485cf4350545c0587b
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 8ace9fbee4fbd8822629a39d5902e176f8511cb5
+ms.sourcegitcommit: 9f6733b2f2c273748c1e7b77f871e9b4e5a8666e
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8231324"
+ms.lasthandoff: 04/11/2022
+ms.locfileid: "8560399"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Eksporter data til Azure Synapse Analytics (forhåndsversjon)
 
@@ -28,21 +28,21 @@ Følgende forhåndskrav må oppfylles for å konfigurere tilkoblingen fra Custom
 
 ## <a name="prerequisites-in-customer-insights"></a>Forhåndskrav i Customer Insights
 
-* Du har en **Administrator**-brukerrolle i målgruppeinnsikt. Finn ut mer om [angivelse av brukertillatelser i målgruppeinnsikt](permissions.md#assign-roles-and-permissions)
+* Azure Active Directory-brukerkontoen (AD) har en **administratorrolle** i Customer Insights. Finn ut mer om [angivelse av brukertillatelser i målgruppeinnsikt](permissions.md#assign-roles-and-permissions)
 
 I Azure: 
 
 - Et aktivt Azure-abonnement.
 
-- Hvis du bruker en ny Azure Data Lake Storage Gen2-konto, må *tjenestesjefen for målgruppeinnsikt* ha tillatelsene **Storage Blob-databidragsyter**. Finn ut mer om hvordan du [kobler til en Azure Data Lake Storage Gen2-konto med Azure-hovedkontohaver for målgruppeinnsikt](connect-service-principal.md). Data Lake Storage Gen2 **må ha** [hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace) aktivert.
+- Hvis du bruker en ny Azure Data Lake Storage Gen2-konto, må *tjenestekontohaveren for Customer Insights* ha sikkerhetstillatelsene **Storage Blob-databidragsyter**. Finn ut mer om hvordan du [kobler til en Azure Data Lake Storage Gen2-konto med Azure-hovedkontohaver for målgruppeinnsikt](connect-service-principal.md). Data Lake Storage Gen2 **må ha** [hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace) aktivert.
 
-- I ressursgruppen der Azure Synapse-arbeidsområdet er plassert, må *tjenestekontohaveren* og *brukeren for målgruppeinnsikt* tilordnes minst **lesetillatelser**. Hvis du vil ha mer informasjon, kan du se [Tilordne Azure-roller ved hjelp av Azure Portal](/azure/role-based-access-control/role-assignments-portal).
+- På ressursgruppen der Azure Synapse workspace er plassert, må *tjenestekontohaveren* og *Azure AD-brukeren med administratortillatelser i Customer Insights* minst være tildelt **Leser**-tillatelser. Hvis du vil ha mer informasjon, kan du se [Tilordne Azure-roller ved hjelp av Azure Portal](/azure/role-based-access-control/role-assignments-portal).
 
-- *Brukeren* må ha tillatelsene **Storage Blob-databidragsyter** på Azure Data Lake Storage Gen2-kontoen der dataene er plassert og koblet til Azure Synapse-arbeidsområdet. Finn ut mer om hvordan du [bruker Azure Portal til å tilordne en Azure-rolle for tilgang til blob- og kødata](/azure/storage/common/storage-auth-aad-rbac-portal) og [tillatelsene for Storage Blob-databidragsyter](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
+- *Azure AD-brukeren med administratortillatelser i Customer Insights* må ha tillatelsene **Storage Blob-databidragsyter** på Azure Data Lake Storage Gen2-kontoen der dataene er plassert og koblet til Azure Synapse workspace. Finn ut mer om hvordan du [bruker Azure Portal til å tilordne en Azure-rolle for tilgang til blob- og kødata](/azure/storage/common/storage-auth-aad-rbac-portal) og [tillatelsene for Storage Blob-databidragsyter](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
 - *[Azure Synapse-arbeidsområdeadministrert identitet](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* må ha tillatelsene **Storage Blob-databidragsyter** på Azure Data Lake Storage Gen2-kontoen der dataene er plassert og koblet til Azure Synapse-arbeidsområdet. Finn ut mer om hvordan du [bruker Azure Portal til å tilordne en Azure-rolle for tilgang til blob- og kødata](/azure/storage/common/storage-auth-aad-rbac-portal) og [tillatelsene for Storage Blob-databidragsyter](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
-- I Azure Synapse-arbeidsområdet må *tjenestekontohaveren for målgruppeinnsikt* ha rollen **Synapse-administrator** tilordnet. Hvis du vil ha mer informasjon, kan du se [Slik konfigurerer du tilgangskontroll for Synapse-arbeidsområdet](/azure/synapse-analytics/security/how-to-set-up-access-control).
+- I Azure Synapse workspace må *tjenestekontohaveren for Customer Insights* være tildelt rollen **Synapse-administrator**. Hvis du vil ha mer informasjon, kan du se [Slik konfigurerer du tilgangskontroll for Synapse-arbeidsområdet](/azure/synapse-analytics/security/how-to-set-up-access-control).
 
 ## <a name="set-up-the-connection-and-export-to-azure-synapse"></a>Konfigurer tilkoblingen og eksporter til Azure Synapse
 
