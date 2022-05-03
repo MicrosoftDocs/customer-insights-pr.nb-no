@@ -1,39 +1,41 @@
 ---
-title: Produktoversikt
+title: Dynamics 365 Customer Insights-produktoversikt
 author: m-hartmann
-description: Få en oversikt over Dynamics 365 Customer Insights og funksjonene.
+description: Få en oversikt over Dynamics 365 Customer Insights og hovedfunksjonene.
 ms.author: mhart
-ms.date: 07/30/2021
+ms.date: 04/12/2022
 ms.topic: overview
 ms.manager: shellyha
-ms.openlocfilehash: ff3d23d00a565bf9e5693e7cd5db644ddfe4887e
-ms.sourcegitcommit: 9f6733b2f2c273748c1e7b77f871e9b4e5a8666e
+ms.openlocfilehash: 4d5b4ec61614877c26468ffe8d07f2448b43bac6
+ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/11/2022
-ms.locfileid: "8560445"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "8641912"
 ---
 # <a name="product-overview-for-dynamics-365-customer-insights"></a>Produktoversikt for Dynamics 365 Customer Insights
 
-[Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/) er en del av Microsofts kundedataplattform (CDP) som bidrar til å levere tilpassede kundeerfaringer. Funksjonene i plattformen gir deg innsikt i hvem kundene er og hvordan de kommer i kontakt med plattformen. Samle kundedata på tvers av flere kilder for å få én enkelt visning av kunder.
+[Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/) er Microsofts kundedataplattform som bidrar til å levere tilpassede kundeopplevelser. Programmet gir et helhetlig syn på kunder med uovertruffen tid til innsikt. Få den mest omfattende visningen av kundene ved å forene kundedata med drifts- og IoT-data i sanntid. Suppler kundeprofiler med første- og tredjepartsdatakilder. 
 
-[Målgruppeinnsikt](audience-insights/overview.md) bidrar til å transformere virksomheten til en kundesentrisk organisasjon. Fagpersoner for markedsføring, salg og service har innsikten de trenger til å tilpasse opplevelsene. Koble data fra transaksjons-, atferds- og observasjonskilder for å opprette en 360-graders kundevisning. Se resultatene raskere ved hjelp av en CDP som er utformet for å gi innsikt som kan ageres på. 
-
-[Engasjementsinnsikt](engagement-insights/overview.md) var en forhåndsfunksjon i Customer Insights som fokuserte på å samle nett- og mobilhendelser for ekstra innsikt. Forhåndsversjonen ble avsluttet 15. februar 2022.
+Customer Insights hjelper deg med å transformere virksomheten til en kundefokusert organisasjon, ved å gi fagpersoner innen markedsføring, salg og service muligheten til å skreddersy samhandlinger på 1:1 i skala. Nøkkelferdige integreringer med Microsoft og tredjepartsprogrammer kan brukes til å aktivere sanntidsinnsikt for å få meningsfylte handlinger.
  
-## <a name="choose-a-capability"></a>Velg en funksjon
+Koble data fra transaksjonsmessige, atferdsmessige og demografiske datakilder for å opprette helhetlige kundevisninger. Avled standardinnsikt med innebygde modeller for kunstig intelligens, eller bygg, test og distribuer tilpassede KI-/ML-modeller raskt ved hjelp av avanserte analyseløsninger i ubegrenset skala.
 
-:::image type="content" source="engagement-insights/media/choose_focus.png" alt-text="Med Kundeinnsikt-siden kan du navigere til målgruppeinnsikt eller engasjementsinnsikt.":::
-
-Slik velger du en funksjon
-
-1. Velg **Alle apper** i navigasjonsruten for å åpne **Velg fokus**-vinduet.
-1. Velg **Gå nå** for å navigere til valgmulighetene du velger.
+Ha full kontroll over kundedataene for å sikre best mulig datastyring og overholdelse av en selvbetjent kundedataplattform på foretaksnivå som er bygd på Microsoft Azure. Støtt EUs personvernforordning (GDPR) og andre lovkrav og bransjestandarder gjennom innebygde verktøy for personvern, sikkerhet og styring og samtykkebehandling.
 
 ## <a name="pricing-and-licensing"></a>Priser og lisenser
+Customer Insights er lisensiert per leier og omfatter funksjoner for både bedrift til forbruker (B2C) og bedrift til bedrift (B2B). Du kan kjøpe mer kapasitet med tilleggslisenser for å øke antallet profiler og kontoer.
 
-Customer Insights er lisensiert per leier og inneholder flere funksjoner. Du kan kjøpe mer kapasitet og flere lisenser for å øke standardkvoten. 
 - [Oversikt over priser](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
 - Kapasitet og rettigheter: [Lisensveiledning for Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544)
+- [Nettsted for Microsoft Volume Licensing](https://www.microsoft.com/licensing/how-to-buy/how-to-buy)
+
+## <a name="try-customer-insights-and-get-started"></a>Prøv Customer Insights og kom i gang
+
+Start en [prøveversjon av Customer Insights](https://signup.microsoft.com/create-account/signup?SKU=036c2481-aa8a-47cd-ab43-324f0c157c2d&ali=1&RU=https:%2F%2Fhome.ci.ai.dynamics.com%2Fstart%2Ftrial&products=036c2481-aa8a-47cd-ab43-324f0c157c2d) i dag for å teste programmet med dine egne kundedata. [Finn ut hvordan du raskt kan få tilgang til og utforske mange av programmets nøkkelfunksjoner](trial-signup.md). 
+
+Bla gjennom [aktuelle læringsressurser](https://dynamics.microsoft.com/ai/customer-insights/resources/), inkludert analytikerrapporter, nettseminarer på forespørsel og kundehistorier.
+
+Finn ut hvordan du kan skape en dypere forståelse av kundene ved hjelp av [Kom i gang-veiledning](get-started.md).
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

@@ -8,12 +8,12 @@ ms.topic: get-started
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 9badd8370358b9f5745ba6347e8db42e89c5f3d3
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 4a269a223efa08f71db09eef2ec9a8f8a077f7a7
+ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229507"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "8641820"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Vanlige spørsmål om prøveversjonen av Dynamics 365 Customer Insights
 
@@ -62,13 +62,13 @@ Du kan utvide prøveversjonen i appen direkte. Du kan utvide prøveversjonen én
 
 Generelt anbefaler vi at du starter på nytt med dine egne data når du oppgraderer til den betalte versjonen av Customer Insights. 
 
-Hvis du bare bruker målgruppeinnsikt, kan du eventuelt kopiere dataene fra et prøvemiljø hvis du kjøper Customer Insights. Du må være administrator for prøveversjonen av Customer Insights og den globale administratoren av Microsoft 365-leieren din eller Dynamics 365-administrator i organisasjonen for å overføre innstillingene fra et prøvemiljø til et betalt miljø. 
+Hvis du bare bruker Customer Insights, kan du eventuelt kopiere dataene fra et prøvemiljø hvis du kjøper Customer Insights. Du må være administrator for prøveversjonen av Customer Insights og den globale administratoren av Microsoft 365-leieren din eller Dynamics 365-administrator i organisasjonen for å overføre innstillingene fra et prøvemiljø til et betalt miljø. 
 
-Etter at du har logget på den betalte forekomsten av Customer Insights for første gang, blir du bedt om å opprette et nytt miljø. I denne prosessen kan du velge å kopiere konfigurasjonen fra et eksisterende miljø og overføre de fleste innstillingene. Hvis du har tillatelsene nevnt ovenfor, vises prøveversjonsmiljøet i denne listen. Hvis du vil ha mer informasjon, kan du se [Kopier miljøkonfigurasjonen](audience-insights/manage-environments.md#copy-the-environment-configuration).
+Etter at du har logget på den betalte forekomsten av Customer Insights for første gang, blir du bedt om å opprette et nytt miljø. I denne prosessen kan du velge å kopiere konfigurasjonen fra et eksisterende miljø og overføre de fleste innstillingene. Hvis du har tillatelsene nevnt ovenfor, vises prøveversjonsmiljøet i denne listen. Hvis du vil ha mer informasjon, kan du se [Kopier miljøkonfigurasjonen](manage-environments.md#copy-the-environment-configuration).
 
 ### <a name="what-are-the-trial-limits-and-quotas"></a>Hva er begrensningene og kvotene for prøveversjonen?
 
-- Du kan ikke bruke din egen Azure Data Lake Storage-konto til å lagre utdata i en prøveversjon av målgruppeinnsikt. Du kan imidlertid innta data fra en Data Lake-lagringskonto.
+- Du kan ikke bruke din egen Azure Data Lake Storage-konto til å lagre utdata i en prøveversjon av Customer Insights. Du kan imidlertid innta data fra en Data Lake-lagringskonto.
 - Du kan lagre opptil 3 GB data i Dataverse-miljøet som klargjøres automatisk når du starter en prøveversjon av Customer Insights.
 
 ## <a name="customer-insights-specific-questions"></a>Spørsmål om Customer Insights spesifikt

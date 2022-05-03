@@ -3,17 +3,17 @@ title: Registrer deg for en gratis prøveversjon - Dynamics 365 Customer Insight
 description: Finn ut hvordan du raskt registrerer deg for og starter en gratis Customer Insights-prøveversjon. Utforsk appen, og finn ytterligere opplæringsressurser.
 author: m-hartmann
 ms.author: mhart
-ms.date: 09/30/2021
+ms.date: 04/12/2022
 ms.topic: get-started
 ms.custom: template-trial-setup
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 1b50da077cb0584ca9f277b276d0e9ebb46b2c5d
-ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+ms.openlocfilehash: 2f27dd4fd9df679696d72f2eccde262de3e4afc4
+ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8350235"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "8641728"
 ---
 # <a name="sign-up-for-a-free-dynamics-365-customer-insights-trial"></a>Registrere deg for en gratis prøveversjon av Dynamics 365 Customer Insights
 
@@ -21,7 +21,7 @@ Customer Insights tilbyr en gratis 30-dagers prøveversjon. Etter en rask regist
 
 **Slik registrerer du deg for prøveversjonen**:
 
-1. Gå til [oversiktssiden for prøveversjonen](https://dynamics.microsoft.com/get-started/?appname=customerinsights), og velg **Registrer deg nå**.
+1. Gå til [oversiktssiden for prøveversjonen](https://dynamics.microsoft.com/ai/customer-insights/), og velg **Prøv Customer Insights nå**.
 1. Følg veiledningen på skjermen for å angi [e-postadressen som er knyttet til Microsoft-kontoen din](https://support.microsoft.com/windows/what-is-a-microsoft-account-4a7c48e9-ff5a-e9c6-5a5c-1a57d66c3bfa), og kontaktinformasjonen din.
 1. Foreta valg, og velg å fokusere til du kommer til startsiden for den valgte funksjonen.
 
@@ -31,12 +31,12 @@ Det tar litt tid å laste inn prøveversjonen, og deretter kan du begynne å bru
 
 Prøveversjonsmiljøet har de samme funksjonene som den betalte versjonen. Koblingene nedenfor veileder deg gjennom noen viktige funksjoner.
 
-- [Hurtigstart for målgruppeinnsikt.](audience-insights/get-started.md)
-- [Legg til flere brukere og tilordne tillatelser.](audience-insights/permissions.md)
-- [Innta datakildene](audience-insights/data-sources.md) og kjør dem gjennom [dataforeningsprosessen](audience-insights/data-unification.md) for å få [enhetlige kundeprofiler](audience-insights/customer-profiles.md).
-- [Suppler de enhetlige kundeprofilene](audience-insights/enrichment-hub.md) eller [kjør prediktive modeller](audience-insights/predictions-overview.md).
-- Opprett [segmenter](audience-insights/segments.md) for å gruppere kunder og [mål](audience-insights/measures.md) for å gjennomgå KPIer.
-- Konfigurer [tilkoblinger](audience-insights/connections.md) og [eksporter](audience-insights/export-destinations.md) for å behandle delsett av dataene i andre programmer.
+- [Kom i gang med Customer Insights.](get-started.md)
+- [Legg til flere brukere og tilordne tillatelser.](permissions.md)
+- [Innta datakildene](data-sources.md) og kjør dem gjennom [dataforeningsprosessen](data-unification.md) for å få [enhetlige kundeprofiler](customer-profiles.md).
+- [Suppler de enhetlige kundeprofilene](enrichment-hub.md) eller [kjør prediktive modeller](predictions-overview.md).
+- Opprett [segmenter](segments.md) for å gruppere kunder og [mål](measures.md) for å gjennomgå KPIer.
+- Konfigurer [tilkoblinger](connections.md) og [eksporter](export-destinations.md) for å behandle delsett av dataene i andre programmer.
 
 ## <a name="additional-resources"></a>Ytterligere ressurser
 
