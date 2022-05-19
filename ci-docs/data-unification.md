@@ -1,38 +1,46 @@
 ---
 title: Opprette en enhetlig visning av kundene
-description: Gå gjennom dataforeningsprosessen med dataene for å opprette ett hoveddatasett med kundeprofiler.
-ms.date: 10/18/2021
-ms.reviewer: mhart
+description: Gå gjennom dataforeningsprosessen med dataene for å opprette ett datasett med enhetlige kundeprofiler.
+ms.date: 05/10/2022
+ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: overview
-author: adkuppa
-ms.author: adkuppa
+author: v-wendysmith
+ms.author: mukeshpo
 manager: shellyha
 searchScope:
 - ci-map
 - customerInsights
-ms.openlocfilehash: eb5bbc538f93bc7097581db233d684870ade84a2
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: bb8da6f4b9f92f2b265ff9807e04638edae4f814
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646563"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755746"
 ---
 # <a name="data-unification-overview"></a>Oversikt over datasamling
 
-Når du har [konfigurert datakildene](data-sources.md), kan du samle dataene. Datasamling består av tre trinn: **Tilordne**, **Samsvare** og **Slå sammen**.
+[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
-Med datasamlingsprosessen kan du samle tidligere spredte datakilder til ett hoveddatasett som gir en ensartet visning av kundene. Samlingsfasene er obligatoriske og utføres i følgende rekkefølge:
+Når du har [konfigurert datakildene](data-sources.md), kan du samle dataene. Med datasamling kan du samle datakilder som en gang var spredt, til ett enkelt hoveddatasett som gir en enhetlig visning av dataene. For individuelle forbrukere (B-til-C) der dataene er sentrert rundt enkeltpersoner, gir samlingen en enhetlig visning av kundene. For forretningskontoer (B-til-B) der dataene er sentrert rundt kontoer, gir samlingen en enhetlig visning av kontoene.
 
-1. [Tilordne](map-entities.md)
-2. [Samsvar](match-entities.md)
-3. [Slå sammen](merge-entities.md)
+Data kan forenes for én enkelt enhet eller flere enheter. Samlingen utføres i følgende rekkefølge:
 
-Når du har fullført datasamlingen, kan du
+1. [Kildefelter](map-entities.md) (tidligere kalt Tildeling): I kildefelttrinnet velger du enheter og felter som skal inkluderes i samlingsprosessen. Tildel felter til en felles semantisk type som beskriver formålet med feltet.
 
-- [konfigurere relasjoner mellom enheter](relationships.md) hvis du vil opprette sofistikerte segmenter
-- [berike dataene](enrichment-hub.md) for å få et større utvalg av innsikt om kundene
-- [definere aktiviteter](activities.md) fra noen av attributtene som er hentet inn
+1. [Duplikatoppføringer](remove-duplicates.md) (tidligere del av Samsvar): I trinnet for duplikatoppføringer kan du eventuelt definere regler for å fjerne dupliserte kundeoppføringer fra hver enhet.
 
+1. [Samsvarende betingelser](match-entities.md) (tidligere kalt Samsvar): I trinnet for samsvarende betingelser definerer du regler som samsvarer med kundeoppføringer mellom enheter. Når en kunde blir funnet i to eller flere enheter, opprettes en enkelt konsolidert oppføring med alle kolonner og data fra hver enhet.
+
+1. [Enhetlige kundefelter](merge-entities.md) (tidligere kalt Slå sammen): I trinnet for enhetlige kundefelter bestemmer du hvilke kildefelter som skal inkluderes, utelates eller slås sammen til en enhetlig kundeprofil.  
+
+1. [Se gjennom](review-unification.md) og opprett den enhetlige profilen.
+
+Når du har fullført datasamlingen, kan du:
+
+- [Konfigurer relasjoner mellom enheter](relationships.md) hvis du vil opprette sofistikerte segmenter.
+- [Suppler dataene](enrichment-hub.md) for å få et større utvalg av innsikt om kundene.
+- [Definer aktiviteter](activities.md) fra noen av attributtene som er hentet inn.
+- [Bygg mål](measures.md) for å få bedre forståelse av kundeatferd og forretningsytelse.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

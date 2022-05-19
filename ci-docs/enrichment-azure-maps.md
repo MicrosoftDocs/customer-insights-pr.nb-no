@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 6a1c3791076a7dda4531664ca88632f7f1b914e3
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 6d43dc2ca82c034fbd396d92637e7aea8179df77
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646532"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755366"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Supplering av kundeprofiler med Azure Maps (forhåndsversjon)
 
@@ -51,7 +51,7 @@ Følgende forhåndskrav må være oppfylt for å konfigurere Azure Maps-datasupp
 
 1. Velg **Neste** for å fullføre felttilordningen.
 
-1. Vurder om du vil endre **Avanserte innstillinger**. Disse leveres for å gi maksimal fleksibilitet til å håndtere avanserte brukssaker, men standardverdiene vil i de fleste tilfeller være tilstrekkelige:
+1. Vurder om du vil endre **Avanserte innstillinger**. Disse innstillingene er angitt for å gi maksimal fleksibilitet til å håndtere avanserte brukssaker, men standardverdiene vil i de fleste tilfeller være tilstrekkelige:
    - **Adressetype**: Standard virkemåte er at suppleringen returnerer den beste adressen, selv om den er ufullstendig. Hvis du bare vil ha fullstendige adresser, for eksempel adresser som inkluderer husnummeret, fjerner du merket i alle avmerkingsboksene unntatt **punktadresser**. 
    - **Språk**: Adresser returneres som standard på språket for området som det er fastslått at adressen skal tilhøre. Hvis du vil bruke et standardisert adressespråk, velger du språket på rullegardinmenyen. Hvis du for eksempel velger **Engelsk**, returneres **Copenhagen, Denmark** i stedet for **København, Danmark**.
 
@@ -89,7 +89,7 @@ Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velg
 
 ## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
 
-Når du gjør det mulig for Dynamics 365 Customer Insights å overføre data til Azure Maps, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data som personlige data. Microsoft overfører slike data etter instruksjonen, men du er ansvarlig for å sørge for at Azure Maps oppfyller personvern- eller sikkerhetsforpliktelser du måtte ha. Hvis du vil ha mer informasjon, kan du gå til [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
+Når du gjør det mulig for Dynamics 365 Customer Insights å overføre data til Azure Maps, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data som personlige data. Microsoft overfører slike data etter instruksjonen, men du er ansvarlig for å sørge for at Azure Maps oppfyller eventuelle personvern- eller sikkerhetsforpliktelser du måtte ha. Hvis du vil ha mer informasjon, kan du gå til [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen når som helst for å slutte å bruke denne funksjonaliteten.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

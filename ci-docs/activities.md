@@ -17,16 +17,16 @@ searchScope:
 - ci-measures
 - ci-segment-suggestions
 - customerInsight
-ms.openlocfilehash: 29b5d3f5848d36abd8e941136a6330dbb7730016
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 6c0a1bc5d9a42806b458142804199c733ff530ec
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646802"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755510"
 ---
 # <a name="customer-activities"></a>Kundeaktiviteter
 
-Kombiner kundeaktiviteter fra [ulike datakilder](data-sources.md) i Dynamics 365 Customer Insights for å opprette en tidslinje som viser aktivitetene kronologisk. Inkluder tidslinjen i Dynamics 365-apper med løsningen for [kundekorttillegg](customer-card-add-in.md) eller i et Power BI-instrumentbord.
+Kombiner kundeaktiviteter fra [forskjellige datakilder](data-sources.md) i Dynamics 365 Customer Insights. Opprett en tidslinje som viser aktivitetene kronologisk. Inkluder tidslinjen i Dynamics 365-apper med [Kundekort-tilleggsprogrammet](customer-card-add-in.md).
 
 ## <a name="define-an-activity"></a>Definere en aktivitet
 
@@ -78,7 +78,7 @@ En enhet må ha minst ett attributt av typen **Dato** som inkluderes på en kund
 
 1. Velg **Neste** for å gå til neste trinn. Du kan velge **Fullfør og se gjennom** for å lagre aktiviteten nå med aktivitetstypen satt til **Annet**. 
 
-1. Velg aktivitetstypen i **Aktivitetstype**-trinnet, og velg eventuelt hvis du vil semantisk tilordne noen av aktivitetstypene for bruk i andre områder av Customer Insights. Aktivitetstypene *Tilbakemelding*, *Lojalitet*, *SalesOrder*, *SalesOrderLine* og *Abonnement* kan tilordnes semantisk etter at du har godtatt å tilordne feltene. Hvis en aktivitetstype ikke er relevant for den nye aktiviteten, kan du velge *Annet* eller *Opprett ny* for en egendefinert type.
+1. Velg aktivitetstypen i **Aktivitetstype**-trinnet, og velg eventuelt hvis du vil semantisk tilordne noen av aktivitetstypene for bruk i andre områder av Customer Insights. For øyeblikket støtter aktivitetstypene *Tilbakemelding*,*Lojalitet*, *SalesOrder*, *SalesOrderLine* og *Abonnement* semantikk etter at de har blitt enige om å tildele feltene. Hvis en aktivitetstype ikke er relevant for den nye aktiviteten, kan du velge *Annet* eller *Opprett ny* for en egendefinert type.
 
 1. Velg **Neste** for å gå til neste trinn. 
 
@@ -110,7 +110,7 @@ Når du har konfigurert kundeaktiviteter, velger du **Vis i tidslinje** i aktivi
 
 Hvis du vil åpne tidslinjen for en kunde, går du til **Kunder** og velger kundeprofilen du vil vise.
 
-Hvis en kunde har deltatt i en aktivitet du har konfigurert, finner du den i delen **Aktivitetstidslinje**.
+Hvis en kunde har deltatt i en konfigurert aktivitet, finner du den i delen **Aktivitetstidslinje**.
 
 :::image type="content" source="media/Activity_Timeline1.PNG" alt-text="Vise konfigurerte aktiviteter i kundeprofiler.":::
 

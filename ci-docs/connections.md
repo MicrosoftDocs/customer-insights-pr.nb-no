@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 10704e287960c1a9171031135ff8f78a45b6e965
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d85de28a12565e1a2e36278d0e8b74f6de286b20
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646856"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755321"
 ---
 # <a name="connections-preview-overview"></a>Oversikt over tilkoblinger (forhåndsversjon)
 
@@ -24,15 +24,15 @@ Tilkoblinger er nøkkelen til å aktivere datadeling til og fra Customer Insight
 
 Gå til **Administrator** > **Tilkoblinger** for å opprette og vise tilkoblinger.
 
-Kategorien **Tilkoblinger** viser alle aktive tilkoblinger. Listen viser en rad for hver tilkobling. 
+Kategorien **Tilkoblinger** viser alle aktive tilkoblinger. Listen viser en rad for hver tilkobling.
 
 Få en rask oversikt, beskrivelse og finn ut hva du kan gjøre med hvert utvidelsesalternativ i kategorien **Oppdag**.
 
-### <a name="exports"></a>Eksporter
+## <a name="exports"></a>Eksporter
 
 Bare administratorer kan konfigurere nye tilkoblinger, men de kan gi tilgang til bidragsytere for å bruke eksisterende tilkoblinger. Administratorer kontrollerer hvor data kan gå, bidragsytere definerer nyttelasten og frekvensen som passer til deres behov. Hvis du vil ha mer informasjon, se [Tillate bidragsytere å bruke en tilkobling for eksporter](#allow-contributors-to-use-a-connection-for-exports).
 
-### <a name="enrichments"></a>Suppleringer
+## <a name="enrichments"></a>Suppleringer
 
 Bare administratorer kan konfigurere nye tilkoblinger, men de opprettede tilkoblingene er alltid tilgjengelige for både administratorer og bidragsytere. Administratorer administrerer legitimasjon og gir samtykke til dataoverføringer. Tilkoblingene kan deretter brukes til suppleringer av både administratorer og bidragsytere.
 
@@ -46,9 +46,9 @@ Hvis du vil legge til tilkoblinger, må du ha [administratortillatelser](permiss
 
 1. Velg **Legg til tilkobling** for å opprette en ny tilkobling. Velg hvilken tilkoblingstype du vil opprette, i rullegardinmenyen.
 
-1. Angi de nødvendige detaljene i ruten **Konfigurer tilkobling**. 
+1. Angi de nødvendige detaljene i ruten **Konfigurer tilkobling**.
    1. **Visningsnavnet** og tilkoblingstypen beskriver en tilkobling. Vi anbefaler at du velger et navn som forklarer formålet med og målet for denne tilkoblingen.
-   1. De nøyaktige feltene avhenger av hvilken tjeneste du kobler til. Du kan lære om detaljer om en bestemt tilkoblingstype i artikkelen om måltjenesten.
+   1. De nøyaktige feltene avhenger av hvilken service du kobler til. Du kan lære om detaljer om en bestemt tilkoblingstype i artikkelen om måltjenesten.
    1. Hvis du [bruker ditt eget Key Vault](use-azure-key-vault.md) til å lagre hemmeligheter, aktiverer du **Bruk Key Vault** og velger hemmeligheten fra listen.
 
 1. Velg **Lagre** for å opprette tilkoblingen.
@@ -59,7 +59,7 @@ Du kan også velge **Konfigurer** på en flis i kategorien **Oppdag**.
 
 Når du definerer eller redigerer en eksporttilkobling, velger du hvilke brukere som har tillatelse til å bruke denne bestemte tilkoblingen til å definere [eksporter](export-destinations.md). Som standard er en tilkobling tilgjengelig for brukere med en administratorrolle. Du kan endre denne innstillingen under **Velg hvem som kan bruke denne tilkoblingen**, og la brukere med bidragsyterrolle bruke denne tilkoblingen.
 
-- Bidragsytere kan ikke vise eller redigere tilkoblingen. De vil bare se visningsnavn og dens type når du oppretter en eksport.
+- Bidragsytere kan ikke vise eller redigere tilkoblingen. De ser bare datatypen og visningsnavnet ved oppretting av en eksport.
 - Ved å dele en tilkobling tillater du at bidragsytere bruker en tilkobling. Bidragsytere vil se delte tilkoblinger når de konfigurerer eksporter. De kan administrere hver eksport som bruker denne spesifikke tilkoblingen.
 - Du kan endre denne innstillingen samtidig som du beholder eksportene som allerede er definert av bidragsytere.
 
@@ -77,7 +77,7 @@ Når du definerer eller redigerer en eksporttilkobling, velger du hvilke brukere
 
 ## <a name="remove-a-connection"></a>Fjerne en tilkobling
 
-Hvis tilkoblingen du fjerner, brukes av suppleringer eller eksport, må du først koble fra eller fjerne dem. Dialogboksen for fjerning vil lede deg til de relevante suppleringene eller eksportene. 
+Hvis tilkoblingen du fjerner, brukes av suppleringer eller eksporter, må du først koble fra eller fjerne dem. Dialogboksen for fjerning vil lede deg til de relevante suppleringene eller eksportene.
 
 Frakoblede suppleringer og eksporter blir inaktive. Du aktiverer dem på nytt ved å legge til en annen tilkobling til dem på siden [Suppleringer](enrichment-hub.md) eller [Eksporter](export-destinations.md).
 
@@ -91,7 +91,7 @@ Frakoblede suppleringer og eksporter blir inaktive. Du aktiverer dem på nytt ve
 
    1. Hvis det er suppleringer eller eksporterer som bruker denne tilkoblingen, velger du knappen for å se hva som bruker tilkoblingen.
       - **Eksporter:** Du kan velge å fjerne eller koble fra eksportene for å kunne fjerne tilkoblingen. Administratorer kan bruke **Koble fra**-handlingen for å koble fra en eksport. Denne handlingen er tilgjengelig for individuelle og flere valgte eksporter. Ved å koble fra beholder du eksportkonfigurasjonen, men den kjøres ikke før en annen tilkobling er lagt til i den.
-      - **Suppleringer:** Du kan velge å fjerne eller deaktivere suppleringene for å kunne fjerne tilkoblingen. 
+      - **Suppleringer:** Du kan velge å fjerne eller deaktivere suppleringene for å kunne fjerne tilkoblingen.
    1. Når tilkoblingen ikke har flere avhengigheter, går du tilbake til **Administrator** > **Tilkoblinger** og prøver å fjerne tilkoblingen på nytt.
 
 1. Velg **Fjern** for å bekrefte slettingen.

@@ -1,110 +1,83 @@
 ---
-title: Tilordne enheter og attributter for dataforening
-description: Velg enheter, attributter, primærnøkler og semantiske typer for å tilordne data til den enhetlige kundeprofilen.
-ms.date: 10/18/2020
+title: Velg kildefelter for datasamling
+description: Det første trinnet i samlingsprosessen er å velge enheter, attributter, primærnøkler og semantiske typer for å tildele data til den enhetlige kundeprofilen.
+recommendations: false
+ms.date: 04/22/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: adkuppa
-ms.author: adkuppa
-ms.reviewer: mhart
+author: v-wendysmith
+ms.author: mukeshpo
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: bebc600e91db471c3cd50eccb5e42be309ff09c9
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a962f1353b6e25b40c60b39a81ac936873f34d92
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646694"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741007"
 ---
-# <a name="map-entities-and-attributes"></a>Tilordne enheter og attributter
+# <a name="select-source-fields-for-data-unification"></a>Velg kildefelter for datasamling
 
-**Tilordning** er den første fasen i datasamlingsprosessen. Tilordning består av tre faser:
+[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
-- *Valg av enhet*: Identifiser de enhetene som kan kombineres, som fører til et datasett med mer fullstendig informasjon om kundene.
-- *Attributtvalg*: For hver enhet identifiserer du kolononnene du vil kombinere, og avstemmer i fasene for *samsvar* og *sammenslåing*. Disse kolonnene kalles *attributter*.
-- *Hovednøkkel og valg av semantisk type*: For hver enhet angir du et attributt du vil definere som primærnøkkel for enheten, og identifiser en semantisk type som best beskriver attributtet, for hvert attributt.
+Det første trinnet i samlingen er å velge enhetene og feltene i datasettene du vil samle. Velg enheter som inneholder kunderelaterte detaljer, for eksempel navn, adresse, telefonnummer og e-post. Du kan velge ett eller flere enheter.
 
-Hvis du vil ha mer informasjon om den generelle flyten for datasamling, se [Samle](data-unification.md).
+## <a name="select-entities-and-fields"></a>Velg enheter og felt
 
-## <a name="select-the-first-entities"></a>Velge de første enhetene
+1. Gå til **Data** > **Samle**.
 
-1. Gå til **Data** > **Samle** > **Tilordne**.
+   :::image type="content" source="media/m3_unify_land.png" alt-text="Skjermbilde av målsiden for samling for første kjøreopplevelse med Kom i gang uthevet.":::
 
-2. Start tilordningsfasen ved å velge **Velg enheter**.
+1. Velg **Komme i gang**.
 
-3. Velg enhetene og attributtene du vil bruke i *samsvars*- og *sammenslåings*-fasene. Du kan velge obligatoriske attributter enkeltvis fra en enhet eller inkludere alle attributter fra en enhet ved å merke av for **Inkluder alle felt** på enhetsnivå. Vi anbefaler at du velger minst to enheter for å dra nytte av datasamlingsprosessen.
+1. Velg **Velg enheter og felter** på **Kildefelter**-siden. Ruten **Velg enheter og felter** vises.
 
-   > [!div class="mx-imgBorder"]
-   > ![Legg til enhet-eksempel.](media/data-manager-configure-map-add-entities-example.png "Legg til enhet-eksempel")
+1. Velg minst én enhet.
 
-   I dette eksemplet skal vi legge til enhetene **eCommerceContacts** og **loyCustomers**. Ved å velge disse enhetene kan du avlede innsikt om hvilke av de elektroniske forretningskundene som er medlemmer av loyalitetsprogrammet.
-   
-   Du kan søke i nøkkelord på tvers av alle attributter og enheter for å velge de nødvendige attributtene du vil tilordne.
-   
-     > [!div class="mx-imgBorder"]
-   > ![Eksempler på søkefelt.](media/data-manager-configure-map-search-fields-example.png "Eksempler på søkefelt")
+1. For hver valgte enhet identifiserer du feltene du vil bruke for å samsvare kundeoppføringer og felter som skal inkluderes i den enhetlige profilen. Disse feltene kalles *attributter*. Du kan velge de obligatoriske attributtene individuelt fra en enhet, eller inkludere alle attributter fra en enhet ved å merke av i avmerkingsboksen på enhetsnivå. Du kan søke i nøkkelord på tvers av alle attributter og enheter for å velge de nødvendige attributtene du vil tilordne.
 
-4. Velg **Bruk** for å bekrefte valgene.
+   :::image type="content" source="media/m3_select_entities.png" alt-text="Skjermbilde av valgte enheter og attributter.":::
+
+   I dette eksemplet skal vi legge til enhetene **Kontakter** og **CustomerLoyalty**. Ved å velge disse enhetene kan du avlede innsikt om hvilke av de elektroniske forretningskundene som er medlemmer av loyalitetsprogrammet.
+
+1. Velg **Bruk** for å bekrefte valgene. De valgte enhetene og attributtene vises.
 
 ## <a name="select-primary-key-and-semantic-type-for-attributes"></a>Velg primærnøkkel og semantisk type for attributter
 
-Etter at du har valgt enhetene, viser **Tilordne**-siden de valgte enhetene for gjennomgang. Definer primærnøkkelen for en enhet, og identifiser den semantiske typen for et attributt i enheten.
+   :::image type="content" source="media/m3_select_primary.png" alt-text="Skjermbilde av valgte enheter med primærnøkkel ikke valgt." lightbox="media/m3_select_primary.png":::
 
-- **Primærnøkkel**: Velg ett attributt som primærnøkkel for hver av enhetene. For at et attributt skal være en gyldig primærnøkkel, bør den ikke inneholde duplikate verdier, manglende verdier eller nullverdier. Attributter for datatypen streng, heltall og GUID støttes som primærnøkler, og vises i et felt du kan velge fra.
+Utfør trinnene nedenfor for hver enhet.
 
-- **Semantisk type for attributt**: Kategorier av attributter, for eksempel e-postadresse eller navn. Hvis du vil bruke AI-modeller for smart prediksjon av semantikk, spare tid og forbedre nøyaktigheten, angir du **Intelligent tilordning** til **På**. Intelligent tilordning fremhever AI-basert semantikkanbefaling i **Type**-feltet. Hvis du setter den til **AV**, vil du se våre vanlige tilordningsanbefalinger. Du kan velge en hvilken som helst semantisk type fra den tilgjengelige listen over alternativer og overstyre det foreslåtte valget.
+1. Velg **primærnøkkelen**. Primærnøkkelen er et attributt som er unikt for enheten. For at et attributt skal være en gyldig primærnøkkel, bør den ikke inneholde duplikate verdier, manglende verdier eller nullverdier. Datatypeattributtene streng, heltall og GUID støttes som primærnøkler.
 
-> [!div class="mx-imgBorder"]
-> ![Attributtype og semantisk prediksjon.](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Attributtype og semantisk prediksjon")
+1. Hvis du vil bruke modeller for kunstig intelligens for smart prediksjon av semantikk, kan du spare tid og forbedre nøyaktigheten ved å sørge for at **Intelligent tildeling** er på. Intelligent tilordning fremhever AI-basert semantikkanbefaling i **Type**-feltet. Du kan overstyre det foreslåtte valget ved å velge en hvilken som helst semantisk type fra den tilgjengelige listen over alternativer.
 
-Det er også mulig å legge til en egendefinert semantisk type. Velg typefeltet for et attributt, og skriv inn det egendefinerte semantiske typenavnet. På denne måten kan du også endre attributtypene som ble identifisert av systemet.
+1. For hvert attributt velger du en semantisk **type** som best beskriver dette attributtet, for eksempel navn, poststed eller e-postadresse.
 
-Alle attributter som en semantisk type identifiseres for, grupperes automatisk i delen **Se gjennom tilordnede felt**. Se gjennom disse attributtene og de semantiske typene fordi de blir brukt til å kombinere enhetene i flettingstrinnet i datasamling.
+   > [!NOTE]
+   > Ett felt må tildeles til semantisk type *Person.FullName* for å fylle ut kundenavnet på kundekortet. Ellers vises kundekortene uten navn.
 
-Attributter som ikke tilordnes automatisk til en semantisk type, grupperes i delen **Definer dataene i feltene som ikke er tilordnet**. Velg feltet for semantisk type for attributter som ikke er tilordnet, eller skriv inn det egendefinerte navnet på attributtet.
+   1. Velg en annen type for å endre en attributtype identifisert av systemet. Hvis typen ikke finnes, oppretter du en egendefinert semantisk type ved å velge **Type**-feltet for attributtet og skrive inn det egendefinerte navnet på den semantiske typen.
 
-> [!div class="mx-imgBorder"]
-> ![Primærnøkkel og attributtype.](media/data-manager-configure-map-add-attributes.png "Primærnøkkel og attributtype")
+   1. Hvis du vil legge til et attributt som inneholder en nettadresse til offentlig tilgjengelige profilbilder eller logoer, velger du enheten og feltet som inneholder nettadressen. I **Type**-feltet angir du følgende:
+      - For en person: Person.ProfileImage
+      - For en organisasjon: Organization.LogoImage
 
-> [!NOTE]
-> Ett felt må være tilordnet den semantiske typen Person.FullName for å fylle ut kundenavnet i kundekortet. Ellers vises kundekortene uten navn. 
+   1. Angi Organization.Name i **Type**-feltet for et attributt for et navneattributt for konto.
 
-## <a name="add-and-remove-attributes-and-entities"></a>Legge til og fjerne attributter og enheter
+1. Se gjennom attributtene der en semantisk type identifiseres automatisk. Disse attributtene vises under **Se gjennom tildelte felter**. Bare attributter av samme type kan kombineres i trinnet **Enhetlige kundefelter**. Semantiske typer brukes til automatisk å foreslå innsikt. Kontroller at typene du velger, er konsekvente for alle de valgte enhetene.
 
-1. På **Samle** > **Tilordne** velger du **Rediger felt**.
+1. For attributter som ikke tildeles automatisk til en semantisk type, velger du et semantisk felt, angir det egendefinerte attributtypenavnet eller lar dem være ikke tildelt. Disse attributtene vises under **Definer dataene i de ikke tildelte feltene**.
 
-2. Legg til eller Fjern attributter og enheter i **Rediger felt**-ruten. Bruk søket eller rull for å finne og velge ønskede attributter og enheter. Du kan ikke fjerne et attributt eller en enhet hvis de allerede er samsvart.
+1. Når du har fullført trinnene for hver enhet, velger du **Lagre kildefelter**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Legg til eller fjern attributter.](media/configure-data-map-edit.png "Legge til eller fjerne attributter")
+1. Velg **Neste**.
 
-3. Velg **Bruk**.
-
-## <a name="add-images-to-profiles"></a>Legge til bilder i profiler
-
-Hvis en enhet inneholder URL-adresser til offentlig tilgjengelige profilbilder eller logoer, kan du legge dem til i den enhetlige kundeprofilen.
-
-Velg enheten, og finn feltet som inneholder URL-adressen til profilbildet. Skriv inn følgende verdi manuelt i **Type**-inndatafeltet: 
-- For en person: Person.ProfileImage
-- For en organisasjon: Organization.LogoImage
-
-Fortsett med samlingstrinnene, og kontroller at attributtet som inneholder bilde-URL-adressen, også legges til i [flettings](merge-entities.md)-trinnet.
-
-## <a name="set-attributes-for-organizations"></a>Angi attributter for organisasjoner
-
-For organisasjoner (forhåndsvisning) må attributtypen tilordnes "Organization.Name"
-> [!div class="mx-imgBorder"]
-> ![Primærnøkkel og attributtype B-til-B.](media/configure-data-map-edit-b2b.png "Primærnøkkel og attributtype B-til-B")
-
-## <a name="next-step"></a>Neste trinn
-
-Som en del av datasamlingsprosessen går du til **Samsvar**-siden. Gå [**Samsvar**](match-entities.md) for å lære om dette trinnet.
-
-> [!TIP]
-> Se følgende video: [Komme i gang: Opprette en enhetlig kundeprofil](https://youtu.be/oBfGEhucAxs).
-
+> [!div class="nextstepaction"]
+> [Neste trinn: Fjern duplikater](remove-duplicates.md)
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Startside i Customer Insights
 description: Kom i gang med å utforske appen på startsiden.
-ms.date: 04/12/2022
+ms.date: 05/11/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,38 +11,55 @@ manager: shellyha
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: ebc5eb6b2dfaa9b013cfa0c9ce60c8a0a57a065d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: cdeb48df2172785ed8adad0f21943974ec39d14d
+ms.sourcegitcommit: 94de4dacdb8a7f4bc0f5914e7398622e70b81ff3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647197"
+ms.lasthandoff: 05/12/2022
+ms.locfileid: "8743425"
 ---
 # <a name="explore-customer-insights"></a>Utforsk Customer Insights
 
-Du kan [Dynamics 365 Customer Insights](https://home.ci.ai.dynamics.com/) på følgende nettadresse: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
+Du kan få tilgang til [Dynamics 365 Customer Insights](https://home.ci.ai.dynamics.com/) på følgende nettadresse: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
 
-**Startsiden** viser en oversikt over segmenter, målinger og suppleringsdata (hvis konfigurert) etter fullføring av fasene [tilordningen](map-entities.md), [samsvare](match-entities.md) og [slå sammen](merge-entities.md).
+**Startsiden** viser deg gjennom konfigureringsprosessen for nøkkelfunksjoner og gir en oversikt over segmenter, mål og suppleringsdata.
 
 :::image type="content" source="media/home-page.png" alt-text="Skjermbilde av startskjermen som viser eksempelinnsikt.":::
 
-Nøkkelkontroller i Customer Insights:
+## <a name="left-side-pane"></a>Venstre siderute
 
-- Venstre rute: Bytt mellom primærmålgruppe hvis du har et B2C- og B2B-miljø
+Bruk den venstre ruten til å navigere mellom ulike områder Customer Insights. 
 
-- Venstre rute: Naviger mellom forskjellige områder og velge primær målgruppe
+Hvis du arbeider med forretningskontoer og individuelle forbrukere, kan du velge den primære målgruppen for å sette fokus i henhold til dette. 
 
-- Topptekst: Endre miljø du arbeider i, og administrer miljøer som en administrator
+## <a name="application-header"></a>Programoverskrift
 
-- Topptekst: Angi personlige innstillinger for Customer Insights, og få hjelpalternativer
+**Miljøvelgeren** viser miljøet du arbeider i, og lar deg opprette eller administrere miljøer som en administrator.
 
-Nå kan du vise følgende deler på startsiden:
+Smilefjesikonet er **Tilbakemelding**-kontrollen. Velg den for å fortelle oss om dine erfaringer med Customer Insights. Vi lytter aktivt til tilbakemeldingen din, og takker deg på forhånd for at du informerer oss om hva du liker og hvordan vi kan forbedre oss.
 
-- **Nylige segmenter** viser grupper av kunder basert på demografiske attributter, atferds- eller transaksjonsattributter du har definert. [Oppretting av segementer](segments.md) hjelper deg med å gruppere kundebasen din og målrette forretningsaktivitetene dine bedre.
+Med **Innstillinger**-kontrollen, som representeres av et tannhjulikon, kan du samle inn øktdetaljer for Customer Insights og konfigurere globale innstillinger for Microsoft 365-profilen. 
 
-- **Nylige forretningstiltak** viser fliser med viktige [ytelsesindikatorer (KPI-er)](measures.md) du har definert. Det kan for eksempel være gjennomsnittlig sannsynlighet for at en kunde frafaller, eller gjennomsnittlig Internett-bruk per kunde.
+**Hjelpealternativer**, visualisert med et spørsmålstegnikon, gir kontekstavhengige hjelpekoblinger og andre nyttige ressurser.
 
-- **Nylige suppleringer** viser resultatene av suppleringskjøringene som nylig ble fullført. [Suppleringer](enrichment-hub.md) legger til informasjon om kundebasen. Hvis du for eksempel forstår interessene og merker de har affinitet for.
+Profilbildet ditt åpner **kontoadministratoren** for Microsoft 365-profilen. Velg **Min konto** for å administrere de personlige innstillingene.
+
+## <a name="getting-started-with-customer-insights-section"></a>Delen Kom i gang med Customer Insights
+
+Denne delen inneholder kort som hjelper deg med å gå gjennom prosessen med å konfigurere Customer Insights-miljøet. 
+
+1. **Legg til data**-kort hjelper deg med dataimporten. Customer Insights støtter [flere alternativer for å hente inn data om kundene](data-sources.md). Velg **Legg til datakilder** for å komme i gang.
+1. Når importen av de første dataene er fullført, kan du bruke **Samle data**-kortet til å samle inn dataene og [opprette enhetlige kundeprofiler](data-unification.md) fra ulike kilder. 
+1. Når enhetlige kundeprofiler er på plass, er det på tide å gå gjennom **Analyser data**-alternativene og få mer innsikt. Prøv å opprette [forretningstiltak](measures.md) for å spore KPI-er, [definere segmenter](segments.md) for å nå bestemte målgrupper eller [konfigurere prognoser](predictions-overview.md) ved hjelp av kunstig intelligens.
+1. Nå som kundedataene er importert, enhetlig og strukturert, bruker du de [forskjellige eksportmålene](export-destinations.md) til å gjøre noe med dataene. Velg **Legg til tilkoblinger** for å koble til favorittjenestene. Eksporter for eksempel dataene til Dynamics 365 Marketing for å opprette utgående markedsføringskampanjer eller bygge kundereiser. 
+
+## <a name="your-customer-insights-section"></a>Delen Din kundeinnsikt
+
+- **Segmenter** viser grupper av kunder basert på demografiske attributter, atferds- eller transaksjonsattributter du har definert. [Oppretting av segementer](segments.md) hjelper deg med å gruppere kundebasen din og målrette forretningsaktivitetene dine bedre.
+
+- **Forretningstiltak** viser fliser med viktige [ytelsesindikatorer (KPI-er)](measures.md) du har definert. Det kan for eksempel være gjennomsnittlig sannsynlighet for at en kunde frafaller, eller gjennomsnittlig Internett-bruk per kunde.
+
+- **Suppleringer** viser resultatene av suppleringskjøringene som nylig ble fullført. [Suppleringer](enrichment-hub.md) legger til informasjon om kundebasen. Hvis du for eksempel forstår interessene og merker de har affinitet for.
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 42095f369c47553e5ddf5fada54e559202c943a9
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 3d573a6c83b7f0b0c33e656eb383e20a96856b0b
+ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646953"
+ms.lasthandoff: 05/15/2022
+ms.locfileid: "8757398"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Eksporter segmentliste og andre data til Azure Blob Storage (forhåndsvisning)
 
@@ -44,7 +44,7 @@ Lagre Customer Insights-data i en Blob Storage, eller bruk den til å overføre 
 Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denne typen. Hvis du vil ha mer informasjon, se [Tillatelser som kreves for å konfigurere en eksport](export-destinations.md#set-up-a-new-export).
 
 > [!IMPORTANT]
-> Hvis du har aktivert innstillingen for myk sletting for Azure Blob Storage-kontoen, vil eksporten mislykkes. Deaktiver myk sletting for å eksportere data til blober. Hvis du vil ha mer informasjon, kan du se [Aktiver myk sletting av blober](/azure/storage/blobs/soft-delete-blob-enable.md)
+> Hvis du har aktivert innstillingen for myk sletting for Azure Blob Storage-kontoen, vil eksporten mislykkes. Deaktiver myk sletting for å eksportere data til blober. Hvis du vil ha mer informasjon, kan du se [Aktiver myk sletting av blober](/azure/storage/blobs/soft-delete-blob-enable)
 
 1. Gå til **Data** > **Eksporter**.
 

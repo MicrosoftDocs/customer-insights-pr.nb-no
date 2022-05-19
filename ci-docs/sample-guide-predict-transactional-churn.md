@@ -1,19 +1,19 @@
 ---
 title: Eksempelveiledning for prognose på transaksjonelt frafall
 description: Bruk denne eksempelveiledningen til å prøve ut den medfølgende prediksjonsmodellen for transaksjonelt frafall.
-ms.date: 11/19/2020
+ms.date: 05/11/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 05c221c634b8e0f582a6c6d3f4d90e971aa9707e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 3edbf2a471313379c28db874d7f19c3265a23299
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647266"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741331"
 ---
 # <a name="transactional-churn-prediction-sample-guide"></a>Eksempelveiledning for prognose på transaksjonelt frafall
 
@@ -86,69 +86,13 @@ Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av data
 
 1. Lagre datakilden.
 
-
 ## <a name="task-2---data-unification"></a>Oppgave 2 – Dataforening
 
-Etter å ha hentet inn dataene, begynner vi nå med prosessen for å **tilordne, samsvare og slå sammen** for å opprette en enhetlig kundeprofil. Hvis du vil ha mer informasjon, kan du se [Dataforening](data-unification.md).
-
-### <a name="map"></a>Tilordne
-
-1. Etter at du har hentet inn dataene, tilordner du kontakter fra eCommerce og lojalitetsdata til vanlige datatyper. Gå til **Data** > **Samle** > **Tilordne**.
-
-1. Velg enhetene som representerer kundeprofilen – **eCommerceContacts** og **loyCustomers**. 
-
-   :::image type="content" source="media/unify-ecommerce-loyalty.PNG" alt-text="Samle ecommerce- og lojalitetsdatakildene.":::
-
-1. Velg **ContactId** som primærnøkkelen for **eCommerceContacts** og **LoyaltyID** som primærnøkkelen for **loyCustomers**.
-
-   :::image type="content" source="media/unify-loyaltyid.PNG" alt-text="Samle LoyaltyId som primærnøkkel.":::
-
-### <a name="match"></a>Treff
-
-1. Gå til **Samsvar**-fanen, og velg **Angi rekkefølge**.
-
-1. I rullegardinlisten **Primær** velger du **eCommerceContacts: eCommerce** som hovedkilde , og inkluder alle oppføringer.
-
-1. I nedtrekkslisten **Enhet 2** velger du **loyCustomers: LoyaltyScheme** og inkluderer alle oppføringer.
-
-   :::image type="content" source="media/unify-match-order.PNG" alt-text="Samle treff for eCommerce og lojalitet.":::
-
-1. Velg **Opprett en ny regel**.
-
-1. Legg til din første betingelse ved å bruke FullName.
-
-   * For eCommerceContacts velger du **FullName** i rullegardinlisten.
-   * For loyCustomers velger du **FullName** i rullegardinlisten.
-   * Velg rullegardinlisten **Normaliser**, og velg **Type (telefon, navn, adresse ...)**.
-   * Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
-
-1. Angi navnet **FullName, Email** for den nye regelen.
-
-   * Legg til en ny betingelse for e-postadresse ved å velge **Legg til betingelse**.
-   * Velg **E-post** i rullegardinmenyen for enheten eCommerceContacts.
-   * Velg **E-post** i rullegardinmenyen for enheten loyCustomers. 
-   * La Normaliser være tomt. 
-   * Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
-
-   :::image type="content" source="media/unify-match-rule.PNG" alt-text="Regel for å samle treff for navn og e-post.":::
-
-7. Velg **Lagre** og **Kjør**.
-
-### <a name="merge"></a>Flett
-
-1. Gå fil fanen **Slå sammen**.
-
-1. På **ContactId** for enheten **loyCustomers** endrer du visningsnavnet til **ContactIdLOYALTY** for å skille de fra de andre ID-ene som er hentet inn.
-
-   :::image type="content" source="media/unify-merge-contactid.PNG" alt-text="Endre navn på contactid fra loyalty id.":::
-
-1. Velg **Lagre** og **Kjør** for å starte sammenslåingsprosessen.
-
-
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-transaction-churn-prediction"></a>Oppgave 3 – Konfigurere prognosen for transaksjonelt frafall
 
-Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abonnementsfrafall. Hvis du vil ha detaljerte trinn, kan du se artikkelen [Prediksjon for abonnementsfrafall](predict-subscription-churn.md). 
+Når de enhetlige kundeprofilene er på plass, kan vi nå kjøre transaksjonsfrafallprediksjonen. Hvis du vil ha detaljerte trinn, kan du se artikkelen [Prediksjon for transaksjonsfrafall](predict-transactional-churn.md). 
 
 1. Gå til **Intelligens** > **Utforsk**, og velg å bruke **kundefrafallsmodellen**.
 
@@ -180,7 +124,7 @@ Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abo
 
 ## <a name="task-4---review-model-results-and-explanations"></a>Oppgave 4 – gå gjennom modellresultater og forklaringer
 
-La modellen fullføre opplæringen og beregne poengsum for dataene. Du kan nå se gjennom forklaringer av modellen for abonnementsfrafall. Hvis du vil ha mer informasjon, kan du se [Gå gjennom en prediksjonsstatus og resultater](predict-subscription-churn.md#review-a-prediction-status-and-results).
+La modellen fullføre opplæringen og beregne poengsum for dataene. Nå kan du se gjennom forklaringene på frafallsmodellen. Hvis du vil ha mer informasjon, kan du se [Gå gjennom en prediksjonsstatus og resultater](predict-transactional-churn.md#review-a-prediction-status-and-results).
 
 ## <a name="task-5---create-a-segment-of-high-churn-risk-customers"></a>Oppgave 5 – Opprette et segment med kunder med høy risiko for frafall
 
@@ -192,14 +136,12 @@ Du kan opprette et nytt segment basert på enheten som er opprettet av modellen.
 
    :::image type="content" source="media/segment-intelligence.PNG" alt-text="Opprette et segment med modellutdataene.":::
 
-1. Velg **OOBSubscriptionChurnPrediction**-endepunktet, og definer segmentet: 
+1. Velg **OOBeCommerceChurnPrediction**-endepunkt og definer segmentet: 
    - Felt: ChurnScore
    - Operator: større enn
    - Verdi: 0,6
-   
-   :::image type="content" source="media/segment-setup-subs.PNG" alt-text="Konfigurer segement for abonnementsfrafall.":::
 
-Du har nå et segment som er dynamisk oppdatert, og som identifiserer kunder med høy frafallsrisiko for denne abonnementsvirksomheten.
+Du har nå et segment som oppdateres dynamisk, og som identifiserer kunder med høy risiko for frafall.
 
 Hvis du vil ha mer informasjon, kan du se [Opprette og behandle segmenter](segments.md).
 

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 18fc072d129be6b4fc5470b1057f592dc2638216
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 03169f0218dfad55cf20ecaf1c1596c652e5f601
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646552"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755274"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Logge videresending i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversjon)
 
@@ -27,7 +27,7 @@ Customer Insights sender følgende hendelseslogger:
 - **Overvåkingshendelser**
   - **APIEvent** - aktiverer endringssporing utført via Dynamics 365 Customer Insights brukergrensesnittet.
 - **Driftshendelser**
-  - **WorkflowEvent** - Arbeidsflyten gjør det mulig å konfigurere [Datakilder](data-sources.md), [forene](data-unification.md) og [supplere](enrichment-hub.md) og til slutt [eksportere](export-destinations.md) data til andre systemer. Alle disse trinnene kan utføres enkeltvis (f.eks. utløse én enkelt eksport) eller orkestrert (f.eks. dataoppdatering fra datakilder som utløser foreningsprosessen, som vil trekke inn flere suppleringer og når det er gjort, eksportere dataene til et annet system). Du finner mer informasjon i [WorkflowEvent-skjemaet](#workflow-event-schema).
+  - **WorkflowEvent** - Arbeidsflyten gjør det mulig å konfigurere [Datakilder](data-sources.md), [samle](data-unification.md), [supplere](enrichment-hub.md) og til slutt [eksportere](export-destinations.md) data til andre systemer. Alle disse trinnene kan utføres enkeltvis (for eksempel utløse én enkelt eksport). Kan også kjøre iverksatt (for eksempel dataoppdatering fra datakilder som utløser samlingsprosessen, noe som vil trekke inn suppleringer og når det er gjort, eksportere dataene til et annet system). Du finner mer informasjon i [WorkflowEvent-skjemaet](#workflow-event-schema).
   - **APIEvent** – alle API-kall til kunder-forekomsten til Dynamics 365 Customer Insights. Du finner mer informasjon i [APIEvent-skjemaet](#api-event-schema).
 
 ## <a name="set-up-the-diagnostic-settings"></a>Konfigurere diagnoseinnstillingene
@@ -55,7 +55,7 @@ Hvis du vil konfigurere diagnose i Customer Insights, må følgende forhåndskra
 
 1. Velg **leieren** av Azure-abonnementet med målressursen, og velg **Logg på**.
 
-1. Velg **ressurstypen** (lagringskonto, hendelseshub eller logganalyse).
+1. Velg **ressurstypen** (lagringskonto, hendelsessenter eller logganalyse).
 
 1. Velg **abonnementet** for målressursen.
 
@@ -182,7 +182,7 @@ API-hendelser og arbeidsflythendelser har en felles struktur og detaljer der de 
 
 ### <a name="workflow-event-schema"></a>Skjema for arbeidsflythendelse
 
-Arbeidsflyten inneholder flere trinn. [Hente inn datakilder](data-sources.md), [forene](data-unification.md), [supplere](enrichment-hub.md) og [eksportere](export-destinations.md) data. Alle disse trinnene kan kjøres individuelt eller orkestrert med følgende prosesser. 
+Arbeidsflyten inneholder flere trinn. [Hente inn datakilder](data-sources.md), [forene](data-unification.md), [supplere](enrichment-hub.md) og [eksportere](export-destinations.md) data. Alle disse trinnene kan kjøres individuelt eller orkestrert med følgende prosesser.
 
 #### <a name="operation-types"></a>Operasjonstyper
 
@@ -215,7 +215,7 @@ Arbeidsflyten inneholder flere trinn. [Hente inn datakilder](data-sources.md), [
 | `time`          | Tidsstempel | Kreves          | Timestamp til hendelsen (UTC).                                                                                                                                 | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
 | `resourceId`    | String    | Kreves          | ResourceId for forekomsten som utsendte hendelsen.                                                                                                            | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX` |
 | `operationName` | String    | Kreves          | Navnet på operasjonen som representeres av denne hendelsen. `{OperationType}.[WorkFlow|Task][Started|Completed]`. Se [Operasjonstyper](#operation-types) for referanse. | `Segmentation.WorkflowStarted`,<br> `Segmentation.TaskStarted`, <br> `Segmentation.TaskCompleted`, <br> `Segmentation.WorkflowCompleted`                                 |
-| `category`      | String    | Kreves          | Loggkategorien for hendelsen. Alltid `Operational` for arbeidsflythendelser                                                                                           | `Operational`                                                                                                                                                            | 
+| `category`      | String    | Kreves          | Loggkategorien for hendelsen. Alltid `Operational` for arbeidsflythendelser                                                                                           | `Operational`                                                                                                                                                            |
 | `resultType`    | String    | Kreves          | Statusen for hendelsen. `Running`, `Skipped`, `Successful`, `Failure`                                                                                            |                                                                                                                                                                          |
 | `durationMs`    | Lang      | Valgfritt          | Varighet for operasjonen i millisekunder.                                                                                                                    | `133`                                                                                                                                                                    |
 | `properties`    | String    | Valgfritt          | JSON-objekt med flere egenskaper for den bestemte kategorien av hendelser.                                                                                        | Se underdelen [Arbeidsflytegenskaper](#workflow-properties-schema)                                                                                                       |

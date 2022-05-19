@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: 56f6a8ad20224922f9968f0ad3b6a0e0a400214b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d1e14d2d4e718d71ccbd2afd259a350ad5c9e69a
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646572"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755698"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Supplering for datakilder (forhåndsversjon)
 
@@ -26,7 +26,7 @@ Du må ha bidragsyter- eller administratortillatelser til å opprette eller redi
 1. Gå til **Data** > **Samle**. Velg enheten du vil supplere, og velg ett attributt som hovednøkkel for enheten. Hvis du vil ha mer informasjon, kan du se [Velg primærnøkkel](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 
 1. Gå til **Data** > **Datakilder**.
- 
+
 1. Velg den loddrette ellipsen ved siden av datakilden du vil berike, og velg **Suppler**.
 
    :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Side for datakildesupplering.":::

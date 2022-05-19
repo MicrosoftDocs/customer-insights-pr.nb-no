@@ -1,7 +1,7 @@
 ---
 title: Eksempelveiledning for prediksjon for produktanbefaling
 description: Bruk denne eksempelveiledningen til å prøve ut den medfølgende prediksjonsmodellen for produktanbefaling.
-ms.date: 02/10/2021
+ms.date: 05/16/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 1115bab13bdca4a308a8d9eb5a1dc270801d16be
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: cc72cce15fa0c9e92dbf202c803e99514c9ce2b1
+ms.sourcegitcommit: 82f417cfb0a16600e9f552d7a21d598cc8f5a267
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647106"
+ms.lasthandoff: 05/16/2022
+ms.locfileid: "8762698"
 ---
 # <a name="product-recommendation-prediction-sample-guide"></a>Eksempelveiledning for prediksjon for produktanbefaling
 
@@ -40,7 +40,7 @@ Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av data
 
 1. Opprett en datakilde med navnet **eCommerce**, velg importalternativet, og velg koblingen **Tekst/CSV**.
 
-1. Skriv inn URL-adressen for eCommerce-kontakter https://aka.ms/ciadclasscontacts.
+1. Skriv inn URL-adressen for eCommerce-kontakter: [https://aka.ms/ciadclasscontacts](https://aka.ms/ciadclasscontacts).
 
 1. Når du redigerer dataene, velger du **Transformasjon** og deretter **Bruk første rad som overskrifter**.
 
@@ -50,15 +50,15 @@ Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av data
 
    :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Transformer fødselsdato til dato.":::
 
-5. I Navn-feltet i den høyre ruten endrer du navnet på datakilden fra **Query** til **eCommerceContacts**.
+1. I Navn-feltet i den høyre ruten endrer du navnet på datakilden fra **Query** til **eCommerceContacts**.
 
-6. **Lagre** datakilden.
+1. **Lagre** datakilden.
 
 ### <a name="ingest-online-purchase-data"></a>Hente inn online kjøpsdata
 
 1. Legge til et nyttdata sett i samme **eCommerce**-datakilde. Velg koblingen **Tekst/CSV** på nytt.
 
-1. Skriv inn URL-adressen for **Online kjøp**-dataene https://aka.ms/ciadclassonline.
+1. Skriv inn nettadressen for **Online kjøp**-dataene [https://aka.ms/ciadclassonline](https://aka.ms/ciadclassonline).
 
 1. Når du redigerer dataene, velger du **Transformasjon** og deretter **Bruk første rad som overskrifter**.
 
@@ -70,12 +70,11 @@ Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av data
 
 1. **Lagre** datakilden.
 
-
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Hente inn kundedata fra lojalitetsskjema
 
 1. Opprett en datakilde med navnet **LoyaltyScheme**, velg importalternativet, og velg koblingen **Tekst/CSV**.
 
-1. Skriv inn URL-adressen for eCommerce-kontakter https://aka.ms/ciadclasscustomerloyalty.
+1. Skriv inn URL-adressen for eCommerce-kontakter [https://aka.ms/ciadclasscustomerloyalty](https://aka.ms/ciadclasscustomerloyalty).
 
 1. Når du redigerer dataene, velger du **Transformasjon** og deretter **Bruk første rad som overskrifter**.
 
@@ -90,64 +89,11 @@ Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av data
 
 ## <a name="task-2---data-unification"></a>Oppgave 2 – Dataforening
 
-Etter å ha tatt inn dataene begynner vi nå dataforeningsprosessen for å opprette en enhetlig kundeprofil. Hvis du vil ha mer informasjon, kan du se [Dataforening](data-unification.md).
-
-### <a name="map"></a>Tilordne
-
-1. Etter at du har hentet inn dataene, tilordner du kontakter fra eCommerce og lojalitetsdata til vanlige datatyper. Gå til **Data** > **Samle** > **Tilordne**.
-
-2. Velg enhetene som representerer kundeprofilen – **eCommerceContacts** og **loyCustomers**.
-
-   ![Samle ecommerce- og lojalitetsdatakildene.](media/unify-ecommerce-loyalty.png)
-
-3. Velg **ContactId** som primærnøkkelen for **eCommerceContacts** og **LoyaltyID** som primærnøkkelen for **loyCustomers**.
-
-   ![Samle LoyaltyId som primærnøkkel.](media/unify-loyaltyid.png)
-
-### <a name="match"></a>Treff
-
-1. Gå til **Samsvar**-fanen, og velg **Angi rekkefølge**.
-
-2. I rullegardinlisten **Primær** velger du **eCommerceContacts: eCommerce** som hovedkilde , og inkluder alle oppføringer.
-
-3. I nedtrekkslisten **Enhet 2** velger du **loyCustomers: LoyaltyScheme** og inkluderer alle oppføringer.
-
-   ![Samle treff for eCommerce og lojalitet.](media/unify-match-order.png)
-
-4. Velg **Opprett en ny regel**.
-
-5. Legg til din første betingelse ved å bruke FullName.
-
-   - For eCommerceContacts velger du **FullName** i rullegardinlisten.
-   - For loyCustomers velger du **FullName** i rullegardinlisten.
-   - Velg rullegardinlisten **Normaliser**, og velg **Type (telefon, navn, adresse ...)**.
-   - Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
-
-6. Angi navnet **FullName, Email** for den nye regelen.
-
-   - Legg til en ny betingelse for e-postadresse ved å velge **Legg til betingelse**.
-   - Velg **E-post** i rullegardinmenyen for enheten eCommerceContacts.
-   - Velg **E-post** i rullegardinmenyen for enheten loyCustomers.
-   - La Normaliser være tomt.
-   - Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
-
-   ![Regel for å samle treff for navn og e-post.](media/unify-match-rule.png)
-
-7. Velg **Lagre** og **Kjør**.
-
-### <a name="merge"></a>Flett
-
-1. Gå fil fanen **Slå sammen**.
-
-1. På **ContactId** for enheten **loyCustomers** endrer du visningsnavnet til **ContactIdLOYALTY** for å skille de fra de andre ID-ene som er hentet inn.
-
-   ![Endre navn på contactid fra loyalty id.](media/unify-merge-contactid.png)
-
-1. Velg **Lagre** og **Kjør** for å starte sammenslåingsprosessen.
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-product-recommendation-prediction"></a>Oppgave 3 – Konfigurer prediksjon av produktanbefaling
 
-Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abonnementsfrafall.
+Når de enhetlige kundeprofilene er på plass, kan vi nå kjøre produktanbefalingsprediksjon.
 
 1. Gå til **Intelligens** > **Prediksjon** og velg **Produktanbefaling**.
 
@@ -162,27 +108,36 @@ Med de enhetlige kundeprofilene på plass kan vi nå kjøre prediksjonen for abo
    - **Forventet å gjenta innkjøp**: Velg **Ja** for å angi at du vil ta med produkter som kundene har kjøpt tidligere, i anbefalingen.
 
    - **Tilbakeblikksvindu:** Velg minst **365 dager**. Denne innstillingen definerer hvor langt modellen skal se bakover for å se på kundens aktivitet og bruke det som inndata i anbefalingene.
-   
+
    :::image type="content" source="media/product-recommendation-model-preferences.png" alt-text="Modellinnstillinger for produktanbefalingsmodellen.":::
 
-1. Velg **Obligatoriske data**, og velg **Legg til data** for kjøpshistorikken.
+1. Velg **Legg til data** i trinnet **Legg til obligatoriske data**.
 
-1. Legg til enheten **eCommercePurchases : eCommerce**, og tilordne feltene fra eCommerce til de tilsvarende feltene som kreves av modellen.
+1. Velg **SalesOrderLine** som innkjøpsloggenhet i ruten **Legg til data**. Nå er det sannsynligvis ikke konfigurert ennå. Åpne koblingen i ruten for å opprette aktiviteten med følgende trinn:
+   1. Skriv inn et **aktivitetsnavn**, og velg *eCommercePurchases:eCommerce* som **aktivitetsenhet**. **Primærnøkkelen** er *PurchaseId*.
+   1. Definer og gi relasjonen navnet til *eCommerceContacts:eCommerce-enheten* og velg **ContactId** som sekundærnøkkel.
+   1. For aktivitetssamling angir du **Hendelsesaktivitet** som *TotalPrice* og Timestamp til *PurchasedOn*. Du kan angi flere felter som angitt i [kundeaktiviteter](activities.md).
+   1. Velg **SalesOrderLine** for *aktivitetstype*. Tildel følgende aktivitetsfelter:
+      - Ordrelinje-ID: PurchaseId
+      - Ordre-ID: PurchaseId
+      - Ordredata: PurchasedOn
+      - Produkt-ID: ProductId
+      - Beløp: TotalPrice
+   1. Se gjennom og fullfør aktiviteten før du går tilbake til modellkonfigurasjonen.
 
-1. Slå sammen enheten **eCommercePurchases : eCommerce** med **eCommerceContacts : eCommerce**.
+1. Tilbake i **Velg aktiviteter**-trinnet velger du den nylig opprettede aktiviteten i **Aktiviteter**-delen. Velg **Neste** og attributtildelingen er allerede fylt ut. Velg **Lagre**.
 
-   ![Slå sammen eCommerce-enheter.](media/model-purchase-join.png)
+1. I denne eksempelhåndboken hopper vi over settet **Legg til produktinformasjon** og **Produktfiltre** fordi vi ikke har produktinformasjonsdata.
 
-1. Velg **Neste** for å angi modellplanen.
+1. Angi modelltidsplanen i trinnet **Dataoppdateringer**.
 
    Modellen må læres opp regelmessig for å lære nye mønstre når nye data er hentet inn. I dette eksemplet velger du **Månedlig**.
 
-1. Når du har sett gjennom alle detaljene, velger du **Lagre og kjør**.
-
+1. Når du har sett gjennom alle detaljene, velger du **Lagre og kjør**. Det tar noen minutter å kjøre modellen første gang.
 
 ## <a name="task-4---review-model-results-and-explanations"></a>Oppgave 4 – gå gjennom modellresultater og forklaringer
 
-La modellen fullføre opplæringen og beregne poengsum for dataene. Du kan nå se gjennom forklaringer av modellen for produktanbefaling. Hvis du vil ha mer informasjon, kan du se [Gå gjennom en prediksjonsstatus og resultater](predict-subscription-churn.md#review-a-prediction-status-and-results).
+La modellen fullføre opplæringen og beregne poengsum for dataene. Du kan nå se gjennom forklaringer av modellen for produktanbefaling. Hvis du vil ha mer informasjon, kan du se [Gå gjennom en prediksjonsstatus og resultater](predict-transactional-churn.md#review-a-prediction-status-and-results).
 
 ## <a name="task-5---create-a-segment-of-high-purchased-products"></a>Oppgave 5 – Opprett et segment av mye kjøpte produkter
 
@@ -190,21 +145,19 @@ Når du kjører produksjonsmodellen, opprettes det en ny enhet som du kan se i *
 
 Du kan opprette et nytt segment basert på enheten som er opprettet av modellen.
 
-1. Gå til **Segmenter**. Velg **Ny**, og velg **Opprett fra** > **Intelligens**.
+1. Gå til **Segmenter**. Velg **Ny** og velg **Opprett fra intelligens**.
 
    ![Opprette et segment med modellutdataene.](media/segment-intelligence.png)
 
 1. Velg **OOBProductRecommendationModelPrediction**-endepunktet, og definer segmentet:
 
    - Felt: ProductID
-   - Operator: Verdi
    - Verdi: Velg de tre mest populære produkt-ID-ene
 
    :::image type="content" source="media/product-recommendation-quick-segment.png" alt-text="Opprett et segment fra modellresultatene.":::
 
-Du har nå et segment som oppdateres dynamisk, og denne identifiserer kundene som er mer villige til å kjøpe de tre mest anbefalte produktene 
+Du har nå et segment som oppdateres dynamisk, og denne identifiserer kundene som kan være interessert i å kjøpe de tre mest anbefalte produktene.
 
 Hvis du vil ha mer informasjon, kan du se [Opprette og behandle segmenter](segments.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

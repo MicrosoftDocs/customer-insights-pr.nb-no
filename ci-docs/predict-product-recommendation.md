@@ -1,25 +1,25 @@
 ---
 title: Produktanbefalingsprediksjon
 description: Forutsi produktene en kunde sannsynligvis kommer til å kjøpe eller samhandle med.
-ms.date: 01/13/2022
+ms.date: 05/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: fe6c0e8ba8236243682a4105535a0026c4343c3d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 9b3e60c49d294d031f43ef0594cb69707bb64019
+ms.sourcegitcommit: 82f417cfb0a16600e9f552d7a21d598cc8f5a267
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647357"
+ms.lasthandoff: 05/16/2022
+ms.locfileid: "8762744"
 ---
 # <a name="product-recommendation-prediction"></a>Produktanbefalingsprediksjon
 
 Produktanbefalingsmodellen oppretter sett med prediktive produktanbefalinger. Anbefalingene er basert på tidligere kjøpsatferd og kunder med lignende kjøpsmønstre. Du kan opprette nye produktanbefalingsprediksjoner på siden **Intelligens** > **Prediksjoner**. Velg **Mine prediksjoner** for å se andre prediksjoner du har opprettet.
 
-Produktanbefalinger kan være underlagt lokale lover og forskrifter og kundens forventninger, som modellen ikke er bygget for å spesifikt ta hensyn til.  Som bruker av denne prediktive funksjonen **må du gå gjennom anbefalingene før du leverer dem til kundene dine** for å sikre at du overholder gjeldende lover eller forskrifter, og kundenes forventninger til hva du kan anbefale. 
+Produktanbefalinger kan være underlagt lokale lover og forskrifter og kundens forventninger, som modellen ikke er bygget for å spesifikt ta hensyn til.  Som bruker av denne prediktive funksjonen **må du gå gjennom anbefalingene før du leverer dem til kundene dine** for å sikre at du overholder gjeldende lover eller forskrifter, og kundenes forventninger til hva du kan anbefale.
 
 I tillegg gir utdataene for denne modellen anbefalinger basert på produkt-ID-en. Leveringsmekanismen må tilordne de anslåtte produkt-IDene til passende innhold som kundene dine kan gjøre rede for lokalisering, bildeinnhold og annet bedriftsspesifikk innhold eller oppførsel.
 
@@ -33,29 +33,31 @@ Hvis du er interessert i å prøve denne funksjonen, men ikke har data for å fu
 
 - Forretningskunnskap for å forstå ulike typer produkter for virksomheten og hvordan kundene samhandler med dem. Vi støtter anbefalte produkter som tidligere er kjøpt av kundene dine, eller anbefalinger for nye produkter.
 
+- Miljøet må konfigureres for hver hovedmålgruppe for **individuelle forbrukere**.
+
 - Data om transaksjoner, kjøp og deres historikk:
-    - Transaksjons-ID-er for å skille innkjøp eller transaksjoner.
-    - Kunde-ID-er for å tilordne transaksjoner for kundene.
-    - Dato for transaksjonshendelser som definerer datoene da transaksjonen forekom.
-    - Produkt-ID-informasjon for transaksjonen.
-    - (Valgfritt) En dataenhet for produktkatalog for å bruke et produktfilter.
-    - (Valgfritt) Om en transaksjon er en retur eller ikke.
-    - Det semantiske dataskjemaet for kjøp eller transaksjoner krever følgende informasjon:
-        - **Transaksjons-ID:** En unik identifikator for et innkjøp eller en transaksjon.
-        - **Transaksjonsdato:** Datoen for innkjøpet eller transaksjonen.
-        - **Verdien av transaksjonen:** Det numeriske verdibeløpet for kjøpet eller transaksjonen.
-        - **Unik produkt-ID:** ID-en til produktet eller tjenesten som er kjøpt, hvis dataene er på et linjevarenivå.
-        - (Valgfritt) **Innkjøp eller retur:** Et boolsk felt der verdien *sann* identifiserer at en transaksjon var en retur. Hvis kjøps- eller returdataene ikke leveres, er modellen og **verdien av transaksjonen** negativ. Vi vil også bruke denne informasjonen til å utlede en retur.
+  - Transaksjons-ID-er for å skille innkjøp eller transaksjoner.
+  - Kunde-ID-er for å tilordne transaksjoner for kundene.
+  - Dato for transaksjonshendelser som definerer datoene da transaksjonen forekom.
+  - Produkt-ID-informasjon for transaksjonen.
+  - (Valgfritt) En dataenhet for produktkatalog for å bruke et produktfilter.
+  - (Valgfritt) Om en transaksjon er en retur eller ikke.
+  - Det semantiske dataskjemaet for kjøp eller transaksjoner krever følgende informasjon:
+    - **Transaksjons-ID:** En unik identifikator for et innkjøp eller en transaksjon.
+    - **Transaksjonsdato:** Datoen for innkjøpet eller transaksjonen.
+    - **Verdien av transaksjonen:** Det numeriske verdibeløpet for kjøpet eller transaksjonen.
+    - **Unik produkt-ID:** ID-en til produktet eller tjenesten som er kjøpt, hvis dataene er på et linjevarenivå.
+    - (Valgfritt) **Innkjøp eller retur:** Et boolsk felt der verdien *sann* identifiserer at en transaksjon var en retur. Hvis kjøps- eller returdataene ikke leveres, er modellen og **verdien av transaksjonen** negativ. Vi vil også bruke denne informasjonen til å utlede en retur.
 - Kjennetegn for foreslåtte data:
-    - Tilstrekkelige historiske data: Minst ett år med transaksjonsdata, helst to til tre år for å inkludere noe sesongavhengighet.
-    - Flere kjøp per kunde: Tre eller flere transaksjoner per kunde-ID
-    - Antall kunder: Minst 100 kunder, helst mer enn 10 000 kunder. Modellen vil mislykkes med færre enn 100 kunder.
+  - Tilstrekkelige historiske data: Minst ett år med transaksjonsdata, helst to til tre år for å inkludere noe sesongavhengighet.
+  - Flere kjøp per kunde: Tre eller flere transaksjoner per kunde-ID
+  - Antall kunder: Minst 100 kunder, helst mer enn 10 000 kunder. Modellen vil mislykkes med færre enn 100 kunder.
 
 > [!NOTE]
+>
 > - Modellen krever kundenes transaksjonshistorikk. Definisjonen av en transaksjon er ganske fleksibel. Alle data som beskriver en brukerproduktinteraksjon, kan fungere som inndata. For eksempel å kjøpe et produkt, ta et kurs eller delta på et arrangement.
 > - Bare én transaksjonsloggenhet kan konfigureres for øyeblikket. Hvis det finnes flere kjøpsenheter, kan du forene dem i Power Query før datainntak begynner.
 > - Hvis ordre- og ordredetaljer er forskjellige enheter, slår du dem sammen før du bruker dem i modellen. Modellen fungerer ikke bare med en ordre-ID eller kvitterings-ID i en enhet.
-
 
 ## <a name="create-a-product-recommendation-prediction"></a>Opprett en produktanbefalingsprediksjon
 
@@ -76,7 +78,7 @@ Hvis du er interessert i å prøve denne funksjonen, men ikke har data for å fu
 ### <a name="define-product-recommendation-configuration"></a>Definer produktanbefalingskonfigurasjon
 
 1. Angi **antall produkter** du vil anbefale til en kunde. Denne verdien avhenger av hvordan leveringsmåten fyller ut data. Hvis du kan anbefale tre produkter, angir du denne verdien i henhold til dette.
-   
+
    >[!TIP]
    > Du kan velge **Lagre utkast** når som helst for å lagre prediksjonen som utkast. Du finner utkastprediksjonen på fanen **Mine prediksjoner**.
 
@@ -98,14 +100,13 @@ Hvis du er interessert i å prøve denne funksjonen, men ikke har data for å fu
 
    :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Sideinnstilling for aktivitetstype.":::
 
-1. Når du har kartlagt aktiviteten til den tilsvarende semantiske typen, velger du **Neste** for å fortsette 
- 
+1. Når du har kartlagt aktiviteten til den tilsvarende semantiske typen, velger du **Neste** for å fortsette.
+
 1. Tilordne semantiske attributter til feltene som kreves for å kjøre modellen.
 
 1. Velg **Lagre**.
 
 1. Velg **Neste**.
-
 
 ### <a name="configure-product-filters"></a>Konfigurere produktfiltre
 
@@ -113,11 +114,11 @@ Noen ganger er bare visse produkter gunstige eller passende for den typen predik
 
 1. I trinnet **Legg til produktinformasjon** legger du til produktkatalogen med informasjon for hvert produkt. Tilordne informasjonen som kreves, og velg **Neste**.
 
-3. I trinnet **Produktfiltre** velger du mellom følgende alternativer.
+1. I trinnet **Produktfiltre** velger du mellom følgende alternativer.
 
-   * **Ingen filtre**: Bruk alle produkte i produktanbefalingsprediksjonen.
+   - **Ingen filtre**: Bruk alle produkte i produktanbefalingsprediksjonen.
 
-   * **Definer spesifikke produktfiltre**: Bruk bestemte produkter i produktanbefalingsprediksjonen.
+   - **Definer spesifikke produktfiltre**: Bruk bestemte produkter i produktanbefalingsprediksjonen.
 
 1. Velg **Neste**.
 
@@ -126,7 +127,7 @@ Noen ganger er bare visse produkter gunstige eller passende for den typen predik
    :::image type="content" source="media/product-filters-sidepane.png" alt-text="Siderute som viser attributtet i produktkatalogenheten som skal velges for produktfiltre.":::
 
 1. Velg om du vil at produktfilteret skal bruke **and**- eller **or**-koblinger til logisk å kombinere ditt utvalg av attributter fra produktkatalogen.
-   
+
    :::image type="content" source="media/product-filters-sample.png" alt-text="Eksempel på konfigurasjon av produktfiltre kombinert med logiske AND-koblinger.":::
 
 1. Velg **Neste**.
@@ -150,7 +151,7 @@ Noen ganger er bare visse produkter gunstige eller passende for den typen predik
 1. Velg prognosen du vil gå gjennom.
    - **Navn på prediksjon:** Navnet på prediksjonen som ble angitt under opprettingen.
    - **Prediksjonstype:** Typen modell som brukes for prediksjonen.
-   - **Utdataenhet:** Navn på enheten for å lagre utdataene fra prediksjonen. Du kan finne en enhet med dette navnet på **Data** > **Enhteter**.    
+   - **Utdataenhet:** Navn på enheten for å lagre utdataene fra prediksjonen. Du kan finne en enhet med dette navnet på **Data** > **Enhteter**.
       *Poengsum* i utdataenheten er et kvantitativt mål på anbefalingen. Modellen anbefaler produkter med høyere poengsum over produkter med lavere poengsum.
    - **Forventet felt:** Dette feltet fylles bare ut for enkelte typer prediksjoner, og brukes ikke i prediksjon av produktanbefaling.
    - **Status:** Gjeldende status for prediksjonskjøringen.
@@ -171,28 +172,27 @@ Noen ganger er bare visse produkter gunstige eller passende for den typen predik
             - **A** Modellen blir betraktet som **A**-kvalitet hvis måleverdien Suksess ved K er minst 10 % mer enn basisen. 
             - **B** Modellen blir betraktet som **B**-kvalitet hvis måleverdien Suksess ved K er minst 0 % til 10 % mer enn basisen.
             - **C** Modellen blir betraktet som **C**-kvalitet hvis måleverdien Suksess ved K er mindre enn basisen.
-               
+
                > [!div class="mx-imgBorder"]
                > ![Visning av modellytelsesresultatet.](media/product-recommendation-modelperformance.PNG "Visning av modellytelsesresultatet")
             - **Basis**: Modellen tar de mest anbefalte produktene etter kjøpsantall for alle kunder, og bruker lærte regler som identifiseres av modellen, til å opprette et sett med anbefalinger for kundene. Prediksjonene sammenlignes deretter med de mest populære produktene basert på antall kunder som hadde kjøpt produktet. Hvis en kunde har minst ett produkt i de anbefalte produktene som også ble sett blant de mest kjøpte produktene, regnes disse som en del av basisen. Hvis det var ti av disse kundene som hadde et anbefalt produkt kjøpt av 100 kunder totalt, ville den opprinnelige basisen vært 10 %.
             - **Suksess ved K**: Ved hjelp av et valideringssett med tidsperioder for transaksjoner opprettes anbefalinger for alle kunder og sammenlignes med valideringssettet for transaksjoner. I en periode på 12 måneder kan for eksempel 12 måneder settes til side som et valideringssett med data. Hvis modellen forutsier minst én ting du ville kjøpt i måned 12, basert på hva den har lært av de forrige 11 månedene, vil kunden øke måleverdien Suksess ved K.
-    
+
     1. **De fleste foreslåtte produkter (med opptelling):** De fem beste produktene som ble forutsatt for kundene dine.
        > [!div class="mx-imgBorder"]
        > ![Diagram som viser de fem mest anbefalte produktene.](media/product-recommendation-topproducts.PNG "Diagram som viser de fem mest anbefalte produktene")
-    
+
     1. **Viktige anbefalingsfaktorer:** Modellen bruker kundenes transaksjonshistorikk til å gi produktanbefalinger. Den lærer mønstre basert på tidligere kjøp og finner likheter mellom kunder og produkter. Disse likhetene brukes deretter til å generere produktanbefalinger.
-    Følgende er faktorene som kan påvirke en produktanbefaling som genereres av modellen. 
-        - **Tidligere transaksjoner**: Tidligere kjøpsmønstre ble brukt av modellen til å generere produktanbefalinger. Modellen kan for eksempel anbefale en _Surface Arc-mus_ hvis noen nylig har kjøpt en _Surface Book 3_ og en _Surface-penn_. Modellen lærte at mange kunder historisk sett hadde kjøpt en _Surface Arc-mus_ etter å ha kjøpt en _Surface Book 3_ og en _Surface-penn_.
-        - **Kundelikhet**: Et anbefalt produkt ble historisk kjøpt av andre kunder som viser lignende kjøpsmønstre. John ble for eksempel anbefalt _Surface Headphones 2_ fordi Jennifer og Brad nylig kjøpte _Surface Headphones 2_. Modellen mener John ligner på Jennifer og Brad fordi de historisk har hatt lignende kjøpsmønstre.
-        - **Produktlikhet**: Et anbefalt produkt ligner på andre produkter som kunden tidligere hadde kjøpt. Modellen anser to produkter for å være like hvis de ble kjøpt sammen eller av lignende kunder. Noen får for eksempel en anbefaling for en _USB-lagringsstasjon_ fordi de tidligere har kjøpt en _USB-C til USB-adapter_, og modellen mener at _USB-lagringsstasjon_ ligner på _USB-C til USB-adapter_ basert på historiske kjøpsmønstre.
+    Følgende er faktorene som kan påvirke en produktanbefaling som genereres av modellen.
+        - **Tidligere transaksjoner**: Tidligere kjøpsmønstre ble brukt av modellen til å generere produktanbefalinger. Modellen kan for eksempel anbefale en *Surface Arc-mus* hvis noen nylig har kjøpt en *Surface Book 3* og en *Surface-penn*. Modellen lærte at mange kunder historisk sett hadde kjøpt en *Surface Arc-mus* etter å ha kjøpt en *Surface Book 3* og en *Surface-penn*.
+        - **Kundelikhet**: Et anbefalt produkt ble historisk kjøpt av andre kunder som viser lignende kjøpsmønstre. John ble for eksempel anbefalt *Surface Headphones 2* fordi Jennifer og Brad nylig kjøpte *Surface Headphones 2*. Modellen mener John ligner på Jennifer og Brad fordi de historisk har hatt lignende kjøpsmønstre.
+        - **Produktlikhet**: Et anbefalt produkt ligner på andre produkter som kunden tidligere hadde kjøpt. Modellen anser to produkter for å være like hvis de ble kjøpt sammen eller av lignende kunder. Noen får for eksempel en anbefaling for en *USB-lagringsstasjon* fordi de tidligere har kjøpt en *USB-C til USB-adapter*, og modellen mener at *USB-lagringsstasjon* ligner på *USB-C til USB-adapter* basert på historiske kjøpsmønstre.
 
         Hver produktanbefaling påvirkes av en eller flere av disse faktorene. Prosentandelen av anbefalinger der hver påvirkningsfaktor spilte en rolle, visualiseres i et diagram. I eksemplet nedenfor ble 100 % av anbefalingene påvirket av tidligere transaksjoner, 60 % av kundelikhet og 22 % av produktlikhet. Hold pekeren over stolpene i diagrammet for å se den nøyaktige prosentandelen der påvirkningsfaktorene bidro.
 
         > [!div class="mx-imgBorder"]
         > ![Viktige anbefalingsfaktorer.](media/product-recommendation-keyrecommendationfactors.png "Viktige anbefalingsfaktorer lært av modellen for å generere produktanbefalinger")
-       
-     
+
    1. **Datastatistikk**: Gir en oversikt over antall transaksjoner, kunder og produkter modellen vurderte. Den er basert på inndata som ble brukt til å lære mønstre og generere produktanbefalinger.
 
       > [!div class="mx-imgBorder"]
@@ -208,6 +208,5 @@ Noen ganger er bare visse produkter gunstige eller passende for den typen predik
 ## <a name="manage-predictions"></a>Administrere prediksjoner
 
 Det går an å optimalisere, feilsøke, oppdatere eller slette prognoser. Se gjennom en brukbarhetsrapport for inndata for å finne ut hvordan du gjør en prediksjon raskere og mer pålitelig. Hvis du vil ha mer informasjon, kan du se [Administrere prediksjoner](manage-predictions.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

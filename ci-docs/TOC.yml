@@ -66,12 +66,18 @@
   items:
     - name: Oversikt over datasamling
       href: data-unification.md
-    - name: Tilordne enheter og attributter
+    - name: Velg kildefelter
       href: map-entities.md
-    - name: Samsvare enheter
+    - name: Fjern dupliserte oppføringer
+      href: remove-duplicates.md
+    - name: Samsvar betingelser
       href: match-entities.md
-    - name: Slå sammen enheter
+    - name: Samle kundefelter
       href: merge-entities.md
+    - name: Se gjennom datasamling
+      href: review-unification.md
+    - name: Oppdater samlingsinnstillingene
+      href: data-unification-update.md
 - name: Datasupplering
   items:
     - name: Supplere kundeprofiler
@@ -282,6 +288,8 @@
       href: apis.md
     - name: API-referanser
       href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+    - name: OData-eksempelspørringer
+      href: odata-examples.md
 - name: Samtykkeadministrasjon (forhåndsversjon)
   items:
     - name: Hjelpesenter

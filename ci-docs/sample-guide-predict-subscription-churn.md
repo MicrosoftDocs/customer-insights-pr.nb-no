@@ -1,8 +1,8 @@
 ---
 title: Eksempelveiledning for prognose på abonnementsfrafall
 description: Bruk denne eksempelveiledningen til å prøve ut den medfølgende prediksjonsmodellen for abonnementsfrafall.
-ms.date: 11/19/2020
-ms.reviewer: mhart
+ms.date: 03/31/2022
+ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 2aea6c62421b308705899e4f8af64f64bfcb2d3d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 5a8eeafecacef3d0bb4a798b698cf490423ca98d
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647097"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741423"
 ---
 # <a name="subscription-churn-prediction-sample-guide"></a>Eksempelveiledning for prognose på abonnementsfrafall
 
@@ -112,61 +112,7 @@ Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av data
 
 ## <a name="task-2---data-unification"></a>Oppgave 2 – Dataforening
 
-Etter å ha hentet inn dataene, begynner vi nå med prosessen for å **tilordne, samsvare og slå sammen** for å opprette en enhetlig kundeprofil. Hvis du vil ha mer informasjon, kan du se [Dataforening](data-unification.md).
-
-### <a name="map"></a>Tilordne
-
-1. Etter at du har hentet inn dataene, tilordner du kontakter fra eCommerce og lojalitetsdata til vanlige datatyper. Gå til **Data** > **Samle** > **Tilordne**.
-
-1. Velg enhetene som representerer kundeprofilen – **eCommerceContacts** og **loyCustomers**. 
-
-   :::image type="content" source="media/unify-ecommerce-loyalty.PNG" alt-text="Samle ecommerce- og lojalitetsdatakildene.":::
-
-1. Velg **ContactId** som primærnøkkelen for **eCommerceContacts** og **LoyaltyID** som primærnøkkelen for **loyCustomers**.
-
-   :::image type="content" source="media/unify-loyaltyid.PNG" alt-text="Samle LoyaltyId som primærnøkkel.":::
-
-### <a name="match"></a>Treff
-
-1. Gå til **Samsvar**-fanen, og velg **Angi rekkefølge**.
-
-1. I rullegardinlisten **Primær** velger du **eCommerceContacts: eCommerce** som hovedkilde , og inkluder alle oppføringer.
-
-1. I nedtrekkslisten **Enhet 2** velger du **loyCustomers: LoyaltyScheme** og inkluderer alle oppføringer.
-
-   :::image type="content" source="media/unify-match-order.PNG" alt-text="Samle treff for eCommerce og lojalitet.":::
-
-1. Velg **Opprett en ny regel**.
-
-1. Legg til din første betingelse ved å bruke FullName.
-
-   * For eCommerceContacts velger du **FullName** i rullegardinlisten.
-   * For loyCustomers velger du **FullName** i rullegardinlisten.
-   * Velg rullegardinlisten **Normaliser**, og velg **Type (telefon, navn, adresse ...)**.
-   * Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
-
-1. Angi navnet **FullName, Email** for den nye regelen.
-
-   * Legg til en ny betingelse for e-postadresse ved å velge **Legg til betingelse**.
-   * Velg **E-post** i rullegardinmenyen for enheten eCommerceContacts.
-   * Velg **E-post** i rullegardinmenyen for enheten loyCustomers. 
-   * La Normaliser være tomt. 
-   * Angi **Presisjonsnivå**: **Grunnleggende** og **Verdi**: **Høy**.
-
-   :::image type="content" source="media/unify-match-rule.PNG" alt-text="Regel for å samle treff for navn og e-post.":::
-
-7. Velg **Lagre** og **Kjør**.
-
-### <a name="merge"></a>Flett
-
-1. Gå fil fanen **Slå sammen**.
-
-1. På **ContactId** for enheten **loyCustomers** endrer du visningsnavnet til **ContactIdLOYALTY** for å skille de fra de andre ID-ene som er hentet inn.
-
-   :::image type="content" source="media/unify-merge-contactid.PNG" alt-text="Endre navn på contactid fra loyalty id.":::
-
-1. Velg **Lagre** og **Kjør** for å starte sammenslåingsprosessen.
-
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-the-subscription-churn-prediction"></a>Oppgave 3 – Konfigurere prognosen for abonnementsfrafall
 

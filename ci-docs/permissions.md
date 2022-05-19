@@ -12,12 +12,12 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: b80f07dfa734f4dd762bd711151a7045f24bed7d
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: 74c7ff7cda8431c04dd34713becefa7e346331b4
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653580"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740915"
 ---
 # <a name="user-permissions"></a>Brukertillatelser
 
@@ -41,7 +41,7 @@ Det finnes tre typer roller:
 
 - Alle tillatelser som er tilgjengelige for visningsprogrammet.
 - Last inn og transformer data ved hjelp av siden **Datakilder**.
-- Fyll ut delene *Datasamling* (**Tilordne**, **Samsvar** og **Slå sammen**), som fører til en samlet kundeprofilenhet.
+- Fullfør ***Datasamling** som resulterer i enheten for enhetlig kundeprofil.
 - Definere **Relasjoner** og **Aktiviteter**.
 - Opprett segmenter ved hjelp siden **Segmenter**.
 - Opprett mål ved hjelp siden **Mål**.
