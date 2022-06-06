@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: e2cace3547a0b584dbf26ae5eecf86f3b256649f
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 57ef46416db0a11cde9f9d7650a0b502a01bf0ab
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8740731"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800662"
 ---
 # <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fullfør de delvise dataene med prognoser (avskrevet)
 
@@ -95,7 +95,7 @@ Som en del av denne flyten velger du et spesifikt attributt som du vil basere se
 
 2. Velg prognosen du vil gå gjennom.
 
-3. Velg en ellipse i kolonnen **Handlinger**, og velg **Visning**.
+3. Velg den loddrette ellipsen (&vellip;) i **Handlinger**-kolonnen, og velg **Vis**.
 
 4. Det vises en rekke datapunkter i visningen i prognosen.
    > [!div class="mx-imgBorder"]
@@ -122,7 +122,7 @@ Når du har opprettet en prediksjon, kan du tilpasse modellen i AI Builder for �
 
 2. Merk prognosen du vil redigere.
 
-3. Velg en ellipse i kolonnen **Handlinger**, og velg **Visning**.
+3. Velg den loddrette ellipsen (&vellip;) i **Handlinger**-kolonnen, og velg **Vis**.
 
 4. Velg **Tilpass i AI Builder**.
 
@@ -139,7 +139,7 @@ Neste kjøring av prognosen vil bruke den oppdaterte modellen du har opprettet.
 
 2. Velg prognosen du vil slette.
 
-3. Velg en ellipse i kolonnen **Handlinger**, og velg **Slett**.
+3. Velg den loddrette ellipsen (&vellip;) i **Handlinger**-kolonnen, og velg **Slett**.
 
 4. Bekreft slettingen.
 
@@ -153,7 +153,7 @@ Hvis du ikke kan fullføre tilleggsprosessen for Dataverse på grunn av en feil,
 - Apptillatelser blir ikke innvilget.
     1. Gå til [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com).
     1. Velg **Miljøer**.
-    1. Velg ellipsen ved siden av miljøet du vil legge til tillatelsen i, og velg **Innstillinger**.
+    1. Velg den loddrette ellipsen (&vellip;) ved siden av miljøet der du vil legge til tillatelsen, og velg **Innstillinger**.
     1. Utvid **Brukere + tillatelser**, og velg **Brukere**.
     1. Velg **+ Ny**, og velg **Bruker**.
     1. Velg **Programbruker** hvis det ikke allerede er valgt, og angi følgende informasjon:

@@ -6,7 +6,9 @@
   href: whats-new-customer-insights.md
 - name: Læringskatalog
   items:
-    - name: Kom i gang
+    - name: Sertifiser som Microsoft Customer Data Platform-spesialist
+      href: /learn/certifications/exams/mb-260?tab=tab-instructor-led
+    - name: Kom i gang med Customer Insights
       href: /learn/modules/get-started-customer-data-platform/
     - name: Hent inn data
       href: /learn/modules/ingest-data-customer-insights/
@@ -34,8 +36,6 @@
       href: get-started.md
     - name: Start med en betalt lisens
       href: paid-license.md
-    - name: Opprett nytt miljø
-      href: create-environment.md
     - name: Utforsk Customer Insights
       href: home.md
     - name: Arbeid med merker og kolonner
@@ -198,6 +198,8 @@
           href: export-campaign-monitor.md
         - name: Constant Contact
           href: export-constant-contact.md
+        - name: Criteo
+          href: export-criteo.md
         - name: DotDigital
           href: export-dotdigital.md
         - name: Dynamics 365 Marketing
@@ -254,12 +256,22 @@
       href: entities.md
     - name: Se gjennom enhetsskjemaer i Common Data Model
       href: entity-schemas.md
-    - name: Customer Insights-data i Dataverse
-      href: customer-insights-dataverse.md
     - name: Bygge relasjoner og tilkoblede enheter
       href: relationships.md
     - name: Definere semantiske tilordninger
       href: semantic-mappings.md
+- name: Miljøer
+  items:
+    - name: Opprett nytt miljø
+      href: create-environment.md
+    - name: Koble til Microsoft Dataverse
+      href: customer-insights-dataverse.md
+    - name: Bruk din egen Azure Data Lake Storage
+      href: own-data-lake-storage.md
+    - name: Administrere miljøinnstillinger
+      href: manage-environments.md
+    - name: Koble til en lagringskonto ved hjelp av tjenestekontohaver
+      href: connect-service-principal.md
 - name: Administrasjon
   items:
     - name: Konfigurere systemkonfigurasjonen
@@ -268,20 +280,12 @@
       href: security-overview.md
     - name: Tilordne brukertillatelser
       href: permissions.md
-    - name: Oversikt over tilkoblinger
-      href: connections.md
-    - name: Behandle flere miljøer
-      href: manage-environments.md
     - name: Hente ditt eget Azure Key Vault
       href: use-azure-key-vault.md
-    - name: Koble til en lagringskonto ved hjelp av tjenestekontohaver
-      href: connect-service-principal.md
     - name: Eksporter diagnoselogger
       href: diagnostics.md
-    - name: Tjenestegrenser
-      href: service-limits.md
-    - name: DSR-rettigheter og -forespørsler
-      href: dsr-rights-requests.md
+    - name: Oversikt over tilkoblinger
+      href: connections.md
 - name: APIer
   items:
     - name: Arbeide med APIer
@@ -324,5 +328,9 @@
       items:
         - name: Opprette prognoser med samtykkedata
           href: consent-management/predictions-consent-data.md
+- name: Tjenestegrenser
+  href: service-limits.md
+- name: DSR-rettigheter og -forespørsler
+  href: dsr-rights-requests.md
 - name: Få støtte
   href: /power-platform/admin/get-help-support

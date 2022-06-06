@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: f392c5cc5ac88a971565f0ccaf309ce89ce12660
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a44d1f2c00c90de3ed5a9425e3a197e109cb28e0
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646719"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800432"
 ---
 # <a name="custom-machine-learning-models"></a>Egendefinerte modeller for maskinlæring
 
@@ -92,7 +92,7 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
 
 ## <a name="edit-a-workflow"></a>Redigere en arbeidsflyt
 
-1. På siden **Egendefinerte modeller** velger du den loddrette ellipsen i **Handlinger**-kolonnen ved siden av en arbeidsflyt du tidligere har opprettet, og deretter velger du **Rediger**.
+1. På siden **Egendefinerte modeller** velger du den loddrette ellipsen (&vellip;) i **Handlinger**-kolonnen ved siden av en arbeidsflyt du tidligere har opprettet, og deretter velger du **Rediger**.
 
 1. Du kan oppdatere det gjenkjennelige navnet på arbeidsflyten i **Visningsnavn**-feltet, men du kan ikke endre den konfigurerte nettjenesten eller pipelinen. Velg **Neste**.
 
@@ -108,7 +108,7 @@ Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forret
 
 ## <a name="run-a-workflow"></a>Kjøre en arbeidsflyt
 
-1. På siden **Egendefinerte modeller** velger du den loddrette ellipsen i **Handlinger**-kolonnen ved siden av en arbeidsflyt du tidligere har opprettet.
+1. På siden **Egendefinerte modeller** velger du den loddrette ellipsen (&vellip;) i **Handlinger**-kolonnen ved siden av en arbeidsflyt du tidligere har opprettet.
 
 1. Velg **Kjør**.
 
@@ -116,7 +116,7 @@ Arbeidsflyten kjøres også automatisk med hver planlagte oppdatering. Lær mer 
 
 ## <a name="delete-a-workflow"></a>Slette en arbeidsflyt
 
-1. På siden **Egendefinerte modeller** velger du den loddrette ellipsen i **Handlinger**-kolonnen ved siden av en arbeidsflyt du tidligere har opprettet.
+1. På siden **Egendefinerte modeller** velger du den loddrette ellipsen (&vellip;) i **Handlinger**-kolonnen ved siden av en arbeidsflyt du tidligere har opprettet.
 
 1. Velg **Slett**, og bekreft slettingen.
 

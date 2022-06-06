@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: d85de28a12565e1a2e36278d0e8b74f6de286b20
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 2a3175737ac95e10d75fad4a69db303b0564c6cc
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755321"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800384"
 ---
 # <a name="connections-preview-overview"></a>Oversikt over tilkoblinger (forhåndsversjon)
 
@@ -69,7 +69,7 @@ Når du definerer eller redigerer en eksporttilkobling, velger du hvilke brukere
 
 1. Gå til kategorien **Tilkoblinger**.
 
-1. Velg den loddrette ellipsen for tilkoblingen du vil redigere.
+1. Velg den loddrette ellipsen (&vellip;) for tilkoblingen du vil redigere.
 
 1. Velg **Rediger**.
 
@@ -85,7 +85,7 @@ Frakoblede suppleringer og eksporter blir inaktive. Du aktiverer dem på nytt ve
 
 1. Gå til kategorien **Tilkoblinger**.
 
-1. Velg den loddrette ellipsen for tilkoblingen du vil fjerne.
+1. Velg den loddrette ellipsen (&vellip;) for tilkoblingen du vil fjerne.
 
 1. Velg **Fjern** fra rullegardinmenyen. En bekreftelsesdialogboks vises.
 

@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 50258365c3134c588aa79ec72c66d0de329e0ff1
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 4db97ec02eb96662d30a8536ea42372f81f318d2
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646881"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800171"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Koble til en Power Query-datakilde
 
@@ -76,7 +76,7 @@ Koblinger med et merke i kolonnen **Customer Insights (dataflyter)** er tilgjeng
 
 1. Gå til **Data** > **Datakilder**.
 
-2. Velg den loddrette ellipsen ved siden av datakildene du vil endre, og velg **Rediger** fra rullegardinmenyen.
+2. Velg den loddrette ellipsen (&vellip;) ved siden av datakildene du vil endre, og velg **Rediger** fra rullegardinmenyen.
 
    > [!div class="mx-imgBorder"]
    > ![Rediger-alternativet.](media/edit-option-data-sources.png "Rediger-alternativet")

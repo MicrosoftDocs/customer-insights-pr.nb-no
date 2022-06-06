@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 45c59465771e4ad25ed36d5da1568e67b94cf994
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: 4cc3cbde97d0f9da198652e86c0843476393b646
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653748"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833320"
 ---
 # <a name="work-with-unified-customer-profiles-in-dynamics-365-marketing"></a>Arbeid med enhetlige kundeprofiler i Dynamics 365 Marketing
 
@@ -23,7 +23,6 @@ Ved å koble Customer Insights-data til Marketing kan du gjøre følgende:
 - Baser dynamisk innhold (for eksempel tilpassede tokener) i e-poster, SMS og push-varsler på målinger som lojalitetsstatus, fornyelse av abonnementsdato, overordnet forretningsforbindelse eller andre målinger du har tatt opp i den enhetlige Customer Insights-profilen.
 - Laste inn data fra Marketing til Customer Insights og kombinere den med kundedata fra andre kilder.
 - Bruk verktøy for Customer Insights-datarensing, supplering og tilnærmet samsvar.
-
 
 ## <a name="use-rich-customer-profiles-in-real-time-marketing"></a>Bruk omfattende kundeprofiler i sanntidsmarkedsføring
 
@@ -41,4 +40,4 @@ Finn ut mer: [Bruk segmenter fra Dynamics 365 Customer Insights med Dynamics 365
 
 Du er ikke begrenset til skylagring hvis du vil bruke Customer Insights-data med Marketing. Hvis du allerede har din egen Azure Data Lake Storage opprettet, kan du koble til Customer Insights og deretter dele dataene med Marketing-appen på samme måte som med et skybasert oppsett.
 
-Finn ut mer: [Aktiver datadeling med Dataverse fra din egen Azure Data Lake Storage](manage-environments.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview)
+Finn ut mer: [Aktiver datadeling med Dataverse fra din egen Azure Data Lake Storage](customer-insights-dataverse.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview)

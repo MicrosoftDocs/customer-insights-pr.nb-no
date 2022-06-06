@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 1a19d83930d667bdca5301dcc5a3ffa5db6a7bdc
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 68c26eb0ad0da787a9f594b4aebe679588b0d6bf
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741145"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833587"
 ---
 # <a name="get-started-with-dynamics-365-customer-insights"></a>Komme i gang med Dynamics 365 Customer Insights
 
@@ -25,21 +25,21 @@ Customer Insights kan hjelpe deg med å få en dypere forståelse av kundene. Ko
 
 ## <a name="step-1-create-an-environment"></a>Trinn 1: Opprett et miljø
 
-Du må først opprette et miljø å arbeide i. Hvis organisasjonen allerede har kjøpt en lisens, kan du se [Opprette et miljø](create-environment.md). Hvis du vil starte en prøveversjon for Customer Insights, kan du se [Konfigurer et prøvemiljø](trial-signup.md).
+Opprett først et miljø å arbeide i. Hvis organisasjonen allerede har kjøpt en lisens, kan du se [Opprette et miljø](create-environment.md). Hvis du vil starte en prøveversjon for Customer Insights, kan du se [Konfigurer et prøvemiljø](trial-signup.md).
 
 ## <a name="step-2-explore-customer-insights"></a>Trinn 2: Utforsk Customer Insights
 
-Første gang du logger på Customer Insights, kan du konfigurere innstillinger og utforske produktet.
+Første gang du logger på Customer Insights, konfigurerer du innstillinger og utforsker produktet.
 
 1. [Logg på Customer Insights](https://home.ci.ai.dynamics.com) ved hjelp av Microsoft Azure Active Directory-brukerkontoen (AAD).
 
-1. [Endre miljøet](manage-environments.md#switch-environments) for å se demonstrasjonsdata og [utforske Customer Insights](home.md).
+1. Endre miljøet for å se demonstrasjonsdata og [utforske Customer Insights](home.md).
 
 ## <a name="step-3-ingest-unify-and-set-up-relationships-for-your-data"></a>Trinn 3: Innta, samle og konfigurer relasjoner for dataene
 
-Enhetlige profiler er fundamentet for å få innsikt og handle ut fra dataene. Hent inn data fra ulike kilder, og kjør datasammenslåingsprosessen for å kombinere enhetlige profiler. Angi relasjoner mellom de innlagte enhetene bruker suppleringsfunksjoner for å legge til informasjon i profilene.
+Enhetlige profiler er fundamentet for å få innsikt og handle ut fra dataene. Hent inn data fra ulike kilder, og kjør datasammenslåingsprosessen for å kombinere enhetlige profiler. Angi relasjoner mellom de registrerte enhetene, og bruk suppleringsfunksjoner for å legge til informasjon i profilene.
 
-1. Innhent data ved å opprette datakilder fra flere alternativer. Velg mellom [Power Query-koblinger](connect-power-query.md), en [Common Data Model-mappe](connect-common-data-model.md) eller [Microsoft Dataverse](connect-dataverse-managed-lake.md). 
+1. Innhent data ved å opprette datakilder fra flere alternativer. Velg mellom [Power Query-koblinger](connect-power-query.md), en [Common Data Model-mappe](connect-common-data-model.md) eller [Microsoft Dataverse](connect-dataverse-managed-lake.md).
 
 1. Kjør [datasamlingsprosessen](data-unification.md) ved å identifisere [kildefeltene](map-entities.md), fjerne [duplikater](remove-duplicates.md), [samsvarende betingelser](match-entities.md) og [samle felter](merge-entities.md).
 
@@ -59,7 +59,7 @@ Med enhetlige profiler konfigurert kan du forbedre dataene og ytterligere øke i
 
 ## <a name="step-5-create-segments-and-activate-data-through-various-export-options"></a>Trinn 5: Opprett segmenter og aktiver data ved hjelp av ulike eksportalternativer
 
-Nå som dataene er fullført og inneholder et bredt utvalg av informasjon om kundene, er det på tide å lete etter måter å utføre handlinger på med de dataene.
+Nå som dataene er fullført og inneholder et bredt utvalg av informasjon om kundene, kan du lete etter måter å utføre handlinger på.
 
 1. [Opprett segmenter](segments.md), delsett av kundebasen din, for å sikre at handlingene er relevante for kundene som er kontaktet.
 

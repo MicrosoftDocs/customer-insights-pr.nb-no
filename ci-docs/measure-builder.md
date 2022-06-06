@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: 6370df0287362a5512a837cdb588f5d20ef03d3b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d003d054145343cc2feeefeeee413810df43185a
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647286"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800338"
 ---
 # <a name="use-measure-builder-to-create-measures-from-scratch"></a>Bruk måleverktøyet til å opprette mål fra bunnen av
 
@@ -88,7 +88,7 @@ Du kan opprette mål på nivået for individuelle kunder (kundeattributt, kundem
 
 1. Hvis du vil legge til flere beregninger for målet, velger du **Ny beregning**. Du kan bare bruke enheter i den samme enhetsbanen for nye beregninger. Flere beregninger vises som nye kolonner i målutdataenheten.
 
-1. Velg **...** i beregningen til **Duplikat**, **Gi nytt navn** eller **Fjern** en beregning fra et mål.
+1. Velg den loddrette ellipsen (&vellip;) i beregningen til **Duplikat**, **Gi nytt navn** eller **Fjern** en beregning fra et mål.
 
 1. I området **Forhåndsvisning** vises dataskjemaet for målutdataenheten, inkludert filtre og dimensjoner. Forhåndsvisningen reagerer dynamisk på endringer i konfigurasjonen.
 
@@ -158,7 +158,7 @@ Du kan opprette mål på nivået for individuelle kontoer (kundemål) eller på 
    1. Velg **Relasjonsbane**, og velg enhetsbanen som skal brukes til å identifisere målet. Hvis det bare finnes én enkelt bane til *Kunde*-enheten, vises ikke denne kontrollen.
    1. Velg **Fullført** for å ta i bruk valget.
 
-1. Velg **...** i beregningen til **Duplikat**, **Gi nytt navn** eller **Fjern** en beregning fra et mål.
+1. Velg den loddrette ellipsen (&vellip;) i beregningen til **Duplikat**, **Gi nytt navn** eller **Fjern** en beregning fra et mål.
 
 1. I området **Forhåndsvisning** vises dataskjemaet for målutdataenheten, inkludert filtre og dimensjoner. Forhåndsvisningen reagerer dynamisk på endringer i konfigurasjonen.
 

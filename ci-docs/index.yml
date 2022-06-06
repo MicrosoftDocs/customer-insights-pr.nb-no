@@ -4,14 +4,14 @@ metadata:
   author: m-hartmann
   description: Finn relevante artikler for å starte med innhold i hjelp.
   ms.author: mhart
-  ms.date: 03/02/2022
+  ms.date: 05/18/2022
   ms.topic: landing-page
-  ms.openlocfilehash: e3a9f6d5f4d23ca3e85fa3f69272a0162ca7bd2d
-  ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+  ms.openlocfilehash: e8134fa66ce47cdf8aeab144b8405104fb257f6c
+  ms.sourcegitcommit: 6108152b3d28a2ec140eae32a61dbf4317baa37b
   ms.translationtype: HT
   ms.contentlocale: nb-NO
-  ms.lasthandoff: 04/27/2022
-  ms.locfileid: "8641668"
+  ms.lasthandoff: 05/19/2022
+  ms.locfileid: "8781376"
 title: Dynamics 365 Customer Insights-dokumentasjon
 summary: Finn nyttige ressurser for å komme i gang og lær om funksjoner og egenskapene i Customer Insights.
 landingContent:
@@ -43,16 +43,30 @@ landingContent:
     links:
     - text: Kom i gang
       url: /learn/modules/get-started-customer-data-platform/
-- title: Samle data
+- title: Hent inn data
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Oversikt over datakilder
       url: data-sources.md
+    - text: Koble til med Power Query
+      url: connect-power-query.md
+    - text: Koble til Microsoft Dataverse
+      url: connect-dataverse-managed-lake.md
+  - linkListType: learn
+    links:
+    - text: Registrer data i Customer Insights
+      url: /learn/modules/ingest-data-customer-insights/
+- title: Samle data
+  linkLists:
+  - linkListType: how-to-guide
+    links:
     - text: Oversikt over datasamling
       url: data-unification.md
     - text: Forstå enheter
       url: entities.md
+    - text: Gå gjennom samlede profiler
+      url: customer-profiles.md
   - linkListType: learn
     links:
     - text: Opprette en samlet profil
@@ -99,20 +113,6 @@ landingContent:
     links:
     - text: Behandle eksterne tilkoblinger
       url: /learn/modules/configure-third-party-connections/
-- title: Administrere appen
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Konfigurere systemet
-      url: system.md
-    - text: Definere brukertillatelser
-      url: permissions.md
-    - text: Behandle flere miljøer
-      url: manage-environments.md
-  - linkListType: learn
-    links:
-    - text: Administrere Customer Insights
-      url: /learn/modules/administer-customer-data-platform/
 - title: Administrere Customer Insights
   linkLists:
   - linkListType: how-to-guide

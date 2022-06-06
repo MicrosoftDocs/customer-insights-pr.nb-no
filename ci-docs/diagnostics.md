@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 03169f0218dfad55cf20ecaf1c1596c652e5f601
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 15ae772617efa4c64cf79d0bac10a0c3cb28ca30
+ms.sourcegitcommit: a92bf5985263240fd07bad98d8e119b88cf2c9d9
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755274"
+ms.lasthandoff: 05/26/2022
+ms.locfileid: "8807593"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Logge videresending i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversjon)
 
@@ -38,7 +38,7 @@ Hvis du vil konfigurere diagnose i Customer Insights, må følgende forhåndskra
 
 - Du må ha et aktivt [Azure-abonnement](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - Du har [administrator](permissions.md#admin)-tillatelser i Customer Insights.
-- Du har rollen **Bidragsyter** og **Brukertilgangsadministrator** på målressursen i Azure. Ressursen kan være en Azure Storage-konto, en Azure-hendelseshub eller et Azure Log Analytics-arbeidsområde. Hvis du vil ha mer informasjon, kan du se [Legge til eller fjerne Azure-rolletilordninger ved hjelp av Azure-portalen](/azure/role-based-access-control/role-assignments-portal).
+- Du har rollen **Bidragsyter** og **Brukertilgangsadministrator** på målressursen i Azure. Ressursen kan være en Azure Data Lake Storage-konto, et Azure-hendelsessenter eller et Azure Log Analytics-arbeidsområde. Hvis du vil ha mer informasjon, kan du se [Legge til eller fjerne Azure-rolletilordninger ved hjelp av Azure-portalen](/azure/role-based-access-control/role-assignments-portal). Denne tillatelsen er nødvendig når du konfigurerer diagnoseinnstillinger i Customer Insights, og den kan endres etter at installasjonen er fullført.
 - [Målkrav](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) for Azure Storage, Azure-hendelseshub eller Azure Log Analytics oppfylt.
 - Du har minst **leser**-rollen på ressursgruppen som ressursen tilhører.
 

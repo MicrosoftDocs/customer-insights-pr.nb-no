@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 1fe8d6e8098831ecc8ff28e571340c56a654de6d
-ms.sourcegitcommit: a50c5e70d2baf4db41a349162fd1b1f84c3e03b6
+ms.openlocfilehash: 355d52eabde90e0764817cf479821264ebb2e5eb
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8739220"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800478"
 ---
 # <a name="data-sources-overview"></a>Oversikt over datakilder
 
@@ -76,7 +76,7 @@ Følg denne fremgangsmåten for å oppdatere en datakilde ved behov:
 
 1. Gå til **Data** > **Datakilder**.
 
-2. Velg den loddrette ellipsen ved siden av datakildene du vil oppdatere, og velg **Oppdater** fra rullegardinlisten.
+2. Velg den loddrette ellipsen (&vellip;) ved siden av datakildene du vil oppdatere, og velg **Oppdater** fra rullegardinlisten.
 
 3. Datakilden utløses nå for manuell oppdatering. Oppdatering av en datakilde vil oppdatere både enhetsskjemaet og dataene for alle enhetene som er angitt i datakilden.
 
@@ -86,7 +86,7 @@ Følg denne fremgangsmåten for å oppdatere en datakilde ved behov:
 
 1. Gå til **Data** > **Datakilder**.
 
-2. Velg den loddrette ellipsen ved siden av datakildene du vil fjerne, og velg **Slett** fra rullegardinmenyen.
+2. Velg den loddrette ellipsen (&vellip;) ved siden av datakildene du vil fjerne, og velg **Slett** fra rullegardinmenyen.
 
 3. Bekreft slettingen.
 

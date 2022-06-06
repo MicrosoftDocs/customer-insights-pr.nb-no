@@ -11,26 +11,26 @@ manager: shellyha
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: cdeb48df2172785ed8adad0f21943974ec39d14d
-ms.sourcegitcommit: 94de4dacdb8a7f4bc0f5914e7398622e70b81ff3
+ms.openlocfilehash: 621977068dc49b55f50f00e9762a4a5952d7b453
+ms.sourcegitcommit: ba29fd7c89bdeba7260b4783662d8da8e1e1e30e
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/12/2022
-ms.locfileid: "8743425"
+ms.lasthandoff: 05/18/2022
+ms.locfileid: "8768362"
 ---
 # <a name="explore-customer-insights"></a>Utforsk Customer Insights
 
 Du kan få tilgang til [Dynamics 365 Customer Insights](https://home.ci.ai.dynamics.com/) på følgende nettadresse: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
 
-**Startsiden** viser deg gjennom konfigureringsprosessen for nøkkelfunksjoner og gir en oversikt over segmenter, mål og suppleringsdata.
+**Startsiden** veileder deg gjennom konfigureringsprosessen for nøkkelfunksjoner og gir en oversikt over segmenter, mål og suppleringsdata.
 
 :::image type="content" source="media/home-page.png" alt-text="Skjermbilde av startskjermen som viser eksempelinnsikt.":::
 
 ## <a name="left-side-pane"></a>Venstre siderute
 
-Bruk den venstre ruten til å navigere mellom ulike områder Customer Insights. 
+Bruk den venstre ruten til å navigere mellom ulike områder for Customer Insights.
 
-Hvis du arbeider med forretningskontoer og individuelle forbrukere, kan du velge den primære målgruppen for å sette fokus i henhold til dette. 
+Hvis du arbeider med forretningskontoer og individuelle forbrukere, kan du velge den primære målgruppen for å sette fokus i henhold til dette.
 
 ## <a name="application-header"></a>Programoverskrift
 
@@ -38,7 +38,7 @@ Hvis du arbeider med forretningskontoer og individuelle forbrukere, kan du velge
 
 Smilefjesikonet er **Tilbakemelding**-kontrollen. Velg den for å fortelle oss om dine erfaringer med Customer Insights. Vi lytter aktivt til tilbakemeldingen din, og takker deg på forhånd for at du informerer oss om hva du liker og hvordan vi kan forbedre oss.
 
-Med **Innstillinger**-kontrollen, som representeres av et tannhjulikon, kan du samle inn øktdetaljer for Customer Insights og konfigurere globale innstillinger for Microsoft 365-profilen. 
+Med **Innstillinger**-kontrollen, som representeres av et tannhjulikon, kan du samle inn øktdetaljer for Customer Insights og konfigurere globale innstillinger for Microsoft 365-profilen.
 
 **Hjelpealternativer**, visualisert med et spørsmålstegnikon, gir kontekstavhengige hjelpekoblinger og andre nyttige ressurser.
 
@@ -46,7 +46,7 @@ Profilbildet ditt åpner **kontoadministratoren** for Microsoft 365-profilen. Ve
 
 ## <a name="getting-started-with-customer-insights-section"></a>Delen Kom i gang med Customer Insights
 
-Denne delen inneholder kort som hjelper deg med å gå gjennom prosessen med å konfigurere Customer Insights-miljøet. 
+Denne delen inneholder kort som hjelper deg med å gå gjennom prosessen med å konfigurere Customer Insights-miljøet.
 
 1. **Legg til data**-kort hjelper deg med dataimporten. Customer Insights støtter [flere alternativer for å hente inn data om kundene](data-sources.md). Velg **Legg til datakilder** for å komme i gang.
 1. Når importen av de første dataene er fullført, kan du bruke **Samle data**-kortet til å samle inn dataene og [opprette enhetlige kundeprofiler](data-unification.md) fra ulike kilder. 

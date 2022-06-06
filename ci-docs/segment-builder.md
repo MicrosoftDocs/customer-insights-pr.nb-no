@@ -13,12 +13,12 @@ searchScope:
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: c8e9e4976ade36c1c3c4f688a667b329bfde6e3e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e1a9cd0e3c0347285026d937ca7d951a602e7160
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647077"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800108"
 ---
 # <a name="create-segments"></a>Opprett segmenter
 
@@ -134,8 +134,9 @@ Når du oppretter et segment, kan du lagre et utkast. I fasen utkast lagres et s
 > - Segmentverktøyet foreslår ikke gyldige verdier fra enheter når du angir operatorene for betingelsene. Du kan gå til **Data** > **Enheter** og laste ned enhetsdataene for å se hvilke verdier som er tilgjengelige.
 > - Betingelser basert på datoene gjør det enkelt å veksle mellom faste datoer og et flytende datointervall.
 > - Hvis du har flere regler for segmentet, har regelen du redigerer, en loddrett blå linje ved siden av seg.
-> - Du kan flytte regler og betingelser til andre steder i segmentdefinisjonen. Velg [...] ved siden av en regel eller betingelse, og velg hvordan og hvor den skal flyttes.
+> - Du kan flytte regler og betingelser til andre steder i segmentdefinisjonen. Velg den loddrette ellipsen (&vellip;) ved siden av en regel eller betingelse, og velg hvordan og hvor den skal flyttes.
 > - Med **Angre** og **Gjør om**-kontrollene på kommandolinjen kan du rulle tilbake endringer.
+> - Når du har opprettet et segment , kan du [spore bruken av segmentet](segments.md#track-usage-of-a-segment) i noen segmenter.
 
 ## <a name="quick-segments"></a>Hurtigsegmenter
 

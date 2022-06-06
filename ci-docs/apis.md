@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: a460ec87ec85f0614f944d352588d4ca899f8120
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 9a04276f7326533cd389cba6554f468123463bac
+ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755462"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "8808518"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbeide med API-er for Customer Insights
 
@@ -31,11 +31,11 @@ Denne artikkelen beskriver hvordan du får tilgang til API-ene for Customer Insi
 
 1. [Logg på](https://home.ci.ai.dynamics.com) to Customer Insights. Hvis du ikke har et abonnement ennå, kan du [registrere deg for en prøveversjon av Customer Insights](https://aka.ms/tryci).
 
-1. For å aktivere API-er i Customer Insights-miljøet går du til **Administrasjon** > **Tillatelser**. Du må ha administratortillatelser for å gjøre dette.
+1. Gå til **Administrator** > **Sikkerhet** for å aktivere API-er i Customer Insights-miljøet. Du må ha administratortillatelser for å gjøre dette.
 
 1. Gå til fanen **API-er**, og velg **Aktiver**-knappen.    
  
-   Når du aktiverer API-ene, opprettes en primær og en sekundær abonnementsnøkkel for forekomsten som blir brukt i API-forespørslene. Du kan generere nøklene på nytt ved å merke av for **Generer primær på nytt** eller **Generer sekundær på nytt** på **Administrasjon** > **Tillatelser** > **API-er**.
+   Når du aktiverer API-ene, opprettes en primær og en sekundær abonnementsnøkkel for forekomsten som blir brukt i API-forespørslene. Du kan generere nøklene på nytt ved å velge **Generer primær på nytt** eller **Generer sekundær på nytt** på **Administrator** > **Sikkerhet** > **API-er**.
 
 <!--  :::image type="content" source="media/enable-apis.gif" alt-text="Enable Customer Insights APIs."::: -->
 
@@ -62,14 +62,12 @@ Disse trinnene hjelper deg å komme i gang med å bruke API-ene for Customer Ins
 1. Til venstre velger du **Appregistreringer**.
 
 1. Velg **Ny registrering**, angi et programnavn, og velg kontotypen.
- 
+
    Du kan også legge til en URL-adresse for omdirigering. http://localhost er tilstrekkelig for utvikling av et program på den lokale datamaskinen.
 
 1. I den nye appregistreringen går du til **API-tillatelser**.
 
-<!--   :::image type="content" source="media/app-registration-1.gif" alt-text="How to set API permissions in App registration."::: -->
-
-1. Velg **Legg til en tillatelse**, og velg **Customer Insights** i sideruten.
+1. Velg **Legg til en tillatelse**, og velg **Dynamics 365 AI for Customer Insights** i sideruten.
 
 1. For **Tillatelsestype** velger du **Delegerte tillatelser**, og deretter velger du **user_impersonation**-tillatelsen.
 
@@ -109,7 +107,7 @@ Hvis du vil ha informasjon om hvordan du bruker API-ene i klientbibliotekene, ka
 
 1. For å fullføre må vi legge til navnet på appregistreringen som en bruker i Customer Insights.  
    
-   Åpne Customer Insights, gå til **Administrasjon** > **Tillatelser**, og velg **Legg til bruker**.
+   Åpne Customer Insights, gå til **Administrator** > **Sikkerhet** og velg **Legg til bruker**.
 
 1. Søk etter navnet på appregistreringen, velg det fra søkeresultatene, og velg **Lagre**.
 

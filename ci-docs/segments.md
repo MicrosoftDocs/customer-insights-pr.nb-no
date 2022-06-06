@@ -1,7 +1,7 @@
 ---
 title: Segmenter i Customer Insights
 description: Oversikt over segmenter og hvordan du oppretter og administrerer dem.
-ms.date: 03/30/2022
+ms.date: 05/20/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 9791e971387eb7db91ed7c4e4fe76552656013ba
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d616ec8273115203dddb59334a348c66e72fa678
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647066"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800754"
 ---
 # <a name="segments-overview"></a>Oversikt over segmenter
 
@@ -58,7 +58,7 @@ Følgende handlinger er tilgjengelige når du velger et segment:
 - **Vis** segmentdetaljene, inkludert medlemsantall, som viser en forhåndsvisning av segmentmedlemmer.
 - **Last ned** listen over medlemmer som en .CSV-fil.
 - **Rediger** segmentet for å endre egenskapene.
-- **Opprett duplikat** av et segment. Du kan velge å redigere egenskapene med en gang, eller ganske enkelt lagre duplikatet.
+- **Opprett duplikat** av et segment. Du kan velge å redigere egenskapene med én gang, eller lagre duplikatet.
 - **Oppdater** segmentet slik at det inneholder de nyeste dataene.
 - **Aktiver** eller **Deaktiver** segmentet. For inaktive segmenter finnes segmentdefinisjonen, men den inneholder ingen kunder ennå. Et aktivt segment ser etter kunder som samsvarer med segmentdefinisjonen. Hvis en [planlagt oppdatering](system.md#schedule-tab) er konfigurert, har inaktive segmenter **Status** oppført som **Hoppet over**, og dette tyder på at en oppdatering ikke ble forsøkt. Når et inaktivt segment blir aktivert, oppdateres det og tas med i planlagte oppdateringer.
   Du kan også bruke funksjonen **Planlegg senere** i rullegardinlisten **Aktiver/Deaktiver** for å angi en fremtidig dato og klokkeslett for acktivering og deaktivering av et bestemt segment.
@@ -75,6 +75,7 @@ Følgende handlinger er tilgjengelige når du velger et segment:
 ## <a name="refresh-segments"></a>Oppdatere segmenter
 
 Du kan oppdatere alle segmenter samtidig ved å velge **Oppdater alle** på **Segmenter**-siden, eller du kan oppdatere ett eller flere segmenter når du velger dem, og deretter velge **Oppdater** fra alternativene. Du kan også konfigurere en regelmessig oppdatering under **Admin** > **System** > **Tidsplan**. Når en regelmessig oppdatering konfigureres, gjelder følgende regler:
+
 - Alle segmenter av typen **Dynamisk** eller **Utvidelse** oppdateres automatisk med den angitte hyppigheten. Når oppdateringen er fullført, angir **Status** om det var problemer under oppdatering av segmentet. **Sist oppdaterte** viser et tidsstempel for den siste vellykkede oppdateringen. Hvis det oppstår en feil, velger du feilen for å vise detaljer om hva som har skjedd.
 - Segmenter av typen **Statisk** *blir ikke* oppdatert automatisk. **Sist oppdatert** viser et tidsstempel for sist gang de statiske segmentene ble kjørt eller oppdatert manuelt.
 
@@ -86,7 +87,7 @@ Du kan eksportere et segment fra segmentsiden eller [eksportsiden](export-destin
 
 1. Gå til siden **Segmenter**.
 
-1. Velg **Vis mer [...]** for segmentet du vil eksportere.
+1. Velg den loddrette ellipsen (&vellip;) for segmentet du vil eksportere.
 
 1. Velg **Behandle eksporter** fra rullegardinlisten over handlinger.
 
@@ -97,6 +98,26 @@ Du kan eksportere et segment fra segmentsiden eller [eksportsiden](export-destin
    1. Hvis du vil opprette en ny eksport med det valgte segmentet, velger du **Legg til eksport**. Hvis du vil ha mer informasjon om hvordan du oppretter eksporter, kan du se [Konfigurere en ny eksport](export-destinations.md#set-up-a-new-export).
 
 1. Velg **Tilbake** for å gå tilbake til hovedsiden for segmenter.
+
+## <a name="track-usage-of-a-segment"></a>Spor bruk av et segment
+
+Hvis du bruker segmenter i apper, som er basert på den samme Microsoft Dataverse-organisasjonen som er koblet til Customer Insights, kan du spore bruken av et segment. For [Customer Insights-segmenter som brukes i kundereiser for Dynamics 365 Marketing](/dynamics365/marketing/real-time-marketing-ci-profile) informerer systemet deg om bruken av dette segmentet.
+
+Når du redigerer et segment som brukes i Customer Insights-miljøet eller i en kundereise i Marketing, informerer et banner i [segmentverktøyet](segment-builder.md) deg om avhengighetene. Du kan kontrollere avhengighetsdetaljene direkte fra banneret eller ved å velge **Bruk** i segmentverktøyet.
+
+Ruten **Segmentbruk** viser detaljene om bruken av dette segmentet i Dataverse-baserte apper. For segmenter som brukes i kundereiser, finner du en kobling du kan bruke til å inspisere reisen i Marketing der dette segmentet brukes. Hvis du har tilgang til Marketing-appen, har du tilgang til flere detaljer der.
+
+:::image type="content" source="media/segment-usage-pane.png" alt-text="Sideruten med detaljer om segmentbruken i segmentverktøyet.":::
+
+Systemet informerer deg om bruken av et sporet segment når du prøver å slette det. Hvis segmentet du er i ferd med å slette, brukes i en kundereise i Marketing, stoppes denne reisen for alle brukerne i segmentet. Hvis reisen er en del av en markedsføringskampanje, påvirker slettingen selve kampanjen. Du kan imidlertid fremdeles slette segmentet til tross for advarslene.
+
+:::image type="content" source="media/segment-usage-delete.png" alt-text="Dialogboksen for å bekrefte segmentsletting når et segment brukes i et Dataverse-program.":::
+
+### <a name="supported-apps"></a>Støttede apper
+
+Bruk spores for øyeblikket i følgende Dataverse-baserte apper:
+
+- [Kundereiser i Dynamics 365 Marketing](/dynamics365/marketing/real-time-marketing-ci-profile)
 
 ## <a name="view-processing-history-and-segment-members"></a>Vis behandlingslogg og segmentmedlemmer
 
@@ -117,6 +138,5 @@ Den nedre delen inneholder en liste over medlemmene i segmentet.
 > Felt som vises i listen, er basert på attributtene til enhetene i segmentet.
 >
 >Listen er en forhåndsvisning av de samsvarende segmentmedlemmene og viser de første 100 oppføringene av segmentet, slik at du raskt kan evaluere det og se gjennom definisjonene hvis det er nødvendig. Hvis du vil vise alle samsvarende oppføringer, må du [eksportere segmentet](export-destinations.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Koble til en Azure Data Lake Storage-konto ved hjelp av en tjenestekontohaver
 description: Bruk en Azure-tjenestekontohaver til å koble til din egen datasjø.
-ms.date: 04/26/2022
+ms.date: 05/31/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -11,22 +11,23 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 776eee79c25edbd40ed119510a314f5126933c3e
-ms.sourcegitcommit: a50c5e70d2baf4db41a349162fd1b1f84c3e03b6
+ms.openlocfilehash: b18d1f42b9510ebf23f0666322819865d132173b
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8739174"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833397"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Koble til en Azure Data Lake Storage-konto ved hjelp av en Azure-tjenestekontohaver
 
-Denne artikkelen beskriver hvordan du kobler Dynamics 365 Customer Insights til en Azure Data Lake Storage konto ved hjelp av en Azure-tjenestekontohaver i stedet for lagringskontonøkler. 
+Denne artikkelen beskriver hvordan du kobler Dynamics 365 Customer Insights til en Azure Data Lake Storage konto ved hjelp av en Azure-tjenestekontohaver i stedet for lagringskontonøkler.
 
 Automatiske verktøy som bruker Azure-tjenester, bør alltid ha begrensede tillatelser. I stedet for at programmer skal logges på som en bruker med full rettigheter, tilbyr Azure tjenestekontohavere. Du kan bruke tjenestekontohavere til sikkert å [legge til eller redigere en Common Data Model-mappe som en datakilde](connect-common-data-model.md) eller [opprette eller oppdatere et miljø](create-environment.md).
 
 > [!IMPORTANT]
+>
 > - Data Lake Storage-kontoen som skal bruke tjenestekontohaveren, må være Gen2 og ha [hierarkisk navneområde aktivert](/azure/storage/blobs/data-lake-storage-namespace). Azure Data Lake Gen1-lagringskontoer støttes ikke.
-> - Du må ha administratortillatelser for Azure-abonnementet for å opprette en tjenestekontohaver.
+> - Du må ha administratortillatelser for Azure-leieren for å opprette en tjenestekontohaver.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Opprett en Azure-tjenestekontohaver for Customer Insights
 
@@ -38,29 +39,15 @@ Før du oppretter en ny tjenestekontohaver for Customer Insights, kontrollerer d
 
 2. Velg **Azure Active Directory** under **Azure-tjenester**.
 
-3. Under **Administrer** velger du **Enterprise-programmer**.
+3. Velg **Microsoft-program** under **Administrer**.
 
 4. Legg til et filter for **program-ID som starter med** `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff`, eller søk etter navnet `Dynamics 365 AI for Customer Insights`.
 
-5. Hvis du finner en samsvarende oppføring, betyr det at tjenestekontohaveren allerede finnes. 
-   
+5. Hvis du finner en samsvarende oppføring, betyr det at tjenestekontohaveren allerede finnes.
+
    :::image type="content" source="media/ADLS-SP-AlreadyProvisioned.png" alt-text="Skjermbilde som viser en eksisterende tjenestekontohaver.":::
-   
-6. Hvis ingen resultater returneres, oppretter du en ny tjenestekontohaver.
 
-### <a name="create-a-new-service-principal"></a>Opprett en ny tjenestekontohaver
-
-1. Installer den nyeste versjonen av Azure Active Directory PowerShell for Graph. Hvis du vil ha mer informasjon, kan du gå til [Install Azure Active Directory PowerShell for Graph](/powershell/azure/active-directory/install-adv2).
-
-   1. Velg Windows-tasten på tastaturet på PC-en, søk etter **Windows PowerShell**, og velg **Kjør som administrator**.
-   
-   1. I PowerShell-vinduet som åpnes, skriver du inn `Install-Module AzureAD`.
-
-2. Opprett tjenestekontohaveren for Customer Insights med Azure AD PowerShell-modulen.
-
-   1. I PowerShell-vinduet skriver du inn `Connect-AzureAD -TenantId "[your Directory ID]" -AzureEnvironmentName Azure`. Bytt ut *[katalog-ID]* med den faktiske katalog-ID-en for Azure-abonnementet der du vil opprette tjenestekontohaveren. Parameteren for miljønavnet `AzureEnvironmentName` er valgfri.
-  
-   1. Angi `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. Denne kommandoen oppretter tjenestesjefen for Customer Insights i det valgte Azure-abonnementet. 
+6. Hvis ingen resultater returneres, kan du opprette [en ny tjenestekontohaver](#create-a-new-service-principal). I de fleste tilfeller finnes den allerede, og du trenger bare gi tillatelser til tjenestehaveren for å få tilgang til lagringskontoen.
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Gi tillatelser til tjenestekontohaveren for tilgang til lagringskontoen
 
@@ -77,9 +64,9 @@ Gå til Azure-portalen for å gi tillatelser til tjenestekontohaveren for lagrin
 1. Angi følgende egenskaper i ruten **Legg til rolletilordning**:
    - Rolle: **Storage Blob-databidragsyter**
    - Tilordne tilgang til: **Bruker, gruppe eller tjenestekontohaver**
-   - Velg medlemmer: **Dynamics 365 AI for Customer Insights** ([tjenestekontohaveren](#create-a-new-service-principal) du opprettet tidligere i denne prosedyren)
+   - Velg medlemmer: **Dynamics 365 AI for Customer Insights** ([tjenestekontohaveren](#create-a-new-service-principal) du slo opp tidligere i denne prosedyren)
 
-1.  Velg **Se gjennom + tildel**.
+1. Velg **Se gjennom + tildel**.
 
 Det kan ta opptil 15 minutter å overføre endringene.
 
@@ -91,7 +78,7 @@ Du kan legge ved en Data Lake Storage-konto i Customer Insights for [å lagre ut
 
 1. Gå til [Azure-administrasjonsportalen](https://portal.azure.com), logg på abonnementet, og åpne lagringskontoen.
 
-1. Gå til **Innstillinger** > **Egenskaper** i ruten til venstre.
+1. Gå til **Innstillinger** > **Endepunkter** i venstre rute.
 
 1. Kopier ressurs-ID-verdien for lagringskontoen.
 
@@ -115,5 +102,18 @@ Du kan legge ved en Data Lake Storage-konto i Customer Insights for [å lagre ut
 
 1. Fortsett med de resterende trinnene i Customer Insights for å legge ved lagringskontoen.
 
+### <a name="create-a-new-service-principal"></a>Opprett en ny tjenestekontohaver
+
+1. Installer den nyeste versjonen av Azure Active Directory PowerShell for Graph. Hvis du vil ha mer informasjon, kan du gå til [Install Azure Active Directory PowerShell for Graph](/powershell/azure/active-directory/install-adv2).
+
+   1. Trykk på Windows-tasten på tastaturet på PC-en, søk etter **Windows PowerShell**, og velg **Kjør som administrator**.
+
+   1. I PowerShell-vinduet som åpnes, skriver du inn `Install-Module AzureAD`.
+
+2. Opprett tjenestekontohaveren for Customer Insights med Azure AD PowerShell-modulen.
+
+   1. I PowerShell-vinduet skriver du inn `Connect-AzureAD -TenantId "[your Directory ID]" -AzureEnvironmentName Azure`. Bytt ut *[katalog-ID]* med den faktiske katalog-ID-en for Azure-abonnementet der du vil opprette tjenestekontohaveren. Parameteren for miljønavnet `AzureEnvironmentName` er valgfri.
+  
+   1. Angi `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. Denne kommandoen oppretter tjenestesjefen for Customer Insights i det valgte Azure-abonnementet.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

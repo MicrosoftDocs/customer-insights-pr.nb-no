@@ -1,7 +1,7 @@
 ---
 title: Koble Common Data Model-til en Azure Data Lake-konto
 description: Arbeid med Common Data Model-data ved hjelp av Azure Data Lake Storage.
-ms.date: 01/25/2022
+ms.date: 05/24/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -13,12 +13,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: eeb6b9d97be5f9c0b9f6cbd6dbc6985559a1cd9d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 2e8564950a3269180a85f80fb736d2dcbd1b03b6
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646845"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833376"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Knytte til en Common Data Model-mappe ved å bruke en Azure Data Lake-konto
 
@@ -46,16 +46,16 @@ Denne artikkelen inneholder informasjon om hvordan du legger data i en Dynamics 
 
 1. Velg **Azure Data Lake Storage**, angi et **navn** for datakilden, og velg deretter **Neste**.
 
-   - Hvis du blir bedt om det, velger du et av eksempeldatasettene som gjelder for bransjen, og deretter velger du **Neste**. 
+   - Hvis du blir bedt om det, velger du et av eksempeldatasettene som gjelder for bransjen, og deretter velger du **Neste**.
 
 1. Du kan velge mellom å bruke et ressursbasert alternativ og et abonnementsbasert alternativ for godkjenning. Hvis du vil ha mer informasjon, kan du se [Koble til en Azure Data Lake Storage Gen2-med en en Azure-tjenestekontohaver](connect-service-principal.md). Skriv inn **Server-adressen**, velg **Logg på**, og velg deretter **Neste**.
    > [!div class="mx-imgBorder"]
    > ![Dialogboksen for å angi nye tilkoblingsdetaljer for Azure Data Lake.](media/enter-new-storage-details.png)
    > [!NOTE]
-   > Du må ha en av følgende roller i beholderen eller lagringskontoen nevnt ovenfor for å kunne koble til og opprette en datakilde:
-   >  - Storage Blob-dataleser
-   >  - Storage Blob-dataeier
-   >  - Storage Blob-databidragsyter
+   > Du må ha en av følgende roller i beholderen på lagringskontoen for å opprette datakilde:
+   >
+   >  - Storage Blob Data-leser er tilstrekkelig for å lese fra en lagringskonto og registrere dataene i Customer Insights. 
+   >  - Storage Blob Data-bidragsyter eller Eier er nødvendig hvis du vil redigere manifestfilene direkte i Customer Insights.
 
 1. I dialogboksen **Velg en mappe i Common Data Model** velger du model.json- eller manifest.json-filen du vil importere data fra, og velger deretter **Neste**.
    > [!NOTE]
@@ -65,11 +65,11 @@ Denne artikkelen inneholder informasjon om hvordan du legger data i en Dynamics 
    > [!div class="mx-imgBorder"]
    > ![Dialogboks som viser en liste over enheter fra en model.json-fil.](media/review-entities.png)
 
-8. Angi hvilke dataenheter du vil aktivere dataprofilering for, og velg deretter **Lagre**. Dataprofilering aktiverer analyse og andre funksjoner. Du kan velge hele enheten, noe som velger alle attributter fra enheten, eller du kan velge bestemte valgte attributter. Som standard er ingen enheter aktivert for dataprofilering.
+1. Angi hvilke dataenheter du vil aktivere dataprofilering for, og velg deretter **Lagre**. Dataprofilering aktiverer analyse og andre funksjoner. Du kan velge hele enheten, noe som velger alle attributter fra enheten, eller du kan velge bestemte valgte attributter. Som standard er ingen enheter aktivert for dataprofilering.
    > [!div class="mx-imgBorder"]
    > ![Dialogboks som viser dataprofilering.](media/dataprofiling-entities.png)
 
-9. Når du har lagret valgene, åpnes siden **Datakilder**. Nå skal du se Common Data Model-mappen som en datakilde.
+1. Når du har lagret valgene, åpnes siden **Datakilder**. Nå skal du se Common Data Model-mappen som en datakilde.
 
 > [!NOTE]
 > En model.json- eller manifest.json-fil kan bare tilknyttes én datakilde i samme miljø. Den samme model.json- eller manifest.json-filen kan imidlertid brukes for datakilder i flere miljøer.
@@ -80,7 +80,7 @@ Du kan oppdatere tilgangsnøkkelen for lagringskontoen som inneholder Common Dat
 
 1. Gå til **Data** > **Datakilder**.
 
-2. Klikk ellipsen ved siden av datakilden du vil oppdatere.
+2. Ved siden av datakilde du vil oppdatere, velger du den loddrette ellipsen (&vellip;).
 
 3. Velg **Rediger**-alternativet fra listen.
 
@@ -93,13 +93,6 @@ Du kan oppdatere tilgangsnøkkelen for lagringskontoen som inneholder Common Dat
 
    > ![Dialogboksen for å angi tilkoblingsdetaljer for Azure Data Lake til en eksisterende lagringskonto.](media/enter-existing-storage-details.png)
 
-   > [!NOTE]
-   > Du må ha en av følgende roller i beholderen eller lagringskontoen nevnt ovenfor for å kunne koble til og opprette en datakilde:
-   >  - Storage Blob-dataleser
-   >  - Storage Blob-dataeier
-   >  - Storage Blob-databidragsyter
-
-
 6. Du kan eventuelt velge en annen model.json- eller manifest.json-fil med et annet sett enheter fra beholderen.
 
 7. Alternativt kan du velge flere enheter å ta inn. Du kan også fjerne eventuelle enheter som allerede er valgt, hvis det ikke finnes avhengigheter.
@@ -107,7 +100,6 @@ Du kan oppdatere tilgangsnøkkelen for lagringskontoen som inneholder Common Dat
    > [!IMPORTANT]
    > Hvis det finnes avhengigheter i den eksisterende model.json- eller manifest.json-filen og enhetene, vises en feilmelding og du kan ikke velge en annen model.json- eller manifest.json-fil. Fjern avhengighetene før du endrer model.json- eller manifest.json-filen, eller opprett en ny datakilde med model.json- eller manifest.json-filen som du vil bruke for å unngå å fjerne avhengighetene.
 
-8. Du kan også velge flere attributter eller enheter du vil aktivere dataprofilering på eller deaktivere en som allerede er valgt.   
-
+8. Du kan også velge flere attributter eller enheter du vil aktivere dataprofilering på eller deaktivere en som allerede er valgt.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]
