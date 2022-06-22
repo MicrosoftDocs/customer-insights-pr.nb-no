@@ -1,7 +1,7 @@
 ---
 title: Supplering av utvidede adresser (inneholder video)
 description: Suppler og normaliser adresseinformasjonen for kundeprofiler med Microsofts modeller.
-ms.date: 01/19/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: b4fef3b5e30e1cac4e5cb4401498f2f0981a409e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f6279b9bb721d99d66f73e8dc839a92f1ad90140
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646523"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953823"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Supplering av kundeprofiler med forbedrede adresser
 
@@ -53,17 +53,17 @@ Adresseinformasjon kan være i et format som ikke er standard, og inneholder sta
 
 ### <a name="limitations"></a>Begrensninger
 
-Forbedrede adresser fungerer bare med verdiene som allerede finnes i de innlagte adressedataene. Modellen vil ikke: 
+Forbedrede adresser fungerer bare med verdiene som allerede finnes i de innlagte adressedataene. Modellen vil ikke:
 
 1. kontrollere om adressen er en gyldig adresse
 2. kontrollere om noen av verdiene, for eksempel postnumre eller gatenavn, er gyldige
 3. endre verdier den ikke gjenkjenner
 
-Modellen bruker maskinlæringsbaserte teknikker for å forbedre adressene. Selv om vi bruker en terskel for høy konfidens for når modellen endrer en inndataverdi, på samme måte som med alle maskinlæringsbaserte modeller, er ikke 100 prosent nøyaktighet garantert.
+Modellen bruker maskinlæringsbaserte teknikker for å forbedre adressene. På samme måte som med alle maskinlæringsbaserte modeller, er ikke 100 prosent nøyaktighet garantert.
 
 ## <a name="supported-countries-or-regions"></a>Støttede land eller områder
 
-Vi støtter for øyeblikket supplering av adresser i disse landene eller områdene: 
+Vi støtter for øyeblikket supplering av adresser i disse landene eller områdene:
 
 - Australia
 - Canada
@@ -74,50 +74,46 @@ Vi støtter for øyeblikket supplering av adresser i disse landene eller område
 - Storbritannia
 - USA
 
-Adresser må inneholde en land-/områdeverdi. Vi behandler ikke adresser for land eller områder som ikke støttes, og adresser som ikke har angitt land eller område.
-
 ## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
 
-1. Gå til **Data** > **Supplering**.
+1. Gå til **Data** > **Supplering**, og velg **Oppdag**-fanen.
 
 1. Velg **Suppler dataene mine** på flisen **Forbedrede adresser**.
 
    :::image type="content" source="media/enhanced-addresses-tile.png" alt-text="Skjermbilde av flisen Forbedrede adresser.":::
 
-1. Velg **kundedatasettet**, og velg enheten som inneholder adressene du vil supplere. Du kan velge *kundeenheten* for å supplere adressene i alle kundeprofilene, eller velge en segmentenhet for å supplere adresser bare i kundeprofiler i det segmentet.
+1. Se gjennom oversikten, og velg deretter **Neste**.
+
+1. Velg **kundedatasettet** og velg profilen eller segmentet du vil supplere. *Kunde*-enheten supplerer alle kundeprofilene dine, mens segmentsuppleringer bare supplerer kundeprofiler i det segmentet.
 
 1. Velg hvordan adresser formateres i datasettet. Velg **Adresse for enkeltattributt** hvis adressene i dataene bruker ett enkelt felt. Velg **Adresse for flere attributter** hvis adressene i dataene bruker mer enn ett datafelt.
+
+1. Velg **Neste**, og tildel adressefeltene fra enheten for enhetlig kunde.
+
+    :::image type="content" source="media/enhanced-address-mapping.png" alt-text="Forbedret adresse-felttilordningsside.":::
 
    > [!NOTE]
    > Land/område er obligatorisk både i adresser med enkeltattributter og flere attributter. Adresser som ikke inneholder gyldige eller støttede land-/områdeverdier, blir ikke supplert.
 
-1.  Tilordne adressefeltene fra enheten for enhetlig kunde.
-
-    :::image type="content" source="media/enhanced-address-mapping.png" alt-text="Forbedret adresse-felttilordningsside.":::
-
 1. Velg **Neste** for å fullføre felttilordningen.
 
-1. Angi et navn for suppleringen og utdataenheten.
+1. Angi et **Navn** for suppleringen og **Utdataenheten**.
 
 1. Velg **Lagre supplering** etter at du har sett gjennom valgene.
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 
-Hvis du vil starte den omfattende prosessen, velger du **Kjør** fra kommandolinjen. Du kan også la systemet kjøre supplementet automatisk som en del av en [planlagt oppdatering](system.md#schedule-tab). Behandlingstiden avhenger av størrelsen på kundedataene.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
-Når suppleringsprosessen fullføres, kan du se gjennom de nylig klargjorte kundeprofildataene under **Mine suppleringer**. I tillegg finner du tidspunktet for den siste oppdateringen og antall supplerte profiler.
-
-Du kan se et eksempel på de supplerte dataene på **forhåndsvisningsflisen for supplerte kunder**. Velg **Vis mer**, og velg fanen **Data** for å få tilgang til en detaljert visning av hver supplerte profil.
+**Antall kunder supplert av feltet** gir en neddrilling i dekningen av hvert supplerte felt.
 
 ### <a name="overview-card"></a>Oversiktskort
 
-Oversiktskortet viser detaljer om dekningen til suppleringen. 
+Kortet **Oversikt over kundeendringer** viser detaljer om dekningen til suppleringen:
 
-* **Adresser som er behandlet og endret**: Antall kundeprofiler med adresser som er supplert.
-
-* **Adresser som er behandlet og uendret**: Antall kundeprofiler med adresser som er gjenkjent, men ikke endret. Det skjer vanligvis når inndataene er gyldige og ikke kan forbedres av suppleringen.
-
-* **Adresser som ikke er behandlet og uendret**: Antall kundeprofiler med adresser som ikke er gjenkjent. Dette skjer vanligvis for inndata som er ugyldige eller ikke støttes av suppleringen.
+- **Adresser som er behandlet og endret**: Antall kundeprofiler med adresser som er supplert.
+- **Adresser som er behandlet og uendret**: Antall kundeprofiler med adresser som er gjenkjent, men ikke endret. Det skjer vanligvis når inndataene er gyldige og ikke kan forbedres av suppleringen.
+- **Adresser som ikke er behandlet og uendret**: Antall kundeprofiler med adresser som ikke er gjenkjent. Dette skjer vanligvis for inndata som er ugyldige eller ikke støttes av suppleringen.
 
 ## <a name="next-steps"></a>Neste trinn
 

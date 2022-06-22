@@ -1,7 +1,7 @@
 ---
 title: Oppdater samlingsinnstillingene
 description: Oppdater duplikatregler, samsvarsregler eller enhetlige felter i samlingsinnstillingene.
-ms.date: 05/04/2022
+ms.date: 06/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: be399da9b98d8803d7d1a90f44a40e0d638a8d47
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 590a2996cf8b2b1c6def59b78583169ec1910b59
+ms.sourcegitcommit: 760fbac397c738407c7dea59297d54cae19b6f57
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755602"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "8844052"
 ---
 # <a name="update-the-unification-settings"></a>Oppdater samlingsinnstillingene
 
@@ -43,8 +43,9 @@ Hvis du vil se gjennom eller endre eventuelle enhetlige innstillinger når en en
 
    :::image type="content" source="media/m3_run_match_merge.png" alt-text="Skjermbilde av siden for datasamling med alternativene for samling uthevet.":::
 
-   - Hvis du vil oppdatere den enhetlige kundeprofilen (med eller uten avhengigheter), kan du se [Kjør oppdateringer til kundeprofilen](#run-updates-to-the-unified-customer-profile).
-   - Hvis du vil evaluere kvaliteten på de samsvarende betingelsene uten å oppdatere den enhetlige profilen, kan du se [Kjør samsvarende betingelser](#run-matching-conditions). Alternativet **Kjør bare samsvarende betingelser** vises ikke for én enhet.
+   - [Kjør samsvarende betingelser](#run-matching-conditions) for å evaluere kvaliteten på de samsvarende betingelsene (deduplisering og samsvarsregler) uten å oppdatere den enhetlige profilen. Alternativet **Kjør bare samsvarende betingelser** vises ikke for én enhet.
+   - [Samle kundeprofiler](#run-updates-to-the-unified-customer-profile) for å kjøre samsvarende betingelser og oppdatere enheten for Unified customer profile uten at det påvirker avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Avhengige prosesser kjøres ikke, men oppdateres som [definert i oppdateringsplanen](system.md#schedule-tab).
+   - [Samle kundeprofiler og -avhengigheter](#run-updates-to-the-unified-customer-profile) for å kjøre samsvarende betingelser og oppdatere enheten for Unified customer profile og alle avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Alle prosesser kjører på nytt automatisk.
 
 ## <a name="edit-source-fields"></a>Rediger kildefelter
 
@@ -135,11 +136,13 @@ Du kan omkonfigurere og finjustere de fleste av samsvarsparameterne. Du kan ikke
 
 ## <a name="run-matching-conditions"></a>Kjør samsvarende betingelser
 
+Kjør samsvarende betingelser kjører bare deduplisering og samsvarsregler, og oppdaterer enhetene *Deduplication_* og *ConflationMatchPair*.
+
 1. Velg **Kjør bare samsvarende betingelser** på siden **Data** > **Samle**.
 
-   Flisene **Duplikatoppføringer** og **Samsvarende betingelser** viser **Kø** eller **Oppdater**.
+   Flisene **Duplikatoppføringer** og **Samsvarende betingelser** viser statusen **I kø** eller **Oppdaterer**.
 
-   [!INCLUDE [m3-task-details-include](includes/m3-task-details.md)]
+   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
 
 1. Når den samsvarende prosessen er fullført, velger du **Rediger** på flisen **Samsvarende betingelser**.
 
@@ -153,10 +156,12 @@ Du kan omkonfigurere og finjustere de fleste av samsvarsparameterne. Du kan ikke
 
 1. Velg følgende på siden **Data** > **Samle**:
 
-   - **Samle kundeprofiler**: Oppdaterer enheten for enhetlig kundeprofil uten at det påvirker avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Avhengige prosesser kjøres ikke, men oppdateres som [definert i oppdateringsplanen](system.md#schedule-tab).
+   - **Samle kundeprofiler**: Kjører samsvarende betingelser og oppdaterer enheten for Unified customer profile uten at det påvirker avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Avhengige prosesser kjøres ikke, men oppdateres som [definert i oppdateringsplanen](system.md#schedule-tab).
 
-   - **Samle kundeprofiler og avhengigheter**: Oppdaterer den enhetlige profilen og alle avhengigheter. Alle prosesser kjører på nytt automatisk. Når alle nedstrømsprosesser er fullført, gjenspeiler kundeprofilen de oppdaterte dataene.
+   - **Samle kundeprofiler og avhengigheter**: Kjører samsvarende betingelser og oppdaterer den enhetlige profilen og alle avhengigheter. Alle prosesser kjører på nytt automatisk. Når alle nedstrømsprosesser er fullført, gjenspeiler kundeprofilen de oppdaterte dataene.
 
-   Flisene **Duplikatoppføringer**, **Samsvarende betingelser** og **Enhetlige kundefelter** viser **Kø** eller **Oppdater**.
+   Flisene **Duplikatoppføringer**, **Samsvarende betingelser** og **Enhetlige kundefelter** viser statusen **I kø** eller **Oppdaterer**.
 
-   [!INCLUDE [m3-task-details-include](includes/m3-task-details.md)]
+   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
+
+Resultatet av et vellykket kjøring vises på **Samle**-siden som viser antall enhetlige kundeprofiler.

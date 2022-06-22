@@ -1,19 +1,19 @@
 ---
 title: Eksportere Customer Insights-data til SFTP-verter (inneholder video)
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til en SFTP-plassering.
-ms.date: 03/03/2021
+ms.date: 06/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5170ec4ca35ad2a94f02e9d696c44a32da888120
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b56d628c8286ba6697cccc9b002f609aa929951b
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646755"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947196"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Eksportere segmenter og andre data til SFTP (forhåndsversjon)
 
@@ -28,8 +28,8 @@ Bruk kundedataene i tredjepartsprogrammer ved å eksportere dem til en plasserin
 ## <a name="known-limitations"></a>Kjente begrensninger
 
 - SFTP-mål bak brannmurer støttes for øyeblikket ikke. 
-- Kjøretiden for en eksport avhenger av systemytelsen. Vi anbefaler to CPU-kjerner og 1 GB minne som minimal konfigurasjon av serveren. 
-- Det kan ta tre timer å eksportere enheter med opptil 100 millioner kundeprofiler når du bruker den anbefalte minimumskonfigurasjonen av to CPU-kjerner og 1 GB minne. 
+- Kjøretiden for en eksport avhenger av systemytelsen. Vi anbefaler to CPU-kjerner og 1 GB minne som minimal konfigurasjon av serveren.
+- Det kan ta tre timer å eksportere enheter med opptil 100 millioner kundeprofiler når du bruker den anbefalte minimumskonfigurasjonen av to CPU-kjerner og 1 GB minne.
 
 ## <a name="set-up-connection-to-sftp"></a>Konfigurer tilkobling til SFTP
 
@@ -64,13 +64,17 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 1. Velg enhetene du vil eksportere, for eksempel segmenter.
 
    > [!NOTE]
-   > Hver valgte enhet blir delt opp i opptil fem utdatafiler når de eksporteres. 
+   > Hver valgte enhet blir delt opp i opptil fem utdatafiler når de eksporteres.
 
 1. Velg **Lagre**.
 
 Hvis du lagrer en eksport, kjøres ikke eksporten umiddelbart.
 
-Eksporten kjører med hver [planlagte oppdatering](system.md#schedule-tab). Du kan også [eksportere data ved behov](export-destinations.md#run-exports-on-demand). 
+Eksporten kjører med hver [planlagte oppdatering](system.md#schedule-tab).
+Du kan også [eksportere data ved behov](export-destinations.md#run-exports-on-demand).
+
+> [!TIP]
+> Eksport av enheter som inneholder store mengder data, kan føre til flere CSV-filer i samme mappe for hver eksport. Oppdeling av eksporter skjer av ytelsesårsaker for å redusere tiden det tar før en eksport fullføres.
 
 ## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
 

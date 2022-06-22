@@ -1,7 +1,7 @@
 ---
 title: Supplere enhetlige kundeprofiler
 description: Bruk funksjoner for å supplere kundedataene.
-ms.date: 03/29/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: abc1b6af80e8854ee3bc930453634ef67376c4af
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: 3bbe8b829a6698da55d84709dbab6c36aa76792a
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800617"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8954053"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
 
@@ -35,29 +35,29 @@ I kategorien **Oppdag** finner du alle støttede suppleringsalternativer.
 
 # <a name="individual-consumers-b-to-c"></a>[Individuelle forbrukere (B-til-C)](#tab/b2c)
 
+- [AbiliTec-identitet](enrichment-liveramp.md) levert av LiveRamp AbiliTec
 - [Merker](enrichment-microsoft.md) levert av Microsoft
-- [Interesser](enrichment-microsoft.md) levert av Microsoft
-- [Forbedrede adresser](enrichment-enhanced-addresses.md) levert av Microsoft 
 - [Demografi](enrichment-experian.md) levert av Experian
-- [Egendefinerte data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
-- [Azure Maps](enrichment-azure-maps.md) levert av Microsoft
-- [Stedsdata](enrichment-here.md) levert av HERE Technologies 
-- [Identitet](enrichment-liveramp.md) angitt av LiveRamp AbiliTec
+- [Forbedrede adresser](enrichment-enhanced-addresses.md) levert av Microsoft
+- [Interesser](enrichment-microsoft.md) levert av Microsoft
+- [Stedsdata](enrichment-azure-maps.md) levert av Microsoft Azure Maps
+- [Stedsdata](enrichment-here.md) levert av HERE Technologies
+- [SFTP-egendefinerte data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP)
 
 # <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
 
-- [Firmadata](enrichment-leadspace.md) levert av Leadspace
-- [Forbedrede adresser](enrichment-enhanced-addresses.md) levert av Microsoft 
-- [Forbedrede firmadata](enrichment-enhanced-company-data.md) fra Microsoft
-- [Stedsdata](enrichment-here.md) levert av HERE Technologies 
-- [Egendefinerte data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
-- [Azure Maps](enrichment-azure-maps.md) levert av Microsoft
-- [Firmadata](enrichment-dnb.md) levert av Dun & Bradstreet
 - [Kontoengasjementsdata](enrichment-office.md) fra Microsoft
+- [Firmadata](enrichment-dnb.md) levert av Dun & Bradstreet
+- [Firmadata](enrichment-leadspace.md) levert av Leadspace
+- [Forbedrede adresser](enrichment-enhanced-addresses.md) levert av Microsoft
+- [Forbedrede firmadata](enrichment-enhanced-company-data.md) fra Microsoft
+- [Stedsdata](enrichment-azure-maps.md) levert av Microsoft Azure Maps
+- [Stedsdata](enrichment-here.md) levert av HERE Technologies
+- [SFTP-egendefinerte data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP)
 
 ---
 
-I kategorien **Mine suppleringer** kan du se de suppleringene du har konfigurert, og redigere egenskapene deres.
+I kategorien **Mine suppleringer** kan du se de suppleringene du har konfigurert, og redigere egenskapene deres. Du kan også opprette [segmenter](segments.md) eller [mål](measures.md) fra suppleringer.
 
 ## <a name="manage-existing-enrichments"></a>Behandle eksisterende suppleringer
 
@@ -81,36 +81,45 @@ Tredjeparts suppleringer konfigureres ved hjelp av [tilkoblinger](connections.md
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flere suppleringer av samme type
 
-Enheten som skal suppleres, angis under suppleringskonfigurasjonen, noe som gjør at du bare kan supplere et delsett av profilene. Du kan for eksempel bare supplere data for et bestemt segment. Du kan konfigurere flere suppleringer av samme type og bruke samme tilkobling på nytt. Noen suppleringer vil ha begrensninger på antall suppleringer av samme type som kan opprettes. Du kan se grensene og gjeldende bruk på **Supplering**-siden.
+Enheten som skal suppleres, angis under suppleringskonfigurasjonen, noe som gjør at du bare kan supplere et delsett av profilene. Du kan for eksempel bare supplere data for et bestemt segment. Du kan konfigurere flere suppleringer av samme type og bruke samme tilkobling på nytt. Noen suppleringer vil ha begrensninger på antall suppleringer av samme type som kan opprettes. Du kan se grensene og nåværende bruk for hver flis på fanen **Oppdag** på siden **Supplering**.
 
 ## <a name="enrich-data-sources-before-unification"></a>Supplere datakilder før foreningen
 
 Du kan supplere kundedataene før dataforeningen, slik at kvaliteten på et datassamsvar økes. Hvis du vil ha mer informasjon, kan du se [datakildesupplering](data-sources-enrichment.md).
 
-## <a name="see-the-progress-of-the-enrichment-process"></a>Se fremdriften for suppleringsprosessen
+## <a name="run-or-refresh-enrichments"></a>Kjør eller oppdater suppleringer
+
+1. Velg **Kjør** for å starte suppleringsprosessen. Du kan også la systemet kjøre supplementet automatisk som en del av en [planlagt oppdatering](system.md#schedule-tab). Behandlingstiden avhenger av størrelsen på kundedataene.
+
+1. Se eventuelt [fremdriften for suppleringsprosessen](#see-the-progress-of-the-enrichment-process).
+
+1. Når suppleringsprosessen er fullført, går du til **Mine suppleringer** for å se gjennom de nylig supplerte kundeprofildataene, tidspunktet for den siste oppdateringen og antall supplerte profiler.
+
+1. Velg suppleringen for å se [suppleringsresultatene](#enrichment-results).
+
+### <a name="see-the-progress-of-the-enrichment-process"></a>Se fremdriften for suppleringsprosessen
 
 Du kan finne detaljer om behandlingen av en supplering, blant annet status og potensielle problemer når den oppdateres eller etter at en oppdatering er fullført. Forstå hvilke prosesser som er involvert i oppdatering av en supplering, og hvor lang tid det tok å kjøre prosessene. Suppleringsstatusen støttes for Experian, Leadspace, HERE Technologies, SFTP-import og Azure Maps.
 
-Slik viser du statusen for en supplering
-
-1. Gå til **Data** > **Supplering**. 
-1. I fanen **Mine supplering** velger du statusen for en supplering for å åpne en siderute. 
-1. Utvid **Suppleringer**-delen i **Fremdrift**-detaljruten. 
-1. Velg **Se detaljer** under suppleringen du vil vise fremdriften for. 
-1. Velg **Vis detaljer** i **Oppgavedetaljer**-ruten for å vise prosessene som er involvert i oppdatering av suppleringen og statusen deres. 
+1. Gå til **Data** > **Supplering**.
+1. I fanen **Mine suppleringer** velger du statusen for suppleringen for å åpne en siderute.
+1. Utvid **Suppleringer**-delen i **Fremdrift**-detaljruten.
+1. Velg **Se detaljer** under suppleringen du vil vise fremdriften for.
+1. Velg **Vis detaljer** i **Oppgavedetaljer**-ruten for å vise prosessene som er involvert i oppdatering av suppleringen og statusen deres.
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 
 Etter en fullført suppleringskjøring, kan du se gjennom suppleringsresultatene.
 
-1. Gå til **Data** > **Supplering**. 
-1. Velg suppleringen du vil ha informasjon om.
+1. Gå til **Data** > **Supplering**.
+1. I fanen **Mine suppleringer** velger du suppleringen du vil ha informasjon om.
 
-Alle suppleringer viser grunnleggende informasjon, for eksempel antall supplerte profiler, en forhåndsvisning av den genererte suppleringsenheten og antall supplerte profiler over tid. Hvis tilgjengelig gir **Antall kunder supplert av feltet** en neddrilling i dekningen av hvert supplerte felt.
+Alle suppleringer viser grunnleggende informasjon, for eksempel antall supplerte profiler og antall supplerte profiler over tid. Flisen **Forhåndsvisning av supplerte kunder** viser et eksempel på den genererte suppleringsenheten. Velg **Vis mer**, og velg fanen **Data** for å se en detaljert visning.
 
 :::image type="content" source="media/enrichments-results.png" alt-text="Suppleringsresultater-siden.":::
 
-Noen suppleringer viser også informasjon som er spesifikk for suppleringstypen. Se dokumentasjonen for den relevante suppleringen hvis du vil ha mer informasjon.
+Hvis tilgjengelig gir **Antall kunder supplert av feltet** en neddrilling i dekningen av hvert supplerte felt.
 
+Noen suppleringer viser også informasjon som er spesifikk for suppleringstypen. Hvis du vil ha mer informasjon, kan du se relatert dokumentasjon.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

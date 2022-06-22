@@ -1,7 +1,7 @@
 ---
 title: Registrer data fra Azure Synapse Analytics
 description: Bruk en database i Azure Synapse som en datakilde i Dynamics 365 Customer Insights.
-ms.date: 02/24/2022
+ms.date: 03/25/2022
 ms.reviewer: v-wendysmith
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,31 +9,29 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 7c758dccf7ea34dd7b8f80d05eff1ed12030526f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 6f94cdbcc203fc4518544f7a945bd80e871b36c1
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646863"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011439"
 ---
-# <a name="connect-an-azure-synapse-data-source-preview"></a>Koble til en Azure Synapse-datakilde (forhåndsversjon)
+# <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Koble til en Azure Synapse Analytics-datakilde (forhåndsversjon)
 
 Azure Synapse Analytics er en bedriftsanalysetjeneste som akselererer tid til innsikt på tvers av datalagre og stordatasystemer. Azure Synapse Analytics samler sammen det beste av SQL-teknologi som brukes i bedriftsdatalagring, Spark-teknologier som brukes til stordata, Data Explorer for analyse av logg- og tidsserier, forløp for dataintegrering og ETL/ELT samt grundig integrasjon med andre Azure-tjenester som Power BI, Cosmos DB og AzureML.
 
 Hvis du vil ha mer informasjon, kan du se [Oversikt over Azure Synapse](/azure/synapse-analytics/overview-what-is).
 
-## <a name="prerequisites"></a>Krav
-
-Følgende forutsetninger må være oppfylt for å konfigurere tilkoblingen fra Dynamics 365 Customer Insights til Azure Synapse.
+## <a name="prerequisites"></a>Forutsetning
 
 > [!IMPORTANT]
 > Pass på at du angir alle **rolletilordninger** slik det er beskrevet.  
 
-## <a name="prerequisites-in-customer-insights"></a>Forhåndskrav i Customer Insights
+**I Customer Insights**:
 
 * Du har en **administratorrolle** i Customer Insights. Finn ut mer om [brukertillatelser i Customer Insights](permissions.md#assign-roles-and-permissions).
 
-I Azure: 
+**I Azure**:
 
 - Et aktivt Azure-abonnement.
 
@@ -47,7 +45,7 @@ I Azure:
 
 - I Azure Synapse workspace må *tjenestekontohaveren for Customer Insights* være tildelt rollen **Synapse-administrator**. Hvis du vil ha mer informasjon, kan du se [Slik konfigurerer du tilgangskontroll for Synapse-arbeidsområdet](/azure/synapse-analytics/security/how-to-set-up-access-control).
 
-## <a name="connect-to-data-lake-databases-in-azure-synapse-analytics"></a>Koble til datasjødatabaser i Azure Synapse Analytics
+## <a name="connect-to-the-data-lake-database-in-azure-synapse-analytics"></a>Koble deg til datasjødatabasen i Azure Synapse Analytics
 
 1. Gå til **Data** > **Datakilder**.
 
@@ -55,14 +53,16 @@ I Azure:
 
 1. Velg metoden **Azure Synapse Analytics (forhåndsversjon)**.
 
-1. Angi et **Navn** for datakilden, og velg deretter **Neste** for å opprette datakilden. 
+   :::image type="content" source="media/data_sources_synapse.png" alt-text="Dialogboks for tilkobling til Synapse Analytics-data":::
+  
+1. Angi et **Navn** for datakilden og en valgfri **beskrivelse**.
 
 1. Velg en [tilgjengelig tilkobling](connections.md) til Azure Synapse Analytics eller opprett en ny en.
 
-1. Velg en **Lage Database** fra arbeidsområdet som er koblet til den valgte Azure Synapse Analytics-tilkoblingen, og velg **Neste**.
+1. Velg en **Database** fra arbeidsområdet som er koblet til den valgte Azure Synapse Analytics-tilkoblingen, og velg **Neste**.
 
-1. Velg enhetene som skal registreres fra den tilkoblede databasen. 
+1. Velg enhetene som skal registreres fra den tilkoblede databasen, og velg **Neste**.
 
-1. Du kan eventuelt velge dataenhetene du vil tillate dataprofilering på. 
+1. Du kan eventuelt velge dataenhetene du vil tillate dataprofilering på.
 
-1. Velg **Lagre** for å ta i bruk valget, og start registreringen av dataene fra den nylig opprettede datakilden koblet til tabellene for Lake Database i Azure Synapse Analytics.
+1. Velg **Lagre** for å ta i bruk valget, og start registreringen av dataene fra den nylig opprettede datakilden koblet til tabellene for Lake Database i Azure Synapse Analytics. Siden **Datakilder** åpnes med den nye datakilde i statusen **Oppdaterer**.

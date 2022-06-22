@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 795eaa3598257f5188070f6ea02d04e4423b66eb
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 6dfaa09cd80498e9a4e4dea6a07ce6e9d29105e2
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833570"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011623"
 ---
 # <a name="how-to-create-a-new-environment"></a>Veiledning: opprett et nytt miljø
 
@@ -67,6 +67,7 @@ Du kan velge mellom to alternativer:
 ## <a name="step-3-connect-to-microsoft-dataverse"></a>Trinn 3: Koble til Microsoft Dataverse
 
 Trinnet **Microsoft Dataverse** lar deg koble til Customer Insights med Dataverse-miljøet. Del data med Dataverse-miljø for å bruke dem med forretningsprogrammer basert på Dataverse, for eksempel Dynamics 365 Marketing eller modelldrevne apper i Power Apps.
+
 
 La dette feltet stå tomt hvis du ikke har ditt eget Dataverse-miljø, så oppretter vi et for deg.
 

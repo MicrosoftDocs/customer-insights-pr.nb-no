@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: 1225482c4bf432ed747537b2c9bec9ab0e692a51
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: b34b83d7a73dbdf21984f626174524188f0f1dc1
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800293"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011485"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Supplering for datakilder (forhåndsversjon)
 
@@ -29,9 +29,11 @@ Du må ha bidragsyter- eller administratortillatelser til å opprette eller redi
 
 1. Velg den loddrette ellipsen (&vellip;) ved siden av datakilden du vil berike, og velg **Suppler**.
 
-   :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Side for datakildesupplering.":::
+   :::image type="content" source="media/data_sources_enrich.png" alt-text="Datakilder-siden med Suppler uthevet":::
 
    Kategorien **Oppdag** viser [alternativene for støttede datakildesuppleringer](#supported-data-source-enrichments).
+
+   :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Side for datakildesupplering.":::
 
 1. Velg **Suppler dataene** for å konfigurere en datakildesupplering. Navnet på utdataenhet fylles ut automatisk.
 

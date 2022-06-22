@@ -1,7 +1,7 @@
 ---
 title: Vise kundeprofiler
 description: Få en kombinert visning av dine enhetlige kundedata.
-ms.date: 05/13/2022
+ms.date: 06/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 9bb7abc04afe38d73e1df9b252e1864fa6570d7e
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 1e9e59d7ae6c16ed8b33f2ea482563c3520ab885
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755794"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947058"
 ---
 # <a name="customer-profiles"></a>Kundeprofiler
 
@@ -55,9 +55,9 @@ Du kan filtrere kunder etter *Kunde*-enhetsfeltene. På samme måte som i søk m
 
 Velg en hvilken som helst av kundeflisene for å åpne **Kundedetaljer**-siden. Denne visningen inneholder enhetlig informasjon om den valgte kunden. Kundedetaljer inkluderer følgende innhold:
 
-**Kundeprofilflis**: Denne flisen viser de forskjellige verdiene fra den enhetlige  *Kunder*-enheten. Hvis et felt ikke har noen verdi for den valgte kundeprofilen, vises det ikke. Flisen er strukturert i deler:
+**Kundeprofilflis**: Denne flisen viser de forskjellige verdiene fra den enhetlige  *Kunder*-enheten. Hvis et felt ikke har noen verdi for den valgte kundeprofilen, vises det ikke unntatt adressefeltet. Flisen er strukturert i deler:
 
-- Den første delen viser et forhåndsdefinert sett med felt etterfulgt av alle felt som er en del av søke- og filterindeksen. Alle adresserelaterte felt kombineres til én enkelt linje hvis profilen inneholder slike felt.
+- Den første delen viser et forhåndsdefinert sett med felt etterfulgt av alle felt som er en del av søke- og filterindeksen. Alle adresserelaterte felter kombineres til én enkelt linje, som vises selv om profilen ikke inneholder noen adresseinformasjon.
 - **Kontaktpersoner for denne kunden**: I miljøer for forretningsforbindelser ser du alle relaterte kontakter for denne kunden som den andre delen. Hver kontakt vises med de tilhørende feltene. Tomme felt er skjult.
 - **Tilleggsfelt**: Viser de resterende feltene for den valgte kunden, unntatt IDer.
 - **IDer**: Viser alle IDene under det tilsvarende enhetsnavnet. Felt identifiseres som IDer av semantikken, som kategoriserer dem som sådan.

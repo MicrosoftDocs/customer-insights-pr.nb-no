@@ -7,20 +7,20 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: 7140e9254108bc6f0d518b3ccf4b10fc33cde115
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: c470956b0453ac2558ed85acdeebba120a0ca55d
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800185"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011715"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Koble til data i en Microsoft Dataverse-administrert datasjø
 
-Denne artikkelen inneholder informasjon om hvordan Dataverse-brukere raskt kan koble til analytiske enheter i en Microsoft Dataverse-administrert sjø. 
+Microsoft Dataverse-brukere kan raskt koble til analytiske enheter i en Microsoft Dataverse-administrert sjø.
 
 > [!NOTE]
 > Du må være administrator i Dataverse organisasjonen for å fortsette og vise listen over enheter som er tilgjengelig i den administrerte sjøen.
@@ -32,40 +32,34 @@ Denne artikkelen inneholder informasjon om hvordan Dataverse-brukere raskt kan k
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Koble til en Dataverse-administrert sjø
 
-1. I Customer Insights går du til **Data** > **Datakilder**.
+1. Gå til **Data** > **Datakilder**.
 
-2. Velg **Legg til datakilde**.
+1. Velg **Legg til datakilde**.
 
-3. Velg **Microsoft Dataverse** og deretter **Neste**.
+1. Velg **Microsoft Dataverse**.
 
-4. Skriv inn et **navn** for datakilden, og klikk deretter **Neste**. 
+1. Angi et **Navn** for datakilden og en valgfri **beskrivelse**.
 
-5. Angi **serveradressen** til for Dataverse-organisasjonen, og velg **Logg på**.
+1. Angi **serveradressen** til for Dataverse-organisasjonen, og velg **Logg på**.
 
-   :::image type="content" source="media/ingest-dataverse-server-address.png" alt-text="Skjermbilde i datainntakstrinn der en bruker kan angi nettadressen for Dataverse-miljøet.":::
-
-6. Velg tabellene du vil legge inn som enheter, i Customer Insights fra den tilgjengelige listen.    
+1. Velg tabellene du vil legge inn som enheter, i Customer Insights fra den tilgjengelige listen.
 
    > [!NOTE]
    > Hvis noen tabeller allerede er valgt, kan det hende de brukes av andre Dynamics 365-programmer (for eksempel Dynamics 365 Sales Insights eller Customer Service Insights). Du kan ikke endre valget. Disse tabellene vil være tilgjengelige som enheter når datakilden er opprettet.
 
-   :::image type="content" source="media/select-dataverse-entities.png" alt-text="Dialogboks som viser en liste over enheter i Dataverse-miljøet.":::
+    :::image type="content" source="media/select-dataverse-entities.png" alt-text="Dialogboks som viser en liste over enheter i Dataverse-miljøet.":::
 
-7. Lagre det merkede området for å begynne å synkronisere de valgte tabellene fra Dataverse. Du finner den nylig tillagte koblingen på **Datakilder**-siden. Den legges i kø for oppdatering og viser enhetsantallet som 0 til alle de valgte tabellene er synkronisert.
+1. Lagre det merkede området for å begynne å synkronisere de valgte tabellene fra Dataverse. Du finner den nylig tillagte koblingen på **Datakilder**-siden. Den legges i kø for oppdatering og viser enhetsantallet som 0 til alle de valgte tabellene er synkronisert.
 
 Bare én datakilde av et miljø som kan bruke samme administrerte Dataverse-sjø samtidig.
 
 ## <a name="edit-a-dataverse-managed-lake-data-source"></a>Redigere en datakilde for Dataverse-administrert sjø
 
-Du redigerer bare enhetsvalget etter opprettelsen av datakilden. For eksempel hvis flere enheter ble lagt til i Dataverse, og du vil importere dem også.    
+Du redigerer bare enhetsvalget etter opprettelsen av datakilden. For eksempel hvis flere enheter ble lagt til i Dataverse, og du vil importere dem også.
 Hvis du vil koble til en annen Dataverse-datasjø, må du [opprette en ny datakilde](#connect-to-a-dataverse-managed-lake).
 
 1. Gå til **Data** > **Datakilder**.
 
-2. Ved siden av datakilde du vil oppdatere, velger du den loddrette ellipsen (&vellip;).
+1. Ved siden av datakilde du vil oppdatere, velger du **Rediger**.
 
-3. Velg **Rediger**-alternativet fra listen.
-
-4. Velg flere enheter fra den tilgjengelige listen med enheter, og velg **Lagre**.
-
-[!INCLUDE [footer-include](includes/footer-banner.md)]
+1. Velg flere enheter fra den tilgjengelige listen med enheter, og velg **Lagre**.

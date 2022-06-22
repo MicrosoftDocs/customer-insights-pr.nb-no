@@ -1,95 +1,95 @@
 ---
 title: Suppler kundeprofiler med stedsdata fra Azure Maps
 description: Generell informasjon om førstepartssupplering for Azure Maps.
-ms.date: 08/31/2021
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 6d43dc2ca82c034fbd396d92637e7aea8179df77
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: a806b2d0c791972c967c90694527608b4def9f3f
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755366"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953640"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Supplering av kundeprofiler med Azure Maps (forhåndsversjon)
 
-Azure Maps tilbyr posisjonssentriske data og tjenester for å levere opplevelse basert på geospatiale data med innebygd posisjonsintelligens. Azure Maps-datasuppleringstjenester forbedrer presisjonen for posisjonsinformasjon om kundene. Den bringer funksjoner som adressenormalisering og bredde- og lengdegradsuttrekking til Dynamics 365 Customer Insights.
+Azure Maps tilbyr stedsentriske data og tjenester for å levere opplevelser basert på geospatiale data med innebygd stedsintelligens. Azure Maps-datasuppleringstjenester forbedrer presisjonen for posisjonsinformasjon om kundene. Den bringer funksjoner som adressenormalisering og bredde- og lengdegradsuttrekking til Dynamics 365 Customer Insights.
 
-## <a name="prerequisites"></a>Forutsetninger
+## <a name="prerequisites"></a>Forutsetning
 
-Følgende forhåndskrav må være oppfylt for å konfigurere Azure Maps-datasupplering:
+- Et aktivt Azure Maps-abonnement. [Registrer deg for en prøveversjon](https://azure.microsoft.com/services/azure-maps/) for å få et abonnement.
 
-- Du må ha et aktivt Azure Maps-abonnement. Hvis du vil ha et abonnement, kan du [registrere deg eller få en prøveversjon](https://azure.microsoft.com/services/azure-maps/).
-
-- En Azure Maps-[tilkobling](connections.md) er tilgjengelig, *eller* du har [administrator](permissions.md#admin)tillatelser og en aktiv API-nøkkel for Azure Maps.
-
-## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
-
-1. Gå til **Data** > **Supplering**. 
-
-1. Velg **Suppler dataene** på **Posisjon**-flisen.
-
-   :::image type="content" source="media/azure-maps-tile.png" alt-text="Azure Maps-flis.":::
-
-1. Velg en [tilkobling](connections.md) fra rullegardinlisten. Kontakt en administrator hvis ingen Azure Maps-tilkobling er tilgjengelig. Hvis du er en administrator, kan du [konfigurere tilkoblingen for Azure Maps](#configure-the-connection-for-azure-maps). 
-
-1. Velg **Neste** for å bekrefte valget.
-
-1. Velg **kundeoppføringsdatasettet** du vil supplere med posisjonsdata fra Azure Maps. Du kan velge enheten **Kunde** for å supplere alle de enhetlige kundeprofilene, eller velge en segmentenhet for å supplere bare kundeprofiler i det segmentet.
-
-    :::image type="content" source="media/enrichment-azure-maps-configuration-customer-data-set.png" alt-text="Skjermbilde når du velger kundedatasettet.":::
-
-1. Velg om du vil tilordne felter til hoved- eller sekundæradressen. Du kan angi en felttilordning for begge adressene og fylle inn profilene for begge adressene separat, for eksempel for en privatadresse og en forretningsadresse. Velg **Neste**.
-
-1. Definer hvilke felter fra de enhetlige profilene som skal brukes til å se etter samsvarende posisjonsdata fra Azure Maps. Feltene **Gate/vei 1** og **Postnummer** kreves for den valgte primære eller sekundære adressen. Du kan legge til flere felter for å oppnå høyere samsvarsnøyaktighet.
-
-   :::image type="content" source="media/enrichment-azure-maps-configuration.png" alt-text="Konfigurasjonsside for Azure Maps-supplering.":::
-
-1. Velg **Neste** for å fullføre felttilordningen.
-
-1. Vurder om du vil endre **Avanserte innstillinger**. Disse innstillingene er angitt for å gi maksimal fleksibilitet til å håndtere avanserte brukssaker, men standardverdiene vil i de fleste tilfeller være tilstrekkelige:
-   - **Adressetype**: Standard virkemåte er at suppleringen returnerer den beste adressen, selv om den er ufullstendig. Hvis du bare vil ha fullstendige adresser, for eksempel adresser som inkluderer husnummeret, fjerner du merket i alle avmerkingsboksene unntatt **punktadresser**. 
-   - **Språk**: Adresser returneres som standard på språket for området som det er fastslått at adressen skal tilhøre. Hvis du vil bruke et standardisert adressespråk, velger du språket på rullegardinmenyen. Hvis du for eksempel velger **Engelsk**, returneres **Copenhagen, Denmark** i stedet for **København, Danmark**.
-
-1. Angi et navn for suppleringen.
-
-1. Se gjennom valgene, og velg deretter **Lagre supplering**.
+- En Azure Maps-[tilkobling](connections.md) er [konfigurert](#configure-the-connection-for-azure-maps) av en administrator.
 
 ## <a name="configure-the-connection-for-azure-maps"></a>Konfigurer tilkoblingen for Azure Maps
 
-Du må være en administrator i Customer Insights for å konfigurere tilkoblinger. Velg **Legg til tilkobling** når du konfigurerer en supplering eller gå til **Administrator** > **Tilkoblinger**, og velg **Konfigurer** på Azure Maps-flisen.
+Du må være en [administrator](permissions.md#admin) i Customer Insights og ha en aktiv API-nøkkel for Azure Maps.
 
-1. Skriv inn at navn på tilkoblingen i feltet **Visningsnavn**.
+1. Velg **Legg til tilkobling** når du konfigurerer en supplering eller gå til **Administrator** > **Tilkoblinger**, og velg **Konfigurer** på Azure Maps-flisen.
 
-1. Angi en gyldig API-nøkkel for Azure Maps.
+   :::image type="content" source="media/enrichment-azure-maps-connection.png" alt-text="Konfigurasjonsside for Azure Maps-tilkobling.":::
 
-1. Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**
+1. Skriv inn et navn på tilkoblingen og en gyldig API-nøkkel for Azure Maps.
 
-1. Velg **Bekreft** for å validere konfigurasjonen.
+1. Gå gjennom og gi ditt samtykke til [Datapersonvern og -samsvar](#data-privacy-and-compliance) ved å velge **Jeg er enig**.
 
-1. Velg **Lagre** etter at verifiseringen er fullført.
+1. Velg **Bekreft** for å validere konfigurasjonen, og velg deretter **Lagre**.
 
-:::image type="content" source="media/enrichment-azure-maps-connection.png" alt-text="Konfigurasjonsside for Azure Maps-tilkobling.":::
+### <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
+
+Når du gjør det mulig for Dynamics 365 Customer Insights å overføre data til Azure Maps, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data som personlige data. Microsoft overfører slike data etter instruksjonen, men du er ansvarlig for å sørge for at Azure Maps oppfyller eventuelle personvern- eller sikkerhetsforpliktelser du måtte ha. Hvis du vil ha mer informasjon, kan du gå til [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
+Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen når som helst for å slutte å bruke denne funksjonaliteten.
+
+## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
+
+1. Gå til **Data** > **Supplering**, og velg **Oppdag**-fanen.
+
+1. Velg **Suppler dataene** på **Sted** fra Microsoft Azure Maps-flisen.
+
+   :::image type="content" source="media/azure-maps-tile.png" alt-text="Azure Maps-flis.":::
+
+1. Se gjennom oversikten, og velg deretter **Neste**.
+
+1. Velg tilkoblingen. Kontakt en administrator hvis ingen tilkobling er tilgjengelig.
+
+1. Velg **Neste**.
+
+1. Velg **Kundedatasett** og velg profilen eller segmentet du vil supplere med data fra Microsoft. *Kunde*-enheten supplerer alle kundeprofilene dine, mens segmentsuppleringer bare supplerer kundeprofiler i det segmentet.
+
+1. Definer hvilken type felter fra de enhetlige profilene som skal brukes til samsvar: primær- eller sekundæradressen. Du kan angi en felttilordning for begge adressene og supplere profilene for begge adressene separat. For eksempel en hjemmeadresse og en jobbadresse. Velg **Neste**.
+
+1. Tildel feltene til stedsdata fra Azure Maps. Feltene **Gate/vei 1** og **Postnummer** kreves for den valgte primære og/eller sekundære adressen. Hvis du vil ha høyere samsvarsnøyaktighet, legger du til flere felter.
+
+   :::image type="content" source="media/enrichment-azure-maps-attributes.png" alt-text="Attributtildeling for Azure Maps.":::
+
+1. Velg **Neste** for å fullføre felttilordningen.
+
+1. Gå gjennom **Avanserte innstillinger**, som gir maksimal fleksibilitet til å håndtere avanserte brukssaker. Standardverdiene nedenfor trenger vanligvis ikke å endres.
+
+   - **Adressetype**: Beste adressesamsvar returneres selv om den er ufullstendig. Hvis du bare vil ha fullstendige adresser, for eksempel adresser som inkluderer husnummeret, fjerner du merket i alle avmerkingsboksene unntatt **punktadresser**.
+   - **Språk**: Adresser returneres på språket basert på adresseområdet. Hvis du vil bruke et standardisert adressespråk, velger du språket på rullegardinmenyen. Hvis du for eksempel velger **Engelsk**, returneres **Copenhagen, Denmark** i stedet for **København, Danmark**.
+   - **Maksimalt antall resultater**: Antall resultater per adresse.
+
+1. Velg **Neste**.
+
+1. Angi et **Navn** for suppleringen og **Utdataenhetsnavn**.
+
+1. Velg **Lagre supplering** etter at du har sett gjennom valgene.
+
+1. Velg **Kjør** for å starte suppleringsprosessen, eller lukk for å gå tilbake til siden **Suppleringer**.
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 
-Hvis du vil starte den omfattende prosessen, velger du **Kjør** fra kommandolinjen. Du kan også la systemet kjøre supplementet automatisk som en del av en [planlagt oppdatering](system.md#schedule-tab). Behandlingstiden avhenger av størrelsen på kundedataene og API-svartidene.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
-Når suppleringsprosessen er fullført, kan du se gjennom de nylig forbedrede kundeprofildataene under **Mine suppleringer**. I tillegg finner du tidspunktet for den siste oppdateringen og antall supplerte profiler.
-
-Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velge **Vis supplerte data**.
+**Antall kunder supplert av feltet** gir en neddrilling i dekningen av hvert supplerte felt.
 
 ## <a name="next-steps"></a>Neste trinn
 
 [!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
-
-## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
-
-Når du gjør det mulig for Dynamics 365 Customer Insights å overføre data til Azure Maps, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data som personlige data. Microsoft overfører slike data etter instruksjonen, men du er ansvarlig for å sørge for at Azure Maps oppfyller eventuelle personvern- eller sikkerhetsforpliktelser du måtte ha. Hvis du vil ha mer informasjon, kan du gå til [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
-Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen når som helst for å slutte å bruke denne funksjonaliteten.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

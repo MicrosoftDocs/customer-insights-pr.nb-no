@@ -1,95 +1,93 @@
 ---
 title: Supplering av LiveRamp-identifikasjonsdata
 description: Supplere kundeprofiler med LiveRamp-data.
-ms.date: 03/02/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 0727818f6df565d9a031966a68d521ae7167e484
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e8a130865267b57c89157b44be3d4bba3dc2fb4e
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646712"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8954007"
 ---
-# <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Forbedre kundeprofiler med identitetsdata fra LiveRamp (forhåndsvisning) 
+# <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Forbedre kundeprofiler med identitetsdata fra LiveRamp (forhåndsversjon)
 
-LiveRamp gir deterministiske frakoblede identitetsløsning og konsolidering av kundedata. Du kan tilordne personlige identifikatorer i kundedataene til AbiliTec-identitetsgrafen og motta AbiliTec-ID-er. Deretter kan du bruke disse IDene til bedre forening av kundedataene. 
+LiveRamp gir deterministiske frakoblede identitetsløsning og konsolidering av kundedata. Du kan tilordne personlige identifikatorer i kundedataene til AbiliTec-identitetsgrafen og motta AbiliTec-ID-er. Deretter kan du bruke disse IDene til bedre forening av kundedataene.
 
-## <a name="prerequisites"></a>Krav 
+## <a name="supported-countriesregions"></a>Støttede land/områder
 
-Følgende forutsetninger må være oppfylt for at du skal konfigurere suppleringen: 
+Vi støtter for øyeblikket bare supplering av kundeprofiler med LiveRamp-data i USA.
 
-- Du må ha et aktivt LiveRamp-abonnement. Hvis du vil ha et abonnement, kontakter du LiveRamp-kontoteamet ditt eller [dynamics@liveramp.com](mailto:dynamics@liveramp.com)for mer informasjon.   
+## <a name="prerequisites"></a>Forutsetning
 
-- Et aktivt AbiliTec-abonnement med en klient-ID og hemmelig for tilgang til API-en. Hvis du vil ha mer informasjon, kan du se [API-utviklerhub for AbiliTec](https://developers.liveramp.com/abilitec-api/). 
+- Et aktivt LiveRamp-abonnement. Hvis du vil ha et abonnement, kontakter du LiveRamp-kontoteamet ditt eller [dynamics@liveramp.com](mailto:dynamics@liveramp.com)for mer informasjon.
 
-## <a name="supported-countriesregions"></a>Støttede land/områder 
+- Et aktivt AbiliTec-abonnement med en klient-ID og hemmelig for tilgang til API-en. Hvis du vil ha mer informasjon, kan du se [API-utviklerhub for AbiliTec](https://developers.liveramp.com/abilitec-api/).
 
-Vi støtter for øyeblikket bare supplering av kundeprofiler med LiveRamp-data i USA. 
+- En LiveRamp-[tilkobling](connections.md) er [konfigurert](#configure-the-connection-for-liveramp) av en administrator.
 
-## <a name="configure-the-enrichment"></a>Konfigurere suppleringen 
+## <a name="configure-the-connection-for-liveramp"></a>Konfigurere tilkoblingen for LiveRamp
 
-1. Gå til **Data** > **Supplering**, og velg **Oppdag**-fanen. 
+Du må være en [administrator](permissions.md#admin) i Customer Insights og ha en aktiv LiveRamp-klient-ID og -hemmelighet.
 
-1. Velg **Suppler dataene** på flisen **Identitet**. 
+1. Velg **Legg til tilkobling** når du konfigurerer en supplering, eller gå til **Administrator** > **Tilkoblinger**, og velg **Konfigurer** på LiveRamp-flisen.
+
+   :::image type="content" source="media/liveramp-connection.png" alt-text="Konfigurasjonsrute for å konfigurere tilkoblingen til LiveRamp AbiliTec-tjenesten. ":::
+
+1. Skriv inn et navn på tilkoblingen og en gyldig LiveRamp-klient-ID og en hemmelighet.
+
+1. Gå gjennom og gi ditt samtykke til [Datapersonvern og -samsvar](#data-privacy-and-compliance) ved å velge **Jeg er enig**.
+
+1. Velg **Bekreft** for å validere konfigurasjonen, og velg deretter **Lagre**.
+
+### <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
+
+Når du aktiverer Dynamics 365 Customer Insights for overføring av data til LiveRamp, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data, for eksempel personlige data. Microsoft overfører slike data etter instruksjonen, men du er ansvarlig for å sørge for at LiveRamp oppfyller eventuelle personvern- eller sikkerhetsforpliktelser du måtte ha. Hvis du vil ha mer informasjon, kan du se [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732). Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen når som helst for å slutte å bruke denne funksjonaliteten.
+
+## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
+
+1. Gå til **Data** > **Supplering**, og velg **Oppdag**-fanen.
+
+1. Velg **Suppler dataene** på flisen **Identitet** fra LiveRamp-flisen.
 
    :::image type="content" source="media/liveramp-tile.png" alt-text="Identitetsflis på oversiktssiden for supplering. ":::
 
-1. Velg en [tilkobling](connections.md) fra rullegardinlisten. Kontakt en administrator hvis ingen tilkobling er tilgjengelig. Hvis du er administrator, kan du opprette en tilkobling ved å velge **Legg til tilkobling**. Velg **LiveRamp** fra nedtrekkslisten. 
+1. Se gjennom oversikten, og velg deretter **Neste**.
 
-1. Velg **Neste**, og velg **Kundedatasett** du vil bruke til å supplere med identitetsdata fra LiveRamp. Du kan velge *Kunde*-enheten for å supplere alle kundeprofilene dine, eller velge en *segment*-enhet som bare skal supplere kundeprofiler i det segmentet. 
+1. Velg tilkoblingen. Kontakt en administrator hvis en slik ikke er tilgjengelig.
 
-1. Velg **Neste**, og definer hvilken type felt fra de enhetlige profilene som skal brukes til å se etter samsvarende identitetsdata fra LiveRamp. Minst ett av feltene **Navn og adresse**, **Telefon** eller **E-post** er nødvendig. 
+1. Velg **Neste**.
 
-   > [!TIP]
-   > Jo flere nøkkelidentifikatorer og felt du tilordner, jo større er sannsynligheten for høyere samsvarsrate 
+1. Velg **Kundedatasett** og velg profilen eller segmentet du vil supplere med identitetsdata fra LiveRamp. *Kunde*-enheten supplerer alle kundeprofilene dine, mens segmentsuppleringer bare supplerer kundeprofiler i det segmentet.
 
-1. Tilordne feltene fra den enhetlige *Kunde*-enheten som skal brukes til samsvar med LiveRamps AbiliTec ID-graf. 
+1. Definer hvilken type felter fra de enhetlige profilene som skal brukes for samsvarende identitetsdata fra LiveRamp. Minst et av feltene **Navn og adresse**, **E-post** eller **Telefon** er nødvendig. Hvis du vil ha høyere samsvarsnøyaktighet, legger du til andre felter. Velg **Neste**.
+
+1. Tildel feltene til identifikasjonsdataene fra LiveRamp.
 
    :::image type="content" source="media/liveramp-data-mapping.png" alt-text="Alternativer for datatilordning for LiveRamp-supplering.":::
 
-1. Velg **Neste** for å fullføre felttilordningen. 
+1. Velg **Neste** for å fullføre felttilordningen.
 
-1. Angi et **Navn** for suppleringen og **Utdataenheten**. 
+1. Angi et **Navn** for suppleringen og **Utdataenhetsnavn**.
 
-1. Velg **Lagre supplering** etter at du har sett gjennom valgene. 
+1. Velg **Lagre supplering** etter at du har sett gjennom valgene.
 
-## <a name="configure-the-connection-for-liveramp"></a>Konfigurere tilkoblingen for LiveRamp 
+1. Velg **Kjør** for å starte suppleringsprosessen, eller lukk for å gå tilbake til siden **Suppleringer**.
 
-Du må være en administrator for å [konfigurere tilkoblinger](connections.md). Velg **Legg til tilkobling** når du konfigurerer suppleringen, eller gå til **Administrator** > **Tilkoblinger**, og velg **Konfigurer** på **LiveRamp**-flisen. 
+## <a name="enrichment-results"></a>Resultater av supplering
 
-:::image type="content" source="media/liveramp-connection.png" alt-text="Konfigurasjonsrute for å konfigurere tilkoblingen til LiveRamp AbiliTec-tjenesten. ":::
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
-1. For **Visningsnavn** angir du navnet for tilkoblingen. 
-
-1. Angi en gyldig LiveRamp-klient-ID og en hemmelighet. 
-
-1. Les gjennom og gi samtykke til **Datapersonvern og -samsvar** ved å merke av for **Jeg godtar**. 
-
-1. Velg **Bekreft** for å validere konfigurasjonen. 
-
-1. Velg **Lagre** for å fullføre tilkoblingen. 
-
-## <a name="enrichment-results"></a>Resultater av supplering 
-
-Hvis du vil starte den omfattende prosessen, velger du Kjør fra kommandolinjen. Du kan også la systemet kjøre supplementet automatisk som en del av en  [planlagt oppdatering](system.md#schedule-tab). Behandlingstiden avhenger av størrelsen på kundedataene. 
-
-Når suppleringsprosessen er fullført, kan du se gjennom de nylig berikede kundeprofildataene under  **Mine suppleringer**. I tillegg finner du tidspunktet for den siste oppdateringen og antall supplerte profiler. 
-
-Du kan få tilgang til en detaljert visning av hver supplerte profil ved å velge  **Vis supplerte data**. 
+**Antall kunder supplert av feltet** gir en neddrilling i dekningen av hvert supplerte felt.
 
 ## <a name="next-steps"></a>Neste trinn
 
-Bygg på toppen av de supplerte kundedataene. Bruk AbiliTec-IDene til å konsolidere kundeprofiler i en personbasert visning. 
+Bygg på toppen av de supplerte kundedataene. Bruk AbiliTec-IDene til å konsolidere kundeprofiler i en personbasert visning.
 [!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
-
-## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar 
-
-Når du aktiverer Dynamics 365 Customer Insights for overføring av data til LiveRamp, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data, for eksempel personlige data. Microsoft overfører slike data etter instruksjonen, men du er ansvarlig for å sørge for at LiveRamp oppfyller eventuelle personvern- eller sikkerhetsforpliktelser du måtte ha. Hvis du vil ha mer informasjon, kan du se [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732). Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen når som helst for å slutte å bruke denne funksjonaliteten. 
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

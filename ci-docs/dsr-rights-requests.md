@@ -1,19 +1,19 @@
 ---
 title: DSR-forespørsler (Data Subject Rights) under GDPR | Microsoft Docs
 description: Svare på dataemneforespørsler for Dynamics 365 Customer Insights.
-ms.date: 08/11/2021
+ms.date: 05/23/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: af2583295627f98e980adbca4f216b9c34c3cad8
-ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
+ms.openlocfilehash: c71305ab835b0f4f75adcce716e795959f898e47
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "8808573"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947380"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>DSR-forespørsler (Data Subject Rights) under GDPR
 
@@ -77,11 +77,5 @@ En leieradministrator kan følge disse trinnene for å eksportere data:
 1. Send en e-post til D365CI@microsoft.com for å angi brukerens e-postadresse i forespørselen. Customer Insights-teamet sender en e-post til den registrerte e-postadressen til leieradministratoren og ber om bekreftelse på å eksportere data.
 2. Godta bekreftelsen om å eksportere dataene for den forespurte brukeren.
 3. Motta de eksporterte dataene via e-postadressen for leieradministratoren.
-
-## <a name="consent-management-preview"></a>Samtykkeadministrasjon (forhåndsversjon)
-
-Funksjonen for samtykkeadministrasjon samler ikke inn brukerdata direkte. Den importerer og behandler bare samtykkedata som leveres av brukere i andre programmer.
-
-Hvis du vil fjerne samtykkedata om bestemte brukere, fjerner du dem i datakildene som er innlagt i samtykkebehandlingsmulighetene. Etter oppdateringen av datakilden slettes de fjernede dataene også i Samtykkesenter. Programmer som bruker samtykkeenheten, sletter også data som ble fjernet i kilden etter en [oppdatering](system.md#refresh-processes). Vi anbefaler at du oppdaterer datakilder raskt etter at du har svart på en dataemneforespørsel for å fjerne brukerens data fra alle andre prosesser og programmer.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 8b14992f8312d333d8a12501e8a28496c8434779
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 22eee11666752459a1750d728c4e254ab0c59e58
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646773"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947242"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-data-lake-storage-gen2-preview"></a>Eksportere segmentliste og andre data til Azure Data Lake Storage Gen2 (forhåndsversjon)
 
@@ -21,11 +21,9 @@ Lagre Customer Insights-data i en Data Lake Storage Gen2-konto, eller bruk den t
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-1. For Azure Data Lake Storage Gen2 kan du velge mellom [Standard-ytelse og Premium-ytelsesnivå](/azure/storage/blobs/create-data-lake-storage-account) når du oppretter en lagringskonto for Data Lake. Hvis du velger Premium-ytelse, velger du premiumblokkblobene som kontotype. 
+1. For Azure Data Lake Storage Gen2 kan du velge mellom [Standard-ytelse og Premium-ytelsesnivå](/azure/storage/blobs/create-data-lake-storage-account) når du oppretter en lagringskonto for Data Lake. Hvis du velger Premium-ytelse, velger du premiumblokkblobene som kontotype.
 
-
-## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Konfigurere tilkoblingen til Azure Data Lake Storage Gen2 
-
+## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Konfigurere tilkoblingen til Azure Data Lake Storage Gen2
 
 1. Gå til **Administrator** > **Tilkoblinger**.
 
@@ -39,7 +37,7 @@ Lagre Customer Insights-data i en Data Lake Storage Gen2-konto, eller bruk den t
     - Hvis du vil vite hvordan du oppretter en lagringskonto som skal brukes med Azure Data Lake Storage Gen2, kan du se [Opprett lagringskonto](/azure/storage/blobs/create-data-lake-storage-account). 
     - Hvis du vil finne ut mer om navn på forretningsforbindelse og kontonøkkel for Azure Data Lake Gen2, kan du se [Behandle innstillinger for lagringskonto i Azure Portal](/azure/storage/common/storage-account-manage).
 
-1. Velg **Lagre** for å fullføre tilkoblingen. 
+1. Velg **Lagre** for å fullføre tilkoblingen.
 
 ## <a name="configure-an-export"></a>Konfigurere en eksport
 
@@ -57,8 +55,12 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 Hvis du lagrer en eksport, kjøres ikke eksporten umiddelbart.
 
-Eksporten kjører med hver [planlagte oppdatering](system.md#schedule-tab). Du kan også [eksportere data ved behov](export-destinations.md#run-exports-on-demand). 
+Eksporten kjører med hver [planlagte oppdatering](system.md#schedule-tab).
+Du kan også [eksportere data ved behov](export-destinations.md#run-exports-on-demand).
 
-Eksporterte data lagres i lagringsbeholderen du konfigurerte for Azure Data Lake Gen 2. 
+Eksporterte data lagres i lagringsbeholderen du konfigurerte for Azure Data Lake Gen 2.
+
+> [!TIP]
+> Eksport av enheter som inneholder store mengder data, kan føre til flere CSV-filer i samme mappe for hver eksport. Oppdeling av eksporter skjer av ytelsesårsaker for å redusere tiden det tar før en eksport fullføres.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

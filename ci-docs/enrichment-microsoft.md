@@ -1,5 +1,5 @@
 ---
-title: Supplere kundeprofiler med data fra Microsoft
+title: Suppler kundeprofiler med merker og interessedata fra Microsoft
 description: Bruk proprietære data fra Microsoft til å forbedre kundedataene med Andel av omtale.
 ms.date: 03/02/2022
 ms.reviewer: mhart
@@ -12,25 +12,16 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 5c016a394fdf485057a190d03bfed9ce5481f435
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 61262980cafdcd130430e200e466ce7da6cc4d07
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646809"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953777"
 ---
 # <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Supplere kundeprofiler med tilknytninger og Andel av omtale (forhåndsversjon)
 
 Bruk proprietære data fra Microsoft til å supplere kundedataene med merketiltrekning, interessetiltrekning og Andel av omtale. Disse tiltrekningene og Andel av omtale er basert på data fra personer med en lignende demografi som kundene dine. Denne informasjonen hjelper deg med å bedre forstå og segmentere kundene basert på deres tilknytninger eller Andel av omtale til bestemte merker og interesser.
-
-Gå til **Data** > **Supplering** for å [konfigurere og vise suppleringer](enrichment-hub.md).
-
-Hvis du vil konfigurere merketiltrekning og Andel av omtale-supplering, går du til kategorien **Oppdag** og velger **Suppler dataene** på **Merker**-flisen.
-
-Hvis du vil konfigurere interessetiltrekning og Andel av omtale-supplering, går du til kategorien **Oppdag** og velger **Suppler dataene** på **Interesser**-flisen.
-
-   > [!div class="mx-imgBorder"]
-   > ![Fliser for merker og interesser.](media/BrandsInterest-tile-Hub.png "Fliser for merker og interesser")
 
 ## <a name="how-we-determine-affinities-and-sov"></a>Slik avgjør vi tilknytninger og Andel av omtale
 
@@ -45,7 +36,6 @@ Vi bruker Microsoft-søkedata på Internett til å finne tilknytninger og Andel 
 For hver supplerte kundeprofil oppgir vi to relaterte verdier: affinitetsnivå og affinitetspoengsum. Disse verdiene hjelper deg med å bestemme hvor sterkt affiniteten er for den profilens demografiske segment, for et merke eller en interesse sammenlignet med andre demografiske segmenter.
 
 *Affinitetsnivået* består av fire nivåer, og *affinitetspoengsummen* beregnes på en 100-punkts skala som tilordnes til affinitetsnivåene.
-
 
 |Affinitetsnivå |Affinitetspoengsum  |
 |---------|---------|
@@ -64,78 +54,65 @@ Vi beregner Andel av omtale på en 100-punktsskala. Det totale Andel av omtale-r
 
 Vi støtter for øyeblikket følgende alternativer for land/område: Australia, Canada (engelsk), Frankrike, Tyskland, Storbritannia eller USA (engelsk).
 
-Hvis du vil velge et land eller en region, åpner du **Merkesupplering** eller **Interessesupplering** og velger **Endre** ved siden av **Land/område**. Velg et alternativ i ruten **Innstillinger for land/område**, og velg **Bruk**.
+## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
 
-### <a name="implications-related-to-country-selection"></a>Implikasjoner knyttet til valg av land
+1. Gå til **Data** > **Supplering**, og velg **Oppdag**-fanen.
 
-- Når du [velger dine egne merker](#define-your-brands-or-interests), gir systemet forslag basert på det valgte landet eller området.
+   - Hvis du vil konfigurere merketiltrekning og Andel av omtale-supplering, velger **Suppler dataene** på **Merker**-flisen.
 
-- Når du [velger en bransje](#define-your-brands-or-interests), får du de mest relevante merkene eller interessene basert på det valgte landet eller området.
+   - Hvis du vil konfigurere interessetiltrekning og Andel av omtale-supplering, velger **Suppler dataene** på **Interesser**-flisen.
 
-- Ved [supplering av profiler](#refresh-enrichment) supplerer vi alle kundeprofiler som vi får data for de valgte merkene og interessene for, inkludert profiler som ikke finnes i det valgte landet eller området. Hvis du for eksempel valgte Tyskland, vil vi supplere profiler i USA hvis vi har data tilgjengelig for de valgte merkene og interessene i USA.
+   > [!div class="mx-imgBorder"]
+   > ![Fliser for merker og interesser.](media/BrandsInterest-tile-Hub.png "Fliser for merker og interesser")
 
-## <a name="configure-enrichment"></a>Konfigurere supplering
+1. Se gjennom oversikten, og velg deretter **Neste**.
 
-En veiledet opplevelse hjelper deg gjennom konfigurasjonen av suppleringene. 
+1. Hvis du vil endre land eller område, velger du **Endre** ved siden av **Land/område**. Velg et [støttet land/område](#supported-countriesregions) i ruten **Innstillinger for land/område**, og velg **Bruk**.
 
-### <a name="define-your-brands-or-interests"></a>Definer merker og interesser
+   > [!NOTE]
+   > Når du velger dine egne merker, gir systemet forslag basert på det valgte landet eller området. Når du velger en bransje, får du de mest relevante merkene eller interessene basert på det valgte landet eller området.
 
-Velg opptil fem merker eller interesser ved å bruke ett av eller begge disse alternativene:
+1. Velg opptil fem merker eller interesser ved å bruke ett av eller begge disse alternativene:
 
-- **Bransje**: Velg bransje fra rullegardinlisten, og velg deretter blant de viktigste merkene eller interessene for den bransjen.
-- **Velg dine egne**: Angi et merke eller en interesse som er relevant for organisasjonen din, og velg deretter blant forslagene som samsvarer. Hvis vi ikke viser et merke eller en interesse du leter etter, kan du sende oss tilbakemelding ved hjelp av **Foreslå**-koblingen.
+   - **Bransje**: Velg bransje fra rullegardinlisten, og velg deretter blant de viktigste merkene eller interessene for den bransjen.
+   - **Velg dine egne**: Angi et merke eller en interesse som er relevant for organisasjonen din, og velg deretter blant forslagene som samsvarer. Hvis vi ikke viser et merke eller en interesse du leter etter, kan du sende oss tilbakemelding ved hjelp av **Foreslå**-koblingen.
 
-### <a name="review-enrichment-preferences"></a>Se gjennom innstillinger for supplering
+1. Velg **Neste**, og se gjennom standardinnstillingene for supplering, og oppdater dem etter behov.
 
-Se gjennom standardinnstillingene for supplering, og oppdater dem etter behov.
+   :::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Skjermbilde av vinduet for innstillinger for supplering.":::
 
-:::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Skjermbilde av vinduet for innstillinger for supplering.":::
+1. Velg **Neste**.
 
-### <a name="select-entity-to-enrich"></a>Velg enhet som skal suppleres
+1. Velg **Kundedatasett** og velg profilen eller segmentet du vil supplere med data fra Microsoft. *Kunde*-enheten supplerer alle kundeprofilene dine, mens segmentsuppleringer bare supplerer kundeprofiler i det segmentet.
 
-Velg **Supplert enhet**, og velg datasettet du vil bruke supplere med data fra Microsoft. Du kan velge kundeenheten for å forbedre alle kundeprofilene dine, eller velge en segmentenhet som bare skal supplere kundeprofiler i det segmentet.
+1. Velg **Neste**.
 
-### <a name="map-your-fields"></a>Tilordne feltene
+1. Tildel feltene fra enheten for enhetlige kunder til Microsoft-dataene.
 
-Tilordne felter fra enheten for enhetlige kunder for å definere det demografiske segmentet du vil at systemet skal bruke til supplering av kundedataene. Tilordne land/område og minst attributtene Fødselsdato eller Kjønn. I tillegg må du tilordne minst én by (og delstat/område) eller ett postnummer. Velg **Rediger** for å definere tilordningen av feltene, og velg **Bruk** når du er ferdig. Velg **Lagre** for å fullføre felttilordningen.
+   > [!NOTE]
+   > Minst attributtene Fødselsdato eller Kjønn kreves. Land/område og minst poststed (og delstat/provins) eller postnummer kreves. Vi anbefaler at fødselsdatoen konverteres til DateTime-type under datainntak. Den kan også være en streng i [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format "åååå-MM-dd" eller "åååå-MM-ddTHH:mm:ss".
 
-Følgende formater og verdier støttes (det skilles ikke mellom små og store bokstaver i verdier):
+1. Velg **Neste** for å fullføre felttilordningen.
 
-- **Fødselsdato**: Vi anbefaler at fødselsdatoen konverteres til en DateTime-type under datainntak. Den kan også være en streng i [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format "åååå-MM-dd" eller "åååå-MM-ddTHH:mm:ss".
-- **Kjønn**: hann, hunn, ukjent.
-- **Postnummer**: Femsifrede postnumre for USA, standard postnummer alle andre steder.
-- **Sted**: Navn på poststed på engelsk.
-- **Delstat/område**: Forkortelse på to bokstaver for USA og Canada. Forkortelse på to eller tre bokstaver for Australia. Gjelder ikke for Frankrike, Tyskland eller Storbritannia.
-- **Land/område**:
+1. Angi et navn for suppleringen. **Navnet på utdataenhet** velges automatisk.
 
-  - US: Amerikas forente stater, De forente stater, USA, US, Amerika
-  - CA: Canada, CA
-  - GB: Storbritannia, UK, Great Britain, GB, Det forente kongerike Storbritannia og Nord-Irland, United Kingdom of Great Britain
-  - AU: Australia, AU, Commonwealth of Australia
-  - FR: Frankrike, FR, Republikken Frankrike
-  - DE: Tyskland, German, Deutschland, Allemagne, DE, Forbundsrepublikken Tyskland, Republic of Germany
+   :::image type="content" source="media/enrichment-interests-summary.png" alt-text="Side for å se gjennom og gi navn til interesser.":::
 
-## <a name="review-and-name-the-enrichment"></a>Se gjennom og gi navn til suppleringen
+1. Velg **Lagre supplering** etter at du har sett gjennom valgene.
 
-Til slutt får du se gjennom informasjonen og angi et navn for suppleringen.
+1. Velg **Kjør** for å starte suppleringsprosessen, eller lukk for å gå tilbake til siden **Suppleringer**.
 
-:::image type="content" source="media/enrichment-interests-summary.png" alt-text="Side for å se gjennom og gi navn til interesser.":::
-
-## <a name="refresh-enrichment"></a>Oppdatere supplering
-
-Kjør suppleringen etter å ha konfigurert merker, interesser og felttilordningen for demografi. Hvis du vil starte prosessen, velger du **Kjør** på siden for merke- eller interessekonfigurasjon. I tillegg kan du la systemet kjøre suppleringen automatisk som en del av en planlagt oppdatering.
-
-Avhengig av størrelsen på kundedataene kan det ta flere minutter å fullføre en supplering.
-
-[!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+   Ved supplering av profiler supplerer vi alle kundeprofiler som vi får data for de valgte merkene og interessene for, inkludert profiler som ikke finnes i det valgte landet eller området. Hvis du for eksempel valgte Tyskland, vil vi supplere profiler i USA hvis vi har data tilgjengelig for de valgte merkene og interessene i USA.
 
 ## <a name="enrichment-results"></a>Resultater av supplering
 
-Når du har kjørt suppleringsprosessen, går du til **Mine suppleringer** for å se du gjennom det totale antallet supplerte kunder, og en analyse over merker og interesser i de supplerte kundeprofilene.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
 :::image type="content" source="media/my-enrichments.png" alt-text="Forhåndsvisning av resultater etter kjøring av suppleringsprosessen.":::
 
-Du finner et diagram med antall supplerte kundeprofiler over tid, og forhåndsvisninger av de supplerte enhetene. Se gjennom de supplerte dataene ved å velge **Se mer** i diagrammene **Affinitetsnivå** eller **Andel av omtale**. Supplerte data for varemerker går til **BrandAffinityFromMicrosoft**- og **BrandShareOfVoiceFromMicrosoft**-enhetene. Data for interesser er i enhetene **InterestAffinityFromMicrosoft** og **InterestShareOfVoiceFromMicrosoft**. Du finner også disse enhetene oppført i gruppen **Supplering** i **Data** > **Enheter**.
+Resultatene inkluderer **Affinitetsnivå**- eller **Andel av omtale**-diagrammer.
+
+Enhetene som opprettes fra suppleringene, vises under **suppleringsgruppen** i **Data** > **Enheter**. Supplerte data for varemerker går til **BrandAffinityFromMicrosoft**- og **BrandShareOfVoiceFromMicrosoft**-enhetene. Data for interesser er i enhetene **InterestAffinityFromMicrosoft** og **InterestShareOfVoiceFromMicrosoft**.
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>Vise supplerte data på kundekortet
 
