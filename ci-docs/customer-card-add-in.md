@@ -1,5 +1,5 @@
 ---
-title: Tillegg for kundekort for Dynamics 365-apper (inneholder video)
+title: Kundekorttillegg for Dynamics 365-apper (forhåndsversjon) (inneholder video)
 description: Vis kundeprofildata fra Customer Insights i Dynamics 365-apper med dette tillegget.
 ms.date: 02/02/2022
 ms.reviewer: mhart
@@ -13,14 +13,14 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 8508880bb3274bb491a314a043a5222d4d381073
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: ead18963959f94fd07912384cf61802f83523e2f
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755648"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081253"
 ---
-# <a name="customer-card-add-in-preview"></a>Tillegg for kundekort (forhåndsversjon)
+# <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Kundekorttillegg for Dynamics 365-apper (forhåndsversjon)
 
 Få en 360-graders visning av kundene direkte i Dynamics 365-apper. Når tillegget for kundekort er installert i en støttet Dynamics 365-app, kan du velge å vise kundeprofilfelt, innsikt og tidslinje for aktivitet. Tillegget henter data fra Customer Insights uten at det påvirker dataene i den tilkoblede Dynamics 365-appen.
 

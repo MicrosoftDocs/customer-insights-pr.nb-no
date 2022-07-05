@@ -1,5 +1,5 @@
 ---
-title: Eksportere data fra Customer Insights
+title: Oversikt over Eksporter (forhåndsversjon)
 description: Administrer eksporter for å dele data.
 ms.date: 11/01/2021
 ms.reviewer: mhart
@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 9c3b35f1514adcc697672f09cabf593f936e4a82
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d983e84e713003610eb27dc9b3f911b62b01d522
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646928"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081604"
 ---
 # <a name="exports-preview-overview"></a>Oversikt over Eksporter (forhåndsversjon)
 

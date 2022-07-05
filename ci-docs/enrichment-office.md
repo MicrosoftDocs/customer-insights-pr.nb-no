@@ -1,5 +1,5 @@
 ---
-title: Supplere kundeprofiler med data fra Microsoft Office 365
+title: Suppler kundeprofiler med data fra Microsoft Office 365 (forhåndsversjon)
 description: Bruk proprietære data fra Microsoft Office for å forbedre kundeprofilene med engasjementsdata.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 7192b7680e73a581dd603de174c57b20bec996dd
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 75762afb70814c8a81c1574ee7ea1553a2048737
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954145"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055686"
 ---
-# <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Supplere kundeprofiler med engasjementsdata (forhåndsversjon)
+# <a name="enrich-customer-profiles-with-data-from-microsoft-office-365-preview"></a>Suppler kundeprofiler med data fra Microsoft Office 365 (forhåndsversjon)
 
 Bruk data fra Microsoft Office 365 til å forbedre kundekontoprofilene dine med innsikt i engasjementer gjennom Office 365-apper. Engasjementsdataene består av e-post og møteaktivitet, som samles på kontonivå. For eksempel antall e-poster fra en forretningsforbindelse eller antall møter med forretningsforbindelsen. Ingen data om enkeltbrukere blir gjort tilgjengelig.
 
@@ -75,7 +75,7 @@ Velg **Kjør** for å starte suppleringsprosessen.
 
 [!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
-## <a name="enrichment-results"></a>Resultater av supplering
+## <a name="view-enrichment-results"></a>Vis suppleringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)] Dette er *Office*-enheten. *Office_UserEntity* inneholder Active Directory-ID-ene for e-postadressene som ble valgt under suppleringskonfigurasjonen.
 

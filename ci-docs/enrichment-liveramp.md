@@ -1,5 +1,5 @@
 ---
-title: Supplering av LiveRamp-identifikasjonsdata
+title: Forbedre kundeprofiler med identitetsdata fra LiveRamp (forhåndsversjon)
 description: Supplere kundeprofiler med LiveRamp-data.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: e8a130865267b57c89157b44be3d4bba3dc2fb4e
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 334440493c50448005ec90d0cfac11358d677b73
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954007"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081282"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Forbedre kundeprofiler med identitetsdata fra LiveRamp (forhåndsversjon)
 
@@ -79,7 +79,7 @@ Når du aktiverer Dynamics 365 Customer Insights for overføring av data til Liv
 
 1. Velg **Kjør** for å starte suppleringsprosessen, eller lukk for å gå tilbake til siden **Suppleringer**.
 
-## <a name="enrichment-results"></a>Resultater av supplering
+## <a name="view-enrichment-results"></a>Vis suppleringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

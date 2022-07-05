@@ -1,6 +1,6 @@
 ---
-title: Hente ditt eget Azure Key Vault for å administrere hemmeligheter
-description: Lær hvordan du konfigurerer Customer Insights til å bruke ditt eget Azure Key Vault.
+title: Hente ditt eget Azure Key Vault (forhåndsvisning)
+description: Lær hvordan du konfigurerer Customer Insights til å bruke ditt eget Azure Key Vault til å administrere hemmeligheter.
 ms.date: 10/06/2021
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: d4f2d5ebc828053c40e22065f4915c4d0f84153f
-ms.sourcegitcommit: 6ec4626a185892dfb781d3c7af4384f9c13f3723
+ms.openlocfilehash: 8fdb131de35c7d936d2921265f03faa5682db6f6
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/17/2022
-ms.locfileid: "8763591"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081473"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Hente ditt eget Azure Key Vault (forhåndsvisning)
 

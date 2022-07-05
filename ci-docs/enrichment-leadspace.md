@@ -1,5 +1,5 @@
 ---
-title: Supplering av firmaprofiler med tredjeparts supplering fra Leadspace
+title: Suppler firmaprofiler med Leadspace (forhåndsversjon)
 description: Generell informasjon om tredjeparts supplering fra Leadspace.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: ca53f15bd7c71b3b4acb396c4daf52d7c7aff9eb
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: b58532a541ee22a5e34d0af1a3334ccbd53627b2
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954191"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081354"
 ---
-# <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Supplering av firmaprofiler med Leadspace (forhåndsversjon)
+# <a name="enrich-company-profiles-with-leadspace-preview"></a>Suppler firmaprofiler med Leadspace (forhåndsversjon)
 
 Leadspace er et datavitenskapsselskap som tilbyr en B-til-B-kundedataplattform. Det gjør det mulig for miljøer med enhetlige kundeprofiler, basert på forretningsforbindelser, å supplere dataene. Suppler *Kundeprofiler* med attributter som firmastørrelse, sted eller bransje. Suppler *Kontaktprofiler* med attributter som tittel, persona eller e-postbekreftelse.
 
@@ -82,7 +82,7 @@ Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen nå
 
 1. Velg **Kjør** for å starte suppleringsprosessen, eller lukk for å gå tilbake til siden **Suppleringer**.
 
-## <a name="enrichment-results"></a>Resultater av supplering
+## <a name="view-enrichment-results"></a>Vis suppleringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

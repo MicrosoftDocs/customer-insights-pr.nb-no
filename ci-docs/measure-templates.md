@@ -11,14 +11,14 @@ manager: shellyha
 searchScope:
 - ci-measure-template
 - customerInsights
-ms.openlocfilehash: eeabd889f7b694f8d809894169a3cdc068acc340
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f6bcdfc45a49c36f22d6ebc6e919f43b27f899d8
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646658"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9051695"
 ---
-# <a name="use-a-template-to-build-a-measure"></a>Bruke en mal til å bygge et mål
+# <a name="create-measures-from-templates"></a>Opprett mål fra maler
 
 Du kan bruke forhåndsdefinerte maler for vanlige [mål](measures.md) for å opprette dem. Detaljerte beskrivelser av malene og en veiledet opplevelse hjelper deg med effektiv måloppretting. Maler bygger på tilordnede data fra *Enhetlig aktivitet*-enheten. Sørg derfor for at du har konfigurert [kundeaktiviteter](activities.md) før du oppretter et mål fra en mal.
 

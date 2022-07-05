@@ -1,5 +1,5 @@
 ---
-title: Suppler kundeprofiler med merker og interessedata fra Microsoft
+title: Suppler kundeprofiler med merker og interessedata fra Microsoft (forhåndsversjon)
 description: Bruk proprietære data fra Microsoft til å forbedre kundedataene med Andel av omtale.
 ms.date: 03/02/2022
 ms.reviewer: mhart
@@ -12,14 +12,14 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 61262980cafdcd130430e200e466ce7da6cc4d07
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: e1827adca10a3b193c02a20c4abccacf73194a77
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953777"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081504"
 ---
-# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Supplere kundeprofiler med tilknytninger og Andel av omtale (forhåndsversjon)
+# <a name="enrich-customer-profiles-with-brands-and-interests-data-from-microsoft-preview"></a>Suppler kundeprofiler med merker og interessedata fra Microsoft (forhåndsversjon)
 
 Bruk proprietære data fra Microsoft til å supplere kundedataene med merketiltrekning, interessetiltrekning og Andel av omtale. Disse tiltrekningene og Andel av omtale er basert på data fra personer med en lignende demografi som kundene dine. Denne informasjonen hjelper deg med å bedre forstå og segmentere kundene basert på deres tilknytninger eller Andel av omtale til bestemte merker og interesser.
 
@@ -104,7 +104,7 @@ Vi støtter for øyeblikket følgende alternativer for land/område: Australia, 
 
    Ved supplering av profiler supplerer vi alle kundeprofiler som vi får data for de valgte merkene og interessene for, inkludert profiler som ikke finnes i det valgte landet eller området. Hvis du for eksempel valgte Tyskland, vil vi supplere profiler i USA hvis vi har data tilgjengelig for de valgte merkene og interessene i USA.
 
-## <a name="enrichment-results"></a>Resultater av supplering
+## <a name="view-enrichment-results"></a>Vis suppleringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

@@ -11,14 +11,14 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: d003d054145343cc2feeefeeee413810df43185a
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: f3ec86806074a12c1107648303ed2d65e97ebc69
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800338"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081653"
 ---
-# <a name="use-measure-builder-to-create-measures-from-scratch"></a>Bruk måleverktøyet til å opprette mål fra bunnen av
+# <a name="create-new-measures-with-the-measure-builder"></a>Opprett nye mål med målverktøyet
 
 Denne artikkelen forklarer hvordan du oppretter et nytt [mål](measures.md) fra bunnen av. Måleverktøyet lar deg definere beregninger ved hjelp av matteoperatorer, sammensettingsfunksjoner og filtre. Du kan bygge et mål med attributter fra enheter som er relatert til den enhetlige enheten *Kunde*.
 

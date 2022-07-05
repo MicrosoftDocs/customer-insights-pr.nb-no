@@ -1,7 +1,7 @@
 ---
-title: Koble til tabeller i Microsoft Dataverse
+title: Koble til data i en Microsoft Dataverse-administrert datasjø
 description: Importer data fra et Microsoft Dataverse-administrert datasjø.
-ms.date: 03/18/2022
+ms.date: 05/18/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -11,12 +11,12 @@ ms.reviewer: v-wendysmith
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: c470956b0453ac2558ed85acdeebba120a0ca55d
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: 9ae0b964d8d39835715b7ddadc712e2338b855af
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011715"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081264"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Koble til data i en Microsoft Dataverse-administrert datasjø
 

@@ -1,6 +1,6 @@
 ---
-title: Supplere enhetlige kundeprofiler
-description: Bruk funksjoner for å supplere kundedataene.
+title: Oversikt over datasupplering (forhåndsversjon)
+description: Bruk funksjoner fra Microsoft og andre tredjepartstjenester til å supplere kundedataene.
 ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -14,24 +14,32 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 3bbe8b829a6698da55d84709dbab6c36aa76792a
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 6b6daab480db5e37830ff58b71dcdd3bbdbe46da
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954053"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9053892"
 ---
-# <a name="enrichment-for-customer-profiles-preview"></a>Supplement for kundeprofiler (forhåndsversjon)
+# <a name="data-enrichment-preview-overview"></a>Oversikt over datasupplering (forhåndsversjon)
 
-Bruk data fra kilder som Microsoft og andre partnere for å berike kundedataene.
+Bruk data fra kilder som Microsoft og andre partnere for å berike kundedataene. Tredjeparts suppleringer konfigureres ved hjelp av [tilkoblinger](connections.md), som en administrator konfigurerer med legitimasjon og gir samtykketil dataoverføringer. Tilkoblingene kan brukes av administratorer og bidragsytere til å konfigurere suppleringer.  
+
+## <a name="multiple-enrichments-of-the-same-type"></a>Flere suppleringer av samme type
+
+Enheten som skal suppleres, angis under suppleringskonfigurasjonen, noe som gjør at du bare kan supplere et delsett av profilene. Du kan for eksempel bare supplere data for et bestemt segment. Du kan konfigurere flere suppleringer av samme type og bruke samme tilkobling på nytt. Noen suppleringer vil ha begrensninger på antall suppleringer av samme type som kan opprettes. Du kan se grensene og nåværende bruk for hver flis på fanen **Oppdag** på siden **Supplering**.
+
+## <a name="enrich-data-sources-before-unification"></a>Supplere datakilder før foreningen
+
+Du kan supplere kundedataene før dataforeningen, slik at kvaliteten på et datassamsvar økes. Hvis du vil ha mer informasjon, kan du se [datakildesupplering](data-sources-enrichment.md).
+
+## <a name="create-an-enrichment"></a>Opprett en supplering
+
+Du må ha [tillatelse](permissions.md) som bidragsyter eller administrator for å opprette eller redigere suppleringer.
+
+Gå til **Data** > **Supplering**. Fanen **Oppdag** viser alle støttede suppleringsalternativer.
 
 :::image type="content" source="media/enrichment-hub-page.png" alt-text="Side for suppleringshub.":::
-
-Gå til **Data** > **Supplering** for å arbeide med suppleringsalternativer.  
-
-Du må ha tillatelse som bidragsyter eller administrator for å opprette eller redigere berikelser. Du finner mer informasjon i [Tillatelser](permissions.md).
-
-I kategorien **Oppdag** finner du alle støttede suppleringsalternativer.
 
 # <a name="individual-consumers-b-to-c"></a>[Individuelle forbrukere (B-til-C)](#tab/b2c)
 
@@ -57,45 +65,33 @@ I kategorien **Oppdag** finner du alle støttede suppleringsalternativer.
 
 ---
 
-I kategorien **Mine suppleringer** kan du se de suppleringene du har konfigurert, og redigere egenskapene deres. Du kan også opprette [segmenter](segments.md) eller [mål](measures.md) fra suppleringer.
-
 ## <a name="manage-existing-enrichments"></a>Behandle eksisterende suppleringer
 
-Gå til fanen **Mine suppleringer** for å vise alle konfigurerte pårikninger. Hvert supplering vises som en rad som inneholder tilleggsinformasjon om suppleringen.
+Gå til **Data** > **Supplering**. Fanen **Mine suppleringer** viser konfigurerte suppleringer, statusen, antall supplerte kunder og sist gang dataene ble oppdatert. Du kan sortere listen over suppleringer etter en hvilken som helst kolonne, eller du kan bruke søkefeltet til å finne suppleringen du vil administrere.
 
-Velg suppleringen for å vise de tilgjengelige alternativene. Du kan også velge den loddrette ellipsen (&vellip;) i et listeelement for å vise alternativene. Hvis du har konfigurert flere suppleringer, kan du bruke søkeboksen til å finne den raskt.
+Velg suppleringen for å vise tilgjengelige handlinger.
 
 :::image type="content" source="media/enrichment-hub-options-run.png" alt-text="Alternativer for å behandle suppleringer i listen over suppleringer.":::
 
 - **Vis** suppleringsdetaljer med antall supplerte kundeprofiler.
 - **Rediger** suppleringskonfigurasjonen.
-- **Kjør** supplementet for å oppdatere kundeprofiler med de nyeste dataene.
-- **Deaktiver** en eksisterende supplering for å unngå at den oppdateres automatisk med hver planlagte oppdatering. Data fra den siste vellykkede oppdateringen er fortsatt tilgjengelige. **Aktiver** en inaktiv supplering for å starte automatisk oppdatering på nytt med hver planlagte oppdatering.
+- [**Kjør**](#run-or-refresh-enrichments) suppleringen for å oppdatere kundeprofiler med de nyeste dataene. Kjør flere suppleringer samtidig ved å velge dem i listen.
+- **Aktiver** eller **deaktiver** en supplering. Inaktive suppleringer oppdateres ikke under en [planlagt oppdatering](system.md#schedule-tab).
 - **Slett** suppleringen.
 
-Kjør eller deaktiver flere suppleringer samtidig ved å merke dem i listen. Visnings- og redigeringsalternativer er ikke tilgjengelige som massehandling. De fungerer bare for én supplering om gangen.
-
-## <a name="enrichments-and-connections"></a>Suppleringer og tilkoblinger
-
-Tredjeparts suppleringer konfigureres ved hjelp av [tilkoblinger](connections.md), som en administrator konfigurerer med legitimasjon og gir samtykketil dataoverføringer. Tilkoblingene kan brukes av administratorer og bidragsytere til å konfigurere suppleringer.  
-
-## <a name="multiple-enrichments-of-the-same-type"></a>Flere suppleringer av samme type
-
-Enheten som skal suppleres, angis under suppleringskonfigurasjonen, noe som gjør at du bare kan supplere et delsett av profilene. Du kan for eksempel bare supplere data for et bestemt segment. Du kan konfigurere flere suppleringer av samme type og bruke samme tilkobling på nytt. Noen suppleringer vil ha begrensninger på antall suppleringer av samme type som kan opprettes. Du kan se grensene og nåværende bruk for hver flis på fanen **Oppdag** på siden **Supplering**.
-
-## <a name="enrich-data-sources-before-unification"></a>Supplere datakilder før foreningen
-
-Du kan supplere kundedataene før dataforeningen, slik at kvaliteten på et datassamsvar økes. Hvis du vil ha mer informasjon, kan du se [datakildesupplering](data-sources-enrichment.md).
+Du kan også opprette [segmenter](segments.md) eller [mål](measures.md) fra suppleringer.
 
 ## <a name="run-or-refresh-enrichments"></a>Kjør eller oppdater suppleringer
 
-1. Velg **Kjør** for å starte suppleringsprosessen. Du kan også la systemet kjøre supplementet automatisk som en del av en [planlagt oppdatering](system.md#schedule-tab). Behandlingstiden avhenger av størrelsen på kundedataene.
+Når den er kjørt, kan suppleringer oppdateres automatisk eller oppdateres manuelt ved behov.
+
+1. Hvis du vil oppdatere en eller flere suppleringer manuelt, velger du dem og velger **Kjør**. Hvis du vil [planlegge en automatisk oppdatering](system.md#schedule-tab), går du til **Administrator** > **System** > **Plan**. Behandlingstiden avhenger av størrelsen på kundedataene.
 
 1. Se eventuelt [fremdriften for suppleringsprosessen](#see-the-progress-of-the-enrichment-process).
 
 1. Når suppleringsprosessen er fullført, går du til **Mine suppleringer** for å se gjennom de nylig supplerte kundeprofildataene, tidspunktet for den siste oppdateringen og antall supplerte profiler.
 
-1. Velg suppleringen for å se [suppleringsresultatene](#enrichment-results).
+1. Velg suppleringen for å se [suppleringsresultatene](#view-enrichment-results).
 
 ### <a name="see-the-progress-of-the-enrichment-process"></a>Se fremdriften for suppleringsprosessen
 
@@ -107,12 +103,12 @@ Du kan finne detaljer om behandlingen av en supplering, blant annet status og po
 1. Velg **Se detaljer** under suppleringen du vil vise fremdriften for.
 1. Velg **Vis detaljer** i **Oppgavedetaljer**-ruten for å vise prosessene som er involvert i oppdatering av suppleringen og statusen deres.
 
-## <a name="enrichment-results"></a>Resultater av supplering
+## <a name="view-enrichment-results"></a>Vis suppleringsresultater
 
 Etter en fullført suppleringskjøring, kan du se gjennom suppleringsresultatene.
 
 1. Gå til **Data** > **Supplering**.
-1. I fanen **Mine suppleringer** velger du suppleringen du vil ha informasjon om.
+1. I fanen **Mine suppleringer** velger du suppleringen du vil vise.
 
 Alle suppleringer viser grunnleggende informasjon, for eksempel antall supplerte profiler og antall supplerte profiler over tid. Flisen **Forhåndsvisning av supplerte kunder** viser et eksempel på den genererte suppleringsenheten. Velg **Vis mer**, og velg fanen **Data** for å se en detaljert visning.
 

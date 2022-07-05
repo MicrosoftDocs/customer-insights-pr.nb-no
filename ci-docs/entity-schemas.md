@@ -1,5 +1,5 @@
 ---
-title: Customer Insights-enhetsskjemaer i Common Data Model
+title: Enhetsskjemaer i Common Data Model
 description: Arbeid med enheter i Common Data Model.
 ms.date: 08/13/2021
 ms.reviewer: mhart
@@ -8,16 +8,14 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 33a0562854e97b9ac5218e060f965996305627fd
-ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
+ms.openlocfilehash: 92d37fc0950fefcb5c2a5d26214a469d3693980d
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/15/2022
-ms.locfileid: "8757444"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054766"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Enhetsskjemaer i Common Data Model
-
-
 
 [Common Data Model](/common-data-model/) er en deklarativ spesifikasjon og en definisjon av standardenheter som representerer vanlig brukte konsepter og aktiviteter på tvers av forretnings- og produktivitetsprogrammer. Denne modellen blir også utvidet til observasjonsmessige og analytiske data. Common Data Model tilbyr veldefinerte, modulbaserte og utvidbare forretningsenheter, som konto, forretningsenhet, sak, kontakt, kundeemne, salgsmulighet og produkt, samt samhandlinger med leverandører, arbeidere og kunder, for eksempel aktiviteter og servicenivåavtaler. Alle kan bygge på og utvide Common Data Model-definisjoner for å fange opp flere forretningsspesifikke ideer.
 

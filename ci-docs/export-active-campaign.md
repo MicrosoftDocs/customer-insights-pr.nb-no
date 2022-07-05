@@ -1,5 +1,5 @@
 ---
-title: Eksportere Customer Insights-data til ActiveCampaign
+title: Eksporter segmenter til ActiveCampaign
 description: Lær hvordan du konfigurerer tilkoblingen og eksporterer til ActiveCampaign.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5d15b9bf7383d06070ac92d7a729fc6e6e00c9d7
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: eb6f2bb69bb30c319e17390562b3f33512f33ff1
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646935"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054720"
 ---
 # <a name="export-segments-to-activecampaign-preview"></a>Eksportere segmenter til ActiveCampaign (forhåndsvisning)
 
@@ -21,9 +21,9 @@ Eksporter segmenter av enhetlige kundeprofiler til ActiveCampaign, og bruk dem f
 
 ## <a name="prerequisites"></a>Forutsetninger
 
--   Du har en [ActiveCampaign-konto](https://www.activecampaign.com/) og tilsvarende administratorlegitimasjon.
--   Du har [konfigurerte segmenter](segments.md) i Customer Insights.
--   Enhetlige kundeprofiler i de eksporterte segmentene inneholder et felt med en e-postadresse.
+- Du har en [ActiveCampaign-konto](https://www.activecampaign.com/) og tilsvarende administratorlegitimasjon.
+- Du har [konfigurerte segmenter](segments.md) i Customer Insights.
+- Enhetlige kundeprofiler i de eksporterte segmentene inneholder et felt med en e-postadresse.
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 

@@ -1,5 +1,5 @@
 ---
-title: OData-eksempler for Dynamics 365 Customer Insights-API-ene
+title: OData-spørringsekseringer for API-er for Customer Insights
 description: Vanlige eksempler på OData (Open Data Protocol) for å spørre API-ene for Customer Insights for å se gjennom data.
 ms.date: 05/25/2022
 ms.subservice: audience-insights
@@ -8,14 +8,14 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: cdadd72bfe4272d8d83d923baaa6fd40d008473b
-ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
+ms.openlocfilehash: 54ba9f4e9baeb4b7021bb8c20a706bbb6eb1529f
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "8808473"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081722"
 ---
-# <a name="odata-query-examples"></a>Eksempler på OData-spørring
+# <a name="odata-query-examples-for-customer-insights-apis"></a>OData-spørringsekseringer for API-er for Customer Insights
 
 OData (Open Data Protocol) er en datatilgangsprotokoll som er bygd på kjerneprotokoller som HTTP. Den bruker allment aksepterte metoder som REST for Internett. Det finnes ulike typer biblioteker og verktøy som kan brukes til å bruke OData-tjenester.
 

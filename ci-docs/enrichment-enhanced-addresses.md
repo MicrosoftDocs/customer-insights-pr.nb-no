@@ -1,5 +1,5 @@
 ---
-title: Supplering av utvidede adresser (inneholder video)
+title: Suppler kundeprofiler med forbedrede adresser (inneholder video)
 description: Suppler og normaliser adresseinformasjonen for kundeprofiler med Microsofts modeller.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -14,14 +14,14 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: f6279b9bb721d99d66f73e8dc839a92f1ad90140
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 01f1c917c75e932cc69f4c7251e57524fc859dce
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953823"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081228"
 ---
-# <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Supplering av kundeprofiler med forbedrede adresser
+# <a name="enrich-customer-profiles-with-enhanced-addresses"></a>Suppler kundeprofiler med forbedrede adresser
 
 Adresser i dataene kan være ustrukturerte, ufullstendige eller feil. Bruk Microsofts modeller til å normalisere og forbedre adressene i [Common Data Model-formatet](/common-data-model/schema/core/applicationcommon/address) for bedre nøyaktighet og innsikt.
 
@@ -101,7 +101,7 @@ Vi støtter for øyeblikket supplering av adresser i disse landene eller område
 
 1. Velg **Lagre supplering** etter at du har sett gjennom valgene.
 
-## <a name="enrichment-results"></a>Resultater av supplering
+## <a name="view-enrichment-results"></a>Vis suppleringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

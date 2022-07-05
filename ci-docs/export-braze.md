@@ -1,34 +1,35 @@
 ---
-title: Eksportere Customer Insights-data til Braze
+title: Eksporter segmenter til Braze (forhåndsversjon)
 description: Finn ut hvordan du konfigurerer og eksporterer til Braze.
-ms.date: 03/29/2022
+ms.date: 06/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bfc9b34506dc3385b5edf12b31e74d05f2d20655
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 314a61f82c4040a8dbd6dff1dd5d92e20464f82a
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646676"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081493"
 ---
-# <a name="export-segment-lists-to-braze-preview"></a>Eksportere segmentlister til Braze (forhåndsversjon)
+# <a name="export-segments-to-braze-preview"></a>Eksporter segmenter til Braze (forhåndsversjon)
 
 Eksporter segmenter av enhetlige kundeprofiler til Braze, og bruk dem for markedsføringsaktiviteter.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Forutsetning
 
--   Du har en [Braze-konto](https://www.braze.com/) og tilsvarende administratorlegitimasjon.
--   Du har [konfigurerte segmenter](segments.md) i Customer Insights.
--   Enhetlige kundeprofiler i de eksporterte segmentene inneholder et felt som representerer en e-postadresse og en Kunde-ID for Braze. 
+- En [Braze-konto](https://www.braze.com/) og tilsvarende administratorlegitimasjon.
+- Eksisterende [segmenter i Braze](https://www.braze.com/docs/user_guide/engagement_tools/segments/creating_a_segment/).
+- [Konfigurerte segmenter](segments.md) i Customer Insights.
+- Enhetlige kundeprofiler i de eksporterte segmentene inneholder et felt som representerer en e-postadresse og en Kunde-ID for Braze.
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
 - Eksport til Braze er begrenset til segmenter.
-- Det kan ta opptil 40 minutter å eksportere 1 million kundeprofiler til Braze. 
+- Det kan ta opptil 40 minutter å eksportere 1 million kundeprofiler til Braze.
 - Antall kundeprofiler du kan eksportere til Braze, avhenger av og begrenses til kontrakten med Braze.
 
 ## <a name="set-up-connection-to-braze"></a>Konfigurere tilkoblingen til Braze
@@ -41,7 +42,7 @@ Eksporter segmenter av enhetlige kundeprofiler til Braze, og bruk dem for marked
 
 1. Velg hvem som kan bruke denne tilkoblingen. Hvis du ikke gjør noe, vil standarden være Administratorer. Hvis du vil ha mer informasjon, se [Tillate bidragsytere å bruke en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Oppgi [API-nøkkelen for Braze](https://www.braze.com/docs/api/basics/) for å fortsette å logge på. 
+1. Oppgi [API-nøkkelen for Braze](https://www.braze.com/docs/api/basics/) for å fortsette å logge på.
 
 1. Velg **Jeg godtar** for å bekrefte **Datapersonvern og -samsvar**.
 
@@ -59,9 +60,13 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Velg **Legg til mål** for å opprette en ny eksport.
 
-1. Velg en tilkobling fra Braze-delen i feltet **Tilkobling for eksport**. Hvis du ikke ser dette inndelingsnavnet, er ingen tilkoblinger av denne typen tilgjengelige for deg.  
+1. Velg en tilkobling fra Braze-delen i feltet **Tilkobling for eksport**. Hvis denne delen ikke vises, er ingen tilkoblinger av denne typen tilgjengelige for deg.  
 
-3. I delen **Datasamsvar** i feltet **E-post** velger du feltet som representerer kundens e-postadresse, i "Kunde-ID"-feltet, og deretter velger du feltet som representerer kundens Braze-ID. Det kreves for å eksportere segmenter til Braze. Segmentene i Braze opprettes med samme navn på segmentet som i Dynamics 365 Customer Insights. Du kan velge flere valgfrie felt for samsvarende data. 
+1. Legg til et **visningsnavn** for eksporten.
+
+1. Legg til API-identifikatoren for Braze-segmentet som du vil eksportere til, i feltet **API-identifikator for Braze-segment**. Du finner identifikatoren i segmentdetaljene på Braze-plattformen.
+
+1. Velg feltet som representerer en kundes e-postadressen, i delen **Datasamsvar** i **E-post**-feltet. Velg feltet som representerer kundens Braze-ID i feltet **Kunde-ID**. Det kreves for å eksportere segmenter til Braze. Du kan eventuelt velge flere felter.
 
 1. Velg **Lagre**.
 

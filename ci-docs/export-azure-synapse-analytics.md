@@ -1,19 +1,19 @@
 ---
-title: Eksporter Customer Insights-data til Azure Synapse Analytics
+title: Eksporter data til Azure Synapse Analytics (forhåndsversjon)
 description: Finn ut hvordan du konfigurerer tilkoblingen til Azure Synapse Analytics.
-ms.date: 04/11/2022
+ms.date: 06/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 772fe0978362ccd829077a8133e2a3e74043f3f8
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 60bacb313e0426564310f3c1339bf3b732e17489
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741515"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081584"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Eksporter data til Azure Synapse Analytics (forhåndsversjon)
 
@@ -72,13 +72,13 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Velg en tilkobling fra **Azure Synapse Analytics**-delen i feltet **Tilkobling for eksport**. Hvis du ikke ser dette inndelingsnavnet, er ingen [tilkoblinger](connections.md) av denne typen tilgjengelige for deg.
 
-1. Angi et gjenkjennelig **visningsnavn** for eksporten og et **databasenavn**.
+1. Angi et gjenkjennelig **visningsnavn** for eksporten og et **databasenavn**. Eksporten oppretter en ny [Azure Synapse-sjødatabase](/azure/synapse-analytics/database-designer/concepts-lake-database) i arbeidsområdet som er definert i tilkoblingen.
 
 1. Velg hvilke enheter du vil eksportere til Azure Synapse Analytics.
    > [!NOTE]
    > Datakilder som er basert på en [Common Data Model-mappe](connect-common-data-model.md), støttes ikke.
 
-2. Velg **Lagre**.
+1. Velg **Lagre**.
 
 Hvis du lagrer en eksport, kjøres ikke eksporten umiddelbart.
 

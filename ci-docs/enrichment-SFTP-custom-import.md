@@ -1,5 +1,5 @@
 ---
-title: Supplering med egendefinert SFTP-import
+title: Suppler kundeprofiler med egendefinert SFTP-import (forhåndsversjon)
 description: Generell informasjon om supplering med egendefinert SFTP-import.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 657afb6fcb68429680eb677734b4115e69769008
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 88fc366ab9478c3b67034af794e237ff4573da7c
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953731"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081336"
 ---
-# <a name="enrich-customer-profiles-with-custom-data-preview"></a>Supplere kundeprofiler med egendefinerte data (forhåndsversjon)
+# <a name="enrich-customer-profiles-with-sftp-custom-import-preview"></a>Suppler kundeprofiler med egendefinert SFTP-import (forhåndsversjon)
 
 Med egendefinert SFTP-import (Secure File Transfer Protocol) kan du importere data som ikke trenger å gå gjennom dataforening. Det er en fleksibel, sikker og enkel måte å skaffe seg på dataene på. Egendefinert SFTP-import kan brukes i kombinasjon med [SFTP-eksport](export-sftp.md), noe som gjør at du kan eskportere kundeprofildataene som er nødvendig for supplering. Dataene kan deretter behandles og forbedres, og tilpasset SFTP-import kan brukes til å hente de supplerte dataene tilbake til Dynamics 365 Customer Insights.
 
@@ -120,7 +120,7 @@ Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen nå
 
 1. Velg **Kjør** for å starte suppleringsprosessen, eller lukk for å gå tilbake til siden **Suppleringer**.
 
-## <a name="enrichment-results"></a>Resultater av supplering
+## <a name="view-enrichment-results"></a>Vis suppleringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

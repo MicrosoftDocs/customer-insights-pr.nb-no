@@ -21,14 +21,14 @@ searchScope:
 - ci-measure-template
 - ci-permissions
 - customerInsights
-ms.openlocfilehash: a7b10d985d5cba64b25595a3d7c101d6cb5c62a5
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 5477798a8b9e0771d390e403379b7447eb7baddd
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647326"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081444"
 ---
-# <a name="relationships-between-entities"></a>Relasjoner mellom enheter
+# <a name="relationships-between-entities-and-entity-paths"></a>Relasjoner mellom enheter og enhetsbaner
 
 Relasjoner kobler sammen enheter og definerer en graf for dataene når enheter deler en felles identifikator, en sekundærnøkkel. Denne sekundærnøkkelen kan referere fra én enhet til en annen. Tilkoblede enheter gjør at segmenter og mål kan defineres basert på flere datakilder.
 

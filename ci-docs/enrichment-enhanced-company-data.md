@@ -1,5 +1,5 @@
 ---
-title: Forbedrede firmadata
+title: Suppler firmaprofiler med forbedrede firmadata
 description: Suppler og normaliser firmadata med Microsoft-modeller.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 4247d59806468907d93fc7848231ec5a2985580e
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 131ef3d1e123628779609ddec368cfef8f4d607e
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953961"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054260"
 ---
-# <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Supplering av firmaprofiler med forbedrede firmadata
+# <a name="enrich-company-profiles-with-enhanced-company-data"></a>Suppler firmaprofiler med forbedrede firmadata
 
 Bruk Microsofts-modeller og kompilerte firmadata til å korrigere, supplere og standardisere firmaprofilene. Vi skal bruke formatet [Common Data Model-formatet](/common-data-model/schema/core/applicationcommon/account) for bedre nøyaktighet og innsikt.
 
@@ -84,7 +84,7 @@ Modellen vil ikke:
 
 1. Velg **Kjør** for å starte suppleringsprosessen, eller lukk for å gå tilbake til siden **Suppleringer**.
 
-## <a name="enrichment-results"></a>Resultater av supplering
+## <a name="view-enrichment-results"></a>Vis suppleringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
