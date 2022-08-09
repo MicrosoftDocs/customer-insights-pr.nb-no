@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 92d37fc0950fefcb5c2a5d26214a469d3693980d
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: cc65314f1b083694b60ac0a2625bea906be7272b
+ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054766"
+ms.lasthandoff: 07/21/2022
+ms.locfileid: "9183505"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Enhetsskjemaer i Common Data Model
 
@@ -39,9 +39,8 @@ Hvis du vil ha mer informasjon, kan du se dokumentasjonen om [Customer Insights-
 
 ## <a name="view-entities-using-the-common-data-model-entity-navigator"></a>Vise enheter ved hjelp av enhetsnavigatoren for Common Data Model
 
-Du kan vise enheter i [Common Data Model-enhetsnavigatoren](https://microsoft.github.io/CDM/). Velg en enhet i Insights Application-delen for å få listen over Customer Insights-enheter og deres definisjoner.
-> [!div class="mx-imgBorder"]
-> ![CDM-enhetsnavigator som viser Kundeaktivitet-enhet.](media/CDM-entity-navigator.png "CDM-enhetsnavigator som viser Kundeaktivitet-enhet")
+Vis enheter i [enhetsnavigatoren for Common Data Model](https://microsoft.github.io/CDM/). Velg en enhet i Insights Application-delen for å få listen over Customer Insights-enheter og deres definisjoner.
 
+:::image type="content" source="media/CDM-entity-navigator.png" alt-text="CDM-enhetsnavigator som viser Kundeaktivitet-enhet.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

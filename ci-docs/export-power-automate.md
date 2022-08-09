@@ -1,19 +1,19 @@
 ---
 title: Power Automate-kobling (forhåndsversjon) | Microsoft Docs
 description: Opprett flyter i Microsoft Power Automate fra Dynamics 365 Customer Insights.
-ms.date: 06/24/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 29a861dad926072f6f849d738d868f0f3b9306be
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: f87bd6db7143294a264813f6c5c7d7963f303628
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081390"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196130"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate-kobling (forhåndsvisning)
 
@@ -21,18 +21,18 @@ Utløs bestemte hendelser som skal skje automatisk når dataene endres og admini
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-- Du kan ringe maksimalt 100 samtaler per 60 sekunder. Du kan kalle api-endepunkt flere ganger ved å bruke $skip-parameteren. [Lær mer om $skip-parameteren](/connectors/customerinsights/#get-items-from-an-entity).
+- Maksimalt 100 samtaler per 60 sekunder. Bruk [$skip-parameteren](/connectors/customerinsights/#get-items-from-an-entity) til å kalle opp API-endepunktet flere ganger.
 
 ## <a name="power-automate-triggers"></a>Power Automate-utløsere
 
-Bruk utløsere til å opprette skyflyter og automatisere repeterende oppgaver, for eksempel varsler eller mer avanserte handlinger.
+Bruk utløsere til å opprette skyflyter og automatisere repeterende oppgaver, for eksempel varsler eller mer avanserte handlinger. Bruk utløsere når følgende er tilfelle:
 
-- Utløs når en oppdatering av datakilde mislykkes.
-- Utløs når en oppdatering av datakilde er vellykket.
-- Utløs når en terskel blir overskredet i et segment. Utløseren er begrenset til overgang over grensen.
-- Utløs når en terskel blir overskredet i et forretningsmål. Bare forretningsmål uten en dimensjon støttes. Utløseren er begrenset til overgang over grensen.
-- Utløses når en full oppdatering av (datakilder, segmenter, mål ...) er fullført.
-- Utløs når en oppdatering av samlingsprosessen er fullført.
+- En oppdatering av datakilde mislykkes.
+- En oppdatering av datakilde fullføres.
+- En terskel blir overskredet i et segment. Utløseren er begrenset til overgang over grensen.
+- En terskel blir overskredet i et forretningsmål. Bare forretningsmål uten en dimensjon støttes. Utløseren er begrenset til overgang over grensen.
+- En planlagt, fullstendig oppdatering fullføres. Denne utløseren fungerer ikke for oppdateringer som startes manuelt.
+- En oppdatering av samlingsprosessen fullføres.
 
 [Konfigurere utløsere i Power Automate.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
 
@@ -42,7 +42,7 @@ Power Automate-koblingen gir andre handlinger enn de tilgjengelige utløserne. H
 
 ## <a name="create-a-power-automate-flow"></a>Opprett en Power Automate-flyt
 
-1. Gå til **Admin** > **Eksporter mål**.
+1. Gå til **Administrator** > **Tilkoblinger**.
 
 1. Velg **Konfigurer** på **Power Automate**-flisen.
 
@@ -53,7 +53,5 @@ Power Automate-koblingen gir andre handlinger enn de tilgjengelige utløserne. H
 Eksempler på hvordan du bruker flyter: 
 - Publiser en melding på en Microsoft Teams-kanal hvis en datakildeoppdatering mislykkes. 
 - Send en e-postmelding til dataeierne når en grense for et segment krysses.
-
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

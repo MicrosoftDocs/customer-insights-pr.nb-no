@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: fb97b721cc82ccd23cfd1df74a0712b8fc277b8a
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 98e9e330e7ef9cf085caa94a506fa788cebdd67b
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081246"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207195"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Supplering for datakilder (forhåndsversjon)
 
@@ -21,9 +21,9 @@ Bruk data fra kilder som Microsoft og andre partnere til å forbedre kundedataen
 
 ## <a name="enrich-a-data-source"></a>Supplere en datakilde
 
-Du må ha bidragsyter- eller administratortillatelser til å opprette eller redigere suppleringer. Du finner mer informasjon i [Tillatelser](permissions.md).  
+Du må ha bidragsyter- eller administrator[tillatelser](permissions.md) til å opprette eller redigere suppleringer.  
 
-1. Gå til **Data** > **Samle**. Velg enheten du vil supplere, og velg ett attributt som hovednøkkel for enheten. Hvis du vil ha mer informasjon, kan du se [Velg primærnøkkel](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+1. Gå til **Data** > **Samle**. Velg enheten du vil supplere, og velg ett attributt som [primærnøkkel](map-entities.md#select-primary-key-and-semantic-type-for-attributes) for enheten.
 
 1. Gå til **Data** > **Datakilder**.
 
@@ -47,8 +47,8 @@ Følgende suppleringer er for øyeblikket tilgjengelige for datakilder. Se gjenn
 
 ## <a name="manage-existing-data-source-enrichments"></a>Administrere eksisterende datakildesuppleringer
 
-Gå til fanen **Mine suppleringer** for å vise alle konfigurerte pårikninger.
+Gå til **Data** > **Supplering**. Fanen **Mine suppleringer** viser konfigurerte suppleringer, statusen, antall supplerte kunder og sist gang dataene ble oppdatert. Du kan sortere listen over suppleringer etter en hvilken som helst kolonne, eller du kan bruke søkefeltet til å finne suppleringen du vil administrere.
 
-Velg suppleringen for å vise de tilgjengelige alternativene. Du kan også velge den loddrette ellipsen (&vellip;) i et listeelement for å vise alternativene. Hvis du har konfigurert flere suppleringer, kan du bruke søkeboksen til å finne den raskt.
+Velg suppleringen for å vise de tilgjengelige alternativene. Du kan også velge den loddrette ellipsen (&vellip;) i et listeelement for å vise alternativene.
 
-Du kan vise, redigere, kjøre eller slette datakildesupplering. Hvis du vil ha mer informasjon, kan du se [Behandle eksisterende suppleringer](enrichment-hub.md).
+Du kan vise, redigere, kjøre eller slette datakildesupplering. Hvis du vil ha mer informasjon, kan du se [Behandle eksisterende suppleringer](enrichment-hub.md#manage-existing-enrichments).

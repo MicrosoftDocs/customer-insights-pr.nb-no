@@ -1,76 +1,72 @@
 ---
 title: Eksporter data til Azure Synapse Analytics (forhåndsversjon)
 description: Finn ut hvordan du konfigurerer tilkoblingen til Azure Synapse Analytics.
-ms.date: 06/29/2022
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 60bacb313e0426564310f3c1339bf3b732e17489
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: f9c9ee55f2874ae1dcaf82f2ff17ed0fbbb7804d
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081584"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196406"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Eksporter data til Azure Synapse Analytics (forhåndsversjon)
 
 Azure Synapse er en analysetjeneste som akselererer tid til innsikt på tvers av datalagre og store datasystemer. Du kan ta inn og bruke Customer Insights-dataene i [Azure Synapse](/azure/synapse-analytics/overview-what-is).
 
-## <a name="prerequisites"></a>Forutsetninger
-
-Følgende forhåndskrav må oppfylles for å konfigurere tilkoblingen fra Customer Insights til Azure Synapse.
+## <a name="prerequisites"></a>Forutsetning
 
 > [!NOTE]
-> Pass på at du angir alle **rolletilordninger** slik det er beskrevet.  
+> Pass på at du angir alle **rolletilordninger** slik det er beskrevet.
 
-## <a name="prerequisites-in-customer-insights"></a>Forhåndskrav i Customer Insights
+- I Customer Insights må Azure Active Directory-brukerkontoen (AD) ha en [administratorrolle](permissions.md#assign-roles-and-permissions).
 
-* Azure Active Directory-brukerkontoen (AD) har en **administratorrolle** i Customer Insights. Du finner ut mer om å [angi brukertillatelser](permissions.md#assign-roles-and-permissions).
-
-I Azure: 
+I Azure:
 
 - Et aktivt Azure-abonnement.
 
-- Hvis du bruker en ny Azure Data Lake Storage Gen2-konto, må *tjenestekontohaveren for Customer Insights* ha sikkerhetstillatelsene **Storage Blob-databidragsyter**. Finn ut mer om å [koble til en Azure Data Lake Storage Gen2-konto med Azure-tjenestekontohaver for Customer Insights](connect-service-principal.md). Data Lake Storage Gen2 **må ha** [hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace) aktivert.
+- Hvis du bruker en ny Azure Data Lake Storage Gen2-konto, har [tjenestekontohaveren for Customer Insights](connect-service-principal.md) sikkerhetstillatelsene **Storage Blob-databidragsyter**. Data Lake Storage Gen2 **må ha** [hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace) aktivert.
 
-- På ressursgruppen der Azure Synapse workspace er plassert, må *tjenestekontohaveren* og *Azure AD-brukeren med administratortillatelser i Customer Insights* minst være tildelt **Leser**-tillatelser. Hvis du vil ha mer informasjon, kan du se [Tilordne Azure-roller ved hjelp av Azure Portal](/azure/role-based-access-control/role-assignments-portal).
+- I ressursgruppen der Azure Synapse workspace er plassert, må *tjenestekontohaveren* og *Azure AD-brukeren med administratortillatelser i Customer Insights* minst få tilordnet **Leser**-[tillatelser](/azure/role-based-access-control/role-assignments-portal).
 
-- *Azure AD-brukeren med administratortillatelser i Customer Insights* må ha tillatelsene **Storage Blob-databidragsyter** på Azure Data Lake Storage Gen2-kontoen der dataene er plassert og koblet til Azure Synapse workspace. Finn ut mer om hvordan du [bruker Azure Portal til å tilordne en Azure-rolle for tilgang til blob- og kødata](/azure/storage/common/storage-auth-aad-rbac-portal) og [tillatelsene for Storage Blob-databidragsyter](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
+- *Azure AD-brukeren med administratortillatelser i Customer Insights* har tillatelsene **Storage Blob-databidragsyter** på  Azure Data Lake Storage Gen2-kontoen der dataene er plassert og koblet til Azure Synapse workspace. Finn ut mer om hvordan du [bruker Azure Portal til å tilordne en Azure-rolle for tilgang til blob- og kødata](/azure/storage/common/storage-auth-aad-rbac-portal) og [tillatelsene for Storage Blob-databidragsyter](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
-- *[Azure Synapse-arbeidsområdeadministrert identitet](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* må ha tillatelsene **Storage Blob-databidragsyter** på Azure Data Lake Storage Gen2-kontoen der dataene er plassert og koblet til Azure Synapse-arbeidsområdet. Finn ut mer om hvordan du [bruker Azure Portal til å tilordne en Azure-rolle for tilgang til blob- og kødata](/azure/storage/common/storage-auth-aad-rbac-portal) og [tillatelsene for Storage Blob-databidragsyter](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
+- *[Azure Synapse workspace-administrert identitet](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* har tillatelsene **Storage Blob-databidragsyter** på Azure Data Lake Storage Gen2-kontoen der dataene er plassert og koblet til Azure Synapse workspace. Finn ut mer om hvordan du [bruker Azure Portal til å tilordne en Azure-rolle for tilgang til blob- og kødata](/azure/storage/common/storage-auth-aad-rbac-portal) og [tillatelsene for Storage Blob-databidragsyter](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
-- I Azure Synapse workspace må *tjenestekontohaveren for Customer Insights* være tildelt rollen **Synapse-administrator**. Hvis du vil ha mer informasjon, kan du se [Slik konfigurerer du tilgangskontroll for Synapse-arbeidsområdet](/azure/synapse-analytics/security/how-to-set-up-access-control).
+- I Azure Synapse workspace har *tjenestekontohaveren for Customer Insights* følgende [rolle tilordnet](/azure/synapse-analytics/security/how-to-set-up-access-control): **Synapse-administrator**.
 
-## <a name="set-up-the-connection-and-export-to-azure-synapse"></a>Konfigurer tilkoblingen og eksporter til Azure Synapse
+## <a name="set-up-connection-to-azure-synapse"></a>Konfigurer tilkoblingen til Azure Synapse
 
-### <a name="configure-a-connection"></a>Konfigurer en tilkobling
-
-Når du skal opprette en tilkobling, trenger tjenestekontohaveren og brukerkontoen i Customer Insights **Leser**-tillatelser i *ressursgruppen* der arbeidsområdet Synapse Analytics er plassert. Tjenestekontohaveren og brukeren i arbeidsområdet Synapse Analytics trenger i tillegg tillatelsene **Synapse-administrator**. 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
 
 1. Gå til **Administrator** > **Tilkoblinger**.
 
-1. Velg **Legg til tilkobling**, og velg **Azure Synapse Analytics** eller velg **Konfigurer** på flisen **Azure Synapse Analytics** for å konfigurere tilkoblingen.
+1. Velg **Legg til tilkobling**, og velg **Azure Synapse Analytics**.
 
-1. Gi tilkoblingen et gjenkjennelig navn i Visningsnavn-feltet. Navnet og tilkoblingstypen beskriver denne tilkoblingen. Vi anbefaler at du velger et navn som forklarer formålet med og målet for tilkoblingen.
+1. Gi tilkoblingen et gjenkjennelig navn i **Visningsnavn**-feltet. Navnet og tilkoblingstypen beskriver denne tilkoblingen. Vi anbefaler at du velger et navn som forklarer formålet med og målet for tilkoblingen.
 
-1. Velg hvem som kan bruke denne tilkoblingen. Hvis du ikke gjør noe, vil standarden være Administratorer. Hvis du vil ha mer informasjon, se [Tillate bidragsytere å bruke en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Velg hvem som kan bruke denne tilkoblingen. Som standard er det bare administratorer. Hvis du vil ha mer informasjon, se [Tillate bidragsytere å bruke en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Velg eller søk etter abonnementet du vil bruke Customer Insights-dataene i. Så snart et abonnement er valgt, kan du også velge **Arbeidsområde**, **Lagringskonto** og **Beholder**.
 
-1. Velg **Lagre** for å lagre tilkoblingen.
+1. Se gjennom [datapersonvern og -samsvar](connections.md#data-privacy-and-compliance), og velg **Jeg godtar**.
 
-### <a name="configure-an-export"></a>Konfigurere en eksport
+1. Velg **Lagre** for å fullføre tilkoblingen.
 
-Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denne typen. Hvis du vil konfigurere eksporten med en delt tilkobling, må du minst ha **Bidragsyter**-tillatelser i Customer Insights. Hvis du vil ha mer informasjon, kan du se [tillatelser som kreves for å konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+## <a name="configure-an-export"></a>Konfigurere en eksport
+
+[!INCLUDE [export-permission-include](includes/export-permission.md)] Hvis du vil konfigurere eksporten med en delt tilkobling, må du minst ha **Bidragsyter**-tillatelser i Customer Insights.
 
 1. Gå til **Data** > **Eksporter**.
 
-1. Velg **Legg til eksport** for å opprette en ny eksport.
+1. Velg **Legg til eksport**.
 
-1. Velg en tilkobling fra **Azure Synapse Analytics**-delen i feltet **Tilkobling for eksport**. Hvis du ikke ser dette inndelingsnavnet, er ingen [tilkoblinger](connections.md) av denne typen tilgjengelige for deg.
+1. Velg en tilkobling fra delen Azure Synapse Analytics i feltet **Tilkobling for eksport**. Kontakt en administrator hvis ingen tilkobling er tilgjengelig.
 
 1. Angi et gjenkjennelig **visningsnavn** for eksporten og et **databasenavn**. Eksporten oppretter en ny [Azure Synapse-sjødatabase](/azure/synapse-analytics/database-designer/concepts-lake-database) i arbeidsområdet som er definert i tilkoblingen.
 
@@ -80,13 +76,11 @@ Du kan konfigurere denne eksporten hvis du har tilgang til en tilkobling av denn
 
 1. Velg **Lagre**.
 
-Hvis du lagrer en eksport, kjøres ikke eksporten umiddelbart.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Eksporten kjører med hver [planlagte oppdatering](system.md#schedule-tab). Du kan også [eksportere data ved behov](export-destinations.md#run-exports-on-demand).
+Hvis du vil spørre etter data som ble eksportert til Synapse Analytics, trenger du tilgangen **Leser for Storage Blob Data** til mållageret i arbeidsområdet for eksporter.
 
-Hvis du vil spørre etter data som ble eksportert til Synapse Analytics, trenger du tilgangen **Leser for Storage Blob Data** til mållageret i arbeidsområdet for eksporter. 
-
-### <a name="update-an-export"></a>Oppdater en eksport
+## <a name="update-an-export"></a>Oppdater en eksport
 
 1. Gå til **Data** > **Eksporter**.
 
@@ -95,3 +89,5 @@ Hvis du vil spørre etter data som ble eksportert til Synapse Analytics, trenger
    - **Legg til** eller **Fjern** enheter fra utvalget. Hvis enheter fjernes fra utvalget, slettes de ikke fra Synapse Analytics-databasen. Fremtidige data oppdateres imidlertid ikke for de fjernede enhetene i databasen.
 
    - **Endring av databasenavnet** oppretter en ny Synapse Analytics-database. Databasen med navnet som ble konfigurert før, vil ikke motta oppdateringer i fremtidige oppdateringer.
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

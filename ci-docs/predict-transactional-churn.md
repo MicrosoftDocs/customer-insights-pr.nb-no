@@ -8,12 +8,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: e55ca8c6926fa0bda05aaf52fd799ca25f7f585f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b8216b5a739964fdfff8cad7e6d6d7ce3f5308b5
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8647497"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9171107"
 ---
 # <a name="transaction-churn-prediction"></a>Prediksjon for transaksjonsfrafall
 
@@ -240,7 +240,7 @@ Legg til en liste over forretningskunder og forretningsforbindelser som du vil b
    - **Navn på prediksjon**: Navnet på prediksjonen som ble angitt under opprettingen.
    - **Prediksjontype**: Typen modell som brukes for prediksjonen
    - **Utdataenhet**: Navn på enheten for å lagre utdataene fra prediksjonen. Du kan finne en enhet med dette navnet på **Data** > **Enhteter**.
-     I utdataenheten er *ChurnScore* den anslåtte sannsynligheten for frafall, og *IsChurn* er en binær etikett basert på *ChurnScore* med en terskel på 0,5. Standardterskelen fungerer kanskje ikke for scenariet. [Opprett et nytt segment](segments.md#create-a-new-segment) med din foretrukne terskelverdi.
+     I utdataenheten er *ChurnScore* den anslåtte sannsynligheten for frafall, og *IsChurn* er en binær etikett basert på *ChurnScore* med en terskel på 0,5. Standardterskelen fungerer kanskje ikke for scenariet. [Opprett et nytt segment](segments.md#create-a-segment) med din foretrukne terskelverdi.
      Ikke alle kunder er nødvendigvis aktive kunder. Noen av dem har kanskje ikke hatt noen aktivitet på lenge og anses som frafalt allerede, basert på din frafallsdefinisjon. Å forutsi frafallsrisiko for kunder som allerede er frafalt, er ikke nyttig fordi de ikke er en interessant målgruppe.
    - **Forespeilet felt**: Dette feltet fylles bare ut for enkelte typer prediksjoner, og brukes ikke i frafallsprediksjon.
    - **Status**: Statusen for prediksjonskjøringen.

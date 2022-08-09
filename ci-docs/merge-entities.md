@@ -14,16 +14,14 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: ceb2724ad490c1ba44fd9b7ff2be04721892fca4
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 4a19b753e7a5979fe72d7e96bc4452d7795c2d48
+ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081624"
+ms.lasthandoff: 07/12/2022
+ms.locfileid: "9139669"
 ---
 # <a name="unify-customer-fields-for-data-unification"></a>Forene kundefelter for dataforening
-
-[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
 I dette trinnet i samlingsprosessen velger og utelater du attributter som skal flettes inn i enheten for den enhetlige profilen. Hvis for eksempel tre enheter hadde e-postdata, vil du kanskje beholde alle tre separate e-postfelter eller slå dem sammen til ett enkelt e-postfelt for den enhetlige profilen. Noen attributter kombineres automatisk av systemet. Du kan opprette stabile og unike kunde-ID-er og gruppere relaterte profiler i en klynge.
 

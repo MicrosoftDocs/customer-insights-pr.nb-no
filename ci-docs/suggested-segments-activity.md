@@ -11,14 +11,14 @@ manager: shellyha
 searchScope:
 - ci-segment-suggestions
 - customerInsights
-ms.openlocfilehash: e98aea3b3f3a2c4788346deab1b7ad7d1167110d
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: df4f5f4b5c9a3ad66d57a6b349e18a0d714aff62
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054352"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170601"
 ---
-# <a name="suggested-segments-based-on-activity-data-preview"></a>Foreslåtte segmenter basert på aktivitsdata (forhåndsversjon)
+# <a name="suggested-segments-based-on-activity-preview"></a>Foreslåtte segmenter basert på aktivitet (forhåndsversjon)
 
 Oppdag interessante segmenter av kundene basert på kundeaktivitetsdata som er hentet inn i Customer Insights. Eksempler på aktivitetsdata er transaksjoner, samtalevarighet, kjøp eller returer. For å foreslå segmenter analyseres aktivitetsdata for nylighet, hyppighet og pengeverdi (eller varighet). Du kan også generere [foreslåtte segmenter for å forbedre et mål, eller bedre forstå hva som har innvirkning på et attributt](suggested-segments.md).
 
@@ -35,33 +35,31 @@ Med [aktivitetsdata](activities.md) tilgjengelige i Customer Insights kan vi gen
 - kunder som ofte samhandler med virksomheten din  
 
 Hvis du har en detaljvirksomhet, kan du finne ut hvilke kunder som genererer størst omsetning, og belønne dem med en rabattkuponger. Du kan også identifisere tilfeldige kunder og tilby dem å delta i et belønningsprogram, slik at de oftere besøker bedriften.
-Hvis du er i helsebransjen som leverer offentlige helsetjenester og målet er å redusere utgiftene for enkeltpasienter. En måte å gjøre dette på kan være å redusere regelmessige besøk ved å gi best mulig pleie i så få besøk som mulig. I dette tilfellet er målet å holde besøksfrekvensen lav og redusere regelmessige kostnader for pasientene. Du kan også identifisere segmenter av pasienter som har hyppige avtaler og høye regelmessige kostnader, og analysere disse sakene for å forbedre behandling av den enkelte. 
+Hvis du tilbyr offentlige helsetjenester og målet er å redusere utgiftene for enkeltpasienter, kan du prøve å redusere antall regelmessige besøk ved å gi best mulig behandling med så få besøk som mulig. I dette tilfellet er målet å holde besøksfrekvensen lav og redusere regelmessige kostnader for pasientene. Du kan også identifisere segmenter av pasienter som har hyppige avtaler og høye regelmessige kostnader, og analysere disse sakene for å forbedre behandling av den enkelte.
 
 ## <a name="required-data"></a>Obligatoriske data
 
-Forslagene genereres basert på de valgte inndataene. 
+Forslagene genereres basert på de valgte inndataene.
 
-- Kundeprofiler: Alle kunder eller medlemmer i et bestemt segment. 
+- Kundeprofiler: Alle kunder eller medlemmer i et bestemt segment.
 
 - Tidsperiode: Siste måned, forrige år eller egendefinerte tidsrammer.
 
 - Aktivitetstype: kjøp, detaljhandelstransaksjoner, elektroniske transaksjoner, kundestøttesaker, abonnementer og så videre.  
 
-- Enhet i Customer Insights som inneholder aktivitetsdataene: UnifiedActivity-enheten eller enheten for en bestemt aktivitet. 
+- Enhet i Customer Insights som inneholder aktivitetsdataene: UnifiedActivity-enheten eller enheten for en bestemt aktivitet.
 
 - Dimensjonene som skal inkluderes: Nylighet, hyppighet eller pengedimensjon, avhengig av forretningskravene.
 
 ## <a name="generate-suggested-segments"></a>Generer foreslåtte segmenter
 
-1. Gå til **Segmenter**.
+1. Gå til **Segmenter**, og velg fanen **Forslag (forhåndsversjon)**.
 
-1. Velg fanen **Forslag (forhåndsversjon)**.
-
-1. Velg **Finn nye forslag** og velg **Se eller forvent kundevirkemåte**. Velg **Start** for å kjøre den veiledede opplevelsen.
+1. Velg **Finn nye forslag** og velg **Se eller forvent kundevirkemåte**. Velg **Start**.
 
    :::image type="content" source="media/suggested-segments-activity-wizard.png" alt-text="Første trinn i konfigurasjonsveiviseren for et foreslått segment basert på aktivitet.":::
 
-1. Angi de nødvendige inndataene og velg **Neste** for å fortsette.
+1. Angi de nødvendige inndataene, og velg **Neste**.
 
    - Velg kunder: Inkluder alle kunder eller et bestemt segment.
    - Velg aktivitet: Velg aktivitetstypen og enhetene som beskriver aktiviteten.
@@ -69,32 +67,17 @@ Forslagene genereres basert på de valgte inndataene.
 
 1. Gå gjennom inndataene og velg **Kjør** for å kjøre modellen og generere forslag.
 
-1. Det kan ta noen minutter å fullføre, avhengig av antall kundeprofiler og valgte aktiviteter. 
+Det kan ta noen minutter å fullføre, avhengig av antall kundeprofiler og valgte aktiviteter.
 
-Når du har generert forslagene, kan du filtrere dem etter dimensjonen eller verdien du er mest interessert i. 
+Når du har generert forslagene, kan du filtrere dem etter dimensjonen eller verdien du er mest interessert i.
 
-## <a name="view-details-of-a-suggested-segment"></a>Vis detaljer for et foreslått segment
+## <a name="manage-suggested-segments"></a>Administrer foreslåtte segmenter
 
-Når forslagene er generert, finner du dem oppført i **Segmenter** > **Forslag (forhåndsversjon)** i delen **Aktivitetsbaserte forslag**.
+Gå til **Segmenter**, og velg fanen **Forslag (forhåndsvisning)**. I delen **Aktivitetsbaserte forslag** velger du et foreslått segment for å vise tilgjengelige handlinger.
 
-:::image type="content" source="media/suggested-segments-details.png" alt-text="Utvidet siderute som viser detaljerte data for et foreslått segment.":::
-
-Velg **Se forslag** i et foreslått segment for å vise detaljene for det segmentet. Sideruten inneholder detaljer som omfanget av hver dimensjon sammenlignet med målgruppen. Den fremhever også antall potensielle medlemmer i segmentet og den tilsvarende prosentandelen av totalkundene. Hvis du vil beholde forslaget som et segment, velger du **Opprett segment**.    
-
-## <a name="save-a-suggestion-as-a-segment"></a>Lagre et forslag som et segment
-
-1. Gå til **Segmenter** > **Forslag (forhåndsversjon)**.
-
-1. Velg segmentet du vil lagre. 
-
-1. Velg **Opprett segment** i sideruten. 
-
-1. Når du har lagret segmentet, vises det i listen over segmenter i fanen **Alle segmenter**. Den kan nå [oppdateres eller slettes som alle andre segmenter](segments.md). Du kan ikke redigere segmentdetaljene. Du kan imidlertid endre inndatavilkårene for forslagene og generere ulike forslag.
-
-## <a name="refresh-or-edit-a-set-of-suggestions"></a>Oppdater eller rediger et sett med forslag
-
-1. Gå til **Segmenter** > **Forslag (forhåndsversjon)**, og se etter segmentet i delen **Aktivitetsbaserte forslag**.
-
-1. Velg **Oppdater forslag** for å oppdatere forslagene samtidig som du beholder konfigurerte attributter. Du kan også velge **Rediger forslag** for å endre de konfigurerte attributtene. Systemet kjører prosessen på nytt, genererer segmentforslag basert på de nyeste dataene og erstatter de gjeldende forslagene.
+- **Se forslag** for å vise detaljene for dette segmentet, for eksempel omfanget av hver dimensjon sammenlignet med målgruppen. Den fremhever også antall potensielle medlemmer i segmentet og den tilsvarende prosentandelen av totalkundene.
+- **Opprett segment** for å lagre forslaget som et segment. Det vises i fanen **Alle segmenter** og kan [oppdateres eller slettes](segments.md). Du kan ikke redigere segmentdetaljene. Du kan imidlertid endre inndatavilkårene for forslagene og generere ulike forslag.
+- **Rediger forslag** for å endre de konfigurerte attributtene som erstatter de gjeldende forslagene.
+- **Oppdater forslag** for å oppdatere forslagene samtidig som du beholder konfigurerte attributter.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 51f2e4e46aa25d10502d0feb5ea42eb7d2d637b9
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 71b35e4295e19c13edadc6548ac79715555e8183
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081433"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196038"
 ---
 # <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Suppler firmaprofiler med Dun & Bradstreet (forhåndsversjon)
 
@@ -80,7 +80,7 @@ Vi støtter for øyeblikket følgende alternativer for land/område: Canada (eng
 
 1. Se gjennom oversikten, og velg deretter **Neste**.
 
-1. Velg tilkoblingen og bekreft. Kontakt en administrator hvis en slik ikke er tilgjengelig.
+1. Velg tilkoblingen og bekreft. Kontakt en administrator hvis ingen tilkobling er tilgjengelig.
 
 1. Velg **Neste**.
 

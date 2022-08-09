@@ -14,43 +14,56 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: 880c06bffcfa269151d96cb4c597eed4832fc61b
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: ead57ccbdcaf9f86ee54d1f15de71a63f2e1081b
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081704"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170833"
 ---
 # <a name="measures-overview"></a>Oversikt over mål
 
-Tiltak hjelper deg med å få bedre forståelse av kundeatferd og forretningsytelse. De ser på relevante verdier fra [enhetlige profiler](data-unification.md). En virksomhet vil for eksempel se *totalkostnaden per kunde* for å forstå en individuell kundes kjøpshistorikk eller måle *totalt salg av firmaet* for å forstå omsetningen på aggregert nivå i hele virksomheten.  
+Tiltak hjelper deg med å få bedre forståelse av kundeatferd og forretningsytelse. De ser på relevante verdier fra [enhetlige profiler](data-unification.md). En virksomhet vil for eksempel se *totalkostnaden per kunde* for å forstå en individuell kundes kjøpshistorikk eller måle *totalt salg av firmaet* for å forstå omsetningen på aggregert nivå i hele virksomheten.
 
-Tiltak opprettes [ved hjelp av måleverktøyet](measure-builder.md), en dataspørringsplattform med forskjellige operatorer og enkle tilordningsalternativer. Den lar deg filtrere dataene, gruppere resultater, registrere [enhetsrelasjonsbaner](relationships.md) og forhåndsvise utdataene. Du kan [bruke forhåndsdefinerte maler](measure-templates.md) til å konfigurere vanlige mål på en effektiv måte.
+Opprett mål for å planlegge forretningsaktiviteter ved å spørre etter kundedata og trekke ut innsikt. Du kan for eksempel opprette et mål for *totalkostnad per kunde* og *total avkastning per kunde* for å gjøre det enklere å identifisere en gruppe kunder som kjøper mye og kommer ofte tilbake. Du kan deretter [opprette et segment](segments.md) basert på disse målene for å få de neste beste handlingene.
 
-Bruk måleverktøyet til å planlegge forretningsaktiviteter ved å spørre etter kundedata og trekke ut innsikt. Hvis du for eksempel oppretter et mål for *totalkostnad per kunde* og *total avkastning per kunde*, blir det enklere å identifisere en gruppe kunder med høy avkastning, men likevel høy avkastning. Du kan [opprette et segment](segments.md) basert på disse tiltakene for å få de neste beste handlingene.
+## <a name="create-a-measure"></a>Opprette et mål
 
-## <a name="manage-your-measures"></a>Administrer målene dine
+Velg hvordan du vil opprette et må basert på målgruppen.
 
-Du finner mållisten på **Mål**-siden.
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrukere (B-til-C)](#tab/b2c)
 
-Du finner informasjon om måltypen, oppretteren, opprettingsdato, status og tilstand. Når du velger et mål fra listen, kan du forhåndsvise utdataene og laste ned en CSV-fil.
+- Fra grunnen av med måleverktøyet: [Bygg din egen](measure-builder.md).
+- Fra ofte brukte mål: [Bruk forhåndsdefinerte maler](measure-templates.md).
+
+# <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
+
+Fra grunnen av med måleverktøyet: [Bygg din egen](measure-builder.md).
+
+---
+
+## <a name="manage-existing-measures"></a>Administrer eksisterende mål
+
+Gå til **Mål**-siden for å vise målene du opprettet, statusen deres, måltypen og sist gang dataene ble oppdatert. Du kan sortere listen over mål etter en hvilken som helst kolonne, eller bruke søkeboksen til å finne målet du vil administrere.
+
+Merk av for et mål for å vise tilgjengelige handlinger. Velg målnavnet for å forhåndsvise utdataene og laste ned en CSV-fil.
 
 :::image type="content" source="media/measures-actions.png" alt-text="Handlinger for å administrere enkeltmål."lightbox="media/measures-actions.png":::
 
-Følgende handlinger er tilgjengelige når du velger et mål:
-
-- **Rediger** konfigurasjonen av målet.
-- **Dupliser** et mål. Du kan velge å redigere egenskapene med en gang, eller ganske enkelt lagre duplikatet.
-- **Oppdater** målet basert på de nyeste dataene. Hvis du vil oppdatere alle målene samtidig, velger du alle målene og deretter **Oppdater**.
+- **Rediger** målet for å endre egenskapene.
+- **Oppdater** målet for å ta med de nyeste dataene.
 - **Gi nytt navn** til målet.
-- **Aktiver** eller **Deaktiver**. Inaktive tiltak oppdateres ikke under en [planlagt oppdatering](system.md#schedule-tab).
-- **Merke** for å [administrere merker](work-with-tags-columns.md#manage-tags) for segmentet.
+- **Aktiver** eller **Deaktiver** målet. Inaktive mål blir ikke oppdatert under en [planlagt oppdatering](system.md#schedule-tab) og har **Status** oppført som **Hoppet over**, som tyder på at en oppdatering ikke ble forsøkt.
+- **Merk** for å [administrere merker](work-with-tags-columns.md#manage-tags) for målet.
 - **Slett** målet.
+- **Kolonner** for å [tilpasse kolonnene](work-with-tags-columns.md#customize-columns) som vises.
+- **Filtrer** for å [filtrere på merker](work-with-tags-columns.md#filter-on-tags).
+- **Søkenavn** for å søke etter målnavn.
+
+## <a name="refresh-measures"></a>Oppdater mål
+
+Mål kan oppdateres etter en automatisk plan eller oppdateres manuelt ved behov. Hvis du vil oppdatere en eller flere mål manuelt, velger du dem og velger **Oppdater**. Hvis du vil [planlegge en automatisk oppdatering](system.md#schedule-tab), går du til **Administrator** > **System** > **Plan**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
-
-## <a name="next-step"></a>Neste trinn
-
-Du kan bruke eksisterende målinger til å opprette [et kundesegment](segments.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

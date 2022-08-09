@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: a8b4b8a9bdcf7cf43c47a67d547405dd20dad60d
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 4a0bc5dd4100b462a26660a0c51fda1fe92b6bb9
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081235"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195186"
 ---
 # <a name="connections-preview-overview"></a>Oversikt over tilkoblinger (forhåndsversjon)
 
@@ -27,6 +27,12 @@ Gå til **Administrator** > **Tilkoblinger** for å opprette og vise tilkoblinge
 Kategorien **Tilkoblinger** viser alle aktive tilkoblinger. Listen viser en rad for hver tilkobling.
 
 Få en rask oversikt, beskrivelse og finn ut hva du kan gjøre med hvert utvidelsesalternativ i kategorien **Oppdag**.
+
+## <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
+
+Når du aktiverer Dynamics 365 Customer Insights for å overføre data til tredjeparter eller andre Microsoft-produkter, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data, for eksempel personopplysninger. Microsoft overfører slike data etter instruksjon fra deg, men du er ansvarlig for å sørge for at tredjeparten oppfyller alle forpliktelser til personvern eller sikkerhet du måtte ha. Hvis du vil ha mer informasjon, kan du se [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
+
+Dynamics 365 Customer Insights-administratoren kan fjerne tilkoblingen når som helst for å slutte å bruke funksjonaliteten.
 
 ## <a name="exports"></a>Eksporter
 
@@ -41,8 +47,6 @@ Bare administratorer kan konfigurere nye tilkoblinger, men de opprettede tilkobl
 Hvis du vil legge til tilkoblinger, må du ha [administratortillatelser](permissions.md). Hvis du kobler til andre Microsoft-tjenester, antar vi at begge tjenestene er i samme organisasjon.
 
 1. Gå til **Administrator** > **Tilkoblinger (forhåndsversjon)**.
-
-1. Gå til kategorien **Tilkoblinger**.
 
 1. Velg **Legg til tilkobling** for å opprette en ny tilkobling. Velg hvilken tilkoblingstype du vil opprette, i rullegardinmenyen.
 
@@ -99,3 +103,5 @@ Frakoblede suppleringer og eksporter blir inaktive. Du aktiverer dem på nytt ve
 ## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Konfigurere tilkoblinger med hemmeligheter administrert av din egen Key Vault
 
 Noen tilkoblinger trenger hemmeligheter, for eksempel API-nøkler eller passord. Noen tilkoblinger støtter hemmeligheter lagret i din egen Key Vault. Finn ut mer om støttede tilkoblinger og hvordan du konfigurerer i [ditt eget Key Vault for Customer Insights](use-azure-key-vault.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: a30e98b06ed07590ab95cae1d8db8023e49ff7f9
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 876853ab42e8c08ad1abacb8d8a205c0aadabcf7
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053033"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195948"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Supplere kundeprofiler med demografi fra Experian (forhåndsvisning)
 
@@ -59,7 +59,7 @@ Når du gjør det mulig for Dynamics 365 Customer Insights å overføre data til
 
 1. Se gjennom oversikten, og velg deretter **Neste**.
 
-1. Velg tilkoblingen. Kontakt en administrator hvis en slik ikke er tilgjengelig.
+1. Velg tilkoblingen. Kontakt en administrator hvis ingen tilkobling er tilgjengelig.
 
 1. Velg **Neste**.
 

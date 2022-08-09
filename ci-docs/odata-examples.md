@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 54ba9f4e9baeb4b7021bb8c20a706bbb6eb1529f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8843fc04e4e6eaba0019d932c54f62561ffbdb92
+ms.sourcegitcommit: f3c12ad445d5f91a88f91a7bbc40790ebcfaa826
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081722"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "9121574"
 ---
 # <a name="odata-query-examples-for-customer-insights-apis"></a>OData-spørringsekseringer for API-er for Customer Insights
 
@@ -23,7 +23,7 @@ Denne artikkelen viser noen ofte spurte eksempelspørringer som kan hjelpe deg m
 
 Du må endre spørringseksemplene slik at de fungerer i målmiljøene: 
 
-- {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}` der {instanceId} er GUID for Customer Insights-miljøet du vil spørre om. Du kan bruke [ListAllInstances-operasjonen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) til å finne {InstanceId} du har tilgang til.
+- {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}/data` der {instanceId} er GUID for Customer Insights-miljøet du vil spørre om. Du kan bruke [ListAllInstances-operasjonen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) til å finne {InstanceId} du har tilgang til.
 - {CID}: GUID for en enhetlig kundeoppføring. Eksempel: `ce759201f786d590bf2134bff576c369`.
 - {AlternateKey}: Identifikator for primærnøkkelen for en kundeoppføring i en datakilde. Eksempel: `CNTID_1002`
 - {DSname}: Streng med enhetsnavnet for en datakilde som blir innlagt i Customer Insights. Eksempel: `Website_contacts`.
@@ -39,9 +39,10 @@ Tabellen nedenfor inneholder et sett med eksempelspørringer for *Kunde*-enheten
 |Alternativ nøkkel    | `{serviceRoot}/Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} eq '{AlternateKey}'`         |  Alternative nøkler beholdes i enhet for enhetlige kunder       |
 |Select   | `{serviceRoot}/Customer?$select=CustomerId,FullName&$filter=customerid eq '1'`        |         |
 |om    | `{serviceRoot}/Customer?$filter=CustomerId in ('{CID1}',’{CID2}’)`        |         |
-|Alternativ nøkkel + In   | `Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} in ('{AlternateKey}','{AlternateKey}')`         |         |
+|Alternativ nøkkel + In   | `{serviceRoot}/Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} in ('{AlternateKey}','{AlternateKey}')`         |         |
 |Søk  | `{serviceRoot}/Customer?$top=10&$skip=0&$search="string"`        |   Returnerer de ti beste resultatene for en søkestreng      |
 |Segmentmedlemskap  | `{serviceRoot}/Customer?select=*&$filter=IsMemberOfSegment('{SegmentName}')&$top=10`     | Returnerer et antall rader for serienummer fra segmenteringsenheten.      |
+|Segmentmedlemskap for en kunde | `{serviceRoot}/Customer?$filter=CustomerId eq '{CID}'&IsMemberOfSegment('{SegmentName}')`     | Returnerer kundeprofilen hvis de er medlem i gitt segment     |
 
 ## <a name="unified-activity"></a>Enhetlig aktivitet
 

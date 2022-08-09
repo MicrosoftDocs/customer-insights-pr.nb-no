@@ -1,7 +1,7 @@
 ---
 title: Arbeide med Customer Insights-data i Microsoft Dataverse
 description: Lær hvordan du kobler til Customer Insights og Microsoft Dataverse og forstå utdataenhetene som eksporteres til Dataverse.
-ms.date: 05/30/2022
+ms.date: 07/15/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 252723b8c174cb1ec488388c26fd2a1d398e9002
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: 89ff629033230de3c6252b6a3a16816d9b3c1287
+ms.sourcegitcommit: 85b198de71ff2916fee5500ed7c37c823c889bbb
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011540"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "9153416"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbeide med Customer Insights-data i Microsoft Dataverse
 
@@ -31,13 +31,25 @@ Når du kobler til Dataverse-miljøet, kan du også [samle inn data fra lokale d
 - Ingen andre Customer Insights-miljø er allerede tilknyttet Dataverse-miljøet du vil koble til. Lær hvordan du [fjerner en eksisterende tilkobling til et Dataverse-miljø ](#remove-an-existing-connection-to-a-dataverse-environment).
 - Et Microsoft Dataverse-miljø kan bare kobles til én enkelt lagringskonto. Den gjelder bare hvis du konfigurerer miljøet til å [bruke Azure Data Lake Storage](own-data-lake-storage.md).
 
+## <a name="dataverse-storage-capacity-entitlement"></a>Rettighet til Dataverse-lagringskapasitet
+
+Et abonnement på Customer Insights gir deg rett til ekstra kapasitet for organisasjonens eksisterende [Dataverse-lagringskapasitet](/power-platform/admin/capacity-storage). Tilleggskapasiteten avhenger av antall profiler du bruker i abonnementet.
+
+**Eksempel:**
+
+La oss si at du får 15 GB databaselagring og 20 GB fillagring per 100 000 kundeprofiler. Hvis abonnementet omfatter 300 000 kundeprofiler, blir den totale lagringskapasiteten 45 GB (3 x 15 GB) databaselagring og 60 GB fillagring (3 x 20 GB). Hvis du har et B2B-abonnement med 30 000 kontoer, blir den totale lagringskapasiteten 45 GB (3 x 15 GB) databaselagring og 60 GB fillagring (3 x 20 GB).
+
+Loggkapasiteten er ikke trinnvis og fast for organisasjonen.
+
+Hvis du vil ha detaljert informasjon om rettigheter til lagringskapasitet, kan du se [Veiledning om lisenser for Dynamics 365](https://go.microsoft.com/fwlink/?LinkId=866544).
+
 ## <a name="connect-a-dataverse-environment-to-customer-insights"></a>Koble et Dataverse-miljø til Customer Insights
 
 Trinnet **Microsoft Dataverse** lar deg koble Customer Insights til Dataverse-miljøet mens du [oppretter et Customer Insights-miljø](create-environment.md).
 
 :::image type="content" source="media/dataverse-provisioning.png" alt-text="datadeling med Microsoft Dataverse automatisk aktivert for netto nye miljøer":::
 
-Administratorer kan konfigurere Customer Insights til å koble til et eksisterende Dataverse-miljø. Ved å oppgi nettadressen til Dataverse-miljøet legges den ved det nye Customer Insights-miljøet.
+Administratorer kan konfigurere Customer Insights til å koble til et eksisterende Dataverse-miljø. Når du angir nettadressen i Dataverse-miljøet, kobles den til det nye Customer Insights-miljøet. Etter at du har opprettet tilkoblingen mellom Customer Insights og Dataverse, lar du være å endre organisasjonsnavnet for Dataverse-miljøet. Navnet på organisasjonen brukes i nettadressen til Dataverse, og et endret navn bryter tilkoblingen til Customer Insights.
 
 Hvis du ikke vil bruke et eksisterende Dataverse-miljø, oppretter systemet et nytt miljø for Customer Insights-dataene i leieren. [Power Platform-administratorer kan styre hvem som kan opprette miljøer](/power-platform/admin/control-environment-creation). Når du konfigurerer et nytt Customer Insights-miljø og administratoren har deaktivert opprettingen av Dataverse-miljøer for alle unntatt administratorer, kan det hende du ikke kan opprette et nytt miljø.
 
@@ -84,7 +96,7 @@ Hvis du vil kjøre PowerShell-skriptene, må du først konfigurere PowerShell i 
 
     2. `ByolSetup.ps1`
         - Du må ha tillatelsene for *Eier av Storage Blob Data* på lagringskonto-/beholdernivå for å kjøre dette skriptet, ellers opprettes det et skript for deg. Rolletilordningen kan fjernes manuelt etter at skriptet er kjørt.
-        - Dette PowerShell-skriptet legger til den nødvendige rollebaserte tilgangskontrollen (RBAC) for Microsoft Dataverse-tjenesten og eventuelle Dataverse-baserte forretningsprogrammer. Den oppdaterer også tilgangskontrollisten (ACL) i CustomerInsights-beholderen for sikkerhetsgruppene som opprettes med skriptet `CreateSecurityGroups.ps1`. Bidragsyteregruppen har også *RWX* tillatelse og lesergruppen har bare *r-x*-tillatelse.
+        - Dette PowerShell-skriptet legger til den nødvendige rollebaserte tilgangskontrollen for Microsoft Dataverse-tjenesten og eventuelle Dataverse-baserte forretningsprogrammer. Den oppdaterer også tilgangskontrollisten (ACL) i CustomerInsights-beholderen for sikkerhetsgruppene som opprettes med skriptet `CreateSecurityGroups.ps1`. Bidragsyteregruppen har også *RWX* tillatelse og lesergruppen har bare *r-x*-tillatelse.
         - Kjør dette PowerShell-skriptet i Windows PowerShell ved å angi Azure-abonnement-ID-en som inneholder Azure Data Lake Storage, lagringskontonavnet, ressursgruppenavnet og ID-verdier for leser og bidragsyter-sikkerhetsgruppe. Åpne PowerShell-skriptet i et redigeringsprogram for å se gjennom tilleggsinformasjon og logikken som er implementert.
         - Kopier utdatastrengen etter at skriptet er kjørt. Utdatastrengen ser slik ut: `https://DVBYODLDemo/customerinsights?rg=285f5727-a2ae-4afd-9549-64343a0gbabc&cg=720d2dae-4ac8-59f8-9e96-2fa675dbdabc`
 

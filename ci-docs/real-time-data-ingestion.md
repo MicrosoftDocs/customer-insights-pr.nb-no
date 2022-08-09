@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 39d68011df9e4341244af627bb71f4e3635256bb
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 403cc9dbd3bddcf67f59b5cb0be936af4d268fc2
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081729"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195670"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Datainntak i sanntid (forhåndsversjon)
 
@@ -28,7 +28,7 @@ Sanntidsfunksjonaliteten gir data øyeblikkelig for forbruk, helt til den påfø
 
 Oppdateringer i sanntid har en utløpstid da de ikke lenger overstyrer verdien fra datakilden:
 
-- Profiloppdateringer vil beholdes i 4 timer
+- Profiloppdateringer beholdes i fire timer
 - Det beholdes aktiviteter i 30 dager
 
 Disse verdiene er API-kallparametere som du kan endre. De skal sikre at kildedataene forblir sannhetskilden. Hvis du vil at sanntidsoppdateringer skal være inkludert lengre, må du legge dem til i en datakilde slik at de blir hentet under den neste planlagte oppdateringen.

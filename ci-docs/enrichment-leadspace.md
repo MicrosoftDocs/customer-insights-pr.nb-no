@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b58532a541ee22a5e34d0af1a3334ccbd53627b2
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 3f23fe7177f931db3e3179970915d0cd3c736f87
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081354"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196222"
 ---
 # <a name="enrich-company-profiles-with-leadspace-preview"></a>Suppler firmaprofiler med Leadspace (forhåndsversjon)
 
@@ -54,7 +54,7 @@ Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen nå
 
 1. Se gjennom oversikten, og velg deretter **Neste**.
 
-1. Velg tilkoblingen. Kontakt en administrator hvis en slik ikke er tilgjengelig.
+1. Velg tilkoblingen. Kontakt en administrator hvis ingen tilkobling er tilgjengelig.
 
 1. Velg **Neste**.
 

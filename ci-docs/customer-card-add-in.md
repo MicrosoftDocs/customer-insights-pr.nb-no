@@ -13,12 +13,12 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: ead18963959f94fd07912384cf61802f83523e2f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8b3b6a0d54b80d7df454e9dc925f14cc3c39684c
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081253"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9194935"
 ---
 # <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Kundekorttillegg for Dynamics 365-apper (forhåndsversjon)
 
@@ -26,23 +26,27 @@ Få en 360-graders visning av kundene direkte i Dynamics 365-apper. Når tillegg
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN1qv]
 
-## <a name="prerequisites"></a>Forutsetninger
+## <a name="prerequisites"></a>Forutsetning
 
-- Tillegget fungerer bare med modelldrevne Dynamics 365-apper, for eksempel Sales eller Customer Service, versjon 9.0 og nyere.
-- Hvis Dynamics 365-dataene skal tilordnes til Customer Insights-kundeprofilene, anbefaler vi at de [hentes fra Dynamics 365-appen ved hjelp av Microsoft Dataverse-koblingen](connect-power-query.md). Hvis du bruker en annen metode til å hente Dynamics 365-kontakter (eller forretningsforbindelser), må du kontrollere at feltet `contactid` (eller `accountid`) er angitt som [primærnøkkel for denne datakilden i tilordningstrinnet i dataforeningsprosessen](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+- Modelldrevne apper i Dynamics 365, for eksempel Sales eller Customer Service, versjon 9.0 og nyere.
+- Hvis Dynamics 365-dataene skal tilordnes til Customer Insights-kundeprofilene, anbefaler vi at de [hentes fra Dynamics 365-appen ved hjelp av Microsoft Dataverse-koblingen](connect-power-query.md). Hvis du bruker en annen metode til å hente Dynamics 365-kontakter (eller forretningsforbindelser), kontrollerer du at feltet `contactid` (eller `accountid`) er angitt som [primærnøkkel for denne datakilden under datasamlingsprosessen](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Alle Dynamics 365-brukere av tillegget Kundekort må [legges til som brukere](permissions.md) i Customer Insights for å vise dataene.
-- [Konfigurerte søke- og filterfunksjoner](search-filter-index.md) i Customer Insights kreves for at oppslag av data skal fungere.
+- [Konfigurerte søk- og filtreringsfunksjoner](search-filter-index.md) i Customer Insights.
 - Hver tilleggskontroll er avhengig av bestemte data i Customer Insights. Noen data og kontroller er bare tilgjengelige i miljøer av bestemte typer. Konfigurasjonen av tillegget informerer deg hvis en kontroll ikke er tilgjengelig på grunn av den valgte miljøtypen. Finn ut mer om [miljøbrukstilfeller](work-with-business-accounts.md).
-  - **Målkontroll**: Krever [konfigurerte målinger](measures.md) av typen kundeattributter.
-  - **Intelligenskontroll**: Krever data generert ved hjelp av [prediksjoner eller egendefinerte modeller](predictions-overview.md).
-  - **Kundedetaljer-kontroll**: Alle felt fra profilen er tilgjengelige i den enhetlige kundeprofilen.
-  - **Suppleringskontroll**: Krever at aktive [suppleringer](enrichment-hub.md) brukes på kundeprofiler. Korttillegget støtter disse suppleringene: [Merker](enrichment-microsoft.md) fra Microsoft, [Interesser](enrichment-microsoft.md) fra Microsoft og [Office-engasjementsdata](enrichment-office.md) fra Microsoft.
-  - **Kontakter**-kontroll: Krever definisjon av semantisk enhet av typekontakter.
-  - **Tidslinjekontroll**: Krever [konfigurerte aktiviteter](activities.md).
+  - **Målkontroll** krever [konfigurerte kundeattributtmål](measures.md).
+  - **Intelligenskontroll** krever data generert ved hjelp av [prediksjoner eller egendefinerte modeller](predictions-overview.md).
+  - **Kundedetaljer-kontroll** viser alle felter fra profilen som er tilgjengelige i den enhetlige kundeprofilen.
+  - **Suppleringskontroll** krever at aktive [suppleringer](enrichment-hub.md) brukes på kundeprofiler. Korttillegget støtter disse suppleringene: [Merker](enrichment-microsoft.md) fra Microsoft, [Interesser](enrichment-microsoft.md) fra Microsoft og [Office-engasjementsdata](enrichment-office.md) fra Microsoft.
+  - **Kontakter-kontroll** krever en semantisk enhet av typen kontakt.
+  - **Tidslinjekontroll** krever [konfigurerte aktiviteter](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Installere tillegget Kundekort
 
-Kundekorttillegget er en løsning for Customer Engagement-apper i Dynamics 365. Gå til AppSource og søk etter **Dynamics-kundekort** for å installere løsningen. Velg [Tillegg for kundekort på AppSource](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) og velg **Hent det nå**.
+Kundekorttillegget er en løsning for Customer Engagement-apper i Dynamics 365. Slik installerer du løsningen:
+
+1. Gå til AppSource og søk etter **Dynamics-kundekort**.
+
+1. Velg [Tillegg for kundekort på AppSource](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) og velg **Hent det nå**.
 
 Det kan hende at du må logge på med administratorlegitimasjonen for Dynamics 365-appen for å kunne installere løsningen. Det kan ta litt tid før løsningen installeres i miljøet ditt.
 

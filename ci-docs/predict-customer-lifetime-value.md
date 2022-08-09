@@ -1,7 +1,7 @@
 ---
 title: Prediksjon av verdi for kundelevetid (CLV)
 description: Forutsi omsetningspotensialet for aktive kunder i fremtiden.
-ms.date: 02/05/2021
+ms.date: 07/21/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -13,21 +13,22 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: ea7acd1ddbb0eb8d66fb82018637a85b6ffb369b
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: b6f6665d906cc96688efe84035336f64d2a39303
+ms.sourcegitcommit: 80d8436d8c940f1267e6f26b221b8d7ce02ed26b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9055226"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9186452"
 ---
 # <a name="customer-lifetime-value-clv-prediction"></a>Prediksjon av verdi for kundelevetid (CLV)
 
 Forutsi potensiell verdi (omsetning) som individuelle aktive kunder kommer til å innføre i virksomheten i løpet av en definert fremtidig tidsperiode. Denne funksjonen kan hjelpe deg med å oppnå ulike mål:
+
 - Identifisere verdifulle kunder og behandle denne innsikten
 - Opprette strategiske kundesegmenter basert på potensiell verdi for å kjøre tilpassede kampanjer med målrettet innsats for salg, markedsføring og støtte
 - Veilede produktutvikling ved å fokusere på funksjoner som øker kundeverdien
 - Optimalisere salgs- eller markedsføringsstrategi og tildele budsjett mer nøyaktig for kundesalg
-- Gjenkjenne og belønne kunder med høy verdi gjennom lojalitetsprogrammer eller belønningsprogrammer 
+- Gjenkjenne og belønne kunder med høy verdi gjennom lojalitetsprogrammer eller belønningsprogrammer
 
 ## <a name="prerequisites"></a>Forutsetninger
 
@@ -35,7 +36,7 @@ Før du kommer i gang, må du reflektere hva CLV betyr for virksomheten. For øy
 
 Siden det ikke tar lang tid å konfigurere og kjøre en CLV-modell, bør du vurdere å opprette flere modeller med varierende inndatainnstillinger og sammenligne modellresultater for å se hvilket modellscenario som passer best til dine forretningsbehov.
 
-###  <a name="data-requirements"></a>Datakrav
+### <a name="data-requirements"></a>Datakrav
 
 Følgende data er obligatoriske, og der det er merket som valgfritt, anbefales det for økt modellytelse. Jo flere data modellen kan behandle, jo mer nøyaktig blir prediksjonen. Vi anbefaler derfor at du tar inn flere kundeaktivitetsdata hvis disse er tilgjengelige.
 
@@ -52,11 +53,12 @@ Følgende data er obligatoriske, og der det er merket som valgfritt, anbefales d
     - Nettaktiviteter: logg for nettstedsbesøk, e-postlogg
     - Lojalitetsaktiviteter: avsetning av lojalitetspoeng og innløsningslogg
     - Kundeservicelogg, servicesamtale, klage eller returhistorikk
+    - Informasjon om kundeprofil
 - Data om kundeaktiviteter (valgfritt):
     - Aktivitets-ID-er for å skille mellom aktiviteter av samme type
     - Kunde-ID-er for å tilordne aktiviteter til kundene
     - Aktivitetsinformasjon som inneholder navnet på og datoen for aktiviteten
-    - Det semantiske dataskjemaet for aktiviteter omfatter følgende: 
+    - Det semantiske dataskjemaet for aktiviteter omfatter følgende:
         - **Primærnøkkel**: En unik identifikator for en aktivitet
         - **Tidsstempel**: Dato og klokkeslett for hendelsen som er identifisert ved hjelp av primærnøkkelen
         - **Hendelse (aktivitetsnavn)**: Navnet på hendelsen du vil bruke
@@ -66,7 +68,7 @@ Følgende data er obligatoriske, og der det er merket som valgfritt, anbefales d
     - Tilstrekkelige historiske data: minst ett år med transaksjonsdata. Helst to til tre år med transaksjonsdata for å forutsi CLV i ett år.
     - Flere kjøp per kunde: Ideelt sett minst to til tre transaksjoner per kunde-ID, helst på flere datoer.
     - Antall kunder: Minst 100 unike kunder, helst mer enn 10 000 kunder. Modellen vil mislykkes med færre enn 100 kunder og utilstrekkelige historiske data
-    - Datafullstendighet: Mindre enn 20 % mangler verdier i obligatoriske felter i inndataene   
+    - Datafullstendighet: Mindre enn 20 % mangler verdier i obligatoriske felter i inndataene
 
 > [!NOTE]
 > - Modellen krever kundenes transaksjonshistorikk. Bare én transaksjonsloggenhet kan konfigureres for øyeblikket. Hvis det finnes flere kjøps-/transaksjonsenheter, kan du forene dem i Power Query før datainntak begynner.
@@ -122,11 +124,11 @@ Følgende data er obligatoriske, og der det er merket som valgfritt, anbefales d
 
 1. Velg **Neste**.
 
-### <a name="add-optional-data"></a>Legg til valgfrie data
+### <a name="add-optional-activity-data"></a>Legg til valgfrie aktivitetsdata
 
-Data som gjenspeiler viktige samhandlinger med kunder (for eksempel nett, kundeservice og hendelseslogger), legger til kontekst i transaksjonsoppføringer. Flere mønstre som finnes i kundeaktivitetsdataene, kan forbedre nøyaktigheten av prediksjonene. 
+Data som gjenspeiler viktige samhandlinger med kunder (for eksempel nett, kundeservice og hendelseslogger), legger til kontekst i transaksjonsoppføringer. Flere mønstre som finnes i kundeaktivitetsdataene, kan forbedre nøyaktigheten av prediksjonene.
 
-1. Velg **Legg til data** i trinnet **Tilleggsdata (valgfritt)**. Velg kundeaktivitetsenheten som inneholder informasjon om kundeaktiviteten, slik det er beskrevet i [forhåndskravene](#prerequisites).
+1. I trinnet **Tilleggsdata (valgfritt)** velger du **Legg til data** under **Øk innsikten i modellen med flere aktivitetsdata**. Velg kundeaktivitetsenheten som inneholder informasjon om kundeaktiviteten, slik det er beskrevet i [forhåndskravene](#prerequisites).
 
 1. Tilordne de semantiske feltene til attributter i kundeaktivitetsenheten, og velg deretter **Neste**.
 
@@ -135,15 +137,34 @@ Data som gjenspeiler viktige samhandlinger med kunder (for eksempel nett, kundes
 1. Velg en aktivitetstype som samsvarer med typen kundeaktivitet du legger til. Velg blant eksisterende aktivitetstyper, eller legg til en ny aktivitetstype.
 
 1. Konfigurer relasjonen fra kundeaktivitetsenheten til *kundeenheten*.
-    
+
     1. Velg feltet som identifiserer kunden i kundeaktivitetstabellen. Den kan være direkte relatert til den primære kunde-ID-en til *kundeenheten*.
     1. Velg *kundeenheten* som samsvarer med den primære *kundeenheten*.
     1. Angi et navn som beskriver relasjonen.
 
    :::image type="content" source="media/clv-additional-data.png" alt-text="Bilde av trinnet i konfigurasjonsflyten for å legge til tilleggsdata og konfigurere aktiviteten med utfylte eksempler.":::
 
-1. Velg **Lagre**.    
+1. Velg **Lagre**.
     Legg til flere data hvis det finnes andre kundeaktiviteter du vil inkludere.
+
+1. Legg til valgfrie kundedata, eller velg **Neste**.
+
+### <a name="add-optional-customer-data"></a>Legg til valgfrie kundedata
+
+Velg blant 18 ofte brukte kundeprofilattributter du vil ta med som inndata i modellen. Disse attributtene kan gi mer tilpassede, relevante og handlingsrettede modellresultater for forretningsbrukstilfellene.
+
+Eksempel: Contoso Coffee ønsker å forutsi kundens levetidsverdi for å tilby kunder med høy verdi et tilpasset tilbud knyttet til lanseringen av den nye espressomaskinen deres. Contoso bruker CLV-modellen og legger til alle de 18 kundeprofilattributtene for å se hvilke faktorer som påvirker kundene med høyest verdi. De finner at kundested er den mest innflytelsesrike faktoren for disse kundene.
+Basert på denne informasjonen organiserer de et lokalt arrangement for lanseringen av espressomaskinen og samarbeider med lokale leverandører for å tilby tilpassede tilbud og en spesiell opplevelse på arrangementet. Uten denne informasjonen hadde kanskje Contoso bare ha sendt generisk markedsførings-e-post og gått glipp av muligheten til å tilpasse arrangementet for dette lokale segmentet med kunder med høy verdi.
+
+1. I trinnet **Tilleggsdata (valgfritt)** velger du **Legg til data** under **Øk innsikten i modellen med enda flere kundedata**.
+
+1. Velg **Kunde: CustomerInsights** for **Enhet** for å velge tabellen for enhetlig kundeprofil som tilordnes til kundeattributtdata. Velg **System.Customer.CustomerId** for **Kunde-ID**.
+
+1. Tilordne flere felter hvis dataene er tilgjengelige i de enhetlige kundeprofilene.
+
+   :::image type="content" source="media/clv-optional-customer-profile-mapping.png" alt-text="Eksempel på tilordnede felter for kundeprofildata.":::
+
+1. Velg **Lagre** etter at du har tilordnet attributtene som skal brukes i modellen for å gjøre det enklere å forutsi kundens levetidsverdi.
 
 1. Velg **Neste**.
 

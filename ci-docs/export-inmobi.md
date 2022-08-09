@@ -1,37 +1,41 @@
 ---
 title: Eksporter Customer Insights-data til InMobi
 description: Finn ut hvordan du konfigurerer og eksporterer til InMobi.
-ms.date: 06/27/2022
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 8261c8adfe231792e70fc85432237cf73d5cd5a7
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: ef486ad6786ef01be977f3d6bda69ce8a2b081c7
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9056547"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195900"
 ---
-# <a name="export-segment-list-and-other-data-to-inmobi-preview"></a>Eksporter segmentliste og andre data til InMobi (forhåndsversjon)
+# <a name="export-customer-insights-data-to-inmobi-preview"></a>Eksporter Customer Insights-data til InMobi (forhåndsversjon)
 
 Eksporter segmentlister eller andre data fra Customer Insights-forekomsten til [InMobi](https://www.inmobi.com/).
 
 ## <a name="prerequisites"></a>Forutsetning
 
-1. Du har en [InMobi-konto](https://www.inmobi.com/) og administratorlegitimasjon.
-1. Du har en Azure Blob Storage-konto og den tilsvarende kontonøkkelen. Hvis du vil ha mer informasjon, kan du se [Administrer lagringskontoinnstillinger i Azure Portal](/azure/storage/common/storage-account-manage). Det er en beholder i lagringskontoen du kan eksportere inMobi-data til. Hvis du vil ha mer informasjon, kan du se [Opprett en beholder](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
-1. InMobi oppretter en direkte tilkobling til Blob Storage og konfigurerer en automatisk import av dataene til InMobi. Kontakt InMobi-representanten for å starte prosessen.
+- En [InMobi-konto](https://www.inmobi.com/) og administratorlegitimasjon.
+- Et navn og en kontonøkkel for [Azure Blob Storage-konto](/azure/storage/blobs/create-data-lake-storage-account). Du finner navnet og nøkkelen ved å se [Administrer lagringskontoinnstillinger i Azure Portal](/azure/storage/common/storage-account-manage).
+- En [Azure Blob Storage-beholder](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) å eksportere InMobi-data til.
+- InMobi oppretter en direkte tilkobling til Blob Storage og konfigurerer en automatisk import av dataene til InMobi. Kontakt InMobi-representanten for å starte prosessen.
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-1. For Azure Blob Storage kan du velge mellom [Standardytelse og Premium-ytelse](/azure/storage/blobs/storage-blob-performance-tiers). Hvis du velger Premium-ytelse, velger du [premiumblokkblobene som kontotype](/azure/storage/common/storage-account-overview#types-of-storage-accounts).
+- For Azure Blob Storage velger du mellom [Standardytelse og Premium-ytelse](/azure/storage/blobs/storage-blob-performance-tiers). Hvis du velger Premium-ytelse, velger du [premiumblokkblobene som kontotype](/azure/storage/common/storage-account-overview#types-of-storage-accounts).
 
-## <a name="set-up-the-connection-to-azure-blob-storage-and-configure-an-export"></a>Konfigurer tilkoblingen til Azure Blob Storage og konfigurer en eksport
+## <a name="set-up-connection-to-azure-blob-storage"></a>Konfigurer tilkobling til Azure Blob Storage
 
-1. Følg instruksjonene for å [konfigurere en tilkobling til Azure Blob Storage](export-azure-blob-storage.md).
-2. Følg instruksjonene for å [konfigurere en eksport](export-azure-blob-storage.md#configure-an-export).
+[Konfigurer en tilkobling til Azure Blob Storage](export-azure-blob-storage.md).
+
+## <a name="configure-an-export"></a>Konfigurere en eksport
+
+[Konfigurere en eksport](export-azure-blob-storage.md#configure-an-export).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

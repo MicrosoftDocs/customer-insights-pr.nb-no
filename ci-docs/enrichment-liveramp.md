@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 334440493c50448005ec90d0cfac11358d677b73
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 49bf558209ca91ab9d8db945862a57adccee1f6b
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081282"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196360"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Forbedre kundeprofiler med identitetsdata fra LiveRamp (forhåndsversjon)
 
@@ -59,7 +59,7 @@ Når du aktiverer Dynamics 365 Customer Insights for overføring av data til Liv
 
 1. Se gjennom oversikten, og velg deretter **Neste**.
 
-1. Velg tilkoblingen. Kontakt en administrator hvis en slik ikke er tilgjengelig.
+1. Velg tilkoblingen. Kontakt en administrator hvis ingen tilkobling er tilgjengelig.
 
 1. Velg **Neste**.
 

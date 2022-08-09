@@ -1,7 +1,7 @@
 ---
 title: Knytte til en Common Data Model-mappe ved å bruke en Azure Data Lake-konto
 description: Arbeid med Common Data Model-data ved hjelp av Azure Data Lake Storage.
-ms.date: 05/30/2022
+ms.date: 07/27/2022
 ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: b1cdcb46df17d722ad49d361ae4c7ab34c83eeb1
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081307"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207011"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Koble til data i Azure Data Lake Storage
 
@@ -82,7 +82,7 @@ Innta data i Dynamics 365 Customer Insights ved å bruke av Azure Data Lake Stor
    :::image type="content" source="media/ADLS_required.png" alt-text="Dialogboksen Obligatorisk for primærnøkkel":::
 
    > [!TIP]
-   > Hvis du vil redigere enhetene i et JSON-redigeringsgrensesnitt, velger du **Vis mer** > **Rediger skjemafil**. Foreta endringene og velg **Lagre**.
+   > Hvis du vil redigere en enhet i et JSON-redigeringsgrensesnitt, velger du enheten og deretter **Rediger skjemafil**. Foreta endringene og velg **Lagre**.
 
 1. For valgte enheter som krever trinnvis inntak, vises **Obligatorisk** vises under **Trinnvis oppdatering**. For hver av disse enhetene kan du se [Konfigurer en trinnvis oppdatering for Azure Data Lake-datakilder](incremental-refresh-data-sources.md).
 
@@ -101,6 +101,10 @@ Innta data i Dynamics 365 Customer Insights ved å bruke av Azure Data Lake Stor
    1. Velg **Ferdig**.
 
 1. Velg **Lagre**. Siden **Datakilder** åpnes med den nye datakilde i statusen **Oppdaterer**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Det kan ta tid å laste inn data. Etter en vellykket oppdatering kan de innhentede dataene gjennomgås fra [**Enheter**](entities.md)-siden.
 
 ### <a name="create-a-new-schema-file"></a>Opprett en ny skjemafil
 
@@ -148,6 +152,9 @@ Innta data i Dynamics 365 Customer Insights ved å bruke av Azure Data Lake Stor
 
 1. Velg **Lagre**. Siden **Datakilder** åpnes med den nye datakilde i statusen **Oppdaterer**.
 
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Det kan ta tid å laste inn data. Etter en vellykket oppdatering kan de innhentede dataene gjennomgås fra [**Enheter**](entities.md)-siden.
 
 ## <a name="edit-an-azure-data-lake-storage-data-source"></a>Rediger en Azure Data Lake Storage-datakilde
 
@@ -179,8 +186,16 @@ Du kan oppdatere alternativet *Koble til lagringskonto ved hjelp av*. Hvis du vi
       > [!IMPORTANT]
       > Hvis det finnes avhengigheter i den eksisterende model.json- eller manifest.json-filen og enhetene, vises en feilmelding og du kan ikke velge en annen model.json- eller manifest.json-fil. Fjern avhengighetene før du endrer model.json- eller manifest.json-filen, eller opprett en ny datakilde med model.json- eller manifest.json-filen som du vil bruke for å unngå å fjerne avhengighetene.
    - Hvis du vil endre datafilplasseringen eller primærnøkkelen, velger du **Rediger**.
-   - Hvis du vil endre de trinnvise inntaksdataene, kan du se [Konfigurer en trinnvis oppdatering for Azure Data Lake-datakilder](incremental-refresh-data-sources.md)
+   - Hvis du vil endre de trinnvise inntaksdataene, kan du se [Konfigurer en trinnvis oppdatering for Azure Data Lake-datakilder](incremental-refresh-data-sources.md).
+   - Endre bare enhetsnavnet slik at det er likt enhetsnavnet i JSON-filen.
+
+     > [!NOTE]
+     > La enhetsnavnet i Customer Insights alltid være likt enhetsnavnet i filen model.json eller manifest.json etter inntak. Customer Insights validerer alle enhetsnavn med model.json eller manifest.json under hver systemoppdatering. Hvis et enhetsnavn endres i eller utenfor Customer Insights, oppstår det en feil fordi Customer Insights ikke kan finne det nye enhetsnavnet i JSON-filen. Hvis et inntatt enhetsnavn ble endret ved et uhell, redigerer du enhetsnavnet i Customer Insights slik at det er likt navnet i JSON-filen.
 
 1. Velg **Attributter** for å legge til eller endre attributter, eller for å aktivere dataprofilering. Deretter velger du **Ferdig**.
 
 1. Klikk på **Lagre** for å ta i bruk endringene, og gå tilbake til siden **Datakilder**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]
