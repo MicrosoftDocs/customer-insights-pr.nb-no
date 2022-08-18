@@ -1,7 +1,7 @@
 ---
-title: Systemkonfigurasjon
+title: Vis systemkonfigurasjon
 description: Lær om systeminnstillinger i Dynamics 365 Customer Insights.
-ms.date: 04/21/2022
+ms.date: 08/09/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: NimrodMagen
@@ -10,40 +10,78 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-system-status
-- ci-system-schedule
 - ci-system-about
 - ci-system-general
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 0ef84d8e286d8135eb8938e72f1319925e948bed
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 2498814a3d2e6330124fb97c036b9b310bcf1f7a
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9050683"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246259"
 ---
-# <a name="system-configuration"></a>Systemkonfigurasjon
+# <a name="view-system-configuration"></a>Vis systemkonfigurasjon
 
-Hvis du vil ha tilgang til systemkonfigurasjoner, går du til **Administrator** > **System** for å vise en liste over systemoppgaver og -prosesser.
+Vis systeminformasjon, systemstatus og API-bruk.
 
-**System**-siden inneholder følgende faner:
-- [Status](#status-tab)
-- [Tidsplan](#schedule-tab)
-- [API-bruk](#api-usage-tab)
-- [Om](#about-tab)
-- [Generelt](#general-tab)
+## <a name="view-api-usage"></a>Vis API-bruk
 
-:::image type="content" source="media/system-tabs.png" alt-text="Innstillinger-faner på systemsiden.":::
+Vis detaljer om API-bruk i sanntid, og se hvilke hendelser som har skjedd i en gitt tidsramme.
 
-## <a name="status-tab"></a>Kategorien Status
+1. Gå til **Administrator** > **System**, og velg fanen **API-bruk**.
 
-I **Kategorien Status** kan du spore fremdriften for oppgaver, datainntak, dataeksporter og flere andre viktige produktprosesser. Se gjennom informasjonen i denne kategorien for å sikre at de aktive oppgavene og prosessene er fullstendige.
+1. **Velg en tidsramme** du vil vise.
 
-Denne fanen inneholder tabeller med status og behandlingsinformasjon for ulike prosesser. Hver tabell sporer **navnet** på oppgaven og den tilsvarende enheten, **statusen** for den nyeste kjøringen og når den **sist ble oppdatert**. Du kan vise detaljene for de siste kjøringene ved å velge oppgave- eller prosessnavnet. 
+   Siden **API-bruken** inneholder tre deler:
 
-Velg statusen ved siden av oppgaven eller prosessen i **Status**-kolonnen for å åpne **Fremdriftsdetaljer**-ruten.
+   - **API-kall** – et diagram som visualiserer det samlede antallet kall til API-en i den valgte tidsramme.
+   - **Dataoverføring** – et diagram som viser datamengden som ble overført via API-en i den valgte tidsramme.
+   - **Operasjoner** – en tabell med rader for hver tilgjengelige API-operasjon og detaljer om bruken av operasjonene. Velg et operasjonsnavn for å gå til [API-referansen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
+
+   Operasjoner som bruker [inntak av data i sanntid](real-time-data-ingestion.md), inneholder et kikkertsymbol for å vise API-bruk i sanntid.
+
+   1. Velg kikkerten for å åpne ruten **API-bruk i sanntid** inneholder bruksdetaljer for operasjonen.
+   1. **Velg en tidsramme** du vil vise.
+   1. Bruk **Grupper etter**-boksen til å velge hvordan du best kan presentere samhandlinger i sanntid. Grupper dataene etter API-**metode**, **enhetskvalifisertnavn** (hentet enhet), **opprettet av** (kilde for hendelsen), **resultat** (vellykket eller mislykket) eller **feilkoder**. Dataene er tilgjengelige som et historikkdiagram og som en tabell.
+
+## <a name="view-system-information"></a>Vis systeminformasjon
+
+Vis miljøet og visningsnavn, ID, område, type og økt-ID.
+
+1. Gå til **Administrator** > **System**, og velg fanen **Om**.
+
+1. Velg fanen **Generelt** for å vise språk og land/område.
+
+### <a name="update-preferred-language-or-countryregion"></a>Oppdater foretrukket språk eller land/område
+
+Customer Insights [støtter mange språk](/dynamics365/get-started/availability). Appen bruker språkpreferansen din til å vise elementer som menyen, etiketttekst og systemmeldinger på språket du foretrekker.
+
+Importerte data og informasjon du har angitt manuelt, blir ikke oversatt.
+
+1. Gå til **Administrator** > **System**, og velg fanen **Generelt**.
+
+1. Hvis du vil endre foretrukket språk, velger du et **Språk** fra rullegardinlisten.
+
+1. Hvis du vil endre foretrukket formatering for datoer, klokkeslett og tall, bruker du rullegardinlisten **Lands-/områdeformat**. En formateringsforhåndsvisning vises. Systemet foreslår automatisk et valg når du velger et nytt språk.
+
+1. Velg **Lagre**.
+
+## <a name="view-system-status"></a>Vis systemstatus
+
+Spor fremdriften for oppgaver, datainntak, dataeksporter og flere andre viktige produktprosesser. Se gjennom informasjonen for å sikre at de aktive oppgavene og prosessene er fullstendige.
+
+1. Gå til **Administrator** > **System**, og velg fanen **Status**.
+
+   Status og behandlingsinformasjon for ulike prosesser vises. Vis **navnet** på oppgaven, **statusen** for den nyeste kjøringen og når den **sist ble oppdatert**.
+
+1. For å vise detaljene for de siste kjøringene velger du oppgave- eller prosessnavnet.
+
+1. Hvis du vil vise fremdriftsdetaljene for en oppgave, velger du statusen. **Fremdriftsdetaljer**-ruten vises.
 
    :::image type="content" source="media/system-progress-details.png" alt-text="Detaljruten for systemfremdrift":::
+
+1. Hvis du vil vise fremdriftsdetaljer for alle oppgavene, velger du **Hele arbeidsflyten**.
 
 ### <a name="status-definitions"></a>Statusdefinisjoner
 
@@ -51,19 +89,19 @@ Systemet bruker følgende statuser for oppgaver og prosesser:
 
 |Status  |Definisjon  |
 |---------|---------|
-|Kansellert |Behandlingen ble avbrutt av brukeren før den ble fullført.   |
-|Mislyktes   |Det oppstod en feil i datainnhentingen.         |
-|Feil  |Behandling har mislyktes.  |
-|Ikke startet   |Datakilden har ingen data som er tatt inn ennå, eller den er fremdeles i utkastmodus.         |
+|Kansellert |Oppgave eller prosess ble avbrutt av brukeren før den ble fullført.   |
+|Mislyktes   |Det oppstod feil under oppgave eller prosess.         |
+|Feil  |Oppgaven eller prosessen mislyktes.  |
+|Ikke startet   |Datakilden har ingen data som er tatt inn ennå, eller oppgaven er fremdeles i utkastmodus.         |
 |Behandles  |Oppgave eller prosess pågår.  |
-|Oppdaterer    |Datainntak pågår. Du kan avbryte denne operasjonen ved å velge **Stopp oppdatering** i kolonnen **Handlinger**. Hvis du stopper oppdateringen av en datakilde, blir den tilbakestilt til siste oppdateringstilstand.       |
+|Oppdaterer    |Oppgave eller prosess pågår. Hvis du vil avbryte denne operasjonen, velger du **Oppdater** og **Avbryt jobben**. Hvis du stopper oppdateringen av en oppgave eller prosess, blir den tilbakestilt til siste oppdateringstilstand.       |
 |Hoppet over  |Hoppet over oppgave eller prosess. Én eller flere av de prosessene nedstrøms som denne oppgaven avhenger av, mislykkes eller blir hoppet over.|
 |Vellykket  |Oppgave eller prosess er fullført. For datakilder, angir at dataene er inntakte hvis et tidspunkt er nevnt i kolonnen **Oppdatert**.|
 |I kø | Behandlingen blir lagt i kø og starter når alle oppstrømsoppgaver og -prosesser er fullført. Hvis du vil ha mer informasjon, kan du se [Forretningsprosesser](#refresh-processes).|
 
 ### <a name="refresh-processes"></a>Oppdateringsprosesser
 
-Oppdatering for oppgaver og prosesser kjøres i henhold til den [konfigurerte tidsplanen](#schedule-tab). 
+Oppdatering for oppgaver og prosesser kjøres i henhold til den [konfigurerte tidsplanen](schedule-refresh.md).
 
 |Behandle  |Beskrivelse  |
 |---------|---------|
@@ -86,58 +124,6 @@ Oppdatering for oppgaver og prosesser kjøres i henhold til den [konfigurerte ti
 |User  |Kjører manuelt (oppdatering én gang). Avhengig av enheter.  |
 
 Velg statusen for en prosess for å vise fremdriftsdetaljene for hele jobben den var i. Oppdateringsprosessene ovenfor kan hjelpe deg med å forstå hva du kan gjøre for å løse en oppgave eller prosess som er **Hoppet over** eller **Lagt i kø**.
-
-## <a name="schedule-tab"></a>Kategorien Tidsplan
-
-Bruk kategorien **Plan** til å planlegge automatisk oppdatering av alle [datakildene som er hentet inn](data-sources.md). Automatisk oppdatering bidrar til å sikre at oppdateringer fra datakildene gjenspeiles i de enhetlige kundeprofilene.
-
-> [!NOTE]
-> Datakilder som administreres av deg, oppdateres etter egne tidsplaner. Hvis du vil planlegge oppdatering av datakilder som administreres av deg, konfigurerer du oppdateringsinnstillinger for bestemte datakilde fra **Datakilder**-siden.
-> :::image type="content" source="media/PPDF-edit-refresh.png" alt-text="Oppdateringsinnstillinger for Power Platform-dataflyt.":::
-
-1. Gå til **Administrator** > **System**, og velg fanen **Planlegg**.
-
-2. Standardtilstanden for den planlagte oppdateringen er **Av**. Hvis du vil aktivere planlagte oppdateringer, endrer du vekslingsknappen øverst på skjermen til **På**.
-
-3. Velg mellom **Ukentlig** (standard) og **Daglig** for oppdateringer. Hvis du planlegger ukentlige oppdateringer, velger du én eller flere dager du vil kjøre oppdateringen på.
-
-4. Angi **Tidssone**, og bruk deretter rullegardinlisten **Tidspunkt** til å angi tiden for oppdatering. Velg **Angi** når du er ferdig. Hvis du vil planlegge flere repetisjoner på én enkelt dag, velger du **Legg til et annet tidspunkt**.
-
-5. Velg **Lagre** for å ta i bruk endringene.
-
-## <a name="about-tab"></a>Om kategori
-
-Kategorien **Om** inneholder organisasjonens **visningsnavn**, den aktive **miljø-ID-en**, **området** og **økt-ID-en**. Hvis du har mer enn ett arbeidsmiljø, må du gi hvert av dem et enkelt identifiserbart visningsnavn.
-
-## <a name="general-tab"></a>Generelt, kategori
-
-Du kan endre språk- og land-/områdeformatet i fanen **Generelt**.
-
-Customer Insights [støtter mange språk](/dynamics365/get-started/availability). Appen bruker språkpreferansen din til å vise elementer som menyen, etiketttekst og systemmeldinger på språket du foretrekker.
-
-Importerte data og informasjon du har angitt manuelt, blir ikke oversatt.
-
-### <a name="update-the-settings"></a>Oppdater innstillingene
-
-Hvis du vil endre foretrukket språk, velger du et **Språk** fra rullegardinlisten.
-
-Hvis du vil endre foretrukket formatering for datoer, klokkeslett og tall, bruker du rullegardinlisten **Lands-/områdeformat**. Det vises en formateringsforhåndsvisning under dette feltet. Systemet vil automatisk foreslå et valg når du velger et nytt språk.
-
-Velg **Lagre** for å bekrefte valgene.
-
-## <a name="api-usage-tab"></a>Kategorien API-bruk
-
-Finn detaljer om API-bruk i sanntid, og se hvilke hendelser som har skjedd i en gitt tidsramme. Du velger tidsramme i rullegardinlisten **Velg en tidsramme**. 
-
-**API-bruken** inneholder tre deler: 
-- **API-kall** – et diagram som visualiserer det samlede antallet kall til API-en i den valgte tidsramme.
-
-- **Dataoverføring** – et diagram som viser datamengden som ble overført via API-en i den valgte tidsramme.
-
--  **Operasjoner** – en tabell med rader for hver tilgjengelige API-operasjon og detaljer om bruken av operasjonene. Du kan velge et operasjonsnavn for å gå til [API-referansen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
-
-   Operasjoner som bruker [inntak av data i sanntid](real-time-data-ingestion.md), inneholder en knapp med et kikkertsymbol for å vise API-bruk i sanntid. Velg knappen for å åpne en siderute som inneholder bruksdetaljer for API-bruk i sanntid i det gjeldende miljøet.   
-   Bruk **Grupper etter**-boksen i ruten for **API-bruk i sanntid** til å velge hvordan du best kan presentere samhandlinger i sanntid. Du kan gruppere dataene etter API-metode, enhetskvalifisertnavn (hentet enhet), opprettet av (kilde for hendelsen), resultat (vellykket eller mislykket) eller feilkoder. Dataene er tilgjengelige som et historikkdiagram og som en tabell.
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

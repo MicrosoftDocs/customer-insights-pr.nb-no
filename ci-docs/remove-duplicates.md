@@ -2,7 +2,7 @@
 title: Fjern duplikater før du samler data
 description: Det andre trinnet i samlingsprosessen er å velge hvilken oppføring som skal beholdes når duplikater blir funnet.
 recommendations: false
-ms.date: 04/22/2022
+ms.date: 08/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,16 +13,25 @@ searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: a838fbdabdb3bfffc6d3835a3f0e97306a43964a
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: 7f4829cfc14af623f724c6594e834f3fac1c15a9
+ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139441"
+ms.lasthandoff: 08/01/2022
+ms.locfileid: "9213639"
 ---
 # <a name="remove-duplicates-before-unifying-data"></a>Fjern duplikater før du samler data
 
-Med dette trinnet i samlingen kan du eventuelt definere regler for håndtering av duplikatoppføringer i en enhet. *Deduplisering* identifiserer duplikatoppføringer og slår dem sammen til én oppføring. Kildeoppføringer kobles til den flettede oppføringen med alternative ID-er. Hvis regler ikke konfigureres, brukes systemdefinerte regler.
+Med dette valgfrie trinnet i samlingen kan du eventuelt definere regler for fjerning av duplikatoppføringer **i** en enhet. Deduplisering identifiserer flere oppføringer for en kunde og velger den beste oppføringen å beholde (basert på grunnleggende sammenslåingsinnstillinger) eller slår oppføringene sammen til én (basert på avanserte sammenslåingsinnstillinger). Kildeoppføringer kobles til den flettede oppføringen med alternative ID-er. Hvis regler ikke konfigureres, brukes systemdefinerte regler.
+
+## <a name="default-deduplication"></a>Standard deduplisering
+
+De systemdefinerte reglene gjelder hvis ingen dedupliseringsregler legges til.
+
+- Primærnøkkelen blir deduplisert.
+  For alle oppføringer med samme primærnøkkel er den **mest fylte** oppføringen (den med færrest nullverdier) vunnet.
+- Alle samsvarsregler på tvers av enheter brukes på enheten.
+  Eksempel: Hvis enhet A samsvares med enhet B på *FullName* og *DateofBirth*, dedupliseres også enhet A av *FullName* og *DateofBirth*. Siden *FullName* og *DateofBirth* er gyldige nøkler for identifisering av en kunde i enhet A, er disse nøklene også gyldige for identifisering av duplikatkunder i enhet A.
 
 ## <a name="include-enriched-entities-preview"></a>Inkludere supplerte enheter (forhåndsversjon)
 

@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 6b6daab480db5e37830ff58b71dcdd3bbdbe46da
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 0c2a900190b4ab6e93098d05a2fd66bcd2b847fd
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053892"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245891"
 ---
 # <a name="data-enrichment-preview-overview"></a>Oversikt over datasupplering (forhåndsversjon)
 
@@ -76,7 +76,7 @@ Velg suppleringen for å vise tilgjengelige handlinger.
 - **Vis** suppleringsdetaljer med antall supplerte kundeprofiler.
 - **Rediger** suppleringskonfigurasjonen.
 - [**Kjør**](#run-or-refresh-enrichments) suppleringen for å oppdatere kundeprofiler med de nyeste dataene. Kjør flere suppleringer samtidig ved å velge dem i listen.
-- **Aktiver** eller **deaktiver** en supplering. Inaktive suppleringer oppdateres ikke under en [planlagt oppdatering](system.md#schedule-tab).
+- **Aktiver** eller **deaktiver** en supplering. Inaktive suppleringer oppdateres ikke under en [planlagt oppdatering](schedule-refresh.md).
 - **Slett** suppleringen.
 
 Du kan også opprette [segmenter](segments.md) eller [mål](measures.md) fra suppleringer.
@@ -85,7 +85,7 @@ Du kan også opprette [segmenter](segments.md) eller [mål](measures.md) fra sup
 
 Når den er kjørt, kan suppleringer oppdateres automatisk eller oppdateres manuelt ved behov.
 
-1. Hvis du vil oppdatere en eller flere suppleringer manuelt, velger du dem og velger **Kjør**. Hvis du vil [planlegge en automatisk oppdatering](system.md#schedule-tab), går du til **Administrator** > **System** > **Plan**. Behandlingstiden avhenger av størrelsen på kundedataene.
+1. Hvis du vil oppdatere en eller flere suppleringer manuelt, velger du dem og velger **Kjør**. Hvis du vil [planlegge en automatisk oppdatering](schedule-refresh.md), går du til **Administrator** > **System** > **Plan**. Behandlingstiden avhenger av størrelsen på kundedataene.
 
 1. Se eventuelt [fremdriften for suppleringsprosessen](#see-the-progress-of-the-enrichment-process).
 
@@ -102,6 +102,8 @@ Du kan finne detaljer om behandlingen av en supplering, blant annet status og po
 1. Utvid **Suppleringer**-delen i **Fremdrift**-detaljruten.
 1. Velg **Se detaljer** under suppleringen du vil vise fremdriften for.
 1. Velg **Vis detaljer** i **Oppgavedetaljer**-ruten for å vise prosessene som er involvert i oppdatering av suppleringen og statusen deres.
+
+[!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
 ## <a name="view-enrichment-results"></a>Vis suppleringsresultater
 

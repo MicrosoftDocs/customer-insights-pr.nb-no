@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 1af7f018abd412c833ff22b3880f0e4508ff4953
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: a7cf06c07e4b95b848a55dfe5fe0b09397fe744e
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139623"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245606"
 ---
 # <a name="update-the-unification-settings"></a>Oppdater samlingsinnstillingene
 
@@ -42,7 +42,7 @@ Hvis du vil se gjennom eller endre eventuelle enhetlige innstillinger når en en
    :::image type="content" source="media/m3_run_match_merge.png" alt-text="Skjermbilde av siden for datasamling med alternativene for samling uthevet.":::
 
    - [Kjør samsvarende betingelser](#run-matching-conditions) for å evaluere kvaliteten på de samsvarende betingelsene (deduplisering og samsvarsregler) uten å oppdatere den enhetlige profilen. Alternativet **Kjør bare samsvarende betingelser** vises ikke for én enhet.
-   - [Samle kundeprofiler](#run-updates-to-the-unified-customer-profile) for å kjøre samsvarende betingelser og oppdatere enheten for Unified customer profile uten at det påvirker avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Avhengige prosesser kjøres ikke, men oppdateres som [definert i oppdateringsplanen](system.md#schedule-tab).
+   - [Samle kundeprofiler](#run-updates-to-the-unified-customer-profile) for å kjøre samsvarende betingelser og oppdatere enheten for Unified customer profile uten at det påvirker avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Avhengige prosesser kjøres ikke, men oppdateres som [definert i oppdateringsplanen](schedule-refresh.md).
    - [Samle kundeprofiler og -avhengigheter](#run-updates-to-the-unified-customer-profile) for å kjøre samsvarende betingelser og oppdatere enheten for Unified customer profile og alle avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Alle prosesser kjører på nytt automatisk.
 
 ## <a name="edit-source-fields"></a>Rediger kildefelter
@@ -154,7 +154,7 @@ Kjør samsvarende betingelser kjører bare deduplisering og samsvarsregler, og o
 
 1. Velg følgende på siden **Data** > **Samle**:
 
-   - **Samle kundeprofiler**: Kjører samsvarende betingelser og oppdaterer enheten for Unified customer profile uten at det påvirker avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Avhengige prosesser kjøres ikke, men oppdateres som [definert i oppdateringsplanen](system.md#schedule-tab).
+   - **Samle kundeprofiler**: Kjører samsvarende betingelser og oppdaterer enheten for Unified customer profile uten at det påvirker avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Avhengige prosesser kjøres ikke, men oppdateres som [definert i oppdateringsplanen](schedule-refresh.md).
 
    - **Samle kundeprofiler og avhengigheter**: Kjører samsvarende betingelser og oppdaterer den enhetlige profilen og alle avhengigheter. Alle prosesser kjører på nytt automatisk. Når alle nedstrømsprosesser er fullført, gjenspeiler kundeprofilen de oppdaterte dataene.
 

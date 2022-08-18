@@ -284,18 +284,20 @@
       href: connect-service-principal.md
 - name: Administrasjon
   items:
-    - name: Konfigurere systemkonfigurasjonen
-      href: system.md
-    - name: Konfigurer sikkerhetsinnstillinger
-      href: security-overview.md
     - name: Tilordne brukertillatelser
       href: permissions.md
     - name: Hente ditt eget Azure Key Vault
       href: use-azure-key-vault.md
+    - name: Konfigurer sikkerhetsinnstillinger
+      href: security-overview.md
     - name: Eksporter diagnoselogger
       href: diagnostics.md
-    - name: Oversikt over tilkoblinger
+    - name: Administrer tilkoblinger
       href: connections.md
+    - name: Planlegg systemoppdatering
+      href: schedule-refresh.md
+    - name: Vis systemkonfigurasjon
+      href: system.md
 - name: APIer
   items:
     - name: Arbeide med APIer

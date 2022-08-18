@@ -1,19 +1,19 @@
 ---
 title: Supplere kundeprofiler med demografi fra Experian (forhåndsvisning)
 description: Generell informasjon om tredjeparts Experian-supplering.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 876853ab42e8c08ad1abacb8d8a205c0aadabcf7
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: fccb37cde3f05a70009c18b6c52db01a5ede094d
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195948"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9238008"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Supplere kundeprofiler med demografi fra Experian (forhåndsvisning)
 
@@ -41,13 +41,9 @@ Du må være en [administrator](permissions.md#admin) i Customer Insights og ha 
 
 1. Skriv inn et navn på tilkoblingen og en gyldig bruker-ID, parts-ID og modellnummer for Experian Secure Transport-kontoen.
 
-1. Gå gjennom og gi ditt samtykke til [Datapersonvern og -samsvar](#data-privacy-and-compliance) ved å velge **Jeg er enig**.
+1. Se gjennom [datapersonvern og -samsvar](connections.md#data-privacy-and-compliance), og velg **Jeg godtar**.
 
 1. Velg **Bekreft** for å validere konfigurasjonen, og velg deretter **Lagre**.
-
-### <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
-
-Når du gjør det mulig for Dynamics 365 Customer Insights å overføre data til Experian, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data som personlige data. Microsoft overfører slike data etter instruksjonen, men du er ansvarlig for å sørge for at Experian oppfyller personvern- eller sikkerhetsforpliktelser du måtte ha. Hvis du vil ha mer informasjon, kan du se [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732). Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen når som helst for å slutte å bruke denne funksjonaliteten.
 
 ## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
 

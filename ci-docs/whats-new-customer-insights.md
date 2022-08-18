@@ -1,19 +1,19 @@
 ---
 title: Nyheter i Dynamics 365 Customer Insights
 description: Informasjon om nye funksjoner, forbedringer og feilrettinger.
-ms.date: 06/30/2022
+ms.date: 08/03/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: f3ae0fe6631ee7c8d79664528be383ec53e93fe8
-ms.sourcegitcommit: 92e5a798ca75c7f10aa5025a9bbd2ffb4d4ae7d2
+ms.openlocfilehash: a9bb254736ae70589afb267bf0a60206a18a3385
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/05/2022
-ms.locfileid: "9114258"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246023"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheter i Dynamics 365 Customer Insights
 
@@ -23,6 +23,28 @@ Vi ruller ut oppdateringer for hver region. Enkelte områder kan se funksjoner f
 
 > [!TIP]
 > For å sende inn og stemme på funksjonsforespørsler og produktforslag går du til [ideportalen for Dynamics 365-apper](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="july-2022-updates"></a>Oppdateringer i juli 2022
+
+Oppdateringene i juli 2022 inkluderer nye funksjoner, ytelsesoppgraderinger og feilrettinger.
+
+### <a name="export-to-moengage"></a>Eksporter til MoEngage
+
+Eksporter segmenter av enhetlige kundeprofiler til MoEngage, og bruk dem til e-postmarkedsføring i MoEngage.
+
+Hvis du vil ha mer informasjon, kan du se [Eksportere segmenter til MoEngage](export-moengage.md).
+
+### <a name="ssh-support-for-sftp-based-exports"></a>SSH-støtte for SFTP-baserte eksporter
+
+Velg om du vil godkjenne via SSH eller brukernavn/passord for tilkoblinger til SFTP-eksportmål.
+
+Hvis du vil ha mer informasjon, kan du se [Eksporter data til SFTP-verter](export-sftp.md).
+
+### <a name="personalize-experiences-with-data-about-known-and-unknown-users"></a>Tilpass erfaringer med data om kjente og ukjente brukere
+
+Det er ikke noen ny utfordring å administrere kundedata, men det blir stadig vanskeligere etter hvert som brukere navigerer blant de ulike digitale kanalene varemerker tilbyr. En bruker som er kjent (godkjent) i én kanal, blir ukjent (ikke godkjent) i en annen hvis vedkommende ikke er logget på. Problemet er ofte at ikke godkjente (ukjente) brukere ikke har en felles ID. Den kunne ha blitt brukt til å knytte sammen meningsfulle attributter for profiler og generere enhetlige kundeprofiler. Customer Insights bidrar til å løse dette problemet ved å hente inn data fra sporingsmetoder på kildesystemene.
+
+Hvis du vil ha mer informasjon, kan du se [Tilpass opplevelsene dine med data om kjente og ukjente brukere](unknown-to-known.md).
 
 ## <a name="june-2022-updates"></a>Oppdateringer i juni 2022
 
@@ -50,7 +72,7 @@ Hvis du vil ha mer informasjon, kan du se [Få sikker tilgang til kundedata med 
 
 Azure Private Link gjør at Customer Insights kan kobles til Azure Data Lake Storage-kontoen din over et privat endepunkt i det virtuelle nettverket. For data i en lagringskonto, som ikke er eksportert for offentlig Internett, kan Private Link aktivere tilkoblingen til det begrensede nettverket.
 
-Hvis du vil ha mer informasjon, kan du se [Bruk Private Link i Customer Insights](security-overview.md#private-links-tab).
+Hvis du vil ha mer informasjon, kan du se [Bruk Private Link i Customer Insights](security-overview.md#set-up-an-azure-private-link).
 
 ## <a name="may-2022-updates"></a>Mai 2022-oppdateringer
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
 ms.reviewer: mhart
-ms.openlocfilehash: 5acb58906c1a9db54337f3b4dc2ab7891db7954e
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: d2ff49c324c5c5c28213f362ff330d441fcb6052
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011945"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246213"
 ---
 # <a name="use-your-own-azure-data-lake-storage-gen2-account"></a>Bruk din egen Azure Data Lake Storage Gen2-konto
 
@@ -37,7 +37,7 @@ Når du oppretter et nytt miljø, må du sørge for at Data Lake Storage-kontoen
 1. Velg hvordan du vil **koble til lagringsplassen**. Du kan velge mellom et ressursbasert alternativ og et abonnementsbasert godkjenningsalternativ. Hvis du vil ha mer informasjon, kan du se [Koble til en Azure Data Lake Storage-konto ved å bruke en Azure-tjenestekontohaver](connect-service-principal.md).
    - Velg **abonnementet**, **ressursgruppen** og **lagringskontoen** som inneholder beholderen `customerinsights`, for **Azure-abonnementet**.
    - For **Kontonøkkel** angir du **kontonavnet** og **kontonøkkelen** for Data Lake Storage-kontoen. Bruk av denne godkjenningsmetoden antyder at du er informert hvis organisasjonen roterer nøklene. Du må [oppdatere miljøkonfigurasjonen](manage-environments.md#edit-an-existing-environment) med den nye nøkkelen når den roteres.
-1. Velg om du vil bruke Azure Private Link til å koble til lagringskontoen og [opprette tilkoblingen til Private Link](security-overview.md#private-links-tab) med en totrinnsprosess.
+1. Velg om du vil bruke Azure Private Link til å koble til lagringskontoen og [opprette tilkoblingen til Private Link](security-overview.md#set-up-an-azure-private-link) med en totrinnsprosess.
 
 Når systemprosesser som datainntak er fullført, oppretter systemet tilsvarende mapper i lagringskontoen. Datafiler og *model.json*-filer opprettes og legges til i mapper basert på prosessnavnet.
 

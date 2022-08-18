@@ -14,12 +14,12 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: ead57ccbdcaf9f86ee54d1f15de71a63f2e1081b
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 99368a7ab2e8d7b3e53c04fbf25bb23bd2e550a9
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170833"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245385"
 ---
 # <a name="measures-overview"></a>Oversikt over mål
 
@@ -53,7 +53,7 @@ Merk av for et mål for å vise tilgjengelige handlinger. Velg målnavnet for å
 - **Rediger** målet for å endre egenskapene.
 - **Oppdater** målet for å ta med de nyeste dataene.
 - **Gi nytt navn** til målet.
-- **Aktiver** eller **Deaktiver** målet. Inaktive mål blir ikke oppdatert under en [planlagt oppdatering](system.md#schedule-tab) og har **Status** oppført som **Hoppet over**, som tyder på at en oppdatering ikke ble forsøkt.
+- **Aktiver** eller **Deaktiver** målet. Inaktive mål blir ikke oppdatert under en [planlagt oppdatering](schedule-refresh.md) og har **Status** oppført som **Hoppet over**, som tyder på at en oppdatering ikke ble forsøkt.
 - **Merk** for å [administrere merker](work-with-tags-columns.md#manage-tags) for målet.
 - **Slett** målet.
 - **Kolonner** for å [tilpasse kolonnene](work-with-tags-columns.md#customize-columns) som vises.
@@ -62,7 +62,7 @@ Merk av for et mål for å vise tilgjengelige handlinger. Velg målnavnet for å
 
 ## <a name="refresh-measures"></a>Oppdater mål
 
-Mål kan oppdateres etter en automatisk plan eller oppdateres manuelt ved behov. Hvis du vil oppdatere en eller flere mål manuelt, velger du dem og velger **Oppdater**. Hvis du vil [planlegge en automatisk oppdatering](system.md#schedule-tab), går du til **Administrator** > **System** > **Plan**.
+Mål kan oppdateres etter en automatisk plan eller oppdateres manuelt ved behov. Hvis du vil oppdatere en eller flere mål manuelt, velger du dem og velger **Oppdater**. Hvis du vil [planlegge en automatisk oppdatering](schedule-refresh.md), går du til **Administrator** > **System** > **Plan**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 

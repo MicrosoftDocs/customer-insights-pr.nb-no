@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: a70aadda4fc0eff3ddb4c89665506762613c291a
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: fd234aff9021ded76d8226bf2f15e035cf75e7db
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9194980"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245339"
 ---
 # <a name="exports-preview-overview"></a>Oversikt over Eksporter (forhåndsversjon)
 
@@ -79,7 +79,7 @@ Velg en eksport for å vise tilgjengelige handlinger.
 
 ## <a name="schedule-and-run-exports"></a>Planlegge og kjøre eksporter
 
-Hver eksport du konfigurerer, har en oppdateringsplan. Under en oppdatering ser systemet etter nye eller oppdaterte data som skal tas med i en eksport. Eksporter kjører som standard som en del av hver [planlagte systemoppdatering](system.md#schedule-tab). Du kan tilpasse oppdateringsplanen eller deaktivere den for å kjøre eksporter manuelt.
+Hver eksport du konfigurerer, har en oppdateringsplan. Under en oppdatering ser systemet etter nye eller oppdaterte data som skal tas med i en eksport. Eksporter kjører som standard som en del av hver [planlagte systemoppdatering](schedule-refresh.md). Du kan tilpasse oppdateringsplanen eller deaktivere den for å kjøre eksporter manuelt.
 
 Eksportplaner er avhengig av tilstanden til miljøet. Hvis det pågår oppdateringer for [avhengigheter](system.md#refresh-processes) når en planlagt eksport skal starte, fullføres oppdateringene først, og deretter kjøres eksporten. Kolonnen **Oppdatert** viser når en eksport sist ble oppdatert.
 

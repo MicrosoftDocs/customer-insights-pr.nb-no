@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 4bcfbb50b893ca7e6ec4607d3c156a3c6979f775
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 195a7c733f047c24f9f47a151c1cb623fe34d055
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170693"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246305"
 ---
 # <a name="segments-overview"></a>Oversikt over segmenter
 
@@ -58,7 +58,7 @@ Velg et segment for å vise tilgjengelige handlinger.
 - **Rediger** segmentet for å endre egenskapene.
 - **Opprett duplikat** av et segment. Du kan velge å redigere egenskapene med én gang, eller lagre duplikatet.
 - [**Oppdater**](#refresh-segments) segmentet slik at det inneholder de nyeste dataene.
-- **Aktiver** eller **Deaktiver** segmentet. Inaktive segmenter blir ikke oppdatert under en [planlagt oppdatering](system.md#schedule-tab) og har **Status** oppført som **Hoppet over**, som tyder på at en oppdatering ikke ble forsøkt. Aktive segmenter oppdateres basert på typen deres: statisk eller dynamisk.
+- **Aktiver** eller **Deaktiver** segmentet. Inaktive segmenter blir ikke oppdatert under en [planlagt oppdatering](schedule-refresh.md) og har **Status** oppført som **Hoppet over**, som tyder på at en oppdatering ikke ble forsøkt. Aktive segmenter oppdateres basert på typen deres: statisk eller dynamisk.
 - Angi **Gjør statisk** eller **Gjør dynamisk** for segmenttypen. Statiske segmenter må oppdateres manuelt. Dynamiske segmenter oppdateres automatisk under systemoppdateringer.
 - [**Finn lignende kunder**](find-similar-customer-segments.md) fra segmentet.
 - **Gi nytt navn** til segmentet.
@@ -88,7 +88,7 @@ Den nedre delen inneholder en liste over medlemmene i segmentet.
 
 Segmenter kan oppdateres etter en automatisk plan eller oppdateres manuelt ved behov. Hvis du vil oppdatere ett eller flere segmenter, velger du dem og velger **Oppdater**.
 
-Hvis du vil [planlegge en automatisk oppdatering](system.md#schedule-tab), går du til **Administrator** > **System** > **Plan**. Følgende regler gjelder:
+Hvis du vil [planlegge en automatisk oppdatering](schedule-refresh.md), går du til **Administrator** > **System** > **Plan**. Følgende regler gjelder:
 
 - Alle segmenter av typen **Dynamisk** eller **Utvidelse** oppdateres automatisk med den angitte hyppigheten. Når oppdateringen er fullført, angir **Status** om det var problemer under oppdatering av segmentet. **Sist oppdaterte** viser et tidsstempel for den siste vellykkede oppdateringen. Hvis det oppstår en feil, velger du feilen for å vise detaljer om hva som har skjedd.
 - Segmenter av typen **Statisk** *blir ikke* oppdatert automatisk. **Sist oppdatert** viser et tidsstempel for sist gang det statiske segmentet ble kjørt eller oppdatert manuelt.

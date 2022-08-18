@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 6ab97c535454e84c1bb18aca00bca2568eb65a2a
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: 591353bf1ba2f9ca05ddd137e1cf29dc0b0fba97
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207103"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245661"
 ---
 # <a name="data-sources-overview"></a>Oversikt over datakilder
 
@@ -67,7 +67,7 @@ Velg en datakilde for å vise tilgjengelige handlinger.
 
 Datakilder kan oppdateres etter en automatisk plan eller oppdateres manuelt ved behov. [Lokale datakilder](connect-power-query.md#add-data-from-on-premises-data-sources) oppdateres på egne tidsplaner, som konfigureres under datainntak. For tilknyttede datakilder bruker datainntak de nyeste dataene som er tilgjengelige fra den datakilde.
 
-Gå til **Administrator** > **System** > [**Planlegg**](system.md#schedule-tab) for å konfigurere systemplanlagte oppdateringer av de inntatte datakildene.
+Gå til **Administrator** > **System** > [**Planlegg**](schedule-refresh.md) for å konfigurere systemplanlagte oppdateringer av de inntatte datakildene.
 
 Slik oppdaterer du en datakilde ved behov:
 

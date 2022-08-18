@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 33c8910b7a4dd8723c0d62f2e28228cd2d8df4b7
-ms.sourcegitcommit: 5716025eb4828425ca237377b02a892de8689f4a
+ms.openlocfilehash: 875cbbd095dfd239ab83c1c80db28ea7c0a04ed0
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "9142831"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245569"
 ---
 # <a name="how-to-create-a-new-environment"></a>Veiledning: opprett et nytt miljø
 
@@ -48,7 +48,7 @@ I trinnet for **Grunnleggende informasjon** velger du om du vil opprette et milj
 
 Angi følgende detaljer:
 
-- **Navn**: Navnet på dette miljøet. Dette feltet er allerede fylt ut hvis du har kopiert et eksisterende miljø, men du kan endre det.
+- **Navn**: Navnet på dette miljøet. Dette feltet er allerede fylt ut hvis du har kopiert et eksisterende miljø, men du kan endre det. Hvis du har mer enn ett arbeidsmiljø, må du gi hvert av dem et enkelt identifiserbart navn.
 - **Velg forretningen**: Velg primærmålgruppe for det nye miljøet. Du kan arbeide med individuelle kunder (B-til-C) eller [forretningskontoer](work-with-business-accounts.md) (B-til-B). Hvis organisasjonen hovedsakelig gjør forretninger med enkeltpersoner, for eksempel en forhandler eller en kaffebar, velger du den enkeltforbrukere. Hvis hovedmålgruppen er andre selskaper, for eksempel en bilprodusent eller et papirfirma, velger du forretningskontoer.
 - **Type**: Velg om du vil opprette et produksjons- eller sandkassemiljø. Sandkassemiljøer tillater ikke oppdatering av planlagte data og er beregnet for forhåndsimplementering og testing. Sandkassemiljøer bruker samme målgruppe som produksjonsmiljøet som er valgt.
 - **Område**: Området som servicen er distribuert i, og driftet. Hvis du vil [bruke din egen Azure Data Lake Storage-konto](own-data-lake-storage.md) eller [koble til en eksisterende Microsoft Dataverse-organisasjon](customer-insights-dataverse.md), må Customer Insights-miljøet være i samme område.

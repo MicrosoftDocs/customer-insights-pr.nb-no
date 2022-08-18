@@ -1,7 +1,7 @@
 ---
-title: Administrasjon av brukertillatelser
+title: Tilordne brukertillatelser
 description: Lær om tillatelser og brukerroller.
-ms.date: 02/09/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -12,20 +12,16 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 30b37645cad4e795ef20579e20e3f2bbdb2afbf6
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: a59a672b6f7e1e67c2162ea14bb9860df0d551aa
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054888"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245431"
 ---
-# <a name="manage-user-permissions"></a>Administrasjon av brukertillatelser
+# <a name="assign-user-permissions"></a>Tilordne brukertillatelser
 
-**Tillatelser**-siden angir roller og tillatelser for bruk av Customer Insights.
-
-Du må ha administratortillatelse for å se siden. Gå til **Administrator** > **Sikkerhet** > **Brukere** for å få tilgang til tillatelsessiden.
-
-Det finnes tre typer roller:
+Tilgang til Customer Insights er begrenset til brukere i organisasjonen som er lagt til i programmet av en administrator. En administrator kan legge til, redigere eller fjerne brukere. En bruker kan være én enkelt bruker, en gruppe eller et program. Det finnes tre typer roller som en bruker kan ha:
 
 ## <a name="viewer"></a>Visningsprogram
 
@@ -41,18 +37,18 @@ Det finnes tre typer roller:
 
 - Alle tillatelser som er tilgjengelige for visningsprogrammet.
 - Last inn og transformer data ved hjelp av siden **Datakilder**.
-- Fullfør ***Datasamling** som resulterer i enheten for enhetlig kundeprofil.
+- Fullfør **Datasamling** som resulterer i enheten for enhetlig kundeprofil.
 - Definere **Relasjoner** og **Aktiviteter**.
 - Opprett segmenter ved hjelp siden **Segmenter**.
 - Opprett mål ved hjelp siden **Mål**.
 - Administrer konfigurasjon og suppler kundeprofiler fra **Supplering**-siden (bare for førsteparts suppleringer).
-- Administrer og opprett eksporter basert på tilkoblinger delt med bidragsytere. [Lær mer om hvordan administratorer tillater at bidragsytere bruker en tilkobling for eksporter](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- Administrer og opprett eksporter basert på [tilkoblinger delt med bidragsytere](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-## <a name="admin"></a>Admin
+## <a name="admin"></a>Administrator
 
 - Alle tillatelser som er tilgjengelige for bidragsyteren.
-- Endre innstillinger på siden **System**, inkludert arbeidsspråket, og oppdater planer for systemprosessene.
-- Vis og legg til tillatelser ved hjelp av siden **Tillatelser**.
+- Endre innstillinger på siden **System**, inkludert arbeidsspråket, oppdater planer for systemprosessene og eksporter diagnoselogger.
+- Endre innstillinger på siden **Sikkerhet**, inkludert brukere, API-nøkler, private koblinger og key vault.
 - Angi søke- og filtreringdefinisjoner for Kunder-siden ved å bruke siden **Søk- og filterindeks** (tilgjengelig via **Kunder**-siden).
 - Administrer tilkoblinger, og tillat dem for andre brukerroller på **Tilkoblinger**-siden.
 - Administrer konfigurasjon og suppler kundeprofiler fra **Supplering**-siden (for alle suppleringer).
@@ -67,24 +63,27 @@ Det finnes tre typer roller:
 - Alle tillatelser som er tilgjengelige for administratoren.
 - [Tilbakestill og slett](manage-environments.md#reset-an-existing-environment-preview) miljøet.
 
-## <a name="assign-roles-and-permissions"></a>Tilordne roller og tillatelser
+## <a name="add-users"></a>Legg til brukere
 
-1. Gå til **Administrator** > **Sikkerhet** > **Brukere**.
+1. Gå til **Administrator** > **Sikkerhet**, og velg fanen **Brukere**.
 
 1. Velg **Legg til brukere** for å åpne ruten **Legg til / rediger tillatelser**.
 
-1. Bruk **Søk**-feltet til å finne Azure Active Directory-brukeren eller -gruppen som du vil justere tillatelser for. Velg en **Rolle** som skal tilordnes brukeren eller gruppen.
+1. Bruk **Søk**-feltet til å finne Azure Active Directory-brukeren eller -gruppen som du vil legge til. Velg en **Rolle** som skal tilordnes brukeren eller gruppen.
 
-1. Velg **Lagre**. Det gjeldende miljøet deles automatisk med brukeren eller medlemmene av gruppen som du har endret tillatelser for. Brukere kan få tilgang til Customer Insights-appen og arbeide i henhold til den angitte rollen.
+1. Velg **Lagre**. Det gjeldende miljøet deles automatisk med brukeren eller medlemmene av gruppen. Brukere kan få tilgang til Customer Insights-appen og arbeide i henhold til den angitte rollen.
 
 ## <a name="view-current-permissions"></a>Vise gjeldende tillatelser
 
-Gå til **Administrator** > **Sikkerhet** > **Brukere** for å se hvilke rolletilordninger som er aktive.
+Gå til **Administrator** > **Sikkerhet**, og velg fanen **Brukere** for å vise listen over aktive brukere og deres rolletildelinger. Du kan sortere listen over brukere etter en hvilken som helst kolonne, eller du kan bruke søkefeltet til å finne en bestemt bruker.
 
-- Kolonnen **Type** angir én bruker, én gruppe eller ett program. Systemet støtter individuelle brukere og grupper.
-- Roller er angitt under kolonnen **Rolle**.
-- Velg en kolonnetittel for å sortere resultatene etter verdien i kolonnen.
-- Bruk **Søk**-feltet øverst på siden for å finne bestemte brukere.
+## <a name="manage-current-users"></a>Administrer nåværende brukere
 
+Gå til **Administrator** > **Sikkerhet** og velg fanen **Brukere**. Du kan sortere listen over suppleringer etter en hvilken som helst kolonne, eller du kan bruke søkefeltet til å finne suppleringen du vil administrere.
+
+Velg en bruker for å vise tilgjengelige handlinger.
+
+- **Rediger** for å redigere brukerens rolle i Customer Insights. Velg **Lagre** for å bekrefte endringen.
+- **Fjern** for å fjerne brukeren fra å ha tilgang til Customer Insights. Velg **Slett** for å bekrefte slettingen.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

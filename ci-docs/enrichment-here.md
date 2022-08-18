@@ -1,19 +1,19 @@
 ---
 title: Suppler kundeprofiler med HERE Technologies (forhåndsversjon)
 description: Generell informasjon om tredjeparts supplering fra HERE Technologies.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 26de9fce863c9832b70adf3ce39cb2ae0ce43d0e
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 86a070342193dd7afda38823d90f4bd28c8b862e
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196268"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237870"
 ---
 # <a name="enrich-customer-profiles-with-here-technologies-preview"></a>Suppler kundeprofiler med HERE Technologies (forhåndsversjon)
 
@@ -33,16 +33,11 @@ Du må være en [administrator](permissions.md#admin) i Customer Insights og ha 
 
 1. Skriv inn et navn på tilkoblingen og en gyldig API-nøkkel for HERE Technologies.
 
-1. Gå gjennom og gi ditt samtykke til [Datapersonvern og -samsvar](#data-privacy-and-compliance) ved å velge **Jeg er enig**.
+1. Se gjennom [datapersonvern og -samsvar](connections.md#data-privacy-and-compliance), og velg **Jeg godtar**.
 
 1. Velg **Bekreft** for å validere konfigurasjonen, og velg deretter **Lagre**.
 
    :::image type="content" source="media/enrichment-HERE-connection.png" alt-text="Konfigurasjonsside for HERE Technologies-tilkobling.":::
-
-### <a name="data-privacy-and-compliance"></a>Datapersonvern og -samsvar
-
-Når du aktiverer Dynamics 365 Customer Insights for overføring av data til HERE Technologies, tillater du overføring av data utenfor samsvarsgrensen for Dynamics 365 Customer Insights, inkludert potensielt sensitive data, for eksempel personlige data. Microsoft overfører slike data etter instruksjon fra deg, men du er ansvarlig for å sørge for at HERE Technologies oppfyller alle forpliktelser til personvern eller sikkerhet du måtte ha. Hvis du vil ha mer informasjon, kan du se [Microsofts personvernerklæring](https://go.microsoft.com/fwlink/?linkid=396732).
-Dynamics 365 Customer Insights-administratoren kan fjerne denne suppleringen når som helst for å slutte å bruke denne funksjonaliteten.
 
 ## <a name="configure-the-enrichment"></a>Konfigurere suppleringen
 

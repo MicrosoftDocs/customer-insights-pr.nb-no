@@ -14,12 +14,12 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 4a19b753e7a5979fe72d7e96bc4452d7795c2d48
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
+ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139669"
+ms.lasthandoff: 08/01/2022
+ms.locfileid: "9213594"
 ---
 # <a name="unify-customer-fields-for-data-unification"></a>Forene kundefelter for dataforening
 
@@ -58,6 +58,9 @@ I dette trinnet i samlingsprosessen velger og utelater du attributter som skal f
 
 1. Angi hvordan du vil kombinere eller flette feltene fra et av tre alternativer:
     - **Viktighet**: Identifiserer vinnerverdien basert på viktighetsrangering angitt for de deltagende feltene. Dette er standardalternativet for sammenslåing. Velg **Flytt opp/ned** for å angi viktighetsrangering.
+
+      > [!NOTE]
+      > Customer Insights bruker den første verdien som ikke er null. Gitte enheter A, B og C rangeres for eksempel i den rekkefølgen, hvis A.Name og B.Name er null, brukes verdien fra C.Name.
 
       :::image type="content" source="media/importance-merge-option.png" alt-text="Viktighetsalternativ i dialogboksen for flettefelter.":::
 

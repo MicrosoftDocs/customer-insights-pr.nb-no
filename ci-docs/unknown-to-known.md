@@ -11,16 +11,16 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: ff99721bef0004bc8cae1ec14ff9df16cbb0682e
-ms.sourcegitcommit: ece8ff732490ecd3b3421ab273f331e6fd46a7f7
+ms.openlocfilehash: 8e3477750d82f965dc2d62174fb35554d9447b7b
+ms.sourcegitcommit: 52eca81c36e93d553140f5a37cf6013aaa42623a
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/19/2022
-ms.locfileid: "9173799"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "9224307"
 ---
 # <a name="personalize-your-experiences-with-data-about-known-and-unknown-users"></a>Tilpass opplevelsene med data om kjente og ukjente brukere
 
-Det er ikke noen ny utfordring å administrere kundedata, men det blir stadig vanskeligere etter hvert som brukere navigerer blant de ulike digitale kanalene varemerker tilbyr. En bruker som er kjent (godkjent) i én kanal, blir ukjent (ikke godkjent) i en annen hvis vedkommende ikke er logget på. Problemet er ofte at ikke godkjente (ukjente) brukere ikke har en felles ID. Den kunne ha blitt brukt til å knytte sammen meningsfulle attributter for profiler og generere enhetlige kundeprofiler. Customer Insights bidrar til å løse dette problemet ved å hente inn data fra sporingsmetoder på kildesystemene. Konsoliderte ukjente og kjente profiler gir organisasjoner en fullstendig oversikt over oppdaterte profiler og deres historiske transaksjoner, atferdsmønstre og demografi. Det gir til og med en identitetsløsning som gjør at du kan samle kundeaktivitet på tvers av flere kanaler, inkludert nettstedet ditt, kjøp i butikken, fordelsprogrammer og så videre.
+Det er ikke noen ny utfordring å administrere kundedata, men det blir stadig vanskeligere etter hvert som brukere navigerer blant de ulike digitale kanalene varemerker tilbyr. En bruker som er kjent (godkjent) i én kanal, blir ukjent (ikke godkjent) i en annen hvis vedkommende ikke er logget på. Problemet er ofte at ikke godkjente (ukjente) brukere ikke har en felles ID. Den kunne ha blitt brukt til å knytte sammen meningsfulle attributter for profiler og generere enhetlige kundeprofiler. Customer Insights bidrar til å løse dette problemet ved å hente inn data fra sporingsmetoder på kildesystemene. Konsolider ukjente og kjente profiler gir organisasjoner en fullstendig visning av oppdaterte profiler og historiske transaksjoner, virkemåte og demografi. Det gir til og med en identitetsløsning som gjør at du kan samle kundeaktivitet på tvers av flere kanaler, inkludert nettstedet ditt, kjøp i butikken, fordelsprogrammer og så videre.
 
 ## <a name="sample-scenario"></a>Eksempelscenario
 

@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: b237c291bb4dd22ca22ab2cdd8b6293490aa83e1
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207011"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245845"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Koble til data i Azure Data Lake Storage
 
@@ -56,8 +56,8 @@ Innta data i Dynamics 365 Customer Insights ved å bruke av Azure Data Lake Stor
 
 1. Velg et av følgende alternativer for **Koble til lagringen ved hjelp av**. Hvis du vil ha mer informasjon, kan du se [Koble Customer Insights til en Azure Data Lake Storage Gen2-konto med en en Azure-tjenestekontohaver](connect-service-principal.md).
 
-   - **Azure-ressurs**: Angi **ressurs-ID-en**. Hvis du eventuelt vil legge inn data fra en lagringskonto via en Azure Private Link, velger du **Aktiver privat kobling**. Hvis du vil ha mer informasjon, kan du se [Private koblinger](security-overview.md#private-links-tab).
-   - **Azure-abonnement**: Velg **abonnementet** og deretter **ressursgruppen** og **lagringskontoen**. Hvis du eventuelt vil legge inn data fra en lagringskonto via en Azure Private Link, velger du **Aktiver privat kobling**. Hvis du vil ha mer informasjon, kan du se [Private koblinger](security-overview.md#private-links-tab).
+   - **Azure-ressurs**: Angi **ressurs-ID-en**. Hvis du eventuelt vil legge inn data fra en lagringskonto via en Azure Private Link, velger du **Aktiver privat kobling**. Hvis du vil ha mer informasjon, kan du se [Private koblinger](security-overview.md#set-up-an-azure-private-link).
+   - **Azure-abonnement**: Velg **abonnementet** og deretter **ressursgruppen** og **lagringskontoen**. Hvis du eventuelt vil legge inn data fra en lagringskonto via en Azure Private Link, velger du **Aktiver privat kobling**. Hvis du vil ha mer informasjon, kan du se [Private koblinger](security-overview.md#set-up-an-azure-private-link).
   
    > [!NOTE]
    > Du må ha en av følgende roller i beholderen eller lagringskontoen for å opprette datakilden:
@@ -176,7 +176,7 @@ Du kan oppdatere alternativet *Koble til lagringskonto ved hjelp av*. Hvis du vi
         > - Storage Blob-dataeier
         > - Storage Blob-databidragsyter
 
-   - **Aktiver privat kobling** hvis du eventuelt vil legge inn data fra en lagringskonto via en Azure Private Link. Hvis du vil ha mer informasjon, kan du se [Private koblinger](security-overview.md#private-links-tab).
+   - **Aktiver privat kobling** hvis du eventuelt vil legge inn data fra en lagringskonto via en Azure Private Link. Hvis du vil ha mer informasjon, kan du se [Private koblinger](security-overview.md#set-up-an-azure-private-link).
 
 1. Velg **Neste**.
 1. Endre eventuelt følgende:

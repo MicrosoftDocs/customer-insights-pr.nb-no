@@ -11,18 +11,18 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 403cc9dbd3bddcf67f59b5cb0be936af4d268fc2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 2652e0868f5cc514ab6df9c150a9183cf95ae589
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195670"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246120"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Datainntak i sanntid (forhåndsversjon)
 
 Ved hjelp av den nær sanntidsfunksjonaliteten kan du se, i løpet av sekunder, de nyeste samhandlingene som kundene har gjort med dine produkter eller tjenester.
 
-[Planlagte oppdateringer](system.md#schedule-tab) omfatter et stort antall oppføringer og flere komplekse operasjoner. Først hentes data inn fra datakilden. Deretter samles dataene og suppleres med tilleggsinformasjon. Hver utførelse av denne prosessen kan ta minutter til timer.
+[Planlagte oppdateringer](schedule-refresh.md) omfatter et stort antall oppføringer og flere komplekse operasjoner. Først hentes data inn fra datakilden. Deretter samles dataene og suppleres med tilleggsinformasjon. Hver utførelse av denne prosessen kan ta minutter til timer.
 
 Sanntidsfunksjonaliteten gir data øyeblikkelig for forbruk, helt til den påfølgende planlagte oppdateringen henter disse dataene fra datakilden.
 
@@ -85,7 +85,7 @@ Detaljer om denne API-en, inkludert parametere og svar, finner du i **EntityData
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Forstå sanntidsbruk med telemetri
 
-Få en oversikt over volumet av forespørsler til sanntids-API-en og informasjon om problemer som systemet kan støte på. Du får [tilgang til telemetrien i sanntid](system.md#api-usage-tab). 
+Få en oversikt over volumet av forespørsler til sanntids-API-en og informasjon om problemer som systemet kan støte på. Du får [tilgang til telemetrien i sanntid](system.md#view-api-usage). 
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]
