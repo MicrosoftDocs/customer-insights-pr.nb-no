@@ -4,21 +4,21 @@ description: Lær om forretningskontoer som primær målgruppe i Dynamics 365 Cu
 ms.date: 10/19/2021
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
+author: v-wendysmith
 ms.custom: intro-internal
 ms.author: wimohabb
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 9bf91671b744198b2f37391edc7abf58eca3c820
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: abb77a720ab737520a905b0c93b65573e669109f
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053125"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303928"
 ---
 # <a name="work-with-business-accounts"></a>Arbeide med forretningskontoer
 
@@ -30,7 +30,7 @@ Administratorer kan [opprette et miljø i en eksisterende organisasjon](create-e
 
 Deretter kan du [legge inn data](data-sources.md) for forretningskontoer og relaterte kontakter som datakilder fra alle støttede kilder.
 
-Når dataene er slått sammen [angir du forretningsforbindelseshierarkier](relationships.md#set-up-account-hierarchies) som en del av relasjonskonfigurasjonen. Du kan også [konfigurere semantiske tilordninger](semantic-mappings.md) for å koble kontakt- og forretningsforbindelsesenheter. 
+ [Samle](data-unification.md) forretningsforbindelsesdataene etterfulgt av kontaktdataene for å koble sammen enheter for kontakt og forretningsforbindelse.
 
 ## <a name="switch-between-primary-target-audience"></a>Veksle mellom primære målgrupper
 
@@ -43,11 +43,12 @@ Hvis organisasjonen vedlikeholder miljøer for individuelle kunder og forretning
 - [Aktiviteter](activities.md): Støtte for forretningsforbindelser og relaterte kontakter for å opprette aktiviteter og vise dem på en tidslinje.
 - [Relasjoner](relationships.md): Aktivitetsveiviseren hjelper deg med å opprette relasjoner mellom enhetene, slik at visningen for forretningsforbindelsen kan vise alle aktiviteter fra kontakter. Kontaktpersoner kan drille opp for å se kontaktvisning, og hierarkier kan brukes for aktivetetsaggregasjoner for forretningsforbindelser.
 - [Mål](measures.md): Støtter mål som er opprettet fra målbyggeverktøy med én beregning. En valgfri innstilling tillater opprulling av underordnede forretningsforbindelser når du oppretter mål.
-- [Segmenter](segments.md): Støtter segmenter som opprettes fra bunnen av med segmentbyggeverktøyet. Nye operatorer tillater innlemmelse av forretningsforbindelseshierarki når de bygger segmenter.
+- [Segmenter](segments.md): Støtter segmenter som opprettes fra bunnen av med segmentbyggeverktøyet. Segmenter kan baseres på forretningsforbindelser eller kontakter.
 - [Datainntak](data-sources.md): Alle funksjonene i dette området er de samme for forretningskontoer og individuelle kunder.
-- [Dataforening](data-unification.md): Alle funksjonene i dette området er de samme for forretningskontoer og individuelle kunder.
+- B2B-datasamling er svært lik B2C-datasamling, men har et ekstra trinn for å samle kontakter etter forretningsforbindelsessamling. Se [Forretningsforbindelser (B2B)](data-unification.md).
 - [Supplering](enrichment-hub.md): Noen suppleringstyper er bare tilgjengelige for individuelle kundescenarioer, mens andre bare er tilgjengelige for forretningskontoer.
 - [Prognoser og standardmodeller](predictions-overview.md): Prediksjon for transaksjonsfrafall inneholder ytterligere trinn for forretningskontoer. Andre prognoser er bare tilgjengelige for enkeltkunder.
 - [Aktivering og eksport](export-destinations.md): Eksporter er tilgjengelige for forretningskontoer og individuelle kunder. Noen eksporter krever ekstra konfigurasjon og kontaktinformasjon som beregnes i de underliggende segmentene for å være gyldig for forretningskontoer.
 - [Systeminnstillinger](system.md) og [brukeradministrasjon](permissions.md): Alle funksjonene i dette området er de samme for forretningskontoer og individuelle kunder.
 
+[!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Oversikt over segmenter
 description: Oversikt over segmenter og hvordan du oppretter og administrerer dem.
-ms.date: 05/20/2022
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,18 +14,18 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 195a7c733f047c24f9f47a151c1cb623fe34d055
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d4de3a6af6bc7d54305a23e3fbd3cc95d464d352
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246305"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304807"
 ---
 # <a name="segments-overview"></a>Oversikt over segmenter
 
 Med segmenter kan du gruppere kunder basert på demografiske, transaksjonelle eller atferdsmessige attributter. Du kan bruke segmenter til å målrette kampanjer, salgsaktiviteter og kundestøttehandlinger slik at du oppnår forretningsmålene dine.
 
-Kundeprofiler som samsvarer med filtrene i en segmentdefinisjon, kalles *medlemmer* av et segment. Enkelte [tjenestebegrensninger](/dynamics365/customer-insights/service-limits) gjelder.
+Kunde- eller kontaktprofiler som samsvarer med filtrene i en segmentdefinisjon, kalles *medlemmer* av et segment. Enkelte [tjenestebegrensninger](/dynamics365/customer-insights/service-limits) gjelder.
 
 ## <a name="create-a-segment"></a>Opprett et segment
 
@@ -41,13 +41,19 @@ Velg hvordan du vil opprette et segment, basert på målgruppen.
 
 # <a name="business-accounts-b-to-b"></a>[Forretningsforbindelser (B-til-B)](#tab/b2b)
 
-- Enkle eller komplekse segmenter med segmentbygger: [Bygg din egen](segment-builder.md)
+Segment for forretningsforbindelser eller segment for kontakter (forhåndsversjon) med segmentverktøyet: [Bygg din egen](segment-builder.md)
+
+> [!NOTE]
+> De fleste eksportmål krever kontaktinformasjon for markedsføringsformål. Opprett derfor segmenter for kontakter for å bruke dem for disse eksportene.
 
 ---
 
 ## <a name="manage-existing-segments"></a>Behandle eksisterende segmenter
 
-Gå til **Segmenter**-siden for å vise segmentene du opprettet, statusen og tilstanden deres, antall medlemmer og sist gang dataene ble oppdatert. Du kan sortere listen over segmenter etter en hvilken som helst kolonne, eller du kan bruke søkefeltet til å finne segmentet du vil administrere.
+Gå til **Segmenter**-siden for å vise segmentene du opprettet, statusen og tilstanden deres, og sist gang dataene ble oppdatert. Du kan sortere listen over segmenter etter en hvilken som helst kolonne, eller du kan bruke søkefeltet til å finne segmentet du vil administrere.
+
+> [!TIP]
+> I B2B-miljøer viser kolonnen **Målgruppetype** om et segment er basert på forretningsforbindelser eller kontakter.
 
 Velg et segment for å vise tilgjengelige handlinger.
 
@@ -82,7 +88,7 @@ Den nedre delen inneholder en liste over medlemmene i segmentet.
 > [!NOTE]
 > Felt som vises i listen, er basert på attributtene til enhetene i segmentet.
 >
->Listen er en forhåndsvisning av de samsvarende segmentmedlemmene og viser de første 100 oppføringene av segmentet, slik at du raskt kan evaluere det og se gjennom definisjonene hvis det er nødvendig. Hvis du vil vise alle samsvarende oppføringer, [eksporterer du segmentet](export-destinations.md).
+> Listen er en forhåndsvisning av de samsvarende segmentmedlemmene og viser de første 100 oppføringene av segmentet, slik at du raskt kan evaluere det og se gjennom definisjonene hvis det er nødvendig. Hvis du vil vise alle samsvarende oppføringer, velger du **Se mer**, som åpner [**Enheter**](entities.md)-siden eller [eksporterer segmentet](export-destinations.md).
 
 ## <a name="refresh-segments"></a>Oppdatere segmenter
 

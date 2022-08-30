@@ -6,19 +6,19 @@ ms.date: 08/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
-ms.author: mukeshpo
+ms.author: sstabbert
 ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: 7f4829cfc14af623f724c6594e834f3fac1c15a9
-ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
+ms.openlocfilehash: 3f84c1c149f0befcbe489ccdd8a666ce6d5d798a
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/01/2022
-ms.locfileid: "9213639"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304485"
 ---
 # <a name="remove-duplicates-before-unifying-data"></a>Fjern duplikater før du samler data
 
@@ -47,7 +47,7 @@ Hvis du supplerte enheter på datakildenivå for å forbedre foreningsresultaten
 
 1. Velg en enhet på siden **Duplikatoppføringer**, og velg **Legg til regel** for å definere dedupliseringsreglene.
 
-   :::image type="content" source="media/m3_duplicates_showmore.png" alt-text="Skjermbilde av sidene duplikatoppføringer med Vis mer uthevet":::
+   :::image type="content" source="media/m3_duplicates_showmore.png" alt-text="Skjermbilde av siden Duplikatoppføringer der enheten er uthevet og Legg til regel vises"  lightbox="media/m3_duplicates_showmore.png":::
 
    1. Angi følgende informasjon i ruten **Legg til regel**:
       - **Velg felt**: Velg fra listen over tilgjengelige felter fra enheten du vil søke etter duplikater for. Velg felter som sannsynligvis er unike for hver enkelt kunde. For eksempel en e-postadresse eller en kombinasjon av navn, poststed og telefonnummer.
@@ -80,9 +80,9 @@ Hvis du supplerte enheter på datakildenivå for å forbedre foreningsresultaten
       - **Mest fylte**: Identifiserer oppføringen med de mest utfylte attributtfeltene som vinneroppføringen. Dette er standardalternativet for sammenslåing.
       - **Nyeste**: Identifiserer vinneroppføringen, basert på den nyeste oppføringen. Krever en dato eller et numerisk felt for å definere den nyeste.
       - **Minst nylig**: Identifiserer vinneroppføringen, basert på den minst nye oppføringen. Krever en dato eller et numerisk felt for å definere den nyeste.
-      
+
       Ved uavgjort er vinneroppføringen den med MAX(PK) eller den største primærnøkkelverdien.
-      
+
    1. Hvis du eventuelt vil definere fletteinnstillinger for individuelle attributter for en enhet, velger du **Avansert** nederst i ruten. Du kan for eksempel velge å beholde den nyeste e-postadressen OG den mest fullstendige adressen fra forskjellige oppføringer. Utvid enheten for å vise alle attributtene, og definer hvilket alternativ som skal brukes for enkeltattributter. Hvis du velger et besøksbasert alternativ, må du også angi et dato-/klokkeslettfelt som definerer ventetiden.
 
       :::image type="content" source="media/m3_adv_merge.png" alt-text="Ruten Avanserte fletteinnstillinger som viser den nyeste e-posten og den mest fullstendige adressen":::
@@ -96,18 +96,5 @@ Hvis du supplerte enheter på datakildenivå for å forbedre foreningsresultaten
 
 > [!div class="nextstepaction"]
 > [Neste trinn for flere enheter: Samsvarende betingelser](match-entities.md)
-
-## <a name="deduplication-output-as-an-entity"></a>Dedupliseringsutdata som en enhet
-
-Dedupliseringsprosessen oppretter en ny deduplisert enhet for hver av kildeenhetene. Disse enhetene kan finnes sammen med **ConflationMatchPairs:CustomerInsights** i **System**-delen på **Enheter**-siden med navnet **Deduplication_DataSource_Entity**.
-
-En utdataenhet for deduplisering inneholder følgende informasjon:
-
-- ID-er/nøkler
-  - Primærnøkkel- og Alternativ ID-felter. Alternativ ID-felt består av alle de alternative ID-ene som er identifisert for en oppføring.
-  - Feltet Deduplication_GroupId viser gruppen eller klyngen som identifiseres i en enhet, som grupperer alle lignende oppføringer basert på de angitte dedupliseringsfeltene. Det brukes til systembehandlingsformål. Hvis det ikke er angitt noen regler for manuell deduplisering og systemdefinerte dedupliseringsregler gjelder, kan det hende du ikke finner dette feltet i utdataenheten for deduplisering.
-  - Deduplication_WinnerId: Dette feltet inneholder vinner-ID-en fra de identifiserte gruppene eller klyngene. Hvis Deduplication_WinnerId er den samme som primærnøkkelverdien for en oppføring, betyr det at oppføringen er vinneroppføringen.
-- Felter brukes til å definere dedupliseringsreglene.
-- Feltene Regel og Poengsum for å angi hvilke av dedupliseringsreglene som ble brukt, og poengsummen som ble returnert av den samsvarende algoritmen.
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

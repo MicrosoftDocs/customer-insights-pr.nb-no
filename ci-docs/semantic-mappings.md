@@ -1,9 +1,9 @@
 ---
 title: Semantiske tilordninger (forhåndsversjon)
 description: Oversikt over semantiske tilordninger og hvordan du bruker dem.
-ms.date: 12/01/2021
+ms.date: 08/12/2022
 ms.subservice: audience-insights
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
@@ -11,18 +11,19 @@ manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - customerInsights
-ms.openlocfilehash: 7c9588ac7a132ca6f43cf26ea3a744109a0dd2b8
-ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
+ms.openlocfilehash: 8780c11c8b091717349f0fd75a36b99c3a63ab49
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/21/2022
-ms.locfileid: "9183643"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303888"
 ---
 # <a name="semantic-mappings-preview"></a>Semantiske tilordninger (forhåndsversjon)
 
-Med semantiske tilordninger kan du tilordne ikke-aktivitetsdata til forhåndsdefinerte skjemaer. Disse skjemaene hjelper Customer Insights å forstå dataattributtene bedre. Semantisk tilordning og de angitte dataene gir deg ny innsikt og nye funksjoner i Customer Insights. Hvis du vil tilordne aktivitetsdataene til skjemaene, ser du gjennom dokumentasjonen for [aktivitetene](activities.md).
+> [!NOTE]
+> Siden **Semantiske tilordninger** er bare tilgjengelig for forretningsmiljøer (B2B) der kontaktprofiler allerede er opprettet ved hjelp av denne siden. Du kan fortsette å opprette og administrere de individuelle kontaktprofilene ved hjelp siden **Semantiske tilordninger**. Eller du kan eventuelt [samle kontaktdataene](data-unification-contacts.md) for å fjerne duplikater, identifisere samsvar på tvers av entiteter og opprette én samlet kontaktprofil. Du kan deretter bruke den samlede kontaktprofilen til å opprette aktiviteter på kontaktnivå.
 
-**Semantiske tilordninger er for øyeblikket aktivert for miljøer basert på forretningskontoer**. *ContactProfile* er den eneste typen semantisk tilordning som for øyeblikket er tilgjengelig i Customer Insights.
+Med semantiske tilordninger kan du tilordne ikke-aktivitetsdata til forhåndsdefinerte skjemaer. Disse skjemaene hjelper Customer Insights med å forstå dataattributtene bedre. Semantisk tilordning og de angitte dataene gir deg ny innsikt og nye funksjoner i Customer Insights. Hvis du vil tilordne aktivitetsdataene til skjemaene, ser du gjennom dokumentasjonen for [aktivitetene](activities.md).
 
 ## <a name="define-a-contactprofile-semantic-entity-mapping"></a>Definere en semantisk enhetstilordning for ContactProfile
 
@@ -87,41 +88,5 @@ Velg den semantiske tilordningen for å vise tilgjengelige handlinger.
 - **Oppdater** den semantiske tilordningen slik at den inneholder de nyeste dataene. Oppdatering av en gitt semantisk tilordning oppdaterer alle semantiske tilordninger av samme type.
 - **Gi nytt navn** til den semantiske tilordningen. Velg **Lagre**.
 - **Slett** den semantiske tilordningen. Hvis du vil slette flere semantiske tilordninger samtidig, velger du de semantiske tilordningene og sletteikonet. Velg **Slett** for å bekrefte slettingen.
-
-## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Bruke en semantisk ContactProfile-enhetstilordning til å opprette aktiviteter på kontaktnivå
-
-Når du har opprettet en semantisk enhetstilordning for *ContactProfile*, kan du registrere aktiviteter for kontakter. Den gjør det mulig å se på aktivitetstidslinjen for en forretningsforbindelse hvilken kontakt som var ansvarlig for hver aktivitet. De fleste trinnene følger den vanlige konfigurasjonen av aktivitetstilordninger.
-
-   > [!NOTE]
-   > For at aktiviteter på kontaktnivå skal fungere, må du ha både **AccountID**- og **ContactID**-attributtene for hver oppføring for aktivitetsdataene.
-
-1. [Definer en semantisk *ContactProfile*-enhetstilordning](#define-a-contactprofile-semantic-entity-mapping), og kjør den semantiske tilordningen.
-
-1. Gå til **Data** > **Aktiviteter**.
-
-1. Velg **Legg til aktivitet** for å opprette en ny aktivitet.
-
-1. Gi aktiviteten et navn, velg kildeaktivitetsenheten, og velg hovednøkkelen for aktivitetsenheten.
-
-1. I trinnet **Relasjoner** oppretter du en indirekte relasjon mellom aktivitetskildedataene til forretningsforbindelser ved å bruke kontaktdataene som en mellomenhet. Hvis du vil ha mer informasjon, kan du se [direkte og indirekte relasjonsbaner](relationships.md#relationship-paths).
-   - Eksempelrelasjon for en aktivitet kalt *Kjøp*:
-      - **Aaktivitetsdata for kilde for kjøp** > **Kontakdata** på attributtet **ContactID**
-      - **Kontaktdata** > **Data om forretningsforbindelse** på attributtet **AccountID**
-
-   :::image type="content" source="media/Contact_Activities1.png" alt-text="Eksempel på relasjonsoppsett.":::
-
-1. Når du har satt opp Relasjoner, velger du **Neste** og fullfører konfigurasjonen av aktivitetstilordningen. Hvis du vil ha detaljerte trinn for oppretting av aktiviteter, kan du se [definere en aktivitet](activities.md).
-
-1. Kjør aktivitetstilordningene.
-
-1. Etter at en aktivitetstilordning på kontaktnivå har kjørt, velger du **Kunder**. Aktivitetene på kontaktnivå vises på kundetidslinjen.
-
-   :::image type="content" source="media/Contact_Activities2.png" alt-text="Endelig resultat etter konfigurasjon av kontaktaktiviteter":::
-
-### <a name="contact-level-activity-timeline-filtering"></a>Tidslinjefiltrering av aktivitet på kontaktnivå
-
-Aktivitetstidslinjen for kundene inkluderer ID-ene eller navnene deres, avhengig av *ContactProfile*-konfigurasjonen for aktivitetene de handlet på. Filtrer aktiviteter etter kontakter på tidslinjen for å se bestemte kontakter du er interessert i. Hvis du vil vise alle aktiviteter som ikke er tilordnet til en bestemt kontakt, velger du **Aktiviteter som ikke er tilordnet til en kontakt**.
-
-:::image type="content" source="media/Contact_Activities3.png" alt-text="Filtreringsalternativer som er tilgjengelige for aktiviteter på kontaktnivå.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

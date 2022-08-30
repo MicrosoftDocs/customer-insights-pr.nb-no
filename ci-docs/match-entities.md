@@ -2,7 +2,7 @@
 title: Samsvar betingelser for dataforening
 description: Samsvar enheter for å opprette enhetlige kundeprofiler.
 recommendations: false
-ms.date: 05/05/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,12 +14,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: e3e4e37d5b4c9caf2520a789d5f78ef33b491793
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: eaa3409aaa7541dc88953336942e43afaf6511c6
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139715"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304669"
 ---
 # <a name="match-conditions-for-data-unification"></a>Samsvar betingelser for dataforening
 
@@ -27,6 +27,8 @@ Dette trinnet i samlingen definerer samsvarsrekkefølgen og reglene for samsvar 
 
 > [!NOTE]
 > Når du har opprettet samsvarsbetingelsene og valgt **Neste**, kan du ikke fjerne en valgt enhet eller et valgt attributt. Velg **Tilbake** hvis nødvendig for å se gjennom de valgte enhetene og attributtene før du fortsetter.
+
+[!INCLUDE [m3-first-run-note](includes/m3-first-run-note.md)]
 
 ## <a name="include-enriched-entities-preview"></a>Inkludere supplerte enheter (forhåndsversjon)
 
@@ -43,16 +45,16 @@ Hvis du supplerte enheter på datakildenivå for å forbedre foreningsresultaten
 Hvert samsvar forener to eller flere enheter i én konsolidert enhet. Samtidig beholdes de unike kundeoppføringene. Samsvarsrekkefølgen angir rekkefølgen systemet prøver å samsvare oppføringene i.
 
 > [!IMPORTANT]
-> Den første enheten i listen kalles hovedenhet. Hovedenheten fungerer som grunnlag for dine enhetlige profildatasett. Flere enheter som er valgt, blir lagt til denne enheten.
+> Den første enheten kalles hovedenheten, som fungerer som grunnlaget for de samlede profilene. Flere enheter som er valgt, blir lagt til denne enheten.
 >
 > Viktige hensyn:
 >
 > - Velg enheten med de mest fullstendige og pålitelige profildataene om kundene som hovedenhet.
 > - Velg enheten som har flere attributter til felles med andre enheter (for eksempel navn, telefonnummer eller e-postadresse) som primær enhet.
 
-1. Bruk pilene flytt opp og pil ned på siden **Samsvarende betingelser** til å flytte enhetene i ønsket rekkefølge, eller flytt og slipp dem. Velg for eksempel **Contacts:eCommerce** som hovedenhet og **CustomerLoyalty:Loyalty** som andre enhet.
+1. Bruk pilene flytt opp og pil ned på siden **Samsvarende betingelser** til å flytte enhetene i ønsket rekkefølge, eller flytt og slipp dem. Velg for eksempel **eCommerceCustomers** som hovedenhet og **loyCustomers** som den andre enheten.
 
-1. For å inkludere alle oppføringer i enheten som en unik kunde uavhengig av om et treff blir funnet, velger du **Inkluder alle oppføringer**. Alle oppføringer i denne enheten som ikke samsvarer med oppføringer i andre enheter, inkluderes i den enhetlige profilen. Oppføringer som ikke har treff, kalles enkeltdatabaser.
+1. For å inkludere alle oppføringer i enheten som en unik kunde uavhengig av om et treff blir funnet, velger du **Inkluder alle oppføringer**. Alle oppføringer i denne enheten som ikke samsvarer med oppføringer i noen annen enhet, inkluderes i den enhetlige profilen. Oppføringer som ikke har treff, kalles enkeltdatabaser.
   
 Primærenheten *Contacts:eCommerce* samsvares med neste enhet *CustomerLoyalty:Loyalty*. Datasettet som er et resultat av det første samsvarstrinnet, samsvares med enheten nedenfor hvis du har flere enn to enheter.
 
@@ -70,7 +72,7 @@ Advarselen ved siden av et enhetsnavn betyr at ingen samsvarsregel er definert f
 
    :::image type="content" source="media/m3_add_rule.png" alt-text="Skjermbilde av ruten Legg til regel.":::
 
-   - **Velg Enhet/felt (første rad)**: Velg en relatert enhet og et attributt for å angi en oppføringsegenskap som sannsynligvis er unik for en kunde. For eksempel et telefonnummer eller en e-postadresse. Unngå samsvar etter attributter av aktivitetstypen. En kjøps-ID samsvarer for eksempel sannsynligvis ikke med andre oppføringstyper.
+   - **Velg Enhet/felt (første rad)**: Velg en enhet og et attributt som sannsynligvis er unik for en kunde. For eksempel et telefonnummer eller en e-postadresse. Unngå samsvar etter attributter av aktivitetstypen. En kjøps-ID samsvarer for eksempel sannsynligvis ikke med andre oppføringstyper.
 
    - **Velg Enhet/Felt (andre rad)**: Velg et attributt som er relatert til attributtet til enheten som er angitt i den første raden.
 
@@ -116,7 +118,7 @@ Samsvarsregler representerer sett med betingelser. Hvis du vil samsvare enheter 
 
 ### <a name="add-exceptions-to-a-rule"></a>Legge til unntak i en regel
 
-I de fleste tilfeller samsvarer enheten med kundeemner til unike kundeprofiler med konsoliderte data. Hvis du vil adressere sjeldne tilfeller av falske positive og falske negativer dynamisk, kan du definere unntak for en samsvarsregel. Unntak brukes etter behandling av samsvarsreglene og unngår samsvar for alle oppføringer, som oppfyller unntaksvilkårene.
+I de fleste tilfeller samsvarer enheten med kundeemner til unike kundeprofiler med konsoliderte data. For å håndtere sjeldne tilfeller av falske positive og falske negativer definerer du unntak for en samsvarsregel. Unntak brukes etter behandling av samsvarsreglene og unngår samsvar for alle oppføringer, som oppfyller unntaksvilkårene.
 
 Hvis for eksempel samsvarsregelen kombinerer etternavn, poststed og fødselsdato, vil systemet identifisere tvillinger med samme etternavn som bor i samme by som har samme profil. Du kan angi et unntak som ikke samsvarer med profilene hvis fornavn i enhetene du kombinerer, ikke er de samme.
 
@@ -134,7 +136,7 @@ Du kan angi betingelser som overstyrer standard samsvarslogikk. Fire alternative
 |---------|---------|---------|
 |Samsvar alltid     | Definerer verdier som alltid samsvarer.         |  Samsvar alltid *Mike* og *MikeR*.       |
 |Samsvar aldri     | Definerer verdier som aldri samsvarer.        | Samsvar aldri *John* og *Jonathan*.        |
-|Egendefinert utelatelse     | Definerer verdier som systemet alltid skal ignorere i samsvarsfasen. |  Ignorer verdiene *11111* og *Ukjent* under samsvar.        |
+|Utelat            | Definerer verdier som systemet alltid skal ignorere i samsvarsfasen. |  Ignorer verdiene *11111* og *Ukjent* under samsvar.        |
 |Aliastilordning    | Definere verdier som systemet skal anse som samme verdi.         | Anse *Joe* lik som *Joseph*.        |
 
 1. Velg **Egendefinert**.

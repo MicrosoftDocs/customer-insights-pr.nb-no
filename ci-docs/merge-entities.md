@@ -2,7 +2,7 @@
 title: Forene kundefelter for dataforening
 description: Slå sammen enheter for å opprette enhetlige kundeprofiler.
 recommendations: false
-ms.date: 05/04/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,18 +14,18 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
-ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
+ms.openlocfilehash: 7ebd6ab8fa6ae141f33295a5d7723e96c8dc70ca
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/01/2022
-ms.locfileid: "9213594"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304025"
 ---
-# <a name="unify-customer-fields-for-data-unification"></a>Forene kundefelter for dataforening
+# <a name="unify-customer-fields"></a>Samle kundefelter
 
-I dette trinnet i samlingsprosessen velger og utelater du attributter som skal flettes inn i enheten for den enhetlige profilen. Hvis for eksempel tre enheter hadde e-postdata, vil du kanskje beholde alle tre separate e-postfelter eller slå dem sammen til ett enkelt e-postfelt for den enhetlige profilen. Noen attributter kombineres automatisk av systemet. Du kan opprette stabile og unike kunde-ID-er og gruppere relaterte profiler i en klynge.
+I dette trinnet i samlingsprosessen velger og utelater du attributter som skal flettes inn i enheten for den enhetlige profilen. Hvis for eksempel tre enheter hadde e-postdata, vil du kanskje beholde alle tre separate e-postfelter eller slå dem sammen til ett enkelt e-postfelt for den enhetlige profilen. Noen attributter kombineres automatisk av systemet. Du kan opprette stabile og unike kunde-ID-er. Du kan gruppere relaterte profiler i en klynge for enkeltkunder.
 
-:::image type="content" source="media/m3_unify.png" alt-text="Slå sammen-siden i dataforeningsprosessen som viser tabell med sammenslåtte felter som definerer den enhetlige kundeprofilen.":::
+:::image type="content" source="media/m3_unify.png" alt-text="Siden Samle kundefelter i datasamlingsprosessen som viser tabell med sammenslåtte felter som definerer den enhetlige kundeprofilen.":::
 
 ## <a name="review-and-update-the-customer-fields"></a>Se gjennom og oppdater kundefeltene
 
@@ -47,7 +47,7 @@ I dette trinnet i samlingsprosessen velger og utelater du attributter som skal f
 
 1. [Generer eventuelt konfigurasjon av kunde-ID](#configure-customer-id-generation).
 
-1. [Grupper eventuelt profiler i husholdninger eller klynger](#group-profiles-into-households-or-clusters).
+1. For B2C kan du eventuelt [gruppere profiler i husholdninger eller klynger](#group-profiles-into-households-or-clusters).
 
 > [!div class="nextstepaction"]
 > [Neste trinn: Se gjennom samlingen](review-unification.md)
@@ -161,7 +161,7 @@ Konfigurasjon av en stabil kunde-ID gjør det mulig å unngå denne virkemåten.
 
 ## <a name="group-profiles-into-households-or-clusters"></a>Grupper profiler i husholdninger eller klynger
 
-Du kan definere regler for å gruppere relaterte profiler i en klynge. Det finnes for øyeblikket to typer klynger som er tilgjengelige – husholdning og tilpassede klynger. Systemet velger automatisk en husholdning med forhåndsdefinerte regler hvis *Kunde*-enheten inneholder de semantiske felter *Person.LastName* og *Location.Address*. Du kan også opprette en klynge med dine egne regler og betingelser, omtrent som [samsvarsregler](match-entities.md#define-rules-for-match-pairs).
+Du kan definere regler for å gruppere relaterte profiler i en klynge for enkeltkunder. Det finnes for øyeblikket to typer klynger som er tilgjengelige – husholdning og tilpassede klynger. Systemet velger automatisk en husholdning med forhåndsdefinerte regler hvis *Kunde*-enheten inneholder de semantiske felter *Person.LastName* og *Location.Address*. Du kan også opprette en klynge med dine egne regler og betingelser, omtrent som [samsvarsregler](match-entities.md#define-rules-for-match-pairs).
 
 1. Velg **Avansert** > **Opprett klynge**.
 

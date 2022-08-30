@@ -1,7 +1,7 @@
 ---
 title: Opprett komplekse segmenter med segmentverktøyet
 description: Bruk segmentverktøyet til å opprette komplekse kundesegmenter ved å gruppere dem basert på ulike attributter.
-ms.date: 03/25/2022
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
@@ -13,19 +13,19 @@ searchScope:
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: cde373cd65e296675e1b3c92f3024e1093853842
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 7f691fd0b2ea76a2960d5adf766a4b166f02ebb4
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170647"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304761"
 ---
 # <a name="create-complex-segments-with-segment-builder"></a>Opprett komplekse segmenter med segmentverktøyet
 
-Definer komplekse filtre rundt enheten for enhetlig kunde og de relaterte enhetene. Hvert segment, etter behandlingen, oppretter et sett med kundeoppføringer som du kan eksportere og utføre handlinger på.
+Definer komplekse filtre rundt enheten for enhetlig kunde eller enhetlig kontakt de relaterte enhetene. Hvert segment, etter at behandlingen er behandlet, oppretter et sett med kunde- eller kontaktoppføringer som du kan eksportere og utføre handlinger på.
 
 > [!TIP]
-> Segmenter basert på **individuelle kunder** inkluderer automatisk tilgjengelig kontaktinformasjon for segmentmedlemmer. I miljøer for **forretningsforbindelser** er segmenter basert på forretningsforbindelser (selskaper eller datterselskaper). Hvis du vil inkludere kontaktinformasjon i et segment, bruker du funksjonen **Prosjektattributter** i segmentverktøyet. Kontroller at kontaktdataene er [tilordnet semantisk til ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping)-enheten.
+> Segmenter basert på **individuelle kunder** inkluderer automatisk tilgjengelig kontaktinformasjon for segmentmedlemmer. Hvis du [samlet](data-unification.md) både forretningsforbindelser og kontakter i **forretningskontoer**, velger du om segmentet er basert på forretningsforbindelser eller forretningskontakter. Hvis du vil eksportere til et mål som forventer kontaktinformasjon, bruker du et segment med kontakter. Hvis du vil eksportere til et mål som forventer forretningsforbindelsesinformasjon, bruker du et segment med forretningsforbindelser.
 
 ## <a name="segment-builder"></a>Segmentverktøy
 
@@ -57,6 +57,11 @@ Eksemplet ovenfor illustrerer segmenteringsfunksjonen. Vi har definert et segmen
 
 1. Velg **Ny** > **Bygg din egen**. På siden for segmentverktøyet definerer eller skriver du regler. En regel består av ett eller flere betingelser som definerer et sett kunder.
 
+   > [!NOTE]
+   > For miljøer basert på forretningskontoer velger du **Nytt** > **Segment for forretningsforbindelser** eller **Segment for kontakter (forhåndsversjon)** basert på typen segment du vil opprette. Hvis et [forretningsforbindelseshierarki](relationships.md#set-up-account-hierarchies) er definert og du vil opprette regler for å filtrere ut data basert på relasjon mellom underordnet og overordnet, velger du **Vil du bruke hierarki? (forhåndsversjon)**, velger hierarkiet og deretter **Bruk**.
+   >
+   > :::image type="content" source="media/segment_acct_hierarchy.png" alt-text="Ruten Velg forretningsforbindelseshierarki for segment.":::
+
 1. Velg **Rediger detaljer** ved siden av Segment uten tittel. Angi et navn for segmentet, og oppdater det foreslåtte **utdataentitetsnavnet** for segmentet. Du kan eventuelt legge til en beskrivelse og [merker](work-with-tags-columns.md#manage-tags) i segmentet.
 
    :::image type="content" source="media/segments_edit_details.png" alt-text="Dialogboksen Rediger detaljer.":::
@@ -65,11 +70,11 @@ Eksemplet ovenfor illustrerer segmenteringsfunksjonen. Vi har definert et segmen
    - Se gjennom listen over tilgjengelige enheter og attributter i ruten **Legg til i regel**, og velg ikonet **+** ved siden av attributtet du vil legge til. Velg om du vil legge til attributtet i en eksisterende regel eller bruke den til å opprette en ny regel.
    - Skriv inn navnet på attributtet i regeldelen for å vise samsvarende forslag.
 
-1. Velg operatorene for å angi de samsvarende verdiene for betingelsen. Attributtet kan ha en av fire datatyper som verdi: numerisk, streng, dato eller boolsk. Avhengig av datatypen til attributtet, kan ulike operatorer angi betingelsen. For segmenter med forretningskontoer er to spesielle operatorer tilgjengelige for å inkludere potensielle hierarkier mellom de integrerte forretningsforbindelsene. Bruk *underordnet av*- og *overordnet for*-operatoren til å inkludere relaterte forretningsforbindelser.
+1. Velg operatorene for å angi de samsvarende verdiene for betingelsen. Attributtet kan ha en av fire datatyper som verdi: numerisk, streng, dato eller boolsk. Avhengig av datatypen til attributtet, kan ulike operatorer angi betingelsen.
 
 1. Velg **Legg til betingelse** for å legge til flere betingelser i en regel. Hvis du vil opprette en regel under den gjeldende regelen, velger du **Legg til underregel**.
 
-1. Hvis en regel bruker andre enheter enn *Kunde*-enheten, velger du **Angi relasjonsbane** for å tilordne den valgte enheten til den enhetlige kundeenheten. Hvis det bare finnes én mulig relasjonsbane, velger systemet den automatisk. Ulike [relasjonsbaner](relationships.md#relationship-paths) kan gi forskjellige resultater. Hver regel kan ha sin egen relasjonsbane.
+1. Hvis en regel bruker andre enheter enn *Kunde*-enheten (eller *ContactProfile*-enheten for B2B), velger du **Angi relasjonsbane** for å tilordne den valgte enheten til enheten for enhetlig kunde. Hvis det bare finnes én mulig relasjonsbane, velger systemet den automatisk. Ulike [relasjonsbaner](relationships.md#relationship-paths) kan gi forskjellige resultater. Hver regel kan ha sin egen relasjonsbane.
 
    :::image type="content" source="media/relationship-path.png" alt-text="Mulig relasjonsbane ved oppretting av en regel basert på en enhet tilordnet til den enhetlige kundeenheten.":::
 
@@ -92,24 +97,22 @@ Eksemplet ovenfor illustrerer segmenteringsfunksjonen. Vi har definert et segmen
       - **Intersect** overlapper de to gruppene. Bare data som *er felles* for begge gruppene, forblir i den enhetlige gruppen.
       - **Bortsett fra** kombinerer de to gruppene. Bare data i gruppe A som *ikke er felles* for data i gruppe B, beholdes.
 
-1. Utdataenheten inneholder som standard automatisk alle attributtene for kundeprofiler som samsvarer med de definerte filtrene. Hvis et segment er basert på andre enheter enn *Kunde*-enheten, velger du **Prosjektattributter** for å legge til flere attributter fra disse enhetene i utdataenheten.
-
-   > [!IMPORTANT]
-   > For segmenter som er basert på forretningsforbindelser, må detaljer om én eller flere kontakter for hver konto fra enheten *ContactProfile* inkluderes i segmentet for å tillate at dette segmentet aktiveres eller eksporteres til mål som krever kontaktinformasjon. Hvis du vil ha mer informasjon om *ContactProfile*-enheten, kan du se [Semantiske tilordninger](semantic-mappings.md).
-   > Et eksempel på utdata for et segment basert på forretningskontoer med beregnede attributter for kontakter, kan se slik ut:
-   >
-   > |ID  |Kontonavn  |Omsetning  |Kontaktnavn  | Kontaktrolle|
-   > |---------|---------|---------|---------|---|
-   > |10021     | Contoso | 100 000 | [Abbie Moss, Ruth Soto]  | [CEO, prosjektbehandling]
-
-   :::image type="content" source="media/segments-project-attributes.png" alt-text="Eksempel på beregnede attributter som er valgt i sideruten, som skal legges til i utdataenheten.":::
-  
+1. Utdataenheten inneholder som standard automatisk alle attributtene for kundeprofiler som samsvarer med de definerte filtrene. Når du bruker *ContactProfile*-enheten i B2B, inkluderes forretningsforbindelses-ID-en automatisk. Hvis et segment er basert på andre enheter enn *Kunde*-enheten, eller hvis du vil inkludere flere attributter fra *ContactProfile*, velger du **Prosjektattributter** for å legge til flere attributter fra disse enhetene i utdataenheten.
+ 
    Eksempel: Et segment er basert på en enhet som inneholder innkjøpsdata, som er relatert til *Kunde*-enheten. Segmentet ser etter alle kunder fra Spania som kjøpte varer i inneværende år. Du kan velge å føye til attributter som prisen på varer, eller innkjøpsdatoen i alle samsvarende kundeoppføringer i utdataenheten. Denne informasjonen kan være nyttig for å analysere årstidskorrelasjoner med de totale kostnadene.
 
+   :::image type="content" source="media/segments-project-attributes.png" alt-text="Eksempel på beregnede attributter som er valgt i sideruten, som skal legges til i utdataenheten.":::
+ 
+   Et eksempel på utdata for et segment basert på forretningskontoer med beregnede attributter for kontakter, kan se slik ut:
+
+   |ID  |Kontonavn  |Omsetning  |Kontaktnavn  | Kontaktrolle|
+   |---------|---------|---------|---------|---|
+   |10021     | Contoso | 100 000 | [Abbie Moss, Ruth Soto]  | [CEO, prosjektbehandling]
+
    > [!NOTE]
-   > - **Prosjektattributter** fungerer bare for enheter som har en én-til-mange-relasjon med kundeenheten. Én kunde kan for eksempel ha flere abonnementer.
-   > - Hvis attributtet du vil prosjektere, er mer enn én stasjon borte fra *Kunde*-enheten, som definert av relasjonen, må dette attributtet brukes i hver regel i segmentspørringen du bygger.
-   > - Hvis attributtet du vil prosjektere, bare er én stasjon borte fra *Kunde*-enheten, må ikke dette attributtet finnes i hver regel i segmentspørringen du bygger.
+   > - **Anslå attributter** fungerer bare for enheter som har en én-til-mange-relasjon til *Kunde*- eller *ContactProfile*-enheten. Én kunde kan for eksempel ha flere abonnementer.
+   > - Hvis attributtet du vil anslå, er mer enn én stasjon borte fra *Kunde* eller *ContactProfile*-enheten, som definert av relasjonen, må dette attributtet brukes i hver regel i segmentspørringen du bygger.
+   > - Hvis attributtet du vil anslå, bare er én stasjon borte fra *Kunde*- eller *ContactProfile*-enheten, må ikke dette attributtet finnes i hver regel i segmentspørringen du bygger.
    > - **Beregnede attributter** beregner ved bruk av angitte operatorer.
 
 1. Velg **Kjør** for å opprette segmentet. Velg **Lagre** hvis du vil beholde gjeldende konfigurasjon og kjøre segmentet senere. **Segmenter**-siden vises.

@@ -1,19 +1,19 @@
 ---
 title: Eksportere segmenter til LinkedIn-annonser (forhåndsversjon)
 description: Finn ut hvordan du konfigurerer tilkoblingen og eksporterer til LinkedIn-annonser.
-ms.date: 07/25/2022
+ms.date: 08/12/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d1a9ae985043398f4bc38163be26ecf0c3c8e2ba
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 4c3928e05db0ebda262b4ad3e928ce85f70035b9
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196820"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304715"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Eksportere segmenter til LinkedIn-annonser (forhåndsversjon)
 
@@ -24,7 +24,7 @@ Eksporter segmenter av enhetlige kundeprofiler til LinkedIn-annonser for å oppr
 - En [LinkedIn Campaign Manager-konto](https://business.linkedin.com/marketing-solutions/ads) og tilsvarende administratorlegitimasjon.
 - En [LinkedIn Campaign Manager-konto-ID](https://www.linkedin.com/help/lms/answer/a424270).
 - [Konfigurerte segmenter](segments.md) i Customer Insights.
-- Enhetlige kundeprofiler i de eksporterte segmentene inneholder et felt som representerer en e-postadresse.
+- De eksporterte segmentene trenger minst ett bestemt felt, avhengig av om du velger [kontaktmålretting](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) eller [firmamålretting](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) på LinkedIn. De mulige feltene vises i trinnet **Datasamsvar** når du [konfigurerer eksporten](#configure-an-export).
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 

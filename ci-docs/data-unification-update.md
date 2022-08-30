@@ -1,11 +1,11 @@
 ---
-title: Oppdater samlingsinnstillingene
-description: Oppdater duplikatregler, samsvarsregler eller enhetlige felter i samlingsinnstillingene.
-ms.date: 06/01/2022
+title: Oppdatere innstillinger for kunde-, forretningsforbindelses- eller kontaktsamling
+description: Oppdater duplikatregler, samsvarsregler eller samlede felter i innstillingene for kunde- eller forretningsforbindelsessamling.
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: v-wendysmith
-ms.author: mukeshpo
+author: Scott-Stabbert
+ms.author: sstabbert
 ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
@@ -13,20 +13,26 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: a7cf06c07e4b95b848a55dfe5fe0b09397fe744e
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: f2c14c169f5973b5f400989b9eeea593eba09182
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245606"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304347"
 ---
-# <a name="update-the-unification-settings"></a>Oppdater samlingsinnstillingene
+# <a name="update-unification-settings"></a>Oppdater samlingsinnstillinger
 
 Hvis du vil se gjennom eller endre eventuelle enhetlige innstillinger når en enhetlig profil er opprettet, utfører du følgende trinn:
 
 1. Gå til **Data** > **Samle**.
 
-   :::image type="content" source="media/m3_unified.png" alt-text="Skjermbilde av siden for datasamling etter at dataene er enhetlig.":::
+   For enkeltkunder (B2C) viser **Samle**-siden antall samlede kundeprofiler og -fliser for hvert av samlingstrinnene.
+
+   :::image type="content" source="media/m3_unified.png" alt-text="Skjermbilde av siden for datasamling etter at dataene er enhetlig." lightbox="media/m3_unified.png":::
+
+   For forretningsforbindelser (B2B) viser **Samle**-siden antall samlede forretningsforbindelsesprofiler og -fliser for hvert av samlingstrinnene for forretningsforbindelse. Hvis kontaktene er samlet, vises antall samlede kontaktprofiler og -fliser for hvert av samlingstrinnene for kontakt. Velg den riktige flisen under **Samle forretningsforbindelser** eller **Samle kontakter (forhåndsversjon)** avhengig av hva du vil oppdatere.
+
+   :::image type="content" source="media/b2b_unified.png" alt-text="Skjermbilde av siden for datasamling etter at forretningsforbindelses- og kontaktdataene er samlet." lightbox="media/b2b_unified.png":::
 
    > [!TIP]
    > Flisen **Samsvarende betingelser** vises bare hvis flere enheter er valgt.
@@ -36,14 +42,14 @@ Hvis du vil se gjennom eller endre eventuelle enhetlige innstillinger når en en
    - [Duplikatoppføringer](#manage-deduplication-rules) for å behandle dupliseringsregler eller fletteinnstillinger.
    - [Samsvarende betingelser](#manage-match-rules) for å oppdatere samsvarende regler på tvers av to eller flere enheter.
    - [Enhetlige kundefelter](#manage-unified-fields) som kan kombinere eller utelate felter. Du kan også gruppere relaterte profiler i klynger.
+   - [Semantiske felter](#manage-semantic-fields-for-unified-contacts) for å behandle semantiske typer for samlede kontaktfelter.
+   - [Relasjoner](#manage-contact-and-account-relationships) for å administrere relasjonen mellom kontakt og forretningsforbindelse.
 
 1. Når du har gjort endringene, velger du det neste alternativet:
 
-   :::image type="content" source="media/m3_run_match_merge.png" alt-text="Skjermbilde av siden for datasamling med alternativene for samling uthevet.":::
-
    - [Kjør samsvarende betingelser](#run-matching-conditions) for å evaluere kvaliteten på de samsvarende betingelsene (deduplisering og samsvarsregler) uten å oppdatere den enhetlige profilen. Alternativet **Kjør bare samsvarende betingelser** vises ikke for én enhet.
-   - [Samle kundeprofiler](#run-updates-to-the-unified-customer-profile) for å kjøre samsvarende betingelser og oppdatere enheten for Unified customer profile uten at det påvirker avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Avhengige prosesser kjøres ikke, men oppdateres som [definert i oppdateringsplanen](schedule-refresh.md).
-   - [Samle kundeprofiler og -avhengigheter](#run-updates-to-the-unified-customer-profile) for å kjøre samsvarende betingelser og oppdatere enheten for Unified customer profile og alle avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Alle prosesser kjører på nytt automatisk.
+   - [Samle profiler](#run-updates-to-the-unified-profile) for å kjøre samsvarende betingelser og oppdatere enheten for samlet profil uten at det påvirker avhengigheter (for eksempel suppleringer, segmenter eller mål). Avhengige prosesser kjøres ikke, men oppdateres som [definert i oppdateringsplanen](schedule-refresh.md).
+   - [Samle profiler og avhengigheter](#run-updates-to-the-unified-profile) for å kjøre samsvarende betingelser, oppdatere enheten for samlet profil og oppdatere alle avhengigheter (for eksempel suppleringer, segmenter eller mål). Alle prosesser kjører på nytt automatisk. I B2B kjøres samling på både forretningsforbindelses- og kontaktenhetene, slik at de samlede profilene oppdateres.
 
 ## <a name="edit-source-fields"></a>Rediger kildefelter
 
@@ -55,11 +61,11 @@ Du kan ikke fjerne et attributt eller en enhet hvis de allerede er samlet.
 
    Antall tildelte og ikke tildelte felter vises.
 
-1. Velg **Velg enheter og felter** for å legge til andre attributter eller enheter. Bruk søket eller rull for å finne og velge ønskede attributter og enheter. Velg **Bruk**.
+1. Velg **Velg enheter og felter** for å legge til andre attributter eller enheter.
 
-1. Du kan eventuelt endre primærnøkkelen for en enhet, attributtypene og aktivere eller deaktivere **Intelligent tildeling**. Hvis du vil ha mer informasjon, kan du se [Velg primærnøkkel og semantisk type for attributter](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+1. Du kan eventuelt endre primærnøkkelen for en enhet, attributtypene og aktivere eller deaktivere **Intelligent tildeling**. Hvis du vil ha mer informasjon, kan du se [Velg kildefelter](map-entities.md).
 
-1. Velg **Neste** for å gjøre endringer i dedupliseringsregler, eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillingene](#update-the-unification-settings).
+1. Velg **Neste** for å gjøre endringer i dedupliseringsregler, eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillinger](#update-unification-settings).
 
 ## <a name="manage-deduplication-rules"></a>Administrer dedupliseringsregler
 
@@ -69,7 +75,7 @@ Du kan ikke fjerne et attributt eller en enhet hvis de allerede er samlet.
 
    Antall duplikatoppføringer som ble funnet, vises under **Duplikater**. Kolonnen **Oppføringer som er deduplisert**, viser hvilke enheter som hadde duplikatoppføringer og prosentandelen dupliserte oppføringer.
 
-1. Hvis du har lagt til en supplert enhet, velger du **Bruk supplerte enheter**. Hvis du vil ha mer informasjon, kan du se [Supplering for datakilder](data-sources-enrichment.md).
+1. Hvis du bruker en supplert enhet, velger du **Bruk supplerte enheter**. Hvis du vil ha mer informasjon, kan du se [Supplering for datakilder](data-sources-enrichment.md).
 
 1. Velg et av følgende alternativer for å behandle dedupliseringsregler:
    - **Opprett en ny regel**: Velg **Legg til regel** under den riktige enheten. Hvis du vil ha mer informasjon, kan du se [Definer dedupliseringsregler](remove-duplicates.md#define-deduplication-rules).
@@ -83,11 +89,9 @@ Du kan ikke fjerne et attributt eller en enhet hvis de allerede er samlet.
    1. Velg **Rediger fletteinnstillinger** og endre alternativet **Oppføring som skal beholdes**.
    1. Hvis du vil endre fletteinnstillinger for enkeltattributter for en enhet, velger du **Avansert** og gjør de nødvendige endringene.
 
-      :::image type="content" source="media/m3_adv_merge.png" alt-text="Skjermbilde av avanserte fletteinnstillinger som viser den nyeste e-posten og den mest fullstendige adressen":::
-
    1. Velg **Ferdig**.
 
-1. Velg **Neste** for å gjøre endringer i samsvarende betingelser, eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillingene](#update-the-unification-settings).
+1. Velg **Neste** for å gjøre endringer i samsvarende betingelser, eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillinger](#update-unification-settings).
 
 ## <a name="manage-match-rules"></a>Administrer samsvarsregler
 
@@ -100,7 +104,7 @@ Du kan omkonfigurere og finjustere de fleste av samsvarsparameterne. Du kan ikke
    Siden viser samsvarsrekkefølgen og definerte regler og følgende statistikk:
    - **Unike kildeoppføringer** viser antall individuelle kildeoppføringer som ble behandlet i siste samsvarskjøring.
    - **Samsvarende og ikke-samsvarende oppføringer** uthever hvor mange unike oppføringer som gjenstår etter behandling av samsvarsreglene.
-   - **Bare samsvarende oppføringer** viser bare antall treff på tvers av alle samsvarsparene.
+   - **Bare samsvarende oppføringer** viser antall treff på tvers av alle samsvarsparene.
 
 1. Velg **Vis sist kjørt** for å vise resultatene for alle reglene og resultatene for dem. Resultatene vises, inkludert de alternative kontakt-ID-ene. Du kan laste ned resultatene.
 
@@ -120,7 +124,7 @@ Du kan omkonfigurere og finjustere de fleste av samsvarsparameterne. Du kan ikke
    - **Dupliser en regel**: Velg regelen og deretter **Dupliser** for å opprette en lignende regel med endringer.
    - **Slett en regel**: Velg regelen og deretter **Slett**.
 
-1. Velg **Neste** for å gjøre endringer i enhetlige felter, eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillingene](#update-the-unification-settings).
+1. Velg **Neste** for å gjøre endringer i samlede felter, eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillinger](#update-unification-settings).
 
 ## <a name="manage-unified-fields"></a>Administrer enhetlige felter
 
@@ -130,7 +134,28 @@ Du kan omkonfigurere og finjustere de fleste av samsvarsparameterne. Du kan ikke
 
 1. Se gjennom de kombinerte og ekskluderte feltene, og gjør eventuelle endringer. Legg til eller rediger CustomerID-nøkkelen eller gruppeprofilene i klynger. Hvis du vil ha mer informasjon, kan du se [Samle kundefelter](merge-entities.md).
 
-1. Velg **Neste** for å se gjennom samlingsinnstillingene og [oppdatere den enhetlige profilen og avhengighetene](#run-updates-to-the-unified-customer-profile), eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillingene](#update-the-unification-settings) for å gjøre flere endringer.
+1. For kunder eller forretningsforbindelser velger du **Neste** for å se gjennom og [oppdatere den samlede profilen og avhengighetene](#run-updates-to-the-unified-profile). Eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillinger](#update-unification-settings) for å gjøre flere endringer.
+
+   For kontakter velger du **Neste** for å behandle semantiske felter. Eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillinger](#update-unification-settings) for å gjøre flere endringer.
+
+## <a name="manage-semantic-fields-for-unified-contacts"></a>Administrer semantiske felter for samlede kontakter
+
+1. Velg **Rediger** på flisen **Semantiske felter**.
+
+1. Hvis du vil endre den semantiske typen for et samlet felt, velger du en ny type. Hvis du vil ha mer informasjon, kan du se [Definer semantiske felter for samlede kontakter](data-unification-contacts.md#define-the-semantic-fields-for-unified-contacts).
+
+1. Velg **Neste** for å administrere forretningsforbindelses- og kontaktrelasjonen, eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillinger](#update-unification-settings) for å gjøre flere innstillinger.
+
+## <a name="manage-contact-and-account-relationships"></a>Administrer relasjoner mellom kontakter og forretningsforbindelser
+
+1. Velg **Rediger** på **Relasjoner**-flisen.
+
+1. Hvis du vil endre relasjonen mellom kontakt og forretningsforbindelse, endrer du følgende informasjon:
+
+   - **Sekundærnøkkel fra kontaktenhet**: Velg attributtet som kobler kontaktenheten til forretningsforbindelsen.
+   - **Til forretningsforbindelsesenhet**: Velg forretningsforbindelsesenheten som er knyttet til kontakten.
+
+1. Velg **Neste** for å se gjennom samlingsinnstillingene og [oppdatere den samlede profilen og avhengighetene](#run-updates-to-the-unified-profile), eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillinger](#update-unification-settings) for å gjøre flere endringer.
 
 ## <a name="run-matching-conditions"></a>Kjør samsvarende betingelser
 
@@ -148,18 +173,15 @@ Kjør samsvarende betingelser kjører bare deduplisering og samsvarsregler, og o
 
 1. Hvis du vil gjøre endringer, kan du se [Administrer dedupliseringsregler](#manage-deduplication-rules) eller [Administrer samsvarsregler](#manage-match-rules).
 
-1. Kjør samsvarsprosessen på nytt, eller [kjør oppdateringer til kundeprofilen](#run-updates-to-the-unified-customer-profile).
+1. Kjør samsvarsprosessen på nytt, eller [kjør oppdateringer for profilen](#run-updates-to-the-unified-profile).
 
-## <a name="run-updates-to-the-unified-customer-profile"></a>Kjør oppdateringer til den enhetlige kundeprofilen
+## <a name="run-updates-to-the-unified-profile"></a>Kjør oppdateringer for den samlede profilen
 
-1. Velg følgende på siden **Data** > **Samle**:
+- For å kjøre samsvarende betingelser og oppdatere enheten for samlet profil *uten* at det påvirker avhengigheter (for eksempel kundekort, suppleringer, segmenter eller mål), velger du **Samle kundeprofiler**. For forretningsforbindelser velger du **Samle forretningsforbindelser** > **Samle profiler**. For kontakter velger du **Samle kontakter (forhåndsversjon)** > **Samle profiler**. Avhengige prosesser kjøres ikke, men oppdateres som [definert i oppdateringsplanen](schedule-refresh.md).
+- For å kjøre samsvarende betingelser, oppdatere den samlede profilen og kjøre alle avhengigheter velger du **Samle kundeprofiler og avhengigheter**. Alle prosesser kjører på nytt automatisk. Når det gjelder forretningsforbindelser og kontakter, velger du **Samle forretningsforbindelser** > **Samle profiler og avhengigheter**. Samsvarende betingelser kjører for både forretningsforbindelser og kontakter, slik at både samlede profiler og alle andre avhengigheter kjøres.
 
-   - **Samle kundeprofiler**: Kjører samsvarende betingelser og oppdaterer enheten for Unified customer profile uten at det påvirker avhengigheter (for eksempel suppleringer, segmenter eller tiltak). Avhengige prosesser kjøres ikke, men oppdateres som [definert i oppdateringsplanen](schedule-refresh.md).
+Alle fliser unntatt **Kildefelter** viser **I kø** eller **Oppdaterer**.
 
-   - **Samle kundeprofiler og avhengigheter**: Kjører samsvarende betingelser og oppdaterer den enhetlige profilen og alle avhengigheter. Alle prosesser kjører på nytt automatisk. Når alle nedstrømsprosesser er fullført, gjenspeiler kundeprofilen de oppdaterte dataene.
+[!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
 
-   Flisene **Duplikatoppføringer**, **Samsvarende betingelser** og **Enhetlige kundefelter** viser statusen **I kø** eller **Oppdaterer**.
-
-   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
-
-Resultatet av et vellykket kjøring vises på **Samle**-siden som viser antall enhetlige kundeprofiler.
+Resultatet av et vellykket kjøring vises på **Samle**-siden som viser antall samlede profiler.

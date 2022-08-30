@@ -1,9 +1,9 @@
 ---
-title: Kundeaktiviteter
-description: Definer kundeaktiviteter, og vis dem på en tidslinje i kundeprofiler.
-ms.date: 07/22/2022
+title: Kunde- eller forretningskontaktaktiviteter
+description: Definer kunde- eller forretningskontaktaktiviteter, og vis dem på en tidslinje i kundeprofiler.
+ms.date: 08/12/2022
 ms.subservice: audience-insights
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
@@ -16,19 +16,19 @@ searchScope:
 - ci-activities-wizard
 - ci-measures
 - ci-segment-suggestions
-- customerInsight
-ms.openlocfilehash: cc21b0eeb368156437e60d851c2d144f3974c066
-ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
+- customerInsights
+ms.openlocfilehash: bbb8bc30d079273bc935181c628915bb3c02d982
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "9188151"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304117"
 ---
-# <a name="customer-activities"></a>Kundeaktiviteter
+# <a name="customer-or-business-contact-activities"></a>Kunde- eller forretningskontaktaktiviteter
 
-Kundeaktiviteter er handlinger eller hendelser som utføres eller forårsakes av kunder. Eksempler kan være transaksjoner, samtalevarighet i en kundestøttesamtale, anmeldelser av nettsteder, kjøp eller returer. Disse aktivitetene finnes i en eller flere datakilder. Med Customer Insights kan du konsolidere kundeaktivitetene fra disse [datakildene](data-sources.md) og knytte dem til kundeprofiler. Disse aktivitetene vises kronologisk på en tidslinje i kundeprofilen. Inkluder tidslinjen i Dynamics 365-apper med [Kundekort-tilleggsprogrammet](customer-card-add-in.md).
+Kundeaktiviteter er handlinger eller hendelser som utføres av kunder eller forretningskontakter. Eksempler kan være transaksjoner, samtalevarighet i en kundestøttesamtale, anmeldelser av nettsteder, kjøp eller returer. Disse aktivitetene finnes i en eller flere datakilder. Med Customer Insights kan du konsolidere kundeaktivitetene fra disse [datakildene](data-sources.md) og knytte dem til kundeprofiler. Disse aktivitetene vises kronologisk på en tidslinje i kundeprofilen. Inkluder tidslinjen i Dynamics 365-apper med [Kundekort-tilleggsprogrammet](customer-card-add-in.md).
 
-## <a name="define-an-activity"></a>Definere en aktivitet
+## <a name="define-a-customer-activity"></a>Definer en kundeaktivitet
 
 En enhet må ha minst ett attributt av typen **Dato** for å kunne inkluderes på en kundetidslinje. Kontrollen **Legg til aktivitet** er deaktivert hvis det ikke finnes en slik enhet.
 
@@ -38,9 +38,9 @@ En enhet må ha minst ett attributt av typen **Dato** for å kunne inkluderes p�
 
 1. I trinnet **Aktivitetsdata** angir du følgende informasjon:
 
-   - **Aktivitetsnavn**: Navnet på aktiviteten.
-   - **Aktivitetsenhet**: Enhet som inkluderer transaksjons- eller aktivitetsdata.
-   - **Primærnøkkel**: Felt som unikt identifiserer en oppføring. Den skal ikke inneholde duplikat verdier, tomme verdier eller manglende verdier.
+   - **Aktivitetsnavn**: Velg et navn for aktiviteten.
+   - **Aktivitetsenhet**: Velg en enhet som omfatter transaksjons- eller aktivitetsdata.
+   - **Primærnøkkel**: Velg feltet som unikt identifiserer en oppføring. Den skal ikke inneholde duplikat verdier, tomme verdier eller manglende verdier.
 
    :::image type="content" source="media/Activity_Wizard1.PNG" alt-text="Konfigurer aktivitetsdataene med navn, enhet og hovednøkkel.":::
 
@@ -48,9 +48,9 @@ En enhet må ha minst ett attributt av typen **Dato** for å kunne inkluderes p�
 
 1. Velg **Legg til relasjon** i **Relasjon**-trinnet for å koble aktivitetsdataene til den tilsvarende kundeoppføringen. Dette trinnet visualiserer tilkoblingen mellom enheter.  
 
-   - **Sekundærnøkkel fra enhet**: Felt i aktivitetsenheten som skal brukes til å opprette en relasjon til en annen enhet.
+   - **Sekundærnøkkel**: Sekundærnøkkelfelt i aktivitetsenheten som skal brukes til å opprette en relasjon til en annen enhet.
    - **Til enhetsnavn**: Tilsvarende kildekundeenhet som aktivitetsenheten skal være i relasjon med. Du kan bare relatere til kildekundeenheter som brukes i dataforeningsprosessen.
-   - **Relasjonsnavn**: Navn som identifiserer relasjonen mellom enheter. Hvis det allerede finnes en relasjon mellom aktivitetsenheten og den valgte kildekundeenheten, er relasjonsnavnet skrivebeskyttet.
+   - **Relasjonsnavn**: Hvis det allerede finnes en relasjon mellom denne aktivitetsenheten og den valgte kildekundeenheten, vil relasjonsnavnet være i skrivebeskyttet modus. Hvis det ikke finnes noen slik relasjon, opprettes det en ny relasjon med navnet du angir i denne boksen.
 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Definer enhetsrelasjonen.":::
 
@@ -90,7 +90,7 @@ En enhet må ha minst ett attributt av typen **Dato** for å kunne inkluderes p�
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 
-## <a name="manage-existing-activities"></a>Behandle eksisterende aktiviteter
+## <a name="manage-existing-customer-activities"></a>Behandle eksisterende kundeaktiviteter
 
 Gå til **Data** > **Aktiviteter** for å vise lagrede aktiviteter, kildeenheten, aktivitetstypen og om de er inkludert på kundetidslinjen. Du kan sortere listen over aktiviteter etter en hvilken som helst kolonne, eller du kan bruke søkefeltet til å finne aktiviteten du vil administrere.
 
@@ -116,9 +116,43 @@ Velg en aktivitet for å vise tilgjengelige handlinger.
 
      :::image type="content" source="media/Activity_Timeline3.PNG" alt-text="Bruk filterpanelet til å konfigurere filterbetingelser.":::
 
-1. Hvis du vil fjerne filtre, velger du **Fjern filtre** eller velger **Filter** og fjerner merket for filteret.
-
 > [!NOTE]
 > Aktivitetsfiltre fjernes når du forlater en kundeprofil. Du må bruke dem hver gang du åpner en kundeprofil.
+
+## <a name="define-a-contact-activity"></a>Definer en kontaktaktivitet
+
+For forretningskontoer (B2B) bruker du en *ContactProfile*-enhet til å registrere kontaktaktiviteter. Du kan se på aktivitetstidslinjen for en forretningsforbindelse hvilken kontakt som var ansvarlig for hver aktivitet. De fleste trinnene følger konfigurasjonen for tilordning av kundeaktivitet.
+
+   > [!NOTE]
+   > Hvis du vil definere en aktivitet på kontaktnivå, må du opprette en *ContactProfile*-enhet, enten som en [samlet kontaktprofil](data-unification-contacts.md) eller via [semantisk tilordning](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
+   >
+   > Du må ha både **AccountID**- og **ContactID**-attributtene for hver oppføring for aktivitetsdataene.
+  
+1. Gå til **Data** > **Aktiviteter**.
+
+1. Velg **Legg til aktivitet**.
+
+1. Gi aktiviteten et navn, velg kildeaktivitetsenheten, og velg hovednøkkelen for aktivitetsenheten.
+
+1. I trinnet **Relasjoner** oppretter du en indirekte relasjon mellom aktivitetskildedataene til forretningsforbindelser ved å bruke kontaktdataene som en mellomenhet. Hvis du vil ha mer informasjon, kan du se [direkte og indirekte relasjonsbaner](relationships.md#relationship-paths).
+   - Eksempelrelasjon for en aktivitet kalt *Kjøp*:
+      - **Aaktivitetsdata for kilde for kjøp** > **Kontakdata** på attributtet **ContactID**
+      - **Kontaktdata** > **Data om forretningsforbindelse** på attributtet **AccountID**
+
+   :::image type="content" source="media/Contact_Activities1.png" alt-text="Eksempel på relasjonsoppsett.":::
+
+1. Når du har satt opp Relasjoner, velger du **Neste** og fullfører konfigurasjonen av aktivitetstilordningen. Hvis du vil ha detaljerte trinn for oppretting av aktiviteter, kan du se [definer en kundeaktivitet](#define-a-customer-activity).
+
+1. Kjør aktivitetstilordningene.
+
+1. Aktivitetene på kontaktnivå vil nå være synlige på tidslinjen for kunden.
+
+   :::image type="content" source="media/Contact_Activities2.png" alt-text="Endelig resultat etter konfigurasjon av kontaktaktiviteter":::
+
+## <a name="contact-level-activity-timeline-filtering"></a>Tidslinjefiltrering av aktivitet på kontaktnivå
+
+Når du har konfigurert en aktivitetstilordning på kontaktnivå og kjørt den, oppdateres tidslinjen for aktiviteten for kundene. Den inkluderer IDer eller navn, avhengig av *ContactProfile*-konfigurasjonen, for aktivitetene de handlet på. Du kan filtrere aktiviteter etter kontakter på tidslinjen for å se bestemte kontakter du er interessert i. I tillegg kan du vise alle aktiviteter som ikke er tilordnet til en bestemt kontakt, ved å velge **Aktiviteter som ikke er tilordnet til en kontakt**.
+
+   :::image type="content" source="media/Contact_Activities3.png" alt-text="Filtreringsalternativer som er tilgjengelige for aktiviteter på kontaktnivå.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]
