@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 60b039173fd938482c782c7394420d4951c222a7
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: c573c46fda895d36d29712e75fe28b261c9b399a
+ms.sourcegitcommit: 0b5bfe0145dbd325fa518df4561d6a0a9a352264
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245937"
+ms.lasthandoff: 08/25/2022
+ms.locfileid: "9352813"
 ---
 # <a name="export-diagnostic-logs-preview"></a>Eksporter diagnoselogger (forhåndsversjon)
 
@@ -36,8 +36,8 @@ Customer Insights sender følgende hendelseslogger:
 
 - Et aktivt [Azure-abonnement](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - [Administrator](permissions.md#admin)-tillatelser i Customer Insights.
+- En gyldig ressurs på Azure som følger [målkravene](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements)for Azure Storage, Azure-hendelsessenter eller Azure Log Analytics.
 - [Bidragsyter og Brukertilgangsadministrator](/azure/role-based-access-control/role-assignments-portal) på målressursen i Azure. Ressursen kan være en Azure Data Lake Storage-konto, et Azure-hendelsessenter eller et Azure Log Analytics-arbeidsområde. Denne tillatelsen er nødvendig når du konfigurerer diagnoseinnstillinger i Customer Insights, men den kan endres etter at installasjonen er fullført.
-- [Målkrav](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) for Azure Storage, Azure-hendelseshub eller Azure Log Analytics er oppfylt.
 - Minst **leser**-rollen på ressursgruppen som ressursen tilhører.
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Konfigurere diagnostisering med Azure Monitor

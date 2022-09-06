@@ -1,19 +1,19 @@
 ---
 title: Nyheter i Dynamics 365 Customer Insights
 description: Informasjon om nye funksjoner, forbedringer og feilrettinger.
-ms.date: 08/03/2022
+ms.date: 08/31/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: a9bb254736ae70589afb267bf0a60206a18a3385
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 1e734464cec1f66428c3a2a2e403437a2a9d8500
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246023"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387306"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheter i Dynamics 365 Customer Insights
 
@@ -23,6 +23,24 @@ Vi ruller ut oppdateringer for hver region. Enkelte områder kan se funksjoner f
 
 > [!TIP]
 > For å sende inn og stemme på funksjonsforespørsler og produktforslag går du til [ideportalen for Dynamics 365-apper](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="august-2022-updates"></a>Oppdateringer for august 2022
+
+Oppdateringene i august 2022 inkluderer nye funksjoner, ytelsesoppgraderinger og feilrettinger.
+
+### <a name="contact-unification-in-b-to-b-environments"></a>Kontaktsamling i B-til-B-miljøer
+
+B-til-B-miljøer i Customer Insights støtter nå en forbedret dataforordningsopplevelse.
+
+Du kan nå samle kontakter i tillegg til forretningsforbindelser for å få en fullstendig visning av forretningskontaktene. Enhetlige kontakter er knyttet til enhetlige forretningsforbindelser og vises nå på kundekortene. 
+
+Hvis du vil ha mer informasjon, kan du se [Opprette en enhetlig kontaktprofil](data-unification-contacts.md).
+
+### <a name="create-and-export-of-segments-based-on-unified-contacts"></a>Opprette og eksportere segmenter basert på enhetlige kontakter
+
+Takket være den nye kontaktforeningen kan du opprette segmenter med kontakter ved hjelp av vilkår fra kontakter, forretningsforbindelser eller begge deler. Disse segmentene kan eksporteres for aktivering i andre tjenester.
+
+Hvis du vil ha mer informasjon, kan du se [Oversikt over eksporter](export-destinations.md).
 
 ## <a name="july-2022-updates"></a>Oppdateringer i juli 2022
 

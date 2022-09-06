@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ea21163d7dd05370de28ca8340ae9583846adb26
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d20d57e9b7724e9921f9341eeaa39141b4555ff1
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246074"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387261"
 ---
 # <a name="configure-security-settings"></a>Konfigurer sikkerhetsinnstillinger
 
@@ -23,7 +23,7 @@ Administrer API-nøkler, få tilgang til kundedata og konfigurer en Azure Privat
 
 Vis og administrer nøklene for å bruke [API-ene for Customer Insights](apis.md) med dataene i miljøet.
 
-1. Gå til **System** > **Sikkerhet**, og velg fanen **API-er**.
+1. Gå til **Administrator** > **Sikkerhet**, og velg fanen **APIer**.
 
 1. Hvis API-tilgang til miljøet ikke er konfigurert, velger du **Aktiver**. Eller hvis du vil blokkere API-tilgang til miljøet, velger du **Deaktiver** og bekrefter.
 

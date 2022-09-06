@@ -1,27 +1,27 @@
 ---
 title: OData-spørringsekseringer for API-er for Customer Insights
 description: Vanlige eksempler på OData (Open Data Protocol) for å spørre API-ene for Customer Insights for å se gjennom data.
-ms.date: 05/25/2022
+ms.date: 08/30/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8843fc04e4e6eaba0019d932c54f62561ffbdb92
-ms.sourcegitcommit: f3c12ad445d5f91a88f91a7bbc40790ebcfaa826
+ms.openlocfilehash: 26e56a3bab01ba55284a52e72efbcbfbaadaad6f
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "9121574"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387214"
 ---
 # <a name="odata-query-examples-for-customer-insights-apis"></a>OData-spørringsekseringer for API-er for Customer Insights
 
 OData (Open Data Protocol) er en datatilgangsprotokoll som er bygd på kjerneprotokoller som HTTP. Den bruker allment aksepterte metoder som REST for Internett. Det finnes ulike typer biblioteker og verktøy som kan brukes til å bruke OData-tjenester.
 
-Denne artikkelen viser noen ofte spurte eksempelspørringer som kan hjelpe deg med å bygge dine egne implementeringer basert på [Customer Insights-API-ene](apis.md).
+For å bygge dine egne implementeringer basert på [API-er for Customer Insights](apis.md) går du gjennom noen ofte forespurte eksempelspørringer.
 
-Du må endre spørringseksemplene slik at de fungerer i målmiljøene: 
+Endre spørringseksemplene slik at de fungerer i målmiljøene:
 
 - {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}/data` der {instanceId} er GUID for Customer Insights-miljøet du vil spørre om. Du kan bruke [ListAllInstances-operasjonen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) til å finne {InstanceId} du har tilgang til.
 - {CID}: GUID for en enhetlig kundeoppføring. Eksempel: `ce759201f786d590bf2134bff576c369`.
@@ -31,7 +31,7 @@ Du må endre spørringseksemplene slik at de fungerer i målmiljøene:
 
 ## <a name="customer"></a>Kunde
 
-Tabellen nedenfor inneholder et sett med eksempelspørringer for *Kunde*-enheten.
+Eksempelspørringer for *Kunde*-enheten.
 
 |Spørringstype |Eksempel  | Merk  |
 |---------|---------|---------|
@@ -46,7 +46,7 @@ Tabellen nedenfor inneholder et sett med eksempelspørringer for *Kunde*-enheten
 
 ## <a name="unified-activity"></a>Enhetlig aktivitet
 
-Tabellen nedenfor inneholder et sett med eksempelspørringer for *UnifiedActivity*-enheten.
+Eksempelspørringer for *UnifiedActivity*-enheten.
 
 |Spørringstype |Eksempel  | Merk  |
 |---------|---------|---------|
@@ -59,7 +59,7 @@ Tabellen nedenfor inneholder et sett med eksempelspørringer for *UnifiedActivit
 
 ## <a name="other-examples"></a>Andre eksempler
 
-Tabellen nedenfor inneholder et sett med eksempelspørringer for andre enheter.
+Eksempelspørringer for andre enheter.
 
 |Spørringstype |Eksempel  | Merk  |
 |---------|---------|---------|
