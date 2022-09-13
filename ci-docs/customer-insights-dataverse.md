@@ -1,7 +1,7 @@
 ---
 title: Arbeide med Customer Insights-data i Microsoft Dataverse
 description: Lær hvordan du kobler til Customer Insights og Microsoft Dataverse og forstå utdataenhetene som eksporteres til Dataverse.
-ms.date: 08/15/2022
+ms.date: 08/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 0d536259f310b41fe12922baeebdc4569937db08
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: dfa63110fc5291f2b63aebf588d6fdd20ed4ab67
+ms.sourcegitcommit: 134aac66e3e0b77b2e96a595d6acbb91bf9afda2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9303841"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9424321"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbeide med Customer Insights-data i Microsoft Dataverse
 
@@ -136,6 +136,7 @@ Hvis fjerningen av tilkoblingen mislykkes på grunn av avhengigheter, må du ogs
 Noen utdataenheter fra Customer Insights er tilgjengelige som tabeller i Dataverse. Delene nedenfor beskriver det forventede skjemaet for disse tabellene.
 
 - [Kundeprofil](#customerprofile)
+- [ContactProfile](#contactprofile)
 - [AlternateKey](#alternatekey)
 - [UnifiedActivity](#unifiedactivity)
 - [CustomerMeasure](#customermeasure)
@@ -145,91 +146,114 @@ Noen utdataenheter fra Customer Insights er tilgjengelige som tabeller i Dataver
 
 ### <a name="customerprofile"></a>Kundeprofil
 
-Denne tabellen inneholder den enhetlige kundeprofilen fra Customer Insights. Skjemaet for en enhetlig kundeprofil avhenger av enhetene og attributtene som brukes i datasamlingsprosessen. Et kundeprofilskjema inneholder vanligvis et delsett av attributtene fra [Common Data Model-definisjonen av CustomerProfile](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile).
+Denne tabellen inneholder den enhetlige kundeprofilen fra Customer Insights. Skjemaet for en enhetlig kundeprofil avhenger av enhetene og attributtene som brukes i datasamlingsprosessen. Et kundeprofilskjema inneholder vanligvis et delsett av attributtene fra [Common Data Model-definisjonen av CustomerProfile](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile). Når det gjelder B2B-scenarioet, inneholder kundeprofilen samlede forretningsforbindelser, og skjemaet inneholder vanligvis et delsett av attributtene fra [Common Data Model-definisjonen av forretningsforbindelse](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/account).
+
+### <a name="contactprofile"></a>ContactProfile
+
+En ContactProfile inneholder samlet informasjon om en kontakt. Kontakter er [enkeltpersoner som er tilordnet til en forretningsforbindelse](data-unification-contacts.md) i et B2B-scenario.
+
+| Kolonne                       | Type                | Bekrivelse     |
+| ---------------------------- | ------------------- | --------------- |
+|  BirthDate            | Date/klokkeslett       |  Fødselsdatoen til kontakten               |
+|  City                 | Tekst |  Poststedet i kontaktadressen               |
+|  ContactId            | Tekst |  ID-en for kontaktprofilen               |
+|  ContactProfileId     | Unik identifikator   |  GUID for kontakten               |
+|  CountryOrRegion      | Tekst |  Land/område i kontaktadressen               |
+|  CustomerId           | Tekst |  ID-en for forretningsforbindelsen kontakten er tilordnet til               |
+|  EntityName           | Tekst |  Enheten som data kommer fra                |
+|  FirstName            | Tekst |  Fornavnet til kontakten               |
+|  Gender               | Tekst |  Kontaktens kjønn               |
+|  ID                   | Tekst |  Deterministisk GUID basert på `Identifier`               |
+|  Identifier           | Tekst |  Intern ID for kontaktprofilen: `ContactProfile|CustomerId|ContactId`               |
+|  JobTitle             | Tekst |  Stillingstittelen til kontakten               |
+|  LastName             | Tekst |  Etternavnet til kontakten               |
+|  PostalCode           | Tekst |  Postnummeret i kontaktadressen               |
+|  PrimaryEmail         | Tekst |  E-postadressen til kontakten               |
+|  PrimaryPhone         | Tekst |  Telefonnummeret til kontakten               |
+|  StateOrProvince      | Tekst |  Delstaten eller området i kontaktadressen               |
+|  StreetAddress        | Tekst |  Gate i kontaktadressen               |
 
 ### <a name="alternatekey"></a>AlternateKey
 
 AlternateKey-tabellen inneholder nøklene til enhetene som var med i foreningsprosessen.
 
-|Column  |Type  |Beskrivelse  |
+|Column  |Type  |Bekrivelse  |
 |---------|---------|---------|
-|DataSourceName    |String         | Navnet på datakilden. Eksempel: `datasource5`        |
-|EntityName        | String        | Navnet på enheten i Customer Insights. Eksempel: `contact1`        |
-|AlternateValue    |String         |Alternativ ID som er tilordnet til kunde-ID-en. Eksempel: `cntid_1078`         |
-|KeyRing           | Tekst på flere linjer        | JSON-verdi  </br> Eksempel: [{"dataSourceName":" datasource5 ",</br>"entityName":" contact1",</br>"preferredKey":" cntid_1078",</br>"keys":[" cntid_1078"]}]       |
-|CustomerId         | String        | ID for den enhetlige kundeprofilen.         |
-|AlternateKeyId     | GUID         |  Deterministisk GUID for AlternateKey basert på msdynci_identifier       |
-|msdynci_identifier |   String      |   `DataSourceName|EntityName|AlternateValue`  </br> Eksempel: `testdatasource|contact1|cntid_1078`    |
+|DataSourceName    |Tekst         | Navnet på datakilden. Eksempel: `datasource5`        |
+|EntityName        | Tekst        | Navnet på enheten i Customer Insights. Eksempel: `contact1`        |
+|AlternateValue    |Tekst         |Alternativ ID som er tilordnet til kunde-ID-en. Eksempel: `cntid_1078`         |
+|KeyRing           | Tekst        | JSON-verdi  </br> Eksempel: [{"dataSourceName":" datasource5 ",</br>"entityName":" contact1",</br>"preferredKey":" cntid_1078",</br>"keys":[" cntid_1078"]}]       |
+|CustomerId         | Tekst        | ID for den enhetlige kundeprofilen.         |
+|AlternateKeyId     | Unik identifikator        |  Deterministisk GUID for AlternateKey basert på `Identifier`      |
+|Identifier |   Tekst      |   `DataSourceName|EntityName|AlternateValue`  </br> Eksempel: `testdatasource|contact1|cntid_1078`    |
 
 ### <a name="unifiedactivity"></a>UnifiedActivity
 
 Denne tabellen inneholder aktiviteter av brukere som er tilgjengelige i Customer Insights.
 
-| Column            | Type        | Bekrivelse                                                                              |
+| Kolonne            | Type        | Bekrivelse                                                                              |
 |-------------------|-------------|------------------------------------------------------------------------------------------|
-| CustomerId        | String      | Kundeprofil-ID                                                                      |
-| ActivityId        | String      | Intern ID for kundeaktiviteten (primærnøkkel)                                       |
-| SourceEntityName  | String      | Navnet på kildeenheten                                                                |
-| SourceActivityId  | String      | Primærnøkkel fra kildeenheten                                                       |
-| ActivityType      | String      | Semantisk aktivitetstype eller navn på egendefinert aktivitet                                        |
-| ActivityTimeStamp | DATETIME    | Aktivitetstidsstempel                                                                      |
-| Title             | String      | Tittelen eller navnet på aktiviteten                                                               |
-| Bekrivelse       | String      | Aktivitetsbeskrivelse                                                                     |
-| Nettadresse               | String      | Kobling til en ekstern nettadresse som er spesifikk for aktiviteten                                         |
-| SemanticData      | JSON-streng | Omfatter en liste over nøkkelverdipar for semantiske tilordningsfelt som er spesifikke for aktivitetstypen |
-| RangeIndex        | String      | Unix-tidsstempel som brukes til å sortere aktivitetstidslinjen og spørringer vedrørende gyldig intervall |
-| mydynci_unifiedactivityid   | GUID | Intern ID for kundeaktiviteten (ActivityId) |
+| CustomerId        | Tekst      | Kundeprofil-ID                                                                      |
+| ActivityId        | Tekst      | Intern ID for kundeaktiviteten (primærnøkkel)                                       |
+| SourceEntityName  | Tekst      | Navnet på kildeenheten                                                                |
+| SourceActivityId  | Tekst      | Primærnøkkel fra kildeenheten                                                       |
+| ActivityType      | Tekst      | Semantisk aktivitetstype eller navn på egendefinert aktivitet                                        |
+| ActivityTimeStamp | Date/klokkeslett    | Aktivitetstidsstempel                                                                      |
+| Title             | Tekst      | Tittelen eller navnet på aktiviteten                                                               |
+| Description       | Tekst      | Aktivitetsbeskrivelse                                                                     |
+| URL               | Tekst      | Kobling til en ekstern nettadresse som er spesifikk for aktiviteten                                         |
+| SemanticData      | Tekst | Omfatter en liste over nøkkelverdipar for semantiske tilordningsfelt som er spesifikke for aktivitetstypen |
+| RangeIndex        | Tekst      | Unix-tidsstempel som brukes til å sortere aktivitetstidslinjen og spørringer vedrørende gyldig intervall |
+| UnifiedActivityId   | Unik identifikator | Intern ID for kundeaktiviteten (ActivityId) |
 
 ### <a name="customermeasure"></a>CustomerMeasure
 
 Denne tabellen inneholder utdataene for mål basert på kundeattributter.
 
-| Column             | Type             | Beskrivelse                 |
+| Kolonne             | Type             | Bekrivelse                 |
 |--------------------|------------------|-----------------------------|
-| CustomerId         | String           | Kundeprofil-ID        |
-| Mål           | JSON-streng      | Omfatter en liste over nøkkelverdipar for målnavn og -verdier for gitt kunde | 
-| msdynci_identifier | String           | `Customer_Measure|CustomerId` |
-| msdynci_customermeasureid | GUID      | Kundeprofil-ID |
-
+| CustomerId         | Tekst           | Kundeprofil-ID        |
+| Measures           | Tekst      | Omfatter en liste over nøkkelverdipar for målnavn og -verdier for gitt kunde |
+| Identifier | Tekst           | `Customer_Measure|CustomerId` |
+| CustomerMeasureId | Unik identifikator     | Kundeprofil-ID |
 
 ### <a name="enrichment"></a>Supplering
 
 Denne tabellen inneholder utdataene for suppleringsprosessen.
 
-| Column               | Type             |  Beskrivelse                                          |
+| Column               | Type             |  Bekrivelse                                          |
 |----------------------|------------------|------------------------------------------------------|
-| CustomerId           | String           | Kundeprofil-ID                                 |
-| EnrichmentProvider   | String           | Navnet på leverandøren av suppleringen                                  |
-| EnrichmentType       | String           | Type supplering                                      |
-| Verdier               | JSON-streng      | Liste over attributter produsert av suppleringsprosessen |
-| msdynci_enrichmentid | GUID             | Deterministisk GUID generert fra msdynci_identifier |
-| msdynci_identifier   | String           | `EnrichmentProvider|EnrichmentType|CustomerId`         |
+| CustomerId           | Tekst           | Kundeprofil-ID                                 |
+| EnrichmentProvider   | Tekst           | Navnet på leverandøren av suppleringen                                  |
+| EnrichmentType       | Tekst           | Type supplering                                      |
+| Values               | Tekst      | Liste over attributter produsert av suppleringsprosessen |
+| EnrichmentId | Unik identifikator            | Deterministisk GUID generert fra `Identifier` |
+| Identifier   | Tekst           | `EnrichmentProvider|EnrichmentType|CustomerId`         |
 
 ### <a name="prediction"></a>Prediksjon
 
 Denne tabellen inneholder utdataene til modellprediksjonene.
 
-| Column               | Type        | Bekrivelse                                          |
+| Kolonne               | Type        | Bekrivelse                                          |
 |----------------------|-------------|------------------------------------------------------|
-| CustomerId           | String      | Kundeprofil-ID                                  |
-| ModelProvider        | String      | Navnet på leverandøren av modellen                                      |
-| Modell                | String      | Modellnavn                                                |
-| Verdier               | JSON-streng | Liste over attributter produsert av modellen |
-| msdynci_predictionid | GUID        | Deterministisk GUID generert fra msdynci_identifier | 
-| msdynci_identifier   | String      |  `Model|ModelProvider|CustomerId`                      |
+| CustomerId           | Tekst      | Kundeprofil-ID                                  |
+| ModelProvider        | Tekst      | Navnet på leverandøren av modellen                                      |
+| Model                | Tekst      | Modellnavn                                                |
+| Values               | Tekst | Liste over attributter produsert av modellen |
+| PredictionId | Unik identifikator       | Deterministisk GUID generert fra `Identifier` |
+| Identifier   | Tekst      |  `Model|ModelProvider|CustomerId`                      |
 
 ### <a name="segment-membership"></a>Segmentmedlemskap
 
 Denne tabellen inneholder informasjon om segmentmedlemskap for kundeprofilene.
 
-| Column        | Type | Description                        |
+| Kolonne        | Type | Bekrivelse                        |
 |--------------------|--------------|-----------------------------|
-| CustomerId        | String       | Kundeprofil-ID        |
-| SegmentProvider      | String       | Appen som publiserer segmentene.      |
-| SegmentMembershipType | String       | Type kunde for denne segmentmedlemskapsoppføringen. Støtter flere typer, for eksempel Kunde, Kontakt eller Konto. Standard: Kunde  |
-| Segmenter       | JSON-streng  | Liste over unike segmenter kundeprofilen er medlem av      |
-| msdynci_identifier  | String   | Unik identifikator for segmentmedlemskapsoppføringen. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
-| msdynci_segmentmembershipid | GUID      | Deterministisk GUID generert fra `msdynci_identifier`          |
-
+| CustomerId        | Tekst       | Kundeprofil-ID        |
+| SegmentProvider      | Tekst       | Appen som publiserer segmentene.      |
+| SegmentMembershipType | Tekst       | Type kunde for denne segmentmedlemskapsoppføringen. Støtter flere typer, for eksempel Kunde, Kontakt eller Konto. Standard: Kunde  |
+| Segments       | Tekst  | Liste over unike segmenter kundeprofilen er medlem av      |
+| Identifier  | Tekst   | Unik identifikator for segmentmedlemskapsoppføringen. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
+| SegmentMembershipId | Unik identifikator      | Deterministisk GUID generert fra `Identifier`          |
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

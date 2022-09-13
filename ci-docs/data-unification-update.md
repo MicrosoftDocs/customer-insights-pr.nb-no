@@ -1,7 +1,7 @@
 ---
 title: Oppdatere innstillinger for kunde-, forretningsforbindelses- eller kontaktsamling
 description: Oppdater duplikatregler, samsvarsregler eller samlede felter i innstillingene for kunde- eller forretningsforbindelsessamling.
-ms.date: 08/12/2022
+ms.date: 08/26/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: Scott-Stabbert
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: f2c14c169f5973b5f400989b9eeea593eba09182
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: e893e66fd7691b9703d51ed8f87cfad63880cc3b
+ms.sourcegitcommit: 560c4ee16376a9c6fdd7860988ce2d2440194fa5
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304347"
+ms.lasthandoff: 09/01/2022
+ms.locfileid: "9392483"
 ---
 # <a name="update-unification-settings"></a>Oppdater samlingsinnstillinger
 
@@ -38,7 +38,7 @@ Hvis du vil se gjennom eller endre eventuelle enhetlige innstillinger når en en
    > Flisen **Samsvarende betingelser** vises bare hvis flere enheter er valgt.
 
 1. Velg hva du vil oppdatere:
-   - [Kildefelter](#edit-source-fields) for å legge til enheter eller attributter eller endre attributtyper.
+   - [Kildefelter](#edit-source-fields) for å legge til attributter eller enheter eller endre attributtyper. Hvis du vil fjerne et attributt, kan du se [Fjerne et samlet felt](#remove-a-unified-field). Hvis du vil fjerne en enhet, kan du se [Fjerne en samlet enhet](#remove-a-unified-entity).
    - [Duplikatoppføringer](#manage-deduplication-rules) for å behandle dupliseringsregler eller fletteinnstillinger.
    - [Samsvarende betingelser](#manage-match-rules) for å oppdatere samsvarende regler på tvers av to eller flere enheter.
    - [Enhetlige kundefelter](#manage-unified-fields) som kan kombinere eller utelate felter. Du kan også gruppere relaterte profiler i klynger.
@@ -53,8 +53,6 @@ Hvis du vil se gjennom eller endre eventuelle enhetlige innstillinger når en en
 
 ## <a name="edit-source-fields"></a>Rediger kildefelter
 
-Du kan ikke fjerne et attributt eller en enhet hvis de allerede er samlet.
-
 1. Velg **Rediger** på flisen **Kildefelter**.
 
    :::image type="content" source="media/m3_source_edit.png" alt-text="Skjermbilde av siden for kildefelter som viser antall primærnøkler, tildelte og ikke tildelte felter":::
@@ -66,6 +64,80 @@ Du kan ikke fjerne et attributt eller en enhet hvis de allerede er samlet.
 1. Du kan eventuelt endre primærnøkkelen for en enhet, attributtypene og aktivere eller deaktivere **Intelligent tildeling**. Hvis du vil ha mer informasjon, kan du se [Velg kildefelter](map-entities.md).
 
 1. Velg **Neste** for å gjøre endringer i dedupliseringsregler, eller velg **Lagre og lukk** og gå tilbake til [Oppdater samlingsinnstillinger](#update-unification-settings).
+
+### <a name="remove-a-unified-field"></a>Fjerne et samlet felt
+
+Hvis du vil fjerne et felt som er samlet, må du fjerne det fra eventuelle avhengigheter, for eksempel segmenter, mål, suppleringer eller relasjoner.
+
+1. Når alle avhengighetene for feltet er fjernet, går du til **Data** > **Samle**.
+
+1. Velg **Rediger** på flisen **Enhetlige kundefelter**.
+
+1. Velg alle forekomster av feltet, og velg deretter **Utelat**.
+
+   :::image type="content" source="media/m3_remove_attribute1.png" alt-text="Skjermbilde av siden for samlede felter med valgte felter og Utelat-knappen":::
+
+1. Velg **Ferdig** for å bekrefte, og velg deretter **Lagre og lukk**.
+
+   > [!TIP]
+   > Hvis du får meldingen «Kan ikke lagre samlingen. Den angitte ressursen kan ikke endres eller slettes på grunn av nedstrømsavhengigheter», brukes feltet fortsatt i en nedstrømsavhengighet.
+
+1. Hvis feltet brukes i en regel for dupliserte oppføringer eller samsvarende betingelser, gjør du følgende: Ellers går du til neste trinn.
+   1. Velg **Rediger** på flisen **Duplikatoppføringer**.
+   1. Fjern feltet fra eventuelle regler det brukes i, og velg deretter **Neste**.
+   1. På siden **Samsvarende betingelser** fjerner du feltet fra eventuelle regler det brukes i, og deretter velger du **Lagre og lukk**.
+   1. Velg **Samle** > **Samle kundeprofiler og avhengigheter**. Vent til samlingen er fullført før du går til neste trinn.
+
+1. Velg **Rediger** på flisen **Kildefelter**.
+
+1. Velg **Velg enheter og felter**, og fjern merket for hver forekomst av feltet.
+
+   :::image type="content" source="media/m3_remove_attribute2.png" alt-text="Skjermbilde av dialogboksen Velg enheter og felter som viser tomme avmerkingsbokser":::
+
+1. Velg **Bruk**.
+
+1. Velg **Lagre og lukk**.
+
+1. Velg **Samle** > **Samle kundeprofiler og avhengigheter** for å oppdatere den samlede profilen.
+
+### <a name="remove-a-unified-entity"></a>Fjerne en samlet enhet
+
+Hvis du vil en enhet som er samlet, må du fjerne den fra eventuelle avhengigheter, for eksempel segmenter, mål, suppleringer eller relasjoner.
+
+1. Når alle avhengighetene for enheten er fjernet, går du til **Data** > **Samle**.
+
+1. Velg **Rediger** på flisen **Enhetlige kundefelter**.
+
+1. Velg alle feltene for enheten, og velg deretter **Utelat**.
+
+   :::image type="content" source="media/m3_remove_entity1.png" alt-text="Skjermbilde av samlede felter med alle feltene valgt for en enhet og Utelat-knappen":::
+
+1. Velg **Ferdig** for å bekrefte, og velg deretter **Lagre og lukk**.
+
+   > [!TIP]
+   > Hvis du får meldingen «Kan ikke lagre samlingen. Den angitte ressursen kan ikke endres eller slettes på grunn av nedstrømsavhengigheter», brukes enheten fortsatt i en nedstrømsavhengighet.
+
+1. Velg **Rediger** på flisen **Duplikatoppføringer**.
+
+1. Fjern eventuelle regler fra enheten, og velg deretter **Neste**.
+
+1. Velg enheten på siden **Samsvarende betingelser**, og velg deretter **Slett**.
+
+   :::image type="content" source="media/m3_remove_entity2.png" alt-text="Skjermbilde av Samsvarende betingelser med valgt enhet og Slett-knappen":::
+
+1. Velg **Lagre og lukk**.
+
+1. Velg **Rediger** på flisen **Kildefelter**.
+
+1. Velg **Velg enheter og felter**, og fjern merket for enheten.
+
+   :::image type="content" source="media/m3_remove_entity3.png" alt-text="Skjermbilde av dialogboksen Velg enheter og felter med tom avmerkingsboks for enhet":::
+
+1. Velg **Bruk**.
+
+1. Velg **Lagre og lukk**.
+
+1. Velg **Samle** > **Samle kundeprofiler og avhengigheter** for å oppdatere den samlede profilen.
 
 ## <a name="manage-deduplication-rules"></a>Administrer dedupliseringsregler
 

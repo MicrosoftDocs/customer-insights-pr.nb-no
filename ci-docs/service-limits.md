@@ -8,12 +8,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 421e1aa41a54a4b8c34ac27fc7c02e510d2bb588
-ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
+ms.openlocfilehash: 7f38b7d9985368fc38107f1f360f0603a7fcc8e6
+ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "9387168"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9411752"
 ---
 # <a name="service-limits-in-customer-insights"></a>Tjenestegrenser i Customer Insights
 
@@ -23,7 +23,7 @@ ms.locfileid: "9387168"
 
 | Areal  | Grenser  | Notater |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Segmenter, mål og prediksjoner | 300  | Det totale antallet [segmenter](segments.md), [mål](measures.md) og [prognoser](predictions.md) til sammen kan ikke overskride 300.  |
+| Segmenter, mål og prediksjoner | 300  | Det totale antallet [segmenter](segments.md), [mål](measures.md) og [prognoser](predictions-overview.md) til sammen kan ikke overskride 300.  |
 | Relasjoner | 20 dybdenivåer på relasjoner i enhetsbaner. | Når du oppretter [segmenter](segments.md) eller [mål](measures.md) ved hjelp av byggergrensesnittet, kan enhetsbaner ha opptil 20 relasjonshopp mellom startenheten og målenheten.  |
 
 ## <a name="fair-scheduling-of-jobs"></a>Rettferdig planlegging av jobber

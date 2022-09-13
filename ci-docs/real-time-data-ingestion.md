@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 2652e0868f5cc514ab6df9c150a9183cf95ae589
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: dd433b57e8695891a08d6f7fdb8c87befd2e1cfa
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246120"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9396073"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Datainntak i sanntid (forhåndsversjon)
 
@@ -82,10 +82,5 @@ Du kan bruke sanntidsfunksjonene ved å bygge din egen pipeline og direkte koble
 Du kan legge inn en aktivitet i formatet til kildesystemet eller i UnifiedActivity-formatet. Få formatet ved å gjøre et API-kall til /api/instances/{instanceId}/manage/entities/UnifiedActivity.
 
 Detaljer om denne API-en, inkludert parametere og svar, finner du i **EntityData**-delen i [Referanse for API-er i Customer Insights](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights). Hvis du vil ha mer informasjon, kan du se [Arbeide med API-er i Customer Insights](apis.md).
-
-## <a name="understand-your-real-time-usage-with-telemetry"></a>Forstå sanntidsbruk med telemetri
-
-Få en oversikt over volumet av forespørsler til sanntids-API-en og informasjon om problemer som systemet kan støte på. Du får [tilgang til telemetrien i sanntid](system.md#view-api-usage). 
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

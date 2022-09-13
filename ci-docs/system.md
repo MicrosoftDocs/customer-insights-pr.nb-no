@@ -14,12 +14,12 @@ searchScope:
 - ci-system-general
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 2498814a3d2e6330124fb97c036b9b310bcf1f7a
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 6e60bf7c18939a29f660e06989e262deeb59a39b
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246259"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9396013"
 ---
 # <a name="view-system-configuration"></a>Vis systemkonfigurasjon
 
@@ -38,12 +38,6 @@ Vis detaljer om API-bruk i sanntid, og se hvilke hendelser som har skjedd i en g
    - **API-kall** – et diagram som visualiserer det samlede antallet kall til API-en i den valgte tidsramme.
    - **Dataoverføring** – et diagram som viser datamengden som ble overført via API-en i den valgte tidsramme.
    - **Operasjoner** – en tabell med rader for hver tilgjengelige API-operasjon og detaljer om bruken av operasjonene. Velg et operasjonsnavn for å gå til [API-referansen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
-
-   Operasjoner som bruker [inntak av data i sanntid](real-time-data-ingestion.md), inneholder et kikkertsymbol for å vise API-bruk i sanntid.
-
-   1. Velg kikkerten for å åpne ruten **API-bruk i sanntid** inneholder bruksdetaljer for operasjonen.
-   1. **Velg en tidsramme** du vil vise.
-   1. Bruk **Grupper etter**-boksen til å velge hvordan du best kan presentere samhandlinger i sanntid. Grupper dataene etter API-**metode**, **enhetskvalifisertnavn** (hentet enhet), **opprettet av** (kilde for hendelsen), **resultat** (vellykket eller mislykket) eller **feilkoder**. Dataene er tilgjengelige som et historikkdiagram og som en tabell.
 
 ## <a name="view-system-information"></a>Vis systeminformasjon
 

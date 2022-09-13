@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: b237c291bb4dd22ca22ab2cdd8b6293490aa83e1
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d79b2d34e425e123224209814fef6e367c77c813
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245845"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9396103"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Koble til data i Azure Data Lake Storage
 
@@ -39,6 +39,8 @@ Innta data i Dynamics 365 Customer Insights ved å bruke av Azure Data Lake Stor
   - Storage Blob-dataleser
   - Storage Blob-dataeier
   - Storage Blob-databidragsyter
+
+- Brukeren som konfigurerer datakildetilkoblingen, må ha minst tillatelsen Storage Blob-databidragsyter på lagringskontoen.
 
 - Data i Data Lake Storage skal følge Common Data Model-standarden for lagring av dataene og ha Common Data Model-manifestet for å representere skjemaet for datafilene (*.csv eller *.parquet). Manifestet må oppgi detaljene for enhetene, for eksempel enhetskolonner og datatyper, og datafilplasseringen og filtypen. Hvis du vil ha mer informasjon, kan du se [Common Data Model-manifestet](/common-data-model/sdk/manifest). Hvis manifestet ikke finnes, kan administratorbrukere med tilgang for Storage Blob-dataeier eller Storage Blob-databidragsyter angi skjemaet ved inntak av dataene.
 
@@ -62,7 +64,7 @@ Innta data i Dynamics 365 Customer Insights ved å bruke av Azure Data Lake Stor
    > [!NOTE]
    > Du må ha en av følgende roller i beholderen eller lagringskontoen for å opprette datakilden:
    >
-   >  - Storage Blob Data-leser er tilstrekkelig for å lese fra en lagringskonto og registrere dataene i Customer Insights. 
+   >  - Storage Blob Data-leser er tilstrekkelig for å lese fra en lagringskonto og registrere dataene i Customer Insights.
    >  - Storage Blob Data-bidragsyter eller Eier er nødvendig hvis du vil redigere manifestfilene direkte i Customer Insights.  
   
 1. Velg navnet på **beholderen** som inneholder dataene og skjemaet (model.json- eller manifest.json-fil) du vil importere data fra, og velg **Neste**.
