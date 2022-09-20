@@ -8,12 +8,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 7f38b7d9985368fc38107f1f360f0603a7fcc8e6
-ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
+ms.openlocfilehash: c3863b1a72fd92ddc87755699feda11371ec9214
+ms.sourcegitcommit: dfba60e17ae6dc1e2e3830e6365e2c1f87230afd
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "9411752"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "9463231"
 ---
 # <a name="service-limits-in-customer-insights"></a>Tjenestegrenser i Customer Insights
 
@@ -25,6 +25,7 @@ ms.locfileid: "9411752"
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
 | Segmenter, mål og prediksjoner | 300  | Det totale antallet [segmenter](segments.md), [mål](measures.md) og [prognoser](predictions-overview.md) til sammen kan ikke overskride 300.  |
 | Relasjoner | 20 dybdenivåer på relasjoner i enhetsbaner. | Når du oppretter [segmenter](segments.md) eller [mål](measures.md) ved hjelp av byggergrensesnittet, kan enhetsbaner ha opptil 20 relasjonshopp mellom startenheten og målenheten.  |
+|Datainntak| Samtidige evalueringer for Power Query-datakilder er begrenset. | Customer Insights har de samme [oppdateringsbegrensningene som Dataflyter i PowerBI.com](/power-query/power-query-online-limits#refresh-limits). |
 
 ## <a name="fair-scheduling-of-jobs"></a>Rettferdig planlegging av jobber
 
