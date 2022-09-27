@@ -7,21 +7,21 @@
 - name: Læringskatalog
   items:
     - name: Sertifiser som Microsoft Customer Data Platform-spesialist
-      href: /learn/certifications/exams/mb-260?tab=tab-instructor-led
+      href: /certifications/exams/mb-260?tab=tab-instructor-led
     - name: Kom i gang med Customer Insights
-      href: /learn/modules/get-started-customer-data-platform/
+      href: /training/modules/get-started-customer-data-platform/
     - name: Hent inn data
-      href: /learn/modules/ingest-data-customer-insights/
+      href: /training/modules/ingest-data-customer-insights/
     - name: Opprette en samlet kundeprofil
-      href: /learn/modules/unified-customer-profile/
+      href: /training/modules/unified-customer-profile/
     - name: Arbeid med Customer Insights
-      href: /learn/modules/working-with-customer-insights/
+      href: /training/modules/working-with-customer-insights/
     - name: Forbedre data og lage prognoser
-      href: /learn/modules/enrich-data/
+      href: /training/modules/enrich-data/
     - name: Behandle eksterne tilkoblinger
-      href: /learn/modules/configure-third-party-connections/
+      href: /training/modules/configure-third-party-connections/
     - name: Administrere Customer Insights
-      href: /learn/modules/administer-customer-data-platform/
+      href: /training/modules/administer-customer-data-platform/
 - name: Gratis prøveversjon
   items:
     - name: Registrere deg for en gratis prøveversjon
@@ -118,6 +118,8 @@
       href: consent-management.md
     - name: Bruk nettdata til tilpassing
       href: unknown-to-known.md
+    - name: Behandle ukjente kundeprofiler
+      href: manage-unknown-profiles.md
 - name: Segments
   items:
     - name: Oversikt over segmenter
