@@ -1,7 +1,7 @@
 ---
 title: Enheter i Customer Insights
 description: Vise data på Enheter-siden.
-ms.date: 12/06/2021
+ms.date: 08/04/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-entities
 - customerInsight
-ms.openlocfilehash: 0beaa46d47545ac195ced876b509dfc57821bfaf
-ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
+ms.openlocfilehash: e365945b27e7c985ca5371c6b72619610b6f3af1
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/21/2022
-ms.locfileid: "9183581"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610110"
 ---
 # <a name="entities-in-customer-insights"></a>Enheter i Customer Insights
 
@@ -61,27 +61,5 @@ Gå til **Data** > **Enheter** for å vise en liste over enheter. Følgende info
   - **Opprettet**: Dato og klokkeslett for enhetsopprettingen.
   - **Redigert av**: Navnet på personen som endret enheten.
   - **Redigert**: Dato og klokkeslett for enhetsendringen.
-
-## <a name="entity-specific-information"></a>Enhetsbestemt informasjon
-
-Delen nedenfor inneholder informasjon om noen systemopprettede enheter.
-
-### <a name="corrupted-data-sources"></a>Ødelagte datakilder
-
-Felter fra en inntatt datakilde kan inneholde ødelagte data. Oppføringer med ødelagte felter vises i systemopprettede enheter. Hvis du vet om ødelagte oppføringer, blir det enklere å identifisere hvilke data du vil se gjennom og oppdatere i kildesystemet. Etter den neste oppdateringen av datakilden, blir de korrigerte oppføringene overført til Customer Insights og videre til nedstrømsprosesser. 
-
-En fødselsdag-kolonne har for eksempel datatypen angitt som dato. En kundeoppføring har fødselsdag angitt som 01/01/19777. Denne oppføringen flagges som ødelagt. Noen kan nå endre fødselsdagen i kildesystemet til 1977. Etter en automatisk oppdatering av datakildene, har feltet nå et gyldig format, og oppføringen blir fjernet fra den ødelagte enheten.
-
-Gå til **Data** > **Enheter**, og se etter de ødelagte enhetene i **System**-delen. Navneskjema for ødelagte enheter: DataSourceName_EntityName_corrupt. Velg en skadet enhet for å identifisere de skadede feltene og årsaken til dette på enkeltoppføringsnivået.
-
-   :::image type="content" source="media/corruption-reason.png" alt-text="Skadeårsak.":::
-
-Customer Insights behandler fremdeles ødelagte oppføringer. Det kan imidlertid føre til problemer når du arbeider med de enhetlige dataene.
-
-Følgende kontroller kjører på de innhentede dataene for å vise skadede oppføringer:
-
-- Verdien i et felt samsvarer ikke med datatypen for kolonnen.
-- Felter inneholder tegn som fører til at kolonnene ikke samsvarer med det forventede skjemaet. Eksempel: feil formaterte anførselstegn, anførselstegn som ikke er reserver, eller tegn for ny linje.
-- Hvis det finnes kolonner for datetime/date/datetimeoffset, må formatet angis i modellen hvis det ikke følger ISO-standardformatet.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

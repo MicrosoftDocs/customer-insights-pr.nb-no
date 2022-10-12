@@ -162,22 +162,20 @@
           href: sentiment-analysis.md
         - name: Bruke egendefinerte modeller fra Azure Machine Learning
           href: custom-models.md
+        - name: Opprette segmenter basert på prediksjoner
+          href: prediction-based-segment.md
     - name: Eksempelveiledninger
       items:
         - name: Eksempelveiledning for CLV-prediksjon
           href: sample-guide-predict-clv.md
         - name: Eksempelveiledning for prognose på abonnementsfrafall
           href: sample-guide-predict-subscription-churn.md
-        - name: Eksempelveiledning for prediksjon for transaksjonsfrafall
+        - name: Eksempelveiledning for prediksjon av transaksjonsfrafall
           href: sample-guide-predict-transactional-churn.md
-        - name: Eksempelveiledning for prediksjon for produktanbefaling
+        - name: Eksempelveiledning for prediksjon av produktanbefaling
           href: sample-guide-predict-product-recommendation.md
         - name: Eksperimenter med Azure Machine Learning
           href: azure-machine-learning-experiments.md
-    - name: Administrere prediksjoner
-      href: manage-predictions.md
-    - name: Opprette segmenter basert på prediksjoner
-      href: prediction-based-segment.md
 - name: Eksportalternativer
   items:
     - name: Eksporter

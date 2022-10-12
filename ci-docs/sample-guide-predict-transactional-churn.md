@@ -1,40 +1,39 @@
 ---
 title: Eksempelveiledning for prognose på transaksjonelt frafall
 description: Bruk denne eksempelveiledningen til å prøve ut den medfølgende prediksjonsmodellen for transaksjonelt frafall.
-ms.date: 05/11/2022
+ms.date: 09/19/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 3edbf2a471313379c28db874d7f19c3265a23299
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 0ccc32b6e5e96adf6f2fa8c6d52960a07d1513f3
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741331"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609696"
 ---
 # <a name="transactional-churn-prediction-sample-guide"></a>Eksempelveiledning for prognose på transaksjonelt frafall
 
-Vi tar deg gjennom et helhetlig eksempel på prediksjon av transaksjonelt frafall i Customer Insights ved å bruke dataene som vises nedenfor. Ingen data som brukes i denne veiledningen, er reelle kundedata. De er en del av Contoso-datasettet som finnes i *demonstrasjonsmiljøet* i Customer Insights-abonnementet.
+Denne veiledningen går gjennom et helhetlig eksempel på prediksjon av transaksjonsfrafall ved hjelp av eksempeldata. Vi anbefaler at du prøver denne prediksjonen [i et nytt miljø](manage-environments.md).
 
 ## <a name="scenario"></a>Scenario
 
-Contoso er et firma som produserer kaffe og kaffemaskiner av høy kvalitet, som de kan selge via nettstedet Contoso Coffee. Målet er å vite hvilke kunder som vanligvis kjøper produktene deres regelmessig, og som vil slutte å være aktive kunder i løpet av de neste 60 dagene. Det å vite hvilke av kundene som har **sannsynlighet for frafall**, kan hjelpe dem med å spare markedsføringsinnsats ved å fokusere på å beholde dem.
+Contoso er et selskap som produserer kaffe og kaffemaskiner av høy kvalitet. De selger produktene via nettstedet til Contoso Coffee. Målet er å vite hvilke kunder som vanligvis kjøper produktene deres regelmessig, og som vil slutte å være aktive kunder i løpet av de neste 60 dagene. Det å vite hvilke av kundene som har **sannsynlighet for frafall**, kan hjelpe dem med å spare markedsføringsinnsats ved å fokusere på å beholde dem.
 
-## <a name="prerequisites"></a>Forutsetninger
+## <a name="prerequisites"></a>Forutsetning
 
-- Minst [Bidragsyter-tillatelser](permissions.md) i Customer Insights.
-- Vi anbefaler at du implementerer følgende trinn [i et nytt miljø](manage-environments.md).
+- Minst [bidragsytertillatelser](permissions.md).
 
 ## <a name="task-1---ingest-data"></a>Oppgave 1 – hente inn data
 
-Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av datakilder ved å bruke Power Query-koblinger](connect-power-query.md). Følgende informasjon forutsetter at du kjenner til datainntakt generelt. 
+Se gjennom artiklene [om datainntak](data-sources.md) og [koble til en Power Query-datakilde](connect-power-query.md). Følgende informasjon forutsetter at du er fortrolig med datainntak generelt.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Hente inn kundedata fra eCommerce-plattform
 
-1. Opprett en datakilde med navnet **eCommerce**, velg importalternativet, og velg koblingen **Tekst/CSV**.
+1. Opprett en datakilde kalt **eCommerce**, og velg koblingen **Tekst/CSV**.
 
 1. Skriv inn URL-adressen for eCommerce-kontakter https://aka.ms/ciadclasscontacts.
 
@@ -47,7 +46,7 @@ Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av data
 
    :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Transformer fødselsdato til dato.":::
 
-1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden fra **Spørring** til **eCommerceContacts**
+1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden til **eCommerceContacts**
 
 1. Lagre datakilden.
 
@@ -55,7 +54,7 @@ Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av data
 
 1. Legge til et nyttdata sett i samme **eCommerce**-datakilde. Velg koblingen **Tekst/CSV** på nytt.
 
-1. Skriv inn URL-adressen for **Online kjøp**-dataene https://aka.ms/ciadclassonline.
+1. Skriv inn nettadressen til dataene for online kjøp: https://aka.ms/ciadclassonline.
 
 1. Når du redigerer dataene, velger du **Transformasjon** og deretter **Bruk første rad som overskrifter**.
 
@@ -63,14 +62,14 @@ Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av data
 
    - **PurchasedOn**: Dato/klokkeslett
    - **TotalPrice**: Valuta
-   
-1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden fra **Spørring** til **eCommercePurchases**.
+
+1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden til **eCommercePurchases**.
 
 1. Lagre datakilden.
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Hente inn kundedata fra lojalitetsskjema
 
-1. Opprett en datakilde med navnet **LoyaltyScheme**, velg importalternativet, og velg koblingen **Tekst/CSV**.
+1. Opprett en datakilde kalt **LoyaltyScheme**, og velg koblingen **Tekst/CSV**.
 
 1. Skriv inn URL-adressen for eCommerce-kontakter https://aka.ms/ciadclasscustomerloyalty.
 
@@ -82,68 +81,86 @@ Se særlig gjennom artiklene [om datainntak](data-sources.md) og [import av data
    - **RewardsPoints**: Heltall
    - **CreatedOn**: Dato/klokkeslett
 
-1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden fra **Spørring** til **loyCustomers**.
+1. I **Navn**-feltet i den høyre ruten endrer du navnet på datakilden til **loyCustomers**.
 
 1. Lagre datakilden.
 
 ## <a name="task-2---data-unification"></a>Oppgave 2 – Dataforening
 
+Gå gjennom artikkelen [om datasamling](data-unification.md). Følgende informasjon forutsetter at du er fortrolig med datasamling generelt.
+
 [!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
-## <a name="task-3---configure-transaction-churn-prediction"></a>Oppgave 3 – Konfigurere prognosen for transaksjonelt frafall
+## <a name="task-3---create-transaction-history-activity"></a>Oppgave 3 – opprett aktivitet for transaksjonslogg
 
-Når de enhetlige kundeprofilene er på plass, kan vi nå kjøre transaksjonsfrafallprediksjonen. Hvis du vil ha detaljerte trinn, kan du se artikkelen [Prediksjon for transaksjonsfrafall](predict-transactional-churn.md). 
+Se gjennom artikkelen [om kundeaktiviteter](activities.md). Følgende informasjon forutsetter at du er fortrolig med opprettelse av aktiviteter generelt.
 
-1. Gå til **Intelligens** > **Utforsk**, og velg å bruke **kundefrafallsmodellen**.
+1. Opprett en aktivitet kalt **eCommercePurchasesmed** med enheten *eCommercePurchases:eCommerce* og primærnøkkelen for den, **PurchaseId**.
 
-1. Velg **Transaksjonell**-alternativet, og velg **Kom i gang**.
+1. Opprett en relasjon mellom *eCommercePurchases:eCommerce* og *eCommerceContacts:eCommerce* med **ContactID** som sekundærnøkkelen for å koble sammen de to enhetene.
+
+1. Velg **TotalPrice** for **EventActivity** og **PurchasedOn** for **TimeStamp**.
+
+1. Velg **SalesOrderLine** for **Aktivitetstype**, og tilordne aktivitetsdataene semantisk.
+
+1. Kjør aktiviteten.
+
+## <a name="task-4---configure-transaction-churn-prediction"></a>Oppgave 4 – Konfigurere prognosen for transaksjonelt frafall
+
+Når de enhetlige kundeprofilene er på plass og aktivitet opprettet, kjører du transaksjonsfrafallprediksjonen.
+
+1. Gå til **Intelligens** > **Prediksjoner**.
+
+1. Velg **Bruk modell** på **Modell for kundefrafall** i **Opprett**-fanen.
+
+1. Velg **Transaksjonell** for frafallstypen og deretter **Kom i gang**.
 
 1. Gi modellen navnet **Frafallsprognose for OOB eCommerce-transaksjon**, og gi utdataenheten navnet **OOBeCommerceChurnPrediction**.
 
-1. Definer to betingelser for frafallsmodellen:
+1. Velg **Neste**.
 
-   * **Prediksjonsvindu**: **Minst 60** dager. Denne innstillingen definerer hvor langt inn i fremtiden vi ønsker å forutse kundefrafall.
+1. Definer modellinnstillinger:
 
-   * **Frafallsdefinisjon**: **Minst 60** dager. Varigheten uten å kjøpe noe etter en kunde anses som frafalt.
+   - **Prediksjonsvindu**: **60** dager for å definere hvor langt inn i fremtiden vi ønsker å forutsi kundefrafall.
 
-     :::image type="content" source="media/model-levers.PNG" alt-text="Velg modellbryterne Prediksjonsvindu og Frafallsdefinisjon.":::
+   - **Frafallsdefinisjon**: **60** dager for å angi varigheten uten å kjøpe noe etter at en kunde anses som frafalt.
+
+     :::image type="content" source="media/model-levers.PNG" alt-text="Velg modellinnstillingene Prediksjonsvindu og Frafallsdefinisjon.":::
+
+1. Velg **Neste**.
 
 1. Velg **Kjøpshistorikk (obligatorisk)**, og velg **Legg til data** for kjøpshistorikken.
 
-1. Legg til enheten **eCommercePurchases : eCommerce**, og tilordne feltene fra eCommerce til de tilsvarende feltene som kreves av modellen.
-
-1. Slå sammen enheten **eCommercePurchases : eCommerce** med **eCommerceContacts : eCommerce**.
+1. Velg **SalesOrderLine** og enheten eCommercePurchases, og velg **Neste**. De obligatoriske dataene blir automatisk fylt ut fra aktiviteten. Velg **Lagre** og deretter **Neste**.
 
    :::image type="content" source="media/model-purchase-join.PNG" alt-text="Slå sammen eCommerce-enheter.":::
 
-1. Velg **Neste** for å angi modellplanen.
+1. Hopp over trinnet **Tilleggsdata (valgfritt)**.
 
-   Modellen må læres opp regelmessig for å lære nye mønstre når nye data er hentet inn. I dette eksemplet velger du **Månedlig**.
+1. Velg **Månedlig** for modelltidsplanen i **Dataoppdateringer**.
 
 1. Når du har sett gjennom alle detaljene, velger du **Lagre og kjør**.
 
-## <a name="task-4---review-model-results-and-explanations"></a>Oppgave 4 – gå gjennom modellresultater og forklaringer
+## <a name="task-5---review-model-results-and-explanations"></a>Oppgave 5 – gå gjennom modellresultater og forklaringer
 
-La modellen fullføre opplæringen og beregne poengsum for dataene. Nå kan du se gjennom forklaringene på frafallsmodellen. Hvis du vil ha mer informasjon, kan du se [Gå gjennom en prediksjonsstatus og resultater](predict-transactional-churn.md#review-a-prediction-status-and-results).
+La modellen fullføre opplæringen og beregne poengsum for dataene. Se gjennom forklaringene på frafallsmodellen. Hvis du vil ha mer informasjon, kan du se [Vis prediksjonsresultater](predict-transactional-churn.md#view-prediction-results).
 
-## <a name="task-5---create-a-segment-of-high-churn-risk-customers"></a>Oppgave 5 – Opprette et segment med kunder med høy risiko for frafall
+## <a name="task-6---create-a-segment-of-high-churn-risk-customers"></a>Oppgave 6 – Opprette et segment med kunder med høy risiko for frafall
 
-Når du kjører produksjonsmodellen, opprettes det en ny enhet som du kan se i **Data** > **Enheter**.   
+Når du kjører produksjonsmodellen, opprettes en ny entitet som vises i **Data** > **Enheter**. Du kan opprette et nytt segment basert på enheten som er opprettet av modellen.
 
-Du kan opprette et nytt segment basert på enheten som er opprettet av modellen.
+1. Velg **Opprett segment** på resultatsiden.
 
-1.  Gå til **Segmenter**. Velg **Ny**, og velg **Opprett fra** > **Intelligens**. 
+1. Opprett en regel ved å bruke enheten **OOBeCommerceChurnPrediction**, og definer segmentet:
+   - **Felt**: ChurnScore
+   - **Operator**: større enn
+   - **Verdi**: 0,6
 
-   :::image type="content" source="media/segment-intelligence.PNG" alt-text="Opprette et segment med modellutdataene.":::
+1. Velg **Lagre**, og **Kjør** segmentet.
 
-1. Velg **OOBeCommerceChurnPrediction**-endepunkt og definer segmentet: 
-   - Felt: ChurnScore
-   - Operator: større enn
-   - Verdi: 0,6
+Du har nå et segment som oppdateres dynamisk, og som identifiserer kunder med høy risiko for frafall. Hvis du vil ha mer informasjon, kan du se [Opprette og behandle segmenter](segments.md).
 
-Du har nå et segment som oppdateres dynamisk, og som identifiserer kunder med høy risiko for frafall.
-
-Hvis du vil ha mer informasjon, kan du se [Opprette og behandle segmenter](segments.md).
-
+> [!TIP]
+> Du kan også opprette et segment for en prediksjonsmodell på **Segmenter**-siden ved å velge **Ny** og velge **Opprett fra** > **Intelligens**. Hvis du vil ha mer informasjon, kan du se [Opprett et nytt segment med hurtigsegmenter](segment-quick.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

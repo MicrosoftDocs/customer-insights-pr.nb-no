@@ -1,19 +1,19 @@
 ---
 title: Bruk Azure Machine Learning-baserte modeller
 description: Bruk Azure Machine Learning-baserte modeller i Dynamics 365 Customer Insights.
-ms.date: 12/02/2021
+ms.date: 09/22/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: a1efad2887a02a92ee2960b07b066edc331f3665
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8d9c9324ea4840b585b9af1a58d505ccaea6f18e
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081318"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609837"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Bruk Azure Machine Learning-baserte modeller
 
@@ -35,7 +35,7 @@ De ensartede dataene i Dynamics 365 Customer Insights er en kilde for bygging av
 ## <a name="work-with-azure-machine-learning-designer"></a>Arbeide med Azure Machine Learning-designer
 
 Azure Machine Learning-utformingen har et visuelt lerret der du kan dra og slippe datasett og moduler. En bunkepipeline som opprettes fra designeren, kan integreres i Customer Insights hvis den er konfigurert i henhold til dette. 
-   
+
 ## <a name="working-with-azure-machine-learning-sdk"></a>Arbeide med SDK-et for Azure Machine Learning
 
 Datateknikere og AI-utviklere bruker [SDK-et for Azure Machine Learning](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py) til å bygge Machine Learning-arbeidsflyter. Modeller som er lært opp ved hjelp av SDK-et, kan for øyeblikket ikke integreres direkte med Customer Insights. En bunkeslutningspipeline som bruker denne modellen, er nødvendig for å integrere med Customer Insights.
@@ -44,17 +44,16 @@ Datateknikere og AI-utviklere bruker [SDK-et for Azure Machine Learning](/python
 
 ### <a name="dataset-configuration"></a>Konfigurasjon av datasett
 
-Du må opprette datasett for å bruke enhetsdata fra Customer Insights for bunkeslutningspipelinen. Disse datasettene må registreres i arbeidsområdet. For øyeblikket støtter vi bare [tabelldatasett](/azure/machine-learning/how-to-create-register-datasets#tabulardataset) i .csv-format. Datasettene som tilsvarer enhetsdata, må ha parametere som en pipelineparameter.
-   
-* Datasettparametere i designeren
-   
-     I designeren åpner du **Velg kolonner i datasett** og velger deretter **Angi som pipelineparameter**, der du oppgir et navn for parameteren.
+Opprett datasett for å bruke enhetsdata fra Customer Insights for bunkeslutningspipelinen. Registrer disse datasettene i arbeidsområdet. For øyeblikket støtter vi bare [tabelldatasett](/azure/machine-learning/how-to-create-register-datasets#tabulardataset) i .csv-format. Parameteriser datasettene som tilsvarer enhetsdata, som en pipelineparameter.
 
-     > [!div class="mx-imgBorder"]
-     > ![Datasettparametrisering i designeren.](media/intelligence-designer-dataset-parameters.png "Datasettparametrisering i designeren")
-   
-* Datasettparameter i SDK (Python)
-   
+- Datasettparametere i designeren
+
+  I designeren åpner du **Velg kolonner i datasett** og velger deretter **Angi som pipelineparameter**, der du oppgir et navn for parameteren.
+
+  :::image type="content" source="media/intelligence-designer-dataset-parameters.png" alt-text="Datasettparametrisering i designeren.":::
+
+- Datasettparameter i SDK (Python)
+
    ```python
    HotelStayActivity_dataset = Dataset.get_by_name(ws, name='Hotel Stay Activity Data')
    HotelStayActivity_pipeline_param = PipelineParameter(name="HotelStayActivity_pipeline_param", default_value=HotelStayActivity_dataset)
@@ -63,10 +62,10 @@ Du må opprette datasett for å bruke enhetsdata fra Customer Insights for bunke
 
 ### <a name="batch-inference-pipeline"></a>Bunkebeslutningspipeline
   
-* I designeren kan en opplæringspipeline brukes til å opprette eller oppdatere en beslutningspipeline. For øyeblikket støttes bare bunkebeslutningspipeliner.
+- I utformingen bruker du en opplæringspipeline til å opprette eller oppdatere en beslutningspipeline. For øyeblikket støttes bare bunkebeslutningspipeliner.
 
-* Ved hjelp av SDK-et kan du publisere pipelinen til et endepunkt. For øyeblikket integreres Customer Insights med standard pipeline i et endepunkt for bunkepipeliner i Machine Learning-arbeidsområdet.
-   
+- Publiser pipelinen til et endepunkt ved hjelp av SDK-et. For øyeblikket integreres Customer Insights med standard pipeline i et endepunkt for bunkepipeliner i Machine Learning-arbeidsområdet.
+
    ```python
    published_pipeline = pipeline.publish(name="ChurnInferencePipeline", description="Published Churn Inference pipeline")
    pipeline_endpoint = PipelineEndpoint.get(workspace=ws, name="ChurnPipelineEndpoint") 
@@ -75,11 +74,11 @@ Du må opprette datasett for å bruke enhetsdata fra Customer Insights for bunke
 
 ### <a name="import-pipeline-data-into-customer-insights"></a>Importere pipelinedata til Customer Insights
 
-* Designeren har [Eksporter data-modulen](/azure/machine-learning/algorithm-module-reference/export-data) som tillater at utdataene fra en pipeline kan eksporteres til Azure Storage. For øyeblikket må modulen bruke datalagertypen **Azure Blob Storage** og parametrisere **datalageret** og den relative **banen**. Customer Insights overstyrer begge disse parameterne under kjøring av pipeline med et datalager og en bane som er tilgjengelig for produktet.
-   > [!div class="mx-imgBorder"]
-   > ![Eksporter datamodulkonfigurasjon.](media/intelligence-designer-importdata.png "Eksportere datamodulkonfigurasjon")
-   
-* Når du skriver beslultningsutdata ved hjelp av kode, kan du laste opp utdataene til en bane innenfor et *registrert datalager* i arbeidsområdet. Hvis banen og datalageret er parametrisert i pipelinen, kan Customer Insights lese og importere beslutningsutdataene. Det er for øyeblikket støtte for enkle tabellutdata i CSV-format. Banen må inneholde navnet på katalogen og filnavnet.
+- Designeren har [Eksporter data-modulen](/azure/machine-learning/algorithm-module-reference/export-data) som tillater at utdataene fra en pipeline kan eksporteres til Azure Storage. For øyeblikket må modulen bruke datalagertypen **Azure Blob Storage** og parametrisere **datalageret** og den relative **banen**. Customer Insights overstyrer begge disse parameterne under kjøring av pipeline med et datalager og en bane som er tilgjengelig for produktet.
+
+  :::image type="content" source="media/intelligence-designer-importdata.png" alt-text="Eksporter datamodulkonfigurasjon.":::
+
+- Når du skriver beslutningsutdata ved hjelp av kode, laster du opp utdataene til en bane innenfor et *registrert datalager* i arbeidsområdet. Hvis banen og datalageret er parametrisert i pipelinen, kan Customer Insights lese og importere beslutningsutdataene. Det er for øyeblikket støtte for enkle tabellutdata i CSV-format. Banen må inneholde navnet på katalogen og filnavnet.
 
    ```python
    # In Pipeline setup script

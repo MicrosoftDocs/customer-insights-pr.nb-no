@@ -1,7 +1,7 @@
 ---
 title: Oversikt over datakilder
 description: Lær hvordan du importerer eller innhenter data fra ulike kilder.
-ms.date: 07/26/2022
+ms.date: 09/29/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 591353bf1ba2f9ca05ddd137e1cf29dc0b0fba97
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: f89da3cf5b56e367bd673740f80cd82ec0907b28
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245661"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610064"
 ---
 # <a name="data-sources-overview"></a>Oversikt over datakilder
 
@@ -65,7 +65,9 @@ Velg en datakilde for å vise tilgjengelige handlinger.
 
 ## <a name="refresh-data-sources"></a>Oppdater datakilder
 
-Datakilder kan oppdateres etter en automatisk plan eller oppdateres manuelt ved behov. [Lokale datakilder](connect-power-query.md#add-data-from-on-premises-data-sources) oppdateres på egne tidsplaner, som konfigureres under datainntak. For tilknyttede datakilder bruker datainntak de nyeste dataene som er tilgjengelige fra den datakilde.
+Datakilder kan oppdateres etter en automatisk plan eller oppdateres manuelt ved behov. [Lokale datakilder](connect-power-query.md#add-data-from-on-premises-data-sources) oppdateres på egne tidsplaner, som konfigureres under datainntak. Hvis du vil ha feilsøkingstips, kan du se [Feilsøke problemer med PPDF Power Query-basert datakildeoppdatering](connect-power-query.md#troubleshoot-ppdf-power-query-based-data-source-refresh-issues).
+
+For tilknyttede datakilder bruker datainntak de nyeste dataene som er tilgjengelige fra den datakilde.
 
 Gå til **Administrator** > **System** > [**Planlegg**](schedule-refresh.md) for å konfigurere systemplanlagte oppdateringer av de inntatte datakildene.
 
@@ -76,5 +78,37 @@ Slik oppdaterer du en datakilde ved behov:
 1. Velg datakilden du vil oppdatere, og velg **Oppdater**. Datakilden utløses nå for manuell oppdatering. Oppdatering av en datakilde vil oppdatere både enhetsskjemaet og dataene for alle enhetene som er angitt i datakilden.
 
 1. Velg statusen for å åpne **Fremdriftsdetaljer**-ruten og vise fremdriften. Hvis du vil avbryte jobben, velger du **Avbryt jobb** nederst i ruten.
+
+## <a name="corrupt-data-sources"></a>Skadede datakilder
+
+Data som tas inn, kan ha skadede oppføringer som kan gjøre at datainntaket fullføres med feil eller advarsler.
+
+> [!NOTE]
+> Hvis datainntak fullføres med feil, blir påfølgende behandling (for eksempel samling eller aktivitetsopprettelse) som bruker denne datakilden, hoppet over. Hvis inntak fullføres med advarsler, fortsetter påfølgende behandling, men noen av oppføringene blir kanskje ikke tatt med.
+
+Du kan se disse feilene i oppgavedetaljene.
+
+:::image type="content" source="media/corrupt-task-error.png" alt-text="Oppgavedetalj som viser feil som skyldes skadede data.":::
+
+Skadede oppføringer vises i systemopprettede enheter.
+
+### <a name="fix-corrupt-data"></a>Reparer skadede data
+
+1. Du kan vise de skadede dataene, ved å gå til **Data** > **Enheter** og se etter de skadede enhetene i **System**-delen. Navneskjemaet for skadede enheter: DataSourceName_EntityName_corrupt.
+
+1. Velg en skadet enhet og deretter **Data**-fanen.
+
+1. Identifiser de skadede feltene i en oppføring og årsaken.
+
+   :::image type="content" source="media/corruption-reason.png" alt-text="Skadeårsak." lightbox="media/corruption-reason.png":::
+
+   > [!NOTE]
+   > **Data** > **Enheter** viser bare en del av de skadede oppføringene. Hvis du vil vise alle skadede oppføringer, eksporterer du filene til en beholder i lagringskontoen ved hjelp av [Customer Insights-eksportprosessen](export-destinations.md). Hvis du brukte din egen lagringskonto, kan du også se i Customer Insights-mappen i lagringskontoen.
+
+1. Reparer de skadede dataene. Når det for eksempel gjelder Azure Data Lake-datakilder, [reparerer du dataene i Data Lake Storage eller oppdaterer datatypene i filen manifest/model.json](connect-common-data-model.md#common-reasons-for-ingestion-errors-or-corrupt-data). Når det gjelder Power Query-datakilder, reparerer du dataene i kildefilen og [korrigerer datatypen i transformasjonstrinnet](connect-power-query.md#data-type-does-not-match-data) på siden **Power Query – Rediger spørringer**.
+
+Etter den neste oppdateringen av datakilden, blir de korrigerte oppføringene overført til Customer Insights og videre til nedstrømsprosesser.
+
+En fødselsdag-kolonne har for eksempel datatypen angitt som dato. En kundeoppføring har fødselsdag angitt som 01/01/19777. Systemet flagger denne oppføringen som skadet. Endre fødselsdagen i kildesystemet til 1977. Etter en automatisk oppdatering av datakildene, har feltet nå et gyldig format, og oppføringen fjernes fra den skadede enheten.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

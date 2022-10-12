@@ -1,7 +1,7 @@
 ---
 title: Knytte til en Common Data Model-mappe ved å bruke en Azure Data Lake-konto
 description: Arbeid med Common Data Model-data ved hjelp av Azure Data Lake Storage.
-ms.date: 07/27/2022
+ms.date: 09/29/2022
 ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: d79b2d34e425e123224209814fef6e367c77c813
-ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
+ms.openlocfilehash: c12603b9ed8a814356a0f8d0137e97afc749b87c
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/02/2022
-ms.locfileid: "9396103"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609960"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Koble til data i Azure Data Lake Storage
 
@@ -43,6 +43,10 @@ Innta data i Dynamics 365 Customer Insights ved å bruke av Azure Data Lake Stor
 - Brukeren som konfigurerer datakildetilkoblingen, må ha minst tillatelsen Storage Blob-databidragsyter på lagringskontoen.
 
 - Data i Data Lake Storage skal følge Common Data Model-standarden for lagring av dataene og ha Common Data Model-manifestet for å representere skjemaet for datafilene (*.csv eller *.parquet). Manifestet må oppgi detaljene for enhetene, for eksempel enhetskolonner og datatyper, og datafilplasseringen og filtypen. Hvis du vil ha mer informasjon, kan du se [Common Data Model-manifestet](/common-data-model/sdk/manifest). Hvis manifestet ikke finnes, kan administratorbrukere med tilgang for Storage Blob-dataeier eller Storage Blob-databidragsyter angi skjemaet ved inntak av dataene.
+
+## <a name="recommendations"></a>Anbefalinger
+
+For å få best mulig ytelse anbefaler Customer Insights at størrelsen på en partisjon er 1 GB eller mindre, og at antall partisjonsfiler i en mappe ikke overskrider 1000.
 
 ## <a name="connect-to-azure-data-lake-storage"></a>Koble til Azure Data Lake Storage
 
@@ -199,5 +203,101 @@ Du kan oppdatere alternativet *Koble til lagringskonto ved hjelp av*. Hvis du vi
 1. Klikk på **Lagre** for å ta i bruk endringene, og gå tilbake til siden **Datakilder**.
 
    [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+## <a name="common-reasons-for-ingestion-errors-or-corrupt-data"></a>Vanlige årsaker til inntaksfeil eller skadede data
+
+Dette er noen av de vanligste årsakene til at en oppføring kan bli betraktet som skadet under datainntak:
+
+- Datatypene og feltverdiene samsvarer ikke mellom kildefilen og skjemaet
+- Antall kolonner i kildefilen samsvarer ikke med skjemaet
+- Felter inneholder tegn som fører til at kolonnene forskyves i forhold til det forventede skjemaet. Eksempel: feil formaterte anførselstegn, anførselstegn som ikke er avsluttet, linjeskifttegn eller tabulatortegn.
+- Partisjonsfiler mangler
+- Hvis det finnes kolonner for datetime/date/datetimeoffset, må formatet angis i skjemaet hvis det ikke følger ISO-standardformatet.
+
+### <a name="schema-or-data-type-mismatch"></a>Manglende samsvar mellom skjema og datatype
+
+Hvis dataene ikke er i samsvar med skjemaet, blir inntaket fullført med feil. Rett kildedataene eller skjemaet, og foreta datainntaket på nytt.
+
+### <a name="partition-files-are-missing"></a>Partisjonsfiler mangler
+
+- Hvis inntaket var vellykket uten noen skadde oppføringer, men du ikke kan se noen data, må du redigere filen model.json eller manifest.json for å sikre at partisjoner er angitt. [Opprett datakilden](data-sources.md#refresh-data-sources).
+
+- Hvis datainntak skjer samtidig som datakilder oppdateres under en automatisk oppdatering av tidsplanen, kan det hende at partisjonsfilene er tomme eller ikke tilgjengelige til behandling av Customer Insights. Hvis du vil justere den oppstrøms oppdateringsplanen, endrer du [oppdateringsplanen for systemet](schedule-refresh.md) eller oppdateringsplanen for datakilde. Juster tidsberegningen slik at ikke alle oppdateringer skjer samtidig, og leverer de nyeste dataene som skal behandles i Customer Insights.
+
+### <a name="datetime-fields-in-the-wrong-format"></a>Dato/klokkeslett-felter i ugyldig format
+
+Dato/klokkeslett-feltene i enheten er ikke i formatet ISO 8601 eller en-US. Standard dato/klokkeslett-format i Customer Insights er et en-US-format. Alle dato/klokkeslett-felter i en enhet skal ha samme format. Customer Insights støtter andre formater hvis merknader eller egenskaper angis på kilde- eller enhetsnivå i modellen eller manifest.json. Eksempel: 
+
+**Model.json**
+
+   ```json
+      "annotations": [
+        {
+          "name": "ci:CustomTimestampFormat",
+          "value": "yyyy-MM-dd'T'HH:mm:ss:SSS"
+        },
+        {
+          "name": "ci:CustomDateFormat",
+          "value": "yyyy-MM-dd"
+        }
+      ]   
+   ```
+
+  I en manifest.json kan dato/klokkeslett-formatet angis på enhetsnivået eller attributtnivået. Bruk exhibitsTraits på enhetsnivået i enheten i *.manifest.cdm.json til å definere dato/klokkeslett-formatet. Bruk appliedTraits på attributtnivået i attributtet i entityname.cdm.json.
+
+**Manifest.json på enhetsnivået**
+
+```json
+"exhibitsTraits": [
+    {
+        "traitReference": "is.formatted.dateTime",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd'T'HH:mm:ss"
+            }
+        ]
+    },
+    {
+        "traitReference": "is.formatted.date",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd"
+            }
+        ]
+    }
+]
+```
+
+**Entity.json på attributtnivået**
+
+```json
+   {
+      "name": "PurchasedOn",
+      "appliedTraits": [
+        {
+          "traitReference": "is.formatted.date",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-dd"
+            }
+          ]
+        },
+        {
+          "traitReference": "is.formatted.dateTime",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-ddTHH:mm:ss"
+            }
+          ]
+        }
+      ],
+      "attributeContext": "POSPurchases/attributeContext/POSPurchases/PurchasedOn",
+      "dataFormat": "DateTime"
+    }
+```
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

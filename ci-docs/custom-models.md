@@ -1,7 +1,7 @@
 ---
 title: Egendefinerte modeller for maskinlæring | Microsoft Docs
 description: Arbeide med egendefinerte modeller fra Azure Machine Learning i Dynamics 365 Customer Insights.
-ms.date: 12/01/2021
+ms.date: 09/19/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: 3fad8a6cba71da80d4cc34be4084275e0d0a3622
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 89553b511d249fd586e36a1c4944a977513b0643
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245815"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609758"
 ---
 # <a name="custom-machine-learning-models"></a>Egendefinerte modeller for maskinlæring
 
@@ -25,106 +25,100 @@ ms.locfileid: "9245815"
 >
 > Per 1. desember 2021 kan du ikke opprette nye Machine Learning Studio-ressurser (klassisk). Til og med 31. august 2024 kan du fortsette å bruke de eksisterende Machine Learning Studio-ressursene (klassisk). Hvis du vil ha mer informasjon, kan du se [Overføre til Azure Machine Learning](/azure/machine-learning/migrate-overview).
 
+Egendefinerte modeller lar deg administrere arbeidsflyter basert på Azure Machine Learning-modeller. Arbeidsflyter hjelper deg med å velge dataene du vil generere innsikt fra, og tilordne resultatene til dine ensartede kundedata. Hvis du vil ha mer informasjon om utforming av egen definerte ML-modeller, kan du se [Bruk Azure Machine Learning-baserte modeller](azure-machine-learning-experiments.md).
 
-**Intelligens** > **Egendefinerte modeller** lar deg behandle arbeidsflyter basert på Azure Machine Learning-modeller. Arbeidsflyter hjelper deg med å velge dataene du vil generere innsikt fra, og tilordne resultatene til dine ensartede kundedata. Hvis du vil ha mer informasjon om utforming av egen definerte ML-modeller, kan du se [Bruk Azure Machine Learning-baserte modeller](azure-machine-learning-experiments.md).
+## <a name="prerequisites"></a>Forutsetning
 
-## <a name="responsible-ai"></a>Ansvarlig kunstig intelligens
+- Denne funksjonen støtter nettjenester som er publisert via [bunkepipeliner i Azure Machine Learning](/azure/machine-learning/concept-ml-pipelines).
+- Pipeline må publiseres under et [pipelineendepunkt](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+- En [Azure Data Lake Gen2-lagringskonto](/azure/storage/blobs/data-lake-storage-quickstart-create-account) som er knyttet til Azure Studio-forekomsten.
+- Tillatelsen Eier eller Administrator for brukertilgang til Azure Machine Learning-arbeidsområdet for Azure Machine Learning-arbeidsområder med pipeliner.
 
-Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forretningsmulighetene og omsetningsstrømmer. Vi anbefaler på det sterkeste at du balanserer verdien i prediksjon mot innvirkningen den har, og vektlegger det som blir introdusert, på en etisk måte. Lær mer om hvordan Microsoft [håndterer ansvarlig kunstig intelligens](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Du kan også lære om [teknikker og prosesser for ansvarlig maskinlæring](/azure/machine-learning/concept-responsible-ml) som er spesifikke for Azure Machine Learning.
-
-## <a name="prerequisites"></a>Krav
-
-- Denne funksjonen støtter webtjenester som er publisert via [Azure Machine Learning-gruppepipeliner](/azure/machine-learning/concept-ml-pipelines).
-
-- Du trenger en Azure Data Lake Gen2-lagringskonto som er tilknyttet Azure Studio-forekomsten, for å bruke denne funksjonen. Hvis du vil ha mer informasjon, se [Opprett en Azure Data Lake Storage Gen2-lagringskonto](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
-
-- For Azure Machine Learning-arbeidsområder med pipeliner trenger du tillatelse som Eier eller Administrator for brukertilgang til Azure Machine Learning-arbeidsområdet.
-
-   > [!NOTE]
-   > Data overføres mellom Customer Insights-forekomstene dine og de valgte Azure-webtjenestene eller -pipelinene i arbeidsflyten. Når du overfører data til en Azure-tjeneste, må du sørge for at tjenesten er konfigurert til å behandle data på måten og stedet som er nødvendig for å overholde eventuelle juridiske eller forskriftsmessige krav for disse dataene for organisasjonen din.
-
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWRElk]
+  > [!NOTE]
+  > Data overføres mellom Customer Insights-forekomstene dine og de valgte Azure-webtjenestene eller -pipelinene i arbeidsflyten. Når du overfører data til en Azure-tjeneste, må du sørge for at tjenesten er konfigurert til å behandle data på måten og stedet som er nødvendig for å overholde eventuelle juridiske eller forskriftsmessige krav for disse dataene for organisasjonen din.
 
 ## <a name="add-a-new-workflow"></a>Legge til en ny arbeidsflyt
 
 1. Gå til **Intelligens** > **Egendefinerte modeller**, og velg **Ny arbeidsflyt**.
 
-1. Gi den egendefinerte modellen et gjenkjennelig navn i **Navn**-feltet.
+1. Oppgi et gjenkjennelig **Navn**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Skjermbilde av ruten Ny arbeidsflyt.](media/new-workflowv2.png "Skjermbilde av ruten Ny arbeidsflyt")
+   :::image type="content" source="media/new-workflowv2.png" alt-text="Skjermbilde av ruten Ny arbeidsflyt.":::
 
 1. Velg organisasjonen som inneholder webtjenesten, i **Leier som inneholder webtjenesten**.
 
 1. Hvis Azure Machine Learning-abonnementet ditt er i en annen leier enn Customer Insights, velger du **Logg på** med legitimasjonen din for den valgte organisasjonen.
 
-1. Velg **arbeidsområdene** som er knyttet til nettjenesten. 
+1. Velg **arbeidsområdene** som er knyttet til nettjenesten.
 
-1. Velg Azure Machine Learning-pipelinen i rullegardinlisten **Nettjeneste som inneholder modellen**. Velg deretter **Neste**.    
-   Lær mer om [publisering av en pipeline i Azure Machine Learning ved hjelp av designeren](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK-et](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Pipelinen må publiseres under et [pipelineendepunkt](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+1. Velg Azure Machine Learning-pipelinen i rullegardinlisten **Nettjeneste som inneholder modellen**. Velg deretter **Neste**.
+   Lær mer om [publisering av en pipeline i Azure Machine Learning ved hjelp av designeren](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK-et](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk).
 
-1. For hver **Webtjenesteinndata** velger du den samsvarende **enheten** fra Customer Insights og velger **Neste**.
+1. For hver **Webtjenesteinndata** velger du den samsvarende **enheten** fra Customer Insights. Velg deretter **Neste**.
    > [!NOTE]
    > Arbeidsflyten for egendefinert modell bruker heuristikk til å tilordne inndatafeltene for nettjenesten til enhetsattributtene basert på navnet og datatypen for feltet. Det vises en feilmelding hvis et nettjenestefelt ikke kan tilordnes til en enhet.
 
-   > [!div class="mx-imgBorder"]
-   > ![Konfigurer en arbeidsflyt.](media/intelligence-screen2-updated.png "Konfigurere en arbeidsflyt")
+   :::image type="content" source="media/intelligence-screen2-updated.png" alt-text="Konfigurer en arbeidsflyt.":::
 
-1. I trinnet **Parametere for modellutdata** angir du følgende egenskaper:
-      1. Angi **enhetsnavnet** for utdataene der du vil at utdataresultatene for pilelinen skal flytes.
-      1. Velg **Navn på parameter for utdatalager** for bunkepipelinen fra rullegardinmenyen.
-      1. Velg **Navn på parameter for utdatabane** for bunkepipelinen fra rullegardinmenyen.
+1. For **Parametere for modellutdata** angir du følgende egenskaper:
+   - **Enhetsnavn** for utdataresultatene for pipeline
+   - **Navn på parameter for utdatalager** for bunkepipelinen
+   - **Navn på parameter for utdatabane** for bunkepipelinen
 
-      > [!div class="mx-imgBorder"]
-      > ![Parameterrute for modellutdata.](media/intelligence-screen3-outputparameters.png "Parameterrute for modelutdata")
+   :::image type="content" source="media/intelligence-screen3-outputparameters.png" alt-text="Parameterrute for modellutdata.":::
 
-1. Velg det tilsvarende attributtet fra rullegardinlisten **Kunde-ID i resultater** som identifiserer kunder, og velg **Lagre**.
+1. Velg det tilsvarende attributtet fra **Kunde-ID i resultater** som identifiserer kunder, og velg **Lagre**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Relater resultater til kundedataruten.](media/intelligence-screen4-relatetocustomer.png "Relater resultater til kundedataruten")
+   :::image type="content" source="media/intelligence-screen4-relatetocustomer.png" alt-text="Relater resultater til kundedataruten.":::
 
-1. Du ser skjermbildet **Arbeidsflyt lagret** med detaljer om arbeidsflyten.    
-   Hvis du konfigurerte en arbeidsflyt for en Azure Machine Learning-forløp, knyttes Customer Insights til arbeidsområdet som inneholder forløpet. Customer Insights får en **bidragsyterrolle** i Azure-arbeidsområdet.
+   Skjermen **Arbeidsflyt lagret** vises med detaljer om arbeidsflyten. Hvis du konfigurerte en arbeidsflyt for en Azure Machine Learning-forløp, knyttes Customer Insights til arbeidsområdet som inneholder forløpet. Customer Insights får en **bidragsyterrolle** i Azure-arbeidsområdet.
 
-1. Velg **Ferdig**.
+1. Velg **Ferdig**. Siden **Egendefinerte modeller** vises.
 
-1. Du kan nå kjøre arbeidsflyten fra siden **Egendefinerte modeller**.
+1. Velg den loddrette ellipsen (&vellip;) for arbeidsflyten, og velg **Kjør**. Arbeidsflyten kjøres også automatisk med hver [planlagte oppdatering](schedule-refresh.md).
 
-## <a name="edit-a-workflow"></a>Redigere en arbeidsflyt
+## <a name="manage-an-existing-workflow"></a>Administrer en eksisterende arbeidsflyt
 
-1. På siden **Egendefinerte modeller** velger du den loddrette ellipsen (&vellip;) i **Handlinger**-kolonnen ved siden av en arbeidsflyt du tidligere har opprettet, og deretter velger du **Rediger**.
+Gå til **Intelligens** > **Egendefinerte modeller** for å vise arbeidsflytene du opprettet.
 
-1. Du kan oppdatere det gjenkjennelige navnet på arbeidsflyten i **Visningsnavn**-feltet, men du kan ikke endre den konfigurerte nettjenesten eller pipelinen. Velg **Neste**.
+Velg en arbeidsflyt for å vise tilgjengelige handlinger.
 
-1. For hver **Nettjenesteinndata** kan du oppdatere den samsvarende **enheten** fra Customer Insights. Velg deretter **Neste**.
+- **Rediger** en arbeidsflyt
+- **Kjør** en arbeidsflyt
+- [**Slett**](#delete-a-workflow) en arbeidsflyt
 
-1. I trinnet **Parametere for modellutdata** angir du følgende egenskaper:
-      1. Angi **enhetsnavnet** for utdataene der du vil at utdataresultatene for pilelinen skal flytes.
-      1. Velg **Navn på parameter for utdatalager** for testpipelinen.
-      1. Velg **Navn på parameter for utdatabane** for testpipelinen.
+### <a name="edit-a-workflow"></a>Redigere en arbeidsflyt
 
-1. Velg det tilsvarende attributtet fra rullegardinlisten **Kunde-ID i resultater** som identifiserer kunder, og velg **Lagre**.
-   Velg et attributt fra beslutningsutdataene med verdier som ligner på kunde-ID-kolonnen for kundeenheten. Hvis du ikke har en slik kolonne i datasettet, velger du et attributt som unikt identifiserer raden.
+1. Gå til **Intelligens** > **Egendefinerte modeller**.
 
-## <a name="run-a-workflow"></a>Kjøre en arbeidsflyt
+1. Ved siden arbeidsflyten du vil oppdatere, velger du den loddrette ellipsen (&vellip;) og **Rediger**.
 
-1. På siden **Egendefinerte modeller** velger du den loddrette ellipsen (&vellip;) i **Handlinger**-kolonnen ved siden av en arbeidsflyt du tidligere har opprettet.
+1. Endre **Visningsnavn** om nødvendig, og velg **Neste**.
 
-1. Velg **Kjør**.
+1. For hver **Nettjenesteinndata** oppdaterer du den samsvarende **enheten** fra Customer Insights om nødvendig. Velg deretter **Neste**.
 
-Arbeidsflyten kjøres også automatisk med hver planlagte oppdatering. Lær mer om [konfigurering av planlagte oppdateringer](schedule-refresh.md).
+1. Endre et av det følgende for **Parametere for modellutdata**:
+   - **Enhetsnavn** for utdataresultatene for pipeline
+   - **Navn på parameter for utdatalager** for bunkepipelinen
+   - **Navn på parameter for utdatabane** for bunkepipelinen
 
-## <a name="delete-a-workflow"></a>Slette en arbeidsflyt
+1. Endre det tilsvarende attributtet fra **Kunde-ID i resultater** for å identifisere kunder. Velg et attributt fra beslutningsutdataene med verdier som ligner på kunde-ID-kolonnen for kundeenheten. Hvis du ikke har en slik kolonne i datasettet, velger du et attributt som unikt identifiserer raden.
 
-1. På siden **Egendefinerte modeller** velger du den loddrette ellipsen (&vellip;) i **Handlinger**-kolonnen ved siden av en arbeidsflyt du tidligere har opprettet.
+1. Velg **Lagre**
 
-1. Velg **Slett**, og bekreft slettingen.
+### <a name="delete-a-workflow"></a>Slette en arbeidsflyt
 
-Arbeidsflyten blir slettet. [Enheten](entities.md) som ble opprettet da du opprettet arbeidsflyten, vedvarer og kan vises fra **Enheter**-siden.
+1. Gå til **Intelligens** > **Egendefinerte modeller**.
 
-## <a name="results"></a>Resultater
+1. Ved siden arbeidsflyten du vil slette, velger du den loddrette ellipsen (&vellip;) og deretter **Slett**.
 
-Resultater fra en arbeidsflyt lagres i enheten som er konfigurert under fasen Parameter for modellutdata. Du kan få tilgang til disse dataene fra [enhetssiden](entities.md) eller med [API-tilgang](apis.md).
+1. Bekreft slettingen.
+
+Arbeidsflyten blir slettet. [Enheten](entities.md) som ble opprettet da du opprettet arbeidsflyten, vedvarer og kan vises fra siden **Data** > **Enheter**.
+
+## <a name="view-the-results"></a>Vis resultatene
+
+Resultater fra en arbeidsflyt lagres i enhetsnavnet som er definert for **Parametere for modellutdata**. Få tilgang til disse dataene fra [**Data** > **Enheter**-siden](entities.md) eller med [API-tilgang](apis.md).
 
 ### <a name="api-access"></a>API-tilgang
 
@@ -132,18 +126,27 @@ Bruk følgende format for den bestemte OData-spørringen for å hente data fra e
 
 `https://api.ci.ai.dynamics.com/v1/instances/<your instance id>/data/<custom model output entity name>%3Ffilter%3DCustomerId%20eq%20'<guid value>'`
 
-1. Erstatt `<your instance id>` med ID-en for Customer Insights-miljøet ditt, som du finner på adresselinjen i nettleseren når du går til Customer Insights.
+1. Erstatt `<your instance id>` med ID-en for Customer Insights-miljøet ditt, som vises på adresselinjen i nettleseren når du går til Customer Insights.
 
-1. Erstatt `<custom model output entity>` med enhetsnavnet du oppgav under trinnet Parametere for modellutdata under konfigurasjonen av den egendefinerte modellen.
+1. Erstatt `<custom model output entity>` med enhetsnavnet du angav for **Parametere for modellutdata**.
 
-1. Erstatt `<guid value>` med kunde-ID-en for kunden du vil ha tilgang til oppføringen for. Du finner vanligvis denne ID-en på [kundeprofilsiden](customer-profiles.md) i CustomerID-feltet.
+1. Erstatt `<guid value>` med kunde-ID-en for kunden du vil ha tilgang til. Denne ID-en vises på [kundeprofilsiden](customer-profiles.md) i CustomerID-feltet.
 
 ## <a name="frequently-asked-questions"></a>Vanlige spørsmål
 
-- Hvorfor kan jeg ikke se pipelinjen min når jeg konfigurerer en arbeidsflyt for en egendefinert modell?    
+- Hvorfor kan jeg ikke se pipelinjen min når jeg konfigurerer en arbeidsflyt for en egendefinert modell?
   Dette problemet skyldes ofte et konfigurasjonsproblem i pipelinen. Kontroller at [inndataparameteren er konfigurert](azure-machine-learning-experiments.md#dataset-configuration), og at [utdatadatalageret og baneparameterne](azure-machine-learning-experiments.md#import-pipeline-data-into-customer-insights) også er konfigurert.
 
-- Hva betyr feilmeldingen "Kunne ikke lagre en intelligensarbeidsflyt"?    
+- Hva betyr feilmeldingen "Kunne ikke lagre en intelligensarbeidsflyt"? 
   Brukerne ser vanligvis denne feilmeldingen hvis de ikke har rettigheter som eier eller administrator for brukertilgang på arbeidsområdet. Brukeren må ha et høyere tillatelsesnivå for at Customer Insights skal kunne behandle arbeidsflyten som en tjeneste, i stedet for å bruke brukerlegitimasjonen for påfølgende kjøringer av arbeidsflyten.
+
+- Er det støtte for et privat endepunkt / en privat kobling for arbeidsflyten for egendefinert modell?
+  Customer Insights har for øyeblikket ikke bruksklar støtte for privat endepunkt for egendefinerte modeller, men en manuell løsning er tilgjengelig. Kontakt kundestøtte hvis du vil ha mer informasjon.
+
+## <a name="responsible-ai"></a>Ansvarlig kunstig intelligens
+
+Prognoser tilbyr funksjoner for å skape bedre kundeopplevelser, forbedre forretningsmulighetene og omsetningsstrømmer. Vi anbefaler på det sterkeste at du balanserer verdien i prediksjon mot innvirkningen den har, og vektlegger det som blir introdusert, på en etisk måte. Lær mer om hvordan Microsoft [håndterer ansvarlig kunstig intelligens](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Du kan også lære om [teknikker og prosesser for ansvarlig maskinlæring](/azure/machine-learning/concept-responsible-ml) som er spesifikke for Azure Machine Learning.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWRElk]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]
