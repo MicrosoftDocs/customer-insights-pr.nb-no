@@ -1,19 +1,19 @@
 ---
 title: Eksporter segmenter til Braze (forhåndsversjon)
 description: Finn ut hvordan du konfigurerer og eksporterer til Braze.
-ms.date: 07/25/2022
+ms.date: 10/06/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 84dc7f13f30e0334d431fe5b5866c7f87e82ab27
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 2f52eb8196e057f934c8d2b5ac0518ce121606b6
+ms.sourcegitcommit: 003c1929f730d7d505c108aba84f6269f4c98978
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195119"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "9655279"
 ---
 # <a name="export-segments-to-braze-preview"></a>Eksporter segmenter til Braze (forhåndsversjon)
 
@@ -23,6 +23,7 @@ Eksporter segmenter av enhetlige kundeprofiler til Braze, og bruk dem for marked
 
 - En [Braze-konto](https://www.braze.com/) og tilsvarende administratorlegitimasjon.
 - En [API-nøkkel for Braze](https://www.braze.com/docs/api/basics/)
+- Ditt [Braze REST-endepunkt](https://www.braze.com/docs/api/basics/#api-definitions) 
 - [Konfigurerte segmenter](segments.md) i Customer Insights.
 - Enhetlige kundeprofiler i de eksporterte segmentene inneholder et felt som representerer en e-postadresse og en Kunde-ID for Braze.
 
@@ -30,6 +31,7 @@ Eksporter segmenter av enhetlige kundeprofiler til Braze, og bruk dem for marked
 
 - Opptil 1 million kundeprofiler til Braze, som kan ta opptil 40 minutter å eksportere. Antall kundeprofiler du kan eksportere til Braze, avhenger av kontrakten med Braze.
 - Bare segmenter.
+- Azure Private Link støttes ikke for Braze-eksporten.
 
 ## <a name="set-up-connection-to-braze"></a>Konfigurere tilkoblingen til Braze
 
@@ -62,6 +64,8 @@ Eksporter segmenter av enhetlige kundeprofiler til Braze, og bruk dem for marked
 1. Velg **Legg til eksport**.
 
 1. Velg en tilkobling fra Braze-delen i feltet **Tilkobling for eksport**. Kontakt en administrator hvis ingen tilkobling er tilgjengelig.
+
+1. Angi REST-endepunktet i **Vertsnavn**-feltet i følgende format: `rest.iad-03.braze.com`.
 
 1. Skriv inn et navn for eksporten.
 

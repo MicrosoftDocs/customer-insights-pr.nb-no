@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 2a386d65a5e285d471e9cafc45f247e7b4ae23bb
-ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
+ms.openlocfilehash: dcee60a73e0c32278553253040478c31e45237ae
+ms.sourcegitcommit: 618ef15b434de0a68213383b6521ce2a60753afb
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 09/30/2022
-ms.locfileid: "9609604"
+ms.lasthandoff: 10/07/2022
+ms.locfileid: "9638363"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheter i Dynamics 365 Customer Insights
 
@@ -23,6 +23,28 @@ Vi ruller ut oppdateringer for hver region. Enkelte områder kan se funksjoner f
 
 > [!TIP]
 > For å sende inn og stemme på funksjonsforespørsler og produktforslag går du til [ideportalen for Dynamics 365-apper](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="september-2022-updates"></a>September 2022-oppdateringer
+
+Oppdateringene i september 2022 inkluderer nye funksjoner, ytelsesoppgraderinger og feilrettinger.
+
+### <a name="export-data-to-hubspot"></a>Eksportere data til HubSpot
+
+Eksporter segmenter av enhetlige kundeprofiler til HubSpot, og bruk dem for e-postmarkedsføring.
+
+Hvis du vil ha mer informasjon, kan du se [Eksportere segmenter til HubSpot](export-hubspot.md).
+
+### <a name="remove-a-unified-field-or-entity-from-data-unification"></a>Fjerne et enhetlig felt eller en enhet fra en datasamling
+
+Du kan fjerne felter og enheter fra datasamlingsprosessen.
+
+For mer informasjon, se [Fjerne et enhetlig felt](data-unification-update.md#remove-a-unified-field).
+
+### <a name="manage-unknown-customer-profiles"></a>Behandle ukjente kundeprofiler
+
+Tilpassing av innhold avhenger av at kundedataene er omfattende og fullstendige, og Customer Insights hjelper deg med å nå disse målene. Du kan administrere kundeprofiler for brukere som du ikke har annen informasjon enn en ID for.
+
+Hvis du vil ha mer informasjon, kan du se [Behandle ukjente profiler med Customer Insights](manage-unknown-profiles.md).
 
 ## <a name="august-2022-updates"></a>Oppdateringer for august 2022
 
