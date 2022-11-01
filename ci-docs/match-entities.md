@@ -2,7 +2,7 @@
 title: Samsvar betingelser for dataforening
 description: Samsvar enheter for å opprette enhetlige kundeprofiler.
 recommendations: false
-ms.date: 07/27/2022
+ms.date: 10/07/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,12 +14,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: eaa3409aaa7541dc88953336942e43afaf6511c6
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: bbd2c5f441b85460250c11f02358ea67260278d6
+ms.sourcegitcommit: 52ea58c872b10f1e6f9d120be93df93cca1a12dd
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304669"
+ms.lasthandoff: 10/26/2022
+ms.locfileid: "9721533"
 ---
 # <a name="match-conditions-for-data-unification"></a>Samsvar betingelser for dataforening
 
@@ -130,12 +130,12 @@ Hvis for eksempel samsvarsregelen kombinerer etternavn, poststed og fødselsdato
 
 ### <a name="specify-custom-match-conditions"></a>Angi egendefinerte samsvarsbetingelser
 
-Du kan angi betingelser som overstyrer standard samsvarslogikk. Fire alternativer er tilgjengelige:
+Angi betingelser som overstyrer standard samsvarslogikk. Fire alternativer er tilgjengelige:
 
-|Alternativ  |Description |Eksempel  |
+|Alternativ  |Bekrivelse |Eksempel  |
 |---------|---------|---------|
-|Samsvar alltid     | Definerer verdier som alltid samsvarer.         |  Samsvar alltid *Mike* og *MikeR*.       |
-|Samsvar aldri     | Definerer verdier som aldri samsvarer.        | Samsvar aldri *John* og *Jonathan*.        |
+|Samsvar alltid     | Definerer verdier for primærnøklene som alltid samsvarer.         |  Samsvar alltid raden med primærnøkkelen *12345* med raden med primærnøkkelen *54321*.       |
+|Samsvar aldri     | Definerer verdier for primærnøklene som aldri samsvarer.        | Samsvar aldri raden med primærnøkkelen *12345* med raden med primærnøkkelen *54321*.        |
 |Utelat            | Definerer verdier som systemet alltid skal ignorere i samsvarsfasen. |  Ignorer verdiene *11111* og *Ukjent* under samsvar.        |
 |Aliastilordning    | Definere verdier som systemet skal anse som samme verdi.         | Anse *Joe* lik som *Joseph*.        |
 
@@ -143,17 +143,18 @@ Du kan angi betingelser som overstyrer standard samsvarslogikk. Fire alternative
 
    :::image type="content" source="media/m3_match_custom.png" alt-text="Egendefinert-knappen":::
 
-1. Velg **Egendefinert type** og velg **Last ned mal**. Du trenger en separat mal for hvert samsvarsalternativ.
+1. Velg **Egendefinert type** og velg **Last ned mal**. Gi malen nytt navn uten å bruke mellomrom. Bruk en egen mal for hvert samsvarsalternativ.
 
-1. Åpne den nedlastede malfilen, og fyll ut detaljene. Malen inneholder felt for å angi enheten og primærnøkkelverdiene for enheten som skal brukes i det egendefinerte samsvaret. Hvis du for eksempel vil at primærnøkkelen *12345* fra *Salg*-enheten alltid skal samsvare med primærnøkkelen *34567* fra *Kontakt*-enheten, fyller du ut malen:
-    - Entity1: Salg
-    - Entity1Key: 12345
-    - Entity2: Kontakt
-    - Entity2Key: 34567
+1. Åpne den nedlastede malfilen, og fyll ut detaljene. Malen inneholder felt for å angi enheten og primærnøkkelverdiene for enheten som skal brukes i det egendefinerte samsvaret. Det skilles mellom små og store bokstaver i enhetsnavn. Hvis du for eksempel vil at primærnøkkelen *12345* fra *Salg*-enheten alltid skal samsvare med primærnøkkelen *34567* fra *Kontakt*-enheten, fyller du ut malen:
+   - Entity1: Salg
+   - Entity1Key: 12345
+   - Entity2: Kontakt
+   - Entity2Key: 34567
 
    Den samme malfilen kan angi egendefinerte samsvarsoppføringer fra flere enheter.
 
-   Hvis du vil angi egendefinert samsvar for deduplisering for en enhet, angir du samme enhet som både Enhet1 og Enhet2 og angir de forskjellige primærnøkkelverdiene.
+   > [!NOTE]
+   > Hvis du vil angi egendefinert samsvar for deduplisering for en enhet, angir du samme enhet som både Enhet1 og Enhet2 og angir de forskjellige primærnøkkelverdiene. Du må definere minst én dedupliseringsregel for enheten for å kunne bruke egendefinert samsvar.
 
 1. Når du har lagt til alle overstyringene, lagrer du malfilen.
 
@@ -169,6 +170,8 @@ Du kan angi betingelser som overstyrer standard samsvarslogikk. Fire alternative
    - For **Utelatelse** eller **Aliastildeling** velger du **Rediger** for en eksisterende samsvarsregel eller oppretter en ny regel. Velg alternativet **Egendefinert utelatelse** eller **Aliastildeling** i rullegardinlisten Normaliseringer, og velg **Fullført**.
 
 1. Velg **Fullført** i **Egendefinert**-ruten for å bruke konfigurasjonen for tilpasset samsvar.
+
+   Hver malfil som tas inn, er sin egen datakilde. Hvis det oppdages oppføringer som krever spesiell samsvarsbehandling, oppdaterer du den aktuelle datakilden. Oppdateringen brukes i løpet av neste samlingsprosess. Du kan for eksempel identifisere tvillinger med nesten like navn som bor på samme adresse som hadde blitt slått sammen som én person. Oppdater datakilden å identifisere tvillingene som separate, unike oppføringer.
 
 > [!div class="nextstepaction"]
 > [Neste trinn: Samle felter](merge-entities.md)
