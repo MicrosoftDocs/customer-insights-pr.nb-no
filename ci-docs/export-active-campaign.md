@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 178d2df8edf1abcec72664e19d73a88f2b97f12d
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: e62888a6d618fb1154890e607d8c23d3767d35f7
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195578"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9725412"
 ---
 # <a name="export-segments-to-activecampaign-preview"></a>Eksportere segmenter til ActiveCampaign (forhåndsvisning)
 
@@ -29,6 +29,7 @@ Eksporter segmenter av enhetlige kundeprofiler til ActiveCampaign, og bruk dem f
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
+- Private Link kombinert med Bring your own storage (BYOS) støttes ikke.
 - Opptil 1 million kundeprofiler per eksport til ActiveCampaign, som kan ta opptil 90 minutter å fullføre. Antall kundeprofiler du kan eksportere til per export til ActiveCampaign avhenger av kontrakten med ActiveCampaign.
 - Bare segmenter.
 

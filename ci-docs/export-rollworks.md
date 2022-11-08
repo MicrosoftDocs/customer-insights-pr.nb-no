@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e13aeca4ee5309f85e7de2986cd1a2ba5d2992fb
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: d857bf5d11de86521c4a9d4fc665c020496d89d2
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195624"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9725137"
 ---
 # <a name="export-segments-to-rollworks-preview"></a>Eksportere segmenter til RollWorks (forhåndsversjon)
 
@@ -28,6 +28,7 @@ Eksporter segmenter av enhetlige kundeprofiler til RollWorks, og bruk dem til re
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
+- Private Link kombinert med Bring your own storage (BYOS) støttes ikke.
 - Opptil 250 000 kundeprofiler til per eksport til RollWorks, som kan ta opptil 10 minutter å fullføre. Antall kundeprofiler du kan eksportere til RollWorks, avhenger av kontrakten med RollWorks.
 - Bare segmenter.
 

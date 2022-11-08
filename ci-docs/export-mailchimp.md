@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 54aec10e24b6356e2e4317cf33e740a1a086a2dd
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: d74672768afec94e899ff0aec8c118c2afcde368
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196866"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9725044"
 ---
 # <a name="export-segments-to-mailchimp-preview"></a>Eksportere segmenter til Mailchimp (forhåndsversjon)
 
@@ -28,6 +28,7 @@ Eksporter segmenter av enhetlige kundeprofiler til MailChimp for å opprette nyh
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
+- Private Link kombinert med Bring your own storage (BYOS) støttes ikke.
 - Opptil 1 million kundeprofiler per eksport til Mailchimp, som kan ta opptil tre timer. Antall kundeprofiler du kan eksportere til Mailchimp, avhenger av kontrakten med Mailchimp.
 - Bare segmenter.
 

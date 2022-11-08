@@ -8,12 +8,12 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 816a3b242fadaa5a75db878adf0a76baf638e41c
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: fc4ac34c1de096e25ba6c374fe17b1da6b2f745f
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196958"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724906"
 ---
 # <a name="export-segments-to-sendinblue-preview"></a>Eksportere segmenter til Sendinblue (forhåndsvisning)
 
@@ -29,6 +29,7 @@ Eksporter segmenter for enhetlige kundeprofiler for å generere kampanjer, lever
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
+- Private Link kombinert med Bring your own storage (BYOS) støttes ikke.
 - Opptil 1 million kundeprofiler per eksport til Sendinblue, som kan ta opptil 90 minutter å fullføre. Antall kundeprofiler du kan eksportere til Sendinblue, avhenger av kontrakten med Sendinblue.
 - Bare segmenter.
 

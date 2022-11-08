@@ -1,12 +1,12 @@
 ---
 title: Kunde- eller forretningskontaktaktiviteter
 description: Definer kunde- eller forretningskontaktaktiviteter, og vis dem på en tidslinje i kundeprofiler.
-ms.date: 08/12/2022
+ms.date: 10/26/2022
 ms.subservice: audience-insights
 ms.reviewer: v-wendysmith
 ms.topic: conceptual
-author: CadeSanthaMSFT
-ms.author: cadesantha
+author: srivas15
+ms.author: shsri
 manager: shellyha
 searchScope:
 - ci-entities
@@ -17,12 +17,12 @@ searchScope:
 - ci-measures
 - ci-segment-suggestions
 - customerInsights
-ms.openlocfilehash: bbb8bc30d079273bc935181c628915bb3c02d982
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: d8caa477278f04c3a0a95ced15f4bea2a22aa8cd
+ms.sourcegitcommit: da6a2d189edacc8f2c0f2abedcb28245f26fe74c
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304117"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9723793"
 ---
 # <a name="customer-or-business-contact-activities"></a>Kunde- eller forretningskontaktaktiviteter
 
@@ -41,6 +41,9 @@ En enhet må ha minst ett attributt av typen **Dato** for å kunne inkluderes p�
    - **Aktivitetsnavn**: Velg et navn for aktiviteten.
    - **Aktivitetsenhet**: Velg en enhet som omfatter transaksjons- eller aktivitetsdata.
    - **Primærnøkkel**: Velg feltet som unikt identifiserer en oppføring. Den skal ikke inneholde duplikat verdier, tomme verdier eller manglende verdier.
+
+     > [!NOTE]
+     > Primærnøkkelen for hver rad må være konsekvent på tvers datakildeoppdateringer. Hvis primærnøkkelen for en rad oppdateres i en datakildeoppdatering, opprettes det duplikater i utdataaktivitetsenheten. 
 
    :::image type="content" source="media/Activity_Wizard1.PNG" alt-text="Konfigurer aktivitetsdataene med navn, enhet og hovednøkkel.":::
 
@@ -132,7 +135,15 @@ For forretningskontoer (B2B) bruker du en *ContactProfile*-enhet til å registre
 
 1. Velg **Legg til aktivitet**.
 
-1. Gi aktiviteten et navn, velg kildeaktivitetsenheten, og velg hovednøkkelen for aktivitetsenheten.
+1. I trinnet **Aktivitetsdata** angir du følgende informasjon:
+
+   - **Aktivitetsnavn**: Velg et navn for aktiviteten.
+   - **Aktivitetsenhet**: Velg en enhet som omfatter transaksjons- eller aktivitetsdata.
+   - **Primærnøkkel**: Velg feltet som unikt identifiserer en oppføring. Den skal ikke inneholde duplikat verdier, tomme verdier eller manglende verdier.
+
+     > [!NOTE]
+     > Primærnøkkelen for hver rad må være konsekvent på tvers datakildeoppdateringer. Hvis primærnøkkelen for en rad oppdateres i en datakildeoppdatering, opprettes det duplikater i utdataaktivitetsenheten. 
+
 
 1. I trinnet **Relasjoner** oppretter du en indirekte relasjon mellom aktivitetskildedataene til forretningsforbindelser ved å bruke kontaktdataene som en mellomenhet. Hvis du vil ha mer informasjon, kan du se [direkte og indirekte relasjonsbaner](relationships.md#relationship-paths).
    - Eksempelrelasjon for en aktivitet kalt *Kjøp*:

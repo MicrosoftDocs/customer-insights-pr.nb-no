@@ -8,12 +8,12 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: fd7498ecf17ef8a3a8f22dcc49ae204bef88b47f
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: a46623e609665f8031f223593a6644147e5209d8
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196590"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9725090"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Eksportere segmenter til Google Ads (forhåndsvisning)
 
@@ -30,6 +30,7 @@ Eksporter segmenter av enhetlige kundeprofiler til en Google Ads-målgruppeliste
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
+- Private Link kombinert med Bring your own storage (BYOS) støttes ikke.
 - Eksport av opptil 1 million kundeprofiler per eksport til Google Ads, som kan ta opptil 30 minutter å fullføre på grunn av begrensninger på leverandørsiden.
 - Bare segmenter.
 - Samsvar i Google Ads kan ta opptil 48 timer.

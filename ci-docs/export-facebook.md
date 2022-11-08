@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 01be1a075db0da05dc5536aea8a33093f9a2ea13
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: c7a4b1be1c959d70fad929b56452169b40e5b592
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195026"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724616"
 ---
 # <a name="export-segments-to-facebook-ads-manager-preview"></a>Eksporter segmenter til Facebook Annonseadministrasjon (forhåndsversjon)
 
@@ -25,11 +25,13 @@ Eksporter segmenter for enhetlige kundeprofiler til Facebook Annonseadministrasj
 
 - En [Facebook-annonsekonto](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) som omfatter en [Facebook Business-konto](https://business.facebook.com/).
 - Administratorrettigheter på [Facebook-annonsekontoen](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
+- Egendefinerte målgruppevilkår må godtas av brukeren som konfigurerer tilkoblingen i Customer Insights.
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
 - Opptil 10 million kundeprofiler per eksport til Facebook Annonseadministrasjon, som kan ta opptil 90 minutter.
 - Bare segmenter.
+- Facebook-annonseintegrering støtter ikke brukere med flere enn 25 annonsekontoer.
 - Typen Facebook-*kundeliste* i [egendefinerte målgrupper](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
   > [!NOTE]
   > I noen tilfeller vises kanskje egendefinerte målgrupper av forskjellige typer i rullegardinlisten. Hvis du velger en annen type enn *kundeliste*, mislykkes eksporten.

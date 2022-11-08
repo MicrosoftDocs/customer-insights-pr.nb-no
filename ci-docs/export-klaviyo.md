@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 6e45ca5827afa29d97a746bd1a474c2346cc32d2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 075e6758f2c6992a1185756f9beecf852fdd0a96
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196774"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724612"
 ---
 # <a name="export-segments-to-klaviyo-preview"></a>Eksporter segmenter til Klaviyo (forhåndsversjon)
 
@@ -29,6 +29,7 @@ Eksporter segmenter av enhetlige kundeprofiler til Klaviyo, og bruk dem for mark
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
+- Private Link kombinert med Bring your own storage (BYOS) støttes ikke.
 - Opptil 1 million kundeprofiler per eksport til Klaviyo, som kan ta opptil 20 minutter å fullføre. Antall kundeprofiler du kan eksportere til Klaviyo, avhenger av kontrakten med Klaviyo.
 - Bare segmenter.
 
