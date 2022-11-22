@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 61435030254638965fbeb7980312e73695416aa2
-ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
+ms.openlocfilehash: 811752da943cd5e40608d48644a1744c7971d3c8
+ms.sourcegitcommit: 40ae3322ac95913e485607494754dd03814e42bb
 ms.translationtype: HT
 ms.contentlocale: nb-NO
-ms.lasthandoff: 10/27/2022
-ms.locfileid: "9724801"
+ms.lasthandoff: 11/11/2022
+ms.locfileid: "9760038"
 ---
 # <a name="export-segments-to-criteo-preview"></a>Eksporter segmenter til Criteo (forhåndsversjon)
 
@@ -27,7 +27,6 @@ Eksporter segmenter for enhetlige kundeprofiler til å generere kampanjer, lever
 
 ## <a name="known-limitations"></a>Kjente begrensninger
 
-- Private Link kombinert med Bring your own storage (BYOS) støttes ikke.
 - Opptil 1 million kundeprofiler per eksport til Criteo, som kan ta opptil 30 minutter å fullføre. Antall kundeprofiler du kan eksportere til Criteo, avhenger av kontrakten med Criteo.
 - Bare segmenter.
 
